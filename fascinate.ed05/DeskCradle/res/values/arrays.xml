@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="select_wallpaper">
+        <item>@string/setting_wallpaper_default</item>
+        <item>@string/setting_wallpaper_album</item>
+        <item>@string/setting_wallpaper_gallery</item>
+    </array>
+    <array name="select_diaplay_clock">
+        <item>@string/setting_display_digital</item>
+        <item>@string/setting_display_calendar</item>
+    </array>
+    <array name="array_unit">
+        <item>@string/weather_unit_c_full_degree</item>
+        <item>@string/weather_unit_f_full_degree</item>
+    </array>
+    <array name="array_refresh_time">
+        <item>@string/weather_refresh_3_hours</item>
+        <item>@string/weather_refresh_6_hours</item>
+        <item>@string/weather_refresh_12_hours</item>
+        <item>@string/weather_refresh_24_hours</item>
+    </array>
+</resources>

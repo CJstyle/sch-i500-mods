@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Base para vehículo</string>
+    <string name="icon_view_map">Ver mapa</string>
+    <string name="icon_voice_search">Búsqueda de voz</string>
+    <string name="icon_navigation">Navegación</string>
+    <string name="icon_phone">Teléfono</string>
+    <string name="icon_browser">Navegador</string>
+    <string name="icon_contacts">Contactos</string>
+    <string name="icon_search">Buscar</string>
+    <string name="icon_music">Música</string>
+    <string name="icon_home">Inicio</string>
+    <string name="bubble_try_saying">Pruebe a decir</string>
+    <string name="bubble_navigation_to_qu">\"</string>
+    <string name="bubble_navigation_to">Navegar a</string>
+    <string name="bubble_navigation_to_pizza">pizza in palo alto\"</string>
+    <string name="msg_car_cradle_notify">Utilice esta aplicación de manera responsable. No utilice este dispositivo mientras conduzca y preste siempre atención a la carretera</string>
+    <string name="msg_car_cradle_noti_accept">Aceptar</string>
+    <string name="msg_car_cradle_noti_always_show">Mostrar siempre</string>
+    <string name="dialog_external_speaker_connect">"Conecte el altavoz externo
+al accesorio"</string>
+    <string name="msg_no_activity_found">No activity found</string>
+</resources>

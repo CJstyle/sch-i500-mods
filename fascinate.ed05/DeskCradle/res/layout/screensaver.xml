@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/screensaverid" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/digital_clock_1_sc" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/clockid" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RelativeLayout android:layout_gravity="top|left|center" android:id="@id/digitalclockid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <View android:textColor="#fffedd00" android:id="@id/View01_sc" android:layout_width="84.0dip" android:layout_height="123.32999dip" android:layout_marginLeft="108.32999dip" android:layout_weight="1.0" />
+                <View android:textColor="#ffffffff" android:id="@id/View02_sc" android:layout_width="84.0dip" android:layout_height="123.32999dip" android:layout_marginLeft="170.32999dip" android:layout_weight="1.0" />
+                <View android:textColor="#ffffffff" android:id="@id/View03_sc" android:background="@drawable/clock_10" android:layout_width="34.659973dip" android:layout_height="123.32999dip" android:layout_marginLeft="243.32999dip" android:layout_weight="1.0" />
+                <View android:textColor="#ffffffff" android:id="@id/View04_sc" android:layout_width="84.0dip" android:layout_height="123.32999dip" android:layout_marginLeft="264.65625dip" android:layout_weight="1.0" />
+                <View android:textColor="#ffffffff" android:id="@id/View05_sc" android:layout_width="84.0dip" android:layout_height="123.32999dip" android:layout_marginLeft="327.32812dip" android:layout_weight="1.0" />
+                <TextView android:textSize="30.659973sp" android:textColor="#ffffffff" android:id="@id/time_ampm_text_sc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="128.32999dip" android:layout_alignRight="@id/View05_sc" />
+                <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:id="@id/date_text_sc" android:paddingRight="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="133.32999dip" android:layout_toLeftOf="@id/time_ampm_text_sc" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

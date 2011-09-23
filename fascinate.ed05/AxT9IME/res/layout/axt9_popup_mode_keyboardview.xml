@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/popup_keyboard_container" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.inputmethod.axt9.AxT9KeyboardView android:id="@id/popup_keyboardview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="5.3339844dip" android:layout_marginRight="0.0dip" android:layout_marginBottom="1.3339844dip" android:layout_alignParentBottom="true"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <View android:id="@id/popup_keyboard_gap" android:layout_width="fill_parent" android:layout_height="3.0dip" />
+    <Button android:id="@id/popup_keyboard_cancel" android:background="@drawable/sip_popup_cancel_xml" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <View android:id="@id/popup_keyboard_gap" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+</LinearLayout>

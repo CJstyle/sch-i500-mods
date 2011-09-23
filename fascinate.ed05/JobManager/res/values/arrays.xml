@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sort_method">
+        <item>@string/sort_none</item>
+        <item>@string/used_cpu</item>
+        <item>@string/used_ram</item>
+        <item>@string/sort_alphabet</item>
+    </array>
+    <array name="kill_all">
+        <item>@string/total_running_services_label</item>
+        <item>@string/total_running_tasks_label</item>
+    </array>
+</resources>

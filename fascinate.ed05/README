@@ -1,0 +1,83 @@
+SAMSUNG FASCINATE APP MODS
+==========================
+
+BASE VERSION: ED05
+
+REQUIRED TOOLS: apktool
+
+FRAMEWORKS USED IN DECOMPILE (apktool -if <framework>):
+    ED05 framework-res.apk (deodexed)
+    ED05 twframework-res.apk (deodexed)
+
+SERVICES.JAR
+============
+
+- Removed full battery popup and notifications
+- Changed default LiveWallpaper to com.android.wallpaper/.nexus.NexusWallpaper
+
+FRAMEWORK.JAR
+=============
+
+- Modified for addition of Reboot and Recovery power menu options
+
+FRAMEWORK-RES.APK
+=================
+
+- NOTE: Was decompiled with "apktool d --keep-broken-res"
+- Modified for addition of Reboot and Recovery power menu options
+- Accurate battery meter modification; graphics courtesy of sbrissen
+
+ANDROID.POLICY.JAR
+==================
+
+- Modified for addition of Reboot and Recovery power menu options
+- Change long-press search button activity to default voice search instead of Bing
+- Add a kill for the bootanim service at the same time (earlier) as the playlogos1 service
+
+BROWSER.APK
+===========
+
+- Hard-coded search link to Verizon removed and replaced with stock Google link
+- Code that prevented in-built bookmark deletion removed
+- Code that prevented in-build bookmark deletion from History removed
+- All default bookmarks removed
+- Home page defaults to about:blank
+
+CARCRADLE.APK
+=============
+
+- Modified View Map to launch Google Maps instead of Bing Maps
+- Modified Voice Search to use Google Voice Search instead of Bing
+- Modified Navigation to launch Google Maps instead of VZNavigator
+
+DESKCRADLE.APK
+==============
+
+- Modified Voice Search to use Google Voice Search instead of Bing
+
+DIALERTABACTIVITY.APK
+=====================
+
+- Modified voicemail button to dial voicemail instead of VZW Visual Voice Mail
+
+TOUCHWIZ30LAUNCHER.APK
+======================
+
+- Modified default application list order to match my ROM
+- Modified default shortcut and widget layouts
+
+CAMERA.APK
+==========
+
+- Remap power button to trigger the shutter rather than locking the controls
+
+JOBMANAGER.APK
+==============
+
+- Don't hide Google Maps, Magic Smoke Live Wallpaper or Dual Clock widget from Task Manager
+
+AX9TIME.APK
+===========
+
+- Use playSound() code from old Froyo version; this Gingerbread version will force close
+

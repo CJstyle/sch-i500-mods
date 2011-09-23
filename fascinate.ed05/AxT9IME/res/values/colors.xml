@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="extract_edit_text_bg">#ff0f0f0f</color>
+    <color name="extract_edit_text">#ffffffff</color>
+    <color name="keypad_text_color">#ff72b1f2</color>
+    <color name="houdini_bg_color">#ff0f0f0f</color>
+    <color name="autosubs_list_text_color">#ffffffff</color>
+    <color name="candidate_normal">#ffffffff</color>
+    <color name="candidate_recommended">#ff00a2ff</color>
+    <color name="candidate_other">#ffa4dae8</color>
+    <color name="popup_key_label_color_normal_pressed">#ff00a2ff</color>
+    <color name="qwerty_key_label_color_normal">#ffe2e2e2</color>
+    <color name="qwerty_key_label_color_function">#ffe2e2e2</color>
+    <color name="qwerty_key_label_color_disable">#ffadadad</color>
+    <color name="phonepad_key_label_color_normal">#ffe2e2e2</color>
+    <color name="phonepad_key_label_color_normal_pressed">#ffffffff</color>
+    <color name="phonepad_key_label_color_extra">#ffffffff</color>
+    <color name="phonepad_key_label_color_function">#ffe2e2e2</color>
+    <color name="phonepad_key_label_color_disable">#ffadadad</color>
+    <color name="landqwerty_key_label_color_normal">#ffe2e2e2</color>
+    <color name="landqwerty_key_label_color_extra">#ffffffff</color>
+    <color name="landqwerty_key_label_color_function">#ffe2e2e2</color>
+    <color name="landqwerty_key_label_color_disable">#ffadadad</color>
+    <color name="hwr_box_label_color">#7fe2e2e2</color>
+    <color name="alternative_popup_label_color">#ffffffff</color>
+    <color name="key_normal_shadow_color">#ff000000</color>
+    <color name="key_function_shadow_color">#ff000000</color>
+    <color name="alternative_popup_label_shadow_color">#ff000000</color>
+    <color name="preview_label_color">#ffffffff</color>
+    <color name="candidate_normal_color">#ff000000</color>
+    <color name="candidate_press_color">#ffffffff</color>
+    <color name="db_list_text_color">@drawable/db_list_text_color_xml</color>
+    <color name="black">#ff000000</color>
+    <color name="gray">#ff808080</color>
+</resources>

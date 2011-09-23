@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view android:orientation="vertical" android:id="@id/grid_data_layout" android:layout_width="100.0dip" android:layout_height="100.0dip" class="com.sec.android.app.dialertab.frequent.FrequentGridDeleteActivity$GridItemView"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/grid_contact_photo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="18.659973dip" android:textColor="@color/tw_color001" android:gravity="left" android:id="@id/contact_name" android:background="@color/tw_color002_bg" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="@color/tw_color002" android:shadowRadius="1.0" android:layout_alignBottom="@id/grid_contact_photo" />
+    <CheckBox android:id="@id/checkbox1" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+</view>

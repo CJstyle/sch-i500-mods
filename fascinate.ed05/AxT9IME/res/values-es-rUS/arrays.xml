@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_input_modes">
+        <item>En teclado principal</item>
+        <item>En teclado de símbolos</item>
+        <item>Desactivado</item>
+    </string-array>
+    <array name="voice_input_modes_values">
+        <item>@string/voice_mode_main</item>
+        <item>@string/voice_mode_symbols</item>
+        <item>@string/voice_mode_off</item>
+    </array>
+    <string-array name="voice_input_modes_summary">
+        <item>Micrófono en teclado principal</item>
+        <item>Micrófono en teclado de símbolos</item>
+        <item>Entrada de voz desactivada</item>
+    </string-array>
+</resources>

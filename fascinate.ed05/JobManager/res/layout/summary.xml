@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.sec.android.app.controlpanel">
+    <com.nemustech.tiffany.widget.TFScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/all_details" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:text="@string/summary_storage" style="?android:attr/listSeparatorTextViewStyle" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/layout_data" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                        <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color001" android:paddingLeft="13.329987dip" android:paddingBottom="4.669983dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_data_label" android:maxLines="1" />
+                        <LinearLayout android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                        <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color005" android:layout_gravity="bottom|right|center" android:id="@id/storage_data_text" android:paddingRight="13.329987dip" android:paddingBottom="4.669983dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+                    </LinearLayout>
+                    <ProgressBar android:layout_gravity="center" android:id="@id/data_percentage" android:paddingLeft="17.329987dip" android:paddingRight="17.329987dip" android:layout_width="fill_parent" android:layout_height="13.329987dip" android:max="100" android:progress="0" style="?android:attr/progressBarStyleHorizontal" />
+                </LinearLayout>
+                <LinearLayout android:background="#20ffffff" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+                <LinearLayout android:orientation="vertical" android:id="@id/layout_dbdata" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                        <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:paddingLeft="13.329987dip" android:paddingBottom="4.669983dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_dbdata_label" android:maxLines="1" android:singleLine="true" android:shadowDx="-1.0" android:shadowDy="-1.0" android:shadowRadius="0.4" android:layout_weight="1.0" />
+                        <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color005" android:layout_gravity="bottom|right|center" android:id="@id/storage_dbdata_text" android:paddingRight="13.329987dip" android:paddingBottom="4.669983dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="0.0" />
+                    </LinearLayout>
+                    <ProgressBar android:layout_gravity="center" android:id="@id/dbdata_percentage" android:paddingLeft="17.329987dip" android:paddingRight="17.329987dip" android:layout_width="fill_parent" android:layout_height="13.329987dip" android:max="100" android:progress="0" style="?android:attr/progressBarStyleHorizontal" />
+                </LinearLayout>
+                <LinearLayout android:background="#20ffffff" android:layout_width="fill_parent" android:layout_height="0.6700001dip" />
+                <LinearLayout android:orientation="vertical" android:id="@id/layout_internal_sdcard" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                        <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:id="@id/storage_internal_sdcard_label" android:paddingLeft="13.329987dip" android:paddingBottom="4.669983dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_internal_sdcard_label" android:maxLines="1" android:singleLine="true" android:shadowDx="-1.0" android:shadowDy="-1.0" android:shadowRadius="0.4" android:layout_weight="1.0" />
+                        <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color005" android:layout_gravity="bottom|right|center" android:id="@id/storage_internal_sdcard_text" android:paddingRight="13.329987dip" android:paddingBottom="4.669983dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="0.0" />
+                    </LinearLayout>
+                    <ProgressBar android:layout_gravity="center" android:id="@id/internal_sdcard_percentage" android:paddingLeft="17.329987dip" android:paddingRight="17.329987dip" android:layout_width="fill_parent" android:layout_height="13.329987dip" android:max="100" android:progress="0" style="?android:attr/progressBarStyleHorizontal" />
+                </LinearLayout>
+                <LinearLayout android:background="#20ffffff" android:layout_width="fill_parent" android:layout_height="0.6700001dip" />
+                <LinearLayout android:orientation="vertical" android:id="@id/layout_external_sdcard" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                        <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:id="@id/storage_external_sdcard_label" android:paddingLeft="13.329987dip" android:paddingBottom="4.669983dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_external_sdcard_label" android:maxLines="1" android:singleLine="true" android:shadowDx="-1.0" android:shadowDy="-1.0" android:shadowRadius="0.4" android:layout_weight="1.0" />
+                        <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color005" android:layout_gravity="bottom|right|center" android:id="@id/storage_external_sdcard_text" android:paddingRight="13.329987dip" android:paddingBottom="4.669983dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="0.0" />
+                    </LinearLayout>
+                    <ProgressBar android:layout_gravity="center" android:id="@id/external_sdcard_percentage" android:paddingLeft="17.329987dip" android:paddingRight="17.329987dip" android:layout_width="fill_parent" android:layout_height="13.329987dip" android:max="100" android:progress="0" style="?android:attr/progressBarStyleHorizontal" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:id="@id/monitoring_text" android:text="@string/summary_monitoring" style="?android:attr/listSeparatorTextViewStyle" />
+            <LinearLayout android:orientation="vertical" android:paddingLeft="6.0dip" android:paddingTop="6.0dip" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/monitoring_TextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/summary_monitoring_description" />
+                <Button android:id="@id/start_monitoring" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/start_monitoring_button" />
+                <Button android:id="@id/stop_monitoring" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stop_monitoring_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.nemustech.tiffany.widget.TFScrollView>
+</LinearLayout>

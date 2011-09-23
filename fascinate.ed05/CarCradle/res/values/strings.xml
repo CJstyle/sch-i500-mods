@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Car Cradle</string>
+    <string name="icon_view_map">View Map</string>
+    <string name="icon_voice_search">Voice Search</string>
+    <string name="icon_navigation">Navigation</string>
+    <string name="icon_phone">Phone</string>
+    <string name="icon_browser">Browser</string>
+    <string name="icon_contacts">Contacts</string>
+    <string name="icon_search">Search</string>
+    <string name="icon_music">Music</string>
+    <string name="icon_home">Home</string>
+    <string name="bubble_try_saying">Try saying</string>
+    <string name="bubble_navigation_to_qu">\"</string>
+    <string name="bubble_navigation_to">Navigate to</string>
+    <string name="bubble_navigation_to_pizza">pizza in palo alto\"</string>
+    <string name="msg_car_cradle_notify">Use this application responsibly. Do not use device while driving. Always pay attention to the road</string>
+    <string name="msg_car_cradle_noti_accept">Accept</string>
+    <string name="msg_car_cradle_noti_always_show">Always show</string>
+    <string name="dialog_external_speaker_connect">"Please connect the external
+speaker to the accessory"</string>
+</resources>
