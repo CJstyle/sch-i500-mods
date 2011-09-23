@@ -9,8 +9,9 @@ FRAMEWORKS USED IN DECOMPILE (apktool -if <framework>):
     EH09 framework-res.apk (deodexed)
     EH09 twframework-res.apk (deodexed)
 
-FRAMEWORK.JAR
-=============
+BROWSER.APK
+===========
 
-- Modified to change ACG "Digital Roaming" to "Verizon Wireless"
+- Removed all default bookmarks
+- Set default home page to "about:blank"
 

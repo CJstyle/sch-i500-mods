@@ -10,14 +10,14 @@ rm -f -r ~/apktool
 apktool if ./stock-apks/framework-res.apk
 apktool if ./stock-apks/twframework-res.apk
 
-# FRAMEWORK.JAR
-apktool b framework.jar.out
-rm framework.jar.out/dist/framework.jar
-cp stock-apks/framework.jar framework.jar.out/dist/
-pushd framework.jar.out/build/apk
-zip -u ../../dist/framework.jar classes.dex
+# BROWSER
+apktool b Browser
+rm Browser/dist/Browser.apk
+cp stock-apks/Browser.apk Browser/dist/
+pushd Browser/build/apk
+zip -u ../../dist/Browser.apk resources.arsc
 popd
-zipalign -f 4 framework.jar.out/dist/framework.jar ./framework.jar
-rm -f -r framework.jar.out/build
-rm -f -r framework.jar.out/dist
+zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
+rm -f -r Browser/build
+rm -f -r Browser/dist
 
