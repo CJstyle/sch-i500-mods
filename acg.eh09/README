@@ -9,9 +9,26 @@ FRAMEWORKS USED IN DECOMPILE (apktool -if <framework>):
     EH09 framework-res.apk (deodexed)
     EH09 twframework-res.apk (deodexed)
 
+FRAMEWORK.JAR
+=============
+
+- Modified for Verizon Wireless (partial)
+
+SERVICES.JAR
+============
+
+- Changed default LiveWallpaper to com.android.wallpaper/.nexus.NexusWallpaper
+
+SEC_FEATURE.JAR
+===============
+
+- Modified for Verizon Wireless (partial)
+
 BROWSER.APK
 ===========
 
 - Removed all default bookmarks
 - Set default home page to "about:blank"
+
+
 
