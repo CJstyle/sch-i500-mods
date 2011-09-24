@@ -54,4 +54,18 @@ zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build
 rm -f -r Browser/dist
 
+# TOUCHWIZ30LAUNCHER
+apktool b TouchWiz30Launcher
+rm TouchWiz30Launcher/dist/TouchWiz30Launcher.apk
+cp stock-apks/TouchWiz30Launcher.apk TouchWiz30Launcher/dist/
+pushd TouchWiz30Launcher/build/apk
+zip -u ../../dist/TouchWiz30Launcher.apk res/xml/default_mainapplication_order.xml
+zip -u ../../dist/TouchWiz30Launcher.apk res/xml/launcher_config.xml
+zip -u ../../dist/TouchWiz30Launcher.apk res/xml/default_workspace.xml
+popd
+zipalign -f 4 TouchWiz30Launcher/dist/TouchWiz30Launcher.apk ./TouchWiz30Launcher.apk
+rm -f -r TouchWiz30Launcher/build
+rm -f -r TouchWiz30Launcher/dist
+
+
 

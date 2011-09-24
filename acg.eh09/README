@@ -30,5 +30,10 @@ BROWSER.APK
 - Removed all default bookmarks
 - Set default home page to "about:blank"
 
+TOUCHWIZ30LAUNCHER.APK
+======================
+
+- Modified default shortcut and widget layouts
+
 
 
