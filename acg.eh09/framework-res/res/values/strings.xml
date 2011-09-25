@@ -1335,4 +1335,6 @@ Buy a new USIM card, please."</string>
     <string name="sum_hide_caller_id">Number hidden in outgoing calls</string>
     <string name="sum_show_caller_id">Number displayed in outgoing calls</string>
     <string name="sum_default_caller_id">Use default operator settings to display my number in outgoing calls</string>
+    <string name="reboot">Reboot</string>
+    <string name="reboot_recovery">Recovery</string>
 </resources>

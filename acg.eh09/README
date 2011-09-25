@@ -9,15 +9,27 @@ FRAMEWORKS USED IN DECOMPILE (apktool -if <framework>):
     EH09 framework-res.apk (deodexed)
     EH09 twframework-res.apk (deodexed)
 
-FRAMEWORK.JAR
-=============
-
-- Modified for Verizon Wireless (partial?)
-
 SERVICES.JAR
 ============
 
 - Changed default LiveWallpaper to com.android.wallpaper/.nexus.NexusWallpaper
+
+FRAMEWORK.JAR
+=============
+
+- Modified for Verizon Wireless (partial?)
+- Modified for addition of Reboot and Recovery power menu options
+
+FRAMEWORK-RES.APK
+=================
+
+- NOTE: Was decompiled with "apktool d --keep-broken-res"
+- Modified for addition of Reboot and Recovery power menu options
+
+ANDROID.POLICY.JAR
+==================
+
+- Modified for addition of Reboot and Recovery power menu options
 
 SEC_FEATURE.JAR
 ===============

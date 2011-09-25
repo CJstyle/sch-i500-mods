@@ -2935,6 +2935,8 @@
     <public type="string" name="sum_default_caller_id" id="0x01040524" />
     <public type="string" name="permlab_accessUsb" id="0x01040525" />
     <public type="string" name="permdesc_accessUsb" id="0x01040526" />
+    <public type="string" name="reboot" id="0x01040527" />
+    <public type="string" name="reboot_recovery" id="0x01040528" />
     <public type="dimen" name="app_icon_size" id="0x01050000" />
     <public type="dimen" name="thumbnail_height" id="0x01050001" />
     <public type="dimen" name="thumbnail_width" id="0x01050002" />
@@ -4057,6 +4059,8 @@
     <public type="drawable" name="APKTOOL_DUMMY_02cc" id="0x010802cc" />
     <public type="drawable" name="APKTOOL_DUMMY_02cd" id="0x010802cd" />
     <public type="drawable" name="APKTOOL_DUMMY_02ce" id="0x010802ce" />
+    <public type="drawable" name="reboot" id="0x010803f1" />
+    <public type="drawable" name="recovery" id="0x010803f2" />
     <public type="layout" name="activity_list_item" id="0x01090000" />
     <public type="layout" name="expandable_list_content" id="0x01090001" />
     <public type="layout" name="preference_category" id="0x01090002" />

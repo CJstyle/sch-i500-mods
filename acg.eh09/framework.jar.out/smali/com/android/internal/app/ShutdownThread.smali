@@ -46,6 +46,7 @@
 
 .field private static sIsStartedGuard:Ljava/lang/Object;
 
+.field public static mReboot:I
 
 # instance fields
 .field private mActionDone:Z
@@ -806,10 +807,48 @@
 
     invoke-static {v3, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    sget v1, Lcom/android/internal/app/ShutdownThread;->mReboot:I
+
+    const/4 v2, 0x1
+	
+    if-eq v1, v2, :reboot
+	
+    const/4 v2, 0x2
+	
+    if-eq v1, v2, :rebootRecovery
+	
+    const/4 v2, 0x3
+	
+    if-eq v1, v2, :rebootDownload
+
     .line 703
     invoke-static {}, Landroid/os/Power;->shutdown()V
 
     .line 704
+    return-void
+
+:reboot
+	
+    const-string v4, "now"
+	
+    invoke-static {v4}, Landroid/os/Power;->reboot(Ljava/lang/String;)V
+
+    return-void
+	
+:rebootRecovery
+	
+    const-string v4, "recovery"
+	
+    invoke-static {v4}, Landroid/os/Power;->reboot(Ljava/lang/String;)V
+
+    return-void
+	
+:rebootDownload
+	
+    const-string v4, "download"
+	
+    invoke-static {v4}, Landroid/os/Power;->reboot(Ljava/lang/String;)V
+
     return-void
 
     .line 679

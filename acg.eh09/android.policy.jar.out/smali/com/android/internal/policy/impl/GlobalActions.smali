@@ -457,7 +457,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mAirplaneModeOn:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;
 
     .line 231
-    const/4 v0, 0x3
+    const/4 v0, 0x5		# was 0x3
 
     new-array v0, v0, [Lcom/android/internal/policy/impl/GlobalActions$Action;
 
@@ -471,16 +471,28 @@
 
     aput-object v1, v0, v9
 
+    # REBOOT
     const/4 v1, 0x2
+    new-instance v2, Lcom/android/internal/policy/impl/GlobalActions$9;
+    const v3, 0x10803f1 	# reboot icon resource id
+    const v4, 0x1040527 	# reboot string resource id 
+    invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/GlobalActions$9;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
+    aput-object v2, v0, v1
 
+    # POWER OFF
+    const/4 v1, 0x3
     new-instance v2, Lcom/android/internal/policy/impl/GlobalActions$4;
-
-    const v3, 0x1080030
-
-    const v4, 0x10401d5
-
+    const v3, 0x1080030		# power off icon resource id
+    const v4, 0x10401d5		# power off string resource id
     invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/GlobalActions$4;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
+    aput-object v2, v0, v1
 
+    # RECOVERY
+    const/4 v1, 0x4
+    new-instance v2, Lcom/android/internal/policy/impl/GlobalActions$10;
+    const v3, 0x10803f2 	# recovery icon resource id
+    const v4, 0x1040528 	# recovery string resource id 
+    invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/GlobalActions$10;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
     aput-object v2, v0, v1
 
     invoke-static {v0}, Lcom/google/android/collect/Lists;->newArrayList([Ljava/lang/Object;)Ljava/util/ArrayList;
