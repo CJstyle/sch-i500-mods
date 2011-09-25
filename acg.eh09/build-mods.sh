@@ -5,9 +5,19 @@ PATH=$PATH:/opt/android-sdk-linux_x86/tools/
 rm -f -r ~/apktool
 
 # FRAMEWORK-RES
-# TODO: change this first, then "apktool if" it
+apktool b framework-res
+rm framework-res/dist/framework-res.apk
+cp stock-apks/framework-res.apk framework-res/dist/
+pushd framework-res/build/apk
+zip -u ../../dist/framework-res.apk res/drawable-hdpi/reboot.png
+zip -u ../../dist/framework-res.apk res/drawable-hdpi/recovery.png
+zip -u ../../dist/framework-res.apk resources.arsc
+popd
+zipalign -f 4 framework-res/dist/framework-res.apk ./framework-res.apk
+rm -f -r framework-res/build
+rm -f -r framework-res/dist
 
-apktool if ./stock-apks/framework-res.apk
+apktool if ./framework-res.apk
 apktool if ./stock-apks/twframework-res.apk
 
 # SERVICES.JAR
@@ -31,6 +41,17 @@ popd
 zipalign -f 4 framework.jar.out/dist/framework.jar ./framework.jar
 rm -f -r framework.jar.out/build
 rm -f -r framework.jar.out/dist
+
+# ANDROID.POLICY.JAR
+apktool b android.policy.jar.out
+rm android.policy.jar.out/dist/android.policy.jar
+cp stock-apks/android.policy.jar android.policy.jar.out/dist/
+pushd android.policy.jar.out/build/apk
+zip -u ../../dist/android.policy.jar classes.dex
+popd
+zipalign -f 4 android.policy.jar.out/dist/android.policy.jar ./android.policy.jar
+rm -f -r android.policy.jar.out/build
+rm -f -r android.policy.jar.out/dist
 
 # SEC_FEATURE.JAR
 apktool b sec_feature.jar.out

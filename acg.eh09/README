@@ -12,7 +12,7 @@ FRAMEWORKS USED IN DECOMPILE (apktool -if <framework>):
 FRAMEWORK.JAR
 =============
 
-- Modified for Verizon Wireless (partial)
+- Modified for Verizon Wireless (partial?)
 
 SERVICES.JAR
 ============
@@ -22,7 +22,7 @@ SERVICES.JAR
 SEC_FEATURE.JAR
 ===============
 
-- Modified for Verizon Wireless (partial)
+- Modified for Verizon Wireless (partial?)
 
 BROWSER.APK
 ===========
