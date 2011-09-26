@@ -24,7 +24,7 @@
     <string name="close">Close</string>
     <string name="cannot_start_camera_msg">Unable to start Camera during call</string>
     <string name="image_stitching_fail">Failed</string>
-    <string name="MaxRecordingSizeMMS">450K</string>
+    <string name="MaxRecordingSizeMMS">1150K</string>
     <string name="CS_PROGRESS_NUMBER">0/9</string>
     <string name="ZOOM_X_1">x1</string>
     <string name="ZOOM_X_3">x3</string>
