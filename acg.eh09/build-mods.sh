@@ -75,6 +75,17 @@ zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build
 rm -f -r Browser/dist
 
+# MMS
+apktool b Mms
+rm Mms/dist/Mms.apk
+cp stock-apks/Mms.apk Mms/dist/
+pushd Mms/build/apk
+zip -u ../../dist/Mms.apk res/xml/mms_config.xml
+popd
+zipalign -f 4 Mms/dist/Mms.apk ./Mms.apk
+rm -f -r Mms/build
+rm -f -r Mms/dist
+
 # TOUCHWIZ30LAUNCHER
 apktool b TouchWiz30Launcher
 rm TouchWiz30Launcher/dist/TouchWiz30Launcher.apk

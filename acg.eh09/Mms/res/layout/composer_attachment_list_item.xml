@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="62.0sp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:textColor="?android:textColorPrimaryInverse" android:gravity="center_vertical" android:id="@id/attach_name" android:background="@drawable/msg_list_bg" android:paddingLeft="8.0dip" android:focusable="false" android:clickable="false" android:duplicateParentState="false" android:layout_width="fill_parent" android:layout_height="45.0sp" android:singleLine="true" android:drawablePadding="8.0dip" android:layout_weight="0.9" />
+    <ImageView android:id="@id/attach_remove" android:background="@drawable/circle_button_images" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/msg_minus_ss" android:scaleType="centerInside" android:adjustViewBounds="true" />
+</LinearLayout>

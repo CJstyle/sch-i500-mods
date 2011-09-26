@@ -44,6 +44,11 @@ BROWSER.APK
 - Removed all default bookmarks
 - Set default home page to "about:blank"
 
+MMS.APK
+=======
+
+- Set mms_config.xml options from ED05 Froyo Mms.apk
+
 TOUCHWIZ30LAUNCHER.APK
 ======================
 
