@@ -75,6 +75,17 @@ zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build
 rm -f -r Browser/dist
 
+# CAMERA
+apktool b Camera
+rm Camera/dist/Camera.apk
+cp stock-apks/Camera.apk Camera/dist/
+pushd Camera/build/apk
+zip -u ../../dist/Camera.apk classes.dex
+popd
+zipalign -f 4 Camera/dist/Camera.apk ./Camera.apk
+rm -f -r Camera/build
+rm -f -r Camera/dist
+
 # MMS
 apktool b Mms
 rm Mms/dist/Mms.apk

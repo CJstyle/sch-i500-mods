@@ -556,9 +556,9 @@
 
 .field public static final mACG:Z = true
 
-.field public static final mCS:Z
+.field public static final mCS:Z = false
 
-.field public static final mUSCC:Z
+.field public static final mUSCC:Z = false
 
 
 # direct methods

@@ -251,203 +251,203 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;Z)V
-    .locals 11
+    .locals 9
     .parameter "context"
     .parameter "ci"
     .parameter "notifier"
     .parameter "unitTestMode"
 
     .prologue
-    const/4 v10, 0x1
+    const/4 v8, 0x1
 
-    const/4 v9, 0x2
+    const/4 v7, 0x2
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
     .line 192
     invoke-direct {p0, p3, p1, p2, p4}, Lcom/android/internal/telephony/PhoneBase;-><init>(Lcom/android/internal/telephony/PhoneNotifier;Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Z)V
 
     .line 117
-    iput-object v8, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mVmNumber:Ljava/lang/String;
+    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mVmNumber:Ljava/lang/String;
 
     .line 129
-    new-instance v6, Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mPendingMmis:Ljava/util/ArrayList;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mPendingMmis:Ljava/util/ArrayList;
 
     .line 138
-    new-instance v6, Landroid/os/RegistrantList;
+    new-instance v4, Landroid/os/RegistrantList;
 
-    invoke-direct {v6}, Landroid/os/RegistrantList;-><init>()V
+    invoke-direct {v4}, Landroid/os/RegistrantList;-><init>()V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mNvLoadedRegistrants:Landroid/os/RegistrantList;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mNvLoadedRegistrants:Landroid/os/RegistrantList;
 
     .line 141
-    new-instance v6, Landroid/os/RegistrantList;
+    new-instance v4, Landroid/os/RegistrantList;
 
-    invoke-direct {v6}, Landroid/os/RegistrantList;-><init>()V
+    invoke-direct {v4}, Landroid/os/RegistrantList;-><init>()V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mEriFileLoadedRegistrants:Landroid/os/RegistrantList;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mEriFileLoadedRegistrants:Landroid/os/RegistrantList;
 
     .line 144
-    new-instance v6, Landroid/os/RegistrantList;
+    new-instance v4, Landroid/os/RegistrantList;
 
-    invoke-direct {v6}, Landroid/os/RegistrantList;-><init>()V
+    invoke-direct {v4}, Landroid/os/RegistrantList;-><init>()V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mEcmTimerResetRegistrants:Landroid/os/RegistrantList;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mEcmTimerResetRegistrants:Landroid/os/RegistrantList;
 
     .line 174
-    new-instance v6, Lcom/android/internal/telephony/cdma/CDMAPhone$1;
+    new-instance v4, Lcom/android/internal/telephony/cdma/CDMAPhone$1;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone$1;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone$1;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mExitEcmRunnable:Ljava/lang/Runnable;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mExitEcmRunnable:Ljava/lang/Runnable;
 
     .line 197
     sput-object p1, Lcom/android/internal/telephony/cdma/CDMAPhone;->mContext:Landroid/content/Context;
 
     .line 199
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    invoke-interface {v6, v9}, Lcom/android/internal/telephony/CommandsInterface;->setPhoneType(I)V
+    invoke-interface {v4, v7}, Lcom/android/internal/telephony/CommandsInterface;->setPhoneType(I)V
 
     .line 200
-    new-instance v6, Lcom/android/internal/telephony/cdma/CdmaCallTracker;
+    new-instance v4, Lcom/android/internal/telephony/cdma/CdmaCallTracker;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCT:Lcom/android/internal/telephony/cdma/CdmaCallTracker;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCT:Lcom/android/internal/telephony/cdma/CdmaCallTracker;
 
     .line 201
-    new-instance v6, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
+    new-instance v4, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mSST:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mSST:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
     .line 202
-    new-instance v6, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;
+    new-instance v4, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mSMS:Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mSMS:Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;
 
     .line 203
-    new-instance v6, Lcom/android/internal/telephony/cdma/RuimFileHandler;
+    new-instance v4, Lcom/android/internal/telephony/cdma/RuimFileHandler;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/RuimFileHandler;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/RuimFileHandler;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     .line 204
-    new-instance v6, Lcom/android/internal/telephony/cdma/RuimRecords;
+    new-instance v4, Lcom/android/internal/telephony/cdma/RuimRecords;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/RuimRecords;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/RuimRecords;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimRecords:Lcom/android/internal/telephony/cdma/RuimRecords;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimRecords:Lcom/android/internal/telephony/cdma/RuimRecords;
 
     .line 205
-    new-instance v6, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;
+    new-instance v4, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnection:Lcom/android/internal/telephony/DataConnectionTracker;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnection:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .line 206
-    new-instance v6, Lcom/android/internal/telephony/cdma/RuimCard;
+    new-instance v4, Lcom/android/internal/telephony/cdma/RuimCard;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/RuimCard;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/RuimCard;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimCard:Lcom/android/internal/telephony/cdma/RuimCard;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimCard:Lcom/android/internal/telephony/cdma/RuimCard;
 
     .line 207
-    new-instance v6, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;
+    new-instance v4, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimPhoneBookInterfaceManager:Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimPhoneBookInterfaceManager:Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;
 
     .line 208
-    new-instance v6, Lcom/android/internal/telephony/cdma/RuimSmsInterfaceManager;
+    new-instance v4, Lcom/android/internal/telephony/cdma/RuimSmsInterfaceManager;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/cdma/RuimSmsInterfaceManager;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/cdma/RuimSmsInterfaceManager;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimSmsInterfaceManager:Lcom/android/internal/telephony/cdma/RuimSmsInterfaceManager;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimSmsInterfaceManager:Lcom/android/internal/telephony/cdma/RuimSmsInterfaceManager;
 
     .line 209
-    new-instance v6, Lcom/android/internal/telephony/PhoneSubInfo;
+    new-instance v4, Lcom/android/internal/telephony/PhoneSubInfo;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/telephony/PhoneSubInfo;-><init>(Lcom/android/internal/telephony/Phone;)V
+    invoke-direct {v4, p0}, Lcom/android/internal/telephony/PhoneSubInfo;-><init>(Lcom/android/internal/telephony/Phone;)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     .line 210
-    new-instance v6, Lcom/android/internal/telephony/cdma/EriManager;
+    new-instance v4, Lcom/android/internal/telephony/cdma/EriManager;
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
-    invoke-direct {v6, p0, p1, v7}, Lcom/android/internal/telephony/cdma/EriManager;-><init>(Lcom/android/internal/telephony/PhoneBase;Landroid/content/Context;I)V
+    invoke-direct {v4, p0, p1, v5}, Lcom/android/internal/telephony/cdma/EriManager;-><init>(Lcom/android/internal/telephony/PhoneBase;Landroid/content/Context;I)V
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mEriManager:Lcom/android/internal/telephony/cdma/EriManager;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mEriManager:Lcom/android/internal/telephony/cdma/EriManager;
 
     .line 212
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    invoke-interface {v6, p0, v10, v8}, Lcom/android/internal/telephony/CommandsInterface;->registerForAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v4, p0, v8, v6}, Lcom/android/internal/telephony/CommandsInterface;->registerForAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 213
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimRecords:Lcom/android/internal/telephony/cdma/RuimRecords;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mRuimRecords:Lcom/android/internal/telephony/cdma/RuimRecords;
 
-    const/16 v7, 0x16
+    const/16 v5, 0x16
 
-    invoke-virtual {v6, p0, v7, v8}, Lcom/android/internal/telephony/cdma/RuimRecords;->registerForRecordsLoaded(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-virtual {v4, p0, v5, v6}, Lcom/android/internal/telephony/cdma/RuimRecords;->registerForRecordsLoaded(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 214
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    const/16 v7, 0x8
+    const/16 v5, 0x8
 
-    invoke-interface {v6, p0, v7, v8}, Lcom/android/internal/telephony/CommandsInterface;->registerForOffOrNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v4, p0, v5, v6}, Lcom/android/internal/telephony/CommandsInterface;->registerForOffOrNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 215
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    const/4 v7, 0x5
+    const/4 v5, 0x5
 
-    invoke-interface {v6, p0, v7, v8}, Lcom/android/internal/telephony/CommandsInterface;->registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v4, p0, v5, v6}, Lcom/android/internal/telephony/CommandsInterface;->registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 216
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    invoke-interface {v6, p0, v9, v8}, Lcom/android/internal/telephony/CommandsInterface;->setOnSuppServiceNotification(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v4, p0, v7, v6}, Lcom/android/internal/telephony/CommandsInterface;->setOnSuppServiceNotification(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 217
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mSST:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mSST:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
-    const/16 v7, 0x13
+    const/16 v5, 0x13
 
-    invoke-virtual {v6, p0, v7, v8}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->registerForNetworkAttach(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-virtual {v4, p0, v5, v6}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->registerForNetworkAttach(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 218
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    const/16 v7, 0x17
+    const/16 v5, 0x17
 
-    invoke-interface {v6, p0, v7, v8}, Lcom/android/internal/telephony/CommandsInterface;->registerForNVReady(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v4, p0, v5, v6}, Lcom/android/internal/telephony/CommandsInterface;->registerForNVReady(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 219
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    const/16 v7, 0x19
+    const/16 v5, 0x19
 
-    invoke-interface {v6, p0, v7, v8}, Lcom/android/internal/telephony/CommandsInterface;->setEmergencyCallbackMode(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v4, p0, v5, v6}, Lcom/android/internal/telephony/CommandsInterface;->setEmergencyCallbackMode(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 221
-    const-string/jumbo v6, "power"
+    const-string/jumbo v4, "power"
 
-    invoke-virtual {p1, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -455,131 +455,91 @@
 
     .line 223
     .local v3, pm:Landroid/os/PowerManager;
-    const-string v6, "CDMA"
+    const-string v4, "CDMA"
 
-    invoke-virtual {v3, v10, v6}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+    invoke-virtual {v3, v8, v4}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
-    move-result-object v6
+    move-result-object v4
 
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     .line 226
-    const-string v6, "gsm.current.phone-type"
+    const-string v4, "gsm.current.phone-type"
 
-    new-instance v7, Ljava/lang/Integer;
+    new-instance v5, Ljava/lang/Integer;
 
-    invoke-direct {v7, v9}, Ljava/lang/Integer;-><init>(I)V
+    invoke-direct {v5, v7}, Ljava/lang/Integer;-><init>(I)V
 
-    invoke-virtual {v7}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/Integer;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-static {v6, v7}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 230
-    const-string/jumbo v6, "ril.cdma.inecmmode"
+    const-string/jumbo v4, "ril.cdma.inecmmode"
 
-    const-string v7, "false"
+    const-string v5, "false"
 
-    invoke-static {v6, v7}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 231
     .local v0, inEcm:Ljava/lang/String;
-    const-string/jumbo v6, "true"
+    const-string/jumbo v4, "true"
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v4
 
-    iput-boolean v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mIsPhoneInEcmState:Z
+    iput-boolean v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mIsPhoneInEcmState:Z
 
     .line 232
-    iget-boolean v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mIsPhoneInEcmState:Z
+    iget-boolean v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mIsPhoneInEcmState:Z
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
     .line 234
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    const/16 v7, 0x1a
+    const/16 v5, 0x1a
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/cdma/CDMAPhone;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v7
-
-    invoke-interface {v6, v7}, Lcom/android/internal/telephony/CommandsInterface;->exitEmergencyCallbackMode(Landroid/os/Message;)V
-
-    .line 238
-    :cond_0
-    const-string/jumbo v6, "ro.cdma.otaspnumschema"
-
-    const-string v7, ""
-
-    invoke-static {v6, v7}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCarrierOtaSpNumSchema:Ljava/lang/String;
-
-    .line 245
-    invoke-static {}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getCDMAPhoneContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-static {v6}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v4
-
-    .line 246
-    .local v4, pref_oper_alpha:Landroid/content/SharedPreferences;
-    new-instance v1, Ljava/lang/String;
-
-    const-string v6, "Oper_Alpha"
-
-    const-string v7, "Default"
-
-    invoke-interface {v4, v6, v7}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v1, v6}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    .line 255
-    .local v1, operatorAlpha:Ljava/lang/String;
-    const-string v6, "gsm.sim.operator.alpha"
-
-    invoke-virtual {p0, v6, v1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 260
-    invoke-static {}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getCDMAPhoneContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-static {v6}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-virtual {p0, v5}, Lcom/android/internal/telephony/cdma/CDMAPhone;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v5
 
-    .line 261
-    .local v5, pref_oper_numeric:Landroid/content/SharedPreferences;
-    new-instance v2, Ljava/lang/String;
+    invoke-interface {v4, v5}, Lcom/android/internal/telephony/CommandsInterface;->exitEmergencyCallbackMode(Landroid/os/Message;)V
 
-    const-string v6, "Oper_Numeric"
+    .line 238
+    :cond_0
+    const-string/jumbo v4, "ro.cdma.otaspnumschema"
 
-    const-string v7, "310000"
+    const-string v5, ""
 
-    invoke-interface {v5, v6, v7}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-direct {v2, v6}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCarrierOtaSpNumSchema:Ljava/lang/String;
+
+    .line 250
+    const-string v1, "Verizon Wireless"
+
+    .line 255
+    .local v1, operatorAlpha:Ljava/lang/String;
+    const-string v4, "gsm.sim.operator.alpha"
+
+    invoke-virtual {p0, v4, v1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 265
+    const-string v2, "310012"
 
     .line 271
     .local v2, operatorNumeric:Ljava/lang/String;
-    const-string v6, "gsm.sim.operator.numeric"
+    const-string v4, "gsm.sim.operator.numeric"
 
-    invoke-virtual {p0, v6, v2}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v4, v2}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 274
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setIsoCountryProperty(Ljava/lang/String;)V
@@ -594,11 +554,11 @@
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->initMipErrorMessageMap()V
 
     .line 284
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    const/16 v7, 0x69
+    const/16 v5, 0x69
 
-    invoke-interface {v6, p0, v7, v8}, Lcom/android/internal/telephony/CommandsInterface;->setMipConnectStatus(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v4, p0, v5, v6}, Lcom/android/internal/telephony/CommandsInterface;->setMipConnectStatus(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 286
     return-void

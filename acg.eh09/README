@@ -17,7 +17,7 @@ SERVICES.JAR
 FRAMEWORK.JAR
 =============
 
-- Modified for Verizon Wireless (partial?)
+- Modified for Verizon Wireless
 - Modified for addition of Reboot and Recovery power menu options
 
 FRAMEWORK-RES.APK
@@ -34,7 +34,7 @@ ANDROID.POLICY.JAR
 SEC_FEATURE.JAR
 ===============
 
-- Modified for Verizon Wireless (partial?)
+- Modified for Verizon Wireless
 
 BROWSER.APK
 ===========
