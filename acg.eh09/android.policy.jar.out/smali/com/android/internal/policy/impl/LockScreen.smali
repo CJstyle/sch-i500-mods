@@ -469,10 +469,6 @@
     .parameter "telephonySpn"
 
     .prologue
-
-    const-string v0, "Verizon Wireless"
-    return-object v0
-
     .line 651
     if-eqz p0, :cond_0
 

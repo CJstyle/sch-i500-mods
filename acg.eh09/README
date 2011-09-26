@@ -30,8 +30,6 @@ ANDROID.POLICY.JAR
 ==================
 
 - Modified for addition of Reboot and Recovery power menu options
-- Change Glass Lockscreen to Puzzle Lockscreen (ccampos784)
-- Update Puzzle Lockscreen Carrier Text (ccampos784)
 
 SEC_FEATURE.JAR
 ===============
