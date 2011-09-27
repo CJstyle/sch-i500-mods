@@ -103,7 +103,7 @@ apktool b MusicPlayer
 rm MusicPlayer/dist/MusicPlayer.apk
 cp stock-apks/MusicPlayer.apk MusicPlayer/dist/
 pushd MusicPlayer/build/apk
-zip -u ../../dist/MusicPlayer.apk res/xml/mms_config.xml
+zip -u ../../dist/MusicPlayer.apk resources.arsc
 popd
 zipalign -f 4 MusicPlayer/dist/MusicPlayer.apk ./MusicPlayer.apk
 rm -f -r MusicPlayer/build
