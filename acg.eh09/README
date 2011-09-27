@@ -48,6 +48,11 @@ MMS.APK
 - NOTE: Mms.apk from EH09 USCC ROM rather than the EH09 ACG ROM
 - Set mms_config.xml options from ED05 Froyo Mms.apk as well as some settings ccampos784 used
 
+MUSICPLAYER.APK
+===============
+
+- Localize some strings for US English
+
 TOUCHWIZ30LAUNCHER.APK
 ======================
 

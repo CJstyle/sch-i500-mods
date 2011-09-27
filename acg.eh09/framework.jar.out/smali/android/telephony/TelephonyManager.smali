@@ -1153,12 +1153,12 @@
 
     .prologue
     .line 354
-    const-string v0, "gsm.operator.alpha"
+    #const-string v0, "gsm.operator.alpha"
+    #invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    #move-result-object v0
 
-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
+    # Just hack it, I can't figure out how to set gsm.operator.alpha properly
+    const-string v0, "Verizon Wireless"
     return-object v0
 .end method
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/AddMusicButton" android:background="@drawable/list_create_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <ImageView android:id="@id/CreateButtonImage" android:background="@drawable/btn_create_ss" android:layout_width="38.0dip" android:layout_height="48.0dip" android:layout_marginLeft="6.659973dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListOneLine" android:id="@id/AddMusicButtonText" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.659973dip" android:text="@string/IDS_MSGC_OPT_ADD_MUSIC" android:singleLine="true" android:layout_toRightOf="@id/CreateButtonImage" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:id="@id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/AddMusicButton">
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/NoItemImage" android:background="@drawable/noitems_multi_based" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+            <TextView android:textSize="24.0sp" android:typeface="sans" android:textColor="@touchwiz:color/tw_color092" android:layout_gravity="center" android:id="@id/NoItemTextView" android:paddingTop="0.0dip" android:paddingBottom="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/NoItemImage" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

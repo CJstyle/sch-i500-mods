@@ -80,7 +80,7 @@ apktool b Camera
 rm Camera/dist/Camera.apk
 cp stock-apks/Camera.apk Camera/dist/
 pushd Camera/build/apk
-zip -u ../../dist/Camera.apk classes.dex
+zip -u ../../dist/Camera.apk resources.arsc
 popd
 zipalign -f 4 Camera/dist/Camera.apk ./Camera.apk
 rm -f -r Camera/build
@@ -92,18 +92,28 @@ rm Mms/dist/Mms.apk
 cp stock-apks/Mms.apk Mms/dist/
 pushd Mms/build/apk
 zip -u ../../dist/Mms.apk res/xml/mms_config.xml
+zip -u ../../dist/Mms.apk res/xml/preferences.xml
 popd
 zipalign -f 4 Mms/dist/Mms.apk ./Mms.apk
 rm -f -r Mms/build
 rm -f -r Mms/dist
+
+# MUSICPLAYER
+apktool b MusicPlayer
+rm MusicPlayer/dist/MusicPlayer.apk
+cp stock-apks/MusicPlayer.apk MusicPlayer/dist/
+pushd MusicPlayer/build/apk
+zip -u ../../dist/MusicPlayer.apk res/xml/mms_config.xml
+popd
+zipalign -f 4 MusicPlayer/dist/MusicPlayer.apk ./MusicPlayer.apk
+rm -f -r MusicPlayer/build
+rm -f -r MusicPlayer/dist
 
 # TOUCHWIZ30LAUNCHER
 apktool b TouchWiz30Launcher
 rm TouchWiz30Launcher/dist/TouchWiz30Launcher.apk
 cp stock-apks/TouchWiz30Launcher.apk TouchWiz30Launcher/dist/
 pushd TouchWiz30Launcher/build/apk
-zip -u ../../dist/TouchWiz30Launcher.apk res/xml/default_mainapplication_order.xml
-zip -u ../../dist/TouchWiz30Launcher.apk res/xml/launcher_config.xml
 zip -u ../../dist/TouchWiz30Launcher.apk res/xml/default_workspace.xml
 popd
 zipalign -f 4 TouchWiz30Launcher/dist/TouchWiz30Launcher.apk ./TouchWiz30Launcher.apk

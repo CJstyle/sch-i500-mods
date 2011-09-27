@@ -541,12 +541,6 @@
 
     invoke-virtual {p0, v4, v2}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    # Try to set the gsm.operator.alpha code here
-    const-string v3, "Verizon Wireless"
-    .local v3, gsmAlpha:Ljava/lang/String;
-    const-string v4, "gsm.operator.alpha"
-    invoke-virtual {p0, v4, v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
-
     .line 274
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setIsoCountryProperty(Ljava/lang/String;)V
 
