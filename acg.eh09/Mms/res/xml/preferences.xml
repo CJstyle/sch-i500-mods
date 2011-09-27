@@ -32,7 +32,7 @@
     <PreferenceCategory android:title="@string/pref_notification_settings_title">
         <CheckBoxPreference android:title="@string/pref_title_notification_enabled" android:key="pref_key_enable_notifications" android:summary="@string/pref_summary_notification_enabled" android:defaultValue="true" />
         <CheckBoxPreference android:layout="?android:preferenceLayoutChild" android:title="@string/pref_title_notification_backlight" android:key="pref_key_backlight" android:summary="@string/pref_summary_notification_backlight" android:dependency="pref_key_enable_notifications" android:defaultValue="true" />
-        <RingtonePreference android:layout="?android:preferenceLayoutChild" android:title="@string/pref_title_notification_ringtone" android:key="pref_key_ringtone" android:dependency="pref_key_enable_notifications" android:defaultValue="content://settings/system/notification_sound" android:ringtoneType="notification" />
+        <RingtonePreference android:layout="?android:preferenceLayoutChild" android:title="@string/pref_title_notification_ringtone" android:key="pref_key_ringtone" android:dependency="pref_key_enable_notifications" android:defaultValue="file://system/media/audio/notifications/00_USCping_1-2.mp3" android:ringtoneType="notification" android:showDefault="false" />
         <CheckBoxPreference android:layout="?android:preferenceLayoutChild" android:title="@string/pref_title_notification_vibrate" android:key="pref_key_vibrate" android:summary="@string/pref_summary_notification_vibrate" android:dependency="pref_key_enable_notifications" android:defaultValue="true" />
     </PreferenceCategory>
 </PreferenceScreen>

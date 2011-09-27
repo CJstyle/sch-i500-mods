@@ -9,17 +9,18 @@
     <int name="defaultMMSMessagesPerThread">20</int>
     <int name="minMessageCountPerThread">10</int>
     <int name="maxMessageCountPerThread">5000</int>
+    <string name="uaProfUrl">http://uaprof.vtext.com/sam/i500/i500.xml</string>
     <string name="uaProfUrlS1">http://wap.samsungmobile.com/uaprof/GT-i9000.xml</string>
     <string name="userAgentS1">SAMSUNG-GT-I9000-Mms/2.0</string>
     <string name="uaProfUrlApollo">http://wap.samsungmobile.com/uaprof/GT-i5801.xml</string>
     <string name="userAgentApollo">SAMSUNG-GT-I5801-Mms/2.0</string>
     <int name="recipientLimit">20</int>
     <int name="smsToMmsTextThreshold">7</int>
+    <string name="userAgent">sam-i500/Android</string>
     <string name="emailGatewayNumber">6245</string>
     <bool name="aliasEnabled">true</bool>
     <int name="aliasMinChars">4</int>
     <int name="aliasMaxChars">72</int>
-    <string name="httpParams"> X-VzW-MDN: ##LINE1##
-</string>
+    <string name="httpParams"> X-VzW-MDN: ##LINE1##</string>
     <string name="httpParamsLine1Key">##LINE1##</string>
 </mms_config>
