@@ -254,7 +254,7 @@
     sput-object v0, Lcom/sec/android/app/controlpanel/PackageInfo;->mMustBeShownPkgString:[Ljava/lang/String;
 
     .line 66
-    const/16 v0, 0x22
+    const/16 v0, 0x2A
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -449,6 +449,54 @@
     const/16 v1, 0x21
 
     const-string v2, "com.sec.android.app.samsungapps.una"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x22
+
+    const-string v2, "com.fede.launcher"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x23
+
+    const-string v2, "org.adw.launcher"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x24
+
+    const-string v2, "info.tikuwarez.launcher3"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x25
+
+    const-string v2, "com.gau.go.launcherex"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x26
+
+    const-string v2, "com.neomtel.mxhome"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x27
+
+    const-string v2, "com.nemustech.regina"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x28
+
+    const-string v2, "com.nd.android.pandahomepro"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x29
+
+    const-string v2, "com.android.launcher"
 
     aput-object v2, v0, v1
 
