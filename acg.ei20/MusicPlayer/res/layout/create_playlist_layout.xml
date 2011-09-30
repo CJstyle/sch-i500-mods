@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/CreatePlaylistButton" android:background="@drawable/list_create_bg" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <ImageView android:id="@id/CreatePlayistButtonImage" android:background="@drawable/btn_create_ss" android:layout_width="38.0dip" android:layout_height="48.0dip" android:layout_marginLeft="6.659973dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListOneLine" android:id="@id/AddMusicButtonText" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.659973dip" android:text="@string/create_new_playlist" android:singleLine="true" android:layout_toRightOf="@id/CreatePlayistButtonImage" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>
