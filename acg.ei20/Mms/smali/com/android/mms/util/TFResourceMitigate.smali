@@ -213,20 +213,6 @@
 
     invoke-static {v0, v2}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->setInt(II)V
 
-    .line 208
-    const/16 v0, 0x20
-
-    const v1, 0x1080257
-
-    invoke-static {v0, v1}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->setInt(II)V
-
     .line 209
-    const/16 v0, 0x21
-
-    const v1, 0x1080258
-
-    invoke-static {v0, v1}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->setInt(II)V
-
-    .line 210
     return-void
 .end method

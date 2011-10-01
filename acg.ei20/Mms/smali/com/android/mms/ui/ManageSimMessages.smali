@@ -1000,12 +1000,12 @@
     iput-object v0, p0, Lcom/android/mms/ui/ManageSimMessages;->mQueryHandler:Landroid/content/AsyncQueryHandler;
 
     .line 117
-    const v0, 0x7f03002f
+    const v0, 0x7f03002c
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ManageSimMessages;->setContentView(I)V
 
     .line 118
-    const v0, 0x7f0800b8
+    const v0, 0x7f080093
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ManageSimMessages;->findViewById(I)Landroid/view/View;
 
@@ -1016,7 +1016,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/ManageSimMessages;->mSimList:Landroid/widget/ListView;
 
     .line 119
-    const v0, 0x7f0800b9
+    const v0, 0x7f080094
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ManageSimMessages;->findViewById(I)Landroid/view/View;
 
@@ -1183,7 +1183,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f02003f
+    const v1, 0x7f02003b
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 

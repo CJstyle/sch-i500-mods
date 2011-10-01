@@ -25,13 +25,13 @@
     .parameter "contentResolver"
 
     .prologue
-    .line 6463
+    .line 6393
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    .line 6464
+    .line 6394
     invoke-direct {p0, p2}, Landroid/content/AsyncQueryHandler;-><init>(Landroid/content/ContentResolver;)V
 
-    .line 6465
+    .line 6395
     return-void
 .end method
 
@@ -44,16 +44,16 @@
     .parameter "result"
 
     .prologue
-    .line 6577
+    .line 6507
     sparse-switch p1, :sswitch_data_0
 
-    .line 6593
+    .line 6523
     :goto_0
     const/16 v0, 0x70a
 
     if-ne p1, v0, :cond_0
 
-    .line 6594
+    .line 6524
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -62,21 +62,21 @@
 
     invoke-virtual {v0}, Lcom/android/mms/data/WorkingMessage;->discard()V
 
-    .line 6595
+    .line 6525
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/data/Conversation;->init(Landroid/content/Context;)V
 
-    .line 6596
+    .line 6526
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->finish()V
 
-    .line 6598
+    .line 6528
     :cond_0
     return-void
 
-    .line 6587
+    .line 6517
     :sswitch_0
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -84,7 +84,7 @@
 
     goto :goto_0
 
-    .line 6577
+    .line 6507
     nop
 
     :sswitch_data_0
@@ -101,15 +101,15 @@
     .parameter "cursor"
 
     .prologue
-    .line 6469
+    .line 6399
     sparse-switch p1, :sswitch_data_0
 
-    .line 6573
+    .line 6503
     .end local p2
     :goto_0
     return-void
 
-    .line 6471
+    .line 6401
     .restart local p2
     :sswitch_0
     const-string v11, "Mms/compose"
@@ -118,10 +118,10 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6473
+    .line 6403
     const/4 v4, -0x1
 
-    .line 6474
+    .line 6404
     .local v4, newSelectionPos:I
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -137,7 +137,7 @@
 
     move-result-wide v5
 
-    .line 6475
+    .line 6405
     .local v5, targetMsgId:J
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -151,7 +151,7 @@
 
     move-result-object v7
 
-    .line 6478
+    .line 6408
     .local v7, targetMsgType:Ljava/lang/String;
     const-wide/16 v11, -0x1
 
@@ -165,7 +165,7 @@
 
     if-nez v11, :cond_1
 
-    .line 6479
+    .line 6409
     const/4 v11, -0x1
 
     move-object/from16 v0, p3
@@ -174,7 +174,7 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 6480
+    .line 6410
     :cond_0
     invoke-interface/range {p3 .. p3}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -182,7 +182,7 @@
 
     if-eqz v11, :cond_1
 
-    .line 6481
+    .line 6411
     const/4 v11, 0x1
 
     move-object/from16 v0, p3
@@ -193,7 +193,7 @@
 
     move-result-wide v2
 
-    .line 6482
+    .line 6412
     .local v2, msgId:J
     const/4 v11, 0x0
 
@@ -205,7 +205,7 @@
 
     move-result-object v10
 
-    .line 6483
+    .line 6413
     .local v10, type:Ljava/lang/String;
     cmp-long v11, v2, v5
 
@@ -217,12 +217,12 @@
 
     if-eqz v11, :cond_0
 
-    .line 6484
+    .line 6414
     invoke-interface/range {p3 .. p3}, Landroid/database/Cursor;->getPosition()I
 
     move-result v4
 
-    .line 6490
+    .line 6420
     .end local v2           #msgId:J
     .end local v10           #type:Ljava/lang/String;
     :cond_1
@@ -236,14 +236,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/MessageListAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 6504
+    .line 6434
     invoke-interface/range {p3 .. p3}, Landroid/database/Cursor;->getCount()I
 
     move-result v11
 
     if-nez v11, :cond_3
 
-    .line 6506
+    .line 6436
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget-object v11, v11, Lcom/android/mms/ui/ComposeMessageActivity;->mMsgListAdapter:Lcom/android/mms/ui/MessageListAdapter;
@@ -254,7 +254,7 @@
 
     if-lez v11, :cond_2
 
-    .line 6507
+    .line 6437
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3500(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/Conversation;
@@ -263,7 +263,7 @@
 
     invoke-virtual {v11}, Lcom/android/mms/data/Conversation;->clearThreadId()V
 
-    .line 6510
+    .line 6440
     :cond_2
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -293,17 +293,17 @@
 
     if-nez v11, :cond_4
 
-    .line 6511
+    .line 6441
     invoke-static {}, Lcom/android/mms/data/Contact;->clearContactsCache()V
 
-    .line 6512
+    .line 6442
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->finish()V
 
     goto/16 :goto_0
 
-    .line 6517
+    .line 6447
     :cond_3
     invoke-interface/range {p3 .. p3}, Landroid/database/Cursor;->getCount()I
 
@@ -339,16 +339,16 @@
 
     if-nez v11, :cond_4
 
-    .line 6519
+    .line 6449
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$9200(Lcom/android/mms/ui/ComposeMessageActivity;)V
+    invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$9100(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 6525
+    .line 6455
     :cond_4
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3800(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/ContactList;
+    invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/ContactList;
 
     move-result-object v11
 
@@ -358,7 +358,7 @@
 
     if-gtz v11, :cond_9
 
-    .line 6526
+    .line 6456
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$300(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/RecipientsEditor;
@@ -367,7 +367,7 @@
 
     if-eqz v11, :cond_8
 
-    .line 6530
+    .line 6460
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1700(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -388,7 +388,7 @@
 
     if-eqz v11, :cond_7
 
-    .line 6531
+    .line 6461
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1800(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -409,7 +409,7 @@
 
     if-nez v11, :cond_5
 
-    .line 6532
+    .line 6462
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1800(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -432,14 +432,14 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/EditText;->setSelection(I)V
 
-    .line 6556
+    .line 6486
     :cond_5
     :goto_1
     const/4 v11, -0x1
 
     if-eq v4, v11, :cond_6
 
-    .line 6557
+    .line 6487
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3200(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/MessageListView;
@@ -448,7 +448,7 @@
 
     invoke-virtual {v11, v4}, Lcom/android/mms/ui/MessageListView;->setSelection(I)V
 
-    .line 6559
+    .line 6489
     :cond_6
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -462,7 +462,7 @@
 
     goto/16 :goto_0
 
-    .line 6536
+    .line 6466
     :cond_7
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -474,7 +474,7 @@
 
     goto :goto_1
 
-    .line 6540
+    .line 6470
     :cond_8
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -484,7 +484,7 @@
 
     if-eqz v11, :cond_5
 
-    .line 6541
+    .line 6471
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1700(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -495,7 +495,7 @@
 
     goto :goto_1
 
-    .line 6549
+    .line 6479
     :cond_9
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -507,7 +507,7 @@
 
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4800(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/view/View;
+    invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4700(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/view/View;
 
     move-result-object v11
 
@@ -517,7 +517,7 @@
 
     if-nez v11, :cond_a
 
-    .line 6550
+    .line 6480
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1700(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -528,7 +528,7 @@
 
     goto :goto_1
 
-    .line 6551
+    .line 6481
     :cond_a
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -550,7 +550,7 @@
 
     if-nez v11, :cond_5
 
-    .line 6552
+    .line 6482
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1800(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -559,7 +559,7 @@
 
     invoke-virtual {v11}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 6553
+    .line 6483
     iget-object v11, p0, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1800(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -584,7 +584,7 @@
 
     goto/16 :goto_1
 
-    .line 6564
+    .line 6494
     .end local v4           #newSelectionPos:I
     .end local v5           #targetMsgId:J
     .end local v7           #targetMsgType:Ljava/lang/String;
@@ -596,7 +596,7 @@
 
     move-result-wide v8
 
-    .line 6565
+    .line 6495
     .local v8, threadId:J
     new-instance v11, Lcom/android/mms/ui/ConversationList$DeleteThreadListener;
 
@@ -646,7 +646,7 @@
 
     goto :goto_3
 
-    .line 6469
+    .line 6399
     :sswitch_data_0
     .sparse-switch
         0x70b -> :sswitch_1

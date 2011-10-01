@@ -1,4 +1,4 @@
-.class final Lcom/nemustech/tiffany/widget/TFListView$SavedState$1;
+.class Lcom/nemustech/tiffany/widget/TFListView$SavedState$1;
 .super Ljava/lang/Object;
 .source "TFListView.java"
 
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 4149
+    .line 4152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 4151
+    .line 4149
     new-instance v0, Lcom/nemustech/tiffany/widget/TFListView$SavedState;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4149
+    .line 4152
     invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFListView$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/nemustech/tiffany/widget/TFListView$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .parameter "size"
 
     .prologue
-    .line 4155
+    .line 4153
     new-array v0, p1, [Lcom/nemustech/tiffany/widget/TFListView$SavedState;
 
     return-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4149
+    .line 4152
     invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFListView$SavedState$1;->newArray(I)[Lcom/nemustech/tiffany/widget/TFListView$SavedState;
 
     move-result-object v0

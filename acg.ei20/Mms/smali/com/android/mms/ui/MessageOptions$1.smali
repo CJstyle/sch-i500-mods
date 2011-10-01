@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 924
+    .line 891
     iput-object p1, p0, Lcom/android/mms/ui/MessageOptions$1;->val$lockUri:Landroid/net/Uri;
 
     iput-object p2, p0, Lcom/android/mms/ui/MessageOptions$1;->val$values:Landroid/content/ContentValues;
@@ -48,7 +48,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 926
+    .line 893
     sget-object v0, Lcom/android/mms/ui/MessageOptions;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/mms/ui/MessageOptions$1;->val$lockUri:Landroid/net/Uri;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v3}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 928
+    .line 895
     return-void
 .end method

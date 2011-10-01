@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 995
+    .line 991
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 1016
+    .line 1012
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2300(Lcom/android/mms/ui/ComposeMessageActivity;)Z
@@ -53,14 +53,14 @@
 
     if-nez v3, :cond_0
 
-    .line 1017
+    .line 1013
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v3, "afterTextChanged called with invisible mRecipientsEditor"
 
     invoke-direct {v1, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 1021
+    .line 1017
     .local v1, e:Ljava/lang/IllegalStateException;
     const-string v3, "Mms/compose"
 
@@ -68,12 +68,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1054
+    .line 1050
     .end local v1           #e:Ljava/lang/IllegalStateException;
     :goto_0
     return-void
 
-    .line 1026
+    .line 1022
     :cond_0
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -83,7 +83,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 1027
+    .line 1023
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v3, v4}, Lcom/android/mms/data/WorkingMessage;->setWorkingRecipients(Lcom/android/mms/data/ContactList;)V
 
-    .line 1029
+    .line 1025
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -121,13 +121,13 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/android/mms/data/WorkingMessage;->setHasEmail(ZZ)V
 
-    .line 1032
+    .line 1028
     :cond_1
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2500(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 1036
+    .line 1032
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
     move-result v3
@@ -138,51 +138,51 @@
     :goto_1
     if-ltz v2, :cond_3
 
-    .line 1037
+    .line 1033
     invoke-interface {p1, v2}, Landroid/text/Editable;->charAt(I)C
 
     move-result v0
 
-    .line 1038
+    .line 1034
     .local v0, c:C
     const/16 v3, 0x20
 
     if-ne v0, v3, :cond_2
 
-    .line 1036
+    .line 1032
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_1
 
-    .line 1041
+    .line 1037
     :cond_2
     const/16 v3, 0x2c
 
     if-ne v0, v3, :cond_3
 
-    .line 1042
+    .line 1038
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2600(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 1043
+    .line 1039
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2700(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 1048
+    .line 1044
     .end local v0           #c:C
     :cond_3
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3, p1}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2800(Lcom/android/mms/ui/ComposeMessageActivity;Landroid/text/Editable;)V
 
-    .line 1050
+    .line 1046
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2900(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 1053
+    .line 1049
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3000(Lcom/android/mms/ui/ComposeMessageActivity;)V
@@ -198,7 +198,7 @@
     .parameter "after"
 
     .prologue
-    .line 997
+    .line 993
     return-void
 .end method
 
@@ -210,11 +210,11 @@
     .parameter "count"
 
     .prologue
-    .line 1004
+    .line 1000
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$5;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->onUserInteraction()V
 
-    .line 1005
+    .line 1001
     return-void
 .end method

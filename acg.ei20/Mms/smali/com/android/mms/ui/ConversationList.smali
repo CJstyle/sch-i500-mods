@@ -23,8 +23,6 @@
 
 .field static headerView:Lcom/android/mms/ui/ConversationListItem;
 
-.field public static isCmas:Z
-
 
 # instance fields
 .field private final mContentChangedListener:Lcom/android/mms/ui/ConversationListAdapter$OnContentChangedListener;
@@ -44,8 +42,6 @@
 .field private mPrefs:Landroid/content/SharedPreferences;
 
 .field private mQueryHandler:Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;
-
-.field private mSweepHandler:Lcom/android/mms/ui/SweepHandler;
 
 .field private final mThreadListKeyListener:Landroid/view/View$OnKeyListener;
 
@@ -69,10 +65,7 @@
 
     const-string v4, "_id"
 
-    .line 142
-    sput-boolean v2, Lcom/android/mms/ui/ConversationList;->isCmas:Z
-
-    .line 151
+    .line 144
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "_id"
@@ -81,7 +74,7 @@
 
     sput-object v0, Lcom/android/mms/ui/ConversationList;->SMS_ID_PROJECTION:[Ljava/lang/String;
 
-    .line 154
+    .line 147
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "_id"
@@ -97,48 +90,48 @@
     .locals 2
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFListActivity;-><init>()V
 
-    .line 146
+    .line 139
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/mms/ui/ConversationList;->mVisiblePosition:I
 
-    .line 147
+    .line 140
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/mms/ui/ConversationList;->mFirstItemId:J
 
-    .line 159
+    .line 152
     new-instance v0, Lcom/android/mms/ui/ConversationList$1;
 
     invoke-direct {v0, p0}, Lcom/android/mms/ui/ConversationList$1;-><init>(Lcom/android/mms/ui/ConversationList;)V
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationList;->onNewMessage:Landroid/view/View$OnClickListener;
 
-    .line 286
+    .line 276
     new-instance v0, Lcom/android/mms/ui/ConversationList$2;
 
     invoke-direct {v0, p0}, Lcom/android/mms/ui/ConversationList$2;-><init>(Lcom/android/mms/ui/ConversationList;)V
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationList;->mContentChangedListener:Lcom/android/mms/ui/ConversationListAdapter$OnContentChangedListener;
 
-    .line 700
+    .line 657
     new-instance v0, Lcom/android/mms/ui/ConversationList$6;
 
     invoke-direct {v0, p0}, Lcom/android/mms/ui/ConversationList$6;-><init>(Lcom/android/mms/ui/ConversationList;)V
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationList;->mConvListOnCreateContextMenuListener:Landroid/view/View$OnCreateContextMenuListener;
 
-    .line 880
+    .line 793
     new-instance v0, Lcom/android/mms/ui/ConversationList$8;
 
     invoke-direct {v0, p0}, Lcom/android/mms/ui/ConversationList$8;-><init>(Lcom/android/mms/ui/ConversationList;)V
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationList;->mThreadListKeyListener:Landroid/view/View$OnKeyListener;
 
-    .line 973
+    .line 886
     return-void
 .end method
 
@@ -147,7 +140,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->createNewMessage()V
 
     return-void
@@ -158,7 +151,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -169,7 +162,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mTitle:Ljava/lang/CharSequence;
 
     return-object v0
@@ -182,7 +175,7 @@
     .parameter "x2"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0, p1, p2}, Lcom/android/mms/ui/ConversationList;->updateEmptyScreen(IZ)V
 
     return-void
@@ -194,7 +187,7 @@
     .parameter "x1"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0, p1, p2}, Lcom/android/mms/ui/ConversationList;->startAsyncQueryDelayed(J)V
 
     return-void
@@ -206,7 +199,7 @@
     .parameter "x1"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0, p1}, Lcom/android/mms/ui/ConversationList;->setTotalQuantityTextView(I)V
 
     return-void
@@ -217,7 +210,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->isFirstItemChanged()Z
 
     move-result v0
@@ -230,7 +223,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
     return-object v0
@@ -241,7 +234,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->startAsyncQuery()V
 
     return-void
@@ -252,7 +245,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget v0, p0, Lcom/android/mms/ui/ConversationList;->mVisiblePosition:I
 
     return v0
@@ -263,7 +256,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
     return-object v0
@@ -274,7 +267,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-boolean v0, p0, Lcom/android/mms/ui/ConversationList;->mNeedToMarkAsRead:Z
 
     return v0
@@ -286,7 +279,7 @@
     .parameter "x1"
 
     .prologue
-    .line 106
+    .line 101
     iput-boolean p1, p0, Lcom/android/mms/ui/ConversationList;->mNeedToMarkAsRead:Z
 
     return p1
@@ -297,7 +290,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mPrefs:Landroid/content/SharedPreferences;
 
     return-object v0
@@ -308,7 +301,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->markCheckedMessageLimit()V
 
     return-void
@@ -321,7 +314,7 @@
     .parameter "x2"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0, p1, p2}, Lcom/android/mms/ui/ConversationList;->log(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
@@ -332,7 +325,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mListAdapter:Lcom/android/mms/ui/ConversationListAdapter;
 
     return-object v0
@@ -344,7 +337,7 @@
     .parameter "x1"
 
     .prologue
-    .line 106
+    .line 101
     invoke-direct {p0, p1}, Lcom/android/mms/ui/ConversationList;->startAsyncQuery(Z)V
 
     return-void
@@ -355,7 +348,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
     return-object v0
@@ -366,7 +359,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 101
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mQueryHandler:Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;
 
     return-object v0
@@ -376,7 +369,7 @@
     .locals 2
 
     .prologue
-    .line 481
+    .line 458
     const v0, 0x7f09000e
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->getString(I)Ljava/lang/String;
@@ -385,13 +378,13 @@
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 482
+    .line 459
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->setProgressBarIndeterminateVisibility(Z)V
 
-    .line 485
-    const v0, 0x7f080063
+    .line 462
+    const v0, 0x7f08003e
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->findViewById(I)Landroid/view/View;
 
@@ -401,7 +394,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 486
+    .line 463
     return-void
 .end method
 
@@ -409,8 +402,8 @@
     .locals 5
 
     .prologue
-    .line 471
-    const v3, 0x7f080064
+    .line 448
+    const v3, 0x7f08003f
 
     invoke-virtual {p0, v3}, Lcom/android/mms/ui/ConversationList;->findViewById(I)Landroid/view/View;
 
@@ -422,7 +415,7 @@
 
     move-result-object v2
 
-    .line 472
+    .line 449
     .local v2, stub:Landroid/view/View;
     move-object v0, v2
 
@@ -430,7 +423,7 @@
 
     move-object v1, v0
 
-    .line 473
+    .line 450
     .local v1, item:Lcom/android/mms/ui/ConversationListItem;
     const v3, 0x7f090001
 
@@ -446,12 +439,12 @@
 
     invoke-virtual {v1, v3, v4}, Lcom/android/mms/ui/ConversationListItem;->bind(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 474
+    .line 451
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    const v4, 0x7f020098
+    const v4, 0x7f020094
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -459,12 +452,12 @@
 
     invoke-virtual {v1, v3}, Lcom/android/mms/ui/ConversationListItem;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 475
+    .line 452
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->onNewMessage:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v1, v3}, Lcom/android/mms/ui/ConversationListItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 476
+    .line 453
     return-void
 .end method
 
@@ -477,29 +470,29 @@
 
     const/4 v1, 0x0
 
-    .line 262
+    .line 252
     sget-object v0, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     if-eqz v0, :cond_0
 
-    .line 263
+    .line 253
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-ne v2, v0, :cond_1
 
-    .line 264
+    .line 254
     sget-object v0, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationListItem;->setClickable(Z)V
 
-    .line 265
+    .line 255
     sget-object v0, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     invoke-virtual {v0, v2}, Lcom/android/mms/ui/ConversationListItem;->setFocusable(Z)V
 
-    .line 266
+    .line 256
     sget-object v0, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -508,23 +501,23 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationListItem;->setTextColor(Ljava/lang/Boolean;)V
 
-    .line 274
+    .line 264
     :cond_0
     :goto_0
     return-void
 
-    .line 269
+    .line 259
     :cond_1
     sget-object v0, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationListItem;->setClickable(Z)V
 
-    .line 270
+    .line 260
     sget-object v0, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationListItem;->setFocusable(Z)V
 
-    .line 271
+    .line 261
     sget-object v0, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -542,12 +535,12 @@
     .parameter "handler"
 
     .prologue
-    .line 839
+    .line 752
     const/16 v0, 0x70b
 
     invoke-static {p2, p0, p1, v0}, Lcom/android/mms/data/Conversation;->startQueryHaveLockedMessages(Landroid/content/AsyncQueryHandler;JI)V
 
-    .line 841
+    .line 754
     return-void
 .end method
 
@@ -561,15 +554,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 856
-    const v0, 0x7f030011
+    .line 769
+    const v0, 0x7f03000e
 
     invoke-static {p3, v0, v3}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
-    .line 857
-    const v0, 0x7f08006f
+    .line 770
+    const v0, 0x7f08004a
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -577,21 +570,21 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    .line 858
+    .line 771
     if-nez p2, :cond_0
 
-    .line 859
+    .line 772
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setVisibility(I)V
 
-    .line 869
+    .line 782
     :goto_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 870
+    .line 783
     if-eqz p1, :cond_1
 
     const v2, 0x7f0900af
@@ -631,23 +624,23 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 878
+    .line 791
     return-void
 
-    .line 861
+    .line 774
     :cond_0
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setVisibility(I)V
 
-    .line 862
+    .line 775
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
 
     move-result v2
 
     invoke-virtual {p0, v2}, Lcom/android/mms/ui/ConversationList$DeleteThreadListener;->setDeleteLockedMessage(Z)V
 
-    .line 863
+    .line 776
     new-instance v2, Lcom/android/mms/ui/ConversationList$7;
 
     invoke-direct {v2, p0, v0}, Lcom/android/mms/ui/ConversationList$7;-><init>(Lcom/android/mms/ui/ConversationList$DeleteThreadListener;Landroid/widget/CheckBox;)V
@@ -656,7 +649,7 @@
 
     goto :goto_0
 
-    .line 870
+    .line 783
     :cond_1
     const v2, 0x7f0900ae
 
@@ -668,7 +661,7 @@
     .parameter "address"
 
     .prologue
-    .line 686
+    .line 643
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.INSERT_OR_EDIT"
@@ -677,7 +670,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 687
+    .line 644
     .local v0, intent:Landroid/content/Intent;
     invoke-static {p0}, Landroid/provider/Telephony$Mms;->isEmailAddress(Ljava/lang/String;)Z
 
@@ -685,27 +678,27 @@
 
     if-eqz v1, :cond_0
 
-    .line 688
+    .line 645
     const-string v1, "email"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 694
+    .line 651
     :goto_0
     const-string v1, "vnd.android.cursor.item/raw_contact"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 696
+    .line 653
     return-object v0
 
-    .line 690
+    .line 647
     :cond_0
     const-string v1, "phone"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 691
+    .line 648
     const-string v1, "phone_type"
 
     const/4 v2, 0x2
@@ -719,7 +712,7 @@
     .locals 2
 
     .prologue
-    .line 668
+    .line 633
     const-wide/16 v0, 0x0
 
     invoke-static {p0, v0, v1}, Lcom/android/mms/ui/ComposeMessageActivity;->createIntent(Landroid/content/Context;J)Landroid/content/Intent;
@@ -728,7 +721,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->startActivity(Landroid/content/Intent;)V
 
-    .line 669
+    .line 634
     return-void
 .end method
 
@@ -736,7 +729,7 @@
     .locals 4
 
     .prologue
-    .line 245
+    .line 238
     invoke-static {}, Lcom/android/mms/ui/ConversationListDel;->ensureUpdateDeletable()Z
 
     move-result v1
@@ -753,7 +746,7 @@
 
     move v0, v1
 
-    .line 248
+    .line 241
     .local v0, result:Z
     :goto_0
     const-string v1, "Mms/ConversationList"
@@ -778,10 +771,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 249
+    .line 242
     return v0
 
-    .line 245
+    .line 238
     .end local v0           #result:Z
     :cond_0
     const/4 v1, 0x0
@@ -796,7 +789,7 @@
     .parameter
 
     .prologue
-    .line 1179
+    .line 1069
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
     invoke-virtual {v0, p1}, Lcom/nemustech/tiffany/widget/TFListView;->getItemAtPosition(I)Ljava/lang/Object;
@@ -805,7 +798,7 @@
 
     check-cast v0, Landroid/database/Cursor;
 
-    .line 1180
+    .line 1070
     const-string v1, "_id"
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -816,7 +809,7 @@
 
     move-result-wide v0
 
-    .line 1183
+    .line 1073
     const/4 v2, 0x0
 
     invoke-static {p0, v0, v1, v2}, Lcom/android/mms/data/Conversation;->get(Landroid/content/Context;JZ)Lcom/android/mms/data/Conversation;
@@ -833,19 +826,19 @@
     .parameter "pluralResourceId"
 
     .prologue
-    .line 947
+    .line 860
     if-nez p1, :cond_0
 
-    .line 948
+    .line 861
     invoke-virtual {p0, p2}, Lcom/android/mms/ui/ConversationList;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 951
+    .line 864
     :goto_0
     return-object v1
 
-    .line 950
+    .line 863
     :cond_0
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getResources()Landroid/content/res/Resources;
 
@@ -859,7 +852,7 @@
 
     move-result-object v0
 
-    .line 951
+    .line 864
     .local v0, format:Ljava/lang/String;
     const/4 v1, 0x1
 
@@ -885,10 +878,10 @@
     .parameter "context"
 
     .prologue
-    .line 239
+    .line 232
     invoke-static {}, Lcom/android/mms/ui/ConversationListDel;->updateDeletable()V
 
-    .line 240
+    .line 233
     return-void
 .end method
 
@@ -896,7 +889,7 @@
     .locals 2
 
     .prologue
-    .line 295
+    .line 285
     new-instance v0, Lcom/android/mms/ui/ConversationListAdapter;
 
     const/4 v1, 0x0
@@ -905,19 +898,19 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationList;->mListAdapter:Lcom/android/mms/ui/ConversationListAdapter;
 
-    .line 296
+    .line 286
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mListAdapter:Lcom/android/mms/ui/ConversationListAdapter;
 
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList;->mContentChangedListener:Lcom/android/mms/ui/ConversationListAdapter$OnContentChangedListener;
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationListAdapter;->setOnContentChangedListener(Lcom/android/mms/ui/ConversationListAdapter$OnContentChangedListener;)V
 
-    .line 297
+    .line 287
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mListAdapter:Lcom/android/mms/ui/ConversationListAdapter;
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->setListAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 298
+    .line 288
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getListView()Lcom/nemustech/tiffany/widget/TFListView;
 
     move-result-object v0
@@ -926,7 +919,7 @@
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->setRecyclerListener(Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;)V
 
-    .line 299
+    .line 289
     return-void
 .end method
 
@@ -934,7 +927,7 @@
     .locals 4
 
     .prologue
-    .line 965
+    .line 878
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
     invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFListView;->getCount()I
@@ -951,7 +944,7 @@
 
     if-lez v0, :cond_0
 
-    .line 966
+    .line 879
     iget-wide v0, p0, Lcom/android/mms/ui/ConversationList;->mFirstItemId:J
 
     iget-object v2, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
@@ -972,10 +965,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 967
+    .line 880
     const/4 v0, 0x1
 
-    .line 970
+    .line 883
     :goto_0
     return v0
 
@@ -991,12 +984,12 @@
     .parameter
 
     .prologue
-    .line 1101
+    .line 1014
     invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1102
+    .line 1015
     const-string v1, "Mms/ConversationList"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1037,7 +1030,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1103
+    .line 1016
     return-void
 .end method
 
@@ -1045,21 +1038,21 @@
     .locals 3
 
     .prologue
-    .line 356
+    .line 346
     const-string v1, "Mms/ConversationList"
 
     const-string v2, "markCheckedMessageLimit"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 357
+    .line 347
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList;->mPrefs:Landroid/content/SharedPreferences;
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 358
+    .line 348
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v1, "checked_message_limits"
 
@@ -1067,61 +1060,26 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 359
+    .line 349
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 360
+    .line 350
     return-void
 .end method
 
 .method private openThread(J)V
-    .locals 3
+    .locals 1
     .parameter "threadId"
 
     .prologue
-    .line 673
-    const-string v0, "Mms/ConversationList"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "openThread startActivity for threadId "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " , CMAS= "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-boolean v2, Lcom/android/mms/ui/ConversationList;->isCmas:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 680
+    .line 637
     invoke-static {p0, p1, p2}, Lcom/android/mms/ui/ComposeMessageActivity;->createIntent(Landroid/content/Context;J)Landroid/content/Intent;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->startActivity(Landroid/content/Intent;)V
 
-    .line 681
+    .line 638
     return-void
 .end method
 
@@ -1130,24 +1088,17 @@
     .parameter "listView"
 
     .prologue
-    .line 255
-    new-instance v0, Lcom/android/mms/ui/SweepHandler;
-
-    invoke-direct {v0, p0}, Lcom/android/mms/ui/SweepHandler;-><init>(Lcom/android/mms/ui/ConversationList;)V
-
-    iput-object v0, p0, Lcom/android/mms/ui/ConversationList;->mSweepHandler:Lcom/android/mms/ui/SweepHandler;
-
-    .line 257
+    .line 247
     new-instance v0, Lcom/android/mms/ui/SweepHandler;
 
     invoke-direct {v0, p0}, Lcom/android/mms/ui/SweepHandler;-><init>(Lcom/android/mms/ui/ConversationList;)V
 
     invoke-virtual {p1, v0}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->setSweepActionBarCallback(Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionBarCallback;)V
 
-    .line 258
+    .line 248
     invoke-virtual {p1, p0}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->setSweepActionListener(Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionListener;)V
 
-    .line 259
+    .line 249
     return-void
 .end method
 
@@ -1156,7 +1107,7 @@
     .parameter
 
     .prologue
-    .line 956
+    .line 869
     const v0, 0x7f09014e
 
     const v1, 0x7f0a0002
@@ -1165,17 +1116,17 @@
 
     move-result-object v0
 
-    .line 958
+    .line 871
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList;->mTotalConversations:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 959
+    .line 872
     const-string v1, "Mms/ConversationList"
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 960
+    .line 873
     return-void
 .end method
 
@@ -1183,15 +1134,15 @@
     .locals 1
 
     .prologue
-    .line 512
+    .line 489
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->beforeQuery()V
 
-    .line 513
+    .line 490
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/mms/ui/ConversationList;->startAsyncQuery(Z)V
 
-    .line 514
+    .line 491
     return-void
 .end method
 
@@ -1200,7 +1151,7 @@
     .parameter "isFake"
 
     .prologue
-    .line 529
+    .line 506
     if-eqz p1, :cond_0
 
     :try_start_0
@@ -1212,11 +1163,11 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/mms/data/Conversation;->startQueryForFakeView(Landroid/content/AsyncQueryHandler;II)V
 
-    .line 535
+    .line 512
     :goto_0
     return-void
 
-    .line 530
+    .line 507
     :cond_0
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList;->mQueryHandler:Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;
 
@@ -1228,13 +1179,13 @@
 
     goto :goto_0
 
-    .line 532
+    .line 509
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 533
+    .line 510
     .local v0, e:Landroid/database/sqlite/SQLiteException;
     invoke-static {p0, v0}, Landroid/database/sqlite/SqliteWrapper;->checkSQLiteException(Landroid/content/Context;Landroid/database/sqlite/SQLiteException;)V
 
@@ -1246,7 +1197,7 @@
     .parameter "delay"
 
     .prologue
-    .line 517
+    .line 494
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -1257,7 +1208,7 @@
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 522
+    .line 499
     return-void
 .end method
 
@@ -1265,15 +1216,15 @@
     .locals 1
 
     .prologue
-    .line 506
+    .line 483
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->beforeQuery()V
 
-    .line 507
+    .line 484
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/mms/ui/ConversationList;->startAsyncQuery(Z)V
 
-    .line 508
+    .line 485
     return-void
 .end method
 
@@ -1287,49 +1238,49 @@
 
     const/4 v3, 0x0
 
-    .line 489
+    .line 466
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getListView()Lcom/nemustech/tiffany/widget/TFListView;
 
     move-result-object v1
 
-    .line 490
+    .line 467
     .local v1, listView:Landroid/view/View;
-    const v2, 0x7f080063
+    const v2, 0x7f08003e
 
     invoke-virtual {p0, v2}, Lcom/android/mms/ui/ConversationList;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 493
+    .line 470
     .local v0, emptyView:Landroid/view/View;
     if-nez p1, :cond_1
 
-    .line 494
+    .line 471
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 495
+    .line 472
     invoke-virtual {v1, v4}, Lcom/nemustech/tiffany/widget/TFAdapterView;->setVisibility(I)V
 
-    .line 496
+    .line 473
     if-eqz p2, :cond_0
 
     iget-object v2, p0, Lcom/android/mms/ui/ConversationList;->mTotalConversations:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 503
+    .line 480
     :cond_0
     :goto_0
     return-void
 
-    .line 499
+    .line 476
     :cond_1
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 500
+    .line 477
     invoke-virtual {v1, v3}, Lcom/nemustech/tiffany/widget/TFAdapterView;->setVisibility(I)V
 
-    .line 501
+    .line 478
     if-eqz p2, :cond_0
 
     iget-object v2, p0, Lcom/android/mms/ui/ConversationList;->mTotalConversations:Landroid/widget/TextView;
@@ -1350,7 +1301,7 @@
 
     const-string v1, "Mms/ConversationList"
 
-    .line 1212
+    .line 1102
     const-string v0, "Mms/ConversationList"
 
     const/4 v0, 0x3
@@ -1361,36 +1312,36 @@
 
     if-eqz v0, :cond_0
 
-    .line 1213
+    .line 1103
     const-string v0, "Mms/ConversationList"
 
     const-string v0, "getNumber"
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1216
+    .line 1106
     :cond_0
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/mms/ui/ConversationList;->getConversation(I)Lcom/android/mms/data/Conversation;
 
     move-result-object v0
 
-    .line 1217
+    .line 1107
     if-nez v0, :cond_1
 
     move-object v0, v2
 
-    .line 1235
+    .line 1125
     :goto_0
     return-object v0
 
-    .line 1219
+    .line 1109
     :cond_1
     invoke-virtual {v0}, Lcom/android/mms/data/Conversation;->getRecipients()Lcom/android/mms/data/ContactList;
 
     move-result-object v0
 
-    .line 1220
+    .line 1110
     invoke-virtual {v0}, Lcom/android/mms/data/ContactList;->size()I
 
     move-result v1
@@ -1401,13 +1352,13 @@
 
     goto :goto_0
 
-    .line 1222
+    .line 1112
     :cond_2
     invoke-virtual {v0}, Lcom/android/mms/data/ContactList;->getNumbers()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1223
+    .line 1113
     array-length v1, v0
 
     if-nez v1, :cond_3
@@ -1416,7 +1367,7 @@
 
     goto :goto_0
 
-    .line 1227
+    .line 1117
     :cond_3
     const/4 v1, 0x0
 
@@ -1428,7 +1379,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 1228
+    .line 1118
     const/4 v1, 0x0
 
     aget-object v0, v0, v1
@@ -1437,22 +1388,22 @@
 
     goto :goto_0
 
-    .line 1230
+    .line 1120
     :catch_0
     move-exception v0
 
-    .line 1231
+    .line 1121
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     move-object v0, v2
 
-    .line 1232
+    .line 1122
     goto :goto_0
 
     :cond_4
     move-object v0, v2
 
-    .line 1235
+    .line 1125
     goto :goto_0
 .end method
 
@@ -1465,16 +1416,16 @@
 
     const/4 v4, 0x0
 
-    .line 277
+    .line 267
     if-gez p1, :cond_0
 
     move v3, v4
 
-    .line 283
+    .line 273
     :goto_0
     return v3
 
-    .line 279
+    .line 269
     :cond_0
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
@@ -1482,7 +1433,7 @@
 
     move-result v0
 
-    .line 280
+    .line 270
     .local v0, cnt:I
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
@@ -1490,7 +1441,7 @@
 
     move-result v2
 
-    .line 281
+    .line 271
     .local v2, cntHeader:I
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
@@ -1498,7 +1449,7 @@
 
     move-result v1
 
-    .line 283
+    .line 273
     .local v1, cntFooter:I
     sub-int v3, v2, v5
 
@@ -1523,10 +1474,10 @@
     .parameter "newConfig"
 
     .prologue
-    .line 827
+    .line 740
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFListActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 828
+    .line 741
     const-string v0, "Mms/ConversationList"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1549,7 +1500,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 829
+    .line 742
     return-void
 .end method
 
@@ -1560,14 +1511,14 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 783
+    .line 696
     invoke-interface {p1}, Landroid/view/MenuItem;->getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
 
     move-result-object v4
 
     check-cast v4, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterContextMenuInfo;
 
-    .line 784
+    .line 697
     .local v4, info:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterContextMenuInfo;
     iget-object v8, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
@@ -1579,7 +1530,7 @@
 
     check-cast v3, Landroid/database/Cursor;
 
-    .line 786
+    .line 699
     .local v3, cursor:Landroid/database/Cursor;
     if-eqz v3, :cond_0
 
@@ -1589,18 +1540,18 @@
 
     if-ltz v8, :cond_0
 
-    .line 787
+    .line 700
     invoke-static {p0, v3}, Lcom/android/mms/data/Conversation;->from(Landroid/content/Context;Landroid/database/Cursor;)Lcom/android/mms/data/Conversation;
 
     move-result-object v2
 
-    .line 788
+    .line 701
     .local v2, conv:Lcom/android/mms/data/Conversation;
     invoke-virtual {v2}, Lcom/android/mms/data/Conversation;->getThreadId()J
 
     move-result-wide v6
 
-    .line 789
+    .line 702
     .local v6, threadId:J
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1608,7 +1559,7 @@
 
     packed-switch v8, :pswitch_data_0
 
-    .line 814
+    .line 727
     .end local v2           #conv:Lcom/android/mms/data/Conversation;
     .end local v6           #threadId:J
     :cond_0
@@ -1619,7 +1570,7 @@
 
     return v8
 
-    .line 791
+    .line 704
     .restart local v2       #conv:Lcom/android/mms/data/Conversation;
     .restart local v6       #threadId:J
     :pswitch_0
@@ -1629,13 +1580,13 @@
 
     goto :goto_0
 
-    .line 795
+    .line 708
     :pswitch_1
     invoke-direct {p0, v6, v7}, Lcom/android/mms/ui/ConversationList;->openThread(J)V
 
     goto :goto_0
 
-    .line 799
+    .line 712
     :pswitch_2
     invoke-virtual {v2}, Lcom/android/mms/data/Conversation;->getRecipients()Lcom/android/mms/data/ContactList;
 
@@ -1647,7 +1598,7 @@
 
     check-cast v1, Lcom/android/mms/data/Contact;
 
-    .line 800
+    .line 713
     .local v1, contact:Lcom/android/mms/data/Contact;
     new-instance v5, Landroid/content/Intent;
 
@@ -1659,18 +1610,18 @@
 
     invoke-direct {v5, v8, v9}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 801
+    .line 714
     .local v5, intent:Landroid/content/Intent;
     const/high16 v8, 0x8
 
     invoke-virtual {v5, v8}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 802
+    .line 715
     invoke-virtual {p0, v5}, Lcom/android/mms/ui/ConversationList;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 806
+    .line 719
     .end local v1           #contact:Lcom/android/mms/data/Contact;
     .end local v5           #intent:Landroid/content/Intent;
     :pswitch_3
@@ -1688,7 +1639,7 @@
 
     move-result-object v0
 
-    .line 807
+    .line 720
     .local v0, address:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/mms/ui/ConversationList;->createAddContactIntent(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -1698,7 +1649,7 @@
 
     goto :goto_0
 
-    .line 789
+    .line 702
     nop
 
     :pswitch_data_0
@@ -1721,25 +1672,25 @@
 
     const-string v4, "Mms/ConversationList"
 
-    .line 183
+    .line 176
     const-string v3, "Mms/ConversationList"
 
     const-string v3, "speed check : onCreate is called"
 
     invoke-static {v4, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 184
+    .line 177
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFListActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 187
+    .line 180
     invoke-static {}, Lcom/android/mms/util/TFResourceMitigate;->init()V
 
-    .line 189
+    .line 182
     const/4 v3, 0x5
 
     invoke-virtual {p0, v3}, Lcom/android/mms/ui/ConversationList;->requestWindowFeature(I)Z
 
-    .line 192
+    .line 185
     new-instance v3, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;
 
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getContentResolver()Landroid/content/ContentResolver;
@@ -1750,36 +1701,36 @@
 
     iput-object v3, p0, Lcom/android/mms/ui/ConversationList;->mQueryHandler:Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;
 
-    .line 194
-    const v3, 0x7f03000e
+    .line 187
+    const v3, 0x7f03000b
 
     invoke-virtual {p0, v3}, Lcom/android/mms/ui/ConversationList;->setContentView(I)V
 
-    .line 195
+    .line 188
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getListView()Lcom/nemustech/tiffany/widget/TFListView;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
-    .line 196
+    .line 189
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
     check-cast v3, Lcom/nemustech/tiffany/widget/TFSweepActionListView;
 
     invoke-direct {p0, v3}, Lcom/android/mms/ui/ConversationList;->setSweepHanlder(Lcom/nemustech/tiffany/widget/TFSweepActionListView;)V
 
-    .line 198
+    .line 191
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->bindNewMessageEmpty()V
 
-    .line 200
+    .line 193
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v2
 
-    .line 201
+    .line 194
     .local v2, inflater:Landroid/view/LayoutInflater;
-    const v3, 0x7f03000d
+    const v3, 0x7f03000a
 
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
@@ -1791,7 +1742,7 @@
 
     sput-object v3, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
-    .line 202
+    .line 195
     sget-object v3, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     const v4, 0x7f090001
@@ -1808,14 +1759,14 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/android/mms/ui/ConversationListItem;->bind(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 203
+    .line 196
     sget-object v3, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f020098
+    const v5, 0x7f020094
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1823,7 +1774,7 @@
 
     invoke-virtual {v3, v4}, Lcom/android/mms/ui/ConversationListItem;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 204
+    .line 197
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
     sget-object v4, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
@@ -1832,13 +1783,13 @@
 
     invoke-virtual {v3, v4, v7, v5}, Lcom/nemustech/tiffany/widget/TFListView;->addHeaderView(Landroid/view/View;Ljava/lang/Object;Z)V
 
-    .line 205
+    .line 198
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
     invoke-virtual {v3, v6}, Lcom/nemustech/tiffany/widget/TFListView;->setHeaderDividersEnabled(Z)V
 
-    .line 206
-    const v3, 0x7f03000c
+    .line 199
+    const v3, 0x7f030009
 
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
@@ -1850,7 +1801,7 @@
 
     iput-object v3, p0, Lcom/android/mms/ui/ConversationList;->mTotalConversations:Landroid/widget/TextView;
 
-    .line 207
+    .line 200
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mTotalConversations:Landroid/widget/TextView;
 
     const v4, 0x7f09000e
@@ -1861,24 +1812,24 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 208
+    .line 201
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList;->mTotalConversations:Landroid/widget/TextView;
 
     invoke-virtual {v3, v4, v7, v6}, Lcom/nemustech/tiffany/widget/TFListView;->addFooterView(Landroid/view/View;Ljava/lang/Object;Z)V
 
-    .line 211
+    .line 204
     invoke-static {}, Lcom/android/mms/ui/ConversationList;->ensureUpdateDeletable()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 212
+    .line 205
     invoke-static {}, Lcom/android/mms/ui/ConversationListDel;->updateDeletable()V
 
-    .line 216
+    .line 209
     :cond_0
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
@@ -1886,17 +1837,17 @@
 
     invoke-virtual {v3, v4}, Lcom/nemustech/tiffany/widget/TFListView;->setOnCreateContextMenuListener(Landroid/view/View$OnCreateContextMenuListener;)V
 
-    .line 217
+    .line 210
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList;->mThreadListKeyListener:Landroid/view/View$OnKeyListener;
 
     invoke-virtual {v3, v4}, Lcom/nemustech/tiffany/widget/TFListView;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    .line 218
+    .line 211
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->initListAdapter()V
 
-    .line 220
+    .line 213
     const/high16 v3, 0x7f09
 
     invoke-virtual {p0, v3}, Lcom/android/mms/ui/ConversationList;->getString(I)Ljava/lang/String;
@@ -1905,14 +1856,14 @@
 
     iput-object v3, p0, Lcom/android/mms/ui/ConversationList;->mTitle:Ljava/lang/CharSequence;
 
-    .line 222
+    .line 215
     new-instance v3, Landroid/os/Handler;
 
     invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
     iput-object v3, p0, Lcom/android/mms/ui/ConversationList;->mHandler:Landroid/os/Handler;
 
-    .line 225
+    .line 218
     :try_start_0
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
@@ -1920,7 +1871,7 @@
 
     iput-object v3, p0, Lcom/android/mms/ui/ConversationList;->mPrefs:Landroid/content/SharedPreferences;
 
-    .line 226
+    .line 219
     iget-object v3, p0, Lcom/android/mms/ui/ConversationList;->mPrefs:Landroid/content/SharedPreferences;
 
     const-string v4, "checked_message_limits"
@@ -1931,7 +1882,7 @@
 
     move-result v0
 
-    .line 227
+    .line 220
     .local v0, checkedMessageLimits:Z
     const-string v3, "Mms/ConversationList"
 
@@ -1955,27 +1906,27 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
+    .line 221
     if-nez v0, :cond_1
 
-    .line 229
+    .line 222
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->runOneTimeStorageLimitCheckForLegacyMessages()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 234
+    .line 227
     .end local v0           #checkedMessageLimits:Z
     :cond_1
     :goto_0
     return-void
 
-    .line 231
+    .line 224
     :catch_0
     move-exception v3
 
     move-object v1, v3
 
-    .line 232
+    .line 225
     .local v1, ex:Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -1986,22 +1937,22 @@
     .locals 2
 
     .prologue
-    .line 436
+    .line 426
     const-string v0, "Mms/ConversationList"
 
     const-string v1, "speed check : onDestroy is called"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 437
+    .line 427
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/mms/ui/ConversationList;->headerView:Lcom/android/mms/ui/ConversationListItem;
 
-    .line 438
+    .line 428
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFListActivity;->onDestroy()V
 
-    .line 439
+    .line 429
     return-void
 .end method
 
@@ -2011,7 +1962,7 @@
     .parameter "hasDraft"
 
     .prologue
-    .line 443
+    .line 433
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mQueryHandler:Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;
 
     new-instance v1, Lcom/android/mms/ui/ConversationList$4;
@@ -2020,7 +1971,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 451
+    .line 441
     return-void
 .end method
 
@@ -2034,7 +1985,7 @@
     .prologue
     const-string v6, "Mms/ConversationList"
 
-    .line 630
+    .line 607
     const-string v4, "Mms/ConversationList"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2067,17 +2018,17 @@
 
     invoke-static {v6, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 633
+    .line 610
     if-nez p3, :cond_0
 
-    .line 634
+    .line 611
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->createNewMessage()V
 
-    .line 665
+    .line 630
     :goto_0
     return-void
 
-    .line 643
+    .line 620
     :cond_0
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getListView()Lcom/nemustech/tiffany/widget/TFListView;
 
@@ -2089,19 +2040,19 @@
 
     check-cast v1, Landroid/database/Cursor;
 
-    .line 644
+    .line 621
     .local v1, cursor:Landroid/database/Cursor;
     invoke-static {p0, v1}, Lcom/android/mms/data/Conversation;->from(Landroid/content/Context;Landroid/database/Cursor;)Lcom/android/mms/data/Conversation;
 
     move-result-object v0
 
-    .line 645
+    .line 622
     .local v0, conv:Lcom/android/mms/data/Conversation;
     invoke-virtual {v0}, Lcom/android/mms/data/Conversation;->getThreadId()J
 
     move-result-wide v2
 
-    .line 660
+    .line 625
     .local v2, tid:J
     const-string v4, "Mms/ConversationList"
 
@@ -2145,7 +2096,7 @@
 
     invoke-static {v6, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 663
+    .line 628
     invoke-direct {p0, v2, v3}, Lcom/android/mms/ui/ConversationList;->openThread(J)V
 
     goto :goto_0
@@ -2156,10 +2107,10 @@
     .parameter "intent"
 
     .prologue
-    .line 365
+    .line 355
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->startAsyncQuery()V
 
-    .line 366
+    .line 356
     return-void
 .end method
 
@@ -2170,40 +2121,40 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 587
+    .line 564
     const/4 v0, 0x0
 
-    .line 588
+    .line 565
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v1
 
     packed-switch v1, :pswitch_data_0
 
-    .line 624
+    .line 601
     :goto_0
     :pswitch_0
     return v0
 
-    .line 590
+    .line 567
     :pswitch_1
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->createNewMessage()V
 
     move v0, v3
 
-    .line 592
+    .line 569
     goto :goto_0
 
-    .line 594
+    .line 571
     :pswitch_2
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->onSearchRequested()Z
 
     move v0, v3
 
-    .line 596
+    .line 573
     goto :goto_0
 
-    .line 600
+    .line 577
     :pswitch_3
     new-instance v0, Landroid/content/Intent;
 
@@ -2211,20 +2162,20 @@
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 604
+    .line 581
     const/high16 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 606
+    .line 583
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->startActivity(Landroid/content/Intent;)V
 
     move v0, v3
 
-    .line 608
+    .line 585
     goto :goto_0
 
-    .line 610
+    .line 587
     :pswitch_4
     new-instance v0, Landroid/content/Intent;
 
@@ -2232,41 +2183,41 @@
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 611
+    .line 588
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->startActivity(Landroid/content/Intent;)V
 
     move v0, v3
 
-    .line 614
+    .line 591
     goto :goto_0
 
-    .line 617
+    .line 594
     :pswitch_5
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 618
+    .line 595
     const-string v1, "com.wsomacp"
 
     const-string v2, "com.wsomacp.WSSClientProvUiList"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 619
+    .line 596
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 620
+    .line 597
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->startActivity(Landroid/content/Intent;)V
 
     move v0, v3
 
-    .line 621
+    .line 598
     goto :goto_0
 
-    .line 588
+    .line 565
     nop
 
     :pswitch_data_0
@@ -2289,10 +2240,10 @@
 
     const/4 v8, 0x0
 
-    .line 540
+    .line 517
     invoke-interface {p1}, Landroid/view/Menu;->clear()V
 
-    .line 541
+    .line 518
     sget-object v0, Lcom/android/mms/ui/ConversationListDel;->isDeleting:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -2303,11 +2254,11 @@
 
     move v0, v8
 
-    .line 574
+    .line 551
     :goto_0
     return v0
 
-    .line 544
+    .line 521
     :cond_0
     const v0, 0x7f090005
 
@@ -2319,7 +2270,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
-    .line 547
+    .line 524
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mListAdapter:Lcom/android/mms/ui/ConversationListAdapter;
 
     invoke-virtual {v0}, Lcom/android/mms/ui/ConversationListAdapter;->getCount()I
@@ -2328,7 +2279,7 @@
 
     if-lez v0, :cond_1
 
-    .line 548
+    .line 525
     const/4 v0, 0x3
 
     const v1, 0x7f09000a
@@ -2341,11 +2292,11 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
-    .line 552
+    .line 529
     :cond_1
     const/4 v7, 0x0
 
-    .line 554
+    .line 531
     .local v7, cursor:Landroid/database/Cursor;
     :try_start_0
     const-string v0, "content://com.wsomacp.messagelist"
@@ -2354,7 +2305,7 @@
 
     move-result-object v2
 
-    .line 555
+    .line 532
     .local v2, cpUri:Landroid/net/Uri;
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2374,7 +2325,7 @@
 
     move-result-object v7
 
-    .line 558
+    .line 535
     if-eqz v7, :cond_2
 
     invoke-interface {v7}, Landroid/database/Cursor;->getCount()I
@@ -2383,7 +2334,7 @@
 
     if-lez v0, :cond_2
 
-    .line 559
+    .line 536
     const/4 v0, 0x0
 
     const/4 v1, 0x4
@@ -2402,14 +2353,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 563
+    .line 540
     :cond_2
     if-eqz v7, :cond_3
 
-    .line 564
+    .line 541
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 567
+    .line 544
     :cond_3
     const v0, 0x104000c
 
@@ -2427,7 +2378,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem;
 
-    .line 571
+    .line 548
     const/4 v0, 0x5
 
     const v1, 0x7f090006
@@ -2442,17 +2393,17 @@
 
     move v0, v9
 
-    .line 574
+    .line 551
     goto :goto_0
 
-    .line 563
+    .line 540
     .end local v2           #cpUri:Landroid/net/Uri;
     :catchall_0
     move-exception v0
 
     if-eqz v7, :cond_4
 
-    .line 564
+    .line 541
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     :cond_4
@@ -2463,29 +2414,29 @@
     .locals 2
 
     .prologue
-    .line 1189
+    .line 1079
     const-string v0, "Mms/ConversationList"
 
     const-string v1, "speed check : onResume is called"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1190
+    .line 1080
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFListActivity;->onResume()V
 
-    .line 1191
+    .line 1081
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getListView()Lcom/nemustech/tiffany/widget/TFListView;
 
     move-result-object p0
 
     check-cast p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;
 
-    .line 1192
+    .line 1082
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->closeAllActionBar(Z)Z
 
-    .line 1193
+    .line 1083
     return-void
 .end method
 
@@ -2494,18 +2445,18 @@
     .parameter "outState"
 
     .prologue
-    .line 407
+    .line 397
     const-string v1, "Mms/ConversationList"
 
     const-string v2, "onSaveInstanceState "
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 409
+    .line 399
     :try_start_0
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFListActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 412
+    .line 402
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFListView;->getFirstVisiblePosition()I
@@ -2514,7 +2465,7 @@
 
     iput v1, p0, Lcom/android/mms/ui/ConversationList;->mVisiblePosition:I
 
-    .line 415
+    .line 405
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFListView;->getCount()I
@@ -2531,7 +2482,7 @@
 
     if-lez v1, :cond_0
 
-    .line 416
+    .line 406
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
 
     iget-object v2, p0, Lcom/android/mms/ui/ConversationList;->mList:Lcom/nemustech/tiffany/widget/TFListView;
@@ -2548,11 +2499,11 @@
 
     iput-wide v1, p0, Lcom/android/mms/ui/ConversationList;->mFirstItemId:J
 
-    .line 424
+    .line 414
     :goto_0
     return-void
 
-    .line 418
+    .line 408
     :cond_0
     const-wide/16 v1, -0x1
 
@@ -2562,13 +2513,13 @@
 
     goto :goto_0
 
-    .line 420
+    .line 410
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 422
+    .line 412
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -2583,10 +2534,10 @@
 
     const/4 v0, 0x0
 
-    .line 580
+    .line 557
     invoke-virtual {p0, v1, v0, v1, v0}, Lcom/android/mms/ui/ConversationList;->startSearch(Ljava/lang/String;ZLandroid/os/Bundle;Z)V
 
-    .line 581
+    .line 558
     const/4 v0, 0x1
 
     return v0
@@ -2596,22 +2547,22 @@
     .locals 2
 
     .prologue
-    .line 370
+    .line 360
     const-string v0, "Mms/ConversationList"
 
     const-string v1, "speed check : onStart is called"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 371
+    .line 361
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFListActivity;->onStart()V
 
-    .line 373
+    .line 363
     sget-object v0, Lcom/android/mms/ui/ConversationListDel;->isDeleting:Ljava/lang/Boolean;
 
     invoke-static {v0}, Lcom/android/mms/ui/ConversationList;->changeConversationListItemDataStyle(Ljava/lang/Boolean;)V
 
-    .line 375
+    .line 365
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2620,7 +2571,7 @@
 
     invoke-static {v0, v1}, Lcom/android/mms/transaction/MessagingNotification;->cancelNotification(Landroid/content/Context;I)V
 
-    .line 378
+    .line 368
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationList;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2629,32 +2580,32 @@
 
     invoke-static {v0, v1}, Lcom/android/mms/transaction/MessagingNotification;->cancelNotification(Landroid/content/Context;I)V
 
-    .line 381
+    .line 371
     invoke-static {}, Lcom/android/mms/util/DraftCache;->getInstance()Lcom/android/mms/util/DraftCache;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lcom/android/mms/util/DraftCache;->addOnDraftChangedListener(Lcom/android/mms/util/DraftCache$OnDraftChangedListener;)V
 
-    .line 383
+    .line 373
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/mms/ui/ConversationList;->mNeedToMarkAsRead:Z
 
-    .line 385
+    .line 375
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->startFakeAsyncQuery()V
 
-    .line 400
+    .line 390
     invoke-static {}, Lcom/android/mms/data/Conversation;->loadingThreads()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 401
+    .line 391
     invoke-static {}, Lcom/android/mms/data/Contact;->invalidateCache()V
 
-    .line 403
+    .line 393
     :cond_0
     return-void
 .end method
@@ -2663,31 +2614,31 @@
     .locals 2
 
     .prologue
-    .line 428
+    .line 418
     const-string v0, "Mms/ConversationList"
 
     const-string v1, "speed check : onStop is called"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 429
+    .line 419
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFListActivity;->onStop()V
 
-    .line 431
+    .line 421
     invoke-static {}, Lcom/android/mms/util/DraftCache;->getInstance()Lcom/android/mms/util/DraftCache;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lcom/android/mms/util/DraftCache;->removeOnDraftChangedListener(Lcom/android/mms/util/DraftCache$OnDraftChangedListener;)V
 
-    .line 432
+    .line 422
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mListAdapter:Lcom/android/mms/ui/ConversationListAdapter;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationListAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 433
+    .line 423
     return-void
 .end method
 
@@ -2698,7 +2649,7 @@
     .prologue
     const-string v2, "Mms/ConversationList"
 
-    .line 1107
+    .line 1020
     const-string v0, "Mms/ConversationList"
 
     const/4 v0, 0x3
@@ -2709,7 +2660,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1108
+    .line 1021
     const-string v0, "Mms/ConversationList"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2738,7 +2689,7 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1109
+    .line 1022
     :cond_0
     return-void
 .end method
@@ -2755,7 +2706,7 @@
 
     const-string v6, "Mms/ConversationList"
 
-    .line 1113
+    .line 1026
     const-string v0, "Mms/ConversationList"
 
     invoke-static {v6, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -2764,7 +2715,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1114
+    .line 1027
     const-string v0, "Mms/ConversationList"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2803,83 +2754,79 @@
 
     invoke-static {v6, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1116
+    .line 1029
     :cond_0
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList;->mListView:Lcom/nemustech/tiffany/widget/TFListView;
 
     check-cast v0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;
 
-    .line 1119
+    .line 1032
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/mms/ui/ConversationList;->getConversation(I)Lcom/android/mms/data/Conversation;
 
     move-result-object v1
 
-    .line 1121
-    if-nez v1, :cond_2
+    .line 1034
+    if-nez v1, :cond_1
 
-    .line 1122
+    .line 1035
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->closeAllActionBar(Z)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1175
-    :cond_1
+    .line 1065
     :goto_0
     return-void
 
-    .line 1125
+    .line 1038
     :catch_0
     move-exception v1
 
-    .line 1126
+    .line 1039
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1127
+    .line 1040
     invoke-virtual {v0, v5}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->closeAllActionBar(Z)Z
 
     goto :goto_0
 
-    .line 1132
-    :cond_2
-    if-nez p2, :cond_6
+    .line 1045
+    :cond_1
+    if-nez p2, :cond_5
 
-    .line 1133
+    .line 1046
     invoke-virtual {p0, p1}, Lcom/android/mms/ui/ConversationList;->getNumber(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1136
-    invoke-direct {p0, p1}, Lcom/android/mms/ui/ConversationList;->getConversation(I)Lcom/android/mms/data/Conversation;
-
-    .line 1153
-    if-eqz v1, :cond_3
+    .line 1048
+    if-eqz v1, :cond_2
 
     invoke-static {v1}, Lcom/android/mms/ui/MessageUtils;->isAlias(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_3
 
-    .line 1154
-    :cond_3
+    .line 1049
+    :cond_2
     invoke-virtual {v0, v5}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->closeAllActionBar(Z)Z
 
     goto :goto_0
 
-    .line 1156
-    :cond_4
+    .line 1051
+    :cond_3
     const-string v0, "Mms/ConversationList"
 
     invoke-static {v6, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
-    .line 1157
+    .line 1052
     const-string v0, "Mms/ConversationList"
 
     const-string v0, "onSweepActionFired calling(itemIndex:%d, number:%s"
@@ -2906,13 +2853,8 @@
 
     invoke-static {v6, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1160
-    :cond_5
-    sget-boolean v0, Lcom/android/mms/ui/ConversationList;->isCmas:Z
-
-    if-eq v5, v0, :cond_1
-
-    .line 1161
+    .line 1054
+    :cond_4
     new-instance v0, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.CALL"
@@ -2927,21 +2869,21 @@
 
     invoke-direct {v0, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1162
+    .line 1055
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1163
+    .line 1056
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationList;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 1169
-    :cond_6
-    if-ne v5, p2, :cond_7
+    .line 1059
+    :cond_5
+    if-ne v5, p2, :cond_6
 
-    .line 1170
+    .line 1060
     invoke-virtual {v1}, Lcom/android/mms/data/Conversation;->getThreadId()J
 
     move-result-wide v0
@@ -2950,8 +2892,8 @@
 
     goto :goto_0
 
-    .line 1173
-    :cond_7
+    .line 1063
+    :cond_6
     invoke-virtual {v0, v5}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->closeAllActionBar(Z)Z
 
     goto :goto_0
@@ -2962,7 +2904,7 @@
     .parameter
 
     .prologue
-    .line 1208
+    .line 1098
     const-string v0, "Mms/ConversationList"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2991,7 +2933,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1209
+    .line 1099
     return-void
 .end method
 
@@ -2999,7 +2941,7 @@
     .locals 2
 
     .prologue
-    .line 308
+    .line 298
     monitor-enter p0
 
     :try_start_0
@@ -3009,25 +2951,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 309
+    .line 299
     const-string v0, "Mms/ConversationList"
 
     const-string v1, "recycler is already turned on"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 312
+    .line 302
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationList;->markCheckedMessageLimit()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 349
+    .line 339
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 315
+    .line 305
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/Thread;
@@ -3044,7 +2986,7 @@
 
     goto :goto_0
 
-    .line 308
+    .line 298
     :catchall_0
     move-exception v0
 

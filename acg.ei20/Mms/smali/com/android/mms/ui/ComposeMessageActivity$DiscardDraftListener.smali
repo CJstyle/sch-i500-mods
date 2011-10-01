@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 909
+    .line 905
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$DiscardDraftListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 909
+    .line 905
     invoke-direct {p0, p1}, Lcom/android/mms/ui/ComposeMessageActivity$DiscardDraftListener;-><init>(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     return-void
@@ -55,7 +55,7 @@
     .parameter "whichButton"
 
     .prologue
-    .line 911
+    .line 907
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$DiscardDraftListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -64,11 +64,11 @@
 
     invoke-virtual {v0}, Lcom/android/mms/data/WorkingMessage;->discard()V
 
-    .line 912
+    .line 908
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$DiscardDraftListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->finish()V
 
-    .line 913
+    .line 909
     return-void
 .end method

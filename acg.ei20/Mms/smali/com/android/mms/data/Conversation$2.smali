@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 396
+    .line 350
     iput-object p1, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
     iput-object p2, p0, Lcom/android/mms/data/Conversation$2;->val$threadUri:Landroid/net/Uri;
@@ -50,7 +50,7 @@
 
     const-string v0, "(read=0)"
 
-    .line 398
+    .line 352
     iget-object v0, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
     invoke-static {v0}, Lcom/android/mms/data/Conversation;->access$400(Lcom/android/mms/data/Conversation;)Ljava/lang/Object;
@@ -59,7 +59,7 @@
 
     monitor-enter v8
 
-    .line 399
+    .line 353
     :try_start_0
     iget-object v0, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
@@ -71,7 +71,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 401
+    .line 355
     :try_start_1
     iget-object v0, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
@@ -84,7 +84,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 406
+    .line 360
     :cond_0
     :goto_0
     :try_start_2
@@ -92,15 +92,15 @@
 
     if-eqz v0, :cond_3
 
-    .line 407
+    .line 361
     iget-object v0, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
     invoke-static {v0}, Lcom/android/mms/data/Conversation;->access$600(Lcom/android/mms/data/Conversation;)V
 
-    .line 413
+    .line 367
     const/4 v7, 0x1
 
-    .line 415
+    .line 369
     .local v7, needUpdate:Z
     iget-object v0, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
@@ -130,11 +130,11 @@
 
     move-result-object v6
 
-    .line 417
+    .line 371
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 419
+    .line 373
     :try_start_3
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
     :try_end_3
@@ -148,16 +148,16 @@
 
     move v7, v0
 
-    .line 421
+    .line 375
     :goto_1
     :try_start_4
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 425
+    .line 379
     :cond_1
     if-eqz v7, :cond_2
 
-    .line 426
+    .line 380
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -184,7 +184,7 @@
 
     invoke-static {v0, v1}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 428
+    .line 382
     iget-object v0, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
     invoke-static {v0}, Lcom/android/mms/data/Conversation;->access$100(Lcom/android/mms/data/Conversation;)Landroid/content/Context;
@@ -207,7 +207,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 432
+    .line 386
     :cond_2
     iget-object v0, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
@@ -215,7 +215,7 @@
 
     invoke-static {v0, v1}, Lcom/android/mms/data/Conversation;->access$800(Lcom/android/mms/data/Conversation;Z)V
 
-    .line 434
+    .line 388
     .end local v6           #c:Landroid/database/Cursor;
     .end local v7           #needUpdate:Z
     :cond_3
@@ -223,7 +223,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 441
+    .line 391
     iget-object v0, p0, Lcom/android/mms/data/Conversation$2;->this$0:Lcom/android/mms/data/Conversation;
 
     invoke-static {v0}, Lcom/android/mms/data/Conversation;->access$100(Lcom/android/mms/data/Conversation;)Landroid/content/Context;
@@ -232,7 +232,7 @@
 
     invoke-static {v0}, Lcom/android/mms/transaction/MessagingNotification;->blockingUpdateAllNotifications(Landroid/content/Context;)V
 
-    .line 442
+    .line 392
     return-void
 
     .restart local v6       #c:Landroid/database/Cursor;
@@ -240,10 +240,10 @@
     :cond_4
     move v7, v9
 
-    .line 419
+    .line 373
     goto :goto_1
 
-    .line 421
+    .line 375
     :catchall_0
     move-exception v0
 
@@ -252,7 +252,7 @@
 
     throw v0
 
-    .line 434
+    .line 388
     .end local v6           #c:Landroid/database/Cursor;
     .end local v7           #needUpdate:Z
     :catchall_1
@@ -264,7 +264,7 @@
 
     throw v0
 
-    .line 402
+    .line 356
     :catch_0
     move-exception v0
 

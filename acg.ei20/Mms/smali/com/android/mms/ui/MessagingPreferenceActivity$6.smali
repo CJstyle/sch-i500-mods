@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 474
+    .line 452
     iput-object p1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,14 +49,14 @@
 
     const-string v1, "+"
 
-    .line 476
+    .line 454
     move-object v0, p2
 
     check-cast v0, Ljava/lang/String;
 
     move-object v10, v0
 
-    .line 478
+    .line 456
     .local v10, smsc_addr:Ljava/lang/String;
     const-string v1, "Mms/MessagingPreferenceActivity"
 
@@ -80,7 +80,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 481
+    .line 459
     :try_start_0
     const-string v1, "+"
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 482
+    .line 460
     const/4 v1, 0x1
 
     invoke-virtual {v10, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -99,7 +99,7 @@
 
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    .line 486
+    .line 464
     :goto_0
     const-string v1, "-"
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 487
+    .line 465
     iget-object v1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     const v2, 0x7f090156
@@ -122,14 +122,14 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 511
+    .line 489
     :cond_0
     :goto_1
     const/4 v1, 0x0
 
     return v1
 
-    .line 484
+    .line 462
     :cond_1
     invoke-static {v10}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
     :try_end_0
@@ -137,13 +137,13 @@
 
     goto :goto_0
 
-    .line 507
+    .line 485
     :catch_0
     move-exception v1
 
     move-object v8, v1
 
-    .line 509
+    .line 487
     .local v8, e:Ljava/lang/NumberFormatException;
     iget-object v1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
@@ -155,7 +155,7 @@
 
     goto :goto_1
 
-    .line 488
+    .line 466
     .end local v8           #e:Ljava/lang/NumberFormatException;
     :cond_2
     :try_start_1
@@ -175,7 +175,7 @@
 
     if-nez v1, :cond_3
 
-    .line 489
+    .line 467
     iget-object v1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     const v2, 0x7f090156
@@ -190,19 +190,19 @@
 
     goto :goto_1
 
-    .line 491
+    .line 469
     :cond_3
     new-instance v4, Landroid/content/ContentValues;
 
     invoke-direct {v4}, Landroid/content/ContentValues;-><init>()V
 
-    .line 492
+    .line 470
     .local v4, values:Landroid/content/ContentValues;
     const-string v1, "smsc"
 
     invoke-virtual {v4, v1, v10}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 493
+    .line 471
     iget-object v1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     iget-object v2, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
@@ -223,11 +223,11 @@
 
     move-result v7
 
-    .line 495
+    .line 473
     .local v7, bResult:I
     if-ne v7, v11, :cond_4
 
-    .line 496
+    .line 474
     iget-object v1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     invoke-virtual {v1}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceManager()Landroid/preference/PreferenceManager;
@@ -242,19 +242,19 @@
 
     check-cast v9, Landroid/preference/EditTextPreference;
 
-    .line 497
+    .line 475
     .local v9, smscPrefs:Landroid/preference/EditTextPreference;
     if-eqz v9, :cond_0
 
-    .line 498
+    .line 476
     invoke-virtual {v9, v10}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 499
+    .line 477
     invoke-virtual {v9, v10}, Landroid/preference/EditTextPreference;->setText(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 503
+    .line 481
     .end local v9           #smscPrefs:Landroid/preference/EditTextPreference;
     :cond_4
     iget-object v1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;

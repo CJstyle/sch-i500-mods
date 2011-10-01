@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 355
+    .line 309
     iput-object p1, p0, Lcom/android/mms/data/Conversation$1;->this$0:Lcom/android/mms/data/Conversation;
 
     iput-object p2, p0, Lcom/android/mms/data/Conversation$1;->val$threadUri:Landroid/net/Uri;
@@ -57,15 +57,15 @@
 
     const-string v3, "(seen=0)"
 
-    .line 357
+    .line 311
     iget-object v0, p0, Lcom/android/mms/data/Conversation$1;->val$threadUri:Landroid/net/Uri;
 
     if-eqz v0, :cond_1
 
-    .line 358
+    .line 312
     const/4 v7, 0x1
 
-    .line 360
+    .line 314
     .local v7, needUpdate:Z
     iget-object v0, p0, Lcom/android/mms/data/Conversation$1;->this$0:Lcom/android/mms/data/Conversation;
 
@@ -91,11 +91,11 @@
 
     move-result-object v6
 
-    .line 362
+    .line 316
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_0
 
-    .line 364
+    .line 318
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
     :try_end_0
@@ -109,15 +109,15 @@
 
     move v7, v0
 
-    .line 366
+    .line 320
     :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 370
+    .line 324
     :cond_0
     if-eqz v7, :cond_1
 
-    .line 371
+    .line 325
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -142,12 +142,12 @@
 
     invoke-static {v0, v1}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 373
+    .line 327
     iget-object v0, p0, Lcom/android/mms/data/Conversation$1;->this$0:Lcom/android/mms/data/Conversation;
 
     invoke-static {v0}, Lcom/android/mms/data/Conversation;->access$200(Lcom/android/mms/data/Conversation;)V
 
-    .line 374
+    .line 328
     iget-object v0, p0, Lcom/android/mms/data/Conversation$1;->this$0:Lcom/android/mms/data/Conversation;
 
     invoke-static {v0}, Lcom/android/mms/data/Conversation;->access$100(Lcom/android/mms/data/Conversation;)Landroid/content/Context;
@@ -168,7 +168,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 378
+    .line 332
     .end local v6           #c:Landroid/database/Cursor;
     .end local v7           #needUpdate:Z
     :cond_1
@@ -176,7 +176,7 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 379
+    .line 333
     return-void
 
     .restart local v6       #c:Landroid/database/Cursor;
@@ -184,10 +184,10 @@
     :cond_2
     move v7, v8
 
-    .line 364
+    .line 318
     goto :goto_0
 
-    .line 366
+    .line 320
     :catchall_0
     move-exception v0
 

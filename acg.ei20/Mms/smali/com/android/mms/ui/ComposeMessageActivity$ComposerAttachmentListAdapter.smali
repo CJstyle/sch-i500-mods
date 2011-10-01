@@ -51,24 +51,24 @@
     .end annotation
 
     .prologue
-    .line 5539
+    .line 5479
     .local p4, attachments:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/mms/model/AttachmentModel;>;"
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    .line 5540
+    .line 5480
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
-    .line 5541
+    .line 5481
     iput p3, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;->mResource:I
 
-    .line 5542
+    .line 5482
     invoke-static {p2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 5543
+    .line 5483
     return-void
 .end method
 
@@ -83,10 +83,10 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 5549
+    .line 5489
     if-nez p2, :cond_0
 
-    .line 5550
+    .line 5490
     iget-object v6, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     iget v7, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;->mResource:I
@@ -97,9 +97,9 @@
 
     move-result-object p2
 
-    .line 5553
+    .line 5493
     :cond_0
-    const v6, 0x7f080055
+    const v6, 0x7f080030
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -107,9 +107,9 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 5554
+    .line 5494
     .local v1, attachmentName:Landroid/widget/TextView;
-    const v6, 0x7f080056
+    const v6, 0x7f080031
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 5555
+    .line 5495
     .local v3, removeImage:Landroid/widget/ImageView;
     invoke-virtual {p0, p1}, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -125,40 +125,40 @@
 
     check-cast v0, Lcom/android/mms/model/AttachmentModel;
 
-    .line 5556
+    .line 5496
     .local v0, attachment:Lcom/android/mms/model/AttachmentModel;
     move v4, p1
 
-    .line 5558
+    .line 5498
     .local v4, selectPosition:I
     invoke-virtual {v0}, Lcom/android/mms/model/AttachmentModel;->getSrc()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 5579
+    .line 5519
     .local v2, fileName:Ljava/lang/String;
-    const v5, 0x7f020085
+    const v5, 0x7f020081
 
-    .line 5582
+    .line 5522
     .local v5, typeImage:I
     invoke-virtual {v1, v5, v9, v9, v9}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    .line 5583
+    .line 5523
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5584
+    .line 5524
     invoke-virtual {v1, v9}, Landroid/widget/TextView;->setFocusable(Z)V
 
-    .line 5585
+    .line 5525
     invoke-virtual {v1, v9}, Landroid/widget/TextView;->setFocusableInTouchMode(Z)V
 
-    .line 5587
+    .line 5527
     new-instance v6, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter$1;
 
     invoke-direct {v6, p0, v0, v4}, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter$1;-><init>(Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;Lcom/android/mms/model/AttachmentModel;I)V
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 5593
+    .line 5533
     return-object p2
 .end method

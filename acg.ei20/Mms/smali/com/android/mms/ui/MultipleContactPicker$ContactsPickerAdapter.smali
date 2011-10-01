@@ -81,7 +81,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f02008a
+    const v1, 0x7f020086
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -132,7 +132,7 @@
     :goto_0
     iget-object v6, p0, Lcom/android/mms/ui/MultipleContactPicker$ContactsPickerAdapter;->this$0:Lcom/android/mms/ui/MultipleContactPicker;
 
-    const v7, 0x7f080066
+    const v7, 0x7f080041
 
     invoke-virtual {v6, v7}, Lcom/android/mms/ui/MultipleContactPicker;->findViewById(I)Landroid/view/View;
 
@@ -149,7 +149,7 @@
     .line 324
     iget-object v6, p0, Lcom/android/mms/ui/MultipleContactPicker$ContactsPickerAdapter;->this$0:Lcom/android/mms/ui/MultipleContactPicker;
 
-    const v7, 0x7f08006a
+    const v7, 0x7f080045
 
     invoke-virtual {v6, v7}, Lcom/android/mms/ui/MultipleContactPicker;->findViewById(I)Landroid/view/View;
 

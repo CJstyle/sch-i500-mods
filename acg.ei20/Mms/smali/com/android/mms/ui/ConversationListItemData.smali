@@ -7,8 +7,6 @@
 
 
 # instance fields
-.field public mCMASType:Ljava/lang/String;
-
 .field private mConversation:Lcom/android/mms/data/Conversation;
 
 .field private mDate:Ljava/lang/String;
@@ -18,8 +16,6 @@
 .field private mHasDraft:Z
 
 .field private mHasError:Z
-
-.field public mIsCmas:Z
 
 .field private mIsRead:Z
 
@@ -47,38 +43,30 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 70
+    .line 65
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 63
-    iput-boolean v2, p0, Lcom/android/mms/ui/ConversationListItemData;->mIsCmas:Z
-
-    .line 64
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mCMASType:Ljava/lang/String;
-
-    .line 72
+    .line 67
     iput-object p2, p0, Lcom/android/mms/ui/ConversationListItemData;->mConversation:Lcom/android/mms/data/Conversation;
 
-    .line 73
+    .line 68
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->getThreadId()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mThreadId:J
 
-    .line 74
+    .line 69
     iput v2, p0, Lcom/android/mms/ui/ConversationListItemData;->mPresenceResId:I
 
-    .line 75
+    .line 70
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->getSnippet()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mSubject:Ljava/lang/String;
 
-    .line 76
+    .line 71
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->getDate()J
 
     move-result-wide v0
@@ -89,7 +77,7 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mDate:Ljava/lang/String;
 
-    .line 77
+    .line 72
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->hasUnreadMessages()Z
 
     move-result v0
@@ -101,51 +89,51 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mIsRead:Z
 
-    .line 78
+    .line 73
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->hasError()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mHasError:Z
 
-    .line 79
+    .line 74
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->hasDraft()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mHasDraft:Z
 
-    .line 80
+    .line 75
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->getMessageCount()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mMessageCount:I
 
-    .line 82
+    .line 77
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->getUnreadMessageCount()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mUnreadMessageCount:I
 
-    .line 83
+    .line 78
     invoke-virtual {p2}, Lcom/android/mms/data/Conversation;->hasAttachment()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mHasAttachment:Z
 
-    .line 84
+    .line 79
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationListItemData;->updateRecipients()V
 
-    .line 85
+    .line 80
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 77
+    .line 72
     goto :goto_0
 .end method
 
@@ -155,7 +143,7 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 109
     iget-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mRecipients:Lcom/android/mms/data/ContactList;
 
     return-object v0
@@ -165,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 98
     iget-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mDate:Ljava/lang/String;
 
     return-object v0
@@ -175,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 105
     iget-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mRecipientString:Ljava/lang/String;
 
     return-object v0
@@ -185,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 160
+    .line 155
     iget v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mMessageCount:I
 
     return v0
@@ -195,7 +183,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 120
     iget-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mSubject:Ljava/lang/String;
 
     return-object v0
@@ -205,7 +193,7 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 159
     iget v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mUnreadMessageCount:I
 
     return v0
@@ -215,7 +203,7 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 127
     iget-boolean v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mHasAttachment:Z
 
     return v0
@@ -225,7 +213,7 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 148
     iget-boolean v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mHasDraft:Z
 
     return v0
@@ -235,7 +223,7 @@
     .locals 1
 
     .prologue
-    .line 146
+    .line 141
     iget-boolean v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mHasError:Z
 
     return v0
@@ -245,7 +233,7 @@
     .locals 1
 
     .prologue
-    .line 139
+    .line 134
     iget-boolean v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mIsRead:Z
 
     return v0
@@ -256,10 +244,10 @@
     .parameter "v"
 
     .prologue
-    .line 204
+    .line 173
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationListItemData;->updateRecipients()V
 
-    .line 205
+    .line 174
     return-void
 .end method
 
@@ -267,7 +255,7 @@
     .locals 2
 
     .prologue
-    .line 172
+    .line 167
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -317,7 +305,7 @@
     .locals 2
 
     .prologue
-    .line 88
+    .line 83
     iget-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mConversation:Lcom/android/mms/data/Conversation;
 
     invoke-virtual {v0}, Lcom/android/mms/data/Conversation;->getRecipients()Lcom/android/mms/data/ContactList;
@@ -326,7 +314,7 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mRecipients:Lcom/android/mms/data/ContactList;
 
-    .line 89
+    .line 84
     iget-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mRecipients:Lcom/android/mms/data/ContactList;
 
     const-string v1, ", "
@@ -337,6 +325,6 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/ConversationListItemData;->mRecipientString:Ljava/lang/String;
 
-    .line 90
+    .line 85
     return-void
 .end method

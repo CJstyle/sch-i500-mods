@@ -31,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 94
+    .line 92
     const-string v0, "content://sms/smsc"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -47,29 +47,29 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 66
     invoke-direct {p0}, Landroid/preference/PreferenceActivity;-><init>()V
 
-    .line 115
+    .line 113
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mPikcerDialog:Lcom/android/mms/ui/NumberPickerDialog;
 
-    .line 436
+    .line 414
     new-instance v0, Lcom/android/mms/ui/MessagingPreferenceActivity$3;
 
     invoke-direct {v0, p0}, Lcom/android/mms/ui/MessagingPreferenceActivity$3;-><init>(Lcom/android/mms/ui/MessagingPreferenceActivity;)V
 
     iput-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mSmsLimitListener:Lcom/android/mms/ui/NumberPickerDialog$OnNumberSetListener;
 
-    .line 443
+    .line 421
     new-instance v0, Lcom/android/mms/ui/MessagingPreferenceActivity$4;
 
     invoke-direct {v0, p0}, Lcom/android/mms/ui/MessagingPreferenceActivity$4;-><init>(Lcom/android/mms/ui/MessagingPreferenceActivity;)V
 
     iput-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mMmsLimitListener:Lcom/android/mms/ui/NumberPickerDialog$OnNumberSetListener;
 
-    .line 474
+    .line 452
     new-instance v0, Lcom/android/mms/ui/MessagingPreferenceActivity$6;
 
     invoke-direct {v0, p0}, Lcom/android/mms/ui/MessagingPreferenceActivity$6;-><init>(Lcom/android/mms/ui/MessagingPreferenceActivity;)V
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 68
+    .line 66
     invoke-direct {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->restoreDefaultPreferences()V
 
     return-void
@@ -95,7 +95,7 @@
     .parameter "x0"
 
     .prologue
-    .line 68
+    .line 66
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mSmsRecycler:Lcom/android/mms/util/Recycler;
 
     return-object v0
@@ -106,7 +106,7 @@
     .parameter "x0"
 
     .prologue
-    .line 68
+    .line 66
     invoke-direct {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->setSmsDisplayLimit()V
 
     return-void
@@ -117,7 +117,7 @@
     .parameter "x0"
 
     .prologue
-    .line 68
+    .line 66
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mMmsRecycler:Lcom/android/mms/util/Recycler;
 
     return-object v0
@@ -128,7 +128,7 @@
     .parameter "x0"
 
     .prologue
-    .line 68
+    .line 66
     invoke-direct {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->setMmsDisplayLimit()V
 
     return-void
@@ -138,7 +138,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 66
     sget-object v0, Lcom/android/mms/ui/MessagingPreferenceActivity;->SMSC_URI:Landroid/net/Uri;
 
     return-object v0
@@ -149,48 +149,48 @@
     .parameter "listener"
 
     .prologue
-    .line 306
+    .line 297
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 307
+    .line 298
     .local v0, builder:Landroid/app/AlertDialog$Builder;
     const v1, 0x7f090088
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 308
+    .line 299
     const v1, 0x1080027
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
-    .line 309
+    .line 300
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 310
+    .line 301
     const v1, 0x7f090147
 
     invoke-virtual {v0, v1, p1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 311
+    .line 302
     const v1, 0x7f090148
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 312
+    .line 303
     const v1, 0x7f090089
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
-    .line 314
+    .line 305
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 315
+    .line 306
     return-void
 .end method
 
@@ -199,7 +199,7 @@
     .parameter "modeName"
 
     .prologue
-    .line 552
+    .line 530
     const-string v0, "restricted"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -208,14 +208,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 553
+    .line 531
     const/4 v0, 0x0
 
-    .line 557
+    .line 535
     :goto_0
     return v0
 
-    .line 554
+    .line 532
     :cond_0
     const-string v0, "warning"
 
@@ -225,12 +225,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 555
+    .line 533
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 556
+    .line 534
     :cond_1
     const-string v0, "free"
 
@@ -240,12 +240,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 557
+    .line 535
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 559
+    .line 537
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -265,12 +265,12 @@
 
     const-string v5, "Automatic"
 
-    .line 531
+    .line 509
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 532
+    .line 510
     .local v0, pref:Landroid/content/SharedPreferences;
     const-string v2, "pref_key_sms_input_mode"
 
@@ -280,7 +280,7 @@
 
     move-result-object v1
 
-    .line 533
+    .line 511
     .local v1, tempStr:Ljava/lang/String;
     const-string v2, "GSM alphabet"
 
@@ -290,14 +290,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 534
+    .line 512
     const/4 v2, 0x0
 
-    .line 540
+    .line 518
     :goto_0
     return v2
 
-    .line 535
+    .line 513
     :cond_0
     const-string v2, "Unicode"
 
@@ -307,12 +307,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 536
+    .line 514
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 537
+    .line 515
     :cond_1
     const-string v2, "Automatic"
 
@@ -324,435 +324,388 @@
 
     move v2, v4
 
-    .line 538
+    .line 516
     goto :goto_0
 
     :cond_2
     move v2, v4
 
-    .line 540
+    .line 518
     goto :goto_0
 .end method
 
 .method private restoreDefaultPreferences()V
-    .locals 15
+    .locals 14
 
     .prologue
-    .line 354
-    new-instance v2, Lcom/android/mms/util/MessagingCscSetting;
+    .line 340
+    new-instance v1, Lcom/android/mms/util/MessagingCscSetting;
 
-    invoke-direct {v2, p0}, Lcom/android/mms/util/MessagingCscSetting;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p0}, Lcom/android/mms/util/MessagingCscSetting;-><init>(Landroid/content/Context;)V
 
-    .line 355
-    .local v2, cscSetting:Lcom/android/mms/util/MessagingCscSetting;
+    .line 341
+    .local v1, cscSetting:Lcom/android/mms/util/MessagingCscSetting;
     invoke-static {}, Lcom/android/mms/util/MessagingCscSetting;->storeCurrentSettings()Z
 
-    .line 356
+    .line 342
     invoke-static {}, Lcom/android/mms/util/MessagingCscSetting;->storeCscSettings()Z
 
-    .line 358
+    .line 344
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-interface {v10}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v9}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-interface {v10}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v9}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-interface {v10}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    invoke-interface {v9}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 359
-    const/4 v10, 0x0
+    .line 345
+    const/4 v9, 0x0
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->setPreferenceScreen(Landroid/preference/PreferenceScreen;)V
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->setPreferenceScreen(Landroid/preference/PreferenceScreen;)V
 
-    .line 361
+    .line 347
     invoke-static {}, Lcom/android/mms/util/MessagingCscSetting;->loadDefaultSettings()Z
 
-    .line 363
-    const v10, 0x7f050004
+    .line 349
+    const v9, 0x7f050003
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->addPreferencesFromResource(I)V
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->addPreferencesFromResource(I)V
 
-    .line 365
-    const-string v10, "pref_key_sms_settings"
+    .line 351
+    const-string v9, "pref_key_sms_settings"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/preference/PreferenceCategory;
-
-    .line 367
-    .local v6, smsCategory:Landroid/preference/PreferenceCategory;
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
-
-    move-result v10
-
-    if-nez v10, :cond_0
-
-    .line 368
-    const-string v10, "pref_key_manage_sim_messages"
-
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v10
-
-    invoke-virtual {v6, v10}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 370
-    :cond_0
-    invoke-static {}, Lcom/android/mms/MmsApp;->getApplication()Lcom/android/mms/MmsApp;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Lcom/android/mms/MmsApp;->getTelephonyManager()Landroid/telephony/TelephonyManager;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
-
-    move-result v10
-
-    if-nez v10, :cond_1
-
-    .line 371
-    const-string v10, "pref_key_manage_smsc_address"
-
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v10
-
-    invoke-virtual {v6, v10}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 379
-    :cond_1
-    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v5
 
-    .line 382
-    .local v5, sharedPrefs:Landroid/content/SharedPreferences;
+    check-cast v5, Landroid/preference/PreferenceCategory;
+
+    .line 353
+    .local v5, smsCategory:Landroid/preference/PreferenceCategory;
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v10}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
 
-    move-result v10
+    move-result v9
 
-    if-eqz v10, :cond_3
+    if-nez v9, :cond_0
 
-    .line 383
-    const-string v10, "pref_key_manage_smsc_address"
+    .line 354
+    const-string v9, "pref_key_manage_sim_messages"
 
-    const-string v11, ""
-
-    invoke-interface {v5, v10, v11}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v9
 
-    .line 384
-    .local v9, summary_smsc:Ljava/lang/String;
-    invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v5, v9}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    move-result v10
-
-    if-eqz v10, :cond_2
-
-    .line 385
-    invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v10
-
-    const v11, 0x7f090155
-
-    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+    .line 356
+    :cond_0
+    invoke-static {}, Lcom/android/mms/MmsApp;->getApplication()Lcom/android/mms/MmsApp;
 
     move-result-object v9
 
-    .end local v9           #summary_smsc:Ljava/lang/String;
-    check-cast v9, Ljava/lang/String;
+    invoke-virtual {v9}, Lcom/android/mms/MmsApp;->getTelephonyManager()Landroid/telephony/TelephonyManager;
 
-    .line 386
-    .restart local v9       #summary_smsc:Ljava/lang/String;
-    :cond_2
-    invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceManager()Landroid/preference/PreferenceManager;
+    move-result-object v9
 
-    move-result-object v10
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
 
-    const-string v11, "pref_key_manage_smsc_address"
+    move-result v9
 
-    invoke-virtual {v10, v11}, Landroid/preference/PreferenceManager;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    if-nez v9, :cond_1
+
+    .line 357
+    const-string v9, "pref_key_manage_smsc_address"
+
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v9
+
+    invoke-virtual {v5, v9}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 365
+    :cond_1
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v4
+
+    .line 368
+    .local v4, sharedPrefs:Landroid/content/SharedPreferences;
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_3
+
+    .line 369
+    const-string v9, "pref_key_manage_smsc_address"
+
+    const-string v10, ""
+
+    invoke-interface {v4, v9, v10}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    check-cast v8, Landroid/preference/EditTextPreference;
+    .line 370
+    .local v8, summary_smsc:Ljava/lang/String;
+    invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 387
-    .local v8, smscPrefs:Landroid/preference/EditTextPreference;
-    if-eqz v8, :cond_3
+    move-result v9
 
-    .line 388
-    invoke-virtual {v8, v9}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
+    if-eqz v9, :cond_2
 
-    .line 389
-    iget-object v10, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mSMSCListener:Landroid/preference/Preference$OnPreferenceChangeListener;
+    .line 371
+    invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getApplicationContext()Landroid/content/Context;
 
-    invoke-virtual {v8, v10}, Landroid/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    move-result-object v9
 
-    .line 395
-    .end local v8           #smscPrefs:Landroid/preference/EditTextPreference;
-    .end local v9           #summary_smsc:Ljava/lang/String;
+    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v9
+
+    const v10, 0x7f090155
+
+    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v8
+
+    .end local v8           #summary_smsc:Ljava/lang/String;
+    check-cast v8, Ljava/lang/String;
+
+    .line 372
+    .restart local v8       #summary_smsc:Ljava/lang/String;
+    :cond_2
+    invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceManager()Landroid/preference/PreferenceManager;
+
+    move-result-object v9
+
+    const-string v10, "pref_key_manage_smsc_address"
+
+    invoke-virtual {v9, v10}, Landroid/preference/PreferenceManager;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/preference/EditTextPreference;
+
+    .line 373
+    .local v7, smscPrefs:Landroid/preference/EditTextPreference;
+    if-eqz v7, :cond_3
+
+    .line 374
+    invoke-virtual {v7, v8}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
+
+    .line 375
+    iget-object v9, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mSMSCListener:Landroid/preference/Preference$OnPreferenceChangeListener;
+
+    invoke-virtual {v7, v9}, Landroid/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+
+    .line 381
+    .end local v7           #smscPrefs:Landroid/preference/EditTextPreference;
+    .end local v8           #summary_smsc:Ljava/lang/String;
     :cond_3
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_4
+
+    .line 382
+    const-string v9, "LanguageCount"
+
+    const/16 v10, 0x9
+
+    invoke-interface {v4, v9, v10}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v2
+
+    .line 383
+    .local v2, langCount:I
+    const/4 v9, 0x1
+
+    if-le v2, v9, :cond_6
+
+    .line 384
+    const-string v9, "pref_key_cb_language"
+
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v9
+
+    const v10, 0x7f0900ab
+
+    const/4 v11, 0x1
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
+
+    invoke-virtual {p0, v10, v11}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
     move-result-object v10
 
-    invoke-virtual {v10}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
+    invoke-virtual {v9, v10}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    move-result v10
-
-    if-eqz v10, :cond_4
-
-    .line 396
-    const-string v10, "LanguageCount"
-
-    const/16 v11, 0x9
-
-    invoke-interface {v5, v10, v11}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    .line 397
-    .local v3, langCount:I
-    const/4 v10, 0x1
-
-    if-le v3, v10, :cond_7
-
-    .line 398
-    const-string v10, "pref_key_cb_language"
-
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v10
-
-    const v11, 0x7f0900ab
-
-    const/4 v12, 0x1
-
-    new-array v12, v12, [Ljava/lang/Object;
-
-    const/4 v13, 0x0
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v14
-
-    aput-object v14, v12, v13
-
-    invoke-virtual {p0, v11, v12}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v10, v11}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
-
-    .line 405
-    .end local v3           #langCount:I
+    .line 391
+    .end local v2           #langCount:I
     :cond_4
     :goto_0
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v10}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
 
-    move-result v10
+    move-result v9
 
-    if-nez v10, :cond_5
+    if-nez v9, :cond_5
 
-    .line 406
-    const-string v10, "pref_key_cb_settings"
+    .line 392
+    const-string v9, "pref_key_cb_settings"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    .line 408
+    .line 394
     .local v0, cbOptions:Landroid/preference/PreferenceCategory;
     invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v10, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v9, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 411
+    .line 397
     .end local v0           #cbOptions:Landroid/preference/PreferenceCategory;
     :cond_5
-    const-string v10, "pref_key_sms_settings"
+    const-string v9, "pref_key_sms_settings"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Landroid/preference/PreferenceCategory;
+    check-cast v6, Landroid/preference/PreferenceCategory;
 
-    .line 412
-    .local v7, smsOptions:Landroid/preference/PreferenceCategory;
-    const-string v10, "pref_key_sms_reply_path"
+    .line 398
+    .local v6, smsOptions:Landroid/preference/PreferenceCategory;
+    const-string v9, "pref_key_sms_reply_path"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v7, v10}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v6, v9}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 413
-    const-string v10, "pref_key_sms_input_mode"
+    .line 399
+    const-string v9, "pref_key_sms_input_mode"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v7, v10}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v6, v9}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 415
-    const-string v10, "pref_key_mms_settings"
+    .line 401
+    const-string v9, "pref_key_mms_settings"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Landroid/preference/PreferenceCategory;
+    check-cast v3, Landroid/preference/PreferenceCategory;
 
-    .line 419
-    .local v4, mmsOptions:Landroid/preference/PreferenceCategory;
-    const-string v10, "pref_key_mms_read_reports"
+    .line 405
+    .local v3, mmsOptions:Landroid/preference/PreferenceCategory;
+    const-string v9, "pref_key_mms_read_reports"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v4, v10}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v3, v9}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 420
-    const-string v10, "pref_key_mms_creation_mode"
+    .line 406
+    const-string v9, "pref_key_mms_creation_mode"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v4, v10}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v3, v9}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 424
-    const-string v10, "pref_key_cmas_settings"
-
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/preference/PreferenceCategory;
-
-    .line 425
-    .local v1, cmas_recv:Landroid/preference/PreferenceCategory;
-    const-string v10, "Mms/MessagingPreferenceActivity"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "restoreDefaultPreferences() : cmas_recv = "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 427
-    if-eqz v1, :cond_6
-
-    .line 428
-    const-string v10, "pref_key_cmas_alerts"
-
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v10
-
-    invoke-virtual {v1, v10}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 431
-    :cond_6
+    .line 409
     invoke-direct {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->setSmsDisplayLimit()V
 
-    .line 432
+    .line 410
     invoke-direct {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->setMmsDisplayLimit()V
 
-    .line 434
+    .line 412
     return-void
 
-    .line 400
-    .end local v1           #cmas_recv:Landroid/preference/PreferenceCategory;
-    .end local v4           #mmsOptions:Landroid/preference/PreferenceCategory;
-    .end local v7           #smsOptions:Landroid/preference/PreferenceCategory;
-    .restart local v3       #langCount:I
-    :cond_7
-    const-string v10, "pref_key_cb_language"
+    .line 386
+    .end local v3           #mmsOptions:Landroid/preference/PreferenceCategory;
+    .end local v6           #smsOptions:Landroid/preference/PreferenceCategory;
+    .restart local v2       #langCount:I
+    :cond_6
+    const-string v9, "pref_key_cb_language"
 
-    invoke-virtual {p0, v10}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v9}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v9
+
+    const v10, 0x7f0900ac
+
+    const/4 v11, 0x1
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
+
+    invoke-virtual {p0, v10, v11}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v10
 
-    const v11, 0x7f0900ac
+    invoke-virtual {v9, v10}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    const/4 v12, 0x1
-
-    new-array v12, v12, [Ljava/lang/Object;
-
-    const/4 v13, 0x0
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v14
-
-    aput-object v14, v12, v13
-
-    invoke-virtual {p0, v11, v12}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v10, v11}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
-
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method private setMmsDisplayLimit()V
     .locals 5
 
     .prologue
-    .line 278
+    .line 269
     const-string v0, "pref_key_mms_delete_limit"
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -785,7 +738,7 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 281
+    .line 272
     return-void
 .end method
 
@@ -793,7 +746,7 @@
     .locals 5
 
     .prologue
-    .line 257
+    .line 248
     const-string v0, "pref_key_sms_delete_limit"
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -826,7 +779,7 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 260
+    .line 251
     return-void
 .end method
 
@@ -837,10 +790,10 @@
     .parameter "newConfig"
 
     .prologue
-    .line 265
+    .line 256
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 267
+    .line 258
     iget v0, p1, Landroid/content/res/Configuration;->orientation:I
 
     const/4 v1, 0x2
@@ -853,7 +806,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 269
+    .line 260
     :cond_0
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mPikcerDialog:Lcom/android/mms/ui/NumberPickerDialog;
 
@@ -867,7 +820,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 270
+    .line 261
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mPikcerDialog:Lcom/android/mms/ui/NumberPickerDialog;
 
     invoke-virtual {v0}, Lcom/android/mms/ui/NumberPickerDialog;->getCurrentFocus()Landroid/view/View;
@@ -876,7 +829,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->clearFocus()V
 
-    .line 271
+    .line 262
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mPikcerDialog:Lcom/android/mms/ui/NumberPickerDialog;
@@ -897,229 +850,123 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 275
+    .line 266
     :cond_1
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 9
+    .locals 8
     .parameter "icicle"
 
     .prologue
-    const-string v8, "pref_key_sms_settings"
+    const-string v7, "pref_key_sms_settings"
 
-    const-string v7, "pref_key_mms_settings"
+    const-string v6, "pref_key_mms_settings"
 
-    .line 119
+    .line 117
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 120
-    const v6, 0x7f050004
+    .line 118
+    const v5, 0x7f050003
 
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->addPreferencesFromResource(I)V
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->addPreferencesFromResource(I)V
+
+    .line 120
+    const-string v5, "pref_key_sms_settings"
+
+    invoke-virtual {p0, v7}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/preference/PreferenceCategory;
 
     .line 122
-    const-string v6, "pref_key_sms_settings"
-
-    invoke-virtual {p0, v8}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/preference/PreferenceCategory;
-
-    .line 124
-    .local v3, smsCategory:Landroid/preference/PreferenceCategory;
+    .local v2, smsCategory:Landroid/preference/PreferenceCategory;
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
+    invoke-virtual {v5}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_0
+    if-nez v5, :cond_0
+
+    .line 123
+    const-string v5, "pref_key_manage_sim_messages"
+
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v5}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
     .line 125
-    const-string v6, "pref_key_manage_sim_messages"
-
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v6
-
-    invoke-virtual {v3, v6}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 127
     :cond_0
     invoke-static {}, Lcom/android/mms/MmsApp;->getApplication()Lcom/android/mms/MmsApp;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Lcom/android/mms/MmsApp;->getTelephonyManager()Landroid/telephony/TelephonyManager;
+    invoke-virtual {v5}, Lcom/android/mms/MmsApp;->getTelephonyManager()Landroid/telephony/TelephonyManager;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
+    invoke-virtual {v5}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_1
+    if-nez v5, :cond_1
 
-    .line 128
-    const-string v6, "pref_key_manage_smsc_address"
+    .line 126
+    const-string v5, "pref_key_manage_smsc_address"
 
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v3, v6}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v2, v5}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 136
+    .line 134
     :cond_1
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
+    invoke-virtual {v5}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_2
+    if-nez v5, :cond_2
 
-    .line 137
-    const-string v6, "pref_key_cb_settings"
+    .line 135
+    const-string v5, "pref_key_cb_settings"
 
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    .line 139
+    .line 137
     .local v0, cbOptions:Landroid/preference/PreferenceCategory;
     invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v5, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 142
+    .line 140
     .end local v0           #cbOptions:Landroid/preference/PreferenceCategory;
     :cond_2
     invoke-static {}, Lcom/android/mms/MmsConfig;->getMmsEnabled()Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_3
+    if-nez v5, :cond_3
 
-    .line 144
-    const-string v6, "pref_key_mms_settings"
-
-    invoke-virtual {p0, v7}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/preference/PreferenceCategory;
-
-    .line 146
-    .local v2, mmsOptions:Landroid/preference/PreferenceCategory;
-    invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v2}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 148
-    const-string v6, "pref_key_storage_settings"
-
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/preference/PreferenceCategory;
-
-    .line 150
-    .local v5, storageOptions:Landroid/preference/PreferenceCategory;
-    const-string v6, "pref_key_mms_delete_limit"
-
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 153
-    .end local v2           #mmsOptions:Landroid/preference/PreferenceCategory;
-    .end local v5           #storageOptions:Landroid/preference/PreferenceCategory;
-    :cond_3
-    const-string v6, "input_method"
-
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/view/inputmethod/InputMethodManager;
-
-    iput-object v6, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mImm:Landroid/view/inputmethod/InputMethodManager;
-
-    .line 165
-    const-string v6, "pref_key_sms_settings"
-
-    invoke-virtual {p0, v8}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/preference/PreferenceCategory;
-
-    .line 167
-    .local v4, smsOptions:Landroid/preference/PreferenceCategory;
-    const-string v6, "pref_key_sms_reply_path"
-
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 168
-    const-string v6, "pref_key_sms_input_mode"
-
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 170
-    const-string v6, "pref_key_mms_settings"
-
-    invoke-virtual {p0, v7}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/preference/PreferenceCategory;
-
-    .line 174
-    .restart local v2       #mmsOptions:Landroid/preference/PreferenceCategory;
-    const-string v6, "pref_key_mms_read_reports"
-
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v6
-
-    invoke-virtual {v2, v6}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 175
-    const-string v6, "pref_key_mms_creation_mode"
-
-    invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v6
-
-    invoke-virtual {v2, v6}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 179
-    const-string v6, "pref_key_cmas_settings"
+    .line 142
+    const-string v5, "pref_key_mms_settings"
 
     invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
@@ -1127,41 +974,124 @@
 
     check-cast v1, Landroid/preference/PreferenceCategory;
 
-    .line 181
-    .local v1, cmas_recv:Landroid/preference/PreferenceCategory;
-    if-eqz v1, :cond_4
+    .line 144
+    .local v1, mmsOptions:Landroid/preference/PreferenceCategory;
+    invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
-    .line 182
-    const-string v6, "pref_key_cmas_alerts"
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 146
+    const-string v5, "pref_key_storage_settings"
+
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/preference/PreferenceCategory;
+
+    .line 148
+    .local v4, storageOptions:Landroid/preference/PreferenceCategory;
+    const-string v5, "pref_key_mms_delete_limit"
+
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 151
+    .end local v1           #mmsOptions:Landroid/preference/PreferenceCategory;
+    .end local v4           #storageOptions:Landroid/preference/PreferenceCategory;
+    :cond_3
+    const-string v5, "input_method"
+
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/view/inputmethod/InputMethodManager;
+
+    iput-object v5, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mImm:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 163
+    const-string v5, "pref_key_sms_settings"
+
+    invoke-virtual {p0, v7}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/preference/PreferenceCategory;
+
+    .line 165
+    .local v3, smsOptions:Landroid/preference/PreferenceCategory;
+    const-string v5, "pref_key_sms_reply_path"
+
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 166
+    const-string v5, "pref_key_sms_input_mode"
+
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 168
+    const-string v5, "pref_key_mms_settings"
 
     invoke-virtual {p0, v6}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v1, v6}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+    check-cast v1, Landroid/preference/PreferenceCategory;
 
-    .line 185
-    :cond_4
+    .line 172
+    .restart local v1       #mmsOptions:Landroid/preference/PreferenceCategory;
+    const-string v5, "pref_key_mms_read_reports"
+
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 173
+    const-string v5, "pref_key_mms_creation_mode"
+
+    invoke-virtual {p0, v5}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 176
     invoke-static {}, Lcom/android/mms/util/Recycler;->getSmsRecycler()Lcom/android/mms/util/Recycler$SmsRecycler;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mSmsRecycler:Lcom/android/mms/util/Recycler;
+    iput-object v5, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mSmsRecycler:Lcom/android/mms/util/Recycler;
 
-    .line 186
+    .line 177
     invoke-static {}, Lcom/android/mms/util/Recycler;->getMmsRecycler()Lcom/android/mms/util/Recycler$MmsRecycler;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mMmsRecycler:Lcom/android/mms/util/Recycler;
+    iput-object v5, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mMmsRecycler:Lcom/android/mms/util/Recycler;
 
-    .line 189
+    .line 180
     invoke-direct {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->setSmsDisplayLimit()V
 
-    .line 190
+    .line 181
     invoke-direct {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->setMmsDisplayLimit()V
 
-    .line 191
+    .line 182
     return-void
 .end method
 
@@ -1170,10 +1100,10 @@
     .parameter "id"
 
     .prologue
-    .line 452
+    .line 430
     packed-switch p1, :pswitch_data_0
 
-    .line 470
+    .line 448
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreateDialog(I)Landroid/app/Dialog;
 
     move-result-object v0
@@ -1181,7 +1111,7 @@
     :goto_0
     return-object v0
 
-    .line 454
+    .line 432
     :pswitch_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -1229,7 +1159,7 @@
 
     goto :goto_0
 
-    .line 452
+    .line 430
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_0
@@ -1245,24 +1175,24 @@
 
     const/4 v1, 0x0
 
-    .line 284
+    .line 275
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
 
-    .line 285
+    .line 276
     invoke-interface {p1}, Landroid/view/Menu;->clear()V
 
-    .line 286
+    .line 277
     const v0, 0x7f090088
 
     invoke-interface {p1, v1, v2, v1, v0}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    const v1, 0x7f020057
+    const v1, 0x7f020053
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
-    .line 288
+    .line 279
     return v2
 .end method
 
@@ -1271,20 +1201,20 @@
     .parameter "item"
 
     .prologue
-    .line 293
+    .line 284
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 302
+    .line 293
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 295
+    .line 286
     :pswitch_0
     new-instance v0, Lcom/android/mms/ui/MessagingPreferenceActivity$2;
 
@@ -1292,12 +1222,12 @@
 
     invoke-direct {p0, v0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->confirmRestoreDialog(Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 300
+    .line 291
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 293
+    .line 284
     nop
 
     :pswitch_data_0
@@ -1310,10 +1240,10 @@
     .locals 1
 
     .prologue
-    .line 248
+    .line 239
     invoke-super {p0}, Landroid/preference/PreferenceActivity;->onPause()V
 
-    .line 250
+    .line 241
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -1324,7 +1254,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 251
+    .line 242
     invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v0
@@ -1335,7 +1265,7 @@
 
     invoke-interface {v0, p0}, Landroid/content/SharedPreferences;->unregisterOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
-    .line 253
+    .line 244
     :cond_0
     return-void
 .end method
@@ -1346,7 +1276,7 @@
     .parameter
 
     .prologue
-    .line 320
+    .line 311
     const-string v0, "pref_key_sms_delete_limit"
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1355,7 +1285,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 321
+    .line 312
     new-instance v0, Lcom/android/mms/ui/NumberPickerDialog;
 
     iget-object v2, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mSmsLimitListener:Lcom/android/mms/ui/NumberPickerDialog$OnNumberSetListener;
@@ -1386,12 +1316,12 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mPikcerDialog:Lcom/android/mms/ui/NumberPickerDialog;
 
-    .line 327
+    .line 318
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mPikcerDialog:Lcom/android/mms/ui/NumberPickerDialog;
 
     invoke-virtual {v0}, Lcom/android/mms/ui/NumberPickerDialog;->show()V
 
-    .line 349
+    .line 335
     :cond_0
     :goto_0
     invoke-super {p0, p1, p2}, Landroid/preference/PreferenceActivity;->onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
@@ -1401,7 +1331,7 @@
     :goto_1
     return v0
 
-    .line 328
+    .line 319
     :cond_1
     const-string v0, "pref_key_mms_delete_limit"
 
@@ -1411,7 +1341,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 329
+    .line 320
     new-instance v0, Lcom/android/mms/ui/NumberPickerDialog;
 
     iget-object v2, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mMmsLimitListener:Lcom/android/mms/ui/NumberPickerDialog$OnNumberSetListener;
@@ -1442,14 +1372,14 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mPikcerDialog:Lcom/android/mms/ui/NumberPickerDialog;
 
-    .line 335
+    .line 326
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mPikcerDialog:Lcom/android/mms/ui/NumberPickerDialog;
 
     invoke-virtual {v0}, Lcom/android/mms/ui/NumberPickerDialog;->show()V
 
     goto :goto_0
 
-    .line 336
+    .line 327
     :cond_2
     const-string v0, "pref_key_manage_sim_messages"
 
@@ -1459,7 +1389,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 337
+    .line 328
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/mms/ui/ManageSimMessages;
@@ -1470,7 +1400,7 @@
 
     goto :goto_0
 
-    .line 338
+    .line 329
     :cond_3
     const-string v0, "pref_key_mms_clear_history"
 
@@ -1480,12 +1410,12 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 339
+    .line 330
     const/4 v0, 0x3
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->showDialog(I)V
 
-    .line 340
+    .line 331
     const/4 v0, 0x1
 
     goto :goto_1
@@ -1499,15 +1429,15 @@
 
     const-string v10, "pref_key_manage_smsc_address"
 
-    .line 196
+    .line 187
     invoke-super {p0}, Landroid/preference/PreferenceActivity;->onResume()V
 
-    .line 198
+    .line 189
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v4
 
-    .line 200
+    .line 191
     .local v4, sharedPrefs:Landroid/content/SharedPreferences;
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -1519,7 +1449,7 @@
 
     if-eqz v7, :cond_2
 
-    .line 202
+    .line 193
     invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v7
@@ -1536,7 +1466,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 203
+    .line 194
     .local v3, not_set:Ljava/lang/String;
     const-string v7, "pref_key_manage_smsc_address"
 
@@ -1544,7 +1474,7 @@
 
     move-result-object v6
 
-    .line 205
+    .line 196
     .local v6, summary_smsc:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
@@ -1558,19 +1488,19 @@
 
     check-cast v5, Landroid/preference/EditTextPreference;
 
-    .line 206
+    .line 197
     .local v5, smscPrefs:Landroid/preference/EditTextPreference;
     if-eqz v5, :cond_0
 
-    .line 207
+    .line 198
     invoke-virtual {v5, v6}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 208
+    .line 199
     iget-object v7, p0, Lcom/android/mms/ui/MessagingPreferenceActivity;->mSMSCListener:Landroid/preference/Preference$OnPreferenceChangeListener;
 
     invoke-virtual {v5, v7}, Landroid/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 212
+    .line 203
     :cond_0
     const-string v7, "LanguageCount"
 
@@ -1580,7 +1510,7 @@
 
     move-result v2
 
-    .line 213
+    .line 204
     .local v2, langCount:I
     const-string v7, "pref_key_cb_language"
 
@@ -1588,14 +1518,14 @@
 
     move-result-object v1
 
-    .line 215
+    .line 206
     .local v1, cbPreference:Landroid/preference/Preference;
     if-eqz v1, :cond_1
 
-    .line 216
+    .line 207
     if-eq v2, v9, :cond_3
 
-    .line 217
+    .line 208
     const v7, 0x7f0900ab
 
     new-array v8, v9, [Ljava/lang/Object;
@@ -1614,7 +1544,7 @@
 
     invoke-virtual {v1, v7}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 221
+    .line 212
     :cond_1
     :goto_0
     invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1627,7 +1557,7 @@
 
     invoke-interface {v7, p0}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
-    .line 226
+    .line 217
     .end local v1           #cbPreference:Landroid/preference/Preference;
     .end local v2           #langCount:I
     .end local v3           #not_set:Ljava/lang/String;
@@ -1642,22 +1572,22 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    .line 227
+    .line 218
     .local v0, autoDeletePrefs:Landroid/preference/CheckBoxPreference;
     if-eqz v0, :cond_4
 
-    .line 228
+    .line 219
     new-instance v7, Lcom/android/mms/ui/MessagingPreferenceActivity$1;
 
     invoke-direct {v7, p0}, Lcom/android/mms/ui/MessagingPreferenceActivity$1;-><init>(Lcom/android/mms/ui/MessagingPreferenceActivity;)V
 
     invoke-virtual {v0, v7}, Landroid/preference/CheckBoxPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 242
+    .line 233
     :goto_1
     return-void
 
-    .line 219
+    .line 210
     .end local v0           #autoDeletePrefs:Landroid/preference/CheckBoxPreference;
     .restart local v1       #cbPreference:Landroid/preference/Preference;
     .restart local v2       #langCount:I
@@ -1675,7 +1605,7 @@
 
     goto :goto_0
 
-    .line 239
+    .line 230
     .end local v1           #cbPreference:Landroid/preference/Preference;
     .end local v2           #langCount:I
     .end local v3           #not_set:Ljava/lang/String;
@@ -1698,14 +1628,14 @@
     .parameter "key"
 
     .prologue
-    .line 518
+    .line 496
     const-string v0, "Mms/MessagingPreferenceActivity"
 
     const-string v1, "[SMS] onSharedPreferenceChanged"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 520
+    .line 498
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -1716,7 +1646,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 522
+    .line 500
     const-string v0, "pref_key_cb_settings_activation"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1725,14 +1655,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 523
+    .line 501
     invoke-virtual {p0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-static {v0, p1}, Lcom/android/mms/ui/ChannelUtils;->setCbSettings(Landroid/content/Context;Landroid/content/SharedPreferences;)V
 
-    .line 526
+    .line 504
     :cond_0
     return-void
 .end method

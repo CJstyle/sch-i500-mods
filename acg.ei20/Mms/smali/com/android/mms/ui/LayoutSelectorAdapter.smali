@@ -83,7 +83,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02005f
+    const v2, 0x7f02005b
 
     invoke-static {v0, v1, v2}, Lcom/android/mms/ui/LayoutSelectorAdapter;->addItem(Ljava/util/List;Ljava/lang/String;I)V
 
@@ -94,7 +94,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02005e
+    const v2, 0x7f02005a
 
     invoke-static {v0, v1, v2}, Lcom/android/mms/ui/LayoutSelectorAdapter;->addItem(Ljava/util/List;Ljava/lang/String;I)V
 

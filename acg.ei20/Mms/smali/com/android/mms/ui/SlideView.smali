@@ -754,7 +754,7 @@
 
     .line 353
     .local v2, factory:Landroid/view/LayoutInflater;
-    const v7, 0x7f030027
+    const v7, 0x7f030024
 
     const/4 v8, 0x0
 
@@ -775,7 +775,7 @@
     .local v3, height:I
     iget-object v7, p0, Lcom/android/mms/ui/SlideView;->mAudioInfoView:Landroid/view/View;
 
-    const v8, 0x7f0800a8
+    const v8, 0x7f080083
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1509,7 +1509,7 @@
     .parameter "toptext"
 
     .prologue
-    const v3, 0x7f0800be
+    const v3, 0x7f080099
 
     .line 229
     const/4 v1, 0x2
@@ -1575,7 +1575,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020094
+    const v2, 0x7f020090
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -1598,7 +1598,7 @@
     if-eqz p3, :cond_3
 
     .line 234
-    const v1, 0x7f0800bf
+    const v1, 0x7f08009a
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideView;->findViewById(I)Landroid/view/View;
 
@@ -1850,7 +1850,7 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    const v2, 0x7f0800be
+    const v2, 0x7f080099
 
     const/4 v5, 0x1
 
@@ -1941,7 +1941,7 @@
     if-eqz p3, :cond_3
 
     .line 786
-    const v0, 0x7f0800bf
+    const v0, 0x7f08009a
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideView;->findViewById(I)Landroid/view/View;
 
@@ -2112,7 +2112,7 @@
     if-nez v0, :cond_0
 
     .line 207
-    const v0, 0x7f0800bd
+    const v0, 0x7f080098
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideView;->findViewById(I)Landroid/view/View;
 
@@ -2173,7 +2173,7 @@
 
     .prologue
     .line 893
-    const v5, 0x7f0800bc
+    const v5, 0x7f080097
 
     invoke-virtual {p0, v5}, Lcom/android/mms/ui/SlideView;->findViewById(I)Landroid/view/View;
 
@@ -2184,7 +2184,7 @@
     .line 894
     iget-object v5, p0, Lcom/android/mms/ui/SlideView;->mPageInfoView:Landroid/view/View;
 
-    const v6, 0x7f0800af
+    const v6, 0x7f08008a
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2196,7 +2196,7 @@
     .local v0, pageNumber:Landroid/widget/TextView;
     iget-object v5, p0, Lcom/android/mms/ui/SlideView;->mPageInfoView:Landroid/view/View;
 
-    const v6, 0x7f0800ae
+    const v6, 0x7f080089
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2302,7 +2302,7 @@
     .parameter "toptext"
 
     .prologue
-    const v5, 0x7f0800bf
+    const v5, 0x7f08009a
 
     const/4 v8, 0x0
 
@@ -2519,7 +2519,7 @@
     if-eqz p4, :cond_3
 
     .line 452
-    const v3, 0x7f0800be
+    const v3, 0x7f080099
 
     invoke-virtual {p0, v3}, Lcom/android/mms/ui/SlideView;->findViewById(I)Landroid/view/View;
 
@@ -2816,7 +2816,7 @@
     .parameter "toptext"
 
     .prologue
-    const v2, 0x7f0800be
+    const v2, 0x7f080099
 
     const/4 v4, -0x1
 
@@ -2936,7 +2936,7 @@
     if-eqz p3, :cond_3
 
     .line 326
-    const v0, 0x7f0800bf
+    const v0, 0x7f08009a
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideView;->findViewById(I)Landroid/view/View;
 

@@ -431,7 +431,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020007
+    const v1, 0x7f020006
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -446,7 +446,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200a3
+    const v1, 0x7f02009d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -461,7 +461,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020006
+    const v1, 0x7f020005
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -476,7 +476,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200a2
+    const v1, 0x7f02009c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -487,7 +487,7 @@
     .line 54
     iget-object v0, p0, Lcom/android/mms/ui/SweepHandler;->mConversationList:Lcom/android/mms/ui/ConversationList;
 
-    const v1, 0x7f090233
+    const v1, 0x7f0901e1
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationList;->getText(I)Ljava/lang/CharSequence;
 
@@ -517,7 +517,7 @@
     .line 56
     iget-object v0, p0, Lcom/android/mms/ui/SweepHandler;->mConversationList:Lcom/android/mms/ui/ConversationList;
 
-    const v1, 0x7f090232
+    const v1, 0x7f0901e0
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationList;->getText(I)Ljava/lang/CharSequence;
 

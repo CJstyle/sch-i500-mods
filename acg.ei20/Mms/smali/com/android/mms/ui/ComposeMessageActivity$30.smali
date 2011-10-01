@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 5231
+    .line 5171
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "s"
 
     .prologue
-    .line 5283
+    .line 5223
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2900(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 5287
+    .line 5227
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .parameter "after"
 
     .prologue
-    .line 5233
+    .line 5173
     return-void
 .end method
 
@@ -71,12 +71,12 @@
     .parameter "count"
 
     .prologue
-    .line 5240
+    .line 5180
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->onUserInteraction()V
 
-    .line 5242
+    .line 5182
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -89,12 +89,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/data/WorkingMessage;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5244
+    .line 5184
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3000(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 5248
+    .line 5188
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     sget v8, Lcom/android/mms/ui/ComposeMessageActivity;->mEncodingType:I
@@ -107,37 +107,37 @@
 
     move/from16 v7, p4
 
-    invoke-static/range {v3 .. v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8100(Lcom/android/mms/ui/ComposeMessageActivity;Ljava/lang/CharSequence;IIII)V
+    invoke-static/range {v3 .. v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8000(Lcom/android/mms/ui/ComposeMessageActivity;Ljava/lang/CharSequence;IIII)V
 
-    .line 5256
+    .line 5196
     invoke-interface/range {p1 .. p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v11
 
-    .line 5257
+    .line 5197
     .local v11, length:I
     const/16 v3, 0x3e8
 
     if-le v11, v3, :cond_0
 
-    .line 5258
+    .line 5198
     const/16 v3, 0x3e8
 
     sub-int v3, v11, v3
 
     sub-int v12, p4, v3
 
-    .line 5259
+    .line 5199
     .local v12, newCount:I
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 5260
+    .line 5200
     .local v13, newText:Ljava/lang/StringBuilder;
     if-nez p2, :cond_1
 
-    .line 5261
+    .line 5201
     const/4 v3, 0x0
 
     move-object/from16 v0, p1
@@ -154,7 +154,7 @@
 
     move-result-object v10
 
-    .line 5262
+    .line 5202
     .local v10, inserted:Ljava/lang/String;
     move-object/from16 v0, p1
 
@@ -170,14 +170,14 @@
 
     move-result-object v9
 
-    .line 5263
+    .line 5203
     .local v9, eStr:Ljava/lang/String;
     invoke-virtual {v13, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5264
+    .line 5204
     invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5274
+    .line 5214
     :goto_0
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -191,7 +191,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5275
+    .line 5215
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1700(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -202,12 +202,12 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setSelection(I)V
 
-    .line 5276
+    .line 5216
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$30;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8200(Lcom/android/mms/ui/ComposeMessageActivity;)V
+    invoke-static {v3}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8100(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 5278
+    .line 5218
     .end local v9           #eStr:Ljava/lang/String;
     .end local v10           #inserted:Ljava/lang/String;
     .end local v12           #newCount:I
@@ -215,7 +215,7 @@
     :cond_0
     return-void
 
-    .line 5266
+    .line 5206
     .restart local v12       #newCount:I
     .restart local v13       #newText:Ljava/lang/StringBuilder;
     :cond_1
@@ -235,7 +235,7 @@
 
     move-result-object v14
 
-    .line 5267
+    .line 5207
     .local v14, sStr:Ljava/lang/String;
     add-int v3, p2, v12
 
@@ -253,7 +253,7 @@
 
     move-result-object v10
 
-    .line 5268
+    .line 5208
     .restart local v10       #inserted:Ljava/lang/String;
     add-int v3, p2, p4
 
@@ -271,14 +271,14 @@
 
     move-result-object v9
 
-    .line 5269
+    .line 5209
     .restart local v9       #eStr:Ljava/lang/String;
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5270
+    .line 5210
     invoke-virtual {v13, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5271
+    .line 5211
     invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0

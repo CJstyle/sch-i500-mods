@@ -673,7 +673,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f050003
+    const v1, 0x7f050002
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
@@ -694,6 +694,7 @@
     invoke-static {v1, v0}, Lcom/android/mms/MmsConfig;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
     .line 331
+    :cond_0
     :goto_0
     invoke-static {v1}, Lcom/android/mms/MmsConfig;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
@@ -709,7 +710,7 @@
 
     .line 333
     .local v3, tag:Ljava/lang/String;
-    if-nez v3, :cond_1
+    if-nez v3, :cond_2
 
     .line 438
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
@@ -726,17 +727,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     sget-object v0, Lcom/android/mms/MmsConfig;->mUaProfUrl:Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     .line 444
     const-string p0, "uaProfUrl"
 
     .line 447
-    :cond_0
+    :cond_1
     if-eqz p0, :cond_1e
 
     .line 448
@@ -772,7 +773,7 @@
     .restart local v1       #parser:Landroid/content/res/XmlResourceParser;
     .restart local v3       #tag:Ljava/lang/String;
     .local p0, context:Landroid/content/Context;
-    :cond_1
+    :cond_2
     const/4 v0, 0x0
 
     :try_start_1
@@ -800,7 +801,7 @@
 
     const/4 v6, 0x4
 
-    if-ne v4, v6, :cond_20
+    if-ne v4, v6, :cond_1f
 
     .line 340
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->getText()Ljava/lang/String;
@@ -820,7 +821,7 @@
     move-result v0
 
     .end local v0           #name:Ljava/lang/String;
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 348
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
@@ -835,7 +836,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     .line 351
     const-string v0, "enabledMMS"
@@ -844,7 +845,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     .line 352
     const-string v0, "true"
@@ -853,35 +854,65 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     const/4 v0, 0x1
 
     :goto_3
     sput v0, Lcom/android/mms/MmsConfig;->mMmsEnabled:I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .local v0, text:Ljava/lang/String;
     goto :goto_0
 
-    .end local v0           #text:Ljava/lang/String;
+    .line 431
+    .end local v2           #sharedPrefs:Landroid/content/SharedPreferences;
+    .end local v3           #tag:Ljava/lang/String;
+    .end local v4           #text:Ljava/lang/String;
+    .end local v5           #value:Ljava/lang/String;
+    :catch_0
+    move-exception p0
+
+    .line 432
+    .local p0, e:Lorg/xmlpull/v1/XmlPullParserException;
+    :try_start_2
+    const-string v0, "Mms/MmsConfig"
+
+    const-string v2, "loadMmsSettings caught "
+
+    invoke-static {v0, v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 438
+    invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
+
+    goto :goto_1
+
+    .line 352
+    .restart local v2       #sharedPrefs:Landroid/content/SharedPreferences;
+    .restart local v3       #tag:Ljava/lang/String;
     .restart local v4       #text:Ljava/lang/String;
-    :cond_2
+    .restart local v5       #value:Ljava/lang/String;
+    .local p0, context:Landroid/content/Context;
+    :cond_3
     const/4 v0, 0x0
 
     goto :goto_3
 
     .line 353
-    :cond_3
+    :cond_4
+    :try_start_3
     const-string v0, "enabledTransID"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     .line 354
     const-string v0, "true"
@@ -891,24 +922,53 @@
     move-result v0
 
     sput-boolean v0, Lcom/android/mms/MmsConfig;->mTransIdEnabled:Z
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
+    .line 433
+    .end local v2           #sharedPrefs:Landroid/content/SharedPreferences;
+    .end local v3           #tag:Ljava/lang/String;
+    .end local v4           #text:Ljava/lang/String;
+    .end local v5           #value:Ljava/lang/String;
+    :catch_1
+    move-exception p0
+
+    .line 434
+    .local p0, e:Ljava/lang/NumberFormatException;
+    :try_start_4
+    const-string v0, "Mms/MmsConfig"
+
+    const-string v2, "loadMmsSettings caught "
+
+    invoke-static {v0, v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    .line 438
+    invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
+
+    goto/16 :goto_1
+
     .line 355
-    .end local v0           #text:Ljava/lang/String;
+    .restart local v2       #sharedPrefs:Landroid/content/SharedPreferences;
+    .restart local v3       #tag:Ljava/lang/String;
     .restart local v4       #text:Ljava/lang/String;
-    :cond_4
+    .restart local v5       #value:Ljava/lang/String;
+    .local p0, context:Landroid/content/Context;
+    :cond_5
+    :try_start_5
     const-string v0, "enabledNotifyWapMMSC"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     .line 356
     const-string v0, "true"
@@ -918,24 +978,53 @@
     move-result v0
 
     sput-boolean v0, Lcom/android/mms/MmsConfig;->mNotifyWapMMSC:Z
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_5 .. :try_end_5} :catch_1
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
+    .line 435
+    .end local v2           #sharedPrefs:Landroid/content/SharedPreferences;
+    .end local v3           #tag:Ljava/lang/String;
+    .end local v4           #text:Ljava/lang/String;
+    .end local v5           #value:Ljava/lang/String;
+    :catch_2
+    move-exception p0
+
+    .line 436
+    .local p0, e:Ljava/io/IOException;
+    :try_start_6
+    const-string v0, "Mms/MmsConfig"
+
+    const-string v2, "loadMmsSettings caught "
+
+    invoke-static {v0, v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+
+    .line 438
+    invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
+
+    goto/16 :goto_1
+
     .line 357
-    .end local v0           #text:Ljava/lang/String;
+    .restart local v2       #sharedPrefs:Landroid/content/SharedPreferences;
+    .restart local v3       #tag:Ljava/lang/String;
     .restart local v4       #text:Ljava/lang/String;
-    :cond_5
+    .restart local v5       #value:Ljava/lang/String;
+    .local p0, context:Landroid/content/Context;
+    :cond_6
+    :try_start_7
     const-string v0, "aliasEnabled"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     .line 358
     const-string v0, "true"
@@ -945,24 +1034,42 @@
     move-result v0
 
     sput-boolean v0, Lcom/android/mms/MmsConfig;->mAliasEnabled:Z
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_7 .. :try_end_7} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_7 .. :try_end_7} :catch_1
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
+    .line 438
+    .end local v2           #sharedPrefs:Landroid/content/SharedPreferences;
+    .end local v3           #tag:Ljava/lang/String;
+    .end local v4           #text:Ljava/lang/String;
+    .end local v5           #value:Ljava/lang/String;
+    .end local p0           #context:Landroid/content/Context;
+    :catchall_0
+    move-exception p0
+
+    invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
+
+    throw p0
+
     .line 359
-    .end local v0           #text:Ljava/lang/String;
+    .restart local v2       #sharedPrefs:Landroid/content/SharedPreferences;
+    .restart local v3       #tag:Ljava/lang/String;
     .restart local v4       #text:Ljava/lang/String;
-    :cond_6
+    .restart local v5       #value:Ljava/lang/String;
+    .restart local p0       #context:Landroid/content/Context;
+    :cond_7
+    :try_start_8
     const-string v0, "allowAttachAudio"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 360
     const-string v0, "true"
@@ -973,23 +1080,17 @@
 
     sput-boolean v0, Lcom/android/mms/MmsConfig;->mAllowAttachAudio:Z
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 362
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_7
+    :cond_8
     const-string v0, "int"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_18
 
     .line 364
     const-string v0, "maxMessageSize"
@@ -998,7 +1099,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     .line 365
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1007,23 +1108,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mMaxMessageSize:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 366
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_8
+    :cond_9
     const-string v0, "mmsHeaderSize"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
     .line 367
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1032,23 +1127,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mMmsHeaderSize:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 368
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_9
+    :cond_a
     const-string v0, "maxImageHeight"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     .line 369
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1057,23 +1146,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mMaxImageHeight:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 370
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_a
+    :cond_b
     const-string v0, "maxImageWidth"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     .line 371
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1082,23 +1165,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mMaxImageWidth:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 372
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_b
+    :cond_c
     const-string v0, "defaultSMSMessagesPerThread"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     .line 373
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1107,23 +1184,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mDefaultSMSMessagesPerThread:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 374
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_c
+    :cond_d
     const-string v0, "defaultMMSMessagesPerThread"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
     .line 375
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1132,23 +1203,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mDefaultMMSMessagesPerThread:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 376
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_d
+    :cond_e
     const-string v0, "minMessageCountPerThread"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_f
 
     .line 377
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1157,23 +1222,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mMinMessageCountPerThread:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 378
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_e
+    :cond_f
     const-string v0, "maxMessageCountPerThread"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
     .line 379
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1182,23 +1241,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mMaxMessageCountPerThread:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 380
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_f
+    :cond_10
     const-string v0, "smsToMmsTextThreshold"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_11
 
     .line 381
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1243,25 +1296,19 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-object v0, v4
-
-    .line 384
-    .end local v4           #text:Ljava/lang/String;
-    .local v0, text:Ljava/lang/String;
     goto/16 :goto_0
 
-    .end local v0           #text:Ljava/lang/String;
+    .line 384
     .restart local v2       #sharedPrefs:Landroid/content/SharedPreferences;
     .restart local v3       #tag:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_10
+    :cond_11
     const-string v0, "recipientLimit"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_13
 
     .line 385
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1283,7 +1330,7 @@
     .line 387
     sget v0, Lcom/android/mms/MmsConfig;->mRecipientLimit:I
 
-    if-gez v0, :cond_11
+    if-gez v0, :cond_12
 
     .line 388
     const v0, 0x7fffffff
@@ -1291,7 +1338,7 @@
     sput v0, Lcom/android/mms/MmsConfig;->mRecipientLimit:I
 
     .line 390
-    :cond_11
+    :cond_12
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1328,25 +1375,19 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-object v0, v4
-
-    .line 392
-    .end local v4           #text:Ljava/lang/String;
-    .local v0, text:Ljava/lang/String;
     goto/16 :goto_0
 
-    .end local v0           #text:Ljava/lang/String;
+    .line 392
     .restart local v2       #sharedPrefs:Landroid/content/SharedPreferences;
     .restart local v3       #tag:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_12
+    :cond_13
     const-string v0, "httpSocketTimeout"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
     .line 393
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1355,23 +1396,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mHttpSocketTimeout:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 394
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_13
+    :cond_14
     const-string v0, "minimumSlideElementDuration"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_15
 
     .line 395
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1380,23 +1415,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mMinimumSlideElementDuration:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 396
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_14
+    :cond_15
     const-string v0, "maxSizeScaleForPendingMmsAllowed"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
     .line 397
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1405,23 +1434,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mMaxSizeScaleForPendingMmsAllowed:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 398
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_15
+    :cond_16
     const-string v0, "aliasMinChars"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_17
 
     .line 399
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1430,23 +1453,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mAliasRuleMinChars:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 400
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_16
+    :cond_17
     const-string v0, "aliasMaxChars"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 401
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1455,23 +1472,17 @@
 
     sput v0, Lcom/android/mms/MmsConfig;->mAliasRuleMaxChars:I
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 403
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_17
+    :cond_18
     const-string v0, "string"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 405
     const-string v0, "userAgent"
@@ -1480,7 +1491,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_19
 
     .line 406
     sput-object v4, Lcom/android/mms/MmsConfig;->mUserAgent:Ljava/lang/String;
@@ -1490,44 +1501,32 @@
 
     sput-object v0, Lcom/android/mms/MmsConfig;->mUserAgentDebug:Ljava/lang/String;
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 408
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_18
+    :cond_19
     const-string v0, "uaProfTagName"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1a
 
     .line 409
     sput-object v4, Lcom/android/mms/MmsConfig;->mUaProfTagName:Ljava/lang/String;
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 410
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_19
+    :cond_1a
     const-string v0, "uaProfUrl"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1b
 
     .line 411
     sput-object v4, Lcom/android/mms/MmsConfig;->mUaProfUrl:Ljava/lang/String;
@@ -1537,117 +1536,11 @@
 
     sput-object v0, Lcom/android/mms/MmsConfig;->mUaProfUrlDebug:Ljava/lang/String;
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
     .line 413
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    :cond_1a
-    const-string v0, "httpParams"
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1b
-
-    .line 416
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v2, "mms_subscriber_id"
-
-    .end local v2           #sharedPrefs:Landroid/content/SharedPreferences;
-    invoke-static {v0, v2}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 417
-    .local v0, subscriberID:Ljava/lang/String;
-    const-string v2, "Mms/MmsConfig"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    .end local v3           #tag:Ljava/lang/String;
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "subscriberID : "
-
-    .end local v5           #value:Ljava/lang/String;
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 418
-    const-string v2, "Not Used"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1f
-
-    .line 419
-    move-object v0, v0
-
-    .line 422
-    .end local v4           #text:Ljava/lang/String;
-    .local v0, text:Ljava/lang/String;
-    :goto_4
-    sput-object v0, Lcom/android/mms/MmsConfig;->mHttpParams:Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
-
-    goto/16 :goto_0
-
-    .line 431
-    .end local v0           #text:Ljava/lang/String;
-    :catch_0
-    move-exception p0
-
-    .line 432
-    .local p0, e:Lorg/xmlpull/v1/XmlPullParserException;
-    :try_start_2
-    const-string v0, "Mms/MmsConfig"
-
-    const-string v2, "loadMmsSettings caught "
-
-    invoke-static {v0, v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 438
-    invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
-
-    goto/16 :goto_1
-
-    .line 423
-    .restart local v2       #sharedPrefs:Landroid/content/SharedPreferences;
-    .restart local v3       #tag:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    .restart local v5       #value:Ljava/lang/String;
-    .local p0, context:Landroid/content/Context;
     :cond_1b
-    :try_start_3
-    const-string v0, "httpParamsLine1Key"
+    const-string v0, "httpParams"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -1655,20 +1548,14 @@
 
     if-eqz v0, :cond_1c
 
-    .line 424
-    sput-object v4, Lcom/android/mms/MmsConfig;->mHttpParamsLine1Key:Ljava/lang/String;
+    .line 422
+    sput-object v4, Lcom/android/mms/MmsConfig;->mHttpParams:Ljava/lang/String;
 
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 425
-    .end local v0           #text:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
+    .line 423
     :cond_1c
-    const-string v0, "emailGatewayNumber"
+    const-string v0, "httpParamsLine1Key"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -1676,94 +1563,46 @@
 
     if-eqz v0, :cond_1d
 
-    .line 426
-    sput-object v4, Lcom/android/mms/MmsConfig;->mEmailGateway:Ljava/lang/String;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_1
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+    .line 424
+    sput-object v4, Lcom/android/mms/MmsConfig;->mHttpParamsLine1Key:Ljava/lang/String;
 
-    .end local v2           #sharedPrefs:Landroid/content/SharedPreferences;
-    :cond_1d
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .restart local v0       #text:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 433
-    .end local v0           #text:Ljava/lang/String;
-    .end local v3           #tag:Ljava/lang/String;
-    .end local v5           #value:Ljava/lang/String;
-    :catch_1
-    move-exception p0
+    .line 425
+    :cond_1d
+    const-string v0, "emailGatewayNumber"
 
-    .line 434
-    .local p0, e:Ljava/lang/NumberFormatException;
-    :try_start_4
-    const-string v0, "Mms/MmsConfig"
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    const-string v2, "loadMmsSettings caught "
+    move-result v0
 
-    invoke-static {v0, v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    if-eqz v0, :cond_0
 
-    .line 438
-    invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
+    .line 426
+    sput-object v4, Lcom/android/mms/MmsConfig;->mEmailGateway:Ljava/lang/String;
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_8 .. :try_end_8} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_8 .. :try_end_8} :catch_1
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_2
 
-    goto/16 :goto_1
-
-    .line 435
-    .local p0, context:Landroid/content/Context;
-    :catch_2
-    move-exception p0
-
-    .line 436
-    .local p0, e:Ljava/io/IOException;
-    :try_start_5
-    const-string v0, "Mms/MmsConfig"
-
-    const-string v2, "loadMmsSettings caught "
-
-    invoke-static {v0, v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    .line 438
-    invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
-
-    goto/16 :goto_1
-
-    .end local p0           #e:Ljava/io/IOException;
-    :catchall_0
-    move-exception p0
-
-    invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
-
-    throw p0
+    goto/16 :goto_0
 
     .line 454
+    .end local v2           #sharedPrefs:Landroid/content/SharedPreferences;
+    .end local v3           #tag:Ljava/lang/String;
+    .end local v4           #text:Ljava/lang/String;
+    .end local v5           #value:Ljava/lang/String;
     .local p0, errorStr:Ljava/lang/String;
     :cond_1e
     return-void
-
-    .local v0, subscriberID:Ljava/lang/String;
-    .restart local v4       #text:Ljava/lang/String;
-    .local p0, context:Landroid/content/Context;
-    :cond_1f
-    move-object v0, v4
-
-    .end local v4           #text:Ljava/lang/String;
-    .local v0, text:Ljava/lang/String;
-    goto :goto_4
 
     .local v0, name:Ljava/lang/String;
     .local v2, text:Ljava/lang/String;
     .restart local v3       #tag:Ljava/lang/String;
     .restart local v5       #value:Ljava/lang/String;
-    :cond_20
+    .local p0, context:Landroid/content/Context;
+    :cond_1f
     move-object v4, v2
 
     .end local v2           #text:Ljava/lang/String;

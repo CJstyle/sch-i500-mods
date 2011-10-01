@@ -33,9 +33,9 @@
     .prologue
     .line 36
     .local p2, items:Ljava/util/List;,"Ljava/util/List<Lcom/android/mms/ui/DeliveryReportItem;>;"
-    const v0, 0x7f030014
+    const v0, 0x7f030011
 
-    const v1, 0x7f080072
+    const v1, 0x7f08004d
 
     invoke-direct {p0, p1, v0, v1, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;IILjava/util/List;)V
 
@@ -74,7 +74,7 @@
 
     .line 46
     .local v1, factory:Landroid/view/LayoutInflater;
-    const v4, 0x7f030014
+    const v4, 0x7f030011
 
     const/4 v5, 0x0
 

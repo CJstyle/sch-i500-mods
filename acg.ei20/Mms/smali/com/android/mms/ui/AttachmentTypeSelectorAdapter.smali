@@ -94,7 +94,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020029
+    const v2, 0x7f020025
 
     const/4 v3, 0x0
 
@@ -107,7 +107,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020024
+    const v2, 0x7f020022
 
     const/4 v3, 0x1
 
@@ -120,7 +120,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020032
+    const v2, 0x7f02002e
 
     const/4 v3, 0x2
 
@@ -133,7 +133,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020025
+    const v2, 0x7f020023
 
     const/4 v3, 0x3
 
@@ -153,7 +153,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02002b
+    const v2, 0x7f020027
 
     const/4 v3, 0x4
 
@@ -167,7 +167,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02002d
+    const v2, 0x7f020029
 
     const/4 v3, 0x5
 
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02002e
+    const v2, 0x7f02002a
 
     const/4 v3, 0x6
 

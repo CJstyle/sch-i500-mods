@@ -36,21 +36,21 @@
     .parameter "msgId"
 
     .prologue
-    .line 5414
+    .line 5354
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5415
+    .line 5355
     iput-object p2, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->mContext:Landroid/content/Context;
 
-    .line 5416
+    .line 5356
     iput-boolean p3, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->mSave:Z
 
-    .line 5417
+    .line 5357
     iput-wide p4, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->mMsgId:J
 
-    .line 5418
+    .line 5358
     return-void
 .end method
 
@@ -66,7 +66,7 @@
 
     const/4 v9, 0x1
 
-    .line 5421
+    .line 5361
     move-object v0, p1
 
     check-cast v0, Landroid/app/AlertDialog;
@@ -77,16 +77,16 @@
 
     move-result-object v5
 
-    .line 5422
+    .line 5362
     .local v5, lv:Landroid/widget/ListView;
     if-nez v5, :cond_1
 
-    .line 5460
+    .line 5400
     :cond_0
     :goto_0
     return-void
 
-    .line 5427
+    .line 5367
     :cond_1
     invoke-virtual {v5}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
@@ -94,13 +94,13 @@
 
     check-cast v4, Lcom/android/mms/ui/AttachmentListAdapter;
 
-    .line 5428
+    .line 5368
     .local v4, la:Lcom/android/mms/ui/AttachmentListAdapter;
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 5429
+    .line 5369
     .local v6, rawAttachments:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/mms/model/AttachmentModel;>;"
     invoke-virtual {v5}, Landroid/widget/ListView;->getCount()I
 
@@ -112,12 +112,12 @@
     :goto_1
     if-ltz v3, :cond_4
 
-    .line 5430
+    .line 5370
     invoke-virtual {v4, v3, v10, v10}, Lcom/android/mms/ui/AttachmentListAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v7
 
-    .line 5431
+    .line 5371
     .local v7, rowItem:Landroid/view/View;
     const v8, 0x7f080005
 
@@ -127,7 +127,7 @@
 
     check-cast v2, Landroid/widget/CheckBox;
 
-    .line 5432
+    .line 5372
     .local v2, cb:Landroid/widget/CheckBox;
     invoke-virtual {v2}, Landroid/widget/CheckBox;->isChecked()Z
 
@@ -135,23 +135,23 @@
 
     if-eqz v8, :cond_2
 
-    .line 5433
+    .line 5373
     invoke-virtual {v5, v3}, Landroid/widget/ListView;->getItemAtPosition(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/mms/model/AttachmentModel;
 
-    .line 5434
+    .line 5374
     .local v1, attach:Lcom/android/mms/model/AttachmentModel;
     iget-boolean v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->mSave:Z
 
     if-eqz v8, :cond_3
 
-    .line 5436
+    .line 5376
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5429
+    .line 5369
     .end local v1           #attach:Lcom/android/mms/model/AttachmentModel;
     :cond_2
     :goto_2
@@ -159,7 +159,7 @@
 
     goto :goto_1
 
-    .line 5438
+    .line 5378
     .restart local v1       #attach:Lcom/android/mms/model/AttachmentModel;
     :cond_3
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -176,7 +176,7 @@
 
     goto :goto_2
 
-    .line 5442
+    .line 5382
     .end local v1           #attach:Lcom/android/mms/model/AttachmentModel;
     .end local v2           #cb:Landroid/widget/CheckBox;
     .end local v7           #rowItem:Landroid/view/View;
@@ -185,40 +185,40 @@
 
     if-eqz v8, :cond_6
 
-    .line 5443
+    .line 5383
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
     if-lez v8, :cond_5
 
-    .line 5444
+    .line 5384
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget-wide v9, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->mMsgId:J
 
-    invoke-static {v8, v6, v9, v10}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8300(Lcom/android/mms/ui/ComposeMessageActivity;Ljava/util/ArrayList;J)V
+    invoke-static {v8, v6, v9, v10}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8200(Lcom/android/mms/ui/ComposeMessageActivity;Ljava/util/ArrayList;J)V
 
     goto :goto_0
 
-    .line 5447
+    .line 5387
     :cond_5
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8400(Lcom/android/mms/ui/ComposeMessageActivity;)V
+    invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8300(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     goto :goto_0
 
-    .line 5450
+    .line 5390
     :cond_6
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 5451
+    .line 5391
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3000(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 5452
+    .line 5392
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -235,7 +235,7 @@
 
     if-nez v8, :cond_0
 
-    .line 5453
+    .line 5393
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -244,10 +244,10 @@
 
     invoke-virtual {v8, v9}, Lcom/android/mms/data/WorkingMessage;->correctAttachmentState(Z)V
 
-    .line 5454
+    .line 5394
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8500(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/LinearLayout;
+    invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8400(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/LinearLayout;
 
     move-result-object v8
 
@@ -255,7 +255,7 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 5455
+    .line 5395
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachOkListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1100(Lcom/android/mms/ui/ComposeMessageActivity;)V

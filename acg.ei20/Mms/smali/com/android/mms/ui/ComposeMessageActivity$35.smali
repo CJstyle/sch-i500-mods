@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 6051
+    .line 5985
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$35;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,17 +54,17 @@
     .end annotation
 
     .prologue
-    .line 6053
+    .line 5987
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     if-eqz p2, :cond_0
 
-    .line 6054
+    .line 5988
     check-cast p2, Lcom/android/mms/ui/MessageListItem;
 
     .end local p2
     invoke-virtual {p2}, Lcom/android/mms/ui/MessageListItem;->onMessageListItemClick()V
 
-    .line 6056
+    .line 5990
     :cond_0
     return-void
 .end method

@@ -52,7 +52,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 62
-    const v0, 0x7f0800cd
+    const v0, 0x7f0800a8
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideListItemView;->findViewById(I)Landroid/view/View;
 
@@ -72,7 +72,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
 
     .line 64
-    const v0, 0x7f0800c7
+    const v0, 0x7f0800a2
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideListItemView;->findViewById(I)Landroid/view/View;
 
@@ -83,7 +83,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/SlideListItemView;->mImagePreview:Landroid/widget/ImageView;
 
     .line 65
-    const v0, 0x7f0800cc
+    const v0, 0x7f0800a7
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideListItemView;->findViewById(I)Landroid/view/View;
 
@@ -94,7 +94,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/SlideListItemView;->mAttachmentName:Landroid/widget/TextView;
 
     .line 66
-    const v0, 0x7f0800cb
+    const v0, 0x7f0800a6
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideListItemView;->findViewById(I)Landroid/view/View;
 
@@ -192,7 +192,7 @@
     .line 80
     iget-object v0, p0, Lcom/android/mms/ui/SlideListItemView;->mAttachmentIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f02005d
+    const v1, 0x7f020059
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -254,7 +254,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020094
+    const v2, 0x7f020090
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -339,7 +339,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020094
+    const v2, 0x7f020090
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -470,7 +470,7 @@
     .line 126
     iget-object v3, p0, Lcom/android/mms/ui/SlideListItemView;->mAttachmentIcon:Landroid/widget/ImageView;
 
-    const v4, 0x7f020077
+    const v4, 0x7f020073
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -513,7 +513,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f020095
+    const v4, 0x7f020091
 
     invoke-static {v3, v4}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

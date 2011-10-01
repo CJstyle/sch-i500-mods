@@ -963,7 +963,7 @@
     .line 507
     iget-object v0, p0, Lcom/android/mms/ui/SlideshowActivity;->mMediaController:Lcom/android/mms/ui/MmsPlayerController;
 
-    const v1, 0x7f0800bb
+    const v1, 0x7f080096
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideshowActivity;->findViewById(I)Landroid/view/View;
 
@@ -982,12 +982,12 @@
     const/4 v12, 0x1
 
     .line 345
-    const v0, 0x7f030031
+    const v0, 0x7f03002e
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideshowActivity;->setContentView(I)V
 
     .line 347
-    const v0, 0x7f0800ba
+    const v0, 0x7f080095
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideshowActivity;->findViewById(I)Landroid/view/View;
 
@@ -1037,7 +1037,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/SlideshowActivity;->view:Lcom/android/mms/ui/SlideView;
 
     .line 357
-    const v0, 0x7f0800bb
+    const v0, 0x7f080096
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideshowActivity;->findViewById(I)Landroid/view/View;
 
@@ -1204,7 +1204,7 @@
     .line 351
     .end local v11           #subject:Ljava/lang/String;
     :cond_2
-    const v0, 0x7f0800dc
+    const v0, 0x7f0800b7
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideshowActivity;->findViewById(I)Landroid/view/View;
 

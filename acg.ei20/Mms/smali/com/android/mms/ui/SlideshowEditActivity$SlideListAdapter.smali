@@ -88,7 +88,7 @@
 
     .line 444
     .local v4, slideListItemView:Lcom/android/mms/ui/SlideListItemView;
-    const v6, 0x7f0800c9
+    const v6, 0x7f0800a4
 
     invoke-virtual {v4, v6}, Lcom/android/mms/ui/SlideListItemView;->findViewById(I)Landroid/view/View;
 
@@ -135,7 +135,7 @@
 
     .line 449
     .local v1, dur:I
-    const v6, 0x7f0800ca
+    const v6, 0x7f0800a5
 
     invoke-virtual {v4, v6}, Lcom/android/mms/ui/SlideListItemView;->findViewById(I)Landroid/view/View;
 

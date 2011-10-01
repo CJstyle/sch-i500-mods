@@ -23,43 +23,6 @@
     <item type="id" name="enable_checkbox">false</item>
     <item type="id" name="body_text_view">false</item>
     <item type="id" name="from_text_view">false</item>
-    <item type="id" name="cmas_icon">false</item>
-    <item type="id" name="cmas_type">false</item>
-    <item type="id" name="cmas_description">false</item>
-    <item type="id" name="cmas_date">false</item>
-    <item type="id" name="dismiss">false</item>
-    <item type="id" name="view">false</item>
-    <item type="id" name="LinearLayout01">false</item>
-    <item type="id" name="ScrollView01">false</item>
-    <item type="id" name="LinearLayout02">false</item>
-    <item type="id" name="cmas_text">false</item>
-    <item type="id" name="cmas_alert_type">false</item>
-    <item type="id" name="cmas_date_time">false</item>
-    <item type="id" name="cmas_data">false</item>
-    <item type="id" name="cmas_msg_expiry">false</item>
-    <item type="id" name="RelativeLayout01">false</item>
-    <item type="id" name="cmas_more_info">false</item>
-    <item type="id" name="cmas_msg_id_menu">false</item>
-    <item type="id" name="TextView01">false</item>
-    <item type="id" name="cmas_msg_id_value">false</item>
-    <item type="id" name="cmas_cmae_category_menu">false</item>
-    <item type="id" name="TextView02">false</item>
-    <item type="id" name="cmas_cmae_category_value">false</item>
-    <item type="id" name="cmas_service_category_menu">false</item>
-    <item type="id" name="TextView03">false</item>
-    <item type="id" name="cmas_service_category_value">false</item>
-    <item type="id" name="cmas_response_type_menu">false</item>
-    <item type="id" name="TextView04">false</item>
-    <item type="id" name="cmas_response_type_value">false</item>
-    <item type="id" name="cmas_severity_menu">false</item>
-    <item type="id" name="TextView05">false</item>
-    <item type="id" name="cmas_severity_value">false</item>
-    <item type="id" name="cmas_urgency_menu">false</item>
-    <item type="id" name="TextView06">false</item>
-    <item type="id" name="cmas_urgency_value">false</item>
-    <item type="id" name="cmas_certainity_menu">false</item>
-    <item type="id" name="TextView07">false</item>
-    <item type="id" name="cmas_certainity_value">false</item>
     <item type="id" name="contact_header">false</item>
     <item type="id" name="recipients_subject_linear">false</item>
     <item type="id" name="recipients_field">false</item>

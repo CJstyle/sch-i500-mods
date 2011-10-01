@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 287
+    .line 277
     iput-object p1, p0, Lcom/android/mms/ui/ConversationList$2;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,18 +42,18 @@
     .parameter "adapter"
 
     .prologue
-    .line 289
+    .line 279
     const-string v0, "Mms/ConversationList"
 
     const-string v1, "ConversationList: onContentChanged"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 290
+    .line 280
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$2;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v0}, Lcom/android/mms/ui/ConversationList;->access$200(Lcom/android/mms/ui/ConversationList;)V
 
-    .line 291
+    .line 281
     return-void
 .end method

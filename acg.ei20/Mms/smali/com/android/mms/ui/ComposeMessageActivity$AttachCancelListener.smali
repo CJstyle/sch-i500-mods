@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 5490
+    .line 5430
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$AttachCancelListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5490
+    .line 5430
     invoke-direct {p0, p1}, Lcom/android/mms/ui/ComposeMessageActivity$AttachCancelListener;-><init>(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     return-void
@@ -55,9 +55,9 @@
     .parameter "whichButton"
 
     .prologue
-    .line 5492
+    .line 5432
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 5493
+    .line 5433
     return-void
 .end method

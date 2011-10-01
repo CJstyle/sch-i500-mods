@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 6445
+    .line 6375
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$36;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "adapter"
 
     .prologue
-    .line 6451
+    .line 6381
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$36;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$9100(Lcom/android/mms/ui/ComposeMessageActivity;)V
+    invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$9000(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 6452
+    .line 6382
     return-void
 .end method
 
@@ -56,13 +56,13 @@
     .parameter "adapter"
 
     .prologue
-    .line 6447
+    .line 6377
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$36;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/mms/ui/ComposeMessageActivity;->access$9002(Lcom/android/mms/ui/ComposeMessageActivity;Z)Z
+    invoke-static {v0, v1}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8902(Lcom/android/mms/ui/ComposeMessageActivity;Z)Z
 
-    .line 6448
+    .line 6378
     return-void
 .end method

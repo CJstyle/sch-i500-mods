@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 1162
+    .line 1129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
     .parameter "contentUri"
 
     .prologue
-    .line 1167
+    .line 1134
     sget-object v1, Lcom/android/mms/ui/MessageOptions$PduBodyCache;->mLastUri:Landroid/net/Uri;
 
     invoke-virtual {p1, v1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -46,14 +46,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 1168
+    .line 1135
     sget-object v1, Lcom/android/mms/ui/MessageOptions$PduBodyCache;->mLastPduBody:Lcom/google/android/mms/pdu/PduBody;
 
-    .line 1177
+    .line 1144
     :goto_0
     return-object v1
 
-    .line 1171
+    .line 1138
     :cond_0
     :try_start_0
     invoke-static {p0, p1}, Lcom/android/mms/model/SlideshowModel;->getPduBody(Landroid/content/Context;Landroid/net/Uri;)Lcom/google/android/mms/pdu/PduBody;
@@ -62,23 +62,23 @@
 
     sput-object v1, Lcom/android/mms/ui/MessageOptions$PduBodyCache;->mLastPduBody:Lcom/google/android/mms/pdu/PduBody;
 
-    .line 1172
+    .line 1139
     sput-object p1, Lcom/android/mms/ui/MessageOptions$PduBodyCache;->mLastUri:Landroid/net/Uri;
     :try_end_0
     .catch Lcom/google/android/mms/MmsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1177
+    .line 1144
     sget-object v1, Lcom/android/mms/ui/MessageOptions$PduBodyCache;->mLastPduBody:Lcom/google/android/mms/pdu/PduBody;
 
     goto :goto_0
 
-    .line 1173
+    .line 1140
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 1174
+    .line 1141
     .local v0, e:Lcom/google/android/mms/MmsException;
     const-string v1, "Mms/viewer"
 
@@ -88,7 +88,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1175
+    .line 1142
     const/4 v1, 0x0
 
     goto :goto_0

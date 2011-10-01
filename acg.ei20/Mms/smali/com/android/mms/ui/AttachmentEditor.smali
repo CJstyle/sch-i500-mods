@@ -140,12 +140,12 @@
     .line 212
     if-eqz p1, :cond_0
 
-    const v3, 0x7f08004c
+    const v3, 0x7f080027
 
     :goto_0
     if-eqz p1, :cond_1
 
-    const v4, 0x7f0800c6
+    const v4, 0x7f0800a1
 
     :goto_1
     invoke-direct {p0, v3, v4}, Lcom/android/mms/ui/AttachmentEditor;->getStubView(II)Landroid/view/View;
@@ -161,7 +161,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 219
-    const v3, 0x7f0800c4
+    const v3, 0x7f08009f
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -171,7 +171,7 @@
 
     .line 220
     .local v0, editBtn:Landroid/widget/Button;
-    const v3, 0x7f0800c5
+    const v3, 0x7f0800a0
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -185,7 +185,7 @@
     invoke-direct {p0}, Lcom/android/mms/ui/AttachmentEditor;->updateSendButton()V
 
     .line 222
-    const v3, 0x7f0800a1
+    const v3, 0x7f08007c
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -233,12 +233,12 @@
     .end local v0           #editBtn:Landroid/widget/Button;
     .end local v1           #playBtn:Landroid/widget/ImageButton;
     :cond_0
-    const v3, 0x7f080050
+    const v3, 0x7f08002b
 
     goto :goto_0
 
     :cond_1
-    const v4, 0x7f0800c0
+    const v4, 0x7f08009b
 
     goto :goto_1
 .end method
@@ -296,23 +296,23 @@
     .line 155
     if-eqz v9, :cond_1
 
-    const v0, 0x7f080049
+    const v0, 0x7f080024
 
     move v1, v0
 
     :goto_1
     if-eqz v9, :cond_2
 
-    const v0, 0x7f08008b
+    const v0, 0x7f080066
 
     move v2, v0
 
     :goto_2
-    const v3, 0x7f080089
+    const v3, 0x7f080064
 
-    const v4, 0x7f08007e
+    const v4, 0x7f080059
 
-    const v5, 0x7f08008a
+    const v5, 0x7f080065
 
     const/16 v6, 0x9
 
@@ -327,14 +327,14 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f08004d
+    const v0, 0x7f080028
 
     move v1, v0
 
     goto :goto_1
 
     :cond_2
-    const v0, 0x7f080087
+    const v0, 0x7f080062
 
     move v2, v0
 
@@ -351,23 +351,23 @@
     .line 163
     if-eqz v9, :cond_4
 
-    const v0, 0x7f08004a
+    const v0, 0x7f080025
 
     move v1, v0
 
     :goto_3
     if-eqz v9, :cond_5
 
-    const v0, 0x7f0800da
+    const v0, 0x7f0800b5
 
     move v2, v0
 
     :goto_4
-    const v3, 0x7f0800d7
+    const v3, 0x7f0800b2
 
-    const v4, 0x7f0800d8
+    const v4, 0x7f0800b3
 
-    const v5, 0x7f0800d9
+    const v5, 0x7f0800b4
 
     const/4 v6, 0x7
 
@@ -382,14 +382,14 @@
     goto :goto_0
 
     :cond_4
-    const v0, 0x7f08004e
+    const v0, 0x7f080029
 
     move v1, v0
 
     goto :goto_3
 
     :cond_5
-    const v0, 0x7f0800d5
+    const v0, 0x7f0800b0
 
     move v2, v0
 
@@ -406,7 +406,7 @@
     .line 171
     if-eqz v9, :cond_7
 
-    const v0, 0x7f08004b
+    const v0, 0x7f080026
 
     move v1, v0
 
@@ -437,7 +437,7 @@
     goto/16 :goto_0
 
     :cond_7
-    const v0, 0x7f08004f
+    const v0, 0x7f08002a
 
     move v1, v0
 

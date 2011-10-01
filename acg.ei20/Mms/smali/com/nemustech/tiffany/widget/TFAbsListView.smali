@@ -71,10 +71,6 @@
 
 .field mDrawSelectorOnTop:Z
 
-.field private mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-.field private mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
 .field protected mExcessScroll:I
 
 .field protected mExcessScrollEnabled:Z
@@ -87,8 +83,6 @@
 
 .field private mFiltered:Z
 
-.field private mFirstPositionDistanceGuess:I
-
 .field private mFlingProfilingStarted:Z
 
 .field private mFlingRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;
@@ -96,8 +90,6 @@
 .field private mGlobalLayoutListenerAddedFilter:Z
 
 .field private mIsChildViewEnabled:Z
-
-.field private mLastPositionDistanceGuess:I
 
 .field private mLastScrollState:I
 
@@ -198,117 +190,117 @@
 
     const/4 v2, 0x0
 
-    .line 642
+    .line 603
     invoke-direct {p0, p1}, Lcom/nemustech/tiffany/widget/TFAdapterView;-><init>(Landroid/content/Context;)V
 
-    .line 204
+    .line 202
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 219
+    .line 217
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDrawSelectorOnTop:Z
 
-    .line 229
+    .line 227
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
-    .line 235
+    .line 233
     new-instance v1, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-direct {v1, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
-    .line 240
+    .line 238
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionLeftPadding:I
 
-    .line 245
+    .line 243
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionTopPadding:I
 
-    .line 250
+    .line 248
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionRightPadding:I
 
-    .line 255
+    .line 253
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionBottomPadding:I
 
-    .line 260
+    .line 258
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
-    .line 265
+    .line 263
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mWidthMeasureSpec:I
 
-    .line 312
+    .line 310
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 338
+    .line 336
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
-    .line 376
+    .line 374
     iput-boolean v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSmoothScrollbarEnabled:Z
 
-    .line 396
+    .line 394
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 398
+    .line 396
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    .line 407
+    .line 405
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastTouchMode:I
 
-    .line 410
+    .line 408
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollProfilingStarted:Z
 
-    .line 413
+    .line 411
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFlingProfilingStarted:Z
 
-    .line 455
+    .line 453
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastScrollState:I
 
-    .line 567
+    .line 528
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 603
+    .line 564
     new-instance v1, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;
 
     invoke-direct {v1, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;
 
-    .line 617
+    .line 578
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
 
-    .line 622
+    .line 583
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockExcessScroll:Z
 
-    .line 643
+    .line 604
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->initAbsListView()V
 
-    .line 645
+    .line 606
     invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 646
+    .line 607
     sget-object v1, Landroid/R$styleable;->View:[I
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 647
+    .line 608
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->initializeScrollbars(Landroid/content/res/TypedArray;)V
 
-    .line 648
+    .line 609
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 649
+    .line 610
     return-void
 .end method
 
@@ -318,7 +310,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 655
+    .line 616
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInstance()Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
     move-result-object v0
@@ -331,7 +323,7 @@
 
     invoke-direct {p0, p1, p2, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 656
+    .line 617
     return-void
 .end method
 
@@ -342,136 +334,136 @@
     .parameter "defStyle"
 
     .prologue
-    .line 662
+    .line 623
     invoke-direct {p0, p1, p2, p3}, Lcom/nemustech/tiffany/widget/TFAdapterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 204
+    .line 202
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 219
+    .line 217
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDrawSelectorOnTop:Z
 
-    .line 229
+    .line 227
     new-instance v9, Landroid/graphics/Rect;
 
     invoke-direct {v9}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
-    .line 235
+    .line 233
     new-instance v9, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-direct {v9, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     iput-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
-    .line 240
+    .line 238
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionLeftPadding:I
 
-    .line 245
+    .line 243
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionTopPadding:I
 
-    .line 250
+    .line 248
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionRightPadding:I
 
-    .line 255
+    .line 253
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionBottomPadding:I
 
-    .line 260
+    .line 258
     new-instance v9, Landroid/graphics/Rect;
 
     invoke-direct {v9}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
-    .line 265
+    .line 263
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mWidthMeasureSpec:I
 
-    .line 312
+    .line 310
     const/4 v9, -0x1
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 338
+    .line 336
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
-    .line 376
+    .line 374
     const/4 v9, 0x1
 
     iput-boolean v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSmoothScrollbarEnabled:Z
 
-    .line 396
+    .line 394
     const/4 v9, -0x1
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 398
+    .line 396
     const/4 v9, 0x0
 
     iput-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    .line 407
+    .line 405
     const/4 v9, -0x1
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastTouchMode:I
 
-    .line 410
+    .line 408
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollProfilingStarted:Z
 
-    .line 413
+    .line 411
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFlingProfilingStarted:Z
 
-    .line 455
+    .line 453
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastScrollState:I
 
-    .line 567
+    .line 528
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 603
+    .line 564
     new-instance v9, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;
 
     invoke-direct {v9, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     iput-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;
 
-    .line 617
+    .line 578
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
 
-    .line 622
+    .line 583
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockExcessScroll:Z
 
-    .line 663
+    .line 624
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->initAbsListView()V
 
-    .line 665
+    .line 626
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInstance()Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
     move-result-object v9
@@ -488,7 +480,7 @@
 
     move-result-object v0
 
-    .line 668
+    .line 629
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInstance()Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
@@ -504,14 +496,14 @@
 
     move-result-object v2
 
-    .line 669
+    .line 630
     .local v2, d:Landroid/graphics/drawable/Drawable;
     if-eqz v2, :cond_0
 
-    .line 670
+    .line 631
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
 
-    .line 673
+    .line 634
     :cond_0
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInstance()Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
@@ -531,7 +523,7 @@
 
     iput-boolean v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDrawSelectorOnTop:Z
 
-    .line 676
+    .line 637
     const/4 v9, 0x2
 
     const/4 v10, 0x0
@@ -540,11 +532,11 @@
 
     move-result v6
 
-    .line 677
+    .line 638
     .local v6, stackFromBottom:Z
     invoke-virtual {p0, v6}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setStackFromBottom(Z)V
 
-    .line 679
+    .line 640
     const/4 v9, 0x3
 
     const/4 v10, 0x1
@@ -553,11 +545,11 @@
 
     move-result v4
 
-    .line 680
+    .line 641
     .local v4, scrollingCacheEnabled:Z
     invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setScrollingCacheEnabled(Z)V
 
-    .line 682
+    .line 643
     const/4 v9, 0x4
 
     const/4 v10, 0x0
@@ -566,11 +558,11 @@
 
     move-result v8
 
-    .line 683
+    .line 644
     .local v8, useTextFilter:Z
     invoke-virtual {p0, v8}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setTextFilterEnabled(Z)V
 
-    .line 685
+    .line 646
     const/4 v9, 0x5
 
     const/4 v10, 0x0
@@ -579,11 +571,11 @@
 
     move-result v7
 
-    .line 687
+    .line 648
     .local v7, transcriptMode:I
     invoke-virtual {p0, v7}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setTranscriptMode(I)V
 
-    .line 689
+    .line 650
     const/4 v9, 0x6
 
     const/4 v10, 0x0
@@ -592,11 +584,11 @@
 
     move-result v1
 
-    .line 690
+    .line 651
     .local v1, color:I
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setCacheColorHint(I)V
 
-    .line 692
+    .line 653
     const/4 v9, 0x7
 
     const/4 v10, 0x0
@@ -605,11 +597,11 @@
 
     move-result v3
 
-    .line 693
+    .line 654
     .local v3, enableFastScroll:Z
     invoke-virtual {p0, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setFastScrollEnabled(Z)V
 
-    .line 695
+    .line 656
     const/16 v9, 0x8
 
     const/4 v10, 0x1
@@ -618,14 +610,14 @@
 
     move-result v5
 
-    .line 696
+    .line 657
     .local v5, smoothScrollbar:Z
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setSmoothScrollbarEnabled(Z)V
 
-    .line 698
+    .line 659
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 699
+    .line 660
     return-void
 .end method
 
@@ -633,7 +625,7 @@
     .locals 1
 
     .prologue
-    .line 1133
+    .line 1082
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilterEnabled:Z
 
     if-eqz v0, :cond_0
@@ -675,7 +667,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->clearScrollingCache()V
 
     return-void
@@ -686,7 +678,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingBottom:I
 
     return v0
@@ -697,7 +689,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingTop:I
 
     return v0
@@ -708,7 +700,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingBottom:I
 
     return v0
@@ -719,7 +711,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingTop:I
 
     return v0
@@ -730,56 +722,56 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMinimumVelocity:I
 
     return v0
 .end method
 
-.method static synthetic access$1600(Lcom/nemustech/tiffany/widget/TFAbsListView;)Z
+.method static synthetic access$1600(Lcom/nemustech/tiffany/widget/TFAbsListView;Z)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 95
+    invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setChildrenDrawnWithCacheEnabled(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$1700(Lcom/nemustech/tiffany/widget/TFAbsListView;)I
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 96
-    invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->contentFits()Z
-
-    move-result v0
+    .line 95
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPersistentDrawingCache:I
 
     return v0
 .end method
 
-.method static synthetic access$1700(Lcom/nemustech/tiffany/widget/TFAbsListView;)Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-    .locals 1
+.method static synthetic access$1800(Lcom/nemustech/tiffany/widget/TFAbsListView;Z)V
+    .locals 0
     .parameter "x0"
+    .parameter "x1"
 
     .prologue
-    .line 96
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
+    .line 95
+    invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setChildrenDrawingCacheEnabled(Z)V
 
-    return-object v0
+    return-void
 .end method
 
-.method static synthetic access$1800(Lcom/nemustech/tiffany/widget/TFAbsListView;)Lcom/nemustech/tiffany/widget/TFEdgeGlow;
+.method static synthetic access$1900(Lcom/nemustech/tiffany/widget/TFAbsListView;)Landroid/view/inputmethod/InputConnection;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 96
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
+    .line 95
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDefInputConnection:Landroid/view/inputmethod/InputConnection;
 
     return-object v0
-.end method
-
-.method static synthetic access$1900(Lcom/nemustech/tiffany/widget/TFAbsListView;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 96
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMaximumVelocity:I
-
-    return v0
 .end method
 
 .method static synthetic access$200(Lcom/nemustech/tiffany/widget/TFAbsListView;)I
@@ -787,7 +779,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getWindowAttachCount()I
 
     move-result v0
@@ -795,73 +787,40 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Lcom/nemustech/tiffany/widget/TFAbsListView;Z)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 96
-    invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setChildrenDrawnWithCacheEnabled(Z)V
-
-    return-void
-.end method
-
-.method static synthetic access$2100(Lcom/nemustech/tiffany/widget/TFAbsListView;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 96
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPersistentDrawingCache:I
-
-    return v0
-.end method
-
-.method static synthetic access$2200(Lcom/nemustech/tiffany/widget/TFAbsListView;Z)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 96
-    invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setChildrenDrawingCacheEnabled(Z)V
-
-    return-void
-.end method
-
-.method static synthetic access$2300(Lcom/nemustech/tiffany/widget/TFAbsListView;)Landroid/view/inputmethod/InputConnection;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 96
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDefInputConnection:Landroid/view/inputmethod/InputConnection;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2800(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
+.method static synthetic access$2400(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 96
+    .line 95
     invoke-virtual {p0, p1, p2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->removeDetachedView(Landroid/view/View;Z)V
 
     return-void
 .end method
 
-.method static synthetic access$2900(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
+.method static synthetic access$2500(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 96
+    .line 95
+    invoke-virtual {p0, p1, p2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->removeDetachedView(Landroid/view/View;Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$2600(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+
+    .prologue
+    .line 95
     invoke-virtual {p0, p1, p2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->removeDetachedView(Landroid/view/View;Z)V
 
     return-void
@@ -872,7 +831,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getWindowAttachCount()I
 
     move-result v0
@@ -880,25 +839,12 @@
     return v0
 .end method
 
-.method static synthetic access$3000(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-
-    .prologue
-    .line 96
-    invoke-virtual {p0, p1, p2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->removeDetachedView(Landroid/view/View;Z)V
-
-    return-void
-.end method
-
 .method static synthetic access$500(Lcom/nemustech/tiffany/widget/TFAbsListView;)Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;
 
     return-object v0
@@ -910,7 +856,7 @@
     .parameter "x1"
 
     .prologue
-    .line 96
+    .line 95
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;
 
     return-object p1
@@ -921,7 +867,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollMode:I
 
     return v0
@@ -933,7 +879,7 @@
     .parameter "x1"
 
     .prologue
-    .line 96
+    .line 95
     iput p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollMode:I
 
     return p1
@@ -944,7 +890,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->awakenScrollBars()Z
 
     move-result v0
@@ -974,14 +920,14 @@
 
     const-string v6, "AbsListView "
 
-    .line 4013
+    .line 3831
     if-nez p1, :cond_0
 
-    .line 4031
+    .line 3849
     :goto_0
     return v0
 
-    .line 4016
+    .line 3834
     :cond_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -991,25 +937,25 @@
 
     move v3, v0
 
-    .line 4017
+    .line 3835
     :goto_1
     if-ge v2, v1, :cond_2
 
-    .line 4018
+    .line 3836
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
-    .line 4019
+    .line 3837
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v4
 
     if-eqz v4, :cond_1
 
-    .line 4021
+    .line 3839
     const-string v3, "ViewConsistency"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1044,7 +990,7 @@
 
     move v3, v5
 
-    .line 4024
+    .line 3842
     :cond_1
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->indexOfChild(Landroid/view/View;)I
 
@@ -1052,7 +998,7 @@
 
     if-ltz v4, :cond_3
 
-    .line 4026
+    .line 3844
     const-string v3, "ViewConsistency"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1087,7 +1033,7 @@
 
     move v0, v5
 
-    .line 4017
+    .line 3835
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
@@ -1098,7 +1044,7 @@
     :cond_2
     move v0, v3
 
-    .line 4031
+    .line 3849
     goto :goto_0
 
     :cond_3
@@ -1111,96 +1057,26 @@
     .locals 1
 
     .prologue
-    .line 2990
+    .line 2822
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mClearScrollingCache:Ljava/lang/Runnable;
 
     if-nez v0, :cond_0
 
-    .line 2991
+    .line 2823
     new-instance v0, Lcom/nemustech/tiffany/widget/TFAbsListView$3;
 
     invoke-direct {v0, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$3;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mClearScrollingCache:Ljava/lang/Runnable;
 
-    .line 3007
+    .line 2839
     :cond_0
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mClearScrollingCache:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->post(Ljava/lang/Runnable;)Z
 
-    .line 3008
+    .line 2840
     return-void
-.end method
-
-.method private contentFits()Z
-    .locals 5
-
-    .prologue
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 2526
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
-
-    move-result v0
-
-    .line 2527
-    .local v0, childCount:I
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mItemCount:I
-
-    if-eq v0, v1, :cond_0
-
-    move v1, v3
-
-    .line 2534
-    :goto_0
-    return v1
-
-    .line 2531
-    :cond_0
-    if-lez v0, :cond_2
-
-    .line 2532
-    invoke-virtual {p0, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/View;->getTop()I
-
-    move-result v1
-
-    if-ltz v1, :cond_1
-
-    sub-int v1, v0, v4
-
-    invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/View;->getBottom()I
-
-    move-result v1
-
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBottom:I
-
-    if-gt v1, v2, :cond_1
-
-    move v1, v4
-
-    goto :goto_0
-
-    :cond_1
-    move v1, v3
-
-    goto :goto_0
-
-    :cond_2
-    move v1, v4
-
-    .line 2534
-    goto :goto_0
 .end method
 
 .method private createScrollingCache()V
@@ -1209,7 +1085,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2982
+    .line 2814
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollingCacheEnabled:Z
 
     if-eqz v0, :cond_0
@@ -1218,16 +1094,16 @@
 
     if-nez v0, :cond_0
 
-    .line 2983
+    .line 2815
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setChildrenDrawnWithCacheEnabled(Z)V
 
-    .line 2984
+    .line 2816
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setChildrenDrawingCacheEnabled(Z)V
 
-    .line 2985
+    .line 2817
     iput-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCachingStarted:Z
 
-    .line 2987
+    .line 2819
     :cond_0
     return-void
 .end method
@@ -1243,22 +1119,22 @@
 
     const/4 v4, -0x2
 
-    .line 3766
+    .line 3584
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     if-nez v0, :cond_0
 
-    .line 3767
+    .line 3585
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 3768
+    .line 3586
     new-instance v1, Landroid/widget/PopupWindow;
 
     invoke-direct {v1, v0}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;)V
 
-    .line 3769
+    .line 3587
     const-string v2, "layout_inflater"
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1267,7 +1143,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 3771
+    .line 3589
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInstance()Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
     move-result-object v2
@@ -1286,70 +1162,70 @@
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
-    .line 3776
+    .line 3594
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
     const/16 v2, 0xb1
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setRawInputType(I)V
 
-    .line 3778
+    .line 3596
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
     const/high16 v2, 0x1000
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 3779
+    .line 3597
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
     invoke-virtual {v0, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 3780
+    .line 3598
     invoke-virtual {v1, v5}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 3781
+    .line 3599
     invoke-virtual {v1, v5}, Landroid/widget/PopupWindow;->setTouchable(Z)V
 
-    .line 3782
+    .line 3600
     const/4 v0, 0x2
 
     invoke-virtual {v1, v0}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 3783
+    .line 3601
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
     invoke-virtual {v1, v0}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
 
-    .line 3784
+    .line 3602
     invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setWidth(I)V
 
-    .line 3785
+    .line 3603
     invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setHeight(I)V
 
-    .line 3786
+    .line 3604
     invoke-virtual {v1, v6}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 3787
+    .line 3605
     iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
-    .line 3788
+    .line 3606
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 3789
+    .line 3607
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mGlobalLayoutListenerAddedFilter:Z
 
-    .line 3791
+    .line 3609
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 3792
+    .line 3610
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInstance()Lcom/nemustech/tiffany/widget/TFResourceBroker;
@@ -1364,11 +1240,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 3796
+    .line 3614
     :goto_0
     return-void
 
-    .line 3794
+    .line 3612
     :cond_1
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
@@ -1394,10 +1270,10 @@
     .parameter
 
     .prologue
-    .line 3588
+    .line 3406
     sparse-switch p2, :sswitch_data_0
 
-    .line 3614
+    .line 3432
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
@@ -1406,11 +1282,11 @@
 
     throw v0
 
-    .line 3590
+    .line 3408
     :sswitch_0
     iget v0, p0, Landroid/graphics/Rect;->right:I
 
-    .line 3591
+    .line 3409
     iget v1, p0, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
@@ -1421,10 +1297,10 @@
 
     add-int/2addr v1, v2
 
-    .line 3592
+    .line 3410
     iget v2, p1, Landroid/graphics/Rect;->left:I
 
-    .line 3593
+    .line 3411
     iget v3, p1, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
@@ -1447,14 +1323,14 @@
 
     move v2, v6
 
-    .line 3617
+    .line 3435
     :goto_0
     sub-int/2addr v1, v3
 
-    .line 3618
+    .line 3436
     sub-int/2addr v0, v2
 
-    .line 3619
+    .line 3437
     mul-int/2addr v0, v0
 
     mul-int/2addr v1, v1
@@ -1463,7 +1339,7 @@
 
     return v0
 
-    .line 3596
+    .line 3414
     :sswitch_1
     iget v0, p0, Landroid/graphics/Rect;->left:I
 
@@ -1475,10 +1351,10 @@
 
     add-int/2addr v0, v1
 
-    .line 3597
+    .line 3415
     iget v1, p0, Landroid/graphics/Rect;->bottom:I
 
-    .line 3598
+    .line 3416
     iget v2, p1, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
@@ -1489,7 +1365,7 @@
 
     add-int/2addr v2, v3
 
-    .line 3599
+    .line 3417
     iget v3, p1, Landroid/graphics/Rect;->top:I
 
     move v5, v3
@@ -1504,14 +1380,14 @@
 
     move v2, v6
 
-    .line 3600
+    .line 3418
     goto :goto_0
 
-    .line 3602
+    .line 3420
     :sswitch_2
     iget v0, p0, Landroid/graphics/Rect;->left:I
 
-    .line 3603
+    .line 3421
     iget v1, p0, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
@@ -1522,10 +1398,10 @@
 
     add-int/2addr v1, v2
 
-    .line 3604
+    .line 3422
     iget v2, p1, Landroid/graphics/Rect;->right:I
 
-    .line 3605
+    .line 3423
     iget v3, p1, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
@@ -1548,10 +1424,10 @@
 
     move v2, v6
 
-    .line 3606
+    .line 3424
     goto :goto_0
 
-    .line 3608
+    .line 3426
     :sswitch_3
     iget v0, p0, Landroid/graphics/Rect;->left:I
 
@@ -1563,10 +1439,10 @@
 
     add-int/2addr v0, v1
 
-    .line 3609
+    .line 3427
     iget v1, p0, Landroid/graphics/Rect;->top:I
 
-    .line 3610
+    .line 3428
     iget v2, p1, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
@@ -1577,7 +1453,7 @@
 
     add-int/2addr v2, v3
 
-    .line 3611
+    .line 3429
     iget v3, p1, Landroid/graphics/Rect;->bottom:I
 
     move v5, v3
@@ -1592,10 +1468,10 @@
 
     move v2, v6
 
-    .line 3612
+    .line 3430
     goto :goto_0
 
-    .line 3588
+    .line 3406
     :sswitch_data_0
     .sparse-switch
         0x11 -> :sswitch_2
@@ -1606,140 +1482,75 @@
 .end method
 
 .method private initAbsListView()V
-    .locals 6
+    .locals 3
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    .line 703
-    invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setClickable(Z)V
+    .line 664
+    invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setClickable(Z)V
 
-    .line 704
-    invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setFocusableInTouchMode(Z)V
+    .line 665
+    invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setFocusableInTouchMode(Z)V
 
-    .line 705
-    invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setWillNotDraw(Z)V
+    .line 666
+    invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setWillNotDraw(Z)V
 
-    .line 706
-    invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setAlwaysDrawnWithCacheEnabled(Z)V
+    .line 667
+    invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setAlwaysDrawnWithCacheEnabled(Z)V
 
-    .line 707
-    invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setScrollingCacheEnabled(Z)V
+    .line 668
+    invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setScrollingCacheEnabled(Z)V
 
-    .line 709
-    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mContext:Landroid/content/Context;
+    .line 670
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mContext:Landroid/content/Context;
 
-    invoke-static {v4}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+    invoke-static {v1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
 
-    .line 710
+    .line 671
     .local v0, configuration:Landroid/view/ViewConfiguration;
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchSlop:I
+    iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchSlop:I
 
-    .line 711
+    .line 672
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMinimumVelocity:I
+    iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMinimumVelocity:I
 
-    .line 712
+    .line 673
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMaximumVelocity:I
+    iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMaximumVelocity:I
 
-    .line 713
+    .line 674
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v4
-
-    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
-
-    iput v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDensityScale:F
-
-    .line 716
-    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    if-nez v4, :cond_0
-
-    .line 717
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    .line 718
-    .local v3, res:Landroid/content/res/Resources;
-    invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInstance()Lcom/nemustech/tiffany/widget/TFResourceBroker;
-
-    move-result-object v4
-
-    const/16 v5, 0x20
-
-    invoke-virtual {v4, v5}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInt(I)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 720
-    .local v1, edge:Landroid/graphics/drawable/Drawable;
-    invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInstance()Lcom/nemustech/tiffany/widget/TFResourceBroker;
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v1
 
-    const/16 v5, 0x21
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    invoke-virtual {v4, v5}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->getInt(I)I
+    move-result-object v1
 
-    move-result v4
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDensityScale:F
 
-    move-result-object v2
-
-    .line 722
-    .local v2, glow:Landroid/graphics/drawable/Drawable;
-    new-instance v4, Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-direct {v4, v1, v2}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    iput-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    .line 723
-    new-instance v4, Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-direct {v4, v1, v2}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    iput-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    .line 726
-    .end local v1           #edge:Landroid/graphics/drawable/Drawable;
-    .end local v2           #glow:Landroid/graphics/drawable/Drawable;
-    .end local v3           #res:Landroid/content/res/Resources;
-    :cond_0
+    .line 675
     return-void
 .end method
 
@@ -1751,7 +1562,7 @@
 
     const/4 v4, -0x1
 
-    .line 3561
+    .line 3379
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1762,15 +1573,15 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 3562
+    .line 3380
     const/4 v1, 0x2
 
     new-array v1, v1, [I
 
-    .line 3563
+    .line 3381
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getLocationOnScreen([I)V
 
-    .line 3566
+    .line 3384
     const/4 v2, 0x1
 
     aget v2, v1, v2
@@ -1793,7 +1604,7 @@
 
     add-int/2addr v0, v2
 
-    .line 3567
+    .line 3385
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v2}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -1802,7 +1613,7 @@
 
     if-nez v2, :cond_0
 
-    .line 3568
+    .line 3386
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     const/16 v3, 0x51
@@ -1811,11 +1622,11 @@
 
     invoke-virtual {v2, p0, v3, v1, v0}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 3573
+    .line 3391
     :goto_0
     return-void
 
-    .line 3571
+    .line 3389
     :cond_0
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
@@ -1834,7 +1645,7 @@
     .parameter "b"
 
     .prologue
-    .line 1559
+    .line 1506
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionLeftPadding:I
@@ -1855,7 +1666,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1561
+    .line 1508
     return-void
 .end method
 
@@ -1863,25 +1674,25 @@
     .locals 1
 
     .prologue
-    .line 3552
+    .line 3370
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getWindowVisibility()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 3553
+    .line 3371
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->createTextFilter(Z)V
 
-    .line 3554
+    .line 3372
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->positionPopup()V
 
-    .line 3556
+    .line 3374
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->checkFocus()V
 
-    .line 3558
+    .line 3376
     :cond_0
     return-void
 .end method
@@ -1895,47 +1706,47 @@
 
     const/4 v5, 0x0
 
-    .line 2136
+    .line 2083
     invoke-static {p1}, Ljava/lang/Math;->abs(I)I
 
     move-result v0
 
-    .line 2137
+    .line 2084
     .local v0, distance:I
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchSlop:I
 
     if-le v0, v3, :cond_2
 
-    .line 2138
+    .line 2085
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->createScrollingCache()V
 
-    .line 2139
+    .line 2086
     const/4 v3, 0x3
 
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2140
+    .line 2087
     iput p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionCorrection:I
 
-    .line 2141
+    .line 2088
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHandler()Landroid/os/Handler;
 
     move-result-object v1
 
-    .line 2145
+    .line 2092
     .local v1, handler:Landroid/os/Handler;
     if-eqz v1, :cond_0
 
-    .line 2146
+    .line 2093
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 2148
+    .line 2095
     :cond_0
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setPressed(Z)V
 
-    .line 2149
+    .line 2096
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
@@ -1946,23 +1757,23 @@
 
     move-result-object v2
 
-    .line 2150
+    .line 2097
     .local v2, motionView:Landroid/view/View;
     if-eqz v2, :cond_1
 
-    .line 2151
+    .line 2098
     invoke-virtual {v2, v5}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2153
+    .line 2100
     :cond_1
     invoke-virtual {p0, v6}, Lcom/nemustech/tiffany/widget/TFAbsListView;->reportScrollStateChange(I)V
 
-    .line 2156
+    .line 2103
     invoke-virtual {p0, v6}, Lcom/nemustech/tiffany/widget/TFAbsListView;->requestDisallowInterceptTouchEvent(Z)V
 
     move v3, v6
 
-    .line 2160
+    .line 2107
     .end local v1           #handler:Landroid/os/Handler;
     .end local v2           #motionView:Landroid/view/View;
     :goto_0
@@ -1978,7 +1789,7 @@
     .locals 3
 
     .prologue
-    .line 905
+    .line 854
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1999,7 +1810,7 @@
 
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
 
-    .line 907
+    .line 856
     return-void
 .end method
 
@@ -2019,29 +1830,29 @@
     .end annotation
 
     .prologue
-    .line 2751
+    .line 2607
     .local p1, views:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v2
 
-    .line 2752
+    .line 2608
     .local v2, count:I
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
-    .line 2753
+    .line 2609
     .local v3, firstPosition:I
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
-    .line 2755
+    .line 2611
     .local v0, adapter:Landroid/widget/ListAdapter;
     if-nez v0, :cond_1
 
-    .line 2766
+    .line 2622
     :cond_0
     return-void
 
-    .line 2759
+    .line 2615
     :cond_1
     const/4 v4, 0x0
 
@@ -2049,12 +1860,12 @@
     :goto_0
     if-ge v4, v2, :cond_0
 
-    .line 2760
+    .line 2616
     invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2761
+    .line 2617
     .local v1, child:Landroid/view/View;
     add-int v5, v3, v4
 
@@ -2064,14 +1875,14 @@
 
     if-eqz v5, :cond_2
 
-    .line 2762
+    .line 2618
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2764
+    .line 2620
     :cond_2
     invoke-virtual {v1, p1}, Landroid/view/View;->addTouchables(Ljava/util/ArrayList;)V
 
-    .line 2759
+    .line 2615
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
@@ -2082,7 +1893,7 @@
     .parameter "s"
 
     .prologue
-    .line 3876
+    .line 3694
     return-void
 .end method
 
@@ -2094,7 +1905,7 @@
     .parameter "after"
 
     .prologue
-    .line 3838
+    .line 3656
     return-void
 .end method
 
@@ -2103,7 +1914,7 @@
     .parameter "view"
 
     .prologue
-    .line 3757
+    .line 3575
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
     if-ne p1, v0, :cond_0
@@ -2124,7 +1935,7 @@
     .parameter "p"
 
     .prologue
-    .line 3897
+    .line 3715
     instance-of v0, p1, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
 
     return v0
@@ -2138,53 +1949,53 @@
 
     const/4 v10, 0x1
 
-    .line 1222
+    .line 1171
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v1
 
-    .line 1223
+    .line 1172
     .local v1, count:I
     if-lez v1, :cond_4
 
-    .line 1224
+    .line 1173
     iget-boolean v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSmoothScrollbarEnabled:Z
 
     if-eqz v8, :cond_3
 
-    .line 1225
+    .line 1174
     mul-int/lit8 v2, v1, 0x64
 
-    .line 1227
+    .line 1176
     .local v2, extent:I
     invoke-virtual {p0, v9}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 1228
+    .line 1177
     .local v7, view:Landroid/view/View;
     invoke-virtual {v7}, Landroid/view/View;->getTop()I
 
     move-result v6
 
-    .line 1229
+    .line 1178
     .local v6, top:I
     invoke-virtual {v7}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
-    .line 1230
+    .line 1179
     .local v3, height:I
     if-lez v3, :cond_0
 
-    .line 1231
+    .line 1180
     mul-int/lit8 v8, v6, 0x64
 
     div-int/2addr v8, v3
 
     add-int/2addr v2, v8
 
-    .line 1234
+    .line 1183
     :cond_0
     sub-int v8, v1, v10
 
@@ -2192,21 +2003,21 @@
 
     move-result-object v7
 
-    .line 1235
+    .line 1184
     invoke-virtual {v7}, Landroid/view/View;->getBottom()I
 
     move-result v0
 
-    .line 1236
+    .line 1185
     .local v0, bottom:I
     invoke-virtual {v7}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
-    .line 1237
+    .line 1186
     if-lez v3, :cond_1
 
-    .line 1238
+    .line 1187
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
 
     move-result v8
@@ -2219,11 +2030,11 @@
 
     sub-int/2addr v2, v8
 
-    .line 1241
+    .line 1190
     :cond_1
     move v5, v2
 
-    .line 1245
+    .line 1193
     .local v5, retVal:I
     iget v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
@@ -2235,7 +2046,7 @@
 
     if-ge v2, v8, :cond_2
 
-    .line 1247
+    .line 1195
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
 
     move-result v8
@@ -2258,7 +2069,7 @@
 
     div-float v4, v8, v9
 
-    .line 1248
+    .line 1196
     .local v4, ratio:F
     int-to-float v8, v5
 
@@ -2266,14 +2077,14 @@
 
     float-to-int v5, v8
 
-    .line 1252
+    .line 1199
     .end local v4           #ratio:F
     :cond_2
     invoke-static {v10, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v8
 
-    .line 1258
+    .line 1205
     .end local v0           #bottom:I
     .end local v2           #extent:I
     .end local v3           #height:I
@@ -2286,13 +2097,13 @@
     :cond_3
     move v8, v10
 
-    .line 1255
+    .line 1202
     goto :goto_0
 
     :cond_4
     move v8, v9
 
-    .line 1258
+    .line 1205
     goto :goto_0
 .end method
 
@@ -2300,29 +2111,29 @@
     .locals 18
 
     .prologue
-    .line 1263
+    .line 1210
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     move v5, v0
 
-    .line 1264
+    .line 1211
     .local v5, firstPosition:I
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v2
 
-    .line 1265
+    .line 1212
     .local v2, childCount:I
     if-ltz v5, :cond_5
 
     if-lez v2, :cond_5
 
-    .line 1266
+    .line 1213
     const/4 v9, 0x0
 
-    .line 1267
+    .line 1214
     .local v9, retVal:I
     move-object/from16 v0, p0
 
@@ -2332,7 +2143,7 @@
 
     if-eqz v14, :cond_2
 
-    .line 1268
+    .line 1215
     const/4 v14, 0x0
 
     move-object/from16 v0, p0
@@ -2343,23 +2154,23 @@
 
     move-result-object v13
 
-    .line 1269
+    .line 1216
     .local v13, view:Landroid/view/View;
     invoke-virtual {v13}, Landroid/view/View;->getTop()I
 
     move-result v12
 
-    .line 1270
+    .line 1217
     .local v12, top:I
     invoke-virtual {v13}, Landroid/view/View;->getHeight()I
 
     move-result v6
 
-    .line 1271
+    .line 1218
     .local v6, height:I
     if-lez v6, :cond_0
 
-    .line 1272
+    .line 1219
     mul-int/lit8 v14, v5, 0x64
 
     mul-int/lit8 v15, v12, 0x64
@@ -2374,7 +2185,7 @@
 
     move-result v9
 
-    .line 1276
+    .line 1223
     :cond_0
     move-object/from16 v0, p0
 
@@ -2384,20 +2195,20 @@
 
     if-gez v14, :cond_1
 
-    .line 1277
+    .line 1224
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     move v10, v0
 
-    .line 1278
+    .line 1225
     .local v10, savedExcessScroll:I
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->computeVerticalScrollExtent()I
 
     move-result v11
 
-    .line 1279
+    .line 1226
     .local v11, shrinkedScrollExtent:I
     const/4 v14, 0x0
 
@@ -2407,12 +2218,12 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 1280
+    .line 1227
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->computeVerticalScrollExtent()I
 
     move-result v8
 
-    .line 1281
+    .line 1228
     .local v8, normalScrollExtent:I
     move v0, v10
 
@@ -2420,10 +2231,10 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 1283
+    .line 1230
     sub-int v4, v8, v11
 
-    .line 1285
+    .line 1232
     .local v4, delta:I
     add-int/2addr v9, v4
 
@@ -2434,7 +2245,7 @@
     :cond_1
     move v14, v9
 
-    .line 1302
+    .line 1249
     .end local v6           #height:I
     .end local v9           #retVal:I
     .end local v12           #top:I
@@ -2442,7 +2253,7 @@
     :goto_0
     return v14
 
-    .line 1291
+    .line 1238
     .restart local v9       #retVal:I
     :cond_2
     move-object/from16 v0, p0
@@ -2451,14 +2262,14 @@
 
     move v3, v0
 
-    .line 1292
+    .line 1239
     .local v3, count:I
     if-nez v5, :cond_3
 
-    .line 1293
+    .line 1240
     const/4 v7, 0x0
 
-    .line 1299
+    .line 1246
     .local v7, index:I
     :goto_1
     int-to-float v14, v5
@@ -2487,20 +2298,20 @@
 
     goto :goto_0
 
-    .line 1294
+    .line 1241
     .end local v7           #index:I
     :cond_3
     add-int v14, v5, v2
 
     if-ne v14, v3, :cond_4
 
-    .line 1295
+    .line 1242
     move v7, v3
 
     .restart local v7       #index:I
     goto :goto_1
 
-    .line 1297
+    .line 1244
     .end local v7           #index:I
     :cond_4
     div-int/lit8 v14, v2, 0x2
@@ -2510,7 +2321,7 @@
     .restart local v7       #index:I
     goto :goto_1
 
-    .line 1302
+    .line 1249
     .end local v3           #count:I
     .end local v7           #index:I
     .end local v9           #retVal:I
@@ -2524,7 +2335,7 @@
     .locals 2
 
     .prologue
-    .line 1307
+    .line 1254
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSmoothScrollbarEnabled:Z
 
     if-eqz v0, :cond_0
@@ -2555,7 +2366,7 @@
     .parameter "id"
 
     .prologue
-    .line 1878
+    .line 1825
     new-instance v0, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterContextMenuInfo;
 
     invoke-direct {v0, p1, p2, p3, p4}, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterContextMenuInfo;-><init>(Landroid/view/View;IJ)V
@@ -2567,17 +2378,17 @@
     .locals 1
 
     .prologue
-    .line 3542
+    .line 3360
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_0
 
-    .line 3543
+    .line 3361
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 3545
+    .line 3363
     :cond_0
     return-void
 .end method
@@ -2587,10 +2398,10 @@
     .parameter "canvas"
 
     .prologue
-    .line 1565
+    .line 1512
     const/4 v2, 0x0
 
-    .line 1566
+    .line 1513
     .local v2, saveCount:I
     iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mGroupFlags:I
 
@@ -2604,24 +2415,24 @@
 
     move v0, v5
 
-    .line 1567
+    .line 1514
     .local v0, clipToPadding:Z
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 1568
+    .line 1515
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v2
 
-    .line 1569
+    .line 1516
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollX:I
 
-    .line 1570
+    .line 1517
     .local v3, scrollX:I
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollY:I
 
-    .line 1571
+    .line 1518
     .local v4, scrollY:I
     iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingLeft:I
 
@@ -2657,55 +2468,55 @@
 
     invoke-virtual {p1, v5, v6, v7, v8}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 1574
+    .line 1521
     iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mGroupFlags:I
 
     and-int/lit8 v5, v5, -0x23
 
     iput v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mGroupFlags:I
 
-    .line 1577
+    .line 1524
     .end local v3           #scrollX:I
     .end local v4           #scrollY:I
     :cond_0
     iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDrawSelectorOnTop:Z
 
-    .line 1578
+    .line 1525
     .local v1, drawSelectorOnTop:Z
     if-nez v1, :cond_1
 
-    .line 1579
+    .line 1526
     invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->drawSelector(Landroid/graphics/Canvas;)V
 
-    .line 1582
+    .line 1529
     :cond_1
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAdapterView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1584
+    .line 1531
     if-eqz v1, :cond_2
 
-    .line 1585
+    .line 1532
     invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->drawSelector(Landroid/graphics/Canvas;)V
 
-    .line 1588
+    .line 1535
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 1589
+    .line 1536
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 1590
+    .line 1537
     iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mGroupFlags:I
 
     or-int/lit8 v5, v5, 0x22
 
     iput v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mGroupFlags:I
 
-    .line 1592
+    .line 1539
     :cond_3
     return-void
 
-    .line 1566
+    .line 1513
     .end local v0           #clipToPadding:Z
     .end local v1           #drawSelectorOnTop:Z
     :cond_4
@@ -2721,166 +2532,19 @@
     .parameter "pressed"
 
     .prologue
-    .line 2041
+    .line 1988
     return-void
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
-    .locals 7
-    .parameter
+    .locals 0
+    .parameter "canvas"
 
     .prologue
-    .line 2645
+    .line 2537
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAdapterView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2648
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    if-eqz v0, :cond_3
-
-    .line 2649
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getWidth()I
-
-    move-result v0
-
-    .line 2650
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
-
-    move-result v1
-
-    .line 2651
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollY:I
-
-    .line 2652
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v3}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->isFinished()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    .line 2653
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v3
-
-    .line 2657
-    neg-int v4, v0
-
-    div-int/lit8 v4, v4, 0x2
-
-    int-to-float v4, v4
-
-    const/4 v5, 0x0
-
-    iget v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPositionDistanceGuess:I
-
-    add-int/2addr v6, v2
-
-    invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 2658
-    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    mul-int/lit8 v5, v0, 0x2
-
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
-
-    move-result v6
-
-    invoke-virtual {v4, v5, v6}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->setSize(II)V
-
-    .line 2659
-    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v4, p1}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->draw(Landroid/graphics/Canvas;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    .line 2660
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
-
-    .line 2662
-    :cond_0
-    invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 2664
-    :cond_1
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v3}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->isFinished()Z
-
-    move-result v3
-
-    if-nez v3, :cond_3
-
-    .line 2665
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v3
-
-    .line 2669
-    neg-int v4, v0
-
-    div-int/lit8 v4, v4, 0x2
-
-    int-to-float v4, v4
-
-    iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastPositionDistanceGuess:I
-
-    add-int/2addr v2, v5
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    invoke-virtual {p1, v4, v2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 2672
-    const/high16 v2, 0x4334
-
-    int-to-float v4, v0
-
-    const/4 v5, 0x0
-
-    invoke-virtual {p1, v2, v4, v5}, Landroid/graphics/Canvas;->rotate(FFF)V
-
-    .line 2673
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    mul-int/lit8 v0, v0, 0x2
-
-    invoke-virtual {v2, v0, v1}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->setSize(II)V
-
-    .line 2674
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0, p1}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->draw(Landroid/graphics/Canvas;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 2675
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
-
-    .line 2677
-    :cond_2
-    invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 2686
-    :cond_3
+    .line 2542
     return-void
 .end method
 
@@ -2889,7 +2553,7 @@
     .parameter "canvas"
 
     .prologue
-    .line 1633
+    .line 1580
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->shouldShowSelector()Z
 
     move-result v1
@@ -2908,19 +2572,19 @@
 
     if-nez v1, :cond_0
 
-    .line 1634
+    .line 1581
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
-    .line 1635
+    .line 1582
     .local v0, selector:Landroid/graphics/drawable/Drawable;
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 1636
+    .line 1583
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1638
+    .line 1585
     .end local v0           #selector:Landroid/graphics/drawable/Drawable;
     :cond_0
     return-void
@@ -2930,15 +2594,15 @@
     .locals 2
 
     .prologue
-    .line 1739
+    .line 1686
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFAdapterView;->drawableStateChanged()V
 
-    .line 1740
+    .line 1687
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 1741
+    .line 1688
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getDrawableState()[I
@@ -2947,7 +2611,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 1743
+    .line 1690
     :cond_0
     return-void
 .end method
@@ -2963,7 +2627,7 @@
     .parameter "x0"
 
     .prologue
-    .line 96
+    .line 95
     invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->generateLayoutParams(Landroid/util/AttributeSet;)Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
 
     move-result-object v0
@@ -2976,7 +2640,7 @@
     .parameter "p"
 
     .prologue
-    .line 3887
+    .line 3705
     new-instance v0, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
 
     invoke-direct {v0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2989,7 +2653,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 3892
+    .line 3710
     new-instance v0, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
 
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getContext()Landroid/content/Context;
@@ -3007,28 +2671,28 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 1334
+    .line 1281
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v1
 
-    .line 1335
+    .line 1282
     .local v1, count:I
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFAdapterView;->getBottomFadingEdgeStrength()F
 
     move-result v2
 
-    .line 1336
+    .line 1283
     .local v2, fadeEdge:F
     if-nez v1, :cond_0
 
     move v5, v2
 
-    .line 1346
+    .line 1293
     :goto_0
     return v5
 
-    .line 1339
+    .line 1286
     :cond_0
     iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
@@ -3042,12 +2706,12 @@
 
     if-ge v5, v6, :cond_1
 
-    .line 1340
+    .line 1287
     const/high16 v5, 0x3f80
 
     goto :goto_0
 
-    .line 1343
+    .line 1290
     :cond_1
     sub-int v5, v1, v7
 
@@ -3067,13 +2731,13 @@
 
     add-int v0, v5, v6
 
-    .line 1344
+    .line 1291
     .local v0, bottom:I
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
 
     move-result v4
 
-    .line 1345
+    .line 1292
     .local v4, height:I
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getVerticalFadingEdgeLength()I
 
@@ -3081,7 +2745,7 @@
 
     int-to-float v3, v5
 
-    .line 1346
+    .line 1293
     .local v3, fadeLength:F
     iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingBottom:I
 
@@ -3111,7 +2775,7 @@
     .locals 1
 
     .prologue
-    .line 3946
+    .line 3764
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCacheColorHint:I
 
     return v0
@@ -3121,7 +2785,7 @@
     .locals 1
 
     .prologue
-    .line 1983
+    .line 1930
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
     return-object v0
@@ -3132,8 +2796,18 @@
     .parameter "childIndex"
 
     .prologue
-    .line 1311
+    .line 1258
     const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method protected getExcessScrollMode()I
+    .locals 1
+
+    .prologue
+    .line 560
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollMode:I
 
     return v0
 .end method
@@ -3143,12 +2817,12 @@
     .parameter "r"
 
     .prologue
-    .line 892
+    .line 841
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getSelectedView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 893
+    .line 842
     .local v0, view:Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -3158,17 +2832,17 @@
 
     if-ne v1, p0, :cond_0
 
-    .line 896
+    .line 845
     invoke-virtual {v0, p1}, Landroid/view/View;->getFocusedRect(Landroid/graphics/Rect;)V
 
-    .line 897
+    .line 846
     invoke-virtual {p0, v0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 902
+    .line 851
     :goto_0
     return-void
 
-    .line 900
+    .line 849
     :cond_0
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAdapterView;->getFocusedRect(Landroid/graphics/Rect;)V
 
@@ -3179,7 +2853,7 @@
     .locals 1
 
     .prologue
-    .line 3250
+    .line 3068
     const/4 v0, 0x0
 
     return v0
@@ -3189,7 +2863,7 @@
     .locals 1
 
     .prologue
-    .line 3240
+    .line 3058
     const/4 v0, 0x0
 
     return v0
@@ -3199,7 +2873,7 @@
     .locals 1
 
     .prologue
-    .line 1466
+    .line 1413
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
@@ -3211,7 +2885,7 @@
     .locals 1
 
     .prologue
-    .line 1454
+    .line 1401
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -3225,7 +2899,7 @@
     .end annotation
 
     .prologue
-    .line 1438
+    .line 1385
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mItemCount:I
 
     if-lez v0, :cond_0
@@ -3234,7 +2908,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 1439
+    .line 1386
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
@@ -3245,7 +2919,7 @@
 
     move-result-object v0
 
-    .line 1441
+    .line 1388
     :goto_0
     return-object v0
 
@@ -3259,7 +2933,7 @@
     .locals 1
 
     .prologue
-    .line 3926
+    .line 3744
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCacheColorHint:I
 
     return v0
@@ -3271,39 +2945,39 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1316
+    .line 1263
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v0
 
-    .line 1317
+    .line 1264
     .local v0, count:I
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFAdapterView;->getTopFadingEdgeStrength()F
 
     move-result v1
 
-    .line 1318
+    .line 1265
     .local v1, fadeEdge:F
     if-nez v0, :cond_0
 
     move v4, v1
 
-    .line 1328
+    .line 1275
     :goto_0
     return v4
 
-    .line 1321
+    .line 1268
     :cond_0
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     if-lez v4, :cond_1
 
-    .line 1322
+    .line 1269
     const/high16 v4, 0x3f80
 
     goto :goto_0
 
-    .line 1325
+    .line 1272
     :cond_1
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
@@ -3319,7 +2993,7 @@
 
     add-int v3, v4, v5
 
-    .line 1326
+    .line 1273
     .local v3, top:I
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingTop:I
 
@@ -3329,7 +3003,7 @@
 
     goto :goto_0
 
-    .line 1327
+    .line 1274
     :cond_2
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getVerticalFadingEdgeLength()I
 
@@ -3337,7 +3011,7 @@
 
     int-to-float v2, v4
 
-    .line 1328
+    .line 1275
     .local v2, fadeLength:F
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingTop:I
 
@@ -3375,22 +3049,22 @@
 
     const/4 v5, 0x1
 
-    .line 3425
+    .line 3243
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mItemCount:I
 
-    .line 3426
+    .line 3244
     .local v0, count:I
     if-lez v0, :cond_a
 
-    .line 3433
+    .line 3251
     iget-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNeedSync:Z
 
     if-eqz v3, :cond_3
 
-    .line 3435
+    .line 3253
     iput-boolean v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNeedSync:Z
 
-    .line 3437
+    .line 3255
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTranscriptMode:I
 
     if-eq v3, v9, :cond_0
@@ -3411,24 +3085,24 @@
 
     if-lt v3, v4, :cond_2
 
-    .line 3440
+    .line 3258
     :cond_0
     const/4 v3, 0x3
 
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 3536
+    .line 3354
     :cond_1
     :goto_0
     return-void
 
-    .line 3444
+    .line 3262
     :cond_2
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncMode:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 3492
+    .line 3310
     :cond_3
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isInTouchMode()Z
 
@@ -3436,41 +3110,41 @@
 
     if-nez v3, :cond_9
 
-    .line 3494
+    .line 3312
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getSelectedItemPosition()I
 
     move-result v1
 
-    .line 3497
+    .line 3315
     .local v1, newPos:I
     if-lt v1, v0, :cond_4
 
-    .line 3498
+    .line 3316
     sub-int v1, v0, v5
 
-    .line 3500
+    .line 3318
     :cond_4
     if-gez v1, :cond_5
 
-    .line 3501
+    .line 3319
     const/4 v1, 0x0
 
-    .line 3505
+    .line 3323
     :cond_5
     invoke-virtual {p0, v1, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->lookForSelectablePosition(IZ)I
 
     move-result v2
 
-    .line 3507
+    .line 3325
     .local v2, selectablePos:I
     if-ltz v2, :cond_8
 
-    .line 3508
+    .line 3326
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setNextSelectedPositionInt(I)V
 
     goto :goto_0
 
-    .line 3446
+    .line 3264
     .end local v1           #newPos:I
     .end local v2           #selectablePos:I
     :pswitch_0
@@ -3480,10 +3154,10 @@
 
     if-eqz v3, :cond_6
 
-    .line 3451
+    .line 3269
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 3452
+    .line 3270
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncPosition:I
 
     invoke-static {v6, v3}, Ljava/lang/Math;->max(II)I
@@ -3500,29 +3174,29 @@
 
     goto :goto_0
 
-    .line 3458
+    .line 3276
     :cond_6
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->findSyncPosition()I
 
     move-result v1
 
-    .line 3459
+    .line 3277
     .restart local v1       #newPos:I
     if-ltz v1, :cond_3
 
-    .line 3461
+    .line 3279
     invoke-virtual {p0, v1, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->lookForSelectablePosition(IZ)I
 
     move-result v2
 
-    .line 3462
+    .line 3280
     .restart local v2       #selectablePos:I
     if-ne v2, v1, :cond_3
 
-    .line 3464
+    .line 3282
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncPosition:I
 
-    .line 3466
+    .line 3284
     iget-wide v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncHeight:J
 
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
@@ -3535,28 +3209,28 @@
 
     if-nez v3, :cond_7
 
-    .line 3469
+    .line 3287
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 3477
+    .line 3295
     :goto_1
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setNextSelectedPositionInt(I)V
 
     goto :goto_0
 
-    .line 3473
+    .line 3291
     :cond_7
     iput v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     goto :goto_1
 
-    .line 3485
+    .line 3303
     .end local v1           #newPos:I
     .end local v2           #selectablePos:I
     :pswitch_1
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 3486
+    .line 3304
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncPosition:I
 
     invoke-static {v6, v3}, Ljava/lang/Math;->max(II)I
@@ -3573,7 +3247,7 @@
 
     goto :goto_0
 
-    .line 3512
+    .line 3330
     .restart local v1       #newPos:I
     .restart local v2       #selectablePos:I
     :cond_8
@@ -3581,15 +3255,15 @@
 
     move-result v2
 
-    .line 3513
+    .line 3331
     if-ltz v2, :cond_a
 
-    .line 3514
+    .line 3332
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setNextSelectedPositionInt(I)V
 
     goto :goto_0
 
-    .line 3521
+    .line 3339
     .end local v1           #newPos:I
     .end local v2           #selectablePos:I
     :cond_9
@@ -3597,7 +3271,7 @@
 
     if-gez v3, :cond_1
 
-    .line 3529
+    .line 3347
     :cond_a
     iget-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
@@ -3608,26 +3282,26 @@
     :goto_2
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 3530
+    .line 3348
     iput v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
-    .line 3531
+    .line 3349
     const-wide/high16 v3, -0x8000
 
     iput-wide v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedRowId:J
 
-    .line 3532
+    .line 3350
     iput v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNextSelectedPosition:I
 
-    .line 3533
+    .line 3351
     const-wide/high16 v3, -0x8000
 
     iput-wide v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNextSelectedRowId:J
 
-    .line 3534
+    .line 3352
     iput-boolean v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNeedSync:Z
 
-    .line 3535
+    .line 3353
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->checkSelectionChanged()V
 
     goto/16 :goto_0
@@ -3635,10 +3309,10 @@
     :cond_b
     move v3, v5
 
-    .line 3529
+    .line 3347
     goto :goto_2
 
-    .line 3444
+    .line 3262
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -3652,17 +3326,17 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 3264
+    .line 3082
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
     if-eq v0, v2, :cond_1
 
-    .line 3265
+    .line 3083
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 3266
+    .line 3084
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNextSelectedPosition:I
 
     if-ltz v0, :cond_0
@@ -3673,29 +3347,29 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 3267
+    .line 3085
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNextSelectedPosition:I
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 3269
+    .line 3087
     :cond_0
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setSelectedPositionInt(I)V
 
-    .line 3270
+    .line 3088
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setNextSelectedPositionInt(I)V
 
-    .line 3271
+    .line 3089
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
-    .line 3272
+    .line 3090
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 3274
+    .line 3092
     :cond_1
     return-void
 .end method
@@ -3704,12 +3378,12 @@
     .locals 4
 
     .prologue
-    .line 824
+    .line 773
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOnScrollListener:Lcom/nemustech/tiffany/widget/TFAbsListView$OnScrollListener;
 
     if-eqz v0, :cond_0
 
-    .line 825
+    .line 774
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOnScrollListener:Lcom/nemustech/tiffany/widget/TFAbsListView$OnScrollListener;
 
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
@@ -3722,7 +3396,7 @@
 
     invoke-interface {v0, p0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView$OnScrollListener;->onScroll(Lcom/nemustech/tiffany/widget/TFAbsListView;III)V
 
-    .line 827
+    .line 776
     :cond_0
     return-void
 .end method
@@ -3731,7 +3405,7 @@
     .locals 1
 
     .prologue
-    .line 3624
+    .line 3442
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
     return v0
@@ -3743,7 +3417,7 @@
     .end annotation
 
     .prologue
-    .line 803
+    .line 752
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSmoothScrollbarEnabled:Z
 
     return v0
@@ -3755,7 +3429,7 @@
     .end annotation
 
     .prologue
-    .line 887
+    .line 836
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilterEnabled:Z
 
     return v0
@@ -3765,7 +3439,7 @@
     .locals 1
 
     .prologue
-    .line 768
+    .line 717
     const/4 v0, 0x0
 
     return v0
@@ -3777,7 +3451,7 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 1695
+    .line 1642
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isEnabled()Z
 
     move-result v5
@@ -3790,20 +3464,20 @@
 
     if-nez v5, :cond_1
 
-    .line 1730
+    .line 1677
     :cond_0
     :goto_0
     return-void
 
-    .line 1699
+    .line 1646
     :cond_1
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
-    .line 1700
+    .line 1647
     .local v2, selector:Landroid/graphics/drawable/Drawable;
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
-    .line 1701
+    .line 1648
     .local v3, selectorRect:Landroid/graphics/Rect;
     if-eqz v2, :cond_0
 
@@ -3828,7 +3502,7 @@
 
     if-nez v5, :cond_0
 
-    .line 1704
+    .line 1651
     iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
     iget v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
@@ -3839,36 +3513,36 @@
 
     move-result-object v4
 
-    .line 1706
+    .line 1653
     .local v4, v:Landroid/view/View;
     if-eqz v4, :cond_3
 
-    .line 1707
+    .line 1654
     invoke-virtual {v4}, Landroid/view/View;->hasFocusable()Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 1708
+    .line 1655
     invoke-virtual {v4, v7}, Landroid/view/View;->setPressed(Z)V
 
-    .line 1710
+    .line 1657
     :cond_3
     invoke-virtual {p0, v7}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setPressed(Z)V
 
-    .line 1712
+    .line 1659
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isLongClickable()Z
 
     move-result v1
 
-    .line 1713
+    .line 1660
     .local v1, longClickable:Z
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getCurrent()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 1714
+    .line 1661
     .local v0, d:Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_4
 
@@ -3876,10 +3550,10 @@
 
     if-eqz v5, :cond_4
 
-    .line 1715
+    .line 1662
     if-eqz v1, :cond_6
 
-    .line 1716
+    .line 1663
     check-cast v0, Landroid/graphics/drawable/TransitionDrawable;
 
     .end local v0           #d:Landroid/graphics/drawable/Drawable;
@@ -3889,7 +3563,7 @@
 
     invoke-virtual {v0, v5}, Landroid/graphics/drawable/TransitionDrawable;->startTransition(I)V
 
-    .line 1722
+    .line 1669
     :cond_4
     :goto_1
     if-eqz v1, :cond_0
@@ -3898,12 +3572,12 @@
 
     if-nez v5, :cond_0
 
-    .line 1723
+    .line 1670
     iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForKeyLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForKeyLongPress;
 
     if-nez v5, :cond_5
 
-    .line 1724
+    .line 1671
     new-instance v5, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForKeyLongPress;
 
     const/4 v6, 0x0
@@ -3912,13 +3586,13 @@
 
     iput-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForKeyLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForKeyLongPress;
 
-    .line 1726
+    .line 1673
     :cond_5
     iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForKeyLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForKeyLongPress;
 
     invoke-virtual {v5}, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForKeyLongPress;->rememberWindowAttachCount()V
 
-    .line 1727
+    .line 1674
     iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForKeyLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForKeyLongPress;
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
@@ -3931,7 +3605,7 @@
 
     goto :goto_0
 
-    .line 1719
+    .line 1666
     .restart local v0       #d:Landroid/graphics/drawable/Drawable;
     :cond_6
     check-cast v0, Landroid/graphics/drawable/TransitionDrawable;
@@ -3946,7 +3620,7 @@
     .locals 0
 
     .prologue
-    .line 1399
+    .line 1346
     return-void
 .end method
 
@@ -3955,49 +3629,49 @@
     .parameter "position"
 
     .prologue
-    .line 1505
+    .line 1452
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v2, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->getScrapView(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1508
+    .line 1455
     .local v1, scrapView:Landroid/view/View;
     if-eqz v1, :cond_1
 
-    .line 1514
+    .line 1461
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v2, p1, v1, p0}, Landroid/widget/ListAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1521
+    .line 1468
     .local v0, child:Landroid/view/View;
     if-eq v0, v1, :cond_0
 
-    .line 1522
+    .line 1469
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v2, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->addScrapView(Landroid/view/View;)V
 
-    .line 1523
+    .line 1470
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCacheColorHint:I
 
     if-eqz v2, :cond_0
 
-    .line 1524
+    .line 1471
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCacheColorHint:I
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setDrawingCacheBackgroundColor(I)V
 
-    .line 1542
+    .line 1489
     :cond_0
     :goto_0
     return-object v0
 
-    .line 1532
+    .line 1479
     .end local v0           #child:Landroid/view/View;
     :cond_1
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
@@ -4008,13 +3682,13 @@
 
     move-result-object v0
 
-    .line 1533
+    .line 1480
     .restart local v0       #child:Landroid/view/View;
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCacheColorHint:I
 
     if-eqz v2, :cond_0
 
-    .line 1534
+    .line 1481
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCacheColorHint:I
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setDrawingCacheBackgroundColor(I)V
@@ -4026,22 +3700,22 @@
     .locals 2
 
     .prologue
-    .line 1786
+    .line 1733
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onAttachedToWindow()V
 
-    .line 1788
+    .line 1735
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    .line 1789
+    .line 1736
     .local v0, treeObserver:Landroid/view/ViewTreeObserver;
     if-eqz v0, :cond_0
 
-    .line 1790
+    .line 1737
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->addOnTouchModeChangeListener(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V
 
-    .line 1791
+    .line 1738
     iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilterEnabled:Z
 
     if-eqz v1, :cond_0
@@ -4054,10 +3728,10 @@
 
     if-nez v1, :cond_0
 
-    .line 1792
+    .line 1739
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1795
+    .line 1742
     :cond_0
     return-void
 .end method
@@ -4069,46 +3743,46 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 3982
+    .line 3800
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onConsistencyCheck(I)Z
 
     move-result v0
 
-    .line 3984
+    .line 3802
     and-int/lit8 v1, p1, 0x1
 
     if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
-    .line 3986
+    .line 3804
     :goto_0
     if-eqz v1, :cond_5
 
-    .line 3988
+    .line 3806
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
-    invoke-static {v1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->access$2500(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)[Landroid/view/View;
+    invoke-static {v1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->access$2100(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)[Landroid/view/View;
 
     move-result-object v1
 
-    .line 3989
+    .line 3807
     array-length v2, v1
 
     move v3, v0
 
     move v0, v6
 
-    .line 3990
+    .line 3808
     :goto_1
     if-ge v0, v2, :cond_2
 
-    .line 3991
+    .line 3809
     aget-object v4, v1, v0
 
     if-eqz v4, :cond_0
 
-    .line 3993
+    .line 3811
     const-string v3, "ViewConsistency"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4145,7 +3819,7 @@
 
     move v3, v6
 
-    .line 3990
+    .line 3808
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
@@ -4154,18 +3828,18 @@
     :cond_1
     move v1, v6
 
-    .line 3984
+    .line 3802
     goto :goto_0
 
-    .line 4000
+    .line 3818
     :cond_2
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
-    invoke-static {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->access$2600(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->access$2200(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 4001
+    .line 3819
     invoke-direct {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->checkScrap(Ljava/util/ArrayList;)Z
 
     move-result v0
@@ -4174,26 +3848,26 @@
 
     move v0, v6
 
-    .line 4002
+    .line 3820
     :goto_2
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
-    invoke-static {v1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->access$2700(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)[Ljava/util/ArrayList;
+    invoke-static {v1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->access$2300(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)[Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 4003
+    .line 3821
     array-length v2, v1
 
     move v3, v0
 
     move v0, v6
 
-    .line 4004
+    .line 3822
     :goto_3
     if-ge v0, v2, :cond_4
 
-    .line 4005
+    .line 3823
     aget-object v4, v1, v0
 
     invoke-direct {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->checkScrap(Ljava/util/ArrayList;)Z
@@ -4204,7 +3878,7 @@
 
     move v3, v6
 
-    .line 4004
+    .line 3822
     :cond_3
     add-int/lit8 v0, v0, 0x1
 
@@ -4213,7 +3887,7 @@
     :cond_4
     move v0, v3
 
-    .line 4009
+    .line 3827
     :cond_5
     return v0
 
@@ -4230,21 +3904,21 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 1748
+    .line 1695
     iget-boolean v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mIsChildViewEnabled:Z
 
     if-eqz v4, :cond_0
 
-    .line 1750
+    .line 1697
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onCreateDrawableState(I)[I
 
     move-result-object v4
 
-    .line 1776
+    .line 1723
     :goto_0
     return-object v4
 
-    .line 1756
+    .line 1703
     :cond_0
     sget-object v4, Lcom/nemustech/tiffany/widget/TFAbsListView;->ENABLED_STATE_SET:[I
 
@@ -4252,7 +3926,7 @@
 
     aget v1, v4, v5
 
-    .line 1761
+    .line 1708
     .local v1, enabledState:I
     add-int/lit8 v4, p1, 0x1
 
@@ -4260,11 +3934,11 @@
 
     move-result-object v3
 
-    .line 1762
+    .line 1709
     .local v3, state:[I
     const/4 v0, -0x1
 
-    .line 1763
+    .line 1710
     .local v0, enabledPos:I
     array-length v4, v3
 
@@ -4274,19 +3948,19 @@
     :goto_1
     if-ltz v2, :cond_1
 
-    .line 1764
+    .line 1711
     aget v4, v3, v2
 
     if-ne v4, v1, :cond_3
 
-    .line 1765
+    .line 1712
     move v0, v2
 
-    .line 1771
+    .line 1718
     :cond_1
     if-ltz v0, :cond_2
 
-    .line 1772
+    .line 1719
     add-int/lit8 v4, v0, 0x1
 
     array-length v5, v3
@@ -4300,10 +3974,10 @@
     :cond_2
     move-object v4, v3
 
-    .line 1776
+    .line 1723
     goto :goto_0
 
-    .line 1763
+    .line 1710
     :cond_3
     add-int/lit8 v2, v2, -0x1
 
@@ -4317,29 +3991,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3702
+    .line 3520
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isTextFilterEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 3706
+    .line 3524
     invoke-direct {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->createTextFilter(Z)V
 
-    .line 3707
+    .line 3525
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPublicInputConnection:Landroid/view/inputmethod/InputConnectionWrapper;
 
     if-nez v0, :cond_0
 
-    .line 3708
+    .line 3526
     new-instance v0, Landroid/view/inputmethod/BaseInputConnection;
 
     invoke-direct {v0, p0, v1}, Landroid/view/inputmethod/BaseInputConnection;-><init>(Landroid/view/View;Z)V
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDefInputConnection:Landroid/view/inputmethod/InputConnection;
 
-    .line 3709
+    .line 3527
     new-instance v0, Lcom/nemustech/tiffany/widget/TFAbsListView$4;
 
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
@@ -4354,21 +4028,21 @@
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPublicInputConnection:Landroid/view/inputmethod/InputConnectionWrapper;
 
-    .line 3743
+    .line 3561
     :cond_0
     const/16 v0, 0xb1
 
     iput v0, p1, Landroid/view/inputmethod/EditorInfo;->inputType:I
 
-    .line 3745
+    .line 3563
     const/4 v0, 0x6
 
     iput v0, p1, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
 
-    .line 3746
+    .line 3564
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPublicInputConnection:Landroid/view/inputmethod/InputConnectionWrapper;
 
-    .line 3748
+    .line 3566
     :goto_0
     return-object v0
 
@@ -4382,25 +4056,25 @@
     .locals 2
 
     .prologue
-    .line 1799
+    .line 1746
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onDetachedFromWindow()V
 
-    .line 1802
+    .line 1749
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->dismissPopup()V
 
-    .line 1804
+    .line 1751
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    .line 1805
+    .line 1752
     .local v0, treeObserver:Landroid/view/ViewTreeObserver;
     if-eqz v0, :cond_0
 
-    .line 1806
+    .line 1753
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnTouchModeChangeListener(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V
 
-    .line 1807
+    .line 1754
     iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilterEnabled:Z
 
     if-eqz v1, :cond_0
@@ -4409,15 +4083,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 1808
+    .line 1755
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1809
+    .line 1756
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mGlobalLayoutListenerAddedFilter:Z
 
-    .line 1812
+    .line 1759
     :cond_0
     return-void
 .end method
@@ -4427,22 +4101,22 @@
     .parameter "count"
 
     .prologue
-    .line 3879
+    .line 3697
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
     if-gez v0, :cond_0
 
     if-lez p1, :cond_0
 
-    .line 3880
+    .line 3698
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 3881
+    .line 3699
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->resurrectSelection()Z
 
-    .line 3883
+    .line 3701
     :cond_0
     return-void
 .end method
@@ -4454,10 +4128,10 @@
     .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 1178
+    .line 1127
     invoke-super {p0, p1, p2, p3}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
-    .line 1179
+    .line 1128
     if-eqz p1, :cond_0
 
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
@@ -4470,10 +4144,10 @@
 
     if-nez v0, :cond_0
 
-    .line 1180
+    .line 1129
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->resurrectSelection()Z
 
-    .line 1182
+    .line 1131
     :cond_0
     return-void
 .end method
@@ -4482,14 +4156,14 @@
     .locals 1
 
     .prologue
-    .line 3819
+    .line 3637
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isShown()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 3821
+    .line 3639
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
     if-eqz v0, :cond_0
@@ -4506,15 +4180,15 @@
 
     if-nez v0, :cond_0
 
-    .line 3822
+    .line 3640
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->showPopup()V
 
-    .line 3831
+    .line 3649
     :cond_0
     :goto_0
     return-void
 
-    .line 3826
+    .line 3644
     :cond_1
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
@@ -4524,7 +4198,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3827
+    .line 3645
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->dismissPopup()V
 
     goto :goto_0
@@ -4541,50 +4215,50 @@
 
     const/4 v4, 0x0
 
-    .line 2690
+    .line 2546
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 2691
+    .line 2547
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
 
     float-to-int v1, v1
 
-    .line 2692
+    .line 2548
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 2703
+    .line 2559
     packed-switch v0, :pswitch_data_0
 
     :cond_0
     :goto_0
     move v0, v4
 
-    .line 2743
+    .line 2599
     :goto_1
     return v0
 
-    .line 2706
+    .line 2562
     :pswitch_0
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->findMotionRow(I)I
 
     move-result v0
 
-    .line 2707
+    .line 2563
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     if-eq v3, v6, :cond_1
 
     if-ltz v0, :cond_1
 
-    .line 2710
+    .line 2566
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     sub-int v3, v0, v3
@@ -4593,35 +4267,35 @@
 
     move-result-object v3
 
-    .line 2711
+    .line 2567
     invoke-virtual {v3}, Landroid/view/View;->getTop()I
 
     move-result v3
 
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionViewOriginalTop:I
 
-    .line 2712
+    .line 2568
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionX:I
 
-    .line 2713
+    .line 2569
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionY:I
 
-    .line 2714
+    .line 2570
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
-    .line 2715
+    .line 2571
     iput v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2716
+    .line 2572
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->clearScrollingCache()V
 
-    .line 2718
+    .line 2574
     :cond_1
     const/high16 v0, -0x8000
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastY:I
 
-    .line 2719
+    .line 2575
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     if-eq v0, v6, :cond_2
@@ -4633,10 +4307,10 @@
     :cond_2
     move v0, v5
 
-    .line 2720
+    .line 2576
     goto :goto_1
 
-    .line 2726
+    .line 2582
     :pswitch_1
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
@@ -4644,7 +4318,7 @@
 
     goto :goto_0
 
-    .line 2728
+    .line 2584
     :pswitch_2
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionY:I
 
@@ -4658,21 +4332,21 @@
 
     move v0, v5
 
-    .line 2729
+    .line 2585
     goto :goto_1
 
-    .line 2737
+    .line 2593
     :pswitch_3
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2738
+    .line 2594
     invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->reportScrollStateChange(I)V
 
     goto :goto_0
 
-    .line 2703
+    .line 2559
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -4680,7 +4354,7 @@
         :pswitch_1
     .end packed-switch
 
-    .line 2726
+    .line 2582
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_2
@@ -4693,7 +4367,7 @@
     .parameter "event"
 
     .prologue
-    .line 2011
+    .line 1958
     const/4 v0, 0x0
 
     return v0
@@ -4709,10 +4383,10 @@
 
     const/4 v4, 0x0
 
-    .line 2016
+    .line 1963
     sparse-switch p1, :sswitch_data_0
 
-    .line 2034
+    .line 1981
     :cond_0
     invoke-super {p0, p1, p2}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
@@ -4721,7 +4395,7 @@
     :goto_0
     return v1
 
-    .line 2019
+    .line 1966
     :sswitch_0
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isEnabled()Z
 
@@ -4731,10 +4405,10 @@
 
     move v1, v5
 
-    .line 2020
+    .line 1967
     goto :goto_0
 
-    .line 2022
+    .line 1969
     :cond_1
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isClickable()Z
 
@@ -4766,7 +4440,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 2026
+    .line 1973
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
@@ -4777,7 +4451,7 @@
 
     move-result-object v0
 
-    .line 2027
+    .line 1974
     .local v0, view:Landroid/view/View;
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
@@ -4785,10 +4459,10 @@
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->performItemClick(Landroid/view/View;IJ)Z
 
-    .line 2028
+    .line 1975
     invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setPressed(Z)V
 
-    .line 2029
+    .line 1976
     if-eqz v0, :cond_2
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setPressed(Z)V
@@ -4796,10 +4470,10 @@
     :cond_2
     move v1, v5
 
-    .line 2030
+    .line 1977
     goto :goto_0
 
-    .line 2016
+    .line 1963
     :sswitch_data_0
     .sparse-switch
         0x17 -> :sswitch_0
@@ -4816,23 +4490,23 @@
     .parameter "b"
 
     .prologue
-    .line 1369
+    .line 1316
     invoke-super/range {p0 .. p5}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onLayout(ZIIII)V
 
-    .line 1370
+    .line 1317
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mInLayout:Z
 
-    .line 1371
+    .line 1318
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->layoutChildren()V
 
-    .line 1372
+    .line 1319
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mInLayout:Z
 
-    .line 1373
+    .line 1320
     return-void
 .end method
 
@@ -4842,19 +4516,19 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 1353
+    .line 1300
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     if-nez v1, :cond_0
 
-    .line 1354
+    .line 1301
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->useDefaultSelector()V
 
-    .line 1356
+    .line 1303
     :cond_0
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
-    .line 1357
+    .line 1304
     .local v0, listPadding:Landroid/graphics/Rect;
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionLeftPadding:I
 
@@ -4864,7 +4538,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->left:I
 
-    .line 1358
+    .line 1305
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionTopPadding:I
 
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingTop:I
@@ -4873,7 +4547,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->top:I
 
-    .line 1359
+    .line 1306
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionRightPadding:I
 
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingRight:I
@@ -4882,7 +4556,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->right:I
 
-    .line 1360
+    .line 1307
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionBottomPadding:I
 
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingBottom:I
@@ -4891,7 +4565,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 1361
+    .line 1308
     return-void
 .end method
 
@@ -4900,21 +4574,21 @@
     .parameter "state"
 
     .prologue
-    .line 1122
+    .line 1071
     sget-object v2, Landroid/view/AbsSavedState;->EMPTY_STATE:Landroid/view/AbsSavedState;
 
     invoke-super {p0, v2}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 1124
+    .line 1073
     instance-of v2, p1, Landroid/os/Bundle;
 
     if-nez v2, :cond_0
 
-    .line 1130
+    .line 1079
     :goto_0
     return-void
 
-    .line 1127
+    .line 1076
     :cond_0
     move-object v0, p1
 
@@ -4922,7 +4596,7 @@
 
     move-object v1, v0
 
-    .line 1129
+    .line 1078
     .local v1, ss:Landroid/os/Bundle;
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->onRestoreInstanceState2(Landroid/os/Bundle;)V
 
@@ -4940,10 +4614,10 @@
 
     const/4 v3, 0x1
 
-    .line 1074
+    .line 1023
     iput-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataChanged:Z
 
-    .line 1076
+    .line 1025
     const-class v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -4952,7 +4626,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
 
-    .line 1077
+    .line 1026
     const-string v0, "com.nemustech.tiffany.tfabslistview.savedstate"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -4961,57 +4635,57 @@
 
     check-cast v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;
 
-    .line 1079
+    .line 1028
     iget v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->height:I
 
     int-to-long v1, v1
 
     iput-wide v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncHeight:J
 
-    .line 1081
+    .line 1030
     iget-wide v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->selectedId:J
 
     cmp-long v1, v1, v5
 
     if-ltz v1, :cond_1
 
-    .line 1082
+    .line 1031
     iput-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNeedSync:Z
 
-    .line 1083
+    .line 1032
     iget-wide v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->selectedId:J
 
     iput-wide v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncRowId:J
 
-    .line 1084
+    .line 1033
     iget v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->position:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncPosition:I
 
-    .line 1085
+    .line 1034
     iget v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->viewTop:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSpecificTop:I
 
-    .line 1086
+    .line 1035
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncMode:I
 
-    .line 1098
+    .line 1047
     :cond_0
     :goto_0
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->filter:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setFilterText(Ljava/lang/String;)V
 
-    .line 1100
+    .line 1049
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->requestLayout()V
 
-    .line 1101
+    .line 1050
     return-void
 
-    .line 1087
+    .line 1036
     :cond_1
     iget-wide v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->firstId:J
 
@@ -5019,31 +4693,31 @@
 
     if-ltz v1, :cond_0
 
-    .line 1088
+    .line 1037
     invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setSelectedPositionInt(I)V
 
-    .line 1090
+    .line 1039
     invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setNextSelectedPositionInt(I)V
 
-    .line 1091
+    .line 1040
     iput-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNeedSync:Z
 
-    .line 1092
+    .line 1041
     iget-wide v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->firstId:J
 
     iput-wide v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncRowId:J
 
-    .line 1093
+    .line 1042
     iget v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->position:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncPosition:I
 
-    .line 1094
+    .line 1043
     iget v1, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->viewTop:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSpecificTop:I
 
-    .line 1095
+    .line 1044
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSyncMode:I
 
     goto :goto_0
@@ -5053,22 +4727,22 @@
     .locals 2
 
     .prologue
-    .line 1109
+    .line 1058
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
-    .line 1111
+    .line 1060
     .local v0, ignoreThis:Landroid/os/Parcelable;
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1113
+    .line 1062
     .local v1, ss:Landroid/os/Bundle;
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->onSaveInstanceState2(Landroid/os/Bundle;)V
 
-    .line 1115
+    .line 1064
     return-object v1
 .end method
 
@@ -5081,15 +4755,15 @@
 
     const/4 v9, 0x0
 
-    .line 1023
+    .line 972
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->dismissPopup()V
 
-    .line 1026
+    .line 975
     new-instance v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;
 
     invoke-direct {v4}, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;-><init>()V
 
-    .line 1028
+    .line 977
     .local v4, ss:Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
@@ -5101,81 +4775,81 @@
 
     move v1, v7
 
-    .line 1029
+    .line 978
     .local v1, haveChildren:Z
     :goto_0
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getSelectedItemId()J
 
     move-result-wide v2
 
-    .line 1030
+    .line 979
     .local v2, selectedId:J
     iput-wide v2, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->selectedId:J
 
-    .line 1031
+    .line 980
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
 
     move-result v7
 
     iput v7, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->height:I
 
-    .line 1033
+    .line 982
     const-wide/16 v7, 0x0
 
     cmp-long v7, v2, v7
 
     if-ltz v7, :cond_2
 
-    .line 1035
+    .line 984
     iget v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
     iput v7, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->viewTop:I
 
-    .line 1036
+    .line 985
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getSelectedItemPosition()I
 
     move-result v7
 
     iput v7, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->position:I
 
-    .line 1037
+    .line 986
     iput-wide v10, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->firstId:J
 
-    .line 1052
+    .line 1001
     :goto_1
     const/4 v7, 0x0
 
     iput-object v7, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->filter:Ljava/lang/String;
 
-    .line 1053
+    .line 1002
     iget-boolean v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
     if-eqz v7, :cond_0
 
-    .line 1054
+    .line 1003
     iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
-    .line 1055
+    .line 1004
     .local v5, textFilter:Landroid/widget/EditText;
     if-eqz v5, :cond_0
 
-    .line 1056
+    .line 1005
     invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
-    .line 1057
+    .line 1006
     .local v0, filterText:Landroid/text/Editable;
     if-eqz v0, :cond_0
 
-    .line 1058
+    .line 1007
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v7
 
     iput-object v7, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->filter:Ljava/lang/String;
 
-    .line 1063
+    .line 1012
     .end local v0           #filterText:Landroid/text/Editable;
     .end local v5           #textFilter:Landroid/widget/EditText;
     :cond_0
@@ -5183,7 +4857,7 @@
 
     invoke-virtual {p1, v7, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 1064
+    .line 1013
     return-void
 
     .end local v1           #haveChildren:Z
@@ -5191,21 +4865,21 @@
     :cond_1
     move v1, v9
 
-    .line 1028
+    .line 977
     goto :goto_0
 
-    .line 1039
+    .line 988
     .restart local v1       #haveChildren:Z
     .restart local v2       #selectedId:J
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 1041
+    .line 990
     invoke-virtual {p0, v9}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    .line 1042
+    .line 991
     .local v6, v:Landroid/view/View;
     invoke-virtual {v6}, Landroid/view/View;->getTop()I
 
@@ -5213,12 +4887,12 @@
 
     iput v7, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->viewTop:I
 
-    .line 1043
+    .line 992
     iget v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     iput v7, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->position:I
 
-    .line 1044
+    .line 993
     iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     iget v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
@@ -5231,15 +4905,15 @@
 
     goto :goto_1
 
-    .line 1046
+    .line 995
     .end local v6           #v:Landroid/view/View;
     :cond_3
     iput v9, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->viewTop:I
 
-    .line 1047
+    .line 996
     iput-wide v10, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->firstId:J
 
-    .line 1048
+    .line 997
     iput v9, v4, Lcom/nemustech/tiffany/widget/TFAbsListView$SavedState;->position:I
 
     goto :goto_1
@@ -5253,22 +4927,22 @@
     .parameter "oldh"
 
     .prologue
-    .line 1596
+    .line 1543
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 1597
+    .line 1544
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataChanged:Z
 
-    .line 1598
+    .line 1545
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->rememberSyncState()V
 
-    .line 1604
+    .line 1551
     :cond_0
     return-void
 .end method
@@ -5281,7 +4955,7 @@
     .parameter
 
     .prologue
-    .line 3846
+    .line 3664
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_1
@@ -5292,32 +4966,32 @@
 
     if-eqz v0, :cond_1
 
-    .line 3847
+    .line 3665
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
-    .line 3848
+    .line 3666
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v1}, Landroid/widget/PopupWindow;->isShowing()Z
 
     move-result v1
 
-    .line 3849
+    .line 3667
     if-nez v1, :cond_2
 
     if-lez v0, :cond_2
 
-    .line 3851
+    .line 3669
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->showPopup()V
 
-    .line 3852
+    .line 3670
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
-    .line 3858
+    .line 3676
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
@@ -5326,7 +5000,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3859
+    .line 3677
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     check-cast v0, Landroid/widget/Filterable;
@@ -5335,33 +5009,33 @@
 
     move-result-object v0
 
-    .line 3861
+    .line 3679
     if-eqz v0, :cond_3
 
-    .line 3862
+    .line 3680
     invoke-virtual {v0, p1, p0}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V
 
-    .line 3869
+    .line 3687
     :cond_1
     return-void
 
-    .line 3853
+    .line 3671
     :cond_2
     if-eqz v1, :cond_0
 
     if-nez v0, :cond_0
 
-    .line 3855
+    .line 3673
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->dismissPopup()V
 
-    .line 3856
+    .line 3674
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
     goto :goto_0
 
-    .line 3864
+    .line 3682
     :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -5387,14 +5061,14 @@
 
     const/4 v5, 0x0
 
-    .line 2181
+    .line 2128
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 2184
+    .line 2131
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isClickable()Z
 
     move-result v0
@@ -5410,55 +5084,55 @@
     :cond_0
     move v0, v6
 
-    .line 2519
+    .line 2426
     :goto_0
     return v0
 
     :cond_1
     move v0, v5
 
-    .line 2184
+    .line 2131
     goto :goto_0
 
-    .line 2194
+    .line 2141
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 2195
+    .line 2142
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
 
     float-to-int v1, v1
 
-    .line 2196
+    .line 2143
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 2201
+    .line 2148
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v3, :cond_3
 
-    .line 2202
+    .line 2149
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 2204
+    .line 2151
     :cond_3
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v3, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 2209
+    .line 2156
     iget-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
 
     if-eqz v3, :cond_5
@@ -5483,7 +5157,7 @@
 
     if-ne v3, v8, :cond_5
 
-    .line 2214
+    .line 2161
     :cond_4
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;
 
@@ -5491,17 +5165,17 @@
 
     invoke-virtual {v3, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->start(F)V
 
-    .line 2217
+    .line 2164
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     if-ne v3, v8, :cond_5
 
-    .line 2218
+    .line 2165
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v3}, Landroid/view/VelocityTracker;->clear()V
 
-    .line 2225
+    .line 2172
     :cond_5
     packed-switch v0, :pswitch_data_0
 
@@ -5509,36 +5183,26 @@
     :goto_1
     move v0, v6
 
-    .line 2519
+    .line 2426
     goto :goto_0
 
-    .line 2228
+    .line 2175
     :pswitch_0
     invoke-virtual {p0, v1, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->pointToPosition(II)I
 
     move-result v3
 
-    .line 2229
+    .line 2176
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;
 
     invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->cancel()V
 
-    .line 2231
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->finish()V
-
-    .line 2232
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->finish()V
-
-    .line 2234
+    .line 2177
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataChanged:Z
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_1e
 
-    .line 2235
+    .line 2178
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     const/4 v4, 0x4
@@ -5563,22 +5227,22 @@
 
     if-nez v0, :cond_9
 
-    .line 2239
+    .line 2182
     iput v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2241
+    .line 2184
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForTap:Ljava/lang/Runnable;
 
     if-nez v0, :cond_7
 
-    .line 2242
+    .line 2185
     new-instance v0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForTap;
 
     invoke-direct {v0, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForTap;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForTap:Ljava/lang/Runnable;
 
-    .line 2244
+    .line 2187
     :cond_7
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForTap:Ljava/lang/Runnable;
 
@@ -5592,11 +5256,11 @@
 
     move v0, v3
 
-    .line 2268
+    .line 2211
     :goto_2
     if-ltz v0, :cond_8
 
-    .line 2270
+    .line 2213
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     sub-int v3, v0, v3
@@ -5605,31 +5269,31 @@
 
     move-result-object v3
 
-    .line 2271
+    .line 2214
     invoke-virtual {v3}, Landroid/view/View;->getTop()I
 
     move-result v3
 
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionViewOriginalTop:I
 
-    .line 2273
+    .line 2216
     :cond_8
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionX:I
 
-    .line 2274
+    .line 2217
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionY:I
 
-    .line 2275
+    .line 2218
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
-    .line 2276
+    .line 2219
     const/high16 v0, -0x8000
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastY:I
 
     goto :goto_1
 
-    .line 2246
+    .line 2189
     :cond_9
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getEdgeFlags()I
 
@@ -5641,241 +5305,142 @@
 
     move v0, v5
 
-    .line 2250
+    .line 2193
     goto/16 :goto_0
 
-    .line 2257
+    .line 2200
     :cond_a
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     if-nez v0, :cond_b
 
-    .line 2258
+    .line 2201
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->createScrollingCache()V
 
-    .line 2260
+    .line 2203
     :cond_b
     iput v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2261
+    .line 2204
     iput v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionCorrection:I
 
-    .line 2262
+    .line 2205
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->findMotionRow(I)I
 
     move-result v0
 
-    .line 2263
+    .line 2206
     invoke-virtual {p0, v6}, Lcom/nemustech/tiffany/widget/TFAbsListView;->reportScrollStateChange(I)V
 
     goto :goto_2
 
-    .line 2281
+    .line 2224
     :pswitch_1
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionY:I
 
     sub-int v0, v2, v0
 
-    .line 2282
+    .line 2225
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     packed-switch v1, :pswitch_data_1
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    .line 2288
+    .line 2231
     :pswitch_2
     invoke-direct {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->startScrollIfNeeded(I)Z
 
     goto/16 :goto_1
 
-    .line 2298
+    .line 2241
     :pswitch_3
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastY:I
 
     if-eq v2, v1, :cond_6
 
-    .line 2300
+    .line 2243
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionCorrection:I
 
     sub-int/2addr v0, v1
 
-    .line 2301
+    .line 2244
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastY:I
 
     const/high16 v3, -0x8000
 
-    if-eq v1, v3, :cond_f
+    if-eq v1, v3, :cond_d
 
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastY:I
 
     sub-int v1, v2, v1
 
-    .line 2303
+    .line 2246
     :goto_3
     if-eqz v1, :cond_c
 
-    .line 2304
+    .line 2247
     invoke-virtual {p0, v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->trackMotionScroll(II)V
 
-    .line 2326
+    .line 2267
     :cond_c
-    invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->contentFits()Z
-
-    move-result v1
-
-    if-nez v1, :cond_e
-
-    .line 2328
-    if-lez v0, :cond_10
-
-    .line 2329
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->blockDecay()V
-
-    .line 2330
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
-
-    neg-int v1, v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float/2addr v1, v3
-
-    invoke-virtual {v0, v6, v1}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->onPull(ZF)V
-
-    .line 2331
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->isFinished()Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    .line 2332
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->onRelease()V
-
-    .line 2341
-    :cond_d
-    :goto_4
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
-
-    .line 2345
-    :cond_e
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastY:I
 
     goto/16 :goto_1
 
-    :cond_f
+    :cond_d
     move v1, v0
 
-    .line 2301
+    .line 2244
     goto :goto_3
 
-    .line 2334
-    :cond_10
-    if-gez v0, :cond_d
-
-    .line 2335
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->blockDecay()V
-
-    .line 2336
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
-
-    neg-int v1, v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float/2addr v1, v3
-
-    invoke-virtual {v0, v6, v1}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->onPull(ZF)V
-
-    .line 2337
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->isFinished()Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    .line 2338
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->onRelease()V
-
-    goto :goto_4
-
-    .line 2355
+    .line 2277
     :pswitch_4
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     packed-switch v0, :pswitch_data_2
 
-    .line 2466
-    :cond_11
-    :goto_5
+    .line 2380
+    :goto_4
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setPressed(Z)V
 
-    .line 2469
+    .line 2383
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
 
-    .line 2471
+    .line 2385
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
-    .line 2472
-    if-eqz v0, :cond_12
+    .line 2386
+    if-eqz v0, :cond_e
 
-    .line 2473
+    .line 2387
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 2476
-    :cond_12
+    .line 2390
+    :cond_e
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_6
 
-    .line 2477
+    .line 2391
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 2478
+    .line 2392
     iput-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     goto/16 :goto_1
 
-    .line 2359
+    .line 2281
     :pswitch_5
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
-    .line 2360
+    .line 2282
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     sub-int v1, v0, v1
@@ -5884,135 +5449,135 @@
 
     move-result-object v1
 
-    .line 2361
-    if-eqz v1, :cond_1b
+    .line 2283
+    if-eqz v1, :cond_17
 
     invoke-virtual {v1}, Landroid/view/View;->hasFocusable()Z
 
     move-result v2
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_17
 
-    .line 2362
+    .line 2284
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_f
 
-    .line 2363
+    .line 2285
     invoke-virtual {v1, v5}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2366
-    :cond_13
+    .line 2288
+    :cond_f
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPerformClick:Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;
 
-    if-nez v2, :cond_14
+    if-nez v2, :cond_10
 
-    .line 2367
+    .line 2289
     new-instance v2, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;
 
     invoke-direct {v2, p0, v9}, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;Lcom/nemustech/tiffany/widget/TFAbsListView$1;)V
 
     iput-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPerformClick:Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;
 
-    .line 2370
-    :cond_14
+    .line 2292
+    :cond_10
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPerformClick:Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;
 
-    .line 2371
+    .line 2293
     iput-object v1, v2, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->mChild:Landroid/view/View;
 
-    .line 2372
+    .line 2294
     iput v0, v2, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->mClickMotionPosition:I
 
-    .line 2373
+    .line 2295
     invoke-virtual {v2}, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->rememberWindowAttachCount()V
 
-    .line 2375
+    .line 2297
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 2377
+    .line 2299
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_11
 
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    if-ne v0, v6, :cond_1a
+    if-ne v0, v6, :cond_16
 
-    .line 2378
-    :cond_15
+    .line 2300
+    :cond_11
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
-    .line 2379
-    if-eqz v0, :cond_16
+    .line 2301
+    if-eqz v0, :cond_12
 
-    .line 2380
+    .line 2302
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_14
 
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForTap:Ljava/lang/Runnable;
 
-    :goto_6
+    :goto_5
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 2383
-    :cond_16
+    .line 2305
+    :cond_12
     iput v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 2384
+    .line 2306
     iput v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2385
+    .line 2307
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataChanged:Z
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_15
 
-    .line 2386
+    .line 2308
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setSelectedPositionInt(I)V
 
-    .line 2387
+    .line 2309
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->layoutChildren()V
 
-    .line 2388
+    .line 2310
     invoke-virtual {v1, v6}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2389
+    .line 2311
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->positionSelector(Landroid/view/View;)V
 
-    .line 2390
+    .line 2312
     invoke-virtual {p0, v6}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setPressed(Z)V
 
-    .line 2391
+    .line 2313
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_13
 
-    .line 2392
+    .line 2314
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getCurrent()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 2393
-    if-eqz v0, :cond_17
+    .line 2315
+    if-eqz v0, :cond_13
 
     instance-of v3, v0, Landroid/graphics/drawable/TransitionDrawable;
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_13
 
-    .line 2394
+    .line 2316
     check-cast v0, Landroid/graphics/drawable/TransitionDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/TransitionDrawable;->resetTransition()V
 
-    .line 2397
-    :cond_17
+    .line 2319
+    :cond_13
     new-instance v0, Lcom/nemustech/tiffany/widget/TFAbsListView$2;
 
     invoke-direct {v0, p0, v1, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView$2;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;)V
@@ -6025,52 +5590,52 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :goto_7
+    :goto_6
     move v0, v6
 
-    .line 2416
+    .line 2338
     goto/16 :goto_0
 
-    .line 2380
-    :cond_18
+    .line 2302
+    :cond_14
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;
+
+    goto :goto_5
+
+    .line 2335
+    :cond_15
+    iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     goto :goto_6
 
-    .line 2413
-    :cond_19
-    iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
-
-    goto :goto_7
-
-    .line 2418
-    :cond_1a
+    .line 2340
+    :cond_16
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataChanged:Z
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_17
 
-    .line 2419
+    .line 2341
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->post(Ljava/lang/Runnable;)Z
 
-    .line 2423
-    :cond_1b
+    .line 2345
+    :cond_17
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
-    .line 2426
+    .line 2348
     :pswitch_6
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v0
 
-    .line 2427
-    if-lez v0, :cond_1f
+    .line 2349
+    if-lez v0, :cond_1b
 
-    .line 2428
+    .line 2350
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_18
 
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
@@ -6084,7 +5649,7 @@
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
 
-    if-lt v1, v2, :cond_1c
+    if-lt v1, v2, :cond_18
 
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
@@ -6092,7 +5657,7 @@
 
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mItemCount:I
 
-    if-ge v1, v2, :cond_1c
+    if-ge v1, v2, :cond_18
 
     sub-int/2addr v0, v6
 
@@ -6114,37 +5679,21 @@
 
     sub-int/2addr v1, v2
 
-    if-gt v0, v1, :cond_1c
+    if-gt v0, v1, :cond_18
 
-    .line 2432
+    .line 2354
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2433
+    .line 2355
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->reportScrollStateChange(I)V
 
-    .line 2457
-    :goto_8
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
+    goto/16 :goto_4
 
-    if-eqz v0, :cond_11
-
-    .line 2458
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->onRelease()V
-
-    .line 2459
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->onRelease()V
-
-    goto/16 :goto_5
-
-    .line 2435
-    :cond_1c
+    .line 2357
+    :cond_18
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 2436
+    .line 2358
     const/16 v1, 0x3e8
 
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMaximumVelocity:I
@@ -6153,75 +5702,75 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 2437
+    .line 2359
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->getYVelocity()F
 
     move-result v0
 
     float-to-int v0, v0
 
-    .line 2439
+    .line 2361
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v1
 
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMinimumVelocity:I
 
-    if-le v1, v2, :cond_1e
+    if-le v1, v2, :cond_1a
 
-    .line 2440
+    .line 2362
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFlingRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_19
 
-    .line 2441
+    .line 2363
     new-instance v1, Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;
 
     invoke-direct {v1, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFlingRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;
 
-    .line 2443
-    :cond_1d
+    .line 2365
+    :cond_19
     const/4 v1, 0x2
 
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->reportScrollStateChange(I)V
 
-    .line 2445
+    .line 2367
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFlingRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;
 
     neg-int v0, v0
 
     invoke-virtual {v1, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;->start(I)V
 
-    goto :goto_8
+    goto/16 :goto_4
 
-    .line 2447
-    :cond_1e
+    .line 2369
+    :cond_1a
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2448
+    .line 2370
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->reportScrollStateChange(I)V
 
-    goto :goto_8
+    goto/16 :goto_4
 
-    .line 2452
-    :cond_1f
+    .line 2374
+    :cond_1b
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2453
+    .line 2375
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->reportScrollStateChange(I)V
 
-    goto :goto_8
+    goto/16 :goto_4
 
-    .line 2491
+    .line 2405
     :pswitch_7
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 2492
+    .line 2406
     invoke-virtual {p0, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setPressed(Z)V
 
-    .line 2493
+    .line 2407
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
@@ -6232,67 +5781,51 @@
 
     move-result-object v0
 
-    .line 2494
-    if-eqz v0, :cond_20
+    .line 2408
+    if-eqz v0, :cond_1c
 
-    .line 2495
+    .line 2409
     invoke-virtual {v0, v5}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2497
-    :cond_20
+    .line 2411
+    :cond_1c
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->clearScrollingCache()V
 
-    .line 2499
+    .line 2413
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
-    .line 2500
-    if-eqz v0, :cond_21
+    .line 2414
+    if-eqz v0, :cond_1d
 
-    .line 2501
+    .line 2415
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPendingCheckForLongPress:Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 2504
-    :cond_21
+    .line 2418
+    :cond_1d
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_6
 
-    .line 2505
+    .line 2419
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 2506
+    .line 2420
     iput-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    .line 2510
-    :cond_22
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    if-eqz v0, :cond_6
-
-    .line 2511
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowTop:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->onRelease()V
-
-    .line 2512
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mEdgeGlowBottom:Lcom/nemustech/tiffany/widget/TFEdgeGlow;
-
-    invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFEdgeGlow;->onRelease()V
 
     goto/16 :goto_1
 
-    :cond_23
+    :cond_1e
     move v0, v3
 
     goto/16 :goto_2
 
-    .line 2225
+    .line 2172
     nop
 
     :pswitch_data_0
@@ -6303,7 +5836,7 @@
         :pswitch_7
     .end packed-switch
 
-    .line 2282
+    .line 2225
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_2
@@ -6312,7 +5845,7 @@
         :pswitch_3
     .end packed-switch
 
-    .line 2355
+    .line 2277
     :pswitch_data_2
     .packed-switch 0x0
         :pswitch_5
@@ -6327,13 +5860,13 @@
     .parameter "isInTouchMode"
 
     .prologue
-    .line 2164
+    .line 2111
     if-eqz p1, :cond_0
 
-    .line 2166
+    .line 2113
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->hideSelector()V
 
-    .line 2170
+    .line 2117
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
 
     move-result v0
@@ -6346,15 +5879,15 @@
 
     if-lez v0, :cond_0
 
-    .line 2173
+    .line 2120
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 2174
+    .line 2121
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->layoutChildren()V
 
-    .line 2177
+    .line 2124
     :cond_0
     return-void
 .end method
@@ -6368,10 +5901,10 @@
 
     const/4 v3, 0x0
 
-    .line 1816
+    .line 1763
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAdapterView;->onWindowFocusChanged(Z)V
 
-    .line 1818
+    .line 1765
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isInTouchMode()Z
 
     move-result v1
@@ -6380,69 +5913,69 @@
 
     move v0, v3
 
-    .line 1820
+    .line 1767
     .local v0, touchMode:I
     :goto_0
     if-nez p1, :cond_3
 
-    .line 1821
+    .line 1768
     invoke-virtual {p0, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setChildrenDrawingCacheEnabled(Z)V
 
-    .line 1822
+    .line 1769
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFlingRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;
 
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1824
+    .line 1771
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->dismissPopup()V
 
-    .line 1826
+    .line 1773
     if-ne v0, v4, :cond_0
 
-    .line 1828
+    .line 1775
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 1832
+    .line 1779
     :cond_0
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     if-eqz v1, :cond_1
 
-    .line 1833
+    .line 1780
     new-instance v1, Lcom/nemustech/tiffany/widget/TFAbsListView$1;
 
     invoke-direct {v1, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$1;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->post(Ljava/lang/Runnable;)Z
 
-    .line 1863
+    .line 1810
     :cond_1
     :goto_1
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastTouchMode:I
 
-    .line 1864
+    .line 1811
     return-void
 
     .end local v0           #touchMode:I
     :cond_2
     move v0, v4
 
-    .line 1818
+    .line 1765
     goto :goto_0
 
-    .line 1842
+    .line 1789
     .restart local v0       #touchMode:I
     :cond_3
     iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
     if-eqz v1, :cond_4
 
-    .line 1844
+    .line 1791
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->showPopup()V
 
-    .line 1848
+    .line 1795
     :cond_4
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastTouchMode:I
 
@@ -6454,22 +5987,22 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 1850
+    .line 1797
     if-ne v0, v4, :cond_5
 
-    .line 1852
+    .line 1799
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->resurrectSelection()Z
 
     goto :goto_1
 
-    .line 1856
+    .line 1803
     :cond_5
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->hideSelector()V
 
-    .line 1857
+    .line 1804
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 1858
+    .line 1805
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->layoutChildren()V
 
     goto :goto_1
@@ -6482,16 +6015,16 @@
     .parameter "longPressId"
 
     .prologue
-    .line 1965
+    .line 1912
     const/4 v6, 0x0
 
-    .line 1967
+    .line 1914
     .local v6, handled:Z
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOnItemLongClickListener:Lcom/nemustech/tiffany/widget/TFAdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
-    .line 1968
+    .line 1915
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOnItemLongClickListener:Lcom/nemustech/tiffany/widget/TFAdapterView$OnItemLongClickListener;
 
     move-object v1, p0
@@ -6506,32 +6039,32 @@
 
     move-result v6
 
-    .line 1971
+    .line 1918
     :cond_0
     if-nez v6, :cond_1
 
-    .line 1972
+    .line 1919
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->createContextMenuInfo(Landroid/view/View;IJ)Landroid/view/ContextMenu$ContextMenuInfo;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    .line 1973
+    .line 1920
     invoke-super {p0, p0}, Lcom/nemustech/tiffany/widget/TFAdapterView;->showContextMenuForChild(Landroid/view/View;)Z
 
     move-result v6
 
-    .line 1975
+    .line 1922
     :cond_1
     if-eqz v6, :cond_2
 
-    .line 1976
+    .line 1923
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->performHapticFeedback(I)Z
 
-    .line 1978
+    .line 1925
     :cond_2
     return v6
 .end method
@@ -6542,30 +6075,30 @@
     .parameter "y"
 
     .prologue
-    .line 2052
+    .line 1999
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchFrame:Landroid/graphics/Rect;
 
-    .line 2053
+    .line 2000
     .local v2, frame:Landroid/graphics/Rect;
     if-nez v2, :cond_0
 
-    .line 2054
+    .line 2001
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchFrame:Landroid/graphics/Rect;
 
-    .line 2055
+    .line 2002
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchFrame:Landroid/graphics/Rect;
 
-    .line 2058
+    .line 2005
     :cond_0
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v1
 
-    .line 2059
+    .line 2006
     .local v1, count:I
     const/4 v4, 0x1
 
@@ -6575,12 +6108,12 @@
     :goto_0
     if-ltz v3, :cond_2
 
-    .line 2060
+    .line 2007
     invoke-virtual {p0, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2061
+    .line 2008
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -6588,34 +6121,34 @@
 
     if-nez v4, :cond_1
 
-    .line 2062
+    .line 2009
     invoke-virtual {v0, v2}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 2063
+    .line 2010
     invoke-virtual {v2, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 2064
+    .line 2011
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     add-int/2addr v4, v3
 
-    .line 2068
+    .line 2015
     .end local v0           #child:Landroid/view/View;
     :goto_1
     return v4
 
-    .line 2059
+    .line 2006
     .restart local v0       #child:Landroid/view/View;
     :cond_1
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_0
 
-    .line 2068
+    .line 2015
     .end local v0           #child:Landroid/view/View;
     :cond_2
     const/4 v4, -0x1
@@ -6628,10 +6161,10 @@
     .parameter "sel"
 
     .prologue
-    .line 1546
+    .line 1493
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
-    .line 1547
+    .line 1494
     .local v1, selectorRect:Landroid/graphics/Rect;
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
@@ -6651,7 +6184,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1548
+    .line 1495
     iget v2, v1, Landroid/graphics/Rect;->left:I
 
     iget v3, v1, Landroid/graphics/Rect;->top:I
@@ -6662,10 +6195,10 @@
 
     invoke-direct {p0, v2, v3, v4, v5}, Lcom/nemustech/tiffany/widget/TFAbsListView;->positionSelector(IIII)V
 
-    .line 1551
+    .line 1498
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mIsChildViewEnabled:Z
 
-    .line 1552
+    .line 1499
     .local v0, isChildViewEnabled:Z
     invoke-virtual {p1}, Landroid/view/View;->isEnabled()Z
 
@@ -6673,7 +6206,7 @@
 
     if-eq v2, v0, :cond_0
 
-    .line 1553
+    .line 1500
     if-nez v0, :cond_1
 
     const/4 v2, 0x1
@@ -6681,14 +6214,14 @@
     :goto_0
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mIsChildViewEnabled:Z
 
-    .line 1554
+    .line 1501
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->refreshDrawableState()V
 
-    .line 1556
+    .line 1503
     :cond_0
     return-void
 
-    .line 1553
+    .line 1500
     :cond_1
     const/4 v2, 0x0
 
@@ -6699,17 +6232,17 @@
     .locals 3
 
     .prologue
-    .line 3282
+    .line 3100
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedPosition:I
 
-    .line 3283
+    .line 3101
     .local v0, position:I
     if-gez v0, :cond_0
 
-    .line 3284
+    .line 3102
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 3286
+    .line 3104
     :cond_0
     const/4 v1, 0x0
 
@@ -6717,7 +6250,7 @@
 
     move-result v0
 
-    .line 3287
+    .line 3105
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mItemCount:I
 
     const/4 v2, 0x1
@@ -6728,7 +6261,7 @@
 
     move-result v0
 
-    .line 3288
+    .line 3106
     return v0
 .end method
 
@@ -6737,25 +6270,25 @@
     .parameter "newState"
 
     .prologue
-    .line 2776
+    .line 2632
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastScrollState:I
 
     if-eq p1, v0, :cond_0
 
-    .line 2777
+    .line 2633
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOnScrollListener:Lcom/nemustech/tiffany/widget/TFAbsListView$OnScrollListener;
 
     if-eqz v0, :cond_0
 
-    .line 2778
+    .line 2634
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOnScrollListener:Lcom/nemustech/tiffany/widget/TFAbsListView$OnScrollListener;
 
     invoke-interface {v0, p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$OnScrollListener;->onScrollStateChanged(Lcom/nemustech/tiffany/widget/TFAbsListView;I)V
 
-    .line 2779
+    .line 2635
     iput p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastScrollState:I
 
-    .line 2782
+    .line 2638
     :cond_0
     return-void
 .end method
@@ -6764,7 +6297,7 @@
     .locals 1
 
     .prologue
-    .line 1186
+    .line 1135
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockLayoutRequests:Z
 
     if-nez v0, :cond_0
@@ -6773,10 +6306,10 @@
 
     if-nez v0, :cond_0
 
-    .line 1187
+    .line 1136
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFAdapterView;->requestLayout()V
 
-    .line 1189
+    .line 1138
     :cond_0
     return-void
 .end method
@@ -6785,23 +6318,23 @@
     .locals 1
 
     .prologue
-    .line 935
+    .line 884
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 936
+    .line 885
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->resetList()V
 
-    .line 937
+    .line 886
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->requestLayout()V
 
-    .line 938
+    .line 887
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
 
-    .line 940
+    .line 889
     :cond_0
     return-void
 .end method
@@ -6814,44 +6347,44 @@
 
     const/4 v2, 0x0
 
-    .line 1195
+    .line 1144
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->removeAllViewsInLayout()V
 
-    .line 1196
+    .line 1145
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
-    .line 1197
+    .line 1146
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataChanged:Z
 
-    .line 1198
+    .line 1147
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mNeedSync:Z
 
-    .line 1199
+    .line 1148
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOldSelectedPosition:I
 
-    .line 1200
+    .line 1149
     const-wide/high16 v0, -0x8000
 
     iput-wide v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOldSelectedRowId:J
 
-    .line 1201
+    .line 1150
     invoke-virtual {p0, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setSelectedPositionInt(I)V
 
-    .line 1202
+    .line 1151
     invoke-virtual {p0, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setNextSelectedPositionInt(I)V
 
-    .line 1203
+    .line 1152
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
-    .line 1204
+    .line 1153
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 1205
+    .line 1154
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
 
-    .line 1206
+    .line 1155
     return-void
 .end method
 
@@ -6859,27 +6392,27 @@
     .locals 20
 
     .prologue
-    .line 3322
+    .line 3140
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v4
 
-    .line 3324
+    .line 3142
     .local v4, childCount:I
     if-gtz v4, :cond_0
 
-    .line 3325
+    .line 3143
     const/16 v18, 0x0
 
-    .line 3416
+    .line 3234
     :goto_0
     return v18
 
-    .line 3328
+    .line 3146
     :cond_0
     const/4 v14, 0x0
 
-    .line 3330
+    .line 3148
     .local v14, selectedTop:I
     move-object/from16 v0, p0
 
@@ -6893,7 +6426,7 @@
 
     move v6, v0
 
-    .line 3331
+    .line 3149
     .local v6, childrenTop:I
     move-object/from16 v0, p0
 
@@ -6923,7 +6456,7 @@
 
     sub-int v5, v18, v19
 
-    .line 3332
+    .line 3150
     .local v5, childrenBottom:I
     move-object/from16 v0, p0
 
@@ -6931,7 +6464,7 @@
 
     move v8, v0
 
-    .line 3333
+    .line 3151
     .local v8, firstPosition:I
     move-object/from16 v0, p0
 
@@ -6939,11 +6472,11 @@
 
     move v15, v0
 
-    .line 3334
+    .line 3152
     .local v15, toPosition:I
     const/4 v7, 0x1
 
-    .line 3336
+    .line 3154
     .local v7, down:Z
     if-lt v15, v8, :cond_3
 
@@ -6955,10 +6488,10 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 3337
+    .line 3155
     move v13, v15
 
-    .line 3339
+    .line 3157
     .local v13, selectedPos:I
     move-object/from16 v0, p0
 
@@ -6976,29 +6509,29 @@
 
     move-result-object v11
 
-    .line 3340
+    .line 3158
     .local v11, selected:Landroid/view/View;
     invoke-virtual {v11}, Landroid/view/View;->getTop()I
 
     move-result v14
 
-    .line 3341
+    .line 3159
     invoke-virtual {v11}, Landroid/view/View;->getBottom()I
 
     move-result v12
 
-    .line 3344
+    .line 3162
     .local v12, selectedBottom:I
     if-ge v14, v6, :cond_2
 
-    .line 3345
+    .line 3163
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getVerticalFadingEdgeLength()I
 
     move-result v18
 
     add-int v14, v6, v18
 
-    .line 3401
+    .line 3219
     .end local v11           #selected:Landroid/view/View;
     .end local v12           #selectedBottom:I
     :cond_1
@@ -7011,7 +6544,7 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
-    .line 3402
+    .line 3220
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFlingRunnable:Lcom/nemustech/tiffany/widget/TFAbsListView$FlingRunnable;
@@ -7024,7 +6557,7 @@
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 3403
+    .line 3221
     const/16 v18, -0x1
 
     move/from16 v0, v18
@@ -7033,17 +6566,17 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 3404
+    .line 3222
     invoke-direct/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->clearScrollingCache()V
 
-    .line 3405
+    .line 3223
     move v0, v14
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSpecificTop:I
 
-    .line 3406
+    .line 3224
     move-object/from16 v0, p0
 
     move v1, v13
@@ -7054,7 +6587,7 @@
 
     move-result v13
 
-    .line 3407
+    .line 3225
     if-lt v13, v8, :cond_b
 
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getLastVisiblePosition()I
@@ -7067,7 +6600,7 @@
 
     if-gt v0, v1, :cond_b
 
-    .line 3408
+    .line 3226
     const/16 v18, 0x4
 
     move/from16 v0, v18
@@ -7076,17 +6609,17 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
-    .line 3409
+    .line 3227
     move-object/from16 v0, p0
 
     move v1, v13
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setSelectionInt(I)V
 
-    .line 3410
+    .line 3228
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invokeOnItemScrollListener()V
 
-    .line 3414
+    .line 3232
     :goto_2
     const/16 v18, 0x0
 
@@ -7096,20 +6629,20 @@
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->reportScrollStateChange(I)V
 
-    .line 3416
+    .line 3234
     if-ltz v13, :cond_c
 
     const/16 v18, 0x1
 
     goto/16 :goto_0
 
-    .line 3346
+    .line 3164
     .restart local v11       #selected:Landroid/view/View;
     .restart local v12       #selectedBottom:I
     :cond_2
     if-le v12, v5, :cond_1
 
-    .line 3347
+    .line 3165
     invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v18
@@ -7124,17 +6657,17 @@
 
     goto :goto_1
 
-    .line 3351
+    .line 3169
     .end local v11           #selected:Landroid/view/View;
     .end local v12           #selectedBottom:I
     .end local v13           #selectedPos:I
     :cond_3
     if-ge v15, v8, :cond_7
 
-    .line 3353
+    .line 3171
     move v13, v8
 
-    .line 3354
+    .line 3172
     .restart local v13       #selectedPos:I
     const/4 v9, 0x0
 
@@ -7142,7 +6675,7 @@
     :goto_3
     if-ge v9, v4, :cond_1
 
-    .line 3355
+    .line 3173
     move-object/from16 v0, p0
 
     move v1, v9
@@ -7151,20 +6684,20 @@
 
     move-result-object v17
 
-    .line 3356
+    .line 3174
     .local v17, v:Landroid/view/View;
     invoke-virtual/range {v17 .. v17}, Landroid/view/View;->getTop()I
 
     move-result v16
 
-    .line 3358
+    .line 3176
     .local v16, top:I
     if-nez v9, :cond_5
 
-    .line 3360
+    .line 3178
     move/from16 v14, v16
 
-    .line 3362
+    .line 3180
     if-gtz v8, :cond_4
 
     move/from16 v0, v16
@@ -7173,7 +6706,7 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 3365
+    .line 3183
     :cond_4
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getVerticalFadingEdgeLength()I
 
@@ -7181,7 +6714,7 @@
 
     add-int v6, v6, v18
 
-    .line 3368
+    .line 3186
     :cond_5
     move/from16 v0, v16
 
@@ -7189,22 +6722,22 @@
 
     if-lt v0, v1, :cond_6
 
-    .line 3370
+    .line 3188
     add-int v13, v8, v9
 
-    .line 3371
+    .line 3189
     move/from16 v14, v16
 
-    .line 3372
+    .line 3190
     goto/16 :goto_1
 
-    .line 3354
+    .line 3172
     :cond_6
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_3
 
-    .line 3376
+    .line 3194
     .end local v9           #i:I
     .end local v13           #selectedPos:I
     .end local v16           #top:I
@@ -7216,18 +6749,18 @@
 
     move v10, v0
 
-    .line 3377
+    .line 3195
     .local v10, itemCount:I
     const/4 v7, 0x0
 
-    .line 3378
+    .line 3196
     add-int v18, v8, v4
 
     const/16 v19, 0x1
 
     sub-int v13, v18, v19
 
-    .line 3380
+    .line 3198
     .restart local v13       #selectedPos:I
     const/16 v18, 0x1
 
@@ -7237,7 +6770,7 @@
     :goto_4
     if-ltz v9, :cond_1
 
-    .line 3381
+    .line 3199
     move-object/from16 v0, p0
 
     move v1, v9
@@ -7246,19 +6779,19 @@
 
     move-result-object v17
 
-    .line 3382
+    .line 3200
     .restart local v17       #v:Landroid/view/View;
     invoke-virtual/range {v17 .. v17}, Landroid/view/View;->getTop()I
 
     move-result v16
 
-    .line 3383
+    .line 3201
     .restart local v16       #top:I
     invoke-virtual/range {v17 .. v17}, Landroid/view/View;->getBottom()I
 
     move-result v3
 
-    .line 3385
+    .line 3203
     .local v3, bottom:I
     const/16 v18, 0x1
 
@@ -7270,10 +6803,10 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 3386
+    .line 3204
     move/from16 v14, v16
 
-    .line 3387
+    .line 3205
     add-int v18, v8, v4
 
     move/from16 v0, v18
@@ -7284,7 +6817,7 @@
 
     if-le v3, v5, :cond_9
 
-    .line 3388
+    .line 3206
     :cond_8
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getVerticalFadingEdgeLength()I
 
@@ -7292,26 +6825,26 @@
 
     sub-int v5, v5, v18
 
-    .line 3392
+    .line 3210
     :cond_9
     if-gt v3, v5, :cond_a
 
-    .line 3393
+    .line 3211
     add-int v13, v8, v9
 
-    .line 3394
+    .line 3212
     move/from16 v14, v16
 
-    .line 3395
+    .line 3213
     goto/16 :goto_1
 
-    .line 3380
+    .line 3198
     :cond_a
     add-int/lit8 v9, v9, -0x1
 
     goto :goto_4
 
-    .line 3412
+    .line 3230
     .end local v3           #bottom:I
     .end local v9           #i:I
     .end local v10           #itemCount:I
@@ -7322,7 +6855,7 @@
 
     goto/16 :goto_2
 
-    .line 3416
+    .line 3234
     :cond_c
     const/16 v18, 0x0
 
@@ -7340,7 +6873,7 @@
 
     const/4 v2, 0x1
 
-    .line 3636
+    .line 3454
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->acceptFilter()Z
 
     move-result v0
@@ -7349,11 +6882,11 @@
 
     move v0, v4
 
-    .line 3694
+    .line 3512
     :goto_0
     return v0
 
-    .line 3642
+    .line 3460
     :cond_0
     sparse-switch p1, :sswitch_data_0
 
@@ -7361,21 +6894,21 @@
 
     move v1, v4
 
-    .line 3671
+    .line 3489
     :goto_1
     if-eqz v0, :cond_1
 
-    .line 3672
+    .line 3490
     invoke-direct {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->createTextFilter(Z)V
 
-    .line 3675
+    .line 3493
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v0
 
     if-lez v0, :cond_3
 
-    .line 3676
+    .line 3494
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getEventTime()J
 
     move-result-wide v2
@@ -7384,13 +6917,13 @@
 
     move-result-object v0
 
-    .line 3679
+    .line 3497
     :goto_2
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v2
 
-    .line 3680
+    .line 3498
     packed-switch v2, :pswitch_data_0
 
     :cond_1
@@ -7403,10 +6936,10 @@
 
     move v1, v4
 
-    .line 3650
+    .line 3468
     goto :goto_1
 
-    .line 3652
+    .line 3470
     :sswitch_1
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
@@ -7424,7 +6957,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 3653
+    .line 3471
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
@@ -7437,7 +6970,7 @@
 
     if-nez v0, :cond_2
 
-    .line 3655
+    .line 3473
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
 
     move-result-object v0
@@ -7451,10 +6984,10 @@
 
     move v0, v4
 
-    .line 3664
+    .line 3482
     goto :goto_1
 
-    .line 3657
+    .line 3475
     :cond_2
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -7474,7 +7007,7 @@
 
     if-nez v0, :cond_4
 
-    .line 3660
+    .line 3478
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
     const-string v1, ""
@@ -7485,7 +7018,7 @@
 
     goto :goto_3
 
-    .line 3667
+    .line 3485
     :sswitch_2
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
@@ -7495,7 +7028,7 @@
 
     goto :goto_1
 
-    .line 3682
+    .line 3500
     :pswitch_0
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
@@ -7505,7 +7038,7 @@
 
     goto :goto_0
 
-    .line 3686
+    .line 3504
     :pswitch_1
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
@@ -7515,7 +7048,7 @@
 
     goto :goto_0
 
-    .line 3690
+    .line 3508
     :pswitch_2
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
@@ -7535,7 +7068,7 @@
 
     goto :goto_3
 
-    .line 3642
+    .line 3460
     :sswitch_data_0
     .sparse-switch
         0x4 -> :sswitch_1
@@ -7548,7 +7081,7 @@
         0x42 -> :sswitch_0
     .end sparse-switch
 
-    .line 3680
+    .line 3498
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -7562,10 +7095,10 @@
     .parameter "color"
 
     .prologue
-    .line 3936
+    .line 3754
     iput p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCacheColorHint:I
 
-    .line 3937
+    .line 3755
     return-void
 .end method
 
@@ -7574,10 +7107,10 @@
     .parameter "onTop"
 
     .prologue
-    .line 1650
+    .line 1597
     iput-boolean p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDrawSelectorOnTop:Z
 
-    .line 1651
+    .line 1598
     return-void
 .end method
 
@@ -7586,10 +7119,10 @@
     .parameter "enabled"
 
     .prologue
-    .line 738
+    .line 687
     iput-boolean p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFastScrollEnabled:Z
 
-    .line 750
+    .line 699
     return-void
 .end method
 
@@ -7598,7 +7131,7 @@
     .parameter "filterText"
 
     .prologue
-    .line 1145
+    .line 1094
     iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilterEnabled:Z
 
     if-eqz v1, :cond_1
@@ -7609,17 +7142,17 @@
 
     if-nez v1, :cond_1
 
-    .line 1146
+    .line 1095
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->createTextFilter(Z)V
 
-    .line 1149
+    .line 1098
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
     invoke-virtual {v1, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1150
+    .line 1099
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilter:Landroid/widget/EditText;
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -7628,19 +7161,19 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setSelection(I)V
 
-    .line 1151
+    .line 1100
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     instance-of v1, v1, Landroid/widget/Filterable;
 
     if-eqz v1, :cond_1
 
-    .line 1153
+    .line 1102
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     if-nez v1, :cond_0
 
-    .line 1154
+    .line 1103
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     check-cast v1, Landroid/widget/Filterable;
@@ -7649,23 +7182,23 @@
 
     move-result-object v0
 
-    .line 1155
+    .line 1104
     .local v0, f:Landroid/widget/Filter;
     invoke-virtual {v0, p1}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;)V
 
-    .line 1159
+    .line 1108
     .end local v0           #f:Landroid/widget/Filter;
     :cond_0
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
 
-    .line 1160
+    .line 1109
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
 
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;->clearSavedState()V
 
-    .line 1163
+    .line 1112
     :cond_1
     return-void
 .end method
@@ -7678,16 +7211,16 @@
     .parameter "bottom"
 
     .prologue
-    .line 1380
+    .line 1327
     invoke-super {p0, p1, p2, p3, p4}, Lcom/nemustech/tiffany/widget/TFAdapterView;->setFrame(IIII)Z
 
     move-result v0
 
-    .line 1382
+    .line 1329
     .local v0, changed:Z
     if-eqz v0, :cond_0
 
-    .line 1386
+    .line 1333
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getWindowVisibility()I
 
     move-result v2
@@ -7698,7 +7231,7 @@
 
     move v1, v2
 
-    .line 1387
+    .line 1334
     .local v1, visible:Z
     :goto_0
     iget-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFiltered:Z
@@ -7719,15 +7252,15 @@
 
     if-eqz v2, :cond_0
 
-    .line 1388
+    .line 1335
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->positionPopup()V
 
-    .line 1392
+    .line 1339
     .end local v1           #visible:Z
     :cond_0
     return v0
 
-    .line 1386
+    .line 1333
     :cond_1
     const/4 v2, 0x0
 
@@ -7741,12 +7274,12 @@
     .parameter "listener"
 
     .prologue
-    .line 4046
+    .line 3864
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
-    invoke-static {v0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->access$2402(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;)Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
+    invoke-static {v0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->access$2002(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;)Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
 
-    .line 4047
+    .line 3865
     return-void
 .end method
 
@@ -7755,21 +7288,21 @@
     .parameter "enabled"
 
     .prologue
-    .line 857
+    .line 806
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollingCacheEnabled:Z
 
     if-eqz v0, :cond_0
 
     if-nez p1, :cond_0
 
-    .line 858
+    .line 807
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->clearScrollingCache()V
 
-    .line 860
+    .line 809
     :cond_0
     iput-boolean p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollingCacheEnabled:Z
 
-    .line 861
+    .line 810
     return-void
 .end method
 
@@ -7781,67 +7314,67 @@
     .parameter "sel"
 
     .prologue
-    .line 1665
+    .line 1612
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_0
 
-    .line 1666
+    .line 1613
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 1667
+    .line 1614
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1669
+    .line 1616
     :cond_0
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
-    .line 1670
+    .line 1617
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1671
+    .line 1618
     .local v0, padding:Landroid/graphics/Rect;
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 1672
+    .line 1619
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionLeftPadding:I
 
-    .line 1673
+    .line 1620
     iget v1, v0, Landroid/graphics/Rect;->top:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionTopPadding:I
 
-    .line 1674
+    .line 1621
     iget v1, v0, Landroid/graphics/Rect;->right:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionRightPadding:I
 
-    .line 1675
+    .line 1622
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
 
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectionBottomPadding:I
 
-    .line 1676
+    .line 1623
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 1677
+    .line 1624
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getDrawableState()[I
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 1678
+    .line 1625
     return-void
 .end method
 
@@ -7850,10 +7383,10 @@
     .parameter "enabled"
 
     .prologue
-    .line 791
+    .line 740
     iput-boolean p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSmoothScrollbarEnabled:Z
 
-    .line 792
+    .line 741
     return-void
 .end method
 
@@ -7862,18 +7395,18 @@
     .parameter "stackFromBottom"
 
     .prologue
-    .line 928
+    .line 877
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 929
+    .line 878
     iput-boolean p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
-    .line 930
+    .line 879
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->requestLayoutIfNecessary()V
 
-    .line 932
+    .line 881
     :cond_0
     return-void
 .end method
@@ -7883,10 +7416,10 @@
     .parameter "textFilterEnabled"
 
     .prologue
-    .line 874
+    .line 823
     iput-boolean p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTextFilterEnabled:Z
 
-    .line 875
+    .line 824
     return-void
 .end method
 
@@ -7895,10 +7428,10 @@
     .parameter "mode"
 
     .prologue
-    .line 3911
+    .line 3729
     iput p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTranscriptMode:I
 
-    .line 3912
+    .line 3730
     return-void
 .end method
 
@@ -7906,7 +7439,7 @@
     .locals 1
 
     .prologue
-    .line 1629
+    .line 1576
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->hasFocus()Z
 
     move-result v0
@@ -7943,33 +7476,33 @@
     .parameter "originalView"
 
     .prologue
-    .line 1988
+    .line 1935
     invoke-virtual {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getPositionForView(Landroid/view/View;)I
 
     move-result v3
 
-    .line 1989
+    .line 1936
     .local v3, longPressPosition:I
     if-ltz v3, :cond_2
 
-    .line 1990
+    .line 1937
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v0, v3}, Landroid/widget/ListAdapter;->getItemId(I)J
 
     move-result-wide v4
 
-    .line 1991
+    .line 1938
     .local v4, longPressId:J
     const/4 v6, 0x0
 
-    .line 1993
+    .line 1940
     .local v6, handled:Z
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOnItemLongClickListener:Lcom/nemustech/tiffany/widget/TFAdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
-    .line 1994
+    .line 1941
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mOnItemLongClickListener:Lcom/nemustech/tiffany/widget/TFAdapterView$OnItemLongClickListener;
 
     move-object v1, p0
@@ -7980,11 +7513,11 @@
 
     move-result v6
 
-    .line 1997
+    .line 1944
     :cond_0
     if-nez v6, :cond_1
 
-    .line 1998
+    .line 1945
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     sub-int v0, v3, v0
@@ -7999,7 +7532,7 @@
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    .line 2001
+    .line 1948
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAdapterView;->showContextMenuForChild(Landroid/view/View;)Z
 
     move-result v6
@@ -8007,7 +7540,7 @@
     :cond_1
     move v0, v6
 
-    .line 2006
+    .line 1953
     .end local v4           #longPressId:J
     .end local v6           #handled:Z
     :goto_0
@@ -8023,24 +7556,24 @@
     .locals 1
 
     .prologue
-    .line 1612
+    .line 1559
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1617
+    .line 1564
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 1615
+    .line 1562
     :pswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 1612
+    .line 1559
     nop
 
     :pswitch_data_0
@@ -8056,21 +7589,21 @@
     .parameter "incrementalDeltaY"
 
     .prologue
-    .line 3021
+    .line 2853
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v5
 
-    .line 3022
+    .line 2854
     .local v5, childCount:I
     if-nez v5, :cond_1
 
-    .line 3231
+    .line 3049
     :cond_0
     :goto_0
     return-void
 
-    .line 3026
+    .line 2858
     :cond_1
     const/16 v20, 0x0
 
@@ -8086,7 +7619,7 @@
 
     move-result v10
 
-    .line 3027
+    .line 2859
     .local v10, firstTop:I
     const/16 v20, 0x1
 
@@ -8104,7 +7637,7 @@
 
     move-result v15
 
-    .line 3029
+    .line 2861
     .local v15, lastBottom:I
     move-object/from16 v0, p0
 
@@ -8112,7 +7645,7 @@
 
     move-object/from16 v16, v0
 
-    .line 3033
+    .line 2865
     .local v16, listPadding:Landroid/graphics/Rect;
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
 
@@ -8126,7 +7659,7 @@
 
     sub-int v8, v20, v21
 
-    .line 3036
+    .line 2868
     .local v8, end:I
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
 
@@ -8148,11 +7681,11 @@
 
     sub-int v13, v20, v21
 
-    .line 3037
+    .line 2869
     .local v13, height:I
     if-gez p1, :cond_2
 
-    .line 3038
+    .line 2870
     const/16 v20, 0x1
 
     sub-int v20, v13, v20
@@ -8171,11 +7704,11 @@
 
     move-result p1
 
-    .line 3043
+    .line 2875
     :goto_1
     if-gez p2, :cond_3
 
-    .line 3044
+    .line 2876
     const/16 v20, 0x1
 
     sub-int v20, v13, v20
@@ -8194,7 +7727,7 @@
 
     move-result p2
 
-    .line 3064
+    .line 2896
     :goto_2
     move-object/from16 v0, p0
 
@@ -8202,33 +7735,125 @@
 
     move v9, v0
 
-    .line 3081
+    .line 2911
     .local v9, firstPosition:I
-    if-nez v9, :cond_4
+    if-nez v9, :cond_5
 
-    .line 3082
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v20, v0
-
-    move-object/from16 v0, v20
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
 
     move/from16 v20, v0
 
-    sub-int v20, v10, v20
+    move v0, v10
+
+    move/from16 v1, v20
+
+    if-lt v0, v1, :cond_5
+
+    if-lez p2, :cond_5
+
+    .line 2918
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
+
+    move/from16 v20, v0
+
+    if-eqz v20, :cond_4
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockExcessScroll:Z
+
+    move/from16 v20, v0
+
+    if-nez v20, :cond_4
+
+    .line 2919
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
+
+    move/from16 v20, v0
+
+    add-int v20, v20, p2
 
     move/from16 v0, v20
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPositionDistanceGuess:I
+    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 3086
-    :goto_3
+    .line 2921
+    const/16 v20, 0x0
+
+    move/from16 v0, v20
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollMode:I
+
+    .line 2922
+    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->awakenScrollBars()Z
+
+    move-result v20
+
+    if-nez v20, :cond_0
+
+    .line 2923
+    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
+
+    goto/16 :goto_0
+
+    .line 2872
+    .end local v9           #firstPosition:I
+    :cond_2
+    const/16 v20, 0x1
+
+    sub-int v20, v13, v20
+
+    move/from16 v0, v20
+
+    move/from16 v1, p1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result p1
+
+    goto :goto_1
+
+    .line 2878
+    :cond_3
+    const/16 v20, 0x1
+
+    sub-int v20, v13, v20
+
+    move/from16 v0, v20
+
+    move/from16 v1, p2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result p2
+
+    goto :goto_2
+
+    .line 2926
+    .restart local v9       #firstPosition:I
+    :cond_4
+    const/16 v20, 0x0
+
+    move/from16 v0, v20
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
+
+    goto/16 :goto_0
+
+    .line 2933
+    :cond_5
     add-int v20, v9, v5
 
     move-object/from16 v0, p0
@@ -8241,48 +7866,13 @@
 
     move/from16 v1, v21
 
-    if-ne v0, v1, :cond_5
+    if-ne v0, v1, :cond_7
 
-    .line 3087
-    move-object/from16 v0, p0
+    if-gt v15, v8, :cond_7
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
+    if-gez p2, :cond_7
 
-    move-object/from16 v20, v0
-
-    move-object/from16 v0, v20
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v20, v0
-
-    add-int v20, v20, v15
-
-    move/from16 v0, v20
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastPositionDistanceGuess:I
-
-    .line 3093
-    :goto_4
-    if-nez v9, :cond_7
-
-    move-object/from16 v0, v16
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v20, v0
-
-    move v0, v10
-
-    move/from16 v1, v20
-
-    if-lt v0, v1, :cond_7
-
-    if-lez p2, :cond_7
-
-    .line 3100
+    .line 2940
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
@@ -8299,7 +7889,7 @@
 
     if-nez v20, :cond_6
 
-    .line 3101
+    .line 2941
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
@@ -8314,7 +7904,7 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 3103
+    .line 2943
     const/16 v20, 0x0
 
     move/from16 v0, v20
@@ -8323,89 +7913,19 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollMode:I
 
-    .line 3104
+    .line 2944
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->awakenScrollBars()Z
 
     move-result v20
 
     if-nez v20, :cond_0
 
-    .line 3105
+    .line 2945
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
 
     goto/16 :goto_0
 
-    .line 3040
-    .end local v9           #firstPosition:I
-    :cond_2
-    const/16 v20, 0x1
-
-    sub-int v20, v13, v20
-
-    move/from16 v0, v20
-
-    move/from16 v1, p1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    goto/16 :goto_1
-
-    .line 3046
-    :cond_3
-    const/16 v20, 0x1
-
-    sub-int v20, v13, v20
-
-    move/from16 v0, v20
-
-    move/from16 v1, p2
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result p2
-
-    goto/16 :goto_2
-
-    .line 3084
-    .restart local v9       #firstPosition:I
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPositionDistanceGuess:I
-
-    move/from16 v20, v0
-
-    add-int v20, v20, p2
-
-    move/from16 v0, v20
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPositionDistanceGuess:I
-
-    goto/16 :goto_3
-
-    .line 3089
-    :cond_5
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastPositionDistanceGuess:I
-
-    move/from16 v20, v0
-
-    add-int v20, v20, p2
-
-    move/from16 v0, v20
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLastPositionDistanceGuess:I
-
-    goto :goto_4
-
-    .line 3108
+    .line 2948
     :cond_6
     const/16 v20, 0x0
 
@@ -8417,102 +7937,17 @@
 
     goto/16 :goto_0
 
-    .line 3115
+    .line 2958
     :cond_7
-    add-int v20, v9, v5
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mItemCount:I
-
-    move/from16 v21, v0
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ne v0, v1, :cond_9
-
-    if-gt v15, v8, :cond_9
-
-    if-gez p2, :cond_9
-
-    .line 3122
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
-
-    move/from16 v20, v0
-
-    if-eqz v20, :cond_8
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockExcessScroll:Z
-
-    move/from16 v20, v0
-
-    if-nez v20, :cond_8
-
-    .line 3123
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     move/from16 v20, v0
 
-    add-int v20, v20, p2
+    if-eqz v20, :cond_9
 
-    move/from16 v0, v20
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
-
-    .line 3125
-    const/16 v20, 0x0
-
-    move/from16 v0, v20
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollMode:I
-
-    .line 3126
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->awakenScrollBars()Z
-
-    move-result v20
-
-    if-nez v20, :cond_0
-
-    .line 3127
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
-
-    goto/16 :goto_0
-
-    .line 3130
-    :cond_8
-    const/16 v20, 0x0
-
-    move/from16 v0, v20
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
-
-    goto/16 :goto_0
-
-    .line 3140
-    :cond_9
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
-
-    move/from16 v20, v0
-
-    if-eqz v20, :cond_b
-
-    .line 3141
+    .line 2959
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
@@ -8531,9 +7966,9 @@
 
     move/from16 v1, v21
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_8
 
-    .line 3142
+    .line 2960
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
@@ -8548,7 +7983,7 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 3143
+    .line 2961
     const/16 v20, 0x0
 
     move/from16 v0, v20
@@ -8557,20 +7992,20 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollMode:I
 
-    .line 3144
+    .line 2962
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->awakenScrollBars()Z
 
     move-result v20
 
     if-nez v20, :cond_0
 
-    .line 3145
+    .line 2963
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
 
     goto/16 :goto_0
 
-    .line 3149
-    :cond_a
+    .line 2967
+    :cond_8
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
@@ -8579,7 +8014,7 @@
 
     add-int p2, p2, v20
 
-    .line 3150
+    .line 2968
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
@@ -8588,7 +8023,7 @@
 
     add-int p1, p1, v20
 
-    .line 3151
+    .line 2969
     const/16 v20, 0x0
 
     move/from16 v0, v20
@@ -8597,25 +8032,25 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 3161
-    :cond_b
-    if-gez p2, :cond_e
+    .line 2979
+    :cond_9
+    if-gez p2, :cond_c
 
     const/16 v20, 0x1
 
     move/from16 v7, v20
 
-    .line 3163
+    .line 2981
     .local v7, down:Z
-    :goto_5
+    :goto_3
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->hideSelector()V
 
-    .line 3165
+    .line 2983
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeaderViewsCount()I
 
     move-result v12
 
-    .line 3166
+    .line 2984
     .local v12, headerViewsCount:I
     move-object/from16 v0, p0
 
@@ -8629,19 +8064,19 @@
 
     sub-int v11, v20, v21
 
-    .line 3168
+    .line 2986
     .local v11, footerViewsStart:I
     const/16 v18, 0x0
 
-    .line 3169
+    .line 2987
     .local v18, start:I
     const/4 v6, 0x0
 
-    .line 3171
+    .line 2989
     .local v6, count:I
-    if-eqz v7, :cond_11
+    if-eqz v7, :cond_f
 
-    .line 3172
+    .line 2990
     move-object/from16 v0, v16
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -8650,15 +8085,15 @@
 
     sub-int v19, v20, p2
 
-    .line 3173
+    .line 2991
     .local v19, top:I
     const/4 v14, 0x0
 
     .local v14, i:I
-    :goto_6
-    if-ge v14, v5, :cond_c
+    :goto_4
+    if-ge v14, v5, :cond_a
 
-    .line 3174
+    .line 2992
     move-object/from16 v0, p0
 
     move v1, v14
@@ -8667,7 +8102,7 @@
 
     move-result-object v4
 
-    .line 3175
+    .line 2993
     .local v4, child:Landroid/view/View;
     invoke-virtual {v4}, Landroid/view/View;->getBottom()I
 
@@ -8677,12 +8112,12 @@
 
     move/from16 v1, v19
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_d
 
-    .line 3214
+    .line 3032
     .end local v4           #child:Landroid/view/View;
     .end local v19           #top:I
-    :cond_c
+    :cond_a
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionViewOriginalTop:I
@@ -8697,7 +8132,7 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionViewNewTop:I
 
-    .line 3216
+    .line 3034
     const/16 v20, 0x1
 
     move/from16 v0, v20
@@ -8706,7 +8141,7 @@
 
     iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockLayoutRequests:Z
 
-    .line 3217
+    .line 3035
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -8715,17 +8150,17 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->detachViewsFromParent(II)V
 
-    .line 3218
+    .line 3036
     move-object/from16 v0, p0
 
     move/from16 v1, p2
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->offsetChildrenTopAndBottom(I)V
 
-    .line 3220
-    if-eqz v7, :cond_d
+    .line 3038
+    if-eqz v7, :cond_b
 
-    .line 3221
+    .line 3039
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
@@ -8740,18 +8175,18 @@
 
     iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
-    .line 3224
-    :cond_d
+    .line 3042
+    :cond_b
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
 
-    .line 3225
+    .line 3043
     move-object/from16 v0, p0
 
     move v1, v7
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->fillGap(Z)V
 
-    .line 3226
+    .line 3044
     const/16 v20, 0x0
 
     move/from16 v0, v20
@@ -8760,29 +8195,29 @@
 
     iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockLayoutRequests:Z
 
-    .line 3228
+    .line 3046
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invokeOnItemScrollListener()V
 
-    .line 3229
+    .line 3047
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->awakenScrollBars()Z
 
     goto/16 :goto_0
 
-    .line 3161
+    .line 2979
     .end local v6           #count:I
     .end local v7           #down:Z
     .end local v11           #footerViewsStart:I
     .end local v12           #headerViewsCount:I
     .end local v14           #i:I
     .end local v18           #start:I
-    :cond_e
+    :cond_c
     const/16 v20, 0x0
 
     move/from16 v7, v20
 
-    goto/16 :goto_5
+    goto/16 :goto_3
 
-    .line 3178
+    .line 2996
     .restart local v4       #child:Landroid/view/View;
     .restart local v6       #count:I
     .restart local v7       #down:Z
@@ -8791,27 +8226,27 @@
     .restart local v14       #i:I
     .restart local v18       #start:I
     .restart local v19       #top:I
-    :cond_f
+    :cond_d
     add-int/lit8 v6, v6, 0x1
 
-    .line 3179
+    .line 2997
     add-int v17, v9, v14
 
-    .line 3180
+    .line 2998
     .local v17, position:I
     move/from16 v0, v17
 
     move v1, v12
 
-    if-lt v0, v1, :cond_10
+    if-lt v0, v1, :cond_e
 
     move/from16 v0, v17
 
     move v1, v11
 
-    if-ge v0, v1, :cond_10
+    if-ge v0, v1, :cond_e
 
-    .line 3181
+    .line 2999
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
@@ -8824,18 +8259,18 @@
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->addScrapView(Landroid/view/View;)V
 
-    .line 3173
-    :cond_10
+    .line 2991
+    :cond_e
     add-int/lit8 v14, v14, 0x1
 
-    goto/16 :goto_6
+    goto/16 :goto_4
 
-    .line 3192
+    .line 3010
     .end local v4           #child:Landroid/view/View;
     .end local v14           #i:I
     .end local v17           #position:I
     .end local v19           #top:I
-    :cond_11
+    :cond_f
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getHeight()I
 
     move-result v20
@@ -8850,17 +8285,17 @@
 
     sub-int v3, v20, p2
 
-    .line 3193
+    .line 3011
     .local v3, bottom:I
     const/16 v20, 0x1
 
     sub-int v14, v5, v20
 
     .restart local v14       #i:I
-    :goto_7
-    if-ltz v14, :cond_c
+    :goto_5
+    if-ltz v14, :cond_a
 
-    .line 3194
+    .line 3012
     move-object/from16 v0, p0
 
     move v1, v14
@@ -8869,7 +8304,7 @@
 
     move-result-object v4
 
-    .line 3195
+    .line 3013
     .restart local v4       #child:Landroid/view/View;
     invoke-virtual {v4}, Landroid/view/View;->getTop()I
 
@@ -8879,32 +8314,32 @@
 
     move v1, v3
 
-    if-le v0, v1, :cond_c
+    if-le v0, v1, :cond_a
 
-    .line 3198
+    .line 3016
     move/from16 v18, v14
 
-    .line 3199
+    .line 3017
     add-int/lit8 v6, v6, 0x1
 
-    .line 3200
+    .line 3018
     add-int v17, v9, v14
 
-    .line 3201
+    .line 3019
     .restart local v17       #position:I
     move/from16 v0, v17
 
     move v1, v12
 
-    if-lt v0, v1, :cond_12
+    if-lt v0, v1, :cond_10
 
     move/from16 v0, v17
 
     move v1, v11
 
-    if-ge v0, v1, :cond_12
+    if-ge v0, v1, :cond_10
 
-    .line 3202
+    .line 3020
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
@@ -8917,11 +8352,11 @@
 
     invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->addScrapView(Landroid/view/View;)V
 
-    .line 3193
-    :cond_12
+    .line 3011
+    :cond_10
     add-int/lit8 v14, v14, -0x1
 
-    goto :goto_7
+    goto :goto_5
 .end method
 
 .method updateScrollIndicators()V
@@ -8934,36 +8369,36 @@
 
     const/4 v7, 0x0
 
-    .line 1402
+    .line 1349
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollUp:Landroid/view/View;
 
     if-eqz v4, :cond_1
 
-    .line 1405
+    .line 1352
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     if-lez v4, :cond_4
 
     move v1, v8
 
-    .line 1408
+    .line 1355
     .local v1, canScrollUp:Z
     :goto_0
     if-nez v1, :cond_0
 
-    .line 1409
+    .line 1356
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v4
 
     if-lez v4, :cond_0
 
-    .line 1410
+    .line 1357
     invoke-virtual {p0, v7}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1411
+    .line 1358
     .local v2, child:Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
@@ -8977,7 +8412,7 @@
 
     move v1, v8
 
-    .line 1415
+    .line 1362
     .end local v2           #child:Landroid/view/View;
     :cond_0
     :goto_1
@@ -8990,19 +8425,19 @@
     :goto_2
     invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1418
+    .line 1365
     .end local v1           #canScrollUp:Z
     :cond_1
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollDown:Landroid/view/View;
 
     if-eqz v4, :cond_3
 
-    .line 1420
+    .line 1367
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildCount()I
 
     move-result v3
 
-    .line 1423
+    .line 1370
     .local v3, count:I
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
@@ -9014,21 +8449,21 @@
 
     move v0, v8
 
-    .line 1426
+    .line 1373
     .local v0, canScrollDown:Z
     :goto_3
     if-nez v0, :cond_2
 
     if-lez v3, :cond_2
 
-    .line 1427
+    .line 1374
     sub-int v4, v3, v8
 
     invoke-virtual {p0, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1428
+    .line 1375
     .restart local v2       #child:Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->getBottom()I
 
@@ -9046,7 +8481,7 @@
 
     move v0, v8
 
-    .line 1431
+    .line 1378
     .end local v2           #child:Landroid/view/View;
     :cond_2
     :goto_4
@@ -9059,7 +8494,7 @@
     :goto_5
     invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1433
+    .line 1380
     .end local v0           #canScrollDown:Z
     .end local v3           #count:I
     :cond_3
@@ -9068,7 +8503,7 @@
     :cond_4
     move v1, v7
 
-    .line 1405
+    .line 1352
     goto :goto_0
 
     .restart local v1       #canScrollUp:Z
@@ -9076,14 +8511,14 @@
     :cond_5
     move v1, v7
 
-    .line 1411
+    .line 1358
     goto :goto_1
 
     .end local v2           #child:Landroid/view/View;
     :cond_6
     move v5, v9
 
-    .line 1415
+    .line 1362
     goto :goto_2
 
     .end local v1           #canScrollUp:Z
@@ -9091,7 +8526,7 @@
     :cond_7
     move v0, v7
 
-    .line 1423
+    .line 1370
     goto :goto_3
 
     .restart local v0       #canScrollDown:Z
@@ -9099,14 +8534,14 @@
     :cond_8
     move v0, v7
 
-    .line 1428
+    .line 1375
     goto :goto_4
 
     .end local v2           #child:Landroid/view/View;
     :cond_9
     move v5, v9
 
-    .line 1431
+    .line 1378
     goto :goto_5
 .end method
 
@@ -9115,7 +8550,7 @@
     .parameter "dr"
 
     .prologue
-    .line 1781
+    .line 1728
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     if-eq v0, p1, :cond_0

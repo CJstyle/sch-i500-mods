@@ -46,7 +46,7 @@
     const/16 v1, 0x8
 
     .line 94
-    const v0, 0x7f0800dd
+    const v0, 0x7f0800b8
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ViewTitleHeader;->findViewById(I)Landroid/view/View;
 
@@ -57,7 +57,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/ViewTitleHeader;->mTitleSender:Landroid/widget/TextView;
 
     .line 95
-    const v0, 0x7f0800de
+    const v0, 0x7f0800b9
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ViewTitleHeader;->findViewById(I)Landroid/view/View;
 
@@ -68,7 +68,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/ViewTitleHeader;->mTitleIcon01:Landroid/widget/ImageView;
 
     .line 96
-    const v0, 0x7f0800df
+    const v0, 0x7f0800ba
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ViewTitleHeader;->findViewById(I)Landroid/view/View;
 
@@ -79,7 +79,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/ViewTitleHeader;->mTitleIcon02:Landroid/widget/ImageView;
 
     .line 97
-    const v0, 0x7f0800e0
+    const v0, 0x7f0800bb
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ViewTitleHeader;->findViewById(I)Landroid/view/View;
 
@@ -152,7 +152,7 @@
     .line 134
     iget-object v2, p0, Lcom/android/mms/ui/ViewTitleHeader;->mTitleIcon02:Landroid/widget/ImageView;
 
-    const v3, 0x7f020092
+    const v3, 0x7f02008e
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -174,7 +174,7 @@
     .line 139
     iget-object v2, p0, Lcom/android/mms/ui/ViewTitleHeader;->mTitleIcon01:Landroid/widget/ImageView;
 
-    const v3, 0x7f020091
+    const v3, 0x7f02008d
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -549,7 +549,7 @@
     .line 158
     iget-object v0, p0, Lcom/android/mms/ui/ViewTitleHeader;->mTitleIcon01:Landroid/widget/ImageView;
 
-    const v1, 0x7f020091
+    const v1, 0x7f02008d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -586,7 +586,7 @@
     .line 147
     iget-object v0, p0, Lcom/android/mms/ui/ViewTitleHeader;->mTitleIcon02:Landroid/widget/ImageView;
 
-    const v1, 0x7f020092
+    const v1, 0x7f02008e
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

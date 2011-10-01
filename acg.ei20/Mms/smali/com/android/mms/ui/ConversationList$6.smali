@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 701
+    .line 658
     iput-object p1, p0, Lcom/android/mms/ui/ConversationList$6;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,26 +46,26 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 704
+    .line 661
     move-object v0, p3
 
     check-cast v0, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterContextMenuInfo;
 
     move-object v3, v0
 
-    .line 707
+    .line 664
     .local v3, info:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterContextMenuInfo;
     iget v5, v3, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterContextMenuInfo;->position:I
 
     if-gtz v5, :cond_1
 
-    .line 777
+    .line 690
     .end local p0
     :cond_0
     :goto_0
     return-void
 
-    .line 710
+    .line 667
     .restart local p0
     :cond_1
     iget-object v5, p0, Lcom/android/mms/ui/ConversationList$6;->this$0:Lcom/android/mms/ui/ConversationList;
@@ -82,7 +82,7 @@
 
     check-cast v2, Landroid/database/Cursor;
 
-    .line 712
+    .line 669
     .local v2, cursor:Landroid/database/Cursor;
     if-eqz v2, :cond_0
 
@@ -92,20 +92,20 @@
 
     if-ltz v5, :cond_0
 
-    .line 715
+    .line 672
     iget-object v5, p0, Lcom/android/mms/ui/ConversationList$6;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v5, v2}, Lcom/android/mms/data/Conversation;->from(Landroid/content/Context;Landroid/database/Cursor;)Lcom/android/mms/data/Conversation;
 
     move-result-object v1
 
-    .line 716
+    .line 673
     .local v1, conv:Lcom/android/mms/data/Conversation;
     invoke-virtual {v1}, Lcom/android/mms/data/Conversation;->getRecipients()Lcom/android/mms/data/ContactList;
 
     move-result-object v4
 
-    .line 760
+    .line 674
     .local v4, recipients:Lcom/android/mms/data/ContactList;
     const-string v5, ","
 
@@ -115,12 +115,12 @@
 
     invoke-interface {p1, v5}, Landroid/view/ContextMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/ContextMenu;
 
-    .line 762
+    .line 676
     iget v5, v3, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterContextMenuInfo;->position:I
 
     if-lez v5, :cond_0
 
-    .line 766
+    .line 680
     invoke-virtual {v4}, Lcom/android/mms/data/ContactList;->size()I
 
     move-result v5
@@ -135,7 +135,7 @@
 
     if-nez v5, :cond_2
 
-    .line 768
+    .line 682
     invoke-virtual {v4, v7}, Lcom/android/mms/data/ContactList;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -149,14 +149,14 @@
 
     if-eqz v5, :cond_3
 
-    .line 769
+    .line 683
     const/4 v5, 0x2
 
     const v6, 0x7f09007d
 
     invoke-interface {p1, v7, v5, v7, v6}, Landroid/view/ContextMenu;->add(IIII)Landroid/view/MenuItem;
 
-    .line 774
+    .line 688
     :cond_2
     :goto_1
     const v5, 0x7f09000b
@@ -165,7 +165,7 @@
 
     goto :goto_0
 
-    .line 770
+    .line 684
     :cond_3
     invoke-virtual {v4, v7}, Lcom/android/mms/data/ContactList;->get(I)Ljava/lang/Object;
 
@@ -179,7 +179,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 771
+    .line 685
     const/4 v5, 0x3
 
     const v6, 0x7f09007e

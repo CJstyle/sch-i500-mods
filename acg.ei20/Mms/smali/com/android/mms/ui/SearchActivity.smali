@@ -80,7 +80,7 @@
     invoke-super {p0, p1}, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 227
-    const v3, 0x7f03002b
+    const v3, 0x7f030028
 
     invoke-virtual {p0, v3}, Lcom/android/mms/ui/SearchActivity;->setContentView(I)V
 

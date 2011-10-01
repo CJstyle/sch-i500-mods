@@ -27,13 +27,13 @@
     .parameter "mComposeMessageActivity"
 
     .prologue
-    .line 938
+    .line 934
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 939
+    .line 935
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$SendThreadListener;->mThis:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    .line 940
+    .line 936
     return-void
 .end method
 
@@ -45,13 +45,13 @@
     .parameter "whichButton"
 
     .prologue
-    .line 942
+    .line 938
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$SendThreadListener;->mThis:Lcom/android/mms/ui/ComposeMessageActivity;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2200(Lcom/android/mms/ui/ComposeMessageActivity;Z)V
 
-    .line 943
+    .line 939
     return-void
 .end method

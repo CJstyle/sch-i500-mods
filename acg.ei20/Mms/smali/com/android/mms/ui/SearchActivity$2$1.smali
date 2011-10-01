@@ -67,7 +67,7 @@
     const/4 v13, 0x0
 
     .line 298
-    const v2, 0x7f080071
+    const v2, 0x7f08004c
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -83,7 +83,7 @@
 
     .line 299
     .local v11, title:Landroid/widget/TextView;
-    const v2, 0x7f0800b5
+    const v2, 0x7f080090
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -229,7 +229,7 @@
 
     .line 332
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v2, 0x7f03002c
+    const v2, 0x7f030029
 
     const/4 v3, 0x0
 

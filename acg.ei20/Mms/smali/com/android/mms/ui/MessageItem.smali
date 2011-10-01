@@ -1692,21 +1692,11 @@
 
 
 # virtual methods
-.method public getAddress()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 320
-    iget-object v0, p0, Lcom/android/mms/ui/MessageItem;->mAddress:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public getBoxId()I
     .locals 1
 
     .prologue
-    .line 440
+    .line 436
     iget v0, p0, Lcom/android/mms/ui/MessageItem;->mBoxId:I
 
     return v0
@@ -1716,26 +1706,26 @@
     .locals 2
 
     .prologue
-    .line 430
+    .line 426
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isSending()Z
 
     move-result v0
 
-    .line 431
+    .line 427
     .local v0, isSending:Z
     iget-boolean v1, p0, Lcom/android/mms/ui/MessageItem;->mLastSendingState:Z
 
     if-eq v0, v1, :cond_0
 
-    .line 432
+    .line 428
     iput-boolean v0, p0, Lcom/android/mms/ui/MessageItem;->mLastSendingState:Z
 
-    .line 433
+    .line 429
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/mms/ui/MessageItem;->mCachedFormattedMessage:Ljava/lang/CharSequence;
 
-    .line 436
+    .line 432
     :cond_0
     iget-object v1, p0, Lcom/android/mms/ui/MessageItem;->mCachedFormattedMessage:Ljava/lang/CharSequence;
 
@@ -1746,7 +1736,7 @@
     .locals 2
 
     .prologue
-    .line 455
+    .line 451
     iget-wide v0, p0, Lcom/android/mms/ui/MessageItem;->mMsgId:J
 
     return-wide v0
@@ -1756,7 +1746,7 @@
     .locals 2
 
     .prologue
-    .line 459
+    .line 455
     iget-wide v0, p0, Lcom/android/mms/ui/MessageItem;->mThreadId:J
 
     return-wide v0
@@ -1766,7 +1756,7 @@
     .locals 1
 
     .prologue
-    .line 463
+    .line 459
     iget-boolean v0, p0, Lcom/android/mms/ui/MessageItem;->mHasDrmContents:Z
 
     return v0
@@ -1776,7 +1766,7 @@
     .locals 2
 
     .prologue
-    .line 365
+    .line 361
     iget-object v0, p0, Lcom/android/mms/ui/MessageItem;->mDeliveryStatus:Lcom/android/mms/ui/MessageItem$DeliveryStatus;
 
     sget-object v1, Lcom/android/mms/ui/MessageItem$DeliveryStatus;->RECEIVED:Lcom/android/mms/ui/MessageItem$DeliveryStatus;
@@ -1798,7 +1788,7 @@
     .locals 2
 
     .prologue
-    .line 327
+    .line 323
     iget v0, p0, Lcom/android/mms/ui/MessageItem;->mMessageType:I
 
     const/16 v1, 0x82
@@ -1824,7 +1814,7 @@
 
     const/4 v4, 0x0
 
-    .line 356
+    .line 352
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isOutgoingMessage()Z
 
     move-result v2
@@ -1833,11 +1823,11 @@
 
     move v2, v4
 
-    .line 361
+    .line 357
     :goto_0
     return v2
 
-    .line 359
+    .line 355
     :cond_0
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isMms()Z
 
@@ -1853,7 +1843,7 @@
 
     move v0, v5
 
-    .line 360
+    .line 356
     .local v0, isFailedMms:Z
     :goto_1
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isSms()Z
@@ -1870,7 +1860,7 @@
 
     move v1, v5
 
-    .line 361
+    .line 357
     .local v1, isFailedSms:Z
     :goto_2
     if-nez v0, :cond_1
@@ -1887,21 +1877,21 @@
     :cond_2
     move v0, v4
 
-    .line 359
+    .line 355
     goto :goto_1
 
     .restart local v0       #isFailedMms:Z
     :cond_3
     move v1, v4
 
-    .line 360
+    .line 356
     goto :goto_2
 
     .restart local v1       #isFailedSms:Z
     :cond_4
     move v2, v4
 
-    .line 361
+    .line 357
     goto :goto_0
 .end method
 
@@ -1913,7 +1903,7 @@
 
     const/4 v3, 0x1
 
-    .line 340
+    .line 336
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isMms()Z
 
     move-result v2
@@ -1926,7 +1916,7 @@
 
     move v0, v3
 
-    .line 341
+    .line 337
     .local v0, isInboxMms:Z
     :goto_0
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isSms()Z
@@ -1941,7 +1931,7 @@
 
     move v1, v3
 
-    .line 342
+    .line 338
     .local v1, isInboxSms:Z
     :goto_1
     if-nez v0, :cond_0
@@ -1959,21 +1949,21 @@
     :cond_1
     move v0, v4
 
-    .line 340
+    .line 336
     goto :goto_0
 
     .restart local v0       #isInboxMms:Z
     :cond_2
     move v1, v4
 
-    .line 341
+    .line 337
     goto :goto_1
 
     .restart local v1       #isInboxSms:Z
     :cond_3
     move v2, v4
 
-    .line 342
+    .line 338
     goto :goto_2
 .end method
 
@@ -2003,7 +1993,7 @@
 
     const/4 v4, 0x0
 
-    .line 331
+    .line 327
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isMms()Z
 
     move-result v2
@@ -2016,7 +2006,7 @@
 
     move v0, v5
 
-    .line 332
+    .line 328
     .local v0, isOutgoingMms:Z
     :goto_0
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isSms()Z
@@ -2044,7 +2034,7 @@
     :cond_0
     move v1, v5
 
-    .line 336
+    .line 332
     .local v1, isOutgoingSms:Z
     :goto_1
     if-nez v0, :cond_1
@@ -2062,21 +2052,21 @@
     :cond_2
     move v0, v4
 
-    .line 331
+    .line 327
     goto :goto_0
 
     .restart local v0       #isOutgoingMms:Z
     :cond_3
     move v1, v4
 
-    .line 332
+    .line 328
     goto :goto_1
 
     .restart local v1       #isOutgoingSms:Z
     :cond_4
     move v2, v4
 
-    .line 336
+    .line 332
     goto :goto_2
 .end method
 
@@ -2084,7 +2074,7 @@
     .locals 1
 
     .prologue
-    .line 346
+    .line 342
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isFailedMessage()Z
 
     move-result v0
@@ -2112,7 +2102,7 @@
     .locals 2
 
     .prologue
-    .line 323
+    .line 319
     iget-object v0, p0, Lcom/android/mms/ui/MessageItem;->mType:Ljava/lang/String;
 
     const-string v1, "sms"
@@ -2129,10 +2119,10 @@
     .parameter "formattedMessage"
 
     .prologue
-    .line 426
+    .line 422
     iput-object p1, p0, Lcom/android/mms/ui/MessageItem;->mCachedFormattedMessage:Ljava/lang/CharSequence;
 
-    .line 427
+    .line 423
     return-void
 .end method
 
@@ -2140,7 +2130,7 @@
     .locals 2
 
     .prologue
-    .line 445
+    .line 441
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2244,21 +2234,21 @@
 
     const/4 v3, 0x0
 
-    .line 369
+    .line 365
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageItem;->isMms()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 370
+    .line 366
     sget-object v0, Landroid/provider/Telephony$MmsSms$PendingMessages;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v13
 
-    .line 371
+    .line 367
     .local v13, uriBuilder:Landroid/net/Uri$Builder;
     const-string v0, "protocol"
 
@@ -2266,7 +2256,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 372
+    .line 368
     const-string v0, "message"
 
     iget-wide v1, p0, Lcom/android/mms/ui/MessageItem;->mMsgId:J
@@ -2277,7 +2267,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 374
+    .line 370
     iget-object v0, p0, Lcom/android/mms/ui/MessageItem;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/mms/ui/MessageItem;->mContext:Landroid/content/Context;
@@ -2300,11 +2290,11 @@
 
     move-result-object v11
 
-    .line 377
+    .line 373
     .local v11, failedCursor:Landroid/database/Cursor;
     if-eqz v11, :cond_1
 
-    .line 379
+    .line 375
     :try_start_0
     invoke-interface {v11}, Landroid/database/Cursor;->getCount()I
 
@@ -2318,7 +2308,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 380
+    .line 376
     const-string v0, "err_type"
 
     invoke-interface {v11, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -2333,18 +2323,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 383
+    .line 379
     :cond_0
     invoke-interface {v11}, Landroid/database/Cursor;->close()V
 
-    .line 400
+    .line 396
     .end local v11           #failedCursor:Landroid/database/Cursor;
     .end local v13           #uriBuilder:Landroid/net/Uri$Builder;
     :cond_1
     :goto_0
     return-void
 
-    .line 383
+    .line 379
     .restart local v11       #failedCursor:Landroid/database/Cursor;
     .restart local v13       #uriBuilder:Landroid/net/Uri$Builder;
     :catchall_0
@@ -2354,7 +2344,7 @@
 
     throw v0
 
-    .line 387
+    .line 383
     .end local v11           #failedCursor:Landroid/database/Cursor;
     .end local v13           #uriBuilder:Landroid/net/Uri$Builder;
     :cond_2
@@ -2366,7 +2356,7 @@
 
     move-result-object v6
 
-    .line 388
+    .line 384
     .local v6, messageUri:Landroid/net/Uri;
     iget-object v4, p0, Lcom/android/mms/ui/MessageItem;->mContext:Landroid/content/Context;
 
@@ -2394,11 +2384,11 @@
 
     move-result-object v12
 
-    .line 390
+    .line 386
     .local v12, smsCursor:Landroid/database/Cursor;
     if-eqz v12, :cond_1
 
-    .line 392
+    .line 388
     :try_start_1
     invoke-interface {v12}, Landroid/database/Cursor;->getCount()I
 
@@ -2412,7 +2402,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 393
+    .line 389
     const/4 v0, 0x0
 
     invoke-interface {v12, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -2423,7 +2413,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 396
+    .line 392
     :cond_3
     invoke-interface {v12}, Landroid/database/Cursor;->close()V
 
@@ -2443,10 +2433,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 403
+    .line 399
     const/4 v6, 0x0
 
-    .line 405
+    .line 401
     .local v6, nullStirng:Ljava/lang/String;
     new-instance v3, Landroid/content/ContentValues;
 
@@ -2454,7 +2444,7 @@
 
     invoke-direct {v3, v0}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 406
+    .line 402
     .local v3, values:Landroid/content/ContentValues;
     const-string v0, "err_type"
 
@@ -2464,7 +2454,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 407
+    .line 403
     const-string v0, "retry_index"
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2473,7 +2463,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 408
+    .line 404
     const-string v0, "due_time"
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2482,12 +2472,12 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 409
+    .line 405
     const-string v0, "last_try"
 
     invoke-virtual {v3, v0, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 410
+    .line 406
     iget-object v0, p0, Lcom/android/mms/ui/MessageItem;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/mms/ui/MessageItem;->mContext:Landroid/content/Context;
@@ -2522,6 +2512,6 @@
 
     invoke-static/range {v0 .. v5}, Landroid/database/sqlite/SqliteWrapper;->update(Landroid/content/Context;Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 418
+    .line 414
     return-void
 .end method

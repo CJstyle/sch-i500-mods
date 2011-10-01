@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 200
+    .line 191
     iput-object p1, p0, Lcom/android/mms/transaction/MessagingNotification$1;->val$context:Landroid/content/Context;
 
     iput-boolean p2, p0, Lcom/android/mms/transaction/MessagingNotification$1;->val$isNew:Z
@@ -51,7 +51,7 @@
     .locals 3
 
     .prologue
-    .line 202
+    .line 193
     iget-object v0, p0, Lcom/android/mms/transaction/MessagingNotification$1;->val$context:Landroid/content/Context;
 
     iget-boolean v1, p0, Lcom/android/mms/transaction/MessagingNotification$1;->val$isNew:Z
@@ -60,6 +60,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/mms/transaction/MessagingNotification;->blockingUpdateNewMessageIndicator(Landroid/content/Context;ZZ)V
 
-    .line 203
+    .line 194
     return-void
 .end method

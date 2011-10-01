@@ -40,7 +40,7 @@ BROWSER.APK
 MMS.APK
 =======
 
-- NOTE: Mms.apk from EH09 USCC ROM rather than the EH09 ACG ROM
+- NOTE: Mms.apk from EH09 USCC ROM rather than the EI20 ACG ROM
 - Set mms_config.xml options from ED05 Froyo Mms.apk as well as some settings ccampos784 used
 
 MUSICPLAYER.APK

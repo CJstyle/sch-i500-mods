@@ -42,7 +42,7 @@
     .parameter
 
     .prologue
-    .line 1376
+    .line 1130
     iput-object p1, p0, Lcom/android/mms/ui/MessageUtils$2;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/mms/ui/MessageUtils$2;->val$imageUri:Landroid/net/Uri;
@@ -66,7 +66,7 @@
     .locals 5
 
     .prologue
-    .line 1380
+    .line 1134
     :try_start_0
     new-instance v0, Lcom/android/mms/ui/UriImage;
 
@@ -76,7 +76,7 @@
 
     invoke-direct {v0, v2, v3}, Lcom/android/mms/ui/UriImage;-><init>(Landroid/content/Context;Landroid/net/Uri;)V
 
-    .line 1381
+    .line 1135
     .local v0, image:Lcom/android/mms/ui/UriImage;
     invoke-static {}, Lcom/android/mms/MmsConfig;->getMaxImageWidth()I
 
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    .line 1390
+    .line 1144
     .local v1, part:Lcom/google/android/mms/pdu/PduPart;
     iget-object v2, p0, Lcom/android/mms/ui/MessageUtils$2;->val$handler:Landroid/os/Handler;
 
@@ -106,10 +106,10 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1395
+    .line 1149
     return-void
 
-    .line 1385
+    .line 1139
     .end local v0           #image:Lcom/android/mms/ui/UriImage;
     .end local v1           #part:Lcom/google/android/mms/pdu/PduPart;
     :catchall_0

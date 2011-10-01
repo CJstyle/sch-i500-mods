@@ -78,12 +78,12 @@
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/ConfirmRateLimitActivity;->requestWindowFeature(I)Z
 
     .line 51
-    const v1, 0x7f03000b
+    const v1, 0x7f030008
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/ConfirmRateLimitActivity;->setContentView(I)V
 
     .line 53
-    const v1, 0x7f080058
+    const v1, 0x7f080033
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/ConfirmRateLimitActivity;->findViewById(I)Landroid/view/View;
 
@@ -100,7 +100,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 60
-    const v1, 0x7f080059
+    const v1, 0x7f080034
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/ConfirmRateLimitActivity;->findViewById(I)Landroid/view/View;
 

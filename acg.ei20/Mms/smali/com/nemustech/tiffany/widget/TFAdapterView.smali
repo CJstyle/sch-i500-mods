@@ -115,7 +115,7 @@
     .line 226
     invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
-    .line 65
+    .line 66
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 82
@@ -127,13 +127,13 @@
     .line 124
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mInLayout:Z
 
-    .line 150
+    .line 151
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedPosition:I
 
     .line 156
     iput-wide v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedRowId:J
 
-    .line 161
+    .line 162
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     .line 167
@@ -168,7 +168,7 @@
     .line 230
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 65
+    .line 66
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 82
@@ -180,13 +180,13 @@
     .line 124
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mInLayout:Z
 
-    .line 150
+    .line 151
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedPosition:I
 
     .line 156
     iput-wide v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedRowId:J
 
-    .line 161
+    .line 162
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     .line 167
@@ -222,7 +222,7 @@
     .line 234
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 65
+    .line 66
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 82
@@ -234,13 +234,13 @@
     .line 124
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mInLayout:Z
 
-    .line 150
+    .line 151
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedPosition:I
 
     .line 156
     iput-wide v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedRowId:J
 
-    .line 161
+    .line 162
     iput v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     .line 167

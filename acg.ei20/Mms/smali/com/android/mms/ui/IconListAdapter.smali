@@ -43,7 +43,7 @@
     .prologue
     .line 41
     .local p2, items:Ljava/util/List;,"Ljava/util/List<Lcom/android/mms/ui/IconListAdapter$IconListItem;>;"
-    const v0, 0x7f030019
+    const v0, 0x7f030016
 
     invoke-direct {p0, p1, v0, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
@@ -77,7 +77,7 @@
     .line 52
     iget-object v3, p0, Lcom/android/mms/ui/IconListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f030019
+    const v4, 0x7f030016
 
     const/4 v5, 0x0
 
@@ -88,7 +88,7 @@
     .line 58
     .local v2, view:Landroid/view/View;
     :goto_0
-    const v3, 0x7f080086
+    const v3, 0x7f080061
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -111,7 +111,7 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 62
-    const v3, 0x7f080070
+    const v3, 0x7f08004b
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

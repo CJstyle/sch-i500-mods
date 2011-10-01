@@ -112,7 +112,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 48
-    const v0, 0x7f08005b
+    const v0, 0x7f080036
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MultipleContactListItem;->findViewById(I)Landroid/view/View;
 
@@ -123,7 +123,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MultipleContactListItem;->avatarView:Landroid/widget/ImageView;
 
     .line 49
-    const v0, 0x7f0800a9
+    const v0, 0x7f080084
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MultipleContactListItem;->findViewById(I)Landroid/view/View;
 
@@ -134,7 +134,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MultipleContactListItem;->numberView:Landroid/widget/TextView;
 
     .line 50
-    const v0, 0x7f0800a8
+    const v0, 0x7f080083
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MultipleContactListItem;->findViewById(I)Landroid/view/View;
 
@@ -145,7 +145,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MultipleContactListItem;->nameView:Landroid/widget/TextView;
 
     .line 51
-    const v0, 0x7f0800aa
+    const v0, 0x7f080085
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MultipleContactListItem;->findViewById(I)Landroid/view/View;
 

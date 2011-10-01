@@ -36,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 850
+    .line 794
     invoke-static {}, Lcom/android/mms/data/Conversation$Cache;->getInstance()Lcom/android/mms/data/Conversation$Cache;
 
     move-result-object v0
@@ -50,10 +50,10 @@
     .locals 2
 
     .prologue
-    .line 859
+    .line 803
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 860
+    .line 804
     new-instance v0, Ljava/util/HashSet;
 
     const/16 v1, 0xa
@@ -62,7 +62,7 @@
 
     iput-object v0, p0, Lcom/android/mms/data/Conversation$Cache;->mCache:Ljava/util/HashSet;
 
-    .line 861
+    .line 805
     return-void
 .end method
 
@@ -71,12 +71,12 @@
     .parameter "threadId"
 
     .prologue
-    .line 868
+    .line 812
     sget-object v3, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
     monitor-enter v3
 
-    .line 869
+    .line 813
     :try_start_0
     const-string v4, "Mms:threadcache"
 
@@ -88,7 +88,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 870
+    .line 814
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -113,7 +113,7 @@
 
     invoke-static {v4, v5}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 887
+    .line 831
     :cond_0
     new-instance v2, Ljava/util/HashSet;
 
@@ -121,7 +121,7 @@
 
     invoke-direct {v2, v4}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 888
+    .line 832
     .local v2, mClonedCache:Ljava/util/HashSet;,"Ljava/util/HashSet<Lcom/android/mms/data/Conversation;>;"
     sget-object v4, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
@@ -134,7 +134,7 @@
     .end local v2           #mClonedCache:Ljava/util/HashSet;,"Ljava/util/HashSet<Lcom/android/mms/data/Conversation;>;"
     check-cast v2, Ljava/util/HashSet;
 
-    .line 890
+    .line 834
     .restart local v2       #mClonedCache:Ljava/util/HashSet;,"Ljava/util/HashSet<Lcom/android/mms/data/Conversation;>;"
     invoke-virtual {v2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
@@ -154,7 +154,7 @@
 
     check-cast v0, Lcom/android/mms/data/Conversation;
 
-    .line 896
+    .line 840
     .local v0, c:Lcom/android/mms/data/Conversation;
     invoke-virtual {v0}, Lcom/android/mms/data/Conversation;->getThreadId()J
 
@@ -164,26 +164,26 @@
 
     if-nez v4, :cond_1
 
-    .line 897
+    .line 841
     monitor-exit v3
 
     move-object v3, v0
 
-    .line 901
+    .line 845
     .end local v0           #c:Lcom/android/mms/data/Conversation;
     :goto_0
     return-object v3
 
-    .line 900
+    .line 844
     :cond_2
     monitor-exit v3
 
-    .line 901
+    .line 845
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 900
+    .line 844
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #mClonedCache:Ljava/util/HashSet;,"Ljava/util/HashSet<Lcom/android/mms/data/Conversation;>;"
     :catchall_0
@@ -201,12 +201,12 @@
     .parameter "list"
 
     .prologue
-    .line 909
+    .line 853
     sget-object v3, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
     monitor-enter v3
 
-    .line 910
+    .line 854
     :try_start_0
     const-string v4, "Mms:threadcache"
 
@@ -218,7 +218,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 911
+    .line 855
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -243,7 +243,7 @@
 
     invoke-static {v4, v5}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 924
+    .line 868
     :cond_0
     new-instance v2, Ljava/util/HashSet;
 
@@ -251,7 +251,7 @@
 
     invoke-direct {v2, v4}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 925
+    .line 869
     .local v2, mClonedCache:Ljava/util/HashSet;,"Ljava/util/HashSet<Lcom/android/mms/data/Conversation;>;"
     sget-object v4, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
@@ -264,7 +264,7 @@
     .end local v2           #mClonedCache:Ljava/util/HashSet;,"Ljava/util/HashSet<Lcom/android/mms/data/Conversation;>;"
     check-cast v2, Ljava/util/HashSet;
 
-    .line 927
+    .line 871
     .restart local v2       #mClonedCache:Ljava/util/HashSet;,"Ljava/util/HashSet<Lcom/android/mms/data/Conversation;>;"
     invoke-virtual {v2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
@@ -284,7 +284,7 @@
 
     check-cast v0, Lcom/android/mms/data/Conversation;
 
-    .line 928
+    .line 872
     .local v0, c:Lcom/android/mms/data/Conversation;
     invoke-virtual {v0}, Lcom/android/mms/data/Conversation;->getRecipients()Lcom/android/mms/data/ContactList;
 
@@ -296,26 +296,26 @@
 
     if-eqz v4, :cond_1
 
-    .line 929
+    .line 873
     monitor-exit v3
 
     move-object v3, v0
 
-    .line 933
+    .line 877
     .end local v0           #c:Lcom/android/mms/data/Conversation;
     :goto_0
     return-object v3
 
-    .line 932
+    .line 876
     :cond_2
     monitor-exit v3
 
-    .line 933
+    .line 877
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 932
+    .line 876
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #mClonedCache:Ljava/util/HashSet;,"Ljava/util/HashSet<Lcom/android/mms/data/Conversation;>;"
     :catchall_0
@@ -332,19 +332,19 @@
     .locals 1
 
     .prologue
-    .line 853
+    .line 797
     sget-object v0, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
     if-nez v0, :cond_0
 
-    .line 854
+    .line 798
     new-instance v0, Lcom/android/mms/data/Conversation$Cache;
 
     invoke-direct {v0}, Lcom/android/mms/data/Conversation$Cache;-><init>()V
 
     sput-object v0, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
-    .line 856
+    .line 800
     :cond_0
     sget-object v0, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
@@ -365,13 +365,13 @@
     .end annotation
 
     .prologue
-    .line 994
+    .line 938
     .local p0, threads:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/Long;>;"
     sget-object v2, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
     monitor-enter v2
 
-    .line 995
+    .line 939
     :try_start_0
     invoke-interface {p0}, Ljava/util/Set;->size()I
 
@@ -379,21 +379,21 @@
 
     if-nez v3, :cond_1
 
-    .line 996
+    .line 940
     sget-object v3, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
     iget-object v3, v3, Lcom/android/mms/data/Conversation$Cache;->mCache:Ljava/util/HashSet;
 
     invoke-virtual {v3}, Ljava/util/HashSet;->clear()V
 
-    .line 1006
+    .line 950
     :cond_0
     monitor-exit v2
 
-    .line 1011
+    .line 955
     return-void
 
-    .line 998
+    .line 942
     :cond_1
     sget-object v3, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
@@ -403,7 +403,7 @@
 
     move-result-object v1
 
-    .line 999
+    .line 943
     .local v1, iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/mms/data/Conversation;>;"
     :cond_2
     :goto_0
@@ -413,14 +413,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 1000
+    .line 944
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/mms/data/Conversation;
 
-    .line 1001
+    .line 945
     .local v0, c:Lcom/android/mms/data/Conversation;
     invoke-virtual {v0}, Lcom/android/mms/data/Conversation;->getThreadId()J
 
@@ -436,12 +436,12 @@
 
     if-nez v3, :cond_2
 
-    .line 1002
+    .line 946
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 1006
+    .line 950
     .end local v0           #c:Lcom/android/mms/data/Conversation;
     .end local v1           #iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/mms/data/Conversation;>;"
     :catchall_0
@@ -459,12 +459,12 @@
     .parameter "c"
 
     .prologue
-    .line 942
+    .line 886
     sget-object v0, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
     monitor-enter v0
 
-    .line 945
+    .line 889
     :try_start_0
     const-string v1, "Mms:threadcache"
 
@@ -476,7 +476,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 946
+    .line 890
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -515,7 +515,7 @@
 
     invoke-static {v1, v2}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 949
+    .line 893
     :cond_0
     sget-object v1, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
@@ -527,7 +527,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 950
+    .line 894
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -566,7 +566,7 @@
 
     throw v1
 
-    .line 954
+    .line 898
     :catchall_0
     move-exception v1
 
@@ -576,7 +576,7 @@
 
     throw v1
 
-    .line 953
+    .line 897
     :cond_1
     :try_start_1
     sget-object v1, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
@@ -585,12 +585,12 @@
 
     invoke-virtual {v1, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 954
+    .line 898
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 955
+    .line 899
     return-void
 .end method
 
@@ -599,12 +599,12 @@
     .parameter "threadId"
 
     .prologue
-    .line 966
+    .line 910
     sget-object v2, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
     monitor-enter v2
 
-    .line 967
+    .line 911
     :try_start_0
     sget-object v3, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
@@ -628,7 +628,7 @@
 
     check-cast v0, Lcom/android/mms/data/Conversation;
 
-    .line 968
+    .line 912
     .local v0, c:Lcom/android/mms/data/Conversation;
     invoke-virtual {v0}, Lcom/android/mms/data/Conversation;->getThreadId()J
 
@@ -638,22 +638,22 @@
 
     if-nez v3, :cond_0
 
-    .line 969
+    .line 913
     sget-object v3, Lcom/android/mms/data/Conversation$Cache;->sInstance:Lcom/android/mms/data/Conversation$Cache;
 
     iget-object v3, v3, Lcom/android/mms/data/Conversation$Cache;->mCache:Ljava/util/HashSet;
 
     invoke-virtual {v3, v0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 970
+    .line 914
     monitor-exit v2
 
-    .line 974
+    .line 918
     .end local v0           #c:Lcom/android/mms/data/Conversation;
     :goto_0
     return-void
 
-    .line 973
+    .line 917
     :cond_1
     monitor-exit v2
 

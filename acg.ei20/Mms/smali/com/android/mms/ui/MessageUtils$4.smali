@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1510
+    .line 1264
     iput-object p1, p0, Lcom/android/mms/ui/MessageUtils$4;->val$callback:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,17 +43,17 @@
     .parameter "which"
 
     .prologue
-    .line 1512
+    .line 1266
     iget-object v0, p0, Lcom/android/mms/ui/MessageUtils$4;->val$callback:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 1513
+    .line 1267
     iget-object v0, p0, Lcom/android/mms/ui/MessageUtils$4;->val$callback:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 1515
+    .line 1269
     :cond_0
     return-void
 .end method

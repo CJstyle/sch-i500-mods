@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 437
+    .line 433
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -47,47 +47,47 @@
 
     const-string v4, "additional"
 
-    .line 440
+    .line 436
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$000(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 441
+    .line 437
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 468
+    .line 464
     :goto_0
     return-void
 
-    .line 443
+    .line 439
     :pswitch_0
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$100(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 444
+    .line 440
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$200(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     goto :goto_0
 
-    .line 448
+    .line 444
     :pswitch_1
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$100(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 449
+    .line 445
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "intent.action.INTERACTION_LIST"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 450
+    .line 446
     .local v1, phonebookIntent:Landroid/content/Intent;
     const-string v2, "additional"
 
@@ -95,7 +95,7 @@
 
     invoke-virtual {v1, v4, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 451
+    .line 447
     const-string v2, "existingRecipientCount"
 
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -108,7 +108,7 @@
 
     invoke-virtual {v1, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 452
+    .line 448
     const-string v2, "maxRecipientCount"
 
     invoke-static {}, Lcom/android/mms/MmsConfig;->getRecipientLimit()I
@@ -117,28 +117,28 @@
 
     invoke-virtual {v1, v6, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 453
+    .line 449
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v2, v1, v3}, Lcom/android/mms/ui/ComposeMessageActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_0
 
-    .line 457
+    .line 453
     .end local v1           #phonebookIntent:Landroid/content/Intent;
     :pswitch_2
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$100(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 458
+    .line 454
     new-instance v0, Landroid/content/Intent;
 
     const-string v2, "intent.action.INTERACTION_GROUP"
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 459
+    .line 455
     .local v0, groupIntent:Landroid/content/Intent;
     const-string v2, "additional"
 
@@ -146,7 +146,7 @@
 
     invoke-virtual {v0, v4, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 460
+    .line 456
     const-string v2, "existingRecipientCount"
 
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -159,7 +159,7 @@
 
     invoke-virtual {v0, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 461
+    .line 457
     const-string v2, "maxRecipientCount"
 
     invoke-static {}, Lcom/android/mms/MmsConfig;->getRecipientLimit()I
@@ -168,14 +168,14 @@
 
     invoke-virtual {v0, v6, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 462
+    .line 458
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$1;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v2, v0, v3}, Lcom/android/mms/ui/ComposeMessageActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_0
 
-    .line 441
+    .line 437
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

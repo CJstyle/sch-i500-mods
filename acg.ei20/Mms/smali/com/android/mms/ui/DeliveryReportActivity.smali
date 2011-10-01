@@ -1577,7 +1577,7 @@
 
     .line 114
     .local v1, inflater:Landroid/view/LayoutInflater;
-    const v2, 0x7f030013
+    const v2, 0x7f030010
 
     invoke-virtual {v1, v2, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1751,7 +1751,7 @@
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/DeliveryReportActivity;->requestWindowFeature(I)Z
 
     .line 101
-    const v1, 0x7f030012
+    const v1, 0x7f03000f
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/DeliveryReportActivity;->setContentView(I)V
 

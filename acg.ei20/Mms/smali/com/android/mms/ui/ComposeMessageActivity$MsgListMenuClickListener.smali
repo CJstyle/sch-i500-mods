@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1892
+    .line 1888
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1892
+    .line 1888
     invoke-direct {p0, p1}, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;-><init>(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     return-void
@@ -60,14 +60,14 @@
 
     const/4 v11, 0x1
 
-    .line 1895
+    .line 1891
     invoke-interface {p1}, Landroid/view/MenuItem;->getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/AdapterView$AdapterContextMenuInfo;
 
-    .line 1896
+    .line 1892
     .local v1, info:Landroid/widget/AdapterView$AdapterContextMenuInfo;
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -83,7 +83,7 @@
 
     check-cast v0, Landroid/database/Cursor;
 
-    .line 1899
+    .line 1895
     .local v0, cursor:Landroid/database/Cursor;
     if-eqz v0, :cond_0
 
@@ -93,7 +93,7 @@
 
     if-gtz v8, :cond_1
 
-    .line 1900
+    .line 1896
     :cond_0
     const-string v8, "Mms/compose"
 
@@ -103,23 +103,23 @@
 
     move v8, v10
 
-    .line 2009
+    .line 2001
     :goto_0
     return v8
 
-    .line 1903
+    .line 1899
     :cond_1
     invoke-interface {v0, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1904
+    .line 1900
     .local v7, type:Ljava/lang/String;
     invoke-interface {v0, v11}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v4
 
-    .line 1905
+    .line 1901
     .local v4, msgId:J
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -127,38 +127,50 @@
 
     move-result-object v6
 
-    .line 1907
+    .line 1903
     .local v6, msgItem:Lcom/android/mms/ui/MessageItem;
     if-nez v6, :cond_2
 
     move v8, v10
 
-    .line 1908
+    .line 1904
     goto :goto_0
 
-    .line 1911
+    .line 1907
     :cond_2
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v8
 
-    sparse-switch v8, :sswitch_data_0
+    packed-switch v8, :pswitch_data_0
 
+    :pswitch_0
     move v8, v10
 
-    .line 2009
+    .line 2001
     goto :goto_0
 
-    .line 1913
-    :sswitch_0
+    .line 1909
+    :pswitch_1
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v8, v6}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1300(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;)V
 
-    .line 1914
+    .line 1910
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1400(Lcom/android/mms/ui/ComposeMessageActivity;)V
+
+    move v8, v11
+
+    .line 1911
+    goto :goto_0
+
+    .line 1914
+    :pswitch_2
+    iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
+
+    invoke-static {v8, v6}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4000(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;)V
 
     move v8, v11
 
@@ -166,31 +178,31 @@
     goto :goto_0
 
     .line 1918
-    :sswitch_1
+    :pswitch_3
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v8, v6}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4100(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;)V
+    iget-object v9, v6, Lcom/android/mms/ui/MessageItem;->mBody:Ljava/lang/String;
+
+    invoke-static {v8, v9}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4100(Lcom/android/mms/ui/ComposeMessageActivity;Ljava/lang/String;)V
 
     move v8, v11
 
     .line 1919
     goto :goto_0
 
-    .line 1922
-    :sswitch_2
+    .line 1925
+    :pswitch_4
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    iget-object v9, v6, Lcom/android/mms/ui/MessageItem;->mBody:Ljava/lang/String;
-
-    invoke-static {v8, v9}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4200(Lcom/android/mms/ui/ComposeMessageActivity;Ljava/lang/String;)V
+    invoke-static {v8, v6}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4200(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;)V
 
     move v8, v11
 
-    .line 1923
+    .line 1927
     goto :goto_0
 
-    .line 1929
-    :sswitch_3
+    .line 1930
+    :pswitch_5
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v8, v6}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4300(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;)V
@@ -201,18 +213,7 @@
     goto :goto_0
 
     .line 1934
-    :sswitch_4
-    iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
-
-    invoke-static {v8, v6}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4400(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;)V
-
-    move v8, v11
-
-    .line 1935
-    goto :goto_0
-
-    .line 1938
-    :sswitch_5
+    :pswitch_6
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     sget-object v9, Landroid/provider/Telephony$Mms;->CONTENT_URI:Landroid/net/Uri;
@@ -225,11 +226,11 @@
 
     move v8, v11
 
-    .line 1940
+    .line 1936
     goto :goto_0
 
-    .line 1943
-    :sswitch_6
+    .line 1939
+    :pswitch_7
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget v9, v6, Lcom/android/mms/ui/MessageItem;->mMessageSize:I
@@ -238,7 +239,7 @@
 
     move-result-object v3
 
-    .line 1945
+    .line 1941
     .local v3, messageDetails:Ljava/lang/String;
     new-instance v8, Landroid/app/AlertDialog$Builder;
 
@@ -270,12 +271,12 @@
 
     move v8, v11
 
-    .line 1951
+    .line 1947
     goto :goto_0
 
-    .line 1954
+    .line 1950
     .end local v3           #messageDetails:Ljava/lang/String;
-    :sswitch_7
+    :pswitch_8
     new-instance v2, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;
 
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -286,13 +287,25 @@
 
     invoke-direct {v2, v8, v9, v10}, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;-><init>(Lcom/android/mms/ui/ComposeMessageActivity;Landroid/net/Uri;Z)V
 
-    .line 1956
+    .line 1952
     .local v2, l:Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget-boolean v9, v6, Lcom/android/mms/ui/MessageItem;->mLocked:Z
 
-    invoke-static {v8, v2, v9}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4500(Lcom/android/mms/ui/ComposeMessageActivity;Landroid/content/DialogInterface$OnClickListener;Z)V
+    invoke-static {v8, v2, v9}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4400(Lcom/android/mms/ui/ComposeMessageActivity;Landroid/content/DialogInterface$OnClickListener;Z)V
+
+    move v8, v11
+
+    .line 1953
+    goto/16 :goto_0
+
+    .line 1956
+    .end local v2           #l:Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;
+    :pswitch_9
+    iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
+
+    invoke-static {v8, v4, v5, v7}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4500(Lcom/android/mms/ui/ComposeMessageActivity;JLjava/lang/String;)V
 
     move v8, v11
 
@@ -300,41 +313,29 @@
     goto/16 :goto_0
 
     .line 1960
-    .end local v2           #l:Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;
-    :sswitch_8
+    :pswitch_a
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v8, v4, v5, v7}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4600(Lcom/android/mms/ui/ComposeMessageActivity;JLjava/lang/String;)V
+    invoke-static {v8, v6, v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4600(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;Z)V
 
     move v8, v11
 
     .line 1961
     goto/16 :goto_0
 
-    .line 1964
-    :sswitch_9
-    iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
-
-    invoke-static {v8, v6, v11}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4700(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;Z)V
-
-    move v8, v11
-
     .line 1965
-    goto/16 :goto_0
-
-    .line 1969
-    :sswitch_a
+    :pswitch_b
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v8, v6, v10}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4700(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;Z)V
+    invoke-static {v8, v6, v10}, Lcom/android/mms/ui/ComposeMessageActivity;->access$4600(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;Z)V
 
     move v8, v11
+
+    .line 1966
+    goto/16 :goto_0
 
     .line 1970
-    goto/16 :goto_0
-
-    .line 1974
-    :sswitch_b
+    :pswitch_c
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-interface {p1}, Landroid/view/MenuItem;->getIntent()Landroid/content/Intent;
@@ -345,11 +346,11 @@
 
     move v8, v11
 
-    .line 1975
+    .line 1971
     goto/16 :goto_0
 
-    .line 1998
-    :sswitch_c
+    .line 1994
+    :pswitch_d
     iget-object v8, p0, Lcom/android/mms/ui/ComposeMessageActivity$MsgListMenuClickListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget-object v9, v6, Lcom/android/mms/ui/MessageItem;->mSlideshow:Lcom/android/mms/model/SlideshowModel;
@@ -358,32 +359,45 @@
 
     move v8, v11
 
-    .line 1999
+    .line 1995
     goto/16 :goto_0
 
-    :sswitch_d
-    move v8, v10
+    .line 1907
+    nop
 
-    .line 2005
-    goto/16 :goto_0
-
-    .line 1911
-    :sswitch_data_0
-    .sparse-switch
-        0xe -> :sswitch_0
-        0x10 -> :sswitch_5
-        0x11 -> :sswitch_6
-        0x12 -> :sswitch_7
-        0x14 -> :sswitch_8
-        0x15 -> :sswitch_4
-        0x18 -> :sswitch_2
-        0x19 -> :sswitch_1
-        0x1c -> :sswitch_9
-        0x1d -> :sswitch_a
-        0x1f -> :sswitch_3
-        0x23 -> :sswitch_c
-        0x28 -> :sswitch_b
-        0x2d -> :sswitch_c
-        0x34 -> :sswitch_d
-    .end sparse-switch
+    :pswitch_data_0
+    .packed-switch 0xe
+        :pswitch_1
+        :pswitch_0
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_0
+        :pswitch_9
+        :pswitch_5
+        :pswitch_0
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_a
+        :pswitch_b
+        :pswitch_0
+        :pswitch_4
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_d
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_c
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_d
+    .end packed-switch
 .end method

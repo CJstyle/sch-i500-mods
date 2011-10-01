@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 517
+    .line 494
     iput-object p1, p0, Lcom/android/mms/ui/ConversationList$5;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .locals 2
 
     .prologue
-    .line 519
+    .line 496
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$5;->this$0:Lcom/android/mms/ui/ConversationList;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/mms/ui/ConversationList;->access$700(Lcom/android/mms/ui/ConversationList;Z)V
 
-    .line 520
+    .line 497
     return-void
 .end method

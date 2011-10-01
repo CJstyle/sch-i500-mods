@@ -27,16 +27,16 @@
     .parameter "timeMillis"
 
     .prologue
-    .line 307
+    .line 286
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 308
+    .line 287
     iput-object p1, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsDeliveryInfo;->mTicker:Ljava/lang/CharSequence;
 
-    .line 309
+    .line 288
     iput-wide p2, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsDeliveryInfo;->mTimeMillis:J
 
-    .line 310
+    .line 289
     return-void
 .end method
 
@@ -48,13 +48,13 @@
     .parameter "isStatusMessage"
 
     .prologue
-    .line 313
+    .line 292
     iget-object v0, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsDeliveryInfo;->mTicker:Ljava/lang/CharSequence;
 
     iget-wide v1, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsDeliveryInfo;->mTimeMillis:J
 
     invoke-static {p1, p2, v0, v1, v2}, Lcom/android/mms/transaction/MessagingNotification;->access$100(Landroid/content/Context;ZLjava/lang/CharSequence;J)V
 
-    .line 315
+    .line 294
     return-void
 .end method

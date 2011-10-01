@@ -25,13 +25,13 @@
     .parameter "contentResolver"
 
     .prologue
-    .line 890
+    .line 857
     iput-object p1, p0, Lcom/android/mms/ui/MessageOptions$BackgroundQueryHandler;->this$0:Lcom/android/mms/ui/MessageOptions;
 
-    .line 891
+    .line 858
     invoke-direct {p0, p2}, Landroid/content/AsyncQueryHandler;-><init>(Landroid/content/ContentResolver;)V
 
-    .line 892
+    .line 859
     return-void
 .end method
 
@@ -46,15 +46,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 895
+    .line 862
     packed-switch p1, :pswitch_data_0
 
-    .line 901
+    .line 868
     .end local p0
     :goto_0
     return-void
 
-    .line 897
+    .line 864
     .restart local p0
     :pswitch_0
     sget-object p0, Lcom/android/mms/ui/MessageOptions;->mthisContext:Landroid/content/Context;
@@ -64,14 +64,14 @@
 
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
-    .line 898
+    .line 865
     sget-object v0, Lcom/android/mms/ui/MessageOptions;->mContext:Landroid/content/Context;
 
     invoke-static {v0, v1, v1}, Lcom/android/mms/transaction/MessagingNotification;->nonBlockingUpdateNewMessageIndicator(Landroid/content/Context;ZZ)V
 
     goto :goto_0
 
-    .line 895
+    .line 862
     :pswitch_data_0
     .packed-switch 0x25e4
         :pswitch_0

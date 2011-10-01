@@ -26,7 +26,7 @@
     .parameter
 
     .prologue
-    .line 1886
+    .line 1833
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$WindowRunnnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1886
+    .line 1833
     invoke-direct {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$WindowRunnnable;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     return-void
@@ -52,7 +52,7 @@
     .locals 1
 
     .prologue
-    .line 1890
+    .line 1837
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$WindowRunnnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-static {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$200(Lcom/nemustech/tiffany/widget/TFAbsListView;)I
@@ -61,7 +61,7 @@
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$WindowRunnnable;->mOriginalAttachCount:I
 
-    .line 1891
+    .line 1838
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .locals 2
 
     .prologue
-    .line 1894
+    .line 1841
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$WindowRunnnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->hasWindowFocus()Z

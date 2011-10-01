@@ -90,7 +90,7 @@
     invoke-direct {v1}, Landroid/app/Notification;-><init>()V
 
     .line 53
-    const v2, 0x7f0200a1
+    const v2, 0x7f02009b
 
     iput v2, v1, Landroid/app/Notification;->icon:I
 

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3435
+    .line 3395
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$23;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 3438
+    .line 3398
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$23;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->onMessageSent()V
 
-    .line 3439
+    .line 3399
     return-void
 .end method

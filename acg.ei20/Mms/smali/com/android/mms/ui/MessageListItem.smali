@@ -430,7 +430,7 @@
 
     move-object v4, v0
 
-    const v5, 0x7f0200a0
+    const v5, 0x7f02009a
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1087,7 +1087,7 @@
     .parameter
 
     .prologue
-    const v6, 0x7f020066
+    const v6, 0x7f020062
 
     const/16 v5, 0xb
 
@@ -1200,7 +1200,7 @@
     .line 1042
     iget-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mMsgListItemLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f020067
+    const v1, 0x7f020063
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
@@ -1225,7 +1225,7 @@
     .line 1052
     iget-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mMsgListItemLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f020068
+    const v1, 0x7f020064
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
@@ -1235,7 +1235,7 @@
     :cond_4
     iget-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mMsgListItemLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f020069
+    const v1, 0x7f020065
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
@@ -1357,7 +1357,7 @@
     .parameter
 
     .prologue
-    const v2, 0x7f020099
+    const v2, 0x7f020095
 
     const/4 v1, 0x0
 
@@ -2015,7 +2015,7 @@
 
     .line 459
     :cond_0
-    const v0, 0x7f08009b
+    const v0, 0x7f080076
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -2026,7 +2026,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 460
-    const v0, 0x7f08009d
+    const v0, 0x7f080078
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -2037,7 +2037,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mDownloadButton:Landroid/widget/Button;
 
     .line 461
-    const v0, 0x7f08009e
+    const v0, 0x7f080079
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -2069,7 +2069,7 @@
     if-nez v0, :cond_0
 
     .line 446
-    const v0, 0x7f080095
+    const v0, 0x7f080070
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -2080,7 +2080,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 448
-    const v0, 0x7f08009f
+    const v0, 0x7f08007a
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -2089,7 +2089,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mMmsView:Landroid/view/View;
 
     .line 449
-    const v0, 0x7f0800a0
+    const v0, 0x7f08007b
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -2100,7 +2100,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mImageView:Landroid/widget/ImageView;
 
     .line 450
-    const v0, 0x7f0800a1
+    const v0, 0x7f08007c
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -2771,7 +2771,7 @@
 
     move-object/from16 v26, v0
 
-    const v27, 0x7f02007f
+    const v27, 0x7f02007b
 
     invoke-direct/range {v25 .. v27}, Landroid/text/style/ImageSpan;-><init>(Landroid/content/Context;I)V
 
@@ -3449,7 +3449,7 @@
 
     move-object/from16 v26, v0
 
-    const v27, 0x7f020078
+    const v27, 0x7f020074
 
     invoke-direct/range {v25 .. v27}, Landroid/text/style/ImageSpan;-><init>(Landroid/content/Context;I)V
 
@@ -3482,7 +3482,7 @@
 
     move-object/from16 v26, v0
 
-    const v27, 0x7f020079
+    const v27, 0x7f020075
 
     invoke-direct/range {v25 .. v27}, Landroid/text/style/ImageSpan;-><init>(Landroid/content/Context;I)V
 
@@ -3712,7 +3712,7 @@
 
     move-object/from16 v26, v0
 
-    const v27, 0x7f020090
+    const v27, 0x7f02008c
 
     invoke-direct/range {v25 .. v27}, Landroid/text/style/ImageSpan;-><init>(Landroid/content/Context;I)V
 
@@ -3748,7 +3748,7 @@
 
     move-object/from16 v26, v0
 
-    const v27, 0x7f02007f
+    const v27, 0x7f02007b
 
     invoke-direct/range {v25 .. v27}, Landroid/text/style/ImageSpan;-><init>(Landroid/content/Context;I)V
 
@@ -3932,7 +3932,7 @@
 
     move-object/from16 v26, v0
 
-    const v27, 0x7f020078
+    const v27, 0x7f020074
 
     invoke-direct/range {v25 .. v27}, Landroid/text/style/ImageSpan;-><init>(Landroid/content/Context;I)V
 
@@ -3975,7 +3975,7 @@
 
     move-object/from16 v26, v0
 
-    const v27, 0x7f020079
+    const v27, 0x7f020075
 
     invoke-direct/range {v25 .. v27}, Landroid/text/style/ImageSpan;-><init>(Landroid/content/Context;I)V
 
@@ -4545,7 +4545,7 @@
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 176
-    const v0, 0x7f080090
+    const v0, 0x7f08006b
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -4554,7 +4554,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mMsgListItem:Landroid/view/View;
 
     .line 178
-    const v0, 0x7f080092
+    const v0, 0x7f08006d
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -4565,7 +4565,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mMsgListItemLayout:Landroid/widget/LinearLayout;
 
     .line 179
-    const v0, 0x7f080091
+    const v0, 0x7f08006c
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -4576,7 +4576,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mMsgListItemLayoutLayout:Landroid/widget/RelativeLayout;
 
     .line 180
-    const v0, 0x7f080096
+    const v0, 0x7f080071
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -4587,7 +4587,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mBodyTextView:Landroid/widget/TextView;
 
     .line 181
-    const v0, 0x7f080099
+    const v0, 0x7f080074
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -4598,7 +4598,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mRightStatusIndicator:Landroid/widget/ImageView;
 
     .line 182
-    const v0, 0x7f08009a
+    const v0, 0x7f080075
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -4609,7 +4609,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mRightLockIndicator:Landroid/widget/ImageView;
 
     .line 183
-    const v0, 0x7f080098
+    const v0, 0x7f080073
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -4620,7 +4620,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MessageListItem;->mRightAttachmentIndicator:Landroid/widget/ImageView;
 
     .line 184
-    const v0, 0x7f080093
+    const v0, 0x7f08006e
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -4758,7 +4758,7 @@
     const/4 v3, 0x0
 
     .line 925
-    const v1, 0x7f08005d
+    const v1, 0x7f080038
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4840,7 +4840,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020094
+    const v2, 0x7f020090
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -5008,7 +5008,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020095
+    const v1, 0x7f020091
 
     invoke-static {v0, v1}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

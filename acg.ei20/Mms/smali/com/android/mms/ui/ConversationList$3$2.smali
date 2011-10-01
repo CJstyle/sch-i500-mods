@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 332
+    .line 322
     iput-object p1, p0, Lcom/android/mms/ui/ConversationList$3$2;->this$1:Lcom/android/mms/ui/ConversationList$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 5
 
     .prologue
-    .line 334
+    .line 324
     iget-object v2, p0, Lcom/android/mms/ui/ConversationList$3$2;->this$1:Lcom/android/mms/ui/ConversationList$3;
 
     iget-object v2, v2, Lcom/android/mms/ui/ConversationList$3;->this$0:Lcom/android/mms/ui/ConversationList;
@@ -54,7 +54,7 @@
 
     move-result-object v1
 
-    .line 335
+    .line 325
     .local v1, editor:Landroid/content/SharedPreferences$Editor;
     iget-object v2, p0, Lcom/android/mms/ui/ConversationList$3$2;->this$1:Lcom/android/mms/ui/ConversationList$3;
 
@@ -72,15 +72,15 @@
 
     move-result v0
 
-    .line 336
+    .line 326
     .local v0, defaultValue:Z
     const-string v2, "pref_key_auto_delete"
 
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 337
+    .line 327
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 338
+    .line 328
     return-void
 .end method

@@ -357,7 +357,7 @@
     :cond_1
     new-instance v0, Lcom/android/mms/ui/MultipleContactPicker$ContactsPickerAdapter;
 
-    const v1, 0x7f030021
+    const v1, 0x7f03001e
 
     invoke-direct {v0, p0, p0, v1, v13}, Lcom/android/mms/ui/MultipleContactPicker$ContactsPickerAdapter;-><init>(Lcom/android/mms/ui/MultipleContactPicker;Landroid/content/Context;ILjava/util/List;)V
 
@@ -552,7 +552,7 @@
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MultipleContactPicker;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 76
-    const v0, 0x7f030022
+    const v0, 0x7f03001f
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MultipleContactPicker;->setContentView(I)V
 
@@ -571,7 +571,7 @@
     iput v0, p0, Lcom/android/mms/ui/MultipleContactPicker;->addedCount:I
 
     .line 82
-    const v0, 0x7f0800ab
+    const v0, 0x7f080086
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MultipleContactPicker;->findViewById(I)Landroid/view/View;
 
@@ -604,7 +604,7 @@
     invoke-direct {p0, p1, v0}, Lcom/android/mms/ui/MultipleContactPicker;->initActivityState(Landroid/os/Bundle;Landroid/content/Intent;)V
 
     .line 89
-    const v0, 0x7f08006b
+    const v0, 0x7f080046
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/MultipleContactPicker;->findViewById(I)Landroid/view/View;
 

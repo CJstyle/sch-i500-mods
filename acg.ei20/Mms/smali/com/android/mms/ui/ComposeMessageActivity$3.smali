@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 543
+    .line 539
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$3;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,12 +39,12 @@
     .parameter "msg"
 
     .prologue
-    .line 547
+    .line 543
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 555
+    .line 551
     const-string v2, "Mms/compose"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -69,16 +69,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 564
+    .line 560
     :cond_0
     :goto_0
     return-void
 
-    .line 549
+    .line 545
     :pswitch_0
     const-string v1, "mms"
 
-    .line 559
+    .line 555
     .local v1, type:Ljava/lang/String;
     :goto_1
     iget-object v3, p0, Lcom/android/mms/ui/ComposeMessageActivity$3;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -97,33 +97,33 @@
 
     move-result-object v0
 
-    .line 560
+    .line 556
     .local v0, msgItem:Lcom/android/mms/ui/MessageItem;
     if-eqz v0, :cond_0
 
-    .line 561
+    .line 557
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$3;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v2, v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1300(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/ui/MessageItem;)V
 
-    .line 562
+    .line 558
     iget-object v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$3;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1400(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     goto :goto_0
 
-    .line 552
+    .line 548
     .end local v0           #msgItem:Lcom/android/mms/ui/MessageItem;
     .end local v1           #type:Ljava/lang/String;
     :pswitch_1
     const-string v1, "sms"
 
-    .line 553
+    .line 549
     .restart local v1       #type:Ljava/lang/String;
     goto :goto_1
 
-    .line 547
+    .line 543
     nop
 
     :pswitch_data_0

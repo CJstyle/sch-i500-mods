@@ -15,8 +15,6 @@
 
 
 # static fields
-.field public static CMAS_Y:Z
-
 .field private static final INFO_COMPARATOR:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfoComparator;
 
 .field private static final LOG_HISTORY_URI:Landroid/net/Uri;
@@ -26,8 +24,6 @@
 .field private static final SMS_STATUS_PROJECTION:[Ljava/lang/String;
 
 .field private static final UNDELIVERED_URI:Landroid/net/Uri;
-
-.field private static mDate:Ljava/lang/String;
 
 .field private static mToastHandler:Landroid/os/Handler;
 
@@ -53,7 +49,7 @@
 
     const/4 v3, 0x0
 
-    .line 111
+    .line 103
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/String;
@@ -86,7 +82,7 @@
 
     sput-object v0, Lcom/android/mms/transaction/MessagingNotification;->MMS_STATUS_PROJECTION:[Ljava/lang/String;
 
-    .line 115
+    .line 107
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
@@ -125,7 +121,7 @@
 
     sput-object v0, Lcom/android/mms/transaction/MessagingNotification;->SMS_STATUS_PROJECTION:[Ljava/lang/String;
 
-    .line 146
+    .line 138
     new-instance v0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfoComparator;
 
     const/4 v1, 0x0
@@ -134,7 +130,7 @@
 
     sput-object v0, Lcom/android/mms/transaction/MessagingNotification;->INFO_COMPARATOR:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfoComparator;
 
-    .line 149
+    .line 141
     const-string v0, "content://mms-sms/undelivered"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -143,7 +139,7 @@
 
     sput-object v0, Lcom/android/mms/transaction/MessagingNotification;->UNDELIVERED_URI:Landroid/net/Uri;
 
-    .line 151
+    .line 143
     const-string v0, "content://logs/historys"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -152,17 +148,14 @@
 
     sput-object v0, Lcom/android/mms/transaction/MessagingNotification;->LOG_HISTORY_URI:Landroid/net/Uri;
 
-    .line 162
-    sput-boolean v3, Lcom/android/mms/transaction/MessagingNotification;->CMAS_Y:Z
-
-    .line 173
+    .line 164
     new-instance v0, Lcom/android/mms/transaction/MessagingNotification$OnDeletedReceiver;
 
     invoke-direct {v0}, Lcom/android/mms/transaction/MessagingNotification$OnDeletedReceiver;-><init>()V
 
     sput-object v0, Lcom/android/mms/transaction/MessagingNotification;->sNotificationDeletedReceiver:Lcom/android/mms/transaction/MessagingNotification$OnDeletedReceiver;
 
-    .line 175
+    .line 166
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -176,10 +169,10 @@
     .locals 0
 
     .prologue
-    .line 177
+    .line 168
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 178
+    .line 169
     return-void
 .end method
 
@@ -191,7 +184,7 @@
     .parameter "x3"
 
     .prologue
-    .line 90
+    .line 85
     invoke-static {p0, p1, p2, p3, p4}, Lcom/android/mms/transaction/MessagingNotification;->updateDeliveryNotification(Landroid/content/Context;ZLjava/lang/CharSequence;J)V
 
     return-void
@@ -211,7 +204,7 @@
     .parameter "x9"
 
     .prologue
-    .line 90
+    .line 85
     invoke-static/range {p0 .. p10}, Lcom/android/mms/transaction/MessagingNotification;->updateNotification(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;IZLjava/lang/CharSequence;JLjava/lang/String;II)V
 
     return-void
@@ -223,16 +216,16 @@
     .parameter "info"
 
     .prologue
-    .line 294
+    .line 273
     if-eqz p1, :cond_0
 
-    .line 295
+    .line 274
     invoke-interface {p0, p1}, Ljava/util/SortedSet;->add(Ljava/lang/Object;)Z
 
-    .line 297
+    .line 276
     iget v0, p1, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mCount:I
 
-    .line 300
+    .line 279
     :goto_0
     return v0
 
@@ -247,7 +240,7 @@
     .parameter "context"
 
     .prologue
-    .line 1207
+    .line 1109
     const-string v1, "power"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -256,7 +249,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 1208
+    .line 1110
     .local v0, pm:Landroid/os/PowerManager;
     const v1, 0x3000001a
 
@@ -268,14 +261,14 @@
 
     sput-object v1, Lcom/android/mms/transaction/MessagingNotification;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 1212
+    .line 1114
     sget-object v1, Lcom/android/mms/transaction/MessagingNotification;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     const-wide/16 v2, 0x1388
 
     invoke-virtual {v1, v2, v3}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 1214
+    .line 1116
     return-void
 .end method
 
@@ -286,16 +279,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 287
+    .line 266
     invoke-static {p0, v0, v0}, Lcom/android/mms/transaction/MessagingNotification;->nonBlockingUpdateNewMessageIndicator(Landroid/content/Context;ZZ)V
 
-    .line 288
+    .line 267
     invoke-static {p0}, Lcom/android/mms/transaction/MessagingNotification;->updateSendFailedNotification(Landroid/content/Context;)V
 
-    .line 289
+    .line 268
     invoke-static {p0}, Lcom/android/mms/transaction/MessagingNotification;->updateDownloadFailedNotification(Landroid/content/Context;)V
 
-    .line 290
+    .line 269
     return-void
 .end method
 
@@ -312,60 +305,60 @@
 
     const/4 v8, 0x0
 
-    .line 216
+    .line 207
     new-instance v0, Ljava/util/TreeSet;
 
     sget-object v1, Lcom/android/mms/transaction/MessagingNotification;->INFO_COMPARATOR:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfoComparator;
 
     invoke-direct {v0, v1}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
-    .line 219
+    .line 210
     new-instance v1, Ljava/util/HashSet;
 
     const/4 v2, 0x4
 
     invoke-direct {v1, v2}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 221
+    .line 212
     invoke-static {p0}, Lcom/android/mms/transaction/MessagingNotification;->updateAllHistoryAsRead(Landroid/content/Context;)V
 
-    .line 223
+    .line 214
     invoke-static {p0, v1}, Lcom/android/mms/transaction/MessagingNotification;->getMmsNewMessageNotificationInfo(Landroid/content/Context;Ljava/util/Set;)Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
 
     move-result-object v2
 
-    .line 224
+    .line 215
     invoke-static {p0, v1}, Lcom/android/mms/transaction/MessagingNotification;->getSmsNewMessageNotificationInfo(Landroid/content/Context;Ljava/util/Set;)Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
 
     move-result-object v3
 
-    .line 227
+    .line 218
     invoke-static {v0, v2}, Lcom/android/mms/transaction/MessagingNotification;->accumulateNotificationInfo(Ljava/util/SortedSet;Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;)I
 
     move-result v4
 
     add-int/2addr v4, v8
 
-    .line 229
+    .line 220
     invoke-static {v0, v3}, Lcom/android/mms/transaction/MessagingNotification;->accumulateNotificationInfo(Ljava/util/SortedSet;Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;)I
 
     move-result v5
 
     add-int/2addr v4, v5
 
-    .line 242
+    .line 223
     const/16 v5, 0x7b
 
     invoke-static {p0, v5}, Lcom/android/mms/transaction/MessagingNotification;->cancelNotification(Landroid/content/Context;I)V
 
-    .line 245
+    .line 224
     invoke-interface {v0}, Ljava/util/SortedSet;->isEmpty()Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 247
+    .line 226
     const-string v5, "Mms:app"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -398,7 +391,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 250
+    .line 229
     invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
 
     move-result-object v0
@@ -411,29 +404,29 @@
 
     invoke-virtual {v0, p0, p1, v4, v1}, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->deliver(Landroid/content/Context;ZII)V
 
-    .line 253
+    .line 232
     :cond_0
     invoke-static {p0, v4}, Lcom/android/mms/transaction/MessagingNotification;->setBadge(Landroid/content/Context;I)V
 
-    .line 257
+    .line 236
     invoke-static {p0}, Lcom/android/mms/transaction/MessagingNotification;->getSmsNewDeliveryInfo(Landroid/content/Context;)Lcom/android/mms/transaction/MessagingNotification$MmsSmsDeliveryInfo;
 
     move-result-object v0
 
-    .line 258
+    .line 237
     if-eqz v0, :cond_1
 
-    .line 259
+    .line 238
     invoke-virtual {v0, p0, p2}, Lcom/android/mms/transaction/MessagingNotification$MmsSmsDeliveryInfo;->deliver(Landroid/content/Context;Z)V
 
-    .line 262
+    .line 241
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 266
+    .line 245
     if-eqz v2, :cond_3
 
-    .line 267
+    .line 246
     new-array v0, v9, [Ljava/lang/Object;
 
     iget-object v1, v2, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mTitle:Ljava/lang/String;
@@ -444,7 +437,7 @@
 
     move-result-object v0
 
-    .line 276
+    .line 255
     :goto_0
     new-instance v1, Landroid/content/Intent;
 
@@ -452,23 +445,23 @@
 
     invoke-direct {v1, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 277
+    .line 256
     const-string v2, "TTS_TEXT"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 278
+    .line 257
     invoke-virtual {p0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 280
+    .line 259
     :cond_2
     return-void
 
-    .line 269
+    .line 248
     :cond_3
     if-eqz v3, :cond_4
 
-    .line 270
+    .line 249
     new-array v0, v9, [Ljava/lang/Object;
 
     iget-object v1, v3, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mTitle:Ljava/lang/String;
@@ -481,7 +474,7 @@
 
     goto :goto_0
 
-    .line 273
+    .line 252
     :cond_4
     const v0, 0x7f0901b8
 
@@ -508,10 +501,10 @@
 
     const/16 v5, 0x20
 
-    .line 756
+    .line 658
     invoke-static {}, Lcom/android/mms/data/Contact;->invalidateCache()V
 
-    .line 758
+    .line 660
     invoke-static {p1, v8}, Lcom/android/mms/data/Contact;->get(Ljava/lang/String;Z)Lcom/android/mms/data/Contact;
 
     move-result-object v4
@@ -520,7 +513,7 @@
 
     move-result-object v1
 
-    .line 759
+    .line 661
     .local v1, displayAddress:Ljava/lang/String;
     const-string v4, "CBmessages"
 
@@ -530,14 +523,14 @@
 
     if-eqz v4, :cond_0
 
-    .line 760
+    .line 662
     const v4, 0x7f09015d
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 762
+    .line 664
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -548,7 +541,7 @@
     :goto_0
     invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 766
+    .line 668
     .local v0, buf:Ljava/lang/StringBuilder;
     const/16 v4, 0x3a
 
@@ -558,12 +551,12 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 768
+    .line 670
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
-    .line 769
+    .line 671
     .local v2, offset:I
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -571,7 +564,7 @@
 
     if-nez v4, :cond_1
 
-    .line 770
+    .line 672
     invoke-virtual {p2, v6, v5}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v4
@@ -580,13 +573,13 @@
 
     move-result-object p2
 
-    .line 771
+    .line 673
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 772
+    .line 674
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 775
+    .line 677
     :cond_1
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -594,7 +587,7 @@
 
     if-nez v4, :cond_2
 
-    .line 776
+    .line 678
     invoke-virtual {p3, v6, v5}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v4
@@ -603,10 +596,10 @@
 
     move-result-object p3
 
-    .line 777
+    .line 679
     invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 780
+    .line 682
     :cond_2
     new-instance v3, Landroid/text/SpannableString;
 
@@ -616,7 +609,7 @@
 
     invoke-direct {v3, v4}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 781
+    .line 683
     .local v3, spanText:Landroid/text/SpannableString;
     new-instance v4, Landroid/text/style/StyleSpan;
 
@@ -628,10 +621,10 @@
 
     invoke-virtual {v3, v4, v5, v2, v6}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 784
+    .line 686
     return-object v3
 
-    .line 762
+    .line 664
     .end local v0           #buf:Ljava/lang/StringBuilder;
     .end local v2           #offset:I
     .end local v3           #spanText:Landroid/text/SpannableString;
@@ -653,7 +646,7 @@
     .parameter "notificationId"
 
     .prologue
-    .line 557
+    .line 495
     const-string v1, "notification"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -662,11 +655,11 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 560
+    .line 498
     .local v0, nm:Landroid/app/NotificationManager;
     invoke-virtual {v0, p1}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 561
+    .line 499
     return-void
 .end method
 
@@ -675,14 +668,14 @@
     .parameter "context"
 
     .prologue
-    .line 1001
+    .line 903
     const/4 v7, 0x0
 
-    .line 1002
+    .line 904
     .local v7, c:Landroid/database/Cursor;
     const/4 v8, 0x0
 
-    .line 1004
+    .line 906
     .local v8, count:I
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -757,23 +750,23 @@
 
     move-result-object v7
 
-    .line 1011
+    .line 913
     if-nez v7, :cond_1
 
-    .line 1012
+    .line 914
     const/4 v0, 0x0
 
-    .line 1017
+    .line 919
     if-eqz v7, :cond_0
 
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 1019
+    .line 921
     :cond_0
     :goto_0
     return v0
 
-    .line 1014
+    .line 916
     :cond_1
     :try_start_1
     invoke-interface {v7}, Landroid/database/Cursor;->getCount()I
@@ -782,7 +775,7 @@
 
     move-result v8
 
-    .line 1017
+    .line 919
     if-eqz v7, :cond_2
 
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
@@ -790,10 +783,10 @@
     :cond_2
     move v0, v8
 
-    .line 1019
+    .line 921
     goto :goto_0
 
-    .line 1017
+    .line 919
     :catchall_0
     move-exception v0
 
@@ -822,13 +815,13 @@
     .end annotation
 
     .prologue
-    .line 361
+    .line 340
     .local p1, threads:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/Long;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 368
+    .line 347
     .local v1, resolver:Landroid/content/ContentResolver;
     sget-object v2, Landroid/provider/Telephony$Mms;->CONTENT_URI:Landroid/net/Uri;
 
@@ -846,20 +839,20 @@
 
     move-result-object v0
 
-    .line 372
+    .line 351
     .local v0, cursor:Landroid/database/Cursor;
     if-nez v0, :cond_0
 
-    .line 373
+    .line 352
     const/4 p0, 0x0
 
-    .line 412
+    .line 391
     .end local v1           #resolver:Landroid/content/ContentResolver;
     .end local p0
     :goto_0
     return-object p0
 
-    .line 377
+    .line 356
     .restart local v1       #resolver:Landroid/content/ContentResolver;
     .restart local p0
     :cond_0
@@ -873,16 +866,16 @@
     .end local v1           #resolver:Landroid/content/ContentResolver;
     if-nez v1, :cond_1
 
-    .line 378
+    .line 357
     const/4 p0, 0x0
 
-    .line 412
+    .line 391
     .end local p0
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 380
+    .line 359
     .restart local p0
     :cond_1
     const/4 v1, 0x1
@@ -892,7 +885,7 @@
 
     move-result-wide v12
 
-    .line 381
+    .line 360
     .local v12, msgId:J
     sget-object v1, Landroid/provider/Telephony$Mms;->CONTENT_URI:Landroid/net/Uri;
 
@@ -912,13 +905,13 @@
 
     move-result-object v1
 
-    .line 383
+    .line 362
     .local v1, msgUri:Landroid/net/Uri;
     invoke-static {p0, v1}, Lcom/android/mms/util/AddressUtils;->getFrom(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 384
+    .line 363
     .local v2, address:Ljava/lang/String;
     const/4 v1, 0x3
 
@@ -937,7 +930,7 @@
 
     move-result-object v3
 
-    .line 386
+    .line 365
     .local v3, subject:Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -945,7 +938,7 @@
 
     move-result-wide v7
 
-    .line 387
+    .line 366
     .local v7, threadId:J
     const/4 v1, 0x2
 
@@ -957,7 +950,7 @@
 
     mul-long/2addr v9, v4
 
-    .line 389
+    .line 368
     .local v9, timeMillis:J
     const-string v1, "Mms:app"
 
@@ -969,7 +962,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 390
+    .line 369
     const-string v1, "Mms:app"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1018,7 +1011,7 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 394
+    .line 373
     :cond_2
     const/4 v1, 0x5
 
@@ -1026,17 +1019,17 @@
 
     move-result v1
 
-    .line 395
+    .line 374
     .local v1, priority:I
     const/16 v4, 0x82
 
     if-ne v1, v4, :cond_3
 
-    const v1, 0x7f0200a0
+    const v1, 0x7f02009a
 
     move v5, v1
 
-    .line 397
+    .line 376
     .end local v1           #priority:I
     .local v5, msg_notification_icon_id:I
     :goto_1
@@ -1052,7 +1045,7 @@
 
     move-result-object v1
 
-    .line 402
+    .line 381
     .local v1, info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1061,14 +1054,14 @@
     .end local v2           #address:Ljava/lang/String;
     invoke-interface {p1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 403
+    .line 382
     const-string v2, "200"
 
     const/4 v3, 0x0
 
     invoke-static {p0, v12, v13, v2, v3}, Lcom/android/mms/transaction/MessagingNotification;->updateHistoryReadFlag(Landroid/content/Context;JLjava/lang/String;Z)V
 
-    .line 405
+    .line 384
     .end local v3           #subject:Ljava/lang/String;
     .end local v5           #msg_notification_icon_id:I
     :goto_2
@@ -1078,7 +1071,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 406
+    .line 385
     const/4 v2, 0x0
 
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
@@ -1091,7 +1084,7 @@
 
     invoke-interface {p1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 407
+    .line 386
     const/4 v2, 0x1
 
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
@@ -1108,7 +1101,7 @@
 
     goto :goto_2
 
-    .line 412
+    .line 391
     .end local v1           #info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
     .end local v7           #threadId:J
     .end local v9           #timeMillis:J
@@ -1121,7 +1114,7 @@
 
     throw p0
 
-    .line 395
+    .line 374
     .local v1, priority:I
     .restart local v2       #address:Ljava/lang/String;
     .restart local v3       #subject:Ljava/lang/String;
@@ -1130,13 +1123,13 @@
     .restart local v12       #msgId:J
     .restart local p0
     :cond_3
-    const v1, 0x7f02009c
+    const v1, 0x7f020098
 
     move v5, v1
 
     goto :goto_1
 
-    .line 412
+    .line 391
     .end local v2           #address:Ljava/lang/String;
     .end local v3           #subject:Ljava/lang/String;
     .local v1, info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
@@ -1154,16 +1147,16 @@
     .parameter "status"
 
     .prologue
-    .line 1179
+    .line 1081
     packed-switch p1, :pswitch_data_0
 
-    .line 1185
+    .line 1087
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 1181
+    .line 1083
     :pswitch_0
     const v0, 0x7f0900e6
 
@@ -1173,7 +1166,7 @@
 
     goto :goto_0
 
-    .line 1183
+    .line 1085
     :pswitch_1
     const v0, 0x7f0900e9
 
@@ -1183,7 +1176,7 @@
 
     goto :goto_0
 
-    .line 1179
+    .line 1081
     nop
 
     :pswitch_data_0
@@ -1199,7 +1192,7 @@
     .parameter "charset"
 
     .prologue
-    .line 788
+    .line 690
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -1239,21 +1232,18 @@
     .parameter "count"
 
     .prologue
-    .line 527
-    const/4 v1, 0x0
-
-    .line 537
-    .local v1, clickIntent:Landroid/content/Intent;
+    .line 477
     invoke-static {p2, p5, p6}, Lcom/android/mms/ui/ComposeMessageActivity;->createIntent(Landroid/content/Context;J)Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 538
+    .line 478
+    .local v1, clickIntent:Landroid/content/Intent;
     const/high16 p5, 0x3400
 
     invoke-virtual {v1, p5}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 544
+    .line 482
     .end local p5
     const/4 p5, 0x0
 
@@ -1267,7 +1257,7 @@
 
     move-result-object p5
 
-    .line 546
+    .line 484
     .local p5, senderInfo:Ljava/lang/String;
     const/4 p6, 0x0
 
@@ -1283,13 +1273,13 @@
 
     move-result-object v7
 
-    .line 548
+    .line 486
     .local v7, senderInfoName:Ljava/lang/String;
     invoke-static {p2, p0, p4, p1}, Lcom/android/mms/transaction/MessagingNotification;->buildTickerMessage(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v4
 
-    .line 551
+    .line 489
     .local v4, ticker:Ljava/lang/CharSequence;
     new-instance v0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
 
@@ -1313,12 +1303,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 417
+    .line 396
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 418
+    .line 397
     .local v1, resolver:Landroid/content/ContentResolver;
     sget-object v2, Landroid/provider/Telephony$Sms;->CONTENT_URI:Landroid/net/Uri;
 
@@ -1334,17 +1324,17 @@
 
     move-result-object v8
 
-    .line 422
+    .line 401
     .local v8, cursor:Landroid/database/Cursor;
     if-nez v8, :cond_0
 
     move-object v0, v5
 
-    .line 437
+    .line 416
     :goto_0
     return-object v0
 
-    .line 426
+    .line 405
     :cond_0
     :try_start_0
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
@@ -1355,14 +1345,14 @@
 
     if-nez v0, :cond_1
 
-    .line 437
+    .line 416
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     move-object v0, v5
 
     goto :goto_0
 
-    .line 429
+    .line 408
     :cond_1
     const/4 v0, 0x4
 
@@ -1371,11 +1361,11 @@
 
     move-result-object v7
 
-    .line 430
+    .line 409
     .local v7, address:Ljava/lang/String;
     const-wide/16 v9, 0xbb8
 
-    .line 432
+    .line 411
     .local v9, timeMillis:J
     new-instance v0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsDeliveryInfo;
 
@@ -1401,7 +1391,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 437
+    .line 416
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
@@ -1433,13 +1423,13 @@
     .end annotation
 
     .prologue
-    .line 443
+    .line 422
     .local p1, threads:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/Long;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 444
+    .line 423
     .local v1, resolver:Landroid/content/ContentResolver;
     sget-object v2, Landroid/provider/Telephony$Sms;->CONTENT_URI:Landroid/net/Uri;
 
@@ -1455,123 +1445,89 @@
 
     invoke-static/range {v0 .. v6}, Landroid/database/sqlite/SqliteWrapper;->query(Landroid/content/Context;Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 448
-    .local v1, cursor:Landroid/database/Cursor;
-    if-nez v1, :cond_0
+    .line 427
+    .local v0, cursor:Landroid/database/Cursor;
+    if-nez v0, :cond_0
 
-    .line 449
+    .line 428
     const/4 p0, 0x0
 
-    .line 514
+    .line 464
+    .end local v1           #resolver:Landroid/content/ContentResolver;
     .end local p0
     :goto_0
     return-object p0
 
-    .line 453
+    .line 432
+    .restart local v1       #resolver:Landroid/content/ContentResolver;
     .restart local p0
     :cond_0
     :try_start_0
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
+    .end local v1           #resolver:Landroid/content/ContentResolver;
+    if-nez v1, :cond_1
 
-    .line 454
+    .line 433
     const/4 p0, 0x0
 
-    .line 514
+    .line 464
     .end local p0
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 457
+    .line 436
     .restart local p0
     :cond_1
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :try_start_1
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v12
 
-    .line 458
+    .line 437
     .local v12, msgId:J
-    const/4 v0, 0x4
+    const/4 v1, 0x4
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 459
+    .line 438
     .local v2, address:Ljava/lang/String;
-    const/4 v0, 0x5
+    const/4 v1, 0x5
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 460
+    .line 439
     .local v3, body:Ljava/lang/String;
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v7
 
-    .line 461
+    .line 440
     .local v7, threadId:J
-    const/4 v0, 0x2
+    const/4 v1, 0x2
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v9
 
-    .line 465
+    .line 444
     .local v9, timeMillis:J
-    const v0, 0x80b10
-
-    .line 469
-    .local v0, format_flags:I
-    invoke-static {p0, v9, v10, v0}, Landroid/text/format/DateUtils;->formatDateTime(Landroid/content/Context;JI)Ljava/lang/String;
-
-    move-result-object v0
-
-    .end local v0           #format_flags:I
-    sput-object v0, Lcom/android/mms/transaction/MessagingNotification;->mDate:Ljava/lang/String;
-
-    .line 470
-    const-string v0, "Mms:app"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "getSmsNewMessageNotificationInfo(), mDate = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/android/mms/transaction/MessagingNotification;->mDate:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v0, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 474
-    const-string v0, "Mms:app"
+    const-string v1, "Mms:app"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1583,7 +1539,7 @@
 
     move-result-object v4
 
-    invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
+    invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
     move-result v5
 
@@ -1617,40 +1573,32 @@
 
     move-result-object v4
 
-    invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 479
-    const-string v0, "#CMAS#"
+    .line 447
+    const/4 v1, 0x6
 
-    .line 492
-    .local v0, cmas_addr:Ljava/lang/String;
-    const/4 v0, 0x6
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
+    move-result v1
 
-    .end local v0           #cmas_addr:Ljava/lang/String;
-    move-result v0
-
-    .line 494
-    .local v0, priority:I
-    const/4 v5, 0x0
-
-    .line 499
-    .local v5, msg_notification_icon_id:I
+    .line 449
+    .local v1, priority:I
     const/4 v4, 0x2
 
-    if-ne v0, v4, :cond_2
+    if-ne v1, v4, :cond_2
 
-    const v0, 0x7f0200a0
+    const v1, 0x7f02009a
 
-    move v5, v0
+    move v5, v1
 
-    .line 501
-    .end local v0           #priority:I
+    .line 451
+    .end local v1           #priority:I
+    .local v5, msg_notification_icon_id:I
     :goto_1
     const/4 v6, 0x0
 
-    invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
+    invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
     move-result v11
 
@@ -1658,10 +1606,10 @@
 
     invoke-static/range {v2 .. v11}, Lcom/android/mms/transaction/MessagingNotification;->getNewMessageNotificationInfo(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;JJI)Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 505
-    .local v0, info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
+    .line 455
+    .local v1, info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -1669,27 +1617,27 @@
     .end local v2           #address:Ljava/lang/String;
     invoke-interface {p1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 506
+    .line 456
     const-string v2, "300"
 
     const/4 v3, 0x0
 
     invoke-static {p0, v12, v13, v2, v3}, Lcom/android/mms/transaction/MessagingNotification;->updateHistoryReadFlag(Landroid/content/Context;JLjava/lang/String;Z)V
 
-    .line 507
+    .line 457
     .end local v3           #body:Ljava/lang/String;
     .end local v5           #msg_notification_icon_id:I
     :goto_2
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 508
+    .line 458
     const/4 v2, 0x0
 
-    invoke-interface {v1, v2}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v2
 
@@ -1699,10 +1647,10 @@
 
     invoke-interface {p1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 509
+    .line 459
     const/4 v2, 0x1
 
-    invoke-interface {v1, v2}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v2
 
@@ -1716,8 +1664,8 @@
 
     goto :goto_2
 
-    .line 514
-    .end local v0           #info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
+    .line 464
+    .end local v1           #info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
     .end local v7           #threadId:J
     .end local v9           #timeMillis:J
     .end local v12           #msgId:J
@@ -1725,35 +1673,33 @@
     move-exception p0
 
     .end local p0
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     throw p0
 
-    .line 499
-    .local v0, priority:I
+    .line 449
+    .local v1, priority:I
     .restart local v2       #address:Ljava/lang/String;
     .restart local v3       #body:Ljava/lang/String;
-    .restart local v5       #msg_notification_icon_id:I
     .restart local v7       #threadId:J
     .restart local v9       #timeMillis:J
     .restart local v12       #msgId:J
     .restart local p0
     :cond_2
-    const v0, 0x7f02009c
+    const v1, 0x7f020098
 
-    move v5, v0
+    move v5, v1
 
     goto :goto_1
 
-    .line 514
+    .line 464
     .end local v2           #address:Ljava/lang/String;
     .end local v3           #body:Ljava/lang/String;
-    .end local v5           #msg_notification_icon_id:I
-    .local v0, info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
+    .local v1, info:Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;
     :cond_3
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    move-object p0, v0
+    move-object p0, v1
 
     goto/16 :goto_0
 .end method
@@ -1770,7 +1716,7 @@
 
     const/4 v13, 0x0
 
-    .line 912
+    .line 814
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -1793,27 +1739,27 @@
 
     move-result-object v10
 
-    .line 914
+    .line 816
     .local v10, undeliveredCursor:Landroid/database/Cursor;
     if-nez v10, :cond_0
 
     move v0, v13
 
-    .line 955
+    .line 857
     :goto_0
     return v0
 
-    .line 917
+    .line 819
     :cond_0
     invoke-interface {v10}, Landroid/database/Cursor;->getCount()I
 
     move-result v7
 
-    .line 918
+    .line 820
     .local v7, count:I
     const-wide/16 v11, 0x0
 
-    .line 920
+    .line 822
     .local v11, undeliveredThreadId:J
     if-eqz p1, :cond_7
 
@@ -1824,26 +1770,26 @@
 
     if-eqz v0, :cond_7
 
-    .line 921
+    .line 823
     const/4 v0, 0x0
 
     invoke-interface {v10, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v11
 
-    .line 922
+    .line 824
     invoke-static {p0, v11, v12}, Lcom/android/mms/transaction/MessagingNotification;->isValidThreadId(Landroid/content/Context;J)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 923
+    .line 825
     const/4 v0, 0x0
 
     aput-wide v11, p1, v0
 
-    .line 937
+    .line 839
     :cond_1
     :goto_1
     array-length v0, p1
@@ -1852,12 +1798,12 @@
 
     if-lt v0, v1, :cond_7
 
-    .line 939
+    .line 841
     const/4 v0, 0x0
 
     aget-wide v8, p1, v0
 
-    .line 940
+    .line 842
     .local v8, firstId:J
     :cond_2
     :goto_2
@@ -1869,31 +1815,31 @@
 
     if-lez v7, :cond_6
 
-    .line 941
+    .line 843
     const/4 v0, 0x0
 
     invoke-interface {v10, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v11
 
-    .line 942
+    .line 844
     invoke-static {p0, v11, v12}, Lcom/android/mms/transaction/MessagingNotification;->isValidThreadId(Landroid/content/Context;J)Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 943
+    .line 845
     add-int/lit8 v7, v7, -0x1
 
     goto :goto_2
 
-    .line 925
+    .line 827
     .end local v8           #firstId:J
     :cond_3
     add-int/lit8 v7, v7, -0x1
 
-    .line 926
+    .line 828
     :goto_3
     invoke-interface {v10}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -1903,21 +1849,21 @@
 
     if-lez v7, :cond_1
 
-    .line 927
+    .line 829
     const/4 v0, 0x0
 
     invoke-interface {v10, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v11
 
-    .line 928
+    .line 830
     invoke-static {p0, v11, v12}, Lcom/android/mms/transaction/MessagingNotification;->isValidThreadId(Landroid/content/Context;J)Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    .line 929
+    .line 831
     const/4 v0, 0x0
 
     aput-wide v11, p1, v0
@@ -1926,7 +1872,7 @@
 
     goto :goto_1
 
-    .line 953
+    .line 855
     :catchall_0
     move-exception v0
 
@@ -1934,25 +1880,25 @@
 
     throw v0
 
-    .line 933
+    .line 835
     :cond_4
     add-int/lit8 v7, v7, -0x1
 
     goto :goto_3
 
-    .line 944
+    .line 846
     .restart local v8       #firstId:J
     :cond_5
     cmp-long v0, v11, v8
 
     if-eqz v0, :cond_2
 
-    .line 945
+    .line 847
     const-wide/16 v8, 0x0
 
     goto :goto_2
 
-    .line 949
+    .line 851
     :cond_6
     const/4 v0, 0x1
 
@@ -1961,14 +1907,14 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 953
+    .line 855
     .end local v8           #firstId:J
     :cond_7
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
     move v0, v7
 
-    .line 955
+    .line 857
     goto :goto_0
 .end method
 
@@ -1979,23 +1925,23 @@
     .prologue
     const-string v3, "com.android.mms.NOTIFICATION_DELETED_ACTION"
 
-    .line 182
+    .line 173
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 183
+    .line 174
     .local v0, intentFilter:Landroid/content/IntentFilter;
     const-string v1, "com.android.mms.NOTIFICATION_DELETED_ACTION"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 184
+    .line 175
     sget-object v1, Lcom/android/mms/transaction/MessagingNotification;->sNotificationDeletedReceiver:Lcom/android/mms/transaction/MessagingNotification$OnDeletedReceiver;
 
     invoke-virtual {p0, v1, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 187
+    .line 178
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "com.android.mms.NOTIFICATION_DELETED_ACTION"
@@ -2004,7 +1950,7 @@
 
     sput-object v1, Lcom/android/mms/transaction/MessagingNotification;->sNotificationOnDeleteIntent:Landroid/content/Intent;
 
-    .line 188
+    .line 179
     return-void
 .end method
 
@@ -2015,7 +1961,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1196
+    .line 1098
     if-eqz p0, :cond_0
 
     const-string v0, "undelivered_flag"
@@ -2044,7 +1990,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1200
+    .line 1102
     if-eqz p0, :cond_0
 
     const-string v0, "failed_download_flag"
@@ -2072,7 +2018,7 @@
     .parameter "threadId"
 
     .prologue
-    .line 959
+    .line 861
     const-wide v0, 0x7fffffffffffffffL
 
     cmp-long v0, p1, v0
@@ -2097,7 +2043,7 @@
     .parameter "isStatusMessage"
 
     .prologue
-    .line 200
+    .line 191
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lcom/android/mms/transaction/MessagingNotification$1;
@@ -2108,7 +2054,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 205
+    .line 196
     return-void
 .end method
 
@@ -2118,14 +2064,14 @@
     .parameter "threadId"
 
     .prologue
-    .line 793
+    .line 695
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
     invoke-static {p0, v0, p1, p2, v1}, Lcom/android/mms/transaction/MessagingNotification;->notifyFailed(Landroid/content/Context;ZJZ)V
 
-    .line 794
+    .line 696
     return-void
 .end method
 
@@ -2137,12 +2083,12 @@
     .parameter
 
     .prologue
-    .line 807
+    .line 709
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 809
+    .line 711
     const-string v0, "pref_key_enable_notifications"
 
     const/4 v2, 0x1
@@ -2151,14 +2097,14 @@
 
     move-result v0
 
-    .line 810
+    .line 712
     if-nez v0, :cond_0
 
-    .line 904
+    .line 806
     :goto_0
     return-void
 
-    .line 814
+    .line 716
     :cond_0
     const-string v0, "notification"
 
@@ -2168,29 +2114,29 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 824
+    .line 726
     const/4 v2, 0x2
 
     new-array v2, v2, [J
 
     fill-array-data v2, :array_0
 
-    .line 825
+    .line 727
     invoke-static {p0, v2}, Lcom/android/mms/transaction/MessagingNotification;->getUndeliveredMessageCount(Landroid/content/Context;[J)I
 
     move-result v3
 
-    .line 828
+    .line 730
     new-instance v4, Landroid/app/Notification;
 
     invoke-direct {v4}, Landroid/app/Notification;-><init>()V
 
-    .line 831
+    .line 733
     const/4 v5, 0x1
 
     if-le v3, v5, :cond_6
 
-    .line 832
+    .line 734
     const p2, 0x7f0900ff
 
     const/4 p3, 0x1
@@ -2209,27 +2155,27 @@
 
     move-result-object p2
 
-    .line 834
+    .line 736
     const p3, 0x7f090100
 
     invoke-virtual {p0, p3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object p3
 
-    .line 836
+    .line 738
     new-instance v2, Landroid/content/Intent;
 
     const-class v3, Lcom/android/mms/ui/ConversationList;
 
     invoke-direct {v2, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 859
+    .line 761
     :goto_1
     const/high16 v3, 0x1400
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 860
+    .line 762
     const/4 v3, 0x0
 
     const/high16 v5, 0x800
@@ -2238,21 +2184,21 @@
 
     move-result-object v2
 
-    .line 863
-    const v3, 0x7f02009f
+    .line 765
+    const v3, 0x7f020099
 
     iput v3, v4, Landroid/app/Notification;->icon:I
 
-    .line 865
+    .line 767
     iput-object p3, v4, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
-    .line 867
+    .line 769
     invoke-virtual {v4, p0, p3, p2, v2}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 869
+    .line 771
     if-eqz p4, :cond_5
 
-    .line 871
+    .line 773
     const-string p2, "power"
 
     invoke-virtual {p0, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2261,7 +2207,7 @@
 
     check-cast p2, Landroid/os/PowerManager;
 
-    .line 872
+    .line 774
     const p3, 0x1000001a
 
     const-string p4, "New message notification LCD on"
@@ -2270,7 +2216,7 @@
 
     move-result-object p3
 
-    .line 874
+    .line 776
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -2279,12 +2225,12 @@
 
     invoke-virtual {p2, v2, v3, p4}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 875
+    .line 777
     const-wide/16 v2, 0x1388
 
     invoke-virtual {p3, v2, v3}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 878
+    .line 780
     const-string p2, "audio"
 
     invoke-virtual {p0, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2293,14 +2239,14 @@
 
     check-cast p2, Landroid/media/AudioManager;
 
-    .line 879
+    .line 781
     const/4 p3, 0x0
 
     invoke-virtual {p2, p3}, Landroid/media/AudioManager;->getVibrateSetting(I)I
 
     move-result p3
 
-    .line 880
+    .line 782
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
@@ -2319,7 +2265,7 @@
 
     const/4 p0, 0x1
 
-    .line 881
+    .line 783
     :goto_2
     invoke-virtual {p2}, Landroid/media/AudioManager;->getRingerMode()I
 
@@ -2331,7 +2277,7 @@
 
     const/4 p2, 0x1
 
-    .line 883
+    .line 785
     :goto_3
     if-eqz p2, :cond_1
 
@@ -2344,7 +2290,7 @@
 
     if-ne p3, p0, :cond_3
 
-    .line 884
+    .line 786
     :cond_2
     iget p0, v4, Landroid/app/Notification;->defaults:I
 
@@ -2352,7 +2298,7 @@
 
     iput p0, v4, Landroid/app/Notification;->defaults:I
 
-    .line 887
+    .line 789
     :cond_3
     const-string p0, "pref_key_ringtone"
 
@@ -2362,7 +2308,7 @@
 
     move-result-object p0
 
-    .line 892
+    .line 794
     const-string p2, "file://"
 
     invoke-virtual {p0, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -2371,7 +2317,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 893
+    .line 795
     const/16 p2, 0x2f
 
     invoke-virtual {p0, p2}, Ljava/lang/String;->indexOf(I)I
@@ -2384,7 +2330,7 @@
 
     move-result-object p0
 
-    .line 896
+    .line 798
     :cond_4
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2397,18 +2343,18 @@
     :goto_4
     iput-object p0, v4, Landroid/app/Notification;->sound:Landroid/net/Uri;
 
-    .line 899
+    .line 801
     :cond_5
     if-eqz p1, :cond_e
 
-    .line 900
+    .line 802
     const/16 p0, 0x213
 
     invoke-virtual {v0, p0, v4}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
     goto/16 :goto_0
 
-    .line 838
+    .line 740
     :cond_6
     if-eqz p1, :cond_7
 
@@ -2418,7 +2364,7 @@
 
     move-result-object v5
 
-    .line 842
+    .line 744
     :goto_5
     const v6, 0x7f090115
 
@@ -2426,24 +2372,24 @@
 
     move-result-object v6
 
-    .line 843
+    .line 745
     new-instance v7, Landroid/content/Intent;
 
     const-class v8, Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {v7, p0, v8}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 844
+    .line 746
     if-eqz p1, :cond_8
 
-    .line 846
+    .line 748
     const-string v2, "failed_download_flag"
 
     const/4 v3, 0x1
 
     invoke-virtual {v7, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 856
+    .line 758
     :goto_6
     const-string v2, "thread_id"
 
@@ -2457,7 +2403,7 @@
 
     goto/16 :goto_1
 
-    .line 838
+    .line 740
     :cond_7
     const v5, 0x7f090114
 
@@ -2467,18 +2413,18 @@
 
     goto :goto_5
 
-    .line 848
+    .line 750
     :cond_8
     if-gtz v3, :cond_9
 
-    .line 849
+    .line 751
     const/16 p1, 0x315
 
     invoke-static {p0, p1}, Lcom/android/mms/transaction/MessagingNotification;->cancelNotification(Landroid/content/Context;I)V
 
     goto/16 :goto_0
 
-    .line 852
+    .line 754
     :cond_9
     const/4 p2, 0x0
 
@@ -2494,7 +2440,7 @@
 
     aget-wide p2, v2, p2
 
-    .line 853
+    .line 755
     :goto_7
     const-string v2, "undelivered_flag"
 
@@ -2504,25 +2450,25 @@
 
     goto :goto_6
 
-    .line 852
+    .line 754
     :cond_a
     const-wide/16 p2, 0x0
 
     goto :goto_7
 
-    .line 880
+    .line 782
     :cond_b
     const/4 p0, 0x0
 
     goto/16 :goto_2
 
-    .line 881
+    .line 783
     :cond_c
     const/4 p2, 0x0
 
     goto/16 :goto_3
 
-    .line 896
+    .line 798
     :cond_d
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -2530,7 +2476,7 @@
 
     goto :goto_4
 
-    .line 902
+    .line 804
     :cond_e
     const/16 p0, 0x315
 
@@ -2538,7 +2484,7 @@
 
     goto/16 :goto_0
 
-    .line 824
+    .line 726
     nop
 
     :array_0
@@ -2555,12 +2501,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 797
+    .line 699
     const-wide/16 v0, 0x0
 
     invoke-static {p0, v2, v0, v1, v2}, Lcom/android/mms/transaction/MessagingNotification;->notifyFailed(Landroid/content/Context;ZJZ)V
 
-    .line 798
+    .line 700
     return-void
 .end method
 
@@ -2570,14 +2516,14 @@
     .parameter "noisy"
 
     .prologue
-    .line 801
+    .line 703
     const/4 v0, 0x0
 
     const-wide/16 v1, 0x0
 
     invoke-static {p0, v0, v1, v2, p1}, Lcom/android/mms/transaction/MessagingNotification;->notifyFailed(Landroid/content/Context;ZJZ)V
 
-    .line 802
+    .line 704
     return-void
 .end method
 
@@ -2587,12 +2533,12 @@
     .parameter "count"
 
     .prologue
-    .line 1218
+    .line 1120
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1222
+    .line 1124
     .local v0, cr:Landroid/content/ContentResolver;
     const-string v1, "com.android.mms"
 
@@ -2600,7 +2546,7 @@
 
     invoke-static {v0, v1, v2, p1}, Lcom/sec/android/touchwiz/app/BadgeNotification$Apps;->setBadgeCount(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1223
+    .line 1125
     return-void
 .end method
 
@@ -2611,15 +2557,15 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1358
+    .line 1260
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1360
+    .line 1262
     const-string v1, "logtype=? OR logtype=?"
 
-    .line 1361
+    .line 1263
     const/4 v2, 0x2
 
     new-array v2, v2, [Ljava/lang/String;
@@ -2634,12 +2580,12 @@
 
     aput-object v4, v2, v3
 
-    .line 1363
+    .line 1265
     new-instance v3, Landroid/content/ContentValues;
 
     invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1364
+    .line 1266
     const-string v4, "new"
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2648,12 +2594,12 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1365
+    .line 1267
     sget-object v4, Lcom/android/mms/transaction/MessagingNotification;->LOG_HISTORY_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v4, v3, v1, v2}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1366
+    .line 1268
     return-void
 .end method
 
@@ -2668,12 +2614,12 @@
 
     const/4 v12, 0x1
 
-    .line 1023
+    .line 925
     new-instance v4, Landroid/app/Notification;
 
     invoke-direct {v4}, Landroid/app/Notification;-><init>()V
 
-    .line 1024
+    .line 926
     .local v4, notification:Landroid/app/Notification;
     const-string v10, "notification"
 
@@ -2683,13 +2629,13 @@
 
     check-cast v3, Landroid/app/NotificationManager;
 
-    .line 1026
+    .line 928
     .local v3, nm:Landroid/app/NotificationManager;
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v7
 
-    .line 1027
+    .line 929
     .local v7, sp:Landroid/content/SharedPreferences;
     const-string v10, "pref_key_enable_notifications"
 
@@ -2699,11 +2645,11 @@
 
     if-nez v10, :cond_0
 
-    .line 1057
+    .line 959
     :goto_0
     return-void
 
-    .line 1031
+    .line 933
     :cond_0
     const-string v10, "power"
 
@@ -2713,7 +2659,7 @@
 
     check-cast v5, Landroid/os/PowerManager;
 
-    .line 1032
+    .line 934
     .local v5, pm:Landroid/os/PowerManager;
     const v10, 0x1000001a
 
@@ -2723,7 +2669,7 @@
 
     move-result-object v9
 
-    .line 1034
+    .line 936
     .local v9, wl:Landroid/os/PowerManager$WakeLock;
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -2731,12 +2677,12 @@
 
     invoke-virtual {v5, v10, v11, v13}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 1035
+    .line 937
     const-wide/16 v10, 0x1388
 
     invoke-virtual {v9, v10, v11}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 1038
+    .line 940
     const-string v10, "audio"
 
     invoke-virtual {p0, v10}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2745,13 +2691,13 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 1039
+    .line 941
     .local v0, audioManager:Landroid/media/AudioManager;
     invoke-virtual {v0, v13}, Landroid/media/AudioManager;->getVibrateSetting(I)I
 
     move-result v8
 
-    .line 1040
+    .line 942
     .local v8, vibrateSetting:I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2767,7 +2713,7 @@
 
     move v2, v12
 
-    .line 1041
+    .line 943
     .local v2, bVibrateSilent:Z
     :goto_1
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
@@ -2780,7 +2726,7 @@
 
     move v1, v12
 
-    .line 1043
+    .line 945
     .local v1, bNowSilent:Z
     :goto_2
     if-eqz v1, :cond_1
@@ -2792,7 +2738,7 @@
 
     if-ne v8, v12, :cond_3
 
-    .line 1044
+    .line 946
     :cond_2
     iget v10, v4, Landroid/app/Notification;->defaults:I
 
@@ -2800,7 +2746,7 @@
 
     iput v10, v4, Landroid/app/Notification;->defaults:I
 
-    .line 1047
+    .line 949
     :cond_3
     const-string v10, "pref_key_ringtone"
 
@@ -2808,7 +2754,7 @@
 
     move-result-object v6
 
-    .line 1051
+    .line 953
     .local v6, ringtoneStr:Ljava/lang/String;
     const-string v10, "file://"
 
@@ -2818,7 +2764,7 @@
 
     if-eqz v10, :cond_4
 
-    .line 1052
+    .line 954
     const/16 v10, 0x2f
 
     invoke-virtual {v6, v10}, Ljava/lang/String;->indexOf(I)I
@@ -2831,7 +2777,7 @@
 
     move-result-object v6
 
-    .line 1055
+    .line 957
     :cond_4
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2844,7 +2790,7 @@
     :goto_3
     iput-object v10, v4, Landroid/app/Notification;->sound:Landroid/net/Uri;
 
-    .line 1056
+    .line 958
     const/16 v10, 0x3e7
 
     invoke-virtual {v3, v10, v4}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
@@ -2857,17 +2803,17 @@
     :cond_5
     move v2, v13
 
-    .line 1040
+    .line 942
     goto :goto_1
 
     .restart local v2       #bVibrateSilent:Z
     :cond_6
     move v1, v13
 
-    .line 1041
+    .line 943
     goto :goto_2
 
-    .line 1055
+    .line 957
     .restart local v1       #bNowSilent:Z
     .restart local v6       #ringtoneStr:Ljava/lang/String;
     :cond_7
@@ -2886,21 +2832,21 @@
     .parameter "timeMillis"
 
     .prologue
-    .line 567
+    .line 505
     if-nez p1, :cond_1
 
-    .line 582
+    .line 520
     :cond_0
     :goto_0
     return-void
 
-    .line 571
+    .line 509
     :cond_1
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 573
+    .line 511
     .local v0, sp:Landroid/content/SharedPreferences;
     const-string v1, "pref_key_enable_notifications"
 
@@ -2912,7 +2858,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 577
+    .line 515
     sget-object v1, Lcom/android/mms/transaction/MessagingNotification;->mToastHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/android/mms/transaction/MessagingNotification$2;
@@ -2929,7 +2875,7 @@
     .parameter "context"
 
     .prologue
-    .line 1190
+    .line 1092
     invoke-static {p0}, Lcom/android/mms/transaction/MessagingNotification;->getDownloadFailedMessageCount(Landroid/content/Context;)I
 
     move-result v0
@@ -2938,12 +2884,12 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1191
+    .line 1093
     const/16 v0, 0x213
 
     invoke-static {p0, v0}, Lcom/android/mms/transaction/MessagingNotification;->cancelNotification(Landroid/content/Context;I)V
 
-    .line 1193
+    .line 1095
     :cond_0
     return-void
 .end method
@@ -2955,7 +2901,7 @@
     .parameter
 
     .prologue
-    .line 1284
+    .line 1186
     const/4 v4, 0x6
 
     new-array v7, v4, [Ljava/lang/String;
@@ -2996,23 +2942,23 @@
 
     aput-object v5, v7, v4
 
-    .line 1292
+    .line 1194
     if-nez p1, :cond_0
 
-    .line 1293
+    .line 1195
     const/16 p0, 0x0
 
-    .line 1354
+    .line 1256
     :goto_0
     return p0
 
-    .line 1296
+    .line 1198
     :cond_0
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
 
-    .line 1297
+    .line 1199
     const/4 v8, 0x0
 
     const/4 v9, 0x0
@@ -3027,15 +2973,15 @@
 
     move-result-object v4
 
-    .line 1298
+    .line 1200
     if-nez v4, :cond_1
 
-    .line 1299
+    .line 1201
     const/16 p0, 0x0
 
     goto :goto_0
 
-    .line 1303
+    .line 1205
     :cond_1
     :try_start_0
     invoke-interface {v4}, Landroid/database/Cursor;->moveToFirst()Z
@@ -3046,19 +2992,19 @@
 
     if-nez v6, :cond_2
 
-    .line 1304
+    .line 1206
     const/16 p0, 0x0
 
-    .line 1352
+    .line 1254
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 1306
+    .line 1208
     :cond_2
     const-wide/16 v6, 0x0
 
-    .line 1307
+    .line 1209
     const/4 v8, 0x0
 
     :try_start_1
@@ -3066,7 +3012,7 @@
 
     move-result-wide v8
 
-    .line 1308
+    .line 1210
     const/4 v10, 0x1
 
     invoke-interface {v4, v10}, Landroid/database/Cursor;->getLong(I)J
@@ -3077,7 +3023,7 @@
 
     mul-long/2addr v10, v12
 
-    .line 1309
+    .line 1211
     const/4 v12, 0x3
 
     invoke-interface {v4, v12}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -3094,7 +3040,7 @@
 
     move-result-object v12
 
-    .line 1310
+    .line 1212
     const/4 v13, 0x2
 
     invoke-interface {v4, v13}, Landroid/database/Cursor;->getInt(I)I
@@ -3103,30 +3049,30 @@
 
     int-to-long v13, v13
 
-    .line 1311
+    .line 1213
     const/4 v15, 0x5
 
     invoke-interface {v4, v15}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v15
 
-    .line 1317
+    .line 1219
     const-wide/16 v16, 0x1
 
     cmp-long v16, v13, v16
 
     if-nez v16, :cond_3
 
-    .line 1318
+    .line 1220
     invoke-static/range {p0 .. p1}, Lcom/android/mms/util/AddressUtils;->getFromMulti(Landroid/content/Context;Landroid/net/Uri;)[Ljava/lang/String;
 
     move-result-object p0
 
-    .line 1327
+    .line 1229
     :goto_1
     if-eqz p2, :cond_8
 
-    .line 1328
+    .line 1230
     invoke-virtual/range {p2 .. p2}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object p1
@@ -3135,11 +3081,11 @@
 
     move-result-wide p1
 
-    .line 1331
+    .line 1233
     :goto_2
     const-string v6, "logtype=? AND ( messageid=? OR messageid=?)"
 
-    .line 1332
+    .line 1234
     const/4 v7, 0x3
 
     new-array v7, v7, [Ljava/lang/String;
@@ -3202,7 +3148,7 @@
 
     aput-object p1, v7, v16
 
-    .line 1334
+    .line 1236
     sget-object p1, Lcom/android/mms/transaction/MessagingNotification;->LOG_HISTORY_URI:Landroid/net/Uri;
 
     move-object v0, v5
@@ -3215,7 +3161,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1338
+    .line 1240
     move-object/from16 v0, p0
 
     array-length v0, v0
@@ -3233,12 +3179,12 @@
 
     aget-object v6, p0, p2
 
-    .line 1339
+    .line 1241
     new-instance v7, Landroid/content/ContentValues;
 
     invoke-direct {v7}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1341
+    .line 1243
     const-string v16, "date"
 
     invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3253,7 +3199,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1342
+    .line 1244
     const-string v16, "type"
 
     const-wide/16 v17, 0x1
@@ -3277,7 +3223,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1343
+    .line 1245
     const-string v16, "number"
 
     move-object v0, v7
@@ -3288,7 +3234,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1344
+    .line 1246
     const-string v6, "messageid"
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3303,12 +3249,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1345
+    .line 1247
     const-string v6, "m_subject"
 
     invoke-virtual {v7, v6, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1346
+    .line 1248
     const-string v6, "new"
 
     if-nez v15, :cond_6
@@ -3328,7 +3274,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1348
+    .line 1250
     const-string v6, "content://logs/mms"
 
     invoke-static {v6}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -3337,12 +3283,12 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    .line 1338
+    .line 1240
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_3
 
-    .line 1319
+    .line 1221
     :cond_3
     const-wide/16 v16, 0x2
 
@@ -3350,7 +3296,7 @@
 
     if-nez v16, :cond_4
 
-    .line 1320
+    .line 1222
     invoke-static/range {p0 .. p1}, Lcom/android/mms/util/AddressUtils;->getToMulti(Landroid/content/Context;Landroid/net/Uri;)[Ljava/lang/String;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -3359,37 +3305,37 @@
 
     goto/16 :goto_1
 
-    .line 1322
+    .line 1224
     :cond_4
     const/16 p0, 0x0
 
-    .line 1352
+    .line 1254
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
     goto/16 :goto_0
 
-    .line 1342
+    .line 1244
     :cond_5
     const/16 v17, 0x2
 
     goto :goto_4
 
-    .line 1346
+    .line 1248
     :cond_6
     const/16 v16, 0x0
 
     goto :goto_5
 
-    .line 1352
+    .line 1254
     :cond_7
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
-    .line 1354
+    .line 1256
     const/16 p0, 0x1
 
     goto/16 :goto_0
 
-    .line 1352
+    .line 1254
     :catchall_0
     move-exception p0
 
@@ -3409,7 +3355,7 @@
     .parameter
 
     .prologue
-    .line 1227
+    .line 1129
     const/4 v0, 0x6
 
     new-array v3, v0, [Ljava/lang/String;
@@ -3450,12 +3396,12 @@
 
     aput-object v1, v3, v0
 
-    .line 1235
+    .line 1137
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 1236
+    .line 1138
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -3470,17 +3416,17 @@
 
     move-result-object p0
 
-    .line 1237
+    .line 1139
     if-nez p0, :cond_0
 
-    .line 1238
+    .line 1140
     const/4 p0, 0x0
 
-    .line 1279
+    .line 1181
     :goto_0
     return p0
 
-    .line 1242
+    .line 1144
     :cond_0
     :try_start_0
     invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
@@ -3491,17 +3437,17 @@
 
     if-nez p1, :cond_1
 
-    .line 1243
+    .line 1145
     const/4 p1, 0x0
 
-    .line 1277
+    .line 1179
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
     move p0, p1
 
     goto :goto_0
 
-    .line 1246
+    .line 1148
     :cond_1
     const/4 p1, 0x0
 
@@ -3510,28 +3456,28 @@
 
     move-result-wide v2
 
-    .line 1247
+    .line 1149
     const/4 p1, 0x1
 
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v4
 
-    .line 1248
+    .line 1150
     const/4 p1, 0x2
 
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1249
+    .line 1151
     const/4 v0, 0x3
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1250
+    .line 1152
     const/4 v6, 0x4
 
     invoke-interface {p0, v6}, Landroid/database/Cursor;->getInt(I)I
@@ -3540,17 +3486,17 @@
 
     int-to-long v6, v6
 
-    .line 1251
+    .line 1153
     const/4 v8, 0x5
 
     invoke-interface {p0, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v8
 
-    .line 1253
+    .line 1155
     if-eqz v0, :cond_2
 
-    .line 1255
+    .line 1157
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v9
@@ -3559,7 +3505,7 @@
 
     if-le v9, v10, :cond_2
 
-    .line 1256
+    .line 1158
     const/4 v9, 0x0
 
     const/16 v10, 0x32
@@ -3568,11 +3514,11 @@
 
     move-result-object v0
 
-    .line 1259
+    .line 1161
     :cond_2
     const-string v9, "logtype=? AND messageid=?"
 
-    .line 1260
+    .line 1162
     const/4 v10, 0x2
 
     new-array v10, v10, [Ljava/lang/String;
@@ -3605,17 +3551,17 @@
 
     aput-object v12, v10, v11
 
-    .line 1262
+    .line 1164
     sget-object v11, Lcom/android/mms/transaction/MessagingNotification;->LOG_HISTORY_URI:Landroid/net/Uri;
 
     invoke-virtual {v1, v11, v9, v10}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1264
+    .line 1166
     new-instance v9, Landroid/content/ContentValues;
 
     invoke-direct {v9}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1266
+    .line 1168
     const-string v10, "date"
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3624,7 +3570,7 @@
 
     invoke-virtual {v9, v10, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1267
+    .line 1169
     const-string v4, "type"
 
     const-wide/16 v10, 0x1
@@ -3642,12 +3588,12 @@
 
     invoke-virtual {v9, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1268
+    .line 1170
     const-string v4, "number"
 
     invoke-virtual {v9, v4, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1269
+    .line 1171
     const-string p1, "messageid"
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3656,12 +3602,12 @@
 
     invoke-virtual {v9, p1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1270
+    .line 1172
     const-string p1, "m_content"
 
     invoke-virtual {v9, p1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1271
+    .line 1173
     const-string p1, "new"
 
     if-nez v8, :cond_5
@@ -3675,43 +3621,43 @@
 
     invoke-virtual {v9, p1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1273
+    .line 1175
     const-string p1, "content://logs/sms"
 
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
 
-    .line 1274
+    .line 1176
     if-eqz p1, :cond_3
 
-    .line 1275
+    .line 1177
     invoke-virtual {v1, p1, v9}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1277
+    .line 1179
     :cond_3
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    .line 1279
+    .line 1181
     const/4 p0, 0x1
 
     goto/16 :goto_0
 
-    .line 1267
+    .line 1169
     :cond_4
     const/4 v5, 0x2
 
     goto :goto_1
 
-    .line 1271
+    .line 1173
     :cond_5
     const/4 v0, 0x0
 
     goto :goto_2
 
-    .line 1277
+    .line 1179
     :catchall_0
     move-exception p1
 
@@ -3732,15 +3678,15 @@
 
     const/4 v5, 0x0
 
-    .line 1369
+    .line 1271
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1371
+    .line 1273
     const-string v1, "logtype=? AND messageid=?"
 
-    .line 1372
+    .line 1274
     const/4 v2, 0x2
 
     new-array v2, v2, [Ljava/lang/String;
@@ -3753,12 +3699,12 @@
 
     aput-object v3, v2, v6
 
-    .line 1374
+    .line 1276
     new-instance v3, Landroid/content/ContentValues;
 
     invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1375
+    .line 1277
     const-string v4, "new"
 
     if-eqz p4, :cond_0
@@ -3770,18 +3716,18 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1376
+    .line 1278
     sget-object v4, Lcom/android/mms/transaction/MessagingNotification;->LOG_HISTORY_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v4, v3, v1, v2}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1377
+    .line 1279
     return-void
 
     :cond_0
     move v5, v6
 
-    .line 1375
+    .line 1277
     goto :goto_0
 .end method
 
@@ -3799,20 +3745,15 @@
     .parameter "uniqueThreadCount"
 
     .prologue
-    .line 595
+    .line 533
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 596
+    .line 535
     .local v1, sp:Landroid/content/SharedPreferences;
-    const/4 v0, 0x0
-
-    .line 597
-    .local v0, aInt:I
     const-string v0, "pref_key_enable_notifications"
 
-    .end local v0           #aInt:I
     const/4 v2, 0x1
 
     invoke-interface {v1, v0, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -3821,7 +3762,7 @@
 
     if-nez v0, :cond_0
 
-    .line 751
+    .line 653
     .end local p0
     .end local p3
     .end local p4
@@ -3830,7 +3771,7 @@
     :goto_0
     return-void
 
-    .line 601
+    .line 539
     .restart local p0
     .restart local p3
     .restart local p4
@@ -3841,19 +3782,19 @@
 
     invoke-direct {v0, p3, p5, p6, p7}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
-    .line 602
+    .line 540
     .local v0, notification:Landroid/app/Notification;
     iput-object p8, v0, Landroid/app/Notification;->contactCharSeq:Ljava/lang/CharSequence;
 
-    .line 603
+    .line 541
     iput p9, v0, Landroid/app/Notification;->missedCount:I
 
-    .line 609
+    .line 547
     const/4 p3, 0x1
 
     if-le p10, p3, :cond_1
 
-    .line 610
+    .line 548
     .end local p3
     const p1, 0x7f0900fe
 
@@ -3862,31 +3803,31 @@
     .end local p1
     move-result-object p8
 
-    .line 611
+    .line 549
     new-instance p1, Landroid/content/Intent;
 
     const-string p3, "android.intent.action.MAIN"
 
     invoke-direct {p1, p3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 613
+    .line 551
     .restart local p1
     const/high16 p3, 0x3400
 
     invoke-virtual {p1, p3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 617
+    .line 555
     const-string p3, "vnd.android-dir/mms-sms"
 
     invoke-virtual {p1, p3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 623
+    .line 561
     :cond_1
     const/4 p3, 0x1
 
     if-le p9, p3, :cond_2
 
-    .line 624
+    .line 562
     const p2, 0x7f0900fd
 
     const/4 p3, 0x1
@@ -3908,7 +3849,7 @@
 
     move-result-object p2
 
-    .line 629
+    .line 567
     .restart local p2
     :cond_2
     const/4 p3, 0x0
@@ -3919,55 +3860,17 @@
 
     move-result-object p3
 
-    .line 657
+    .line 571
     .local p3, pendingIntent:Landroid/app/PendingIntent;
-    const/4 p5, 0x0
-
-    iput-boolean p5, v0, Landroid/app/Notification;->bRepeat:Z
-
-    .line 658
     invoke-virtual {v0, p0, p8, p2, p3}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 660
-    const-string p3, "Mms:app"
-
-    .end local p3           #pendingIntent:Landroid/app/PendingIntent;
-    new-instance p5, Ljava/lang/StringBuilder;
-
-    invoke-direct {p5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p6, "MessagingNotification, updatenoti, description = "
-
-    invoke-virtual {p5, p6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p5
-
-    invoke-virtual {p5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p5
-
-    const-string p6, "title = "
-
-    invoke-virtual {p5, p6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p5
-
-    invoke-virtual {p5, p8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p5
-
-    invoke-virtual {p5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p5
-
-    invoke-static {p3, p5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 662
+    .line 573
     if-eqz p4, :cond_9
 
-    .line 686
+    .line 597
     const-string p3, "pref_key_backlight"
 
+    .end local p3           #pendingIntent:Landroid/app/PendingIntent;
     const/4 p4, 0x1
 
     invoke-interface {v1, p3, p4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -3975,11 +3878,11 @@
     .end local p4
     move-result p3
 
-    .line 688
+    .line 599
     .local p3, backlight:Z
     if-eqz p3, :cond_3
 
-    .line 690
+    .line 601
     const-string p3, "power"
 
     .end local p3           #backlight:Z
@@ -3989,7 +3892,7 @@
 
     check-cast p3, Landroid/os/PowerManager;
 
-    .line 691
+    .line 602
     .local p3, pm:Landroid/os/PowerManager;
     const p4, 0x1000001a
 
@@ -3999,7 +3902,7 @@
 
     move-result-object p4
 
-    .line 693
+    .line 604
     .local p4, wl:Landroid/os/PowerManager$WakeLock;
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -4009,12 +3912,12 @@
 
     invoke-virtual {p3, p5, p6, p7}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 694
+    .line 605
     const-wide/16 p5, 0x1388
 
     invoke-virtual {p4, p5, p6}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 699
+    .line 610
     .end local p3           #pm:Landroid/os/PowerManager;
     .end local p4           #wl:Landroid/os/PowerManager$WakeLock;
     :cond_3
@@ -4026,7 +3929,7 @@
 
     check-cast p3, Landroid/media/AudioManager;
 
-    .line 700
+    .line 611
     .local p3, audioManager:Landroid/media/AudioManager;
     const/4 p4, 0x0
 
@@ -4034,7 +3937,7 @@
 
     move-result p6
 
-    .line 701
+    .line 612
     .local p6, vibrateSetting:I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -4056,7 +3959,7 @@
 
     move p5, p4
 
-    .line 702
+    .line 613
     .local p5, bVibrateSilent:Z
     :goto_1
     invoke-virtual {p3}, Landroid/media/AudioManager;->getRingerMode()I
@@ -4072,7 +3975,7 @@
 
     move p4, p3
 
-    .line 703
+    .line 614
     .local p4, bNowSilent:Z
     :goto_2
     const-string p3, "pref_key_vibrate"
@@ -4083,7 +3986,7 @@
 
     move-result p3
 
-    .line 705
+    .line 616
     .local p3, bAlwaysvibrate:Z
     if-eqz p3, :cond_6
 
@@ -4098,7 +4001,7 @@
 
     if-ne p6, p3, :cond_6
 
-    .line 706
+    .line 617
     .end local p3           #bAlwaysvibrate:Z
     :cond_5
     iget p3, v0, Landroid/app/Notification;->defaults:I
@@ -4107,7 +4010,7 @@
 
     iput p3, v0, Landroid/app/Notification;->defaults:I
 
-    .line 712
+    .line 623
     :cond_6
     const-string p3, "pref_key_backlight"
 
@@ -4118,14 +4021,14 @@
     .end local p4           #bNowSilent:Z
     move-result p3
 
-    .line 714
+    .line 625
     .local p3, backlight:Z
     if-eqz p3, :cond_7
 
-    .line 715
+    .line 626
     invoke-static {p0}, Lcom/android/mms/transaction/MessagingNotification;->acquire(Landroid/content/Context;)V
 
-    .line 725
+    .line 630
     :cond_7
     const-string p3, "pref_key_ringtone"
 
@@ -4136,7 +4039,7 @@
 
     move-result-object p3
 
-    .line 729
+    .line 635
     .local p3, ringtoneStr:Ljava/lang/String;
     const-string p4, "file://"
 
@@ -4146,7 +4049,7 @@
 
     if-eqz p4, :cond_8
 
-    .line 730
+    .line 636
     const/16 p4, 0x2f
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->indexOf(I)I
@@ -4159,7 +4062,7 @@
 
     move-result-object p3
 
-    .line 734
+    .line 639
     :cond_8
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -4173,7 +4076,7 @@
     :goto_3
     iput-object p3, v0, Landroid/app/Notification;->sound:Landroid/net/Uri;
 
-    .line 737
+    .line 642
     .end local p5           #bVibrateSilent:Z
     .end local p6           #vibrateSetting:I
     :cond_9
@@ -4183,14 +4086,14 @@
 
     iput p3, v0, Landroid/app/Notification;->flags:I
 
-    .line 738
+    .line 643
     iget p3, v0, Landroid/app/Notification;->defaults:I
 
     or-int/lit8 p3, p3, 0x4
 
     iput p3, v0, Landroid/app/Notification;->defaults:I
 
-    .line 741
+    .line 646
     const/4 p3, 0x0
 
     sget-object p4, Lcom/android/mms/transaction/MessagingNotification;->sNotificationOnDeleteIntent:Landroid/content/Intent;
@@ -4203,7 +4106,7 @@
 
     iput-object p3, v0, Landroid/app/Notification;->deleteIntent:Landroid/app/PendingIntent;
 
-    .line 744
+    .line 649
     const-string p3, "notification"
 
     invoke-virtual {p0, p3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -4213,7 +4116,7 @@
     .end local p0
     check-cast p0, Landroid/app/NotificationManager;
 
-    .line 750
+    .line 652
     .local p0, nm:Landroid/app/NotificationManager;
     const/16 p3, 0x7b
 
@@ -4221,7 +4124,7 @@
 
     goto/16 :goto_0
 
-    .line 701
+    .line 612
     .local p0, context:Landroid/content/Context;
     .local p3, audioManager:Landroid/media/AudioManager;
     .restart local p6       #vibrateSetting:I
@@ -4232,7 +4135,7 @@
 
     goto :goto_1
 
-    .line 702
+    .line 613
     .end local p3           #audioManager:Landroid/media/AudioManager;
     .restart local p5       #bVibrateSilent:Z
     :cond_b
@@ -4242,7 +4145,7 @@
 
     goto :goto_2
 
-    .line 734
+    .line 639
     .local p3, ringtoneStr:Ljava/lang/String;
     :cond_c
     invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -4261,12 +4164,12 @@
     .parameter "address"
 
     .prologue
-    .line 1060
+    .line 962
     new-instance v1, Landroid/app/Notification;
 
     invoke-direct {v1}, Landroid/app/Notification;-><init>()V
 
-    .line 1061
+    .line 963
     .local v1, notification:Landroid/app/Notification;
     const-string v0, "notification"
 
@@ -4276,11 +4179,11 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 1066
+    .line 968
     .local v0, nm:Landroid/app/NotificationManager;
     packed-switch p1, :pswitch_data_0
 
-    .line 1148
+    .line 1050
     .end local p0
     .end local p1
     .end local p2
@@ -4290,7 +4193,7 @@
     :goto_0
     return-void
 
-    .line 1080
+    .line 982
     .restart local p0
     .restart local p1
     .restart local p2
@@ -4304,29 +4207,29 @@
     .end local p1
     move-result-object v2
 
-    .line 1081
+    .line 983
     .local v2, title:Ljava/lang/String;
     invoke-static {p0, p2}, Lcom/android/mms/transaction/MessagingNotification;->getMmsReadReportText(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 1082
+    .line 984
     .local p2, reportStatusText:Ljava/lang/String;
-    const p1, 0x7f02009b
+    const p1, 0x7f020097
 
     iput p1, v1, Landroid/app/Notification;->icon:I
 
-    .line 1088
+    .line 990
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 1091
+    .line 993
     const-string p1, ""
 
-    .line 1093
+    .line 995
     .local p1, displayAddress:Ljava/lang/String;
     invoke-static {p5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -4334,10 +4237,10 @@
 
     if-nez v3, :cond_1
 
-    .line 1094
+    .line 996
     invoke-static {}, Lcom/android/mms/data/Contact;->invalidateCache()V
 
-    .line 1095
+    .line 997
     const/4 p1, 0x1
 
     invoke-static {p5, p1}, Lcom/android/mms/data/Contact;->get(Ljava/lang/String;Z)Lcom/android/mms/data/Contact;
@@ -4349,7 +4252,7 @@
 
     move-result-object p1
 
-    .line 1098
+    .line 1000
     .restart local p1       #displayAddress:Ljava/lang/String;
     :cond_1
     new-instance p5, Ljava/lang/StringBuilder;
@@ -4376,19 +4279,19 @@
 
     move-result-object p2
 
-    .line 1100
+    .line 1002
     .local p2, description:Ljava/lang/String;
     invoke-static {p0, p3, p4}, Lcom/android/mms/ui/ComposeMessageActivity;->createIntent(Landroid/content/Context;J)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 1101
+    .line 1003
     .local p1, clickIntent:Landroid/content/Intent;
     const/high16 p3, 0x3400
 
     invoke-virtual {p1, p3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1105
+    .line 1007
     .end local p3
     const/4 p3, 0x0
 
@@ -4398,13 +4301,13 @@
 
     move-result-object p1
 
-    .line 1108
+    .line 1010
     .local p1, pendingIntent:Landroid/app/PendingIntent;
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object p4
 
-    .line 1109
+    .line 1011
     .local p4, sp:Landroid/content/SharedPreferences;
     const-string p3, "pref_key_enable_notifications"
 
@@ -4416,12 +4319,12 @@
 
     if-eqz p3, :cond_0
 
-    .line 1113
+    .line 1015
     const/16 p3, 0x378
 
     invoke-static {p0, p3}, Lcom/android/mms/transaction/MessagingNotification;->cancelNotification(Landroid/content/Context;I)V
 
-    .line 1116
+    .line 1018
     const-string p3, "power"
 
     invoke-virtual {p0, p3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -4430,7 +4333,7 @@
 
     check-cast p3, Landroid/os/PowerManager;
 
-    .line 1117
+    .line 1019
     .local p3, pm:Landroid/os/PowerManager;
     const p5, 0x1000001a
 
@@ -4440,7 +4343,7 @@
 
     move-result-object p5
 
-    .line 1119
+    .line 1021
     .local p5, wl:Landroid/os/PowerManager$WakeLock;
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -4450,18 +4353,18 @@
 
     invoke-virtual {p3, v3, v4, v5}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 1120
+    .line 1022
     const-wide/16 v3, 0x1388
 
     invoke-virtual {p5, v3, v4}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 1122
+    .line 1024
     iput-object v2, v1, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
-    .line 1124
+    .line 1026
     invoke-virtual {v1, p0, v2, p2, p1}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 1127
+    .line 1029
     const-string p1, "audio"
 
     .end local p1           #pendingIntent:Landroid/app/PendingIntent;
@@ -4471,7 +4374,7 @@
 
     check-cast p1, Landroid/media/AudioManager;
 
-    .line 1128
+    .line 1030
     .local p1, audioManager:Landroid/media/AudioManager;
     const/4 p2, 0x0
 
@@ -4480,7 +4383,7 @@
     .end local p2           #description:Ljava/lang/String;
     move-result p3
 
-    .line 1129
+    .line 1031
     .local p3, vibrateSetting:I
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -4504,7 +4407,7 @@
 
     move p2, p0
 
-    .line 1130
+    .line 1032
     .local p2, bVibrateSilent:Z
     :goto_1
     invoke-virtual {p1}, Landroid/media/AudioManager;->getRingerMode()I
@@ -4518,7 +4421,7 @@
     .end local p1           #audioManager:Landroid/media/AudioManager;
     const/4 p0, 0x1
 
-    .line 1132
+    .line 1034
     .local p0, bNowSilent:Z
     :goto_2
     if-eqz p0, :cond_2
@@ -4532,7 +4435,7 @@
 
     if-ne p3, p0, :cond_4
 
-    .line 1133
+    .line 1035
     .end local p0           #bNowSilent:Z
     :cond_3
     iget p0, v1, Landroid/app/Notification;->defaults:I
@@ -4541,7 +4444,7 @@
 
     iput p0, v1, Landroid/app/Notification;->defaults:I
 
-    .line 1136
+    .line 1038
     :cond_4
     const-string p0, "pref_key_ringtone"
 
@@ -4551,7 +4454,7 @@
 
     move-result-object p0
 
-    .line 1140
+    .line 1042
     .local p0, ringtoneStr:Ljava/lang/String;
     const-string p1, "file://"
 
@@ -4561,7 +4464,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 1141
+    .line 1043
     const/16 p1, 0x2f
 
     invoke-virtual {p0, p1}, Ljava/lang/String;->indexOf(I)I
@@ -4574,7 +4477,7 @@
 
     move-result-object p0
 
-    .line 1145
+    .line 1047
     :cond_5
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -4588,14 +4491,14 @@
     :goto_3
     iput-object p0, v1, Landroid/app/Notification;->sound:Landroid/net/Uri;
 
-    .line 1147
+    .line 1049
     const/16 p0, 0x378
 
     invoke-virtual {v0, p0, v1}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
     goto/16 :goto_0
 
-    .line 1129
+    .line 1031
     .end local p2           #bVibrateSilent:Z
     .restart local p1       #audioManager:Landroid/media/AudioManager;
     :cond_6
@@ -4605,7 +4508,7 @@
 
     goto :goto_1
 
-    .line 1130
+    .line 1032
     .end local p1           #audioManager:Landroid/media/AudioManager;
     .restart local p2       #bVibrateSilent:Z
     :cond_7
@@ -4613,7 +4516,7 @@
 
     goto :goto_2
 
-    .line 1145
+    .line 1047
     .restart local p0       #ringtoneStr:Ljava/lang/String;
     :cond_8
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -4622,7 +4525,7 @@
 
     goto :goto_3
 
-    .line 1066
+    .line 968
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_0
@@ -4634,7 +4537,7 @@
     .parameter "context"
 
     .prologue
-    .line 977
+    .line 879
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/android/mms/transaction/MessagingNotification;->getUndeliveredMessageCount(Landroid/content/Context;[J)I
@@ -4645,16 +4548,16 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 978
+    .line 880
     const/16 v0, 0x315
 
     invoke-static {p0, v0}, Lcom/android/mms/transaction/MessagingNotification;->cancelNotification(Landroid/content/Context;I)V
 
-    .line 982
+    .line 884
     :goto_0
     return-void
 
-    .line 980
+    .line 882
     :cond_0
     invoke-static {p0}, Lcom/android/mms/transaction/MessagingNotification;->notifySendFailed(Landroid/content/Context;)V
 
@@ -4667,14 +4570,14 @@
     .parameter "threadId"
 
     .prologue
-    .line 988
+    .line 890
     const/4 v1, 0x2
 
     new-array v0, v1, [J
 
     fill-array-data v0, :array_0
 
-    .line 989
+    .line 891
     .local v0, msgThreadId:[J
     invoke-static {p0, v0}, Lcom/android/mms/transaction/MessagingNotification;->getUndeliveredMessageCount(Landroid/content/Context;[J)I
 
@@ -4700,16 +4603,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 992
+    .line 894
     const/16 v1, 0x315
 
     invoke-static {p0, v1}, Lcom/android/mms/transaction/MessagingNotification;->cancelNotification(Landroid/content/Context;I)V
 
-    .line 994
+    .line 896
     :cond_0
     return-void
 
-    .line 988
+    .line 890
     :array_0
     .array-data 0x8
         0x0t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t

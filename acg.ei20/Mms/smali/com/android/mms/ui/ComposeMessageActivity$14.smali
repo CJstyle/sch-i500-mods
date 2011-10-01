@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2616
+    .line 2608
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$14;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,10 +43,10 @@
     .parameter "hasFocus"
 
     .prologue
-    .line 2618
+    .line 2610
     if-eqz p2, :cond_0
 
-    .line 2621
+    .line 2613
     :cond_0
     return-void
 .end method

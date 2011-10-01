@@ -118,7 +118,7 @@
     .line 146
     .local v1, ItemView:Landroid/widget/LinearLayout;
     :goto_0
-    const v5, 0x7f080076
+    const v5, 0x7f080051
 
     invoke-virtual {v1, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 

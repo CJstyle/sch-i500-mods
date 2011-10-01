@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="10" android:versionName="2.3.5" package="com.android.mms"
+<manifest android:versionCode="10" android:versionName="2.3.4" package="com.android.mms"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <original-package android:name="com.android.mms" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -46,16 +46,6 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="vnd.android-dir/mms-sms" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ui.CMASViewerActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ui.CMASMoreInfoActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:label="@string/language" android:name=".ui.LanguagePreferenceActivity" android:configChanges="keyboardHidden|orientation" />
@@ -133,7 +123,6 @@
         </activity>
         <activity android:theme="@android:style/Theme.Translucent" android:label="@string/class_0_message_activity" android:name=".ui.ClassZeroActivity" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation" />
         <activity android:label="@string/preferences_title" android:name=".ui.MessagingPreferenceActivity" android:configChanges="keyboardHidden|orientation" />
-        <activity android:name=".ui.CMASPreferenceActivity" android:configChanges="keyboardHidden|orientation" />
         <receiver android:name=".transaction.PushReceiver" android:permission="android.permission.BROADCAST_WAP_PUSH">
             <intent-filter>
                 <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
@@ -156,12 +145,6 @@
         <receiver android:name=".transaction.PrivilegedSmsReceiver" android:permission="android.permission.BROADCAST_SMS">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.provider.Telephony.CMAS_RECEIVED" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.provider.Telephony.SCPT_RECEIVED" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.provider.Telephony.GET_SMSC" />
@@ -266,18 +249,6 @@
         <activity android:label="@string/drmcontents" android:name=".ui.DrmContentsActivity" android:configChanges="keyboardHidden|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:theme="@style/cmas_alert" android:name=".ui.CMASAlertActivity" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="standard" android:configChanges="keyboard|keyboardHidden|navigation|orientation">
-            <intent-filter>
-                <action android:name="android.intent.action.CMASAlert" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:theme="@android:style/Theme.Wallpaper.NoTitleBar" android:name=".ui.CMASAlertFullScreen" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="standard" android:configChanges="keyboard|keyboardHidden|navigation|orientation">
-            <intent-filter>
-                <action android:name="android.intent.action.CMASAlertFullScreen" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

@@ -589,7 +589,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0200ba
+    const v10, 0x7f0200b4
 
     invoke-virtual {v9, v10}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 

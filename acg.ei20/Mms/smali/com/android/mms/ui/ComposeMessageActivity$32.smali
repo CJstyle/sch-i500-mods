@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 5360
+    .line 5300
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,22 +45,22 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 5362
+    .line 5302
     if-eqz p2, :cond_3
 
-    .line 5364
+    .line 5304
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$5400(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/AddRecipientButtonEditor;
+    invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$5300(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/AddRecipientButtonEditor;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 5365
+    .line 5305
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$5400(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/AddRecipientButtonEditor;
+    invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$5300(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/AddRecipientButtonEditor;
 
     move-result-object v0
 
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v3}, Lcom/android/mms/ui/AddRecipientButtonEditor;->setVisibility(I)V
 
-    .line 5370
+    .line 5310
     :cond_0
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -80,12 +80,12 @@
 
     invoke-virtual {v0, v3}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 5374
+    .line 5314
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1100(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 5376
+    .line 5316
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1700(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
@@ -100,14 +100,14 @@
 
     move-result-object v6
 
-    .line 5378
+    .line 5318
     .local v6, editorText:Ljava/lang/String;
     if-eqz v6, :cond_1
 
-    .line 5379
+    .line 5319
     const/4 v1, 0x0
 
-    .line 5381
+    .line 5321
     .local v1, editText:Ljava/lang/CharSequence;
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
@@ -117,7 +117,7 @@
 
     move-result-object v1
 
-    .line 5382
+    .line 5322
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     sget v5, Lcom/android/mms/ui/ComposeMessageActivity;->mEncodingType:I
@@ -126,9 +126,9 @@
 
     move v4, v2
 
-    invoke-static/range {v0 .. v5}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8100(Lcom/android/mms/ui/ComposeMessageActivity;Ljava/lang/CharSequence;IIII)V
+    invoke-static/range {v0 .. v5}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8000(Lcom/android/mms/ui/ComposeMessageActivity;Ljava/lang/CharSequence;IIII)V
 
-    .line 5385
+    .line 5325
     .end local v1           #editText:Ljava/lang/CharSequence;
     :cond_1
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -149,7 +149,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setSelection(I)V
 
-    .line 5387
+    .line 5327
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3200(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/MessageListView;
@@ -162,34 +162,34 @@
 
     if-nez v0, :cond_2
 
-    .line 5388
+    .line 5328
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1700(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;
 
     move-result-object v0
 
-    const v2, 0x7f080090
+    const v2, 0x7f08006b
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setNextFocusUpId(I)V
 
-    .line 5389
+    .line 5329
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3200(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/MessageListView;
 
     move-result-object v0
 
-    const v2, 0x7f080044
+    const v2, 0x7f08001f
 
     invoke-virtual {v0, v2}, Lcom/android/mms/ui/MessageListView;->setNextFocusDownId(I)V
 
-    .line 5400
+    .line 5340
     .end local v6           #editorText:Ljava/lang/String;
     :goto_0
     return-void
 
-    .line 5392
+    .line 5332
     .restart local v6       #editorText:Ljava/lang/String;
     :cond_2
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -198,13 +198,13 @@
 
     move-result-object v0
 
-    const v2, 0x7f080040
+    const v2, 0x7f08001b
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setNextFocusUpId(I)V
 
     goto :goto_0
 
-    .line 5397
+    .line 5337
     .end local v6           #editorText:Ljava/lang/String;
     :cond_3
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -217,7 +217,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setMinLines(I)V
 
-    .line 5398
+    .line 5338
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$32;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1700(Lcom/android/mms/ui/ComposeMessageActivity;)Landroid/widget/EditText;

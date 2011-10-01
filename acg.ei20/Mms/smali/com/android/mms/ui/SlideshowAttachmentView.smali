@@ -50,7 +50,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 63
-    const v0, 0x7f0800c1
+    const v0, 0x7f08009c
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideshowAttachmentView;->findViewById(I)Landroid/view/View;
 
@@ -61,7 +61,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/SlideshowAttachmentView;->mFrameLayout:Landroid/widget/FrameLayout;
 
     .line 64
-    const v0, 0x7f0800c2
+    const v0, 0x7f08009d
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideshowAttachmentView;->findViewById(I)Landroid/view/View;
 
@@ -72,7 +72,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/SlideshowAttachmentView;->mImageView:Landroid/widget/ImageView;
 
     .line 65
-    const v0, 0x7f0800c3
+    const v0, 0x7f08009e
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/SlideshowAttachmentView;->findViewById(I)Landroid/view/View;
 
@@ -133,7 +133,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020093
+    const v2, 0x7f02008f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -209,7 +209,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020094
+    const v2, 0x7f020090
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -317,7 +317,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020094
+    const v2, 0x7f020090
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -464,7 +464,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f020095
+    const v4, 0x7f020091
 
     invoke-static {v3, v4}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

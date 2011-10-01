@@ -67,12 +67,12 @@
     .parameter
 
     .prologue
-    .line 4114
+    .line 3932
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4128
+    .line 3946
     const/4 v0, 0x0
 
     new-array v0, v0, [Landroid/view/View;
@@ -82,46 +82,46 @@
     return-void
 .end method
 
-.method static synthetic access$2402(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;)Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
+.method static synthetic access$2002(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;)Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 4114
+    .line 3932
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mRecyclerListener:Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
 
     return-object p1
 .end method
 
-.method static synthetic access$2500(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)[Landroid/view/View;
+.method static synthetic access$2100(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)[Landroid/view/View;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 4114
+    .line 3932
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mActiveViews:[Landroid/view/View;
 
     return-object v0
 .end method
 
-.method static synthetic access$2600(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)Ljava/util/ArrayList;
+.method static synthetic access$2200(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)Ljava/util/ArrayList;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 4114
+    .line 3932
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mCurrentScrap:Ljava/util/ArrayList;
 
     return-object v0
 .end method
 
-.method static synthetic access$2700(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)[Ljava/util/ArrayList;
+.method static synthetic access$2300(Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;)[Ljava/util/ArrayList;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 4114
+    .line 3932
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
     return-object v0
@@ -131,20 +131,20 @@
     .locals 12
 
     .prologue
-    .line 4393
+    .line 4211
     iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mActiveViews:[Landroid/view/View;
 
     array-length v3, v9
 
-    .line 4394
+    .line 4212
     .local v3, maxViews:I
     iget v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mViewTypeCount:I
 
-    .line 4395
+    .line 4213
     .local v8, viewTypeCount:I
     iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
-    .line 4396
+    .line 4214
     .local v5, scrapViews:[Ljava/util/ArrayList;,"[Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v1, 0x0
 
@@ -152,24 +152,24 @@
     :goto_0
     if-ge v1, v8, :cond_1
 
-    .line 4397
+    .line 4215
     aget-object v4, v5, v1
 
-    .line 4398
+    .line 4216
     .local v4, scrapPile:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    .line 4399
+    .line 4217
     .local v6, size:I
     sub-int v0, v6, v3
 
-    .line 4400
+    .line 4218
     .local v0, extras:I
     add-int/lit8 v6, v6, -0x1
 
-    .line 4401
+    .line 4219
     const/4 v2, 0x0
 
     .local v2, j:I
@@ -180,10 +180,12 @@
     :goto_1
     if-ge v2, v0, :cond_0
 
-    .line 4402
+    .line 4220
     iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
-    add-int/lit8 v6, v7, -0x1
+    const/4 v9, 0x1
+
+    sub-int v6, v7, v9
 
     .end local v7           #size:I
     .restart local v6       #size:I
@@ -195,9 +197,9 @@
 
     const/4 v11, 0x0
 
-    invoke-static {v10, v9, v11}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$3000(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
+    invoke-static {v10, v9, v11}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$2600(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
 
-    .line 4401
+    .line 4219
     add-int/lit8 v2, v2, 0x1
 
     move v7, v6
@@ -206,13 +208,13 @@
     .restart local v7       #size:I
     goto :goto_1
 
-    .line 4396
+    .line 4214
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 4405
+    .line 4223
     .end local v0           #extras:I
     .end local v2           #j:I
     .end local v4           #scrapPile:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
@@ -228,12 +230,12 @@
     .parameter "scrap"
 
     .prologue
-    .line 4296
+    .line 4114
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->addScrapView(Landroid/view/View;Z)V
 
-    .line 4297
+    .line 4115
     return-void
 .end method
 
@@ -243,15 +245,15 @@
     .parameter "ignoreRetainView"
 
     .prologue
-    .line 4305
+    .line 4123
     if-nez p1, :cond_1
 
-    .line 4343
+    .line 4161
     :cond_0
     :goto_0
     return-void
 
-    .line 4309
+    .line 4127
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -259,27 +261,27 @@
 
     check-cast v0, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
 
-    .line 4310
+    .line 4128
     .local v0, lp:Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
     if-eqz v0, :cond_0
 
-    .line 4316
+    .line 4134
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
-    .line 4318
+    .line 4136
     .local v1, retainViews:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Landroid/view/View;>;"
     if-eqz v1, :cond_2
 
     if-nez p2, :cond_2
 
-    .line 4319
+    .line 4137
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->containsValue(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 4320
+    .line 4138
     const-string v3, "[ABS_LIST]"
 
     const-string v4, "scrap view should be retained~! return~!"
@@ -288,11 +290,11 @@
 
     goto :goto_0
 
-    .line 4329
+    .line 4147
     :cond_2
     iget v2, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;->viewType:I
 
-    .line 4330
+    .line 4148
     .local v2, viewType:I
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->shouldRecycleViewType(I)Z
 
@@ -300,32 +302,32 @@
 
     if-eqz v3, :cond_0
 
-    .line 4334
+    .line 4152
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mViewTypeCount:I
 
     const/4 v4, 0x1
 
     if-ne v3, v4, :cond_3
 
-    .line 4335
+    .line 4153
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mCurrentScrap:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4340
+    .line 4158
     :goto_1
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mRecyclerListener:Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
 
     if-eqz v3, :cond_0
 
-    .line 4341
+    .line 4159
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mRecyclerListener:Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
 
     invoke-interface {v3, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;->onMovedToScrapHeap(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 4337
+    .line 4155
     :cond_3
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
@@ -342,7 +344,7 @@
     .parameter "v"
 
     .prologue
-    .line 4143
+    .line 3961
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getAdapter()Landroid/widget/Adapter;
@@ -357,24 +359,24 @@
 
     if-nez v0, :cond_0
 
-    .line 4150
+    .line 3968
     :goto_0
     return-void
 
-    .line 4146
+    .line 3964
     :cond_0
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
     if-nez v0, :cond_1
 
-    .line 4147
+    .line 3965
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
-    .line 4149
+    .line 3967
     :cond_1
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
@@ -395,21 +397,21 @@
 
     const/4 v7, 0x1
 
-    .line 4207
+    .line 4025
     iget v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mViewTypeCount:I
 
     if-ne v5, v7, :cond_0
 
-    .line 4208
+    .line 4026
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mCurrentScrap:Ljava/util/ArrayList;
 
-    .line 4209
+    .line 4027
     .local v2, scrap:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 4210
+    .line 4028
     .local v3, scrapCount:I
     const/4 v0, 0x0
 
@@ -417,7 +419,7 @@
     :goto_0
     if-ge v0, v3, :cond_2
 
-    .line 4211
+    .line 4029
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     sub-int v5, v3, v7
@@ -430,21 +432,21 @@
 
     check-cast v5, Landroid/view/View;
 
-    invoke-static {v6, v5, v8}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$2800(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
+    invoke-static {v6, v5, v8}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$2400(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
 
-    .line 4210
+    .line 4028
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 4214
+    .line 4032
     .end local v0           #i:I
     .end local v2           #scrap:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     .end local v3           #scrapCount:I
     :cond_0
     iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mViewTypeCount:I
 
-    .line 4215
+    .line 4033
     .local v4, typeCount:I
     const/4 v0, 0x0
 
@@ -452,18 +454,18 @@
     :goto_1
     if-ge v0, v4, :cond_2
 
-    .line 4216
+    .line 4034
     iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
     aget-object v2, v5, v0
 
-    .line 4217
+    .line 4035
     .restart local v2       #scrap:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 4218
+    .line 4036
     .restart local v3       #scrapCount:I
     const/4 v1, 0x0
 
@@ -471,7 +473,7 @@
     :goto_2
     if-ge v1, v3, :cond_1
 
-    .line 4219
+    .line 4037
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     sub-int v5, v3, v7
@@ -484,20 +486,20 @@
 
     check-cast v5, Landroid/view/View;
 
-    invoke-static {v6, v5, v8}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$2900(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
+    invoke-static {v6, v5, v8}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$2500(Lcom/nemustech/tiffany/widget/TFAbsListView;Landroid/view/View;Z)V
 
-    .line 4218
+    .line 4036
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 4215
+    .line 4033
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 4223
+    .line 4041
     .end local v1           #j:I
     .end local v2           #scrap:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     .end local v3           #scrapCount:I
@@ -510,12 +512,12 @@
     .locals 3
 
     .prologue
-    .line 4153
+    .line 3971
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
     if-eqz v1, :cond_1
 
-    .line 4154
+    .line 3972
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -526,7 +528,7 @@
 
     move-result-object v0
 
-    .line 4155
+    .line 3973
     .local v0, itr:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/Integer;Landroid/view/View;>;>;"
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -535,7 +537,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 4156
+    .line 3974
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -560,13 +562,13 @@
 
     goto :goto_0
 
-    .line 4158
+    .line 3976
     :cond_0
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 4160
+    .line 3978
     .end local v0           #itr:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/Integer;Landroid/view/View;>;>;"
     :cond_1
     return-void
@@ -578,26 +580,26 @@
     .parameter "firstActivePosition"
 
     .prologue
-    .line 4233
+    .line 4051
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mActiveViews:[Landroid/view/View;
 
     array-length v4, v4
 
     if-ge v4, p1, :cond_0
 
-    .line 4234
+    .line 4052
     new-array v4, p1, [Landroid/view/View;
 
     iput-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mActiveViews:[Landroid/view/View;
 
-    .line 4236
+    .line 4054
     :cond_0
     iput p2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mFirstActivePosition:I
 
-    .line 4238
+    .line 4056
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mActiveViews:[Landroid/view/View;
 
-    .line 4239
+    .line 4057
     .local v0, activeViews:[Landroid/view/View;
     const/4 v2, 0x0
 
@@ -605,14 +607,14 @@
     :goto_0
     if-ge v2, p1, :cond_2
 
-    .line 4240
+    .line 4058
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v4, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 4241
+    .line 4059
     .local v1, child:Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -620,7 +622,7 @@
 
     check-cast v3, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
 
-    .line 4243
+    .line 4061
     .local v3, lp:Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
     if-eqz v3, :cond_1
 
@@ -630,16 +632,16 @@
 
     if-eq v4, v5, :cond_1
 
-    .line 4246
+    .line 4064
     aput-object v1, v0, v2
 
-    .line 4239
+    .line 4057
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 4249
+    .line 4067
     .end local v1           #child:Landroid/view/View;
     .end local v3           #lp:Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;
     :cond_2
@@ -653,16 +655,16 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 4259
+    .line 4077
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mFirstActivePosition:I
 
     sub-int v1, p1, v3
 
-    .line 4260
+    .line 4078
     .local v1, index:I
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mActiveViews:[Landroid/view/View;
 
-    .line 4261
+    .line 4079
     .local v0, activeViews:[Landroid/view/View;
     if-ltz v1, :cond_0
 
@@ -670,16 +672,16 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 4262
+    .line 4080
     aget-object v2, v0, v1
 
-    .line 4263
+    .line 4081
     .local v2, match:Landroid/view/View;
     aput-object v4, v0, v1
 
     move-object v3, v2
 
-    .line 4266
+    .line 4084
     .end local v2           #match:Landroid/view/View;
     :goto_0
     return-object v3
@@ -694,10 +696,10 @@
     .locals 2
 
     .prologue
-    .line 4168
+    .line 3986
     const/4 v0, 0x0
 
-    .line 4170
+    .line 3988
     .local v0, ret:[Ljava/lang/Object;
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
@@ -711,7 +713,7 @@
 
     if-lez v1, :cond_0
 
-    .line 4171
+    .line 3989
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -722,7 +724,7 @@
 
     move-result-object v0
 
-    .line 4173
+    .line 3991
     :cond_0
     return-object v0
 .end method
@@ -736,25 +738,25 @@
 
     const/4 v4, 0x1
 
-    .line 4274
+    .line 4092
     iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mViewTypeCount:I
 
     if-ne v3, v4, :cond_1
 
-    .line 4275
+    .line 4093
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mCurrentScrap:Ljava/util/ArrayList;
 
-    .line 4276
+    .line 4094
     .local v0, scrapViews:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 4277
+    .line 4095
     .local v1, size:I
     if-lez v1, :cond_0
 
-    .line 4278
+    .line 4096
     sub-int v3, v1, v4
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -766,7 +768,7 @@
 
     move-object v3, p0
 
-    .line 4292
+    .line 4110
     .end local v0           #scrapViews:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     .end local v1           #size:I
     :goto_0
@@ -778,10 +780,10 @@
     :cond_0
     move-object v3, v5
 
-    .line 4280
+    .line 4098
     goto :goto_0
 
-    .line 4283
+    .line 4101
     .end local v0           #scrapViews:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     .end local v1           #size:I
     :cond_1
@@ -793,7 +795,7 @@
 
     move-result v2
 
-    .line 4284
+    .line 4102
     .local v2, whichScrap:I
     if-ltz v2, :cond_2
 
@@ -803,22 +805,22 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 4285
+    .line 4103
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
     aget-object v0, v3, v2
 
-    .line 4286
+    .line 4104
     .restart local v0       #scrapViews:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 4287
+    .line 4105
     .restart local v1       #size:I
     if-lez v1, :cond_2
 
-    .line 4288
+    .line 4106
     sub-int v3, v1, v4
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -838,7 +840,7 @@
     :cond_2
     move-object v3, v5
 
-    .line 4292
+    .line 4110
     goto :goto_0
 .end method
 
@@ -847,7 +849,7 @@
     .parameter "position"
 
     .prologue
-    .line 4181
+    .line 3999
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mShouldRetainViews:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
@@ -886,10 +888,10 @@
 
     const/4 v9, 0x1
 
-    .line 4349
+    .line 4167
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mActiveViews:[Landroid/view/View;
 
-    .line 4350
+    .line 4168
     .local v0, activeViews:[Landroid/view/View;
     iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mRecyclerListener:Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
 
@@ -897,7 +899,7 @@
 
     move v2, v9
 
-    .line 4351
+    .line 4169
     .local v2, hasListener:Z
     :goto_0
     iget v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mViewTypeCount:I
@@ -906,16 +908,16 @@
 
     move v4, v9
 
-    .line 4353
+    .line 4171
     .local v4, multipleScraps:Z
     :goto_1
     iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mCurrentScrap:Ljava/util/ArrayList;
 
-    .line 4354
+    .line 4172
     .local v5, scrapViews:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     array-length v1, v0
 
-    .line 4355
+    .line 4173
     .local v1, count:I
     const/4 v3, 0x0
 
@@ -923,14 +925,14 @@
     :goto_2
     if-ge v3, v1, :cond_5
 
-    .line 4356
+    .line 4174
     aget-object v6, v0, v3
 
-    .line 4357
+    .line 4175
     .local v6, victim:Landroid/view/View;
     if-eqz v6, :cond_0
 
-    .line 4358
+    .line 4176
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v8
@@ -939,18 +941,18 @@
 
     iget v7, v8, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;->viewType:I
 
-    .line 4361
+    .line 4179
     .local v7, whichScrap:I
     const/4 v8, 0x0
 
     aput-object v8, v0, v3
 
-    .line 4363
+    .line 4181
     const/4 v8, -0x1
 
     if-ne v7, v8, :cond_3
 
-    .line 4355
+    .line 4173
     .end local v7           #whichScrap:I
     :cond_0
     :goto_3
@@ -967,17 +969,17 @@
     :cond_1
     move v2, v10
 
-    .line 4350
+    .line 4168
     goto :goto_0
 
     .restart local v2       #hasListener:Z
     :cond_2
     move v4, v10
 
-    .line 4351
+    .line 4169
     goto :goto_1
 
-    .line 4368
+    .line 4186
     .restart local v1       #count:I
     .restart local v3       #i:I
     .restart local v4       #multipleScraps:Z
@@ -987,32 +989,32 @@
     :cond_3
     if-eqz v4, :cond_4
 
-    .line 4369
+    .line 4187
     iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
     aget-object v5, v8, v7
 
-    .line 4371
+    .line 4189
     :cond_4
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4373
+    .line 4191
     if-eqz v2, :cond_0
 
-    .line 4374
+    .line 4192
     iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mRecyclerListener:Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;
 
     invoke-interface {v8, v6}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecyclerListener;->onMovedToScrapHeap(Landroid/view/View;)V
 
     goto :goto_3
 
-    .line 4385
+    .line 4203
     .end local v6           #victim:Landroid/view/View;
     .end local v7           #whichScrap:I
     :cond_5
     invoke-direct {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->pruneScrapViews()V
 
-    .line 4386
+    .line 4204
     return-void
 .end method
 
@@ -1021,12 +1023,12 @@
     .parameter "viewTypeCount"
 
     .prologue
-    .line 4186
+    .line 4004
     const/4 v2, 0x1
 
     if-ge p1, v2, :cond_0
 
-    .line 4187
+    .line 4005
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "Can\'t have a viewTypeCount < 1"
@@ -1035,11 +1037,11 @@
 
     throw v2
 
-    .line 4190
+    .line 4008
     :cond_0
     new-array v1, p1, [Ljava/util/ArrayList;
 
-    .line 4191
+    .line 4009
     .local v1, scrapViews:[Ljava/util/ArrayList;,"[Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v0, 0x0
 
@@ -1047,33 +1049,33 @@
     :goto_0
     if-ge v0, p1, :cond_1
 
-    .line 4192
+    .line 4010
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     aput-object v2, v1, v0
 
-    .line 4191
+    .line 4009
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 4194
+    .line 4012
     :cond_1
     iput p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mViewTypeCount:I
 
-    .line 4195
+    .line 4013
     const/4 v2, 0x0
 
     aget-object v2, v1, v2
 
     iput-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mCurrentScrap:Ljava/util/ArrayList;
 
-    .line 4196
+    .line 4014
     iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
-    .line 4197
+    .line 4015
     return-void
 .end method
 
@@ -1082,7 +1084,7 @@
     .parameter "viewType"
 
     .prologue
-    .line 4200
+    .line 4018
     if-ltz p1, :cond_0
 
     const/4 v0, 0x1

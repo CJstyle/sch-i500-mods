@@ -15,8 +15,6 @@
 # static fields
 .field static final PROJECTION:[Ljava/lang/String;
 
-.field static final PROJECTION_CMAS:[Ljava/lang/String;
-
 
 # instance fields
 .field private mAddressToMessageListItems:Ljava/util/HashMap;
@@ -62,11 +60,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 7
 
     .prologue
-    const/4 v7, 0x0
-
     const-string v6, "read"
 
     const-string v5, "pri"
@@ -80,9 +76,11 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string v1, "transport_type"
+    const/4 v1, 0x0
 
-    aput-object v1, v0, v7
+    const-string v2, "transport_type"
+
+    aput-object v2, v0, v1
 
     const/4 v1, 0x1
 
@@ -218,209 +216,6 @@
 
     sput-object v0, Lcom/android/mms/ui/MessageListAdapter;->PROJECTION:[Ljava/lang/String;
 
-    .line 104
-    const/16 v0, 0x21
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const-string v1, "transport_type"
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x1
-
-    const-string v2, "_id"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    const-string v2, "thread_id"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x3
-
-    const-string v2, "address"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x4
-
-    const-string v2, "body"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x5
-
-    const-string v2, "date"
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x6
-
-    const-string v2, "read"
-
-    aput-object v6, v0, v1
-
-    const/4 v1, 0x7
-
-    const-string v2, "type"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    const-string v2, "status"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    const-string v2, "locked"
-
-    aput-object v4, v0, v1
-
-    const/16 v1, 0xa
-
-    const-string v2, "error_code"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    const-string v2, "pri"
-
-    aput-object v5, v0, v1
-
-    const/16 v1, 0xc
-
-    const-string v2, "sub"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    const-string v2, "sub_cs"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    const-string v2, "date"
-
-    aput-object v3, v0, v1
-
-    const/16 v1, 0xf
-
-    const-string v2, "read"
-
-    aput-object v6, v0, v1
-
-    const/16 v1, 0x10
-
-    const-string v2, "m_type"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
-    const-string v2, "msg_box"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x12
-
-    const-string v2, "d_rpt"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x13
-
-    const-string v2, "rr"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x14
-
-    const-string v2, "err_type"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x15
-
-    const-string v2, "locked"
-
-    aput-object v4, v0, v1
-
-    const/16 v1, 0x16
-
-    const-string v2, "pri"
-
-    aput-object v5, v0, v1
-
-    const/16 v1, 0x17
-
-    const-string v2, "service_category"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x18
-
-    const-string v2, "category"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x19
-
-    const-string v2, "response_type"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1a
-
-    const-string v2, "severity"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1b
-
-    const-string v2, "urgency"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1c
-
-    const-string v2, "certainty"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1d
-
-    const-string v2, "identifier"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1e
-
-    const-string v2, "alert_handling"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1f
-
-    const-string v2, "expires"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x20
-
-    const-string v2, "language"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/android/mms/ui/MessageListAdapter;->PROJECTION_CMAS:[Ljava/lang/String;
-
     return-void
 .end method
 
@@ -433,25 +228,25 @@
     .parameter "highlight"
 
     .prologue
-    .line 198
+    .line 147
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/CursorAdapter;-><init>(Landroid/content/Context;Landroid/database/Cursor;Z)V
 
-    .line 192
+    .line 141
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mAddressToMessageListItems:Ljava/util/HashMap;
 
-    .line 199
+    .line 148
     iput-object p1, p0, Lcom/android/mms/ui/MessageListAdapter;->mContext:Landroid/content/Context;
 
-    .line 200
+    .line 149
     iput-object p5, p0, Lcom/android/mms/ui/MessageListAdapter;->mHighlight:Ljava/util/regex/Pattern;
 
-    .line 202
+    .line 151
     const-string v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -462,10 +257,10 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 204
+    .line 153
     iput-object p3, p0, Lcom/android/mms/ui/MessageListAdapter;->mListView:Landroid/widget/ListView;
 
-    .line 205
+    .line 154
     new-instance v0, Lcom/android/mms/ui/MessageListAdapter$1;
 
     const/16 v1, 0xa
@@ -478,21 +273,21 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mMessageItemCache:Ljava/util/LinkedHashMap;
 
-    .line 213
+    .line 162
     if-eqz p4, :cond_0
 
-    .line 214
+    .line 163
     new-instance v0, Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
 
     invoke-direct {v0}, Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mColumnsMap:Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
 
-    .line 218
+    .line 167
     :goto_0
     return-void
 
-    .line 216
+    .line 165
     :cond_0
     new-instance v0, Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
 
@@ -509,7 +304,7 @@
     .parameter "id"
 
     .prologue
-    .line 299
+    .line 248
     const-string v0, "mms"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -518,10 +313,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 300
+    .line 249
     neg-long v0, p1
 
-    .line 302
+    .line 251
     :goto_0
     return-wide v0
 
@@ -536,7 +331,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 292
+    .line 241
     invoke-interface {p1}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
@@ -555,11 +350,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 293
+    .line 242
     :cond_0
     const/4 v0, 0x0
 
-    .line 295
+    .line 244
     :goto_0
     return v0
 
@@ -578,12 +373,12 @@
     .parameter "cursor"
 
     .prologue
-    .line 222
+    .line 171
     instance-of v5, p1, Lcom/android/mms/ui/MessageListItem;
 
     if-eqz v5, :cond_0
 
-    .line 223
+    .line 172
     iget-object v5, p0, Lcom/android/mms/ui/MessageListAdapter;->mColumnsMap:Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
 
     iget v5, v5, Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;->mColumnMsgType:I
@@ -592,7 +387,7 @@
 
     move-result-object v4
 
-    .line 224
+    .line 173
     .local v4, type:Ljava/lang/String;
     iget-object v5, p0, Lcom/android/mms/ui/MessageListAdapter;->mColumnsMap:Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
 
@@ -602,17 +397,17 @@
 
     move-result-wide v1
 
-    .line 226
+    .line 175
     .local v1, msgId:J
     invoke-virtual {p0, v4, v1, v2, p3}, Lcom/android/mms/ui/MessageListAdapter;->getCachedMessageItem(Ljava/lang/String;JLandroid/database/Cursor;)Lcom/android/mms/ui/MessageItem;
 
     move-result-object v3
 
-    .line 227
+    .line 176
     .local v3, msgItem:Lcom/android/mms/ui/MessageItem;
     if-eqz v3, :cond_0
 
-    .line 230
+    .line 179
     move-object v0, p1
 
     check-cast v0, Lcom/android/mms/ui/MessageListItem;
@@ -621,7 +416,7 @@
 
     invoke-virtual {v5, v3, p2, p3}, Lcom/android/mms/ui/MessageListItem;->bind(Lcom/android/mms/ui/MessageItem;Landroid/content/Context;Landroid/database/Cursor;)V
 
-    .line 231
+    .line 180
     check-cast p1, Lcom/android/mms/ui/MessageListItem;
 
     .end local p1
@@ -629,7 +424,7 @@
 
     invoke-virtual {p1, v5}, Lcom/android/mms/ui/MessageListItem;->setMsgListItemHandler(Landroid/os/Handler;)V
 
-    .line 234
+    .line 183
     .end local v1           #msgId:J
     .end local v3           #msgItem:Lcom/android/mms/ui/MessageItem;
     .end local v4           #type:Ljava/lang/String;
@@ -644,7 +439,7 @@
     .parameter "c"
 
     .prologue
-    .line 278
+    .line 227
     iget-object v1, p0, Lcom/android/mms/ui/MessageListAdapter;->mMessageItemCache:Ljava/util/LinkedHashMap;
 
     invoke-static {p1, p2, p3}, Lcom/android/mms/ui/MessageListAdapter;->getKey(Ljava/lang/String;J)J
@@ -661,7 +456,7 @@
 
     check-cast v7, Lcom/android/mms/ui/MessageItem;
 
-    .line 279
+    .line 228
     .local v7, item:Lcom/android/mms/ui/MessageItem;
     if-nez v7, :cond_0
 
@@ -673,7 +468,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 281
+    .line 230
     :try_start_0
     new-instance v0, Lcom/android/mms/ui/MessageItem;
 
@@ -691,7 +486,7 @@
     :try_end_0
     .catch Lcom/google/android/mms/MmsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 282
+    .line 231
     .end local v7           #item:Lcom/android/mms/ui/MessageItem;
     .local v0, item:Lcom/android/mms/ui/MessageItem;
     :try_start_1
@@ -715,11 +510,11 @@
     :try_end_1
     .catch Lcom/google/android/mms/MmsException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 287
+    .line 236
     :goto_0
     return-object v0
 
-    .line 283
+    .line 232
     .end local v0           #item:Lcom/android/mms/ui/MessageItem;
     .restart local v7       #item:Lcom/android/mms/ui/MessageItem;
     :catch_0
@@ -729,7 +524,7 @@
 
     move-object v0, v7
 
-    .line 284
+    .line 233
     .end local v7           #item:Lcom/android/mms/ui/MessageItem;
     .restart local v0       #item:Lcom/android/mms/ui/MessageItem;
     .local v6, e:Lcom/google/android/mms/MmsException;
@@ -744,7 +539,7 @@
 
     goto :goto_0
 
-    .line 283
+    .line 232
     .end local v6           #e:Lcom/google/android/mms/MmsException;
     :catch_1
     move-exception v1
@@ -770,32 +565,32 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 309
+    .line 258
     iget-object v1, p0, Lcom/android/mms/ui/MessageListAdapter;->mContext:Landroid/content/Context;
 
     instance-of v1, v1, Lcom/android/mms/ui/DeleteThreadActivity;
 
     if-eqz v1, :cond_0
 
-    .line 310
+    .line 259
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mContext:Landroid/content/Context;
 
     check-cast v0, Lcom/android/mms/ui/DeleteThreadActivity;
 
-    .line 312
+    .line 261
     .local v0, delActivity:Lcom/android/mms/ui/DeleteThreadActivity;
     iget-object v1, v0, Lcom/android/mms/ui/DeleteThreadActivity;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     if-eqz v1, :cond_0
 
-    .line 313
+    .line 262
     iget-object v1, v0, Lcom/android/mms/ui/DeleteThreadActivity;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v1, p1, v2}, Landroid/util/SparseBooleanArray;->get(IZ)Z
 
     move-result v1
 
-    .line 317
+    .line 266
     .end local v0           #delActivity:Lcom/android/mms/ui/DeleteThreadActivity;
     :goto_0
     return v1
@@ -813,10 +608,10 @@
     .parameter "parent"
 
     .prologue
-    .line 274
+    .line 223
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f03001d
+    const v1, 0x7f03001a
 
     const/4 v2, 0x0
 
@@ -831,10 +626,10 @@
     .locals 2
 
     .prologue
-    .line 250
+    .line 199
     invoke-super {p0}, Landroid/widget/CursorAdapter;->notifyDataSetChanged()V
 
-    .line 255
+    .line 204
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mListView:Landroid/widget/ListView;
 
     iget-object v1, p0, Lcom/android/mms/ui/MessageListAdapter;->mListView:Landroid/widget/ListView;
@@ -845,22 +640,22 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setSelection(I)V
 
-    .line 256
+    .line 205
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mMessageItemCache:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->clear()V
 
-    .line 258
+    .line 207
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mOnDataSetChangedListener:Lcom/android/mms/ui/MessageListAdapter$OnDataSetChangedListener;
 
     if-eqz v0, :cond_0
 
-    .line 259
+    .line 208
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mOnDataSetChangedListener:Lcom/android/mms/ui/MessageListAdapter$OnDataSetChangedListener;
 
     invoke-interface {v0, p0}, Lcom/android/mms/ui/MessageListAdapter$OnDataSetChangedListener;->onDataSetChanged(Lcom/android/mms/ui/MessageListAdapter;)V
 
-    .line 261
+    .line 210
     :cond_0
     return-void
 .end method
@@ -869,7 +664,7 @@
     .locals 1
 
     .prologue
-    .line 265
+    .line 214
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageListAdapter;->getCursor()Landroid/database/Cursor;
 
     move-result-object v0
@@ -886,17 +681,17 @@
 
     if-nez v0, :cond_0
 
-    .line 266
+    .line 215
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mOnDataSetChangedListener:Lcom/android/mms/ui/MessageListAdapter$OnDataSetChangedListener;
 
     if-eqz v0, :cond_0
 
-    .line 267
+    .line 216
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mOnDataSetChangedListener:Lcom/android/mms/ui/MessageListAdapter$OnDataSetChangedListener;
 
     invoke-interface {v0, p0}, Lcom/android/mms/ui/MessageListAdapter$OnDataSetChangedListener;->onContentChanged(Lcom/android/mms/ui/MessageListAdapter;)V
 
-    .line 270
+    .line 219
     :cond_0
     return-void
 .end method
@@ -907,33 +702,33 @@
     .parameter "isChecked"
 
     .prologue
-    .line 321
+    .line 270
     iget-object v1, p0, Lcom/android/mms/ui/MessageListAdapter;->mContext:Landroid/content/Context;
 
     instance-of v1, v1, Lcom/android/mms/ui/DeleteThreadActivity;
 
     if-eqz v1, :cond_0
 
-    .line 322
+    .line 271
     iget-object v0, p0, Lcom/android/mms/ui/MessageListAdapter;->mContext:Landroid/content/Context;
 
     check-cast v0, Lcom/android/mms/ui/DeleteThreadActivity;
 
-    .line 323
+    .line 272
     .local v0, delActivity:Lcom/android/mms/ui/DeleteThreadActivity;
     iget-object v1, v0, Lcom/android/mms/ui/DeleteThreadActivity;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     if-eqz v1, :cond_0
 
-    .line 324
+    .line 273
     iget-object v1, v0, Lcom/android/mms/ui/DeleteThreadActivity;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v1, p1, p2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 325
+    .line 274
     invoke-super {p0}, Landroid/widget/CursorAdapter;->notifyDataSetChanged()V
 
-    .line 328
+    .line 277
     .end local v0           #delActivity:Lcom/android/mms/ui/DeleteThreadActivity;
     :cond_0
     return-void
@@ -944,10 +739,10 @@
     .parameter "handler"
 
     .prologue
-    .line 246
+    .line 195
     iput-object p1, p0, Lcom/android/mms/ui/MessageListAdapter;->mMsgListItemHandler:Landroid/os/Handler;
 
-    .line 247
+    .line 196
     return-void
 .end method
 
@@ -956,10 +751,10 @@
     .parameter "l"
 
     .prologue
-    .line 242
+    .line 191
     iput-object p1, p0, Lcom/android/mms/ui/MessageListAdapter;->mOnDataSetChangedListener:Lcom/android/mms/ui/MessageListAdapter$OnDataSetChangedListener;
 
-    .line 243
+    .line 192
     return-void
 .end method
 
@@ -974,17 +769,17 @@
 
     const/4 v4, 0x0
 
-    .line 331
+    .line 280
     if-nez p2, :cond_1
 
-    .line 332
+    .line 281
     move-object v0, p1
 
     check-cast v0, Landroid/widget/CheckBox;
 
     move-object v1, v0
 
-    .line 334
+    .line 283
     .local v1, checkBox:Landroid/widget/CheckBox;
     invoke-virtual {v1}, Landroid/widget/CheckBox;->isChecked()Z
 
@@ -992,22 +787,22 @@
 
     if-eqz v3, :cond_0
 
-    .line 335
+    .line 284
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_0
     if-ge v2, p3, :cond_2
 
-    .line 336
+    .line 285
     invoke-virtual {p0, v2, v5}, Lcom/android/mms/ui/MessageListAdapter;->setChecked(IZ)V
 
-    .line 335
+    .line 284
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 338
+    .line 287
     .end local v2           #i:I
     :cond_0
     const/4 v2, 0x0
@@ -1016,15 +811,15 @@
     :goto_1
     if-ge v2, p3, :cond_2
 
-    .line 339
+    .line 288
     invoke-virtual {p0, v2, v4}, Lcom/android/mms/ui/MessageListAdapter;->setChecked(IZ)V
 
-    .line 338
+    .line 287
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 342
+    .line 291
     .end local v1           #checkBox:Landroid/widget/CheckBox;
     .end local v2           #i:I
     :cond_1
@@ -1039,13 +834,13 @@
     :goto_2
     invoke-virtual {p0, p2, v3}, Lcom/android/mms/ui/MessageListAdapter;->setChecked(IZ)V
 
-    .line 344
+    .line 293
     :cond_2
     return-void
 
     :cond_3
     move v3, v4
 
-    .line 342
+    .line 291
     goto :goto_2
 .end method

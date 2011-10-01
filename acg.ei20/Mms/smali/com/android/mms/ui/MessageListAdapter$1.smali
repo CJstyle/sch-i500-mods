@@ -37,7 +37,7 @@
     .parameter "x2"
 
     .prologue
-    .line 206
+    .line 155
     iput-object p1, p0, Lcom/android/mms/ui/MessageListAdapter$1;->this$0:Lcom/android/mms/ui/MessageListAdapter;
 
     invoke-direct {p0, p2, p3, p4}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
@@ -52,7 +52,7 @@
     .parameter "eldest"
 
     .prologue
-    .line 209
+    .line 158
     invoke-virtual {p0}, Lcom/android/mms/ui/MessageListAdapter$1;->size()I
 
     move-result v0
