@@ -4,7 +4,10 @@ PATH=$PATH:/opt/android-sdk-linux_x86/tools/
 
 rm -f -r ~/apktool
 
-# FRAMEWORK-RES
+# FRAMEWORK-RES.APK
+echo
+echo FRAMEWORK-RES.APK
+echo
 apktool b framework-res
 rm framework-res/dist/framework-res.apk
 cp stock-apks/framework-res.apk framework-res/dist/
@@ -21,6 +24,9 @@ apktool if ./framework-res.apk
 apktool if ./stock-apks/twframework-res.apk
 
 # SERVICES.JAR
+echo
+echo SERVICES.JAR
+echo
 apktool b services.jar.out
 rm services.jar.out/dist/services.jar
 cp stock-apks/services.jar services.jar.out/dist/
@@ -32,6 +38,9 @@ rm -f -r services.jar.out/build
 rm -f -r services.jar.out/dist
 
 # FRAMEWORK.JAR
+echo
+echo FRAMEWORK.JAR
+echo
 apktool b framework.jar.out
 rm framework.jar.out/dist/framework.jar
 cp stock-apks/framework.jar framework.jar.out/dist/
@@ -43,6 +52,9 @@ rm -f -r framework.jar.out/build
 rm -f -r framework.jar.out/dist
 
 # ANDROID.POLICY.JAR
+echo
+echo ANDROID.POLICY.JAR
+echo
 apktool b android.policy.jar.out
 rm android.policy.jar.out/dist/android.policy.jar
 cp stock-apks/android.policy.jar android.policy.jar.out/dist/
@@ -53,7 +65,10 @@ zipalign -f 4 android.policy.jar.out/dist/android.policy.jar ./android.policy.ja
 rm -f -r android.policy.jar.out/build
 rm -f -r android.policy.jar.out/dist
 
-# BROWSER
+# BROWSER.APK
+echo
+echo BROWSER.APK
+echo
 apktool b Browser
 rm Browser/dist/Browser.apk
 cp stock-apks/Browser.apk Browser/dist/
@@ -64,18 +79,39 @@ zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build
 rm -f -r Browser/dist
 
-# CAMERA
+# CAMERA.APK
+echo
+echo CAMERA.APK
+echo
 apktool b Camera
 rm Camera/dist/Camera.apk
 cp stock-apks/Camera.apk Camera/dist/
 pushd Camera/build/apk
+zip -u ../../dist/Camera.apk classes.dex
 zip -u ../../dist/Camera.apk resources.arsc
 popd
 zipalign -f 4 Camera/dist/Camera.apk ./Camera.apk
 rm -f -r Camera/build
 rm -f -r Camera/dist
 
-# MMS
+# JOBMANAGER.APK
+echo
+echo JOBMANAGER.APK
+echo
+apktool b JobManager
+rm JobManager/dist/JobManager.apk
+cp stock-apks/JobManager.apk JobManager/dist/
+pushd JobManager/build/apk
+zip -u ../../dist/JobManager.apk classes.dex
+popd
+zipalign -f 4 JobManager/dist/JobManager.apk ./JobManager.apk
+rm -f -r JobManager/build
+rm -f -r JobManager/dist
+
+# MMS.APK
+echo
+echo MMS.APK
+echo
 apktool b Mms
 rm Mms/dist/Mms.apk
 cp stock-apks/Mms.apk Mms/dist/
@@ -87,7 +123,10 @@ zipalign -f 4 Mms/dist/Mms.apk ./Mms.apk
 rm -f -r Mms/build
 rm -f -r Mms/dist
 
-# MUSICPLAYER
+# MUSICPLAYER.APK
+echo
+echo MUSICPLAYER.APK
+echo
 apktool b MusicPlayer
 rm MusicPlayer/dist/MusicPlayer.apk
 cp stock-apks/MusicPlayer.apk MusicPlayer/dist/
@@ -98,7 +137,25 @@ zipalign -f 4 MusicPlayer/dist/MusicPlayer.apk ./MusicPlayer.apk
 rm -f -r MusicPlayer/build
 rm -f -r MusicPlayer/dist
 
-# TOUCHWIZ30LAUNCHER
+# SETTINGS.APK
+echo
+echo SETTINGS.APK
+echo
+apktool b Settings
+rm Settings/dist/Settings.apk
+cp stock-apks/Settings.apk Settings/dist/
+pushd Settings/build/apk
+zip -u ../../dist/Settings.apk classes.dex
+zip -u ../../dist/Settings.apk res/xml/display_settings.xml
+popd
+zipalign -f 4 Settings/dist/Settings.apk ./Settings.apk
+rm -f -r Settings/build
+rm -f -r Settings/dist
+
+# TOUCHWIZ30LAUNCHER.APK
+echo
+echo TOUCHWIZ30LAUNCHER.APK
+echo
 apktool b TouchWiz30Launcher
 rm TouchWiz30Launcher/dist/TouchWiz30Launcher.apk
 cp stock-apks/TouchWiz30Launcher.apk TouchWiz30Launcher/dist/

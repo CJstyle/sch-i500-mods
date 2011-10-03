@@ -8694,6 +8694,7 @@
     :cond_2
     const/16 v0, 0x1a
 
+    goto :cond_3					# djp952: skip special case for power button (0x1A)
     if-ne p1, v0, :cond_3
 
     .line 827
@@ -8975,7 +8976,7 @@
         0x17 -> :sswitch_2
         0x18 -> :sswitch_3
         0x19 -> :sswitch_3
-        0x1a -> :sswitch_0
+        0x1a -> :sswitch_2				#djp952: was sswitch_0. 0x1A = Power button
         0x1b -> :sswitch_2
         0x42 -> :sswitch_2
         0x50 -> :sswitch_1
@@ -9071,6 +9072,7 @@
     :cond_1
     const/16 v0, 0x1a
 
+    goto :cond_4					# djp952: skip special case for power button (0x1A)
     if-ne p1, v0, :cond_4
 
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getFlags()I
@@ -9365,6 +9367,7 @@
         0x17 -> :sswitch_2
         0x18 -> :sswitch_3
         0x19 -> :sswitch_3
+	0x1a -> :sswitch_2					# djp952: Added line. 0x1A = power button
         0x1b -> :sswitch_2
         0x42 -> :sswitch_2
         0x52 -> :sswitch_1

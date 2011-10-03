@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabWidget android:id="@id/buttonbar_installed" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@touchwiz:color/tw_color001" android:gravity="center" android:layout_gravity="center" android:id="@id/buttonbar_text_intallted" android:background="@drawable/buttonbarbackground" android:focusable="true" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="-0.33000004dip" android:text="@string/data_menu" android:drawableTop="@drawable/buttonbaricon_program_list" />
+</TabWidget>

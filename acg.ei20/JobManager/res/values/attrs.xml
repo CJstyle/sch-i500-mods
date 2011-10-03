@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="top_text" format="string" />
+    <attr name="bottom_text" format="string" />
+    <attr name="graph_color" format="color" />
+</resources>

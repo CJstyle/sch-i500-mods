@@ -30,12 +30,25 @@ ANDROID.POLICY.JAR
 ==================
 
 - Modified for addition of Reboot and Recovery power menu options
+- Add back in support for Puzzle lockscreen
 
 BROWSER.APK
 ===========
 
 - Removed all default bookmarks
 - Set default home page to "about:blank"
+
+CAMERA.APK
+==========
+
+- Update MMS settings
+- Remap power button to trigger the shutter rather than locking the controls
+
+JOBMANAGER.APK
+==============
+
+- Don't hide Google Maps, Magic Smoke Live Wallpaper or Dual Clock widget from Task Manager
+- Hide many well-known launchers from Task Manager
 
 MMS.APK
 =======
@@ -47,6 +60,11 @@ MUSICPLAYER.APK
 ===============
 
 - Localize some strings for US English
+
+SETTINGS.APK
+============
+
+- Add "Unlock Screen" settings back to "Display Settings"
 
 TOUCHWIZ30LAUNCHER.APK
 ======================
