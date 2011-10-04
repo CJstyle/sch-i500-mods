@@ -101,6 +101,8 @@
 
 .field private mLockScreen:Landroid/view/View;
 
+.field private mLockscreenType:I
+
 .field private mLowBatteryDialog:Landroid/app/AlertDialog;
 
 .field private mMissedCall:I
@@ -302,6 +304,13 @@
     .line 352
     iput-object p4, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mWindowController:Lcom/android/internal/policy/impl/KeyguardWindowController;
 
+    iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->getLockConfig()I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockscreenType:I
     .line 361
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->getInitialMode()Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
 
@@ -2986,14 +2995,21 @@
     .locals 6
 
     .prologue
-    .line 1241
+    const/4 v2, 0x1
+
+    .line 1174
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockScreenMode:Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;
 
     sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;->PuzzleLock:Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_1
 
-    .line 1242
+    .line 1175
+    iget v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockscreenType:I
+
+    if-ne v0, v2, :cond_0
+
+    .line 1176
     new-instance v0, Lcom/android/internal/policy/impl/PuzzleLockScreen;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mContext:Landroid/content/Context;
@@ -3006,19 +3022,12 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/internal/policy/impl/PuzzleLockScreen;-><init>(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
 
-    .line 1257
+    .line 1203
     :goto_0
     return-object v0
 
-    .line 1247
+    .line 1182
     :cond_0
-    sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockScreenMode:Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;
-
-    sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;->GlassLock:Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;
-
-    if-ne v0, v1, :cond_1
-
-    .line 1248
     new-instance v0, Lcom/android/internal/policy/impl/GlassLockScreen;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mContext:Landroid/content/Context;
@@ -3033,8 +3042,52 @@
 
     goto :goto_0
 
-    .line 1257
+    .line 1188
     :cond_1
+    sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockScreenMode:Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;
+
+    sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;->GlassLock:Lcom/android/internal/policy/impl/LockPatternKeyguardView$LockScreenMode;
+
+    if-ne v0, v1, :cond_3
+
+    .line 1189
+    iget v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockscreenType:I
+
+    if-ne v0, v2, :cond_2
+
+    .line 1190
+    new-instance v0, Lcom/android/internal/policy/impl/PuzzleLockScreen;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+
+    iget-object v4, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mKeyguardScreenCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/internal/policy/impl/PuzzleLockScreen;-><init>(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
+
+    goto :goto_0
+
+    .line 1196
+    :cond_2
+    new-instance v0, Lcom/android/internal/policy/impl/GlassLockScreen;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+
+    iget-object v4, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mKeyguardScreenCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/internal/policy/impl/GlassLockScreen;-><init>(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
+
+    goto :goto_0
+
+    .line 1203
+    :cond_3
     new-instance v0, Lcom/android/internal/policy/impl/LockScreen;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mContext:Landroid/content/Context;
