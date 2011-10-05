@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:id="@id/scoll_custom_eq" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:id="@id/music_setting_linearlayout" android:paddingLeft="5.0dip" android:paddingTop="0.0dip" android:paddingRight="10.0dip" android:paddingBottom="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="vertical" android:id="@id/eq_values" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    </LinearLayout>
-</ScrollView>
