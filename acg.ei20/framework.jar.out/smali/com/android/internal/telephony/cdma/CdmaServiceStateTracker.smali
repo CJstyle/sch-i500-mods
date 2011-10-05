@@ -5590,7 +5590,7 @@
 
     .line 394
     :cond_2
-    const-string v4, "Digital Roaming"
+    const-string v4, "Verizon Wireless"
 
     move-object/from16 v0, p0
 
@@ -5807,7 +5807,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 408
-    const-string v4, "Digital Roaming"
+    const-string v4, "Verizon Wireless"
 
     move-object/from16 v0, p0
 
