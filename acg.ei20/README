@@ -66,6 +66,12 @@ SETTINGS.APK
 
 - Add "Unlock Screen" settings back to "Display Settings"
 
+SYSTEMUI.APK
+============
+
+- NOTE: Was decompiled with "apktool d -r" due to problem linking back to twframework-res.apk
+- Remove full battery notification
+
 TOUCHWIZ30LAUNCHER.APK
 ======================
 

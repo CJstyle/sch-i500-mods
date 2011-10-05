@@ -152,6 +152,20 @@ zipalign -f 4 Settings/dist/Settings.apk ./Settings.apk
 rm -f -r Settings/build
 rm -f -r Settings/dist
 
+# SYSTEMUI.APK
+echo
+echo SYSTEMUI.APK
+echo
+apktool b SystemUI
+rm SystemUI/dist/SystemUI.apk
+cp stock-apks/SystemUI.apk SystemUI/dist/
+pushd SystemUI/build/apk
+zip -u ../../dist/SystemUI.apk classes.dex
+popd
+zipalign -f 4 SystemUI/dist/SystemUI.apk ./SystemUI.apk
+rm -f -r SystemUI/build
+rm -f -r SystemUI/dist
+
 # TOUCHWIZ30LAUNCHER.APK
 echo
 echo TOUCHWIZ30LAUNCHER.APK
