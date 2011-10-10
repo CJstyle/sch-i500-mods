@@ -160,7 +160,7 @@
     sput-object v0, Lcom/sec/android/app/controlpanel/PackageInfo;->mMustBeShownPkgString:[Ljava/lang/String;
 
     .line 74
-    const/16 v0, 0x2B
+    const/16 v0, 0x2C
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -413,6 +413,12 @@
     const/16 v1, 0x2A
 
     const-string v2, "com.android.launcher"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x2B
+
+    const-string v2, "samsung.tw4.nextgen"
 
     aput-object v2, v0, v1
 
