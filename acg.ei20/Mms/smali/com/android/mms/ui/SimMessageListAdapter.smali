@@ -35,7 +35,7 @@
     if-eqz v5, :cond_0
 
     .line 29
-    iget-object v5, p0, Lcom/android/mms/ui/SimMessageListAdapter;->mColumnsMap:Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
+    iget-object v5, p0, Lcom/android/mms/ui/MessageListAdapter;->mColumnsMap:Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
 
     iget v5, v5, Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;->mColumnMsgType:I
 
@@ -45,7 +45,7 @@
 
     .line 30
     .local v4, type:Ljava/lang/String;
-    iget-object v5, p0, Lcom/android/mms/ui/SimMessageListAdapter;->mColumnsMap:Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
+    iget-object v5, p0, Lcom/android/mms/ui/MessageListAdapter;->mColumnsMap:Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;
 
     iget v5, v5, Lcom/android/mms/ui/MessageListAdapter$ColumnsMap;->mColumnMsgId:I
 
@@ -78,7 +78,7 @@
     check-cast p1, Lcom/android/mms/ui/MessageListItem;
 
     .end local p1
-    iget-object v5, p0, Lcom/android/mms/ui/SimMessageListAdapter;->mMsgListItemHandler:Landroid/os/Handler;
+    iget-object v5, p0, Lcom/android/mms/ui/MessageListAdapter;->mMsgListItemHandler:Landroid/os/Handler;
 
     invoke-virtual {p1, v5}, Lcom/android/mms/ui/MessageListItem;->setMsgListItemHandler(Landroid/os/Handler;)V
 

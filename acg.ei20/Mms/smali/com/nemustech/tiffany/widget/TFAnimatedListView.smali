@@ -330,7 +330,7 @@
 
     .line 2505
     .local v5, prevLen:I
-    iget-boolean v6, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mStackFromBottom:Z
+    iget-boolean v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     if-eqz v6, :cond_5
 
@@ -759,7 +759,7 @@
     .line 1707
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -1018,7 +1018,7 @@
     .line 1645
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move/from16 v17, v0
 
@@ -1366,7 +1366,7 @@
 
     .line 1631
     .local v4, drawingTime:J
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->getRetainViewPositions()[Ljava/lang/Object;
 
@@ -1407,7 +1407,7 @@
 
     .line 1635
     .local v2, position:I
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v0, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->getShouldRetainView(I)Landroid/view/View;
 
@@ -1613,7 +1613,7 @@
 
     .line 2698
     :cond_1
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v8, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->getShouldRetainView(I)Landroid/view/View;
 
@@ -1627,7 +1627,7 @@
 
     .line 2700
     .local v0, HORIZONTAL_TRANSLATE_DISTANCE:I
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mFirstPosition:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 2703
     .local v3, first:I
@@ -1690,7 +1690,7 @@
     if-eqz v8, :cond_2
 
     .line 2718
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v8, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->getShouldRetainView(I)Landroid/view/View;
 
@@ -1701,7 +1701,7 @@
     if-eqz v1, :cond_3
 
     .line 2720
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
@@ -1743,7 +1743,7 @@
     if-eqz v8, :cond_4
 
     .line 2728
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v8, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->getShouldRetainView(I)Landroid/view/View;
 
@@ -1754,7 +1754,7 @@
     if-eqz v1, :cond_5
 
     .line 2730
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
@@ -1818,7 +1818,7 @@
     if-eqz v8, :cond_6
 
     .line 2779
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v8, v4}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->getShouldRetainView(I)Landroid/view/View;
 
@@ -1829,7 +1829,7 @@
     if-eqz v1, :cond_7
 
     .line 2781
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
@@ -1918,7 +1918,7 @@
 
     .line 2584
     :cond_0
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mFirstPosition:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 2585
     .local v3, first:I
@@ -1995,7 +1995,7 @@
     if-ne v7, v10, :cond_1
 
     .line 2604
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     sub-int v8, v4, v3
 
@@ -2033,7 +2033,7 @@
     if-ne v7, v10, :cond_2
 
     .line 2611
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     sub-int v8, v4, v3
 
@@ -2098,7 +2098,7 @@
     if-ne v7, v10, :cond_3
 
     .line 2654
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     sub-int v8, v4, v3
 
@@ -2388,7 +2388,7 @@
 
     .prologue
     .line 1609
-    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mShowAnimationOnDataChange:Z
+    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mShowAnimationOnDataChange:Z
 
     if-eqz v0, :cond_1
 
@@ -2417,7 +2417,7 @@
     invoke-direct {p0, p1}, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->drawRetainView(Landroid/graphics/Canvas;)V
 
     .line 1620
-    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mShowAnimationOnDataChange:Z
+    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mShowAnimationOnDataChange:Z
 
     if-eqz v0, :cond_3
 
@@ -2686,7 +2686,7 @@
     .line 1832
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
 
     move/from16 v21, v0
 
@@ -2694,7 +2694,7 @@
     .local v21, dataChanged:Z
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v5, v0
 
@@ -2723,7 +2723,7 @@
     .line 1845
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mShowAnimationOnDataChange:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mShowAnimationOnDataChange:Z
 
     move v5, v0
 
@@ -2731,7 +2731,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v5, v0
 
@@ -2739,7 +2739,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v5, v0
 
@@ -2764,7 +2764,7 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v5, v0
 
@@ -2806,7 +2806,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v6, v0
 
@@ -3078,7 +3078,7 @@
     .line 1916
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     move v5, v0
 
@@ -3113,7 +3113,7 @@
     .line 1919
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v5, v0
 
@@ -3146,7 +3146,7 @@
     :cond_6
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -3322,7 +3322,7 @@
     .line 1934
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v5, v0
 
@@ -3429,7 +3429,7 @@
     .line 1956
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     move v5, v0
 
@@ -3488,7 +3488,7 @@
     .line 1960
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -3507,7 +3507,7 @@
     .line 1962
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v5, v0
 
@@ -3529,7 +3529,7 @@
     :cond_f
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -3581,7 +3581,7 @@
     .line 1976
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -3676,7 +3676,7 @@
     .line 1987
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -3695,7 +3695,7 @@
     .line 1989
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v5, v0
 
@@ -3746,7 +3746,7 @@
     .line 2000
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v5, v0
 
@@ -3781,7 +3781,7 @@
     :cond_15
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -3995,7 +3995,7 @@
     :cond_18
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -4054,7 +4054,7 @@
     .line 2036
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -4196,7 +4196,7 @@
     .line 2050
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -4450,7 +4450,7 @@
     .line 2088
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v5, v0
 
@@ -4700,7 +4700,7 @@
     :cond_2a
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     move v5, v0
 
@@ -4841,7 +4841,7 @@
     .line 2130
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -5175,7 +5175,7 @@
     .local v30, distortion:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -5298,7 +5298,7 @@
     .line 2192
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -5514,7 +5514,7 @@
     .line 2223
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v5, v0
 
@@ -5587,7 +5587,7 @@
     .line 2226
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mDividerHeight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v5, v0
 
@@ -5766,7 +5766,7 @@
     .line 2247
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -5884,7 +5884,7 @@
     .line 2264
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -6315,7 +6315,7 @@
     .line 2307
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -6431,7 +6431,7 @@
     .line 2335
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -6608,7 +6608,7 @@
     .restart local v12       #anchorView:Landroid/view/View;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -6942,7 +6942,7 @@
     .line 2389
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v5, v0
 
@@ -7162,7 +7162,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v6, v0
 
@@ -7338,7 +7338,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object v6, v0
 

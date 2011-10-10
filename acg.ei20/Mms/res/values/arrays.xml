@@ -79,6 +79,18 @@
         <item>warning</item>
         <item>free</item>
     </string-array>
+    <string-array name="cmas_font_size_Array">
+        <item>Once</item>
+        <item>Every 2 minutes</item>
+        <item>Every 15 minutes</item>
+        <item>Off</item>
+    </string-array>
+    <string-array name="cmas_font_size_Array_values">
+        <item>1</item>
+        <item>2</item>
+        <item>15</item>
+        <item>0</item>
+    </string-array>
     <string-array name="prefEntries_vibrateWhen">
         <item>Always</item>
         <item>Only when silent</item>

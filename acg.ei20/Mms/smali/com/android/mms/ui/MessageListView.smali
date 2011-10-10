@@ -160,7 +160,7 @@
     :cond_2
     iget-object v5, p0, Lcom/android/mms/ui/MessageListView;->mMsgListAdapter:Lcom/android/mms/ui/MessageListAdapter;
 
-    const v6, 0x7f080038
+    const v6, 0x7f08005d
 
     invoke-virtual {v4, v6}, Lcom/android/mms/ui/MessageListItem;->findViewById(I)Landroid/view/View;
 

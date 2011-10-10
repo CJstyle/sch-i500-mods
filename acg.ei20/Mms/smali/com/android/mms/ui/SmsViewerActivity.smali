@@ -1294,12 +1294,12 @@
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SmsViewerActivity;->requestWindowFeature(I)Z
 
     .line 337
-    const v1, 0x7f030034
+    const v1, 0x7f030037
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SmsViewerActivity;->setContentView(I)V
 
     .line 339
-    const v1, 0x7f080095
+    const v1, 0x7f0800ba
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SmsViewerActivity;->findViewById(I)Landroid/view/View;
 
@@ -1322,7 +1322,7 @@
 
     .line 346
     :goto_0
-    const v1, 0x7f0800ad
+    const v1, 0x7f0800d2
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SmsViewerActivity;->findViewById(I)Landroid/view/View;
 
@@ -1337,7 +1337,7 @@
 
     .line 343
     :cond_0
-    const v1, 0x7f0800b7
+    const v1, 0x7f0800dc
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SmsViewerActivity;->findViewById(I)Landroid/view/View;
 

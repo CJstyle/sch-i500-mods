@@ -71,7 +71,7 @@
     iput v0, p0, Lcom/android/mms/ui/SlideshowPresenter;->mLocation:I
 
     .line 86
-    iget-object v0, p0, Lcom/android/mms/ui/SlideshowPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v0, p0, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v0, Lcom/android/mms/model/SlideshowModel;
 
@@ -153,7 +153,7 @@
 
     .line 562
     .local v0, index:I
-    iget-object v1, p0, Lcom/android/mms/ui/SlideshowPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v1, p0, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v1, Lcom/android/mms/model/SlideshowModel;
 
@@ -166,7 +166,7 @@
     if-ge v0, v1, :cond_1
 
     .line 564
-    iget-object v1, p0, Lcom/android/mms/ui/SlideshowPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v1, p0, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v1, Lcom/android/mms/model/SlideshowModel;
 
@@ -386,7 +386,7 @@
 
     .prologue
     .line 482
-    iget-object v1, p0, Lcom/android/mms/ui/SlideshowPresenter;->mView:Lcom/android/mms/ui/ViewInterface;
+    iget-object v1, p0, Lcom/android/mms/ui/Presenter;->mView:Lcom/android/mms/ui/ViewInterface;
 
     check-cast v1, Lcom/android/mms/ui/SlideViewInterface;
 
@@ -504,11 +504,11 @@
 
     .prologue
     .line 134
-    iget-object v0, p0, Lcom/android/mms/ui/SlideshowPresenter;->mView:Lcom/android/mms/ui/ViewInterface;
+    iget-object v0, p0, Lcom/android/mms/ui/Presenter;->mView:Lcom/android/mms/ui/ViewInterface;
 
     check-cast v0, Lcom/android/mms/ui/SlideViewInterface;
 
-    iget-object v1, p0, Lcom/android/mms/ui/SlideshowPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v1, p0, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v1, Lcom/android/mms/model/SlideshowModel;
 
@@ -710,7 +710,7 @@
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
     move-object v15, v0
 
@@ -1513,7 +1513,7 @@
     iput-boolean v6, p0, Lcom/android/mms/ui/SlideshowPresenter;->mHasAudio:Z
 
     .line 162
-    iget-object v1, p0, Lcom/android/mms/ui/SlideshowPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v1, p0, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v1, Lcom/android/mms/model/SlideshowModel;
 
@@ -1619,9 +1619,9 @@
     invoke-static {v6, v7, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 185
-    iget-object v6, p0, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
-    iget-object v7, p0, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
     const v8, 0x7f090029
 
@@ -1734,9 +1734,9 @@
     invoke-static {v6, v7, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 191
-    iget-object v6, p0, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
-    iget-object v7, p0, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
     const v8, 0x7f090029
 

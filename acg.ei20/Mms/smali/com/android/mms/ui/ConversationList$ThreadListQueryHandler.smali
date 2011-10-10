@@ -25,13 +25,13 @@
     .parameter "contentResolver"
 
     .prologue
-    .line 887
+    .line 974
     iput-object p1, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
-    .line 888
+    .line 975
     invoke-direct {p0, p2}, Landroid/content/AsyncQueryHandler;-><init>(Landroid/content/ContentResolver;)V
 
-    .line 889
+    .line 976
     return-void
 .end method
 
@@ -44,32 +44,32 @@
     .parameter "result"
 
     .prologue
-    .line 989
+    .line 1076
     packed-switch p1, :pswitch_data_0
 
-    .line 1010
+    .line 1097
     :goto_0
     return-void
 
-    .line 992
+    .line 1079
     :pswitch_0
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v0}, Lcom/android/mms/data/Conversation;->init(Landroid/content/Context;)V
 
-    .line 1000
+    .line 1087
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v0}, Lcom/android/mms/transaction/MessagingNotification;->blockingUpdateAllNotifications(Landroid/content/Context;)V
 
-    .line 1003
+    .line 1090
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v0}, Lcom/android/mms/ui/ConversationList;->access$200(Lcom/android/mms/ui/ConversationList;)V
 
     goto :goto_0
 
-    .line 989
+    .line 1076
     :pswitch_data_0
     .packed-switch 0x70a
         :pswitch_0
@@ -89,10 +89,10 @@
 
     const-string v6, "Mms/ConversationList"
 
-    .line 893
+    .line 980
     sparse-switch p1, :sswitch_data_0
 
-    .line 983
+    .line 1070
     const-string v4, "Mms/ConversationList"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -115,12 +115,12 @@
 
     invoke-static {v6, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 985
+    .line 1072
     .end local p2
     :goto_0
     return-void
 
-    .line 895
+    .line 982
     .restart local p2
     :sswitch_0
     const-string v4, "Mms/ConversationList"
@@ -129,7 +129,7 @@
 
     invoke-static {v6, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 898
+    .line 985
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4}, Lcom/android/mms/ui/ConversationList;->access$800(Lcom/android/mms/ui/ConversationList;)Lcom/nemustech/tiffany/widget/TFListView;
@@ -138,10 +138,10 @@
 
     invoke-virtual {v4, v7}, Lcom/nemustech/tiffany/widget/TFListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 900
+    .line 987
     const/4 v0, 0x0
 
-    .line 901
+    .line 988
     .local v0, fakeCursorCount:I
     if-eqz p3, :cond_0
 
@@ -149,7 +149,7 @@
 
     move-result v0
 
-    .line 904
+    .line 991
     :cond_0
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
@@ -161,12 +161,12 @@
 
     invoke-virtual {v4, v5}, Lcom/android/mms/ui/ConversationList;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 905
+    .line 992
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-virtual {v4, v7}, Lcom/android/mms/ui/ConversationList;->setProgressBarIndeterminateVisibility(Z)V
 
-    .line 909
+    .line 996
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4}, Lcom/android/mms/ui/ConversationList;->access$600(Lcom/android/mms/ui/ConversationList;)Lcom/android/mms/ui/ConversationListAdapter;
@@ -175,12 +175,12 @@
 
     invoke-virtual {v4, p3}, Lcom/android/mms/ui/ConversationListAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 912
+    .line 999
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4, v0, v7}, Lcom/android/mms/ui/ConversationList;->access$1500(Lcom/android/mms/ui/ConversationList;IZ)V
 
-    .line 915
+    .line 1002
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     const-wide/16 v5, 0xc8
@@ -189,7 +189,7 @@
 
     goto :goto_0
 
-    .line 920
+    .line 1007
     .end local v0           #fakeCursorCount:I
     :sswitch_1
     const-string v4, "Mms/ConversationList"
@@ -198,7 +198,7 @@
 
     invoke-static {v6, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 923
+    .line 1010
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4}, Lcom/android/mms/ui/ConversationList;->access$800(Lcom/android/mms/ui/ConversationList;)Lcom/nemustech/tiffany/widget/TFListView;
@@ -207,10 +207,10 @@
 
     invoke-virtual {v4, v8}, Lcom/nemustech/tiffany/widget/TFListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 925
+    .line 1012
     const/4 v1, 0x0
 
-    .line 926
+    .line 1013
     .local v1, fullCursorCount:I
     if-eqz p3, :cond_1
 
@@ -218,7 +218,7 @@
 
     move-result v1
 
-    .line 929
+    .line 1016
     :cond_1
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
@@ -230,12 +230,12 @@
 
     invoke-virtual {v4, v5}, Lcom/android/mms/ui/ConversationList;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 930
+    .line 1017
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-virtual {v4, v7}, Lcom/android/mms/ui/ConversationList;->setProgressBarIndeterminateVisibility(Z)V
 
-    .line 934
+    .line 1021
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4}, Lcom/android/mms/ui/ConversationList;->access$600(Lcom/android/mms/ui/ConversationList;)Lcom/android/mms/ui/ConversationListAdapter;
@@ -244,17 +244,17 @@
 
     invoke-virtual {v4, p3}, Lcom/android/mms/ui/ConversationListAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 937
+    .line 1024
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4, v1}, Lcom/android/mms/ui/ConversationList;->access$1700(Lcom/android/mms/ui/ConversationList;I)V
 
-    .line 940
+    .line 1027
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4, v1, v8}, Lcom/android/mms/ui/ConversationList;->access$1500(Lcom/android/mms/ui/ConversationList;IZ)V
 
-    .line 945
+    .line 1032
     sget-object v4, Lcom/android/mms/ui/ConversationListDel;->isDeleting:Ljava/lang/Boolean;
 
     invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
@@ -263,19 +263,19 @@
 
     if-ne v8, v4, :cond_2
 
-    .line 946
+    .line 1033
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v4
 
     sput-object v4, Lcom/android/mms/ui/ConversationListDel;->isDeleting:Ljava/lang/Boolean;
 
-    .line 947
+    .line 1034
     sget-object v4, Lcom/android/mms/ui/ConversationListDel;->isDeleting:Ljava/lang/Boolean;
 
     invoke-static {v4}, Lcom/android/mms/ui/ConversationList;->changeConversationListItemDataStyle(Ljava/lang/Boolean;)V
 
-    .line 952
+    .line 1039
     :cond_2
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
@@ -293,7 +293,7 @@
 
     invoke-virtual {v4, v7}, Lcom/nemustech/tiffany/widget/TFListView;->setSelection(I)V
 
-    .line 957
+    .line 1044
     :cond_3
     :goto_1
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
@@ -304,12 +304,12 @@
 
     if-eqz v4, :cond_4
 
-    .line 958
+    .line 1045
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4, v7}, Lcom/android/mms/ui/ConversationList;->access$2202(Lcom/android/mms/ui/ConversationList;Z)Z
 
-    .line 964
+    .line 1051
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v4}, Lcom/android/mms/ui/ConversationList;->access$900(Lcom/android/mms/ui/ConversationList;)Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;
@@ -320,7 +320,7 @@
 
     invoke-static {v4, v5}, Lcom/android/mms/data/Conversation;->asyncDeleteObsoleteThreads(Landroid/content/AsyncQueryHandler;I)V
 
-    .line 971
+    .line 1058
     :cond_4
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
@@ -328,7 +328,7 @@
 
     goto/16 :goto_0
 
-    .line 953
+    .line 1040
     :cond_5
     iget-object v4, p0, Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;->this$0:Lcom/android/mms/ui/ConversationList;
 
@@ -356,7 +356,7 @@
 
     goto :goto_1
 
-    .line 975
+    .line 1062
     .end local v1           #fullCursorCount:I
     :sswitch_2
     check-cast p2, Ljava/lang/Long;
@@ -366,7 +366,7 @@
 
     move-result-wide v2
 
-    .line 976
+    .line 1063
     .local v2, threadId:J
     new-instance v4, Lcom/android/mms/ui/ConversationList$DeleteThreadListener;
 
@@ -416,7 +416,7 @@
 
     goto :goto_3
 
-    .line 893
+    .line 980
     nop
 
     :sswitch_data_0

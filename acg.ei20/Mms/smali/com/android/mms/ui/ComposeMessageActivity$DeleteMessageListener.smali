@@ -34,12 +34,12 @@
     .parameter "deleteLocked"
 
     .prologue
-    .line 873
+    .line 877
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 874
+    .line 878
     const-string v0, "mms"
 
     invoke-virtual {v0, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -48,7 +48,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 875
+    .line 879
     sget-object v0, Landroid/provider/Telephony$Mms;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p2, p3}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
@@ -57,14 +57,14 @@
 
     iput-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->mDeleteUri:Landroid/net/Uri;
 
-    .line 879
+    .line 883
     :goto_0
     iput-boolean p5, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->mDeleteLocked:Z
 
-    .line 880
+    .line 884
     return-void
 
-    .line 877
+    .line 881
     :cond_0
     sget-object v0, Landroid/provider/Telephony$Sms;->CONTENT_URI:Landroid/net/Uri;
 
@@ -84,18 +84,18 @@
     .parameter "deleteLocked"
 
     .prologue
-    .line 868
+    .line 872
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 869
+    .line 873
     iput-object p2, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->mDeleteUri:Landroid/net/Uri;
 
-    .line 870
+    .line 874
     iput-boolean p3, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->mDeleteLocked:Z
 
-    .line 871
+    .line 875
     return-void
 .end method
 
@@ -111,7 +111,7 @@
 
     const/4 v2, 0x0
 
-    .line 883
+    .line 887
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2000(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;
@@ -133,19 +133,19 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/mms/ui/ComposeMessageActivity$BackgroundQueryHandler;->startDelete(ILjava/lang/Object;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 887
+    .line 891
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0, v8}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2102(Lcom/android/mms/ui/ComposeMessageActivity;Z)Z
 
-    .line 890
+    .line 894
     const-string v0, "ril.sms.gcf-mode"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 892
+    .line 896
     .local v6, GcfMode:Ljava/lang/String;
     const-string v0, "On"
 
@@ -155,35 +155,35 @@
 
     if-eqz v0, :cond_0
 
-    .line 894
+    .line 898
     const-string v0, "Mms/compose"
 
     const-string v1, "GCF Mode On -  DB Count Reset"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 895
+    .line 899
     sput v8, Lcom/android/mms/MmsConfig;->SMS_DB_COUNT:I
 
-    .line 897
+    .line 901
     new-instance v7, Landroid/content/Intent;
 
     const-string v0, "android.intent.action.GCF_DEVICE_STORAGE_OK"
 
     invoke-direct {v7, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 898
+    .line 902
     .local v7, intent:Landroid/content/Intent;
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$DeleteMessageListener;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v0, v7}, Lcom/android/mms/ui/ComposeMessageActivity;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 902
+    .line 906
     .end local v7           #intent:Landroid/content/Intent;
     :cond_0
     return-void
 
-    .line 883
+    .line 887
     .end local v6           #GcfMode:Ljava/lang/String;
     :cond_1
     const-string v4, "locked=0"

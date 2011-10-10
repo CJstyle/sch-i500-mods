@@ -24,6 +24,10 @@
 
 .field private static mRId_com_android_internal_R_drawable_list_selector_background:I
 
+.field private static mRId_com_android_internal_R_drawable_overscroll_edge:I
+
+.field private static mRId_com_android_internal_R_drawable_overscroll_glow:I
+
 .field private static mRId_com_android_internal_R_layout_list_content:I
 
 .field private static mRId_com_android_internal_R_layout_simple_list_item_1:I
@@ -94,9 +98,9 @@
     .locals 6
 
     .prologue
-    const/4 v5, 0x3
+    const/4 v5, 0x4
 
-    const/4 v4, 0x4
+    const/4 v4, 0x3
 
     const/4 v3, 0x2
 
@@ -111,163 +115,175 @@
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleLoadFlag:I
 
     .line 54
-    sput v4, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
+    const/4 v0, 0x6
 
-    .line 473
+    sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
+
+    .line 483
     const v0, 0x101006a
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_absListViewStyle:I
 
-    .line 474
+    .line 484
     const v0, 0x1010070
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_galleryStyle:I
 
-    .line 475
+    .line 485
     const v0, 0x1010071
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_gridViewStyle:I
 
-    .line 476
+    .line 486
     const v0, 0x1010074
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_listViewStyle:I
 
-    .line 477
+    .line 487
     const v0, 0x1010080
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_scrollViewStyle:I
 
-    .line 478
+    .line 488
     const v0, 0x1080062
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_list_selector_background:I
 
-    .line 479
+    .line 489
     const v0, 0x109003b
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_list_content:I
 
-    .line 480
+    .line 490
     const v0, 0x1090003
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_list_item_1:I
 
-    .line 481
+    .line 491
     const v0, 0x1090009
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_spinner_dropdown_item:I
 
-    .line 482
+    .line 492
     const v0, 0x1090008
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_spinner_item:I
 
-    .line 483
-    const v0, 0x109006b
+    .line 493
+    const v0, 0x1090069
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_typing_filter:I
 
-    .line 484
-    const v0, 0x103006d
+    .line 494
+    const v0, 0x1030071
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_style_Animation_TypingFilter:I
 
-    .line 485
-    const v0, 0x103006e
+    .line 495
+    const v0, 0x1030072
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_style_Animation_TypingFilterRestore:I
 
-    .line 486
+    .line 496
     sget-object v0, Lcom/android/internal/R$styleable;->AbsListView:[I
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView:[I
 
-    .line 487
+    .line 497
     sput v2, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView_drawSelectorOnTop:I
 
-    .line 488
+    .line 498
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView_listSelector:I
 
-    .line 489
+    .line 499
     sget-object v0, Lcom/android/internal/R$styleable;->AbsSpinner:[I
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsSpinner:[I
 
-    .line 490
+    .line 500
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsSpinner_entries:I
 
-    .line 491
+    .line 501
     sget-object v0, Lcom/android/internal/R$styleable;->Gallery:[I
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery:[I
 
-    .line 492
+    .line 502
     sput v2, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_animationDuration:I
 
-    .line 493
+    .line 503
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_gravity:I
 
-    .line 494
+    .line 504
     sput v3, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_spacing:I
 
-    .line 495
-    sput v5, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_unselectedAlpha:I
+    .line 505
+    sput v4, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_unselectedAlpha:I
 
-    .line 496
+    .line 506
     sget-object v0, Lcom/android/internal/R$styleable;->GridView:[I
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView:[I
 
-    .line 497
+    .line 507
     sput v2, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_horizontalSpacing:I
 
-    .line 498
+    .line 508
     sput v3, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_verticalSpacing:I
 
-    .line 499
-    sput v5, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_stretchMode:I
+    .line 509
+    sput v4, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_stretchMode:I
 
-    .line 500
-    sput v4, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_columnWidth:I
+    .line 510
+    sput v5, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_columnWidth:I
 
-    .line 501
+    .line 511
     const/4 v0, 0x5
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_numColumns:I
 
-    .line 502
+    .line 512
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_gravity:I
 
-    .line 503
+    .line 513
     sget-object v0, Lcom/android/internal/R$styleable;->ListView:[I
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView:[I
 
-    .line 504
+    .line 514
     sput v2, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_divider:I
 
-    .line 505
+    .line 515
     sput v3, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_dividerHeight:I
 
-    .line 506
+    .line 516
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_entries:I
 
-    .line 507
+    .line 517
     const/4 v0, 0x5
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_footerDividersEnabled:I
 
-    .line 508
-    sput v4, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_headerDividersEnabled:I
+    .line 518
+    sput v5, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_headerDividersEnabled:I
 
-    .line 509
+    .line 519
     sget-object v0, Lcom/android/internal/R$styleable;->ScrollView:[I
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ScrollView:[I
 
-    .line 510
+    .line 520
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ScrollView_fillViewport:I
+
+    .line 521
+    const v0, 0x1080238
+
+    sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_edge:I
+
+    .line 522
+    const v0, 0x1080239
+
+    sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_glow:I
 
     return-void
 .end method
@@ -276,10 +292,10 @@
     .locals 0
 
     .prologue
-    .line 110
+    .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 118
+    .line 120
     return-void
 .end method
 
@@ -292,7 +308,7 @@
 
     const-string v4, "TFResourceBroker"
 
-    .line 256
+    .line 260
     const-string v1, "TFResourceBroker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -315,15 +331,15 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 258
+    .line 262
     sparse-switch p0, :sswitch_data_0
 
-    .line 349
+    .line 355
     :cond_0
     :goto_0
     return-void
 
-    .line 263
+    .line 267
     :sswitch_0
     :try_start_0
     const-string v1, "TFResourceBroker"
@@ -348,7 +364,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 264
+    .line 268
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
 
     and-int/lit8 v1, v1, 0x1
@@ -361,10 +377,10 @@
 
     if-nez v1, :cond_0
 
-    .line 266
+    .line 270
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->initAttr()V
 
-    .line 267
+    .line 271
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleLoadFlag:I
 
     or-int/lit8 v1, v1, 0x1
@@ -380,13 +396,13 @@
 
     goto :goto_0
 
-    .line 333
+    .line 339
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 334
+    .line 340
     .local v0, e:Ljava/lang/ClassNotFoundException;
     const-string v1, "TFResourceBroker"
 
@@ -412,7 +428,7 @@
 
     goto :goto_0
 
-    .line 271
+    .line 277
     .end local v0           #e:Ljava/lang/ClassNotFoundException;
     :sswitch_1
     :try_start_1
@@ -438,7 +454,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 272
+    .line 278
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
 
     and-int/lit8 v1, v1, 0x2
@@ -451,10 +467,10 @@
 
     if-nez v1, :cond_0
 
-    .line 274
+    .line 280
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->initDrawable()V
 
-    .line 275
+    .line 281
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleLoadFlag:I
 
     or-int/lit8 v1, v1, 0x2
@@ -470,13 +486,13 @@
 
     goto :goto_0
 
-    .line 335
+    .line 341
     :catch_1
     move-exception v1
 
     move-object v0, v1
 
-    .line 336
+    .line 342
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v1, "TFResourceBroker"
 
@@ -500,12 +516,12 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 337
+    .line 343
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
     goto/16 :goto_0
 
-    .line 283
+    .line 289
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :sswitch_2
     :try_start_2
@@ -531,7 +547,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 284
+    .line 290
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
 
     and-int/lit8 v1, v1, 0x4
@@ -544,10 +560,10 @@
 
     if-nez v1, :cond_0
 
-    .line 286
+    .line 292
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->initLayout()V
 
-    .line 287
+    .line 293
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleLoadFlag:I
 
     or-int/lit8 v1, v1, 0x4
@@ -563,13 +579,13 @@
 
     goto/16 :goto_0
 
-    .line 338
+    .line 344
     :catch_2
     move-exception v1
 
     move-object v0, v1
 
-    .line 339
+    .line 345
     .local v0, e:Ljava/lang/IllegalAccessException;
     const-string v1, "TFResourceBroker"
 
@@ -593,12 +609,12 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 340
+    .line 346
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
     goto/16 :goto_0
 
-    .line 292
+    .line 298
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :sswitch_3
     :try_start_3
@@ -624,7 +640,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 293
+    .line 299
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
 
     and-int/lit8 v1, v1, 0x8
@@ -637,10 +653,10 @@
 
     if-nez v1, :cond_0
 
-    .line 295
+    .line 301
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->initStyle()V
 
-    .line 296
+    .line 302
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleLoadFlag:I
 
     or-int/lit8 v1, v1, 0x8
@@ -656,13 +672,13 @@
 
     goto/16 :goto_0
 
-    .line 341
+    .line 347
     :catch_3
     move-exception v1
 
     move-object v0, v1
 
-    .line 342
+    .line 348
     .local v0, e:Ljava/lang/NullPointerException;
     const-string v1, "TFResourceBroker"
 
@@ -686,12 +702,12 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 343
+    .line 349
     invoke-virtual {v0}, Ljava/lang/NullPointerException;->printStackTrace()V
 
     goto/16 :goto_0
 
-    .line 323
+    .line 329
     .end local v0           #e:Ljava/lang/NullPointerException;
     :sswitch_4
     :try_start_4
@@ -717,7 +733,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 324
+    .line 330
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
 
     and-int/lit8 v1, v1, 0x10
@@ -734,10 +750,10 @@
 
     if-nez v1, :cond_0
 
-    .line 326
+    .line 332
     invoke-static {}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->initStyleable()V
 
-    .line 327
+    .line 333
     sget v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleLoadFlag:I
 
     or-int/lit8 v1, v1, 0x10
@@ -753,13 +769,13 @@
 
     goto/16 :goto_0
 
-    .line 344
+    .line 350
     :catch_4
     move-exception v1
 
     move-object v0, v1
 
-    .line 345
+    .line 351
     .local v0, e:Ljava/lang/SecurityException;
     const-string v1, "TFResourceBroker"
 
@@ -785,14 +801,14 @@
 
     goto/16 :goto_0
 
-    .line 346
+    .line 352
     .end local v0           #e:Ljava/lang/SecurityException;
     :catch_5
     move-exception v1
 
     move-object v0, v1
 
-    .line 347
+    .line 353
     .local v0, e:Ljava/lang/NoSuchFieldException;
     const-string v1, "TFResourceBroker"
 
@@ -818,7 +834,7 @@
 
     goto/16 :goto_0
 
-    .line 258
+    .line 262
     nop
 
     :sswitch_data_0
@@ -854,6 +870,8 @@
         0x1d -> :sswitch_4
         0x1e -> :sswitch_4
         0x1f -> :sswitch_4
+        0x20 -> :sswitch_1
+        0x21 -> :sswitch_1
         0x100 -> :sswitch_4
         0x101 -> :sswitch_4
         0x102 -> :sswitch_4
@@ -866,19 +884,19 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 123
     sget-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mInstance:Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
     if-nez v0, :cond_0
 
-    .line 122
+    .line 124
     new-instance v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
     invoke-direct {v0}, Lcom/nemustech/tiffany/widget/TFResourceBroker;-><init>()V
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mInstance:Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
-    .line 124
+    .line 126
     :cond_0
     sget-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mInstance:Lcom/nemustech/tiffany/widget/TFResourceBroker;
 
@@ -903,7 +921,7 @@
 
     const-string v4, "TFResourceBroker"
 
-    .line 161
+    .line 163
     const-string v1, "TFResourceBroker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -934,18 +952,18 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
+    .line 166
     const-string v1, "com.android.internal.R$attr"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 165
+    .line 167
     .local v0, c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     if-eqz v0, :cond_0
 
-    .line 166
+    .line 168
     const-string v1, "absListViewStyle"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -958,7 +976,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_absListViewStyle:I
 
-    .line 167
+    .line 169
     const-string v1, "galleryStyle"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -971,7 +989,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_galleryStyle:I
 
-    .line 168
+    .line 170
     const-string v1, "gridViewStyle"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -984,7 +1002,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_gridViewStyle:I
 
-    .line 169
+    .line 171
     const-string v1, "listViewStyle"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -997,7 +1015,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_listViewStyle:I
 
-    .line 170
+    .line 172
     const-string v1, "scrollViewStyle"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1010,7 +1028,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_scrollViewStyle:I
 
-    .line 173
+    .line 175
     :cond_0
     const-string v1, "TFResourceBroker"
 
@@ -1042,12 +1060,12 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
+    .line 177
     return-void
 .end method
 
 .method public static initDrawable()V
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/ClassNotFoundException;,
@@ -1060,9 +1078,11 @@
     .end annotation
 
     .prologue
-    const-string v3, "TFResourceBroker"
+    const/4 v3, 0x0
 
-    .line 178
+    const-string v4, "TFResourceBroker"
+
+    .line 180
     const-string v1, "TFResourceBroker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1091,35 +1111,59 @@
 
     move-result-object v1
 
-    invoke-static {v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
+    .line 182
     const-string v1, "com.android.internal.R$drawable"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 181
+    .line 183
     .local v0, c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     if-eqz v0, :cond_0
 
-    .line 182
+    .line 184
     const-string v1, "list_selector_background"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v1
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
+    invoke-virtual {v1, v3}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
 
     move-result v1
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_list_selector_background:I
 
     .line 185
+    const-string v1, "overscroll_edge"
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
+
+    move-result v1
+
+    sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_edge:I
+
+    .line 186
+    const-string v1, "overscroll_glow"
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
+
+    move-result v1
+
+    sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_glow:I
+
+    .line 189
     :cond_0
     const-string v1, "TFResourceBroker"
 
@@ -1149,9 +1193,9 @@
 
     move-result-object v1
 
-    invoke-static {v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 188
+    .line 192
     return-void
 .end method
 
@@ -1173,7 +1217,7 @@
 
     const-string v4, "TFResourceBroker"
 
-    .line 191
+    .line 195
     const-string v1, "TFResourceBroker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1204,18 +1248,18 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 193
+    .line 197
     const-string v1, "com.android.internal.R$layout"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 194
+    .line 198
     .local v0, c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     if-eqz v0, :cond_0
 
-    .line 195
+    .line 199
     const-string v1, "list_content"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1228,7 +1272,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_list_content:I
 
-    .line 196
+    .line 200
     const-string v1, "simple_list_item_1"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1241,7 +1285,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_list_item_1:I
 
-    .line 197
+    .line 201
     const-string v1, "simple_spinner_dropdown_item"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1254,7 +1298,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_spinner_dropdown_item:I
 
-    .line 198
+    .line 202
     const-string v1, "simple_spinner_item"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1267,7 +1311,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_spinner_item:I
 
-    .line 199
+    .line 203
     const-string v1, "typing_filter"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1280,7 +1324,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_typing_filter:I
 
-    .line 202
+    .line 206
     :cond_0
     const-string v1, "TFResourceBroker"
 
@@ -1312,7 +1356,7 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 204
+    .line 208
     return-void
 .end method
 
@@ -1334,7 +1378,7 @@
 
     const-string v4, "TFResourceBroker"
 
-    .line 207
+    .line 211
     const-string v1, "TFResourceBroker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1365,18 +1409,18 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 209
+    .line 213
     const-string v1, "com.android.internal.R$style"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 210
+    .line 214
     .local v0, c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     if-eqz v0, :cond_0
 
-    .line 211
+    .line 215
     const-string v1, "Animation_TypingFilter"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1389,7 +1433,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_style_Animation_TypingFilter:I
 
-    .line 212
+    .line 216
     const-string v1, "Animation_TypingFilterRestore"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1402,7 +1446,7 @@
 
     sput v1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_style_Animation_TypingFilterRestore:I
 
-    .line 215
+    .line 219
     :cond_0
     const-string v1, "TFResourceBroker"
 
@@ -1434,7 +1478,7 @@
 
     invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 217
+    .line 221
     return-void
 .end method
 
@@ -1458,7 +1502,7 @@
 
     const-class v3, [I
 
-    .line 220
+    .line 224
     const-string v0, "TFResourceBroker"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1489,17 +1533,17 @@
 
     invoke-static {v4, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 222
+    .line 226
     const-string v0, "com.android.internal.R$styleable"
 
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v1
 
-    .line 223
+    .line 227
     if-eqz v1, :cond_0
 
-    .line 224
+    .line 228
     const-class v0, [I
 
     const-string v0, "AbsListView"
@@ -1526,7 +1570,7 @@
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView:[I
 
-    .line 225
+    .line 229
     const-string v0, "AbsListView_drawSelectorOnTop"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1539,7 +1583,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView_drawSelectorOnTop:I
 
-    .line 226
+    .line 230
     const-string v0, "AbsListView_listSelector"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1552,7 +1596,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView_listSelector:I
 
-    .line 227
+    .line 231
     const-class v0, [I
 
     const-string v0, "AbsSpinner"
@@ -1579,7 +1623,7 @@
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsSpinner:[I
 
-    .line 228
+    .line 232
     const-string v0, "AbsSpinner_entries"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1592,7 +1636,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsSpinner_entries:I
 
-    .line 229
+    .line 233
     const-class v0, [I
 
     const-string v0, "Gallery"
@@ -1619,7 +1663,7 @@
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery:[I
 
-    .line 230
+    .line 234
     const-string v0, "Gallery_animationDuration"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1632,7 +1676,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_animationDuration:I
 
-    .line 231
+    .line 235
     const-string v0, "Gallery_gravity"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1645,7 +1689,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_gravity:I
 
-    .line 232
+    .line 236
     const-string v0, "Gallery_spacing"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1658,7 +1702,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_spacing:I
 
-    .line 233
+    .line 237
     const-string v0, "Gallery_unselectedAlpha"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1671,7 +1715,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_unselectedAlpha:I
 
-    .line 234
+    .line 238
     const-class v0, [I
 
     const-string v0, "GridView"
@@ -1698,7 +1742,7 @@
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView:[I
 
-    .line 235
+    .line 239
     const-string v0, "GridView_horizontalSpacing"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1711,7 +1755,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_horizontalSpacing:I
 
-    .line 236
+    .line 240
     const-string v0, "GridView_verticalSpacing"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1724,7 +1768,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_verticalSpacing:I
 
-    .line 237
+    .line 241
     const-string v0, "GridView_stretchMode"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1737,7 +1781,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_stretchMode:I
 
-    .line 238
+    .line 242
     const-string v0, "GridView_columnWidth"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1750,7 +1794,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_columnWidth:I
 
-    .line 239
+    .line 243
     const-string v0, "GridView_numColumns"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1763,7 +1807,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_numColumns:I
 
-    .line 240
+    .line 244
     const-string v0, "GridView_gravity"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1776,7 +1820,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_gravity:I
 
-    .line 241
+    .line 245
     const-class v0, [I
 
     const-string v0, "ListView"
@@ -1803,7 +1847,7 @@
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView:[I
 
-    .line 242
+    .line 246
     const-string v0, "ListView_divider"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1816,7 +1860,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_divider:I
 
-    .line 243
+    .line 247
     const-string v0, "ListView_dividerHeight"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1829,7 +1873,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_dividerHeight:I
 
-    .line 244
+    .line 248
     const-string v0, "ListView_entries"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1842,7 +1886,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_entries:I
 
-    .line 245
+    .line 249
     const-string v0, "ListView_footerDividersEnabled"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1855,7 +1899,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_footerDividersEnabled:I
 
-    .line 246
+    .line 250
     const-string v0, "ListView_headerDividersEnabled"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1868,7 +1912,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_headerDividersEnabled:I
 
-    .line 247
+    .line 251
     const-class v0, [I
 
     const-string v0, "ScrollView"
@@ -1895,7 +1939,7 @@
 
     sput-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ScrollView:[I
 
-    .line 248
+    .line 252
     const-string v0, "ScrollView_fillViewport"
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -1908,7 +1952,7 @@
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ScrollView_fillViewport:I
 
-    .line 251
+    .line 255
     :cond_0
     const-string v0, "TFResourceBroker"
 
@@ -1940,7 +1984,7 @@
 
     invoke-static {v4, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 253
+    .line 257
     return-void
 .end method
 
@@ -1952,7 +1996,7 @@
     .prologue
     const-string v2, "TFResourceBroker"
 
-    .line 414
+    .line 422
     const-string v0, "TFResourceBroker"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1985,15 +2029,15 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 415
+    .line 423
     const/4 v0, 0x0
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
 
-    .line 416
+    .line 424
     packed-switch p0, :pswitch_data_0
 
-    .line 449
+    .line 459
     :pswitch_0
     const-string v0, "TFResourceBroker"
 
@@ -2017,197 +2061,209 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 451
+    .line 461
     :goto_0
     return-void
 
-    .line 417
+    .line 425
     :pswitch_1
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_absListViewStyle:I
 
     goto :goto_0
 
-    .line 418
+    .line 426
     :pswitch_2
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_galleryStyle:I
 
     goto :goto_0
 
-    .line 419
+    .line 427
     :pswitch_3
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_listViewStyle:I
 
     goto :goto_0
 
-    .line 420
+    .line 428
     :pswitch_4
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_scrollViewStyle:I
 
     goto :goto_0
 
-    .line 421
+    .line 429
     :pswitch_5
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_list_selector_background:I
 
     goto :goto_0
 
-    .line 422
+    .line 430
     :pswitch_6
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_list_content:I
 
     goto :goto_0
 
-    .line 423
+    .line 431
     :pswitch_7
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_list_item_1:I
 
     goto :goto_0
 
-    .line 424
+    .line 432
     :pswitch_8
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_spinner_dropdown_item:I
 
     goto :goto_0
 
-    .line 425
+    .line 433
     :pswitch_9
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_spinner_item:I
 
     goto :goto_0
 
-    .line 426
+    .line 434
     :pswitch_a
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_typing_filter:I
 
     goto :goto_0
 
-    .line 427
+    .line 435
     :pswitch_b
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_style_Animation_TypingFilter:I
 
     goto :goto_0
 
-    .line 428
+    .line 436
     :pswitch_c
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_style_Animation_TypingFilterRestore:I
 
     goto :goto_0
 
-    .line 429
+    .line 437
     :pswitch_d
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView_drawSelectorOnTop:I
 
     goto :goto_0
 
-    .line 430
+    .line 438
     :pswitch_e
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView_listSelector:I
 
     goto :goto_0
 
-    .line 431
+    .line 439
     :pswitch_f
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsSpinner_entries:I
 
     goto :goto_0
 
-    .line 432
+    .line 440
     :pswitch_10
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_animationDuration:I
 
     goto :goto_0
 
-    .line 433
+    .line 441
     :pswitch_11
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_gravity:I
 
     goto :goto_0
 
-    .line 434
+    .line 442
     :pswitch_12
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_spacing:I
 
     goto :goto_0
 
-    .line 435
+    .line 443
     :pswitch_13
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_unselectedAlpha:I
 
     goto :goto_0
 
-    .line 436
+    .line 444
     :pswitch_14
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_horizontalSpacing:I
 
     goto :goto_0
 
-    .line 437
+    .line 445
     :pswitch_15
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_verticalSpacing:I
 
     goto :goto_0
 
-    .line 438
+    .line 446
     :pswitch_16
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_stretchMode:I
 
     goto :goto_0
 
-    .line 439
+    .line 447
     :pswitch_17
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_columnWidth:I
 
     goto :goto_0
 
-    .line 440
+    .line 448
     :pswitch_18
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_numColumns:I
 
     goto :goto_0
 
-    .line 441
+    .line 449
     :pswitch_19
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_gravity:I
 
     goto :goto_0
 
-    .line 442
+    .line 450
     :pswitch_1a
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_divider:I
 
     goto :goto_0
 
-    .line 443
+    .line 451
     :pswitch_1b
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_dividerHeight:I
 
     goto :goto_0
 
-    .line 444
+    .line 452
     :pswitch_1c
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_entries:I
 
     goto :goto_0
 
-    .line 445
+    .line 453
     :pswitch_1d
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_footerDividersEnabled:I
 
     goto :goto_0
 
-    .line 446
+    .line 454
     :pswitch_1e
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_headerDividersEnabled:I
 
     goto :goto_0
 
-    .line 447
+    .line 455
     :pswitch_1f
     sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ScrollView_fillViewport:I
 
     goto :goto_0
 
-    .line 416
+    .line 456
+    :pswitch_20
+    sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_edge:I
+
+    goto :goto_0
+
+    .line 457
+    :pswitch_21
+    sput p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_glow:I
+
+    goto :goto_0
+
+    .line 424
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -2242,6 +2298,8 @@
         :pswitch_1d
         :pswitch_1e
         :pswitch_1f
+        :pswitch_20
+        :pswitch_21
     .end packed-switch
 .end method
 
@@ -2253,7 +2311,7 @@
     .prologue
     const-string v2, "TFResourceBroker"
 
-    .line 458
+    .line 468
     const-string v0, "TFResourceBroker"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2286,15 +2344,15 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 459
+    .line 469
     const/4 v0, 0x0
 
     sput v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mModuleNeedFlag:I
 
-    .line 460
+    .line 470
     packed-switch p0, :pswitch_data_0
 
-    .line 468
+    .line 478
     const-string v0, "TFResourceBroker"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2317,47 +2375,47 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 470
+    .line 480
     :goto_0
     return-void
 
-    .line 461
+    .line 471
     :pswitch_0
     sput-object p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView:[I
 
     goto :goto_0
 
-    .line 462
+    .line 472
     :pswitch_1
     sput-object p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsSpinner:[I
 
     goto :goto_0
 
-    .line 463
+    .line 473
     :pswitch_2
     sput-object p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery:[I
 
     goto :goto_0
 
-    .line 464
+    .line 474
     :pswitch_3
     sput-object p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView:[I
 
     goto :goto_0
 
-    .line 465
+    .line 475
     :pswitch_4
     sput-object p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView:[I
 
     goto :goto_0
 
-    .line 466
+    .line 476
     :pswitch_5
     sput-object p1, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ScrollView:[I
 
     goto :goto_0
 
-    .line 460
+    .line 470
     nop
 
     :pswitch_data_0
@@ -2378,17 +2436,17 @@
     .parameter "orid"
 
     .prologue
-    .line 353
+    .line 359
     invoke-static {p1}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->checkModule(I)V
 
-    .line 354
+    .line 360
     const/4 v0, 0x0
 
-    .line 355
+    .line 361
     .local v0, intVal:I
     packed-switch p1, :pswitch_data_0
 
-    .line 388
+    .line 396
     :pswitch_0
     const-string v1, "TFResourceBroker"
 
@@ -2412,197 +2470,209 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 390
+    .line 398
     :goto_0
     return v0
 
-    .line 356
+    .line 362
     :pswitch_1
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_absListViewStyle:I
 
     goto :goto_0
 
-    .line 357
+    .line 363
     :pswitch_2
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_galleryStyle:I
 
     goto :goto_0
 
-    .line 358
+    .line 364
     :pswitch_3
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_listViewStyle:I
 
     goto :goto_0
 
-    .line 359
+    .line 365
     :pswitch_4
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_attr_scrollViewStyle:I
 
     goto :goto_0
 
-    .line 360
+    .line 366
     :pswitch_5
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_list_selector_background:I
 
     goto :goto_0
 
-    .line 361
+    .line 367
     :pswitch_6
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_list_content:I
 
     goto :goto_0
 
-    .line 362
+    .line 368
     :pswitch_7
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_list_item_1:I
 
     goto :goto_0
 
-    .line 363
+    .line 369
     :pswitch_8
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_spinner_dropdown_item:I
 
     goto :goto_0
 
-    .line 364
+    .line 370
     :pswitch_9
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_simple_spinner_item:I
 
     goto :goto_0
 
-    .line 365
+    .line 371
     :pswitch_a
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_layout_typing_filter:I
 
     goto :goto_0
 
-    .line 366
+    .line 372
     :pswitch_b
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_style_Animation_TypingFilter:I
 
     goto :goto_0
 
-    .line 367
+    .line 373
     :pswitch_c
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_style_Animation_TypingFilterRestore:I
 
     goto :goto_0
 
-    .line 368
+    .line 374
     :pswitch_d
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView_drawSelectorOnTop:I
 
     goto :goto_0
 
-    .line 369
+    .line 375
     :pswitch_e
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView_listSelector:I
 
     goto :goto_0
 
-    .line 370
+    .line 376
     :pswitch_f
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsSpinner_entries:I
 
     goto :goto_0
 
-    .line 371
+    .line 377
     :pswitch_10
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_animationDuration:I
 
     goto :goto_0
 
-    .line 372
+    .line 378
     :pswitch_11
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_gravity:I
 
     goto :goto_0
 
-    .line 373
+    .line 379
     :pswitch_12
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_spacing:I
 
     goto :goto_0
 
-    .line 374
+    .line 380
     :pswitch_13
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery_unselectedAlpha:I
 
     goto :goto_0
 
-    .line 375
+    .line 381
     :pswitch_14
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_horizontalSpacing:I
 
     goto :goto_0
 
-    .line 376
+    .line 382
     :pswitch_15
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_verticalSpacing:I
 
     goto :goto_0
 
-    .line 377
+    .line 383
     :pswitch_16
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_stretchMode:I
 
     goto :goto_0
 
-    .line 378
+    .line 384
     :pswitch_17
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_columnWidth:I
 
     goto :goto_0
 
-    .line 379
+    .line 385
     :pswitch_18
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_numColumns:I
 
     goto :goto_0
 
-    .line 380
+    .line 386
     :pswitch_19
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView_gravity:I
 
     goto :goto_0
 
-    .line 381
+    .line 387
     :pswitch_1a
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_divider:I
 
     goto :goto_0
 
-    .line 382
+    .line 388
     :pswitch_1b
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_dividerHeight:I
 
     goto :goto_0
 
-    .line 383
+    .line 389
     :pswitch_1c
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_entries:I
 
     goto :goto_0
 
-    .line 384
+    .line 390
     :pswitch_1d
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_footerDividersEnabled:I
 
     goto :goto_0
 
-    .line 385
+    .line 391
     :pswitch_1e
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView_headerDividersEnabled:I
 
     goto :goto_0
 
-    .line 386
+    .line 392
     :pswitch_1f
     sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ScrollView_fillViewport:I
 
     goto :goto_0
 
-    .line 355
+    .line 393
+    :pswitch_20
+    sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_edge:I
+
+    goto :goto_0
+
+    .line 394
+    :pswitch_21
+    sget v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_glow:I
+
+    goto :goto_0
+
+    .line 361
     nop
 
     :pswitch_data_0
@@ -2639,6 +2709,8 @@
         :pswitch_1d
         :pswitch_1e
         :pswitch_1f
+        :pswitch_20
+        :pswitch_21
     .end packed-switch
 .end method
 
@@ -2647,13 +2719,13 @@
     .parameter "orid"
 
     .prologue
-    .line 394
+    .line 402
     invoke-static {p1}, Lcom/nemustech/tiffany/widget/TFResourceBroker;->checkModule(I)V
 
-    .line 396
+    .line 404
     packed-switch p1, :pswitch_data_0
 
-    .line 404
+    .line 412
     const-string v1, "TFResourceBroker"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2676,17 +2748,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 405
+    .line 413
     const/4 v1, 0x0
 
     new-array v0, v1, [I
 
-    .line 407
+    .line 415
     .local v0, intArrVal:[I
     :goto_0
     return-object v0
 
-    .line 397
+    .line 405
     .end local v0           #intArrVal:[I
     :pswitch_0
     sget-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsListView:[I
@@ -2694,7 +2766,7 @@
     .restart local v0       #intArrVal:[I
     goto :goto_0
 
-    .line 398
+    .line 406
     .end local v0           #intArrVal:[I
     :pswitch_1
     sget-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_AbsSpinner:[I
@@ -2702,7 +2774,7 @@
     .restart local v0       #intArrVal:[I
     goto :goto_0
 
-    .line 399
+    .line 407
     .end local v0           #intArrVal:[I
     :pswitch_2
     sget-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_Gallery:[I
@@ -2710,7 +2782,7 @@
     .restart local v0       #intArrVal:[I
     goto :goto_0
 
-    .line 400
+    .line 408
     .end local v0           #intArrVal:[I
     :pswitch_3
     sget-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_GridView:[I
@@ -2718,7 +2790,7 @@
     .restart local v0       #intArrVal:[I
     goto :goto_0
 
-    .line 401
+    .line 409
     .end local v0           #intArrVal:[I
     :pswitch_4
     sget-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ListView:[I
@@ -2726,7 +2798,7 @@
     .restart local v0       #intArrVal:[I
     goto :goto_0
 
-    .line 402
+    .line 410
     .end local v0           #intArrVal:[I
     :pswitch_5
     sget-object v0, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_styleable_ScrollView:[I
@@ -2734,7 +2806,7 @@
     .restart local v0       #intArrVal:[I
     goto :goto_0
 
-    .line 396
+    .line 404
     :pswitch_data_0
     .packed-switch 0x100
         :pswitch_0
@@ -2754,12 +2826,12 @@
 
     const-string v3, "\n entries = "
 
-    .line 513
+    .line 525
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 515
+    .line 527
     .local v0, sb:Ljava/lang/StringBuilder;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2783,7 +2855,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 516
+    .line 528
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2806,7 +2878,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 517
+    .line 529
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2829,7 +2901,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 518
+    .line 530
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2852,7 +2924,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 519
+    .line 531
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2875,7 +2947,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 520
+    .line 532
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2898,7 +2970,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 521
+    .line 533
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2921,7 +2993,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 522
+    .line 534
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2944,7 +3016,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 523
+    .line 535
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2967,7 +3039,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 524
+    .line 536
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2990,7 +3062,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 525
+    .line 537
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3013,7 +3085,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 526
+    .line 538
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3036,7 +3108,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 527
+    .line 539
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3059,7 +3131,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 528
+    .line 540
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3086,7 +3158,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 529
+    .line 541
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3109,7 +3181,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 530
+    .line 542
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3132,7 +3204,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 531
+    .line 543
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3159,7 +3231,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 532
+    .line 544
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3182,7 +3254,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 533
+    .line 545
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3209,7 +3281,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 534
+    .line 546
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3232,7 +3304,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 535
+    .line 547
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3255,7 +3327,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 536
+    .line 548
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3278,7 +3350,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 537
+    .line 549
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3301,7 +3373,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 538
+    .line 550
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3328,7 +3400,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 539
+    .line 551
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3351,7 +3423,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 540
+    .line 552
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3374,7 +3446,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 541
+    .line 553
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3397,7 +3469,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 542
+    .line 554
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3420,7 +3492,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 543
+    .line 555
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3443,7 +3515,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 544
+    .line 556
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3466,7 +3538,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 545
+    .line 557
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3493,7 +3565,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 546
+    .line 558
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3516,7 +3588,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 547
+    .line 559
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3539,7 +3611,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 548
+    .line 560
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3562,7 +3634,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 549
+    .line 561
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3585,7 +3657,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 550
+    .line 562
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3608,7 +3680,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 551
+    .line 563
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3635,7 +3707,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 552
+    .line 564
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3658,7 +3730,53 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 554
+    .line 565
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "\n overscroll_edge = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    sget v2, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_edge:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 566
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "\n overscroll_glow = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    sget v2, Lcom/nemustech/tiffany/widget/TFResourceBroker;->mRId_com_android_internal_R_drawable_overscroll_glow:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 568
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

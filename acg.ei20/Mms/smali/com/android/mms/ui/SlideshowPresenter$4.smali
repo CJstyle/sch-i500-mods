@@ -102,11 +102,11 @@
     .line 521
     iget-object v1, p0, Lcom/android/mms/ui/SlideshowPresenter$4;->this$0:Lcom/android/mms/ui/SlideshowPresenter;
 
-    iget-object v1, v1, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v1, v1, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/mms/ui/SlideshowPresenter$4;->this$0:Lcom/android/mms/ui/SlideshowPresenter;
 
-    iget-object v2, v2, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v2, v2, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -140,11 +140,11 @@
     .line 526
     iget-object v1, p0, Lcom/android/mms/ui/SlideshowPresenter$4;->this$0:Lcom/android/mms/ui/SlideshowPresenter;
 
-    iget-object v1, v1, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v1, v1, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/mms/ui/SlideshowPresenter$4;->this$0:Lcom/android/mms/ui/SlideshowPresenter;
 
-    iget-object v2, v2, Lcom/android/mms/ui/SlideshowPresenter;->mContext:Landroid/content/Context;
+    iget-object v2, v2, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

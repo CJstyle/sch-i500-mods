@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 3919
+    .line 3979
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$25;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iput-boolean p2, p0, Lcom/android/mms/ui/ComposeMessageActivity$25;->val$toReplaceMedia:Z
@@ -48,12 +48,12 @@
     .parameter "which"
 
     .prologue
-    .line 3921
+    .line 3981
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$25;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget-object v1, p0, Lcom/android/mms/ui/ComposeMessageActivity$25;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
-    invoke-static {v1}, Lcom/android/mms/ui/ComposeMessageActivity;->access$6400(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/AttachmentTypeSelectorAdapter;
+    invoke-static {v1}, Lcom/android/mms/ui/ComposeMessageActivity;->access$6500(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/AttachmentTypeSelectorAdapter;
 
     move-result-object v1
 
@@ -63,8 +63,8 @@
 
     iget-boolean v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$25;->val$toReplaceMedia:Z
 
-    invoke-static {v0, v1, v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$6500(Lcom/android/mms/ui/ComposeMessageActivity;IZ)V
+    invoke-static {v0, v1, v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$6600(Lcom/android/mms/ui/ComposeMessageActivity;IZ)V
 
-    .line 3923
+    .line 3983
     return-void
 .end method

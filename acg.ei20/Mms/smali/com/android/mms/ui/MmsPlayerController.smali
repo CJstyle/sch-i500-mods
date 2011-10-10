@@ -403,7 +403,7 @@
 
     .prologue
     .line 146
-    const v0, 0x7f08007e
+    const v0, 0x7f0800a3
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -432,7 +432,7 @@
 
     .line 152
     :cond_0
-    const v0, 0x7f08007d
+    const v0, 0x7f0800a2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -456,7 +456,7 @@
 
     .line 156
     :cond_1
-    const v0, 0x7f08007f
+    const v0, 0x7f0800a4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -480,7 +480,7 @@
 
     .line 161
     :cond_2
-    const v0, 0x7f080081
+    const v0, 0x7f0800a6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -511,7 +511,7 @@
 
     .line 167
     :cond_3
-    const v0, 0x7f080082
+    const v0, 0x7f0800a7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -522,7 +522,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/MmsPlayerController;->mEndTime:Landroid/widget/TextView;
 
     .line 168
-    const v0, 0x7f080080
+    const v0, 0x7f0800a5
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1160,7 +1160,7 @@
 
     .line 138
     .local v0, inflate:Landroid/view/LayoutInflater;
-    const v1, 0x7f03001d
+    const v1, 0x7f030020
 
     const/4 v2, 0x0
 

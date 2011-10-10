@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3317
+    .line 3357
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$19;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,22 +41,22 @@
     .locals 2
 
     .prologue
-    .line 3319
+    .line 3359
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$19;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1400(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 3320
+    .line 3360
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$19;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1400(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 3321
+    .line 3361
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$19;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$3000(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 3322
+    .line 3362
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$19;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1000(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/AttachmentEditor;
@@ -71,6 +71,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/AttachmentEditor;->update(Lcom/android/mms/data/WorkingMessage;)V
 
-    .line 3323
+    .line 3363
     return-void
 .end method

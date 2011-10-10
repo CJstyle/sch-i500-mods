@@ -341,7 +341,7 @@
     const-string v3, "last"
 
     .line 50
-    iget-object v1, p0, Lcom/android/mms/dom/smil/ElementParallelTimeContainerImpl;->mSmilElement:Lorg/w3c/dom/smil/SMILElement;
+    iget-object v1, p0, Lcom/android/mms/dom/smil/ElementTimeImpl;->mSmilElement:Lorg/w3c/dom/smil/SMILElement;
 
     const-string v2, "endsync"
 
@@ -619,7 +619,7 @@
 
     .line 69
     :cond_0
-    iget-object v0, p0, Lcom/android/mms/dom/smil/ElementParallelTimeContainerImpl;->mSmilElement:Lorg/w3c/dom/smil/SMILElement;
+    iget-object v0, p0, Lcom/android/mms/dom/smil/ElementTimeImpl;->mSmilElement:Lorg/w3c/dom/smil/SMILElement;
 
     const-string v1, "endsync"
 

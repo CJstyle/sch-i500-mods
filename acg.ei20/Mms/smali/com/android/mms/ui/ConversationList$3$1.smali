@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 312
+    .line 322
     iput-object p1, p0, Lcom/android/mms/ui/ConversationList$3$1;->this$1:Lcom/android/mms/ui/ConversationList$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 314
+    .line 324
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList$3$1;->this$1:Lcom/android/mms/ui/ConversationList$3;
@@ -52,7 +52,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 316
+    .line 326
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/mms/ui/ConversationList$3$1;->this$1:Lcom/android/mms/ui/ConversationList$3;
 
@@ -60,6 +60,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/mms/ui/ConversationList;->startActivity(Landroid/content/Intent;)V
 
-    .line 317
+    .line 327
     return-void
 .end method

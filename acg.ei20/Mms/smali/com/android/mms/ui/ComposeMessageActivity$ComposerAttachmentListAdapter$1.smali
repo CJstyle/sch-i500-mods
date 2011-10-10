@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 5527
+    .line 5587
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter$1;->this$1:Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;
 
     iput-object p2, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter$1;->val$attachment:Lcom/android/mms/model/AttachmentModel;
@@ -52,7 +52,7 @@
     .parameter "v"
 
     .prologue
-    .line 5530
+    .line 5590
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter$1;->this$1:Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;
 
     iget-object v0, v0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -61,8 +61,8 @@
 
     iget v2, p0, Lcom/android/mms/ui/ComposeMessageActivity$ComposerAttachmentListAdapter$1;->val$selectPosition:I
 
-    invoke-static {v0, v1, v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8500(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/model/AttachmentModel;I)V
+    invoke-static {v0, v1, v2}, Lcom/android/mms/ui/ComposeMessageActivity;->access$8600(Lcom/android/mms/ui/ComposeMessageActivity;Lcom/android/mms/model/AttachmentModel;I)V
 
-    .line 5531
+    .line 5591
     return-void
 .end method

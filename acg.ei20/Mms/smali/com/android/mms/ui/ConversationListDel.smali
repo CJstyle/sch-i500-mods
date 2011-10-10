@@ -244,7 +244,7 @@
     const/4 v5, 0x0
 
     .line 450
-    const v3, 0x7f03000e
+    const v3, 0x7f030011
 
     invoke-static {p3, v3, v5}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -252,7 +252,7 @@
 
     .line 451
     .local v2, contents:Landroid/view/View;
-    const v3, 0x7f08004a
+    const v3, 0x7f08006f
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -507,7 +507,7 @@
     const/4 v2, 0x1
 
     .line 751
-    const v0, 0x7f03000c
+    const v0, 0x7f03000f
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationListDel;->setContentView(I)V
 
@@ -574,7 +574,7 @@
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationListDel;->startInitQuery()V
 
     .line 766
-    const v0, 0x7f080046
+    const v0, 0x7f08006b
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/ConversationListDel;->findViewById(I)Landroid/view/View;
 
@@ -670,7 +670,7 @@
     const/4 v3, 0x0
 
     .line 239
-    const v1, 0x7f03002b
+    const v1, 0x7f03002e
 
     const/4 v2, 0x0
 
@@ -682,7 +682,7 @@
 
     .line 246
     .local v0, mAllItem:Landroid/widget/LinearLayout;
-    const v1, 0x7f080038
+    const v1, 0x7f08005d
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 

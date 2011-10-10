@@ -88,7 +88,7 @@
 
     .line 102
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v2, 0x7f030021
+    const v2, 0x7f030024
 
     const/4 v3, 0x0
 
@@ -101,7 +101,7 @@
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/NumberPickerDialog;->setView(Landroid/view/View;)V
 
     .line 104
-    const v2, 0x7f080087
+    const v2, 0x7f0800ac
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

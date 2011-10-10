@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2937
+    .line 2945
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$16;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "s"
 
     .prologue
-    .line 2943
+    .line 2951
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$16;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$2300(Lcom/android/mms/ui/ComposeMessageActivity;)Z
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2944
+    .line 2952
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$16;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/data/WorkingMessage;->checkIfAddressContainsEmailToMms(Ljava/util/List;)V
 
-    .line 2946
+    .line 2954
     :cond_0
     return-void
 .end method
@@ -83,7 +83,7 @@
     .parameter "after"
 
     .prologue
-    .line 2939
+    .line 2947
     return-void
 .end method
 
@@ -95,6 +95,6 @@
     .parameter "after"
 
     .prologue
-    .line 2941
+    .line 2949
     return-void
 .end method

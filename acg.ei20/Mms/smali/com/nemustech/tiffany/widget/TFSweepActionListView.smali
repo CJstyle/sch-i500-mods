@@ -676,7 +676,7 @@
     iput v3, p1, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;->mStatus:I
 
     .line 1473
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     iget-object v4, p1, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;->mSweepActionItemAnimation:Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo$SweepActionItemAnimation;
 
@@ -756,7 +756,7 @@
     if-eqz v0, :cond_5
 
     .line 1501
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     iget v4, p1, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;->mItemIndex:I
 
@@ -766,7 +766,7 @@
 
     .line 1503
     :cond_5
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v3}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->start()V
 
@@ -1462,7 +1462,7 @@
     invoke-virtual {v6, v0, v5, v2}, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo$SweepActionItemAnimation;->start(III)V
 
     .line 1440
-    iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v6}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->run()V
 
@@ -2056,7 +2056,7 @@
 
     .line 1644
     .local v6, retVal:I
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mExcessScroll:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     if-eqz v10, :cond_5
 
@@ -2065,7 +2065,7 @@
 
     move-result v10
 
-    iget v11, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mExcessScroll:I
+    iget v11, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     invoke-static {v11}, Ljava/lang/Math;->abs(I)I
 
@@ -2486,13 +2486,13 @@
     :cond_0
     if-nez v0, :cond_3
 
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mTouchMode:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     const/4 v11, 0x4
 
     if-eq v10, v11, :cond_3
 
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mTouchMode:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     const/4 v11, 0x5
 
@@ -2833,7 +2833,7 @@
 
     .line 962
     :cond_c
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mTouchMode:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     const/4 v11, 0x1
 
@@ -2849,11 +2849,11 @@
     .line 964
     const/4 v10, 0x3
 
-    iput v10, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mTouchMode:I
+    iput v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     .line 967
     :cond_d
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mMotionPosition:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     invoke-direct {p0, v10}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->findSweepActionViewInfo(I)Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;
 
@@ -2895,7 +2895,7 @@
     invoke-static {v6, v10, v11}, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;->access$1500(Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;II)V
 
     .line 978
-    iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     iget v11, v6, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;->mItemIndex:I
 
@@ -2904,7 +2904,7 @@
     invoke-virtual {v10, v11, v12}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->putItemAnimation(ILcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimation;)V
 
     .line 979
-    iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v10}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->start()V
 
@@ -2969,13 +2969,13 @@
     :cond_0
     if-nez v0, :cond_1
 
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mTouchMode:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     const/4 v8, 0x4
 
     if-eq v7, v8, :cond_1
 
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mTouchMode:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     const/4 v8, 0x5
 
@@ -3099,7 +3099,7 @@
     if-nez v7, :cond_7
 
     .line 1041
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mMotionPosition:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     invoke-direct {p0, v7}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->findSweepActionViewInfo(I)Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;
 
@@ -3186,7 +3186,7 @@
 
     .line 1061
     :cond_9
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mTouchMode:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     if-ne v7, v10, :cond_a
 
@@ -3198,7 +3198,7 @@
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1063
-    iput v12, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mTouchMode:I
+    iput v12, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     .line 1072
     :cond_a
@@ -3232,7 +3232,7 @@
     invoke-static {v4, v7, v8}, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;->access$1500(Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;II)V
 
     .line 1084
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     iget v8, v4, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;->mItemIndex:I
 
@@ -3241,7 +3241,7 @@
     invoke-virtual {v7, v8, v9}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->putItemAnimation(ILcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimation;)V
 
     .line 1085
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v7}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->start()V
 
@@ -3486,9 +3486,9 @@
 
     .line 1190
     .local v1, childAtMotionPositionIsPressed:Z
-    iget v6, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mMotionPosition:I
+    iget v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mFirstPosition:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     sub-int v0, v6, v7
 
@@ -3528,7 +3528,7 @@
 
     .line 1202
     .local v2, drawSelector:Z
-    iget v6, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mMotionPosition:I
+    iget v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     invoke-direct {p0, v6}, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->findSweepActionViewInfo(I)Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo;
 
@@ -3582,7 +3582,7 @@
     :goto_1
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mSweepActionBarCallback:Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionBarCallback;
 
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView;->mMotionPosition:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     invoke-interface {v6, v7, v3, v5}, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionBarCallback;->onListShouldDrawSelector(IFI)Z
 

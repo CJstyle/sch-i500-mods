@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.mms.ui.MessageContactHeader android:id="@id/msg_contact_header" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/banner" android:background="@drawable/contact_header_background" android:paddingLeft="7.0dip" android:paddingTop="7.0dip" android:paddingRight="7.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="70.0dip">
+        <android.widget.QuickContactBadge android:layout_gravity="center_vertical" android:id="@id/contact_badge" android:layout_marginRight="15.0dip" style="@*android:style/Widget.QuickContactBadge.WindowSmall" />
+        <ScrollView android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.669983sp" android:textColor="#ffffffff" android:id="@id/contact_name" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </ScrollView>
+    </LinearLayout>
+</com.android.mms.ui.MessageContactHeader>

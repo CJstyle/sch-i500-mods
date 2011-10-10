@@ -48,7 +48,7 @@
     .parameter "date"
 
     .prologue
-    const v8, 0x7f02005d
+    const v8, 0x7f020061
 
     .line 64
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -248,7 +248,7 @@
     .line 95
     iget-object v6, p0, Lcom/android/mms/ui/DeliveryReportListItem;->mIconView:Landroid/widget/ImageView;
 
-    const v7, 0x7f02005c
+    const v7, 0x7f020060
 
     invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -305,7 +305,7 @@
     .line 99
     iget-object v6, p0, Lcom/android/mms/ui/DeliveryReportListItem;->mIconView:Landroid/widget/ImageView;
 
-    const v7, 0x7f02005e
+    const v7, 0x7f020062
 
     invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -335,7 +335,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 50
-    const v0, 0x7f08004d
+    const v0, 0x7f080072
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/DeliveryReportListItem;->findViewById(I)Landroid/view/View;
 
@@ -346,7 +346,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/DeliveryReportListItem;->mRecipientView:Landroid/widget/TextView;
 
     .line 51
-    const v0, 0x7f08004e
+    const v0, 0x7f080073
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/DeliveryReportListItem;->findViewById(I)Landroid/view/View;
 
@@ -357,7 +357,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/DeliveryReportListItem;->mStatusView:Landroid/widget/TextView;
 
     .line 53
-    const v0, 0x7f080037
+    const v0, 0x7f08005c
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/DeliveryReportListItem;->findViewById(I)Landroid/view/View;
 
@@ -368,7 +368,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/DeliveryReportListItem;->mDateView:Landroid/widget/TextView;
 
     .line 55
-    const v0, 0x7f08004b
+    const v0, 0x7f080070
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/DeliveryReportListItem;->findViewById(I)Landroid/view/View;
 

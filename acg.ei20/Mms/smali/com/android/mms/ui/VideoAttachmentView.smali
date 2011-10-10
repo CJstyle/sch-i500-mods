@@ -128,7 +128,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 55
-    const v0, 0x7f0800b1
+    const v0, 0x7f0800d6
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/VideoAttachmentView;->findViewById(I)Landroid/view/View;
 
@@ -310,7 +310,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f020091
+    const v3, 0x7f020095
 
     invoke-static {v2, v3}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

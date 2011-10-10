@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 23
+    .line 22
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFListActivity$1;->this$0:Lcom/nemustech/tiffany/widget/TFListActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

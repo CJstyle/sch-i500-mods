@@ -144,7 +144,7 @@
     .line 71
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     move-object v2, v0
 
@@ -156,7 +156,7 @@
     .local v3, cr:Landroid/content/ContentResolver;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     move-object v2, v0
 
@@ -215,7 +215,7 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     .line 79
     const-string v2, "mime_type"
@@ -232,12 +232,12 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     .line 82
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -275,7 +275,7 @@
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -290,7 +290,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -303,7 +303,7 @@
     .line 95
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -325,7 +325,7 @@
     :try_start_2
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -375,7 +375,7 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_2 .. :try_end_2} :catch_1
@@ -411,7 +411,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     move-object v4, v0
 
@@ -427,7 +427,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     move-object v4, v0
 
@@ -616,7 +616,7 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     .line 143
     invoke-virtual {v14, v12}, Lcom/android/mms/util/MessageMimeTypeMap;->getMimeTypeFromExtension(Ljava/lang/String;)Ljava/lang/String;
@@ -627,12 +627,12 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     .line 144
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -655,7 +655,7 @@
     :cond_9
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -669,7 +669,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -682,7 +682,7 @@
     .line 156
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -702,7 +702,7 @@
     :try_start_5
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/VideoModel;->mSrc:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     move-object v2, v0
 
@@ -752,7 +752,7 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
     :try_end_5
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_5 .. :try_end_5} :catch_0
 
@@ -827,7 +827,7 @@
 
     .line 217
     .local v0, cr:Lcom/android/mms/model/ContentRestriction;
-    iget-object v1, p0, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Lcom/android/mms/model/ContentRestriction;->checkVideoContentType(Ljava/lang/String;)V
 
@@ -851,9 +851,9 @@
 
     .line 222
     .local v0, cr:Lcom/android/mms/model/ContentRestriction;
-    iget-object v1, p0, Lcom/android/mms/model/VideoModel;->mContentType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/mms/model/VideoModel;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/android/mms/model/CarrierContentRestriction;->getMmsCreationMode(Landroid/content/Context;)I
 
@@ -949,7 +949,7 @@
     invoke-virtual {p0}, Lcom/android/mms/model/VideoModel;->pauseMusicPlayer()V
 
     .line 195
-    iput-boolean v5, p0, Lcom/android/mms/model/VideoModel;->mVisible:Z
+    iput-boolean v5, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     .line 210
     .end local p1
@@ -978,12 +978,12 @@
     sget-object v0, Lcom/android/mms/model/MediaModel$MediaAction;->STOP:Lcom/android/mms/model/MediaModel$MediaAction;
 
     .line 198
-    iget-short v2, p0, Lcom/android/mms/model/VideoModel;->mFill:S
+    iget-short v2, p0, Lcom/android/mms/model/MediaModel;->mFill:S
 
     if-eq v2, v5, :cond_1
 
     .line 199
-    iput-boolean v6, p0, Lcom/android/mms/model/VideoModel;->mVisible:Z
+    iput-boolean v6, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     goto :goto_0
 
@@ -1001,7 +1001,7 @@
     sget-object v0, Lcom/android/mms/model/MediaModel$MediaAction;->PAUSE:Lcom/android/mms/model/MediaModel$MediaAction;
 
     .line 203
-    iput-boolean v5, p0, Lcom/android/mms/model/VideoModel;->mVisible:Z
+    iput-boolean v5, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     goto :goto_0
 
@@ -1026,10 +1026,10 @@
 
     move-result v2
 
-    iput v2, p0, Lcom/android/mms/model/VideoModel;->mSeekTo:I
+    iput v2, p0, Lcom/android/mms/model/MediaModel;->mSeekTo:I
 
     .line 207
-    iput-boolean v5, p0, Lcom/android/mms/model/VideoModel;->mVisible:Z
+    iput-boolean v5, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     goto :goto_0
 .end method

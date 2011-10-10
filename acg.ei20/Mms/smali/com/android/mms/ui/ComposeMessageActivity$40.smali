@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 6685
+    .line 6772
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$40;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 6689
+    .line 6776
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6690
+    .line 6777
     .local v0, action:Ljava/lang/String;
     const-string v1, "ResponseAxT9Info"
 
@@ -55,7 +55,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 6691
+    .line 6778
     const-string v1, "AxT9IME.isVisibleWindow"
 
     const/4 v2, 0x0
@@ -66,7 +66,7 @@
 
     sput-boolean v1, Lcom/android/mms/ui/ComposeMessageActivity;->isSipVisible:Z
 
-    .line 6694
+    .line 6781
     :cond_0
     return-void
 .end method

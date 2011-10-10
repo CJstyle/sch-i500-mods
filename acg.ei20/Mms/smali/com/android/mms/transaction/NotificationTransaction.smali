@@ -54,7 +54,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/String;-><init>([B)V
 
-    iput-object v1, p0, Lcom/android/mms/transaction/NotificationTransaction;->mId:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/mms/transaction/Transaction;->mId:Ljava/lang/String;
 
     .line 156
     return-void
@@ -134,7 +134,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/String;-><init>([B)V
 
-    iput-object v3, p0, Lcom/android/mms/transaction/NotificationTransaction;->mId:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/mms/transaction/Transaction;->mId:Ljava/lang/String;
 
     .line 95
     new-instance v3, Ljava/lang/String;
@@ -222,7 +222,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/mms/transaction/NotificationTransaction;->mId:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/mms/transaction/Transaction;->mId:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -264,7 +264,7 @@
     :cond_1
     iget-object v3, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContentLocation:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/android/mms/transaction/NotificationTransaction;->mId:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/mms/transaction/Transaction;->mId:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
@@ -284,7 +284,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/mms/transaction/NotificationTransaction;->mId:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/mms/transaction/Transaction;->mId:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -325,7 +325,7 @@
     .line 128
     .end local v2           #isSimbol:I
     :cond_4
-    iget-object v3, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/provider/MMSDomesticHelper;->isDomesticTestMode(Landroid/content/Context;)Z
 
@@ -466,7 +466,7 @@
     .line 274
     new-instance v1, Lcom/google/android/mms/pdu/PduComposer;
 
-    iget-object v2, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2, v0}, Lcom/google/android/mms/pdu/PduComposer;-><init>(Landroid/content/Context;Lcom/google/android/mms/pdu/GenericPdu;)V
 
@@ -486,7 +486,7 @@
     :cond_0
     new-instance v1, Lcom/google/android/mms/pdu/PduComposer;
 
-    iget-object v2, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2, v0}, Lcom/google/android/mms/pdu/PduComposer;-><init>(Landroid/content/Context;Lcom/google/android/mms/pdu/GenericPdu;)V
 
@@ -623,7 +623,7 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 251
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mUri:Landroid/net/Uri;
 
@@ -636,7 +636,7 @@
 
     .line 255
     :cond_1
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x1
 
@@ -644,7 +644,7 @@
 
     .line 257
     :cond_2
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v10}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -655,7 +655,7 @@
     if-eq v10, v11, :cond_3
 
     .line 258
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x2
 
@@ -783,7 +783,7 @@
     invoke-static {v10, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 209
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x2
 
@@ -836,7 +836,7 @@
 
     move-result-object v10
 
-    iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContext:Landroid/content/Context;
+    iget-object v11, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     iget-object v12, p0, Lcom/android/mms/transaction/NotificationTransaction;->mUri:Landroid/net/Uri;
 
@@ -846,7 +846,7 @@
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
 
     .line 251
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mUri:Landroid/net/Uri;
 
@@ -859,7 +859,7 @@
 
     .line 255
     :cond_9
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x1
 
@@ -867,7 +867,7 @@
 
     .line 257
     :cond_a
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v10}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -878,7 +878,7 @@
     if-eq v10, v11, :cond_b
 
     .line 258
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x2
 
@@ -906,7 +906,7 @@
     .line 202
     .local v3, e:Ljava/io/IOException;
     :try_start_4
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x2
 
@@ -940,7 +940,7 @@
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 251
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mUri:Landroid/net/Uri;
 
@@ -953,7 +953,7 @@
 
     .line 255
     :cond_c
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x1
 
@@ -961,7 +961,7 @@
 
     .line 257
     :cond_d
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v10}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -972,7 +972,7 @@
     if-eq v10, v11, :cond_e
 
     .line 258
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x2
 
@@ -998,7 +998,7 @@
     .restart local v7       #status:I
     :cond_f
     :try_start_6
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContext:Landroid/content/Context;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     invoke-static {v10}, Lcom/google/android/mms/pdu/PduPersister;->getPduPersister(Landroid/content/Context;)Lcom/google/android/mms/pdu/PduPersister;
 
@@ -1014,9 +1014,9 @@
 
     .line 217
     .local v9, uri:Landroid/net/Uri;
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContext:Landroid/content/Context;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
-    iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContext:Landroid/content/Context;
+    iget-object v11, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     invoke-virtual {v11}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1031,7 +1031,7 @@
     invoke-static {v10, v11, v12, v13, v14}, Landroid/database/sqlite/SqliteWrapper;->delete(Landroid/content/Context;Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
     .line 221
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mContext:Landroid/content/Context;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mUri:Landroid/net/Uri;
 
@@ -1050,7 +1050,7 @@
     .end local v5           #pdu:Lcom/google/android/mms/pdu/GenericPdu;
     .end local v9           #uri:Landroid/net/Uri;
     :pswitch_1
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x1
 
@@ -1067,7 +1067,7 @@
     :catchall_0
     move-exception v10
 
-    iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v11, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v12, p0, Lcom/android/mms/transaction/NotificationTransaction;->mUri:Landroid/net/Uri;
 
@@ -1080,7 +1080,7 @@
 
     .line 255
     :cond_10
-    iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v11, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v12, 0x1
 
@@ -1088,7 +1088,7 @@
 
     .line 257
     :cond_11
-    iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v11, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v11}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -1099,7 +1099,7 @@
     if-eq v11, v12, :cond_12
 
     .line 258
-    iget-object v11, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v11, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v12, 0x2
 
@@ -1123,7 +1123,7 @@
     .restart local v7       #status:I
     :pswitch_2
     :try_start_7
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v10}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -1132,7 +1132,7 @@
     if-nez v10, :cond_8
 
     .line 239
-    iget-object v10, p0, Lcom/android/mms/transaction/NotificationTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v10, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v11, 0x1
 

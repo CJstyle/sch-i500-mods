@@ -149,7 +149,7 @@
     if-eqz v0, :cond_5
 
     .line 75
-    iget-object v0, p0, Lcom/android/mms/model/AudioModel;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -157,7 +157,7 @@
 
     .line 76
     .local v1, cr:Landroid/content/ContentResolver;
-    iget-object v0, p0, Lcom/android/mms/model/AudioModel;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     const/4 v3, 0x0
 
@@ -217,7 +217,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     .line 108
     :goto_0
@@ -233,10 +233,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/mms/model/AudioModel;->mSrc:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     .line 110
-    iget-object v0, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -293,7 +293,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     goto :goto_0
 
@@ -441,10 +441,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/mms/model/AudioModel;->mSrc:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     .line 143
-    iget-object v0, p0, Lcom/android/mms/model/AudioModel;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -511,7 +511,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
@@ -521,7 +521,7 @@
 
     .line 157
     :cond_8
-    iget-object v0, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     if-nez v0, :cond_9
 
@@ -530,11 +530,11 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     .line 160
     :cond_9
-    iget-object v0, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     if-nez v0, :cond_3
 
@@ -598,7 +598,7 @@
 
     .line 209
     .local v0, cr:Lcom/android/mms/model/ContentRestriction;
-    iget-object v1, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Lcom/android/mms/model/ContentRestriction;->checkAudioContentType(Ljava/lang/String;)V
 
@@ -622,9 +622,9 @@
 
     .line 214
     .local v0, cr:Lcom/android/mms/model/ContentRestriction;
-    iget-object v1, p0, Lcom/android/mms/model/AudioModel;->mContentType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/mms/model/AudioModel;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/android/mms/model/CarrierContentRestriction;->getMmsCreationMode(Landroid/content/Context;)I
 
@@ -751,7 +751,7 @@
 
     move-result v2
 
-    iput v2, p0, Lcom/android/mms/model/AudioModel;->mSeekTo:I
+    iput v2, p0, Lcom/android/mms/model/MediaModel;->mSeekTo:I
 
     goto :goto_0
 .end method

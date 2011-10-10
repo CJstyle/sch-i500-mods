@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 349
+    .line 348
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo$SweepActionItemAnimation$1;->this$2:Lcom/nemustech/tiffany/widget/TFSweepActionListView$SweepActionViewInfo$SweepActionItemAnimation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

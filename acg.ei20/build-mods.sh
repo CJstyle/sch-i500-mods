@@ -116,6 +116,7 @@ apktool b Mms
 rm Mms/dist/Mms.apk
 cp stock-apks/Mms.apk Mms/dist/
 pushd Mms/build/apk
+zip -u ../../dist/Mms.apk classes.dex
 zip -u ../../dist/Mms.apk res/xml/mms_config.xml
 zip -u ../../dist/Mms.apk res/xml/preferences.xml
 popd

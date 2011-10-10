@@ -1,4 +1,4 @@
-.class Lcom/nemustech/tiffany/widget/TFAdapterView$1;
+.class synthetic Lcom/nemustech/tiffany/widget/TFAdapterView$1;
 .super Ljava/lang/Object;
 .source "TFAdapterView.java"
 

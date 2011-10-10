@@ -673,7 +673,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f050002
+    const v1, 0x7f050003
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 

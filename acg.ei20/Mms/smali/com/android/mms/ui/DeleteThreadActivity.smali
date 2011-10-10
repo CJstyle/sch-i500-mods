@@ -364,7 +364,7 @@
     const/4 v5, 0x0
 
     .line 417
-    const v3, 0x7f03000e
+    const v3, 0x7f030011
 
     invoke-static {p3, v3, v5}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -372,7 +372,7 @@
 
     .line 418
     .local v2, contents:Landroid/view/View;
-    const v3, 0x7f08004a
+    const v3, 0x7f08006f
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1101,7 +1101,7 @@
     const/4 v3, 0x0
 
     .line 299
-    const v1, 0x7f080048
+    const v1, 0x7f08006d
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/DeleteThreadActivity;->findViewById(I)Landroid/view/View;
 
@@ -1112,7 +1112,7 @@
     iput-object v1, p0, Lcom/android/mms/ui/DeleteThreadActivity;->mMsgListView:Lcom/android/mms/ui/MessageListView;
 
     .line 301
-    const v1, 0x7f03002b
+    const v1, 0x7f03002e
 
     invoke-static {p0, v1, v4}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1122,7 +1122,7 @@
 
     .line 308
     .local v0, mAllItem:Landroid/widget/LinearLayout;
-    const v1, 0x7f080038
+    const v1, 0x7f08005d
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -1292,7 +1292,7 @@
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/DeleteThreadActivity;->requestWindowFeature(I)Z
 
     .line 456
-    const v0, 0x7f03000d
+    const v0, 0x7f030010
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/DeleteThreadActivity;->setContentView(I)V
 
@@ -1445,7 +1445,7 @@
     invoke-static {v0, v1}, Lcom/android/mms/ui/ConversationListDel;->updateDeletable(J)V
 
     .line 490
-    const v0, 0x7f080046
+    const v0, 0x7f08006b
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/DeleteThreadActivity;->findViewById(I)Landroid/view/View;
 

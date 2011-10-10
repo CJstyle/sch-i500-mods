@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 435
+    .line 457
     iput-object p1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$5;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "which"
 
     .prologue
-    .line 437
+    .line 459
     iget-object v1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$5;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     invoke-virtual {v1}, Lcom/android/mms/ui/MessagingPreferenceActivity;->getApplication()Landroid/app/Application;
@@ -57,14 +57,14 @@
 
     move-result-object v0
 
-    .line 439
+    .line 461
     .local v0, recent:Landroid/provider/SearchRecentSuggestions;
     if-eqz v0, :cond_0
 
-    .line 440
+    .line 462
     invoke-virtual {v0}, Landroid/provider/SearchRecentSuggestions;->clearHistory()V
 
-    .line 442
+    .line 464
     :cond_0
     return-void
 .end method

@@ -56,27 +56,27 @@
     .end annotation
 
     .prologue
-    .line 1264
+    .line 1297
     .local p3, rawAttachments:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/mms/model/AttachmentModel;>;"
     iput-object p1, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->this$0:Lcom/android/mms/ui/MessageOptions;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 1261
+    .line 1294
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mCancelled:Z
 
-    .line 1265
+    .line 1298
     iput-object p2, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mTargetDir:Ljava/lang/String;
 
-    .line 1266
+    .line 1299
     iput-object p3, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mRawAttachments:Ljava/util/ArrayList;
 
-    .line 1267
+    .line 1300
     iput-wide p4, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mMsgId:J
 
-    .line 1269
+    .line 1302
     sget-object v1, Lcom/android/mms/ui/MessageOptions;->mthisContext:Landroid/content/Context;
 
     const-string v2, "power"
@@ -87,7 +87,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 1270
+    .line 1303
     .local v0, powerManager:Landroid/os/PowerManager;
     const v1, 0x20000006
 
@@ -99,7 +99,7 @@
 
     iput-object v1, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 1273
+    .line 1306
     return-void
 .end method
 
@@ -114,10 +114,10 @@
     .end annotation
 
     .prologue
-    .line 1362
+    .line 1395
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 1363
+    .line 1396
     iget-object v0, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     if-eqz v0, :cond_0
@@ -130,12 +130,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1364
+    .line 1397
     iget-object v0, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1366
+    .line 1399
     :cond_0
     return-void
 .end method
@@ -144,15 +144,15 @@
     .locals 10
 
     .prologue
-    .line 1277
+    .line 1310
     iget-object v6, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v6}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 1278
+    .line 1311
     const/4 v4, 0x0
 
-    .line 1281
+    .line 1314
     .local v4, outputStream:Ljava/io/OutputStream;
     const/4 v3, 0x0
 
@@ -167,34 +167,34 @@
 
     if-ge v3, v6, :cond_5
 
-    .line 1282
+    .line 1315
     iget-boolean v6, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mCancelled:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v6, :cond_1
 
-    .line 1350
+    .line 1383
     if-eqz v4, :cond_0
 
-    .line 1351
+    .line 1384
     :try_start_1
     throw v4
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1356
+    .line 1389
     :cond_0
     :goto_1
     iget-object v6, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v6}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1358
+    .line 1391
     :goto_2
     return-void
 
-    .line 1285
+    .line 1318
     :cond_1
     :try_start_2
     iget-object v6, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mRawAttachments:Ljava/util/ArrayList;
@@ -205,7 +205,7 @@
 
     check-cast v0, Lcom/android/mms/model/AttachmentModel;
 
-    .line 1326
+    .line 1359
     .local v0, attach:Lcom/android/mms/model/AttachmentModel;
     const-string v6, "text/plain"
 
@@ -231,7 +231,7 @@
 
     if-nez v6, :cond_3
 
-    .line 1329
+    .line 1362
     iget-wide v6, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mMsgId:J
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -242,10 +242,10 @@
 
     if-lez v6, :cond_3
 
-    .line 1332
+    .line 1365
     const/4 v2, 0x0
 
-    .line 1334
+    .line 1367
     .local v2, errorReason:Ljava/lang/String;
     :try_start_3
     iget-object v6, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->this$0:Lcom/android/mms/ui/MessageOptions;
@@ -262,7 +262,7 @@
 
     move v5, v6
 
-    .line 1335
+    .line 1368
     .local v5, resId:I
     :goto_3
     sget-object v6, Lcom/android/mms/ui/MessageOptions;->mthisContext:Landroid/content/Context;
@@ -274,7 +274,7 @@
 
     move-result-object v2
 
-    .line 1342
+    .line 1375
     .end local v5           #resId:I
     :cond_2
     :goto_4
@@ -293,14 +293,14 @@
 
     invoke-virtual {v6, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1281
+    .line 1314
     .end local v2           #errorReason:Ljava/lang/String;
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1334
+    .line 1367
     .restart local v2       #errorReason:Ljava/lang/String;
     :cond_4
     const v6, 0x7f09011a
@@ -309,19 +309,19 @@
 
     goto :goto_3
 
-    .line 1337
+    .line 1370
     :catch_0
     move-exception v6
 
     move-object v1, v6
 
-    .line 1338
+    .line 1371
     .local v1, e:Ljava/io/IOException;
     invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1339
+    .line 1372
     const-string v6, "No space left on device"
 
     invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -330,7 +330,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 1340
+    .line 1373
     sget-object v6, Lcom/android/mms/ui/MessageOptions;->mthisContext:Landroid/content/Context;
 
     const v7, 0x7f0901c2
@@ -343,20 +343,20 @@
 
     goto :goto_4
 
-    .line 1350
+    .line 1383
     .end local v0           #attach:Lcom/android/mms/model/AttachmentModel;
     .end local v1           #e:Ljava/io/IOException;
     .end local v2           #errorReason:Ljava/lang/String;
     :cond_5
     if-eqz v4, :cond_6
 
-    .line 1351
+    .line 1384
     :try_start_5
     throw v4
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 1356
+    .line 1389
     :cond_6
     :goto_5
     iget-object v6, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -365,20 +365,20 @@
 
     goto :goto_2
 
-    .line 1349
+    .line 1382
     :catchall_0
     move-exception v6
 
-    .line 1350
+    .line 1383
     if-eqz v4, :cond_7
 
-    .line 1351
+    .line 1384
     :try_start_6
     throw v4
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
-    .line 1356
+    .line 1389
     :cond_7
     :goto_6
     iget-object v7, p0, Lcom/android/mms/ui/MessageOptions$RawAttachmentsExportThread;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -387,7 +387,7 @@
 
     throw v6
 
-    .line 1353
+    .line 1386
     :catch_1
     move-exception v6
 

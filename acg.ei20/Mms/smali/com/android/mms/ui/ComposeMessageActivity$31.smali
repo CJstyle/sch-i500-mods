@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 5261
+    .line 5321
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$31;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "s"
 
     .prologue
-    .line 5268
+    .line 5328
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .parameter "after"
 
     .prologue
-    .line 5262
+    .line 5322
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter "count"
 
     .prologue
-    .line 5265
+    .line 5325
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$31;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$700(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/data/WorkingMessage;
@@ -77,6 +77,6 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/android/mms/data/WorkingMessage;->setSubject(Ljava/lang/CharSequence;Z)V
 
-    .line 5266
+    .line 5326
     return-void
 .end method

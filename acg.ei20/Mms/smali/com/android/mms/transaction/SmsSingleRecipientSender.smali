@@ -54,7 +54,7 @@
 
     .prologue
     .line 141
-    iget v7, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->userSelectedEncodingType:I
+    iget v7, p0, Lcom/android/mms/transaction/SmsMessageSender;->userSelectedEncodingType:I
 
     if-nez v7, :cond_5
 
@@ -109,7 +109,7 @@
     :cond_1
     const/4 v7, 0x2
 
-    iput v7, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->userSelectedEncodingType:I
+    iput v7, p0, Lcom/android/mms/transaction/SmsMessageSender;->userSelectedEncodingType:I
 
     move-object v2, p1
 
@@ -270,7 +270,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mMessageText:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/mms/transaction/SmsMessageSender;->mMessageText:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
@@ -285,16 +285,16 @@
 
     .line 47
     :cond_0
-    iget-object v0, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mMessageText:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/mms/transaction/SmsMessageSender;->mMessageText:Ljava/lang/String;
 
     .line 48
-    iget-object v0, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mMessageText:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/mms/transaction/SmsMessageSender;->mMessageText:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/android/mms/transaction/SmsSingleRecipientSender;->EncodeNonGSMCharater(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mMessageText:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/mms/transaction/SmsMessageSender;->mMessageText:Ljava/lang/String;
 
     .line 51
     invoke-static {}, Landroid/telephony/SmsManager;->getDefault()Landroid/telephony/SmsManager;
@@ -342,7 +342,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mMessageText:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/mms/transaction/SmsMessageSender;->mMessageText:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -360,7 +360,7 @@
     iput-object v2, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mDest:Ljava/lang/String;
 
     .line 59
-    iget v2, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->userSelectedEncodingType:I
+    iget v2, p0, Lcom/android/mms/transaction/SmsMessageSender;->userSelectedEncodingType:I
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/SmsManager;->divideMessage(Ljava/lang/String;I)Ljava/util/ArrayList;
 
@@ -390,7 +390,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mMessageText:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/mms/transaction/SmsMessageSender;->mMessageText:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -412,9 +412,9 @@
 
     .line 64
     :cond_2
-    iget-object v1, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mMessageText:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/mms/transaction/SmsMessageSender;->mMessageText:Ljava/lang/String;
 
-    iget v2, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->userSelectedEncodingType:I
+    iget v2, p0, Lcom/android/mms/transaction/SmsMessageSender;->userSelectedEncodingType:I
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/SmsManager;->divideMessage(Ljava/lang/String;I)Ljava/util/ArrayList;
 
@@ -439,7 +439,7 @@
 
     .line 84
     :cond_3
-    iget-object v1, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/mms/transaction/SmsMessageSender;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mUri:Landroid/net/Uri;
 
@@ -511,7 +511,7 @@
     if-ne v1, v2, :cond_7
 
     .line 99
-    iget-object v2, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/mms/transaction/SmsMessageSender;->mContext:Landroid/content/Context;
 
     const/4 v6, 0x0
 
@@ -521,7 +521,7 @@
 
     iget-object v9, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mUri:Landroid/net/Uri;
 
-    iget-object v11, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mContext:Landroid/content/Context;
+    iget-object v11, p0, Lcom/android/mms/transaction/SmsMessageSender;->mContext:Landroid/content/Context;
 
     const-class v12, Lcom/android/mms/transaction/MessageStatusReceiver;
 
@@ -544,7 +544,7 @@
 
     iget-object v7, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mUri:Landroid/net/Uri;
 
-    iget-object v8, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/android/mms/transaction/SmsMessageSender;->mContext:Landroid/content/Context;
 
     const-class v9, Lcom/android/mms/transaction/SmsReceiver;
 
@@ -566,7 +566,7 @@
 
     .line 118
     :cond_6
-    iget-object v6, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/mms/transaction/SmsMessageSender;->mContext:Landroid/content/Context;
 
     const/4 v7, 0x0
 
@@ -596,15 +596,15 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mDest:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mServiceCenter:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/mms/transaction/SmsMessageSender;->mServiceCenter:Ljava/lang/String;
 
-    iget-boolean v6, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->replyPath:Z
+    iget-boolean v6, p0, Lcom/android/mms/transaction/SmsMessageSender;->replyPath:Z
 
-    iget v7, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->expiry:I
+    iget v7, p0, Lcom/android/mms/transaction/SmsMessageSender;->expiry:I
 
-    iget v8, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->serviceType:I
+    iget v8, p0, Lcom/android/mms/transaction/SmsMessageSender;->serviceType:I
 
-    iget v9, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->userSelectedEncodingType:I
+    iget v9, p0, Lcom/android/mms/transaction/SmsMessageSender;->userSelectedEncodingType:I
 
     invoke-virtual/range {v0 .. v9}, Landroid/telephony/SmsManager;->sendMultipartTextMessage(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZIII)V
     :try_end_0
@@ -621,7 +621,7 @@
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/android/mms/transaction/SmsSingleRecipientSender;->mThreadId:J
+    iget-wide v1, p0, Lcom/android/mms/transaction/SmsMessageSender;->mThreadId:J
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

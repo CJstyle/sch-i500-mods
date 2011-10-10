@@ -46,7 +46,7 @@
     .line 97
     iget-object v1, p0, Lcom/android/mms/ui/SlideshowPresenter$1;->this$0:Lcom/android/mms/ui/SlideshowPresenter;
 
-    iget-object v1, v1, Lcom/android/mms/ui/SlideshowPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v1, v1, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v1, Lcom/android/mms/model/SlideshowModel;
 

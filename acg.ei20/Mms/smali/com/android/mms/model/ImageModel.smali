@@ -129,7 +129,7 @@
     invoke-direct/range {p0 .. p5}, Lcom/android/mms/model/ImageModel;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Lcom/android/mms/model/RegionModel;)V
 
     .line 90
-    iput p6, p0, Lcom/android/mms/model/ImageModel;->mDuration:I
+    iput p6, p0, Lcom/android/mms/model/MediaModel;->mDuration:I
 
     .line 91
     return-void
@@ -200,7 +200,7 @@
     invoke-direct/range {p0 .. p5}, Lcom/android/mms/model/ImageModel;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lcom/android/mms/drm/DrmWrapper;Lcom/android/mms/model/RegionModel;)V
 
     .line 96
-    iput p6, p0, Lcom/android/mms/model/ImageModel;->mDuration:I
+    iput p6, p0, Lcom/android/mms/model/MediaModel;->mDuration:I
 
     .line 97
     return-void
@@ -333,7 +333,7 @@
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/model/ImageModel;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     move-object v3, v0
 
@@ -562,7 +562,7 @@
     .line 122
     new-instance v0, Lcom/android/mms/ui/UriImage;
 
-    iget-object v1, p0, Lcom/android/mms/model/ImageModel;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Lcom/android/mms/model/ImageModel;->getUriWithDrmCheck()Landroid/net/Uri;
 
@@ -609,7 +609,7 @@
     .line 101
     new-instance v0, Lcom/android/mms/ui/UriImage;
 
-    iget-object v1, p0, Lcom/android/mms/model/ImageModel;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1, p1}, Lcom/android/mms/ui/UriImage;-><init>(Landroid/content/Context;Landroid/net/Uri;)V
 
@@ -619,10 +619,10 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/mms/model/ImageModel;->mContentType:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     .line 104
-    iget-object v1, p0, Lcom/android/mms/model/ImageModel;->mContentType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -645,7 +645,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/mms/model/ImageModel;->mSrc:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/mms/model/MediaModel;->mSrc:Ljava/lang/String;
 
     .line 108
     invoke-virtual {v0}, Lcom/android/mms/ui/UriImage;->getWidth()I
@@ -740,7 +740,7 @@
 
     .line 173
     .local v0, cr:Lcom/android/mms/model/ContentRestriction;
-    iget-object v1, p0, Lcom/android/mms/model/ImageModel;->mContentType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Lcom/android/mms/model/ContentRestriction;->checkImageContentType(Ljava/lang/String;)V
 
@@ -764,9 +764,9 @@
 
     .line 179
     .local v0, cr:Lcom/android/mms/model/ContentRestriction;
-    iget-object v1, p0, Lcom/android/mms/model/ImageModel;->mContentType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/mms/model/ImageModel;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/android/mms/model/CarrierContentRestriction;->getMmsCreationMode(Landroid/content/Context;)I
 
@@ -847,7 +847,7 @@
 
     .prologue
     .line 258
-    iget v0, p0, Lcom/android/mms/model/ImageModel;->mDuration:I
+    iget v0, p0, Lcom/android/mms/model/MediaModel;->mDuration:I
 
     if-nez v0, :cond_0
 
@@ -861,7 +861,7 @@
     return v0
 
     :cond_0
-    iget v0, p0, Lcom/android/mms/model/ImageModel;->mDuration:I
+    iget v0, p0, Lcom/android/mms/model/MediaModel;->mDuration:I
 
     goto :goto_0
 .end method
@@ -871,7 +871,7 @@
 
     .prologue
     .line 267
-    iget-object v0, p0, Lcom/android/mms/model/ImageModel;->mContentType:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/mms/model/MediaModel;->mContentType:Ljava/lang/String;
 
     const-string v1, "image/gif"
 
@@ -924,7 +924,7 @@
     sget-object v0, Lcom/android/mms/model/MediaModel$MediaAction;->START:Lcom/android/mms/model/MediaModel$MediaAction;
 
     .line 143
-    iput-boolean v3, p0, Lcom/android/mms/model/ImageModel;->mVisible:Z
+    iput-boolean v3, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     .line 156
     :cond_0
@@ -955,7 +955,7 @@
     sget-object v0, Lcom/android/mms/model/MediaModel$MediaAction;->PAUSE:Lcom/android/mms/model/MediaModel$MediaAction;
 
     .line 146
-    iput-boolean v3, p0, Lcom/android/mms/model/ImageModel;->mVisible:Z
+    iput-boolean v3, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     goto :goto_0
 
@@ -977,23 +977,23 @@
     sget-object v0, Lcom/android/mms/model/MediaModel$MediaAction;->STOP:Lcom/android/mms/model/MediaModel$MediaAction;
 
     .line 149
-    iget-short v1, p0, Lcom/android/mms/model/ImageModel;->mFill:S
+    iget-short v1, p0, Lcom/android/mms/model/MediaModel;->mFill:S
 
     if-eq v1, v3, :cond_0
 
     .line 150
-    iput-boolean v4, p0, Lcom/android/mms/model/ImageModel;->mVisible:Z
+    iput-boolean v4, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     goto :goto_0
 
     .line 152
     :cond_3
-    iget-short v1, p0, Lcom/android/mms/model/ImageModel;->mFill:S
+    iget-short v1, p0, Lcom/android/mms/model/MediaModel;->mFill:S
 
     if-eq v1, v3, :cond_0
 
     .line 153
-    iput-boolean v4, p0, Lcom/android/mms/model/ImageModel;->mVisible:Z
+    iput-boolean v4, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     goto :goto_0
 .end method
@@ -1019,7 +1019,7 @@
     :try_start_0
     new-instance v2, Lcom/android/mms/ui/UriImage;
 
-    iget-object v6, p0, Lcom/android/mms/model/ImageModel;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Lcom/android/mms/model/ImageModel;->getUri()Landroid/net/Uri;
 
@@ -1117,7 +1117,7 @@
 
     .line 290
     .local v4, part:Lcom/google/android/mms/pdu/PduPart;
-    iget-object v6, p0, Lcom/android/mms/model/ImageModel;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/mms/model/MediaModel;->mContext:Landroid/content/Context;
 
     invoke-static {v6}, Lcom/google/android/mms/pdu/PduPersister;->getPduPersister(Landroid/content/Context;)Lcom/google/android/mms/pdu/PduPersister;
 
@@ -1134,7 +1134,7 @@
 
     array-length v6, v6
 
-    iput v6, p0, Lcom/android/mms/model/ImageModel;->mSize:I
+    iput v6, p0, Lcom/android/mms/model/MediaModel;->mSize:I
 
     .line 297
     invoke-virtual {v5, v4, p2, p3}, Lcom/google/android/mms/pdu/PduPersister;->persistPart(Lcom/google/android/mms/pdu/PduPart;J)Landroid/net/Uri;

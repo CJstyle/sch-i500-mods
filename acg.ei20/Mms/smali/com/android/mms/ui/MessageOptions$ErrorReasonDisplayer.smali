@@ -30,15 +30,15 @@
     .parameter "errorReason"
 
     .prologue
-    .line 1390
+    .line 1423
     iput-object p1, p0, Lcom/android/mms/ui/MessageOptions$ErrorReasonDisplayer;->this$0:Lcom/android/mms/ui/MessageOptions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1391
+    .line 1424
     iput-object p2, p0, Lcom/android/mms/ui/MessageOptions$ErrorReasonDisplayer;->mErrorReason:Ljava/lang/String;
 
-    .line 1392
+    .line 1425
     return-void
 .end method
 
@@ -48,12 +48,12 @@
     .locals 3
 
     .prologue
-    .line 1395
+    .line 1428
     iget-object v0, p0, Lcom/android/mms/ui/MessageOptions$ErrorReasonDisplayer;->mErrorReason:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 1397
+    .line 1430
     sget-object v0, Lcom/android/mms/ui/MessageOptions;->mthisContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/mms/ui/MessageOptions$ErrorReasonDisplayer;->mErrorReason:Ljava/lang/String;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 1400
+    .line 1433
     :cond_0
     return-void
 .end method

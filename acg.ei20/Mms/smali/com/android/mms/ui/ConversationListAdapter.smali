@@ -160,7 +160,7 @@
     .line 77
     iget-object v0, p0, Lcom/android/mms/ui/ConversationListAdapter;->mFactory:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f03000a
+    const v1, 0x7f03000d
 
     const/4 v2, 0x0
 

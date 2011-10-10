@@ -196,7 +196,7 @@
 
     .line 61
     .local v1, preference:Landroid/preference/Preference;
-    const v2, 0x7f03002a
+    const v2, 0x7f03002d
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setLayoutResource(I)V
 

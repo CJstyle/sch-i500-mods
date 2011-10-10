@@ -466,7 +466,7 @@
 
     .line 174
     :goto_0
-    iget-object v4, p0, Lcom/android/mms/model/SlideModel;->mModelChangedObservers:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/android/mms/model/Model;->mModelChangedObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 

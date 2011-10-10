@@ -171,13 +171,13 @@
     .prologue
     .line 103
     :try_start_0
-    iget-object v2, p0, Lcom/android/mms/ui/MmsThumbnailPresenter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/mms/ui/Presenter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v3, 0x7f020055
+    const v3, 0x7f020059
 
     invoke-static {v2, v3}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -246,7 +246,7 @@
 
     .prologue
     .line 41
-    iget-object v1, p0, Lcom/android/mms/ui/MmsThumbnailPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v1, p0, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v1, Lcom/android/mms/model/SlideshowModel;
 
@@ -261,7 +261,7 @@
     if-eqz v0, :cond_0
 
     .line 43
-    iget-object v1, p0, Lcom/android/mms/ui/MmsThumbnailPresenter;->mView:Lcom/android/mms/ui/ViewInterface;
+    iget-object v1, p0, Lcom/android/mms/ui/Presenter;->mView:Lcom/android/mms/ui/ViewInterface;
 
     check-cast v1, Lcom/android/mms/ui/SlideViewInterface;
 
@@ -292,7 +292,7 @@
 
     .line 51
     :cond_1
-    iget-object v3, p0, Lcom/android/mms/ui/MmsThumbnailPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v3, p0, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v3, Lcom/android/mms/model/SlideshowModel;
 
@@ -315,7 +315,7 @@
 
     .line 56
     :cond_2
-    iget-object v3, p0, Lcom/android/mms/ui/MmsThumbnailPresenter;->mModel:Lcom/android/mms/model/Model;
+    iget-object v3, p0, Lcom/android/mms/ui/Presenter;->mModel:Lcom/android/mms/model/Model;
 
     check-cast v3, Lcom/android/mms/model/SlideshowModel;
 
@@ -328,7 +328,7 @@
     if-eqz v2, :cond_0
 
     .line 58
-    iget-object v3, p0, Lcom/android/mms/ui/MmsThumbnailPresenter;->mView:Lcom/android/mms/ui/ViewInterface;
+    iget-object v3, p0, Lcom/android/mms/ui/Presenter;->mView:Lcom/android/mms/ui/ViewInterface;
 
     check-cast v3, Lcom/android/mms/ui/SlideViewInterface;
 

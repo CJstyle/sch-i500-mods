@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 476
+    .line 480
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,30 +43,30 @@
 
     const/4 v2, 0x0
 
-    .line 479
+    .line 483
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 536
+    .line 540
     :cond_0
     :goto_0
     return-void
 
-    .line 481
+    .line 485
     :pswitch_0
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$000(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 482
+    .line 486
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$400(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     goto :goto_0
 
-    .line 486
+    .line 490
     :pswitch_1
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -76,20 +76,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 487
+    .line 491
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$600(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     goto :goto_0
 
-    .line 492
+    .line 496
     :pswitch_2
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$000(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 493
+    .line 497
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget-object v1, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 499
+    .line 503
     :pswitch_3
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -114,7 +114,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 500
+    .line 504
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     const v1, 0x7f0901d6
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 504
+    .line 508
     :cond_1
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -141,13 +141,13 @@
 
     goto :goto_0
 
-    .line 510
+    .line 514
     :pswitch_4
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$000(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
-    .line 511
+    .line 515
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget-object v1, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 518
+    .line 522
     :pswitch_5
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -168,11 +168,11 @@
 
     goto :goto_0
 
-    .line 525
+    .line 529
     :pswitch_6
     const/4 v6, 0x0
 
-    .line 526
+    .line 530
     .local v6, result:I
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
@@ -196,10 +196,10 @@
 
     move-result v6
 
-    .line 527
+    .line 531
     if-nez v6, :cond_0
 
-    .line 528
+    .line 532
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1000(Lcom/android/mms/ui/ComposeMessageActivity;)Lcom/android/mms/ui/AttachmentEditor;
@@ -210,14 +210,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/AttachmentEditor;->setVisibility(I)V
 
-    .line 529
+    .line 533
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$2;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/ComposeMessageActivity;->access$1100(Lcom/android/mms/ui/ComposeMessageActivity;)V
 
     goto/16 :goto_0
 
-    .line 479
+    .line 483
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

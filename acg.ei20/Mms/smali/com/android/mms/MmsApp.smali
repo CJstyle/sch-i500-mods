@@ -151,7 +151,7 @@
     .line 58
     const-string v1, "com.android.mms_preferences"
 
-    const v1, 0x7f050003
+    const v1, 0x7f050004
 
     invoke-static {p0, v4, v3, v1, v2}, Landroid/preference/PreferenceManager;->setDefaultValues(Landroid/content/Context;Ljava/lang/String;IIZ)V
 

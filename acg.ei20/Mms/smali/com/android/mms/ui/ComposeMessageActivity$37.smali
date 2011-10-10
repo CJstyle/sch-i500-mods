@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 6570
+    .line 6640
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$37;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +44,12 @@
     .parameter "textRepresentation"
 
     .prologue
-    .line 6572
+    .line 6642
     instance-of v1, p1, Landroid/widget/ImageView;
 
     if-eqz v1, :cond_0
 
-    .line 6573
+    .line 6643
     iget-object v1, p0, Lcom/android/mms/ui/ComposeMessageActivity$37;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-virtual {v1}, Lcom/android/mms/ui/ComposeMessageActivity;->getResources()Landroid/content/res/Resources;
@@ -67,17 +67,17 @@
 
     move-result-object v0
 
-    .line 6574
+    .line 6644
     .local v0, img:Landroid/graphics/drawable/Drawable;
     check-cast p1, Landroid/widget/ImageView;
 
     .end local p1
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 6575
+    .line 6645
     const/4 v1, 0x1
 
-    .line 6577
+    .line 6647
     .end local v0           #img:Landroid/graphics/drawable/Drawable;
     :goto_0
     return v1

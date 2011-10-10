@@ -230,12 +230,12 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 40
-    const v4, 0x7f030012
+    const v4, 0x7f030015
 
     invoke-virtual {p0, v4}, Lcom/android/mms/ui/DrmContentsActivity;->setContentView(I)V
 
     .line 41
-    const v4, 0x7f08004f
+    const v4, 0x7f080074
 
     invoke-virtual {p0, v4}, Lcom/android/mms/ui/DrmContentsActivity;->findViewById(I)Landroid/view/View;
 
@@ -254,7 +254,7 @@
     .line 44
     new-instance v4, Lcom/android/mms/ui/DrmContentsActivity$DrmItemAdapter;
 
-    const v5, 0x7f030013
+    const v5, 0x7f030016
 
     iget-object v6, p0, Lcom/android/mms/ui/DrmContentsActivity;->mDrmItemList:Ljava/util/ArrayList;
 

@@ -27,7 +27,7 @@
     iput-object v0, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mReadReportURI:Landroid/net/Uri;
 
     .line 60
-    iput-object p4, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mId:Ljava/lang/String;
+    iput-object p4, p0, Lcom/android/mms/transaction/Transaction;->mId:Ljava/lang/String;
 
     .line 63
     invoke-static {p1}, Lcom/android/mms/transaction/RetryScheduler;->getInstance(Landroid/content/Context;)Lcom/android/mms/transaction/RetryScheduler;
@@ -63,7 +63,7 @@
     const-string v6, "Mms/ReadRecTransaction"
 
     .line 72
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     invoke-static {v6}, Lcom/google/android/mms/pdu/PduPersister;->getPduPersister(Landroid/content/Context;)Lcom/google/android/mms/pdu/PduPersister;
 
@@ -103,7 +103,7 @@
     .line 85
     new-instance v6, Lcom/google/android/mms/pdu/PduComposer;
 
-    iget-object v7, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     invoke-direct {v6, v7, v4}, Lcom/google/android/mms/pdu/PduComposer;-><init>(Landroid/content/Context;Lcom/google/android/mms/pdu/GenericPdu;)V
 
@@ -126,14 +126,14 @@
 
     .line 89
     .local v5, uri:Landroid/net/Uri;
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     const/4 v7, 0x1
 
     invoke-virtual {v6, v7}, Lcom/android/mms/transaction/TransactionState;->setState(I)V
 
     .line 90
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6, v5}, Lcom/android/mms/transaction/TransactionState;->setContentUri(Landroid/net/Uri;)V
     :try_end_0
@@ -143,7 +143,7 @@
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
 
     .line 104
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -152,12 +152,12 @@
     if-eq v6, v8, :cond_0
 
     .line 105
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6, v9}, Lcom/android/mms/transaction/TransactionState;->setState(I)V
 
     .line 106
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v7, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mReadReportURI:Landroid/net/Uri;
 
@@ -193,7 +193,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 104
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -202,12 +202,12 @@
     if-eq v6, v8, :cond_1
 
     .line 105
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6, v9}, Lcom/android/mms/transaction/TransactionState;->setState(I)V
 
     .line 106
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v7, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mReadReportURI:Landroid/net/Uri;
 
@@ -238,7 +238,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 104
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -247,12 +247,12 @@
     if-eq v6, v8, :cond_2
 
     .line 105
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6, v9}, Lcom/android/mms/transaction/TransactionState;->setState(I)V
 
     .line 106
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v7, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mReadReportURI:Landroid/net/Uri;
 
@@ -283,7 +283,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 104
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -292,12 +292,12 @@
     if-eq v6, v8, :cond_3
 
     .line 105
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v6, v9}, Lcom/android/mms/transaction/TransactionState;->setState(I)V
 
     .line 106
-    iget-object v6, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v6, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v7, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mReadReportURI:Landroid/net/Uri;
 
@@ -314,7 +314,7 @@
     :catchall_0
     move-exception v6
 
-    iget-object v7, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v7, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v7}, Lcom/android/mms/transaction/TransactionState;->getState()I
 
@@ -323,12 +323,12 @@
     if-eq v7, v8, :cond_4
 
     .line 105
-    iget-object v7, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v7, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     invoke-virtual {v7, v9}, Lcom/android/mms/transaction/TransactionState;->setState(I)V
 
     .line 106
-    iget-object v7, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v7, p0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     iget-object v8, p0, Lcom/android/mms/transaction/ReadRecTransaction;->mReadReportURI:Landroid/net/Uri;
 

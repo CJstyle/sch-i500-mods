@@ -1391,7 +1391,7 @@
 
     .line 689
     .local v0, builder:Landroid/app/AlertDialog$Builder;
-    const v2, 0x7f020056
+    const v2, 0x7f02005a
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
@@ -1473,7 +1473,7 @@
 
     .line 717
     .local v1, builder:Landroid/app/AlertDialog$Builder;
-    const v3, 0x7f020057
+    const v3, 0x7f02005b
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
@@ -2832,12 +2832,12 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 154
-    const v1, 0x7f030014
+    const v1, 0x7f030017
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideEditorActivity;->setContentView(I)V
 
     .line 156
-    const v1, 0x7f080052
+    const v1, 0x7f080077
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideEditorActivity;->findViewById(I)Landroid/view/View;
 
@@ -2855,7 +2855,7 @@
     invoke-virtual {v1, v2}, Lcom/android/mms/ui/BasicSlideEditorView;->setOnTextChangedListener(Lcom/android/mms/ui/BasicSlideEditorView$OnTextChangedListener;)V
 
     .line 159
-    const v1, 0x7f080056
+    const v1, 0x7f08007b
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideEditorActivity;->findViewById(I)Landroid/view/View;
 
@@ -2873,7 +2873,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 162
-    const v1, 0x7f080057
+    const v1, 0x7f08007c
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideEditorActivity;->findViewById(I)Landroid/view/View;
 
@@ -2891,7 +2891,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 165
-    const v1, 0x7f080058
+    const v1, 0x7f08007d
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideEditorActivity;->findViewById(I)Landroid/view/View;
 
@@ -2919,7 +2919,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 170
-    const v1, 0x7f080059
+    const v1, 0x7f08007e
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideEditorActivity;->findViewById(I)Landroid/view/View;
 
@@ -2942,7 +2942,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 174
-    const v1, 0x7f08005a
+    const v1, 0x7f08007f
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideEditorActivity;->findViewById(I)Landroid/view/View;
 
@@ -2965,7 +2965,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 178
-    const v1, 0x7f08005c
+    const v1, 0x7f080081
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideEditorActivity;->findViewById(I)Landroid/view/View;
 
@@ -3586,9 +3586,9 @@
     .parameter "menu"
 
     .prologue
-    const v10, 0x7f02004a
+    const v10, 0x7f02004e
 
-    const v9, 0x7f020031
+    const v9, 0x7f020035
 
     const/16 v6, 0xc
 
@@ -3641,7 +3641,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02004b
+    const v5, 0x7f02004f
 
     invoke-interface {v4, v5}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -3677,7 +3677,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02004e
+    const v5, 0x7f020052
 
     invoke-interface {v4, v5}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -3698,7 +3698,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02004c
+    const v5, 0x7f020050
 
     invoke-interface {v4, v5}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -3720,7 +3720,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02004d
+    const v5, 0x7f020051
 
     invoke-interface {v4, v5}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -3742,7 +3742,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02004f
+    const v5, 0x7f020053
 
     invoke-interface {v4, v5}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -3757,7 +3757,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f020030
+    const v5, 0x7f020034
 
     invoke-interface {v4, v5}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -3809,7 +3809,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02003f
+    const v5, 0x7f020043
 
     invoke-interface {v4, v5}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -3963,7 +3963,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f020049
+    const v5, 0x7f02004d
 
     invoke-interface {v4, v5}, Landroid/view/SubMenu;->setIcon(I)Landroid/view/SubMenu;
 
@@ -4191,7 +4191,7 @@
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 1188
-    const v1, 0x7f02002f
+    const v1, 0x7f020033
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2724
+    .line 2732
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$15$1;->this$1:Lcom/android/mms/ui/ComposeMessageActivity$15;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2726
+    .line 2734
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$15$1;->this$1:Lcom/android/mms/ui/ComposeMessageActivity$15;
 
     iget-object v0, v0, Lcom/android/mms/ui/ComposeMessageActivity$15;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -68,7 +68,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2727
+    .line 2735
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$15$1;->this$1:Lcom/android/mms/ui/ComposeMessageActivity$15;
 
     iget-object v0, v0, Lcom/android/mms/ui/ComposeMessageActivity$15;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -79,7 +79,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/data/WorkingMessage;->saveAsMms(Z)Landroid/net/Uri;
 
-    .line 2728
+    .line 2736
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$15$1;->this$1:Lcom/android/mms/ui/ComposeMessageActivity$15;
 
     iget-object v0, v0, Lcom/android/mms/ui/ComposeMessageActivity$15;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -90,7 +90,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2729
+    .line 2737
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$15$1;->this$1:Lcom/android/mms/ui/ComposeMessageActivity$15;
 
     iget-object v0, v0, Lcom/android/mms/ui/ComposeMessageActivity$15;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
@@ -101,7 +101,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/data/WorkingMessage;->removeFakeMmsForDraft(Z)V
 
-    .line 2732
+    .line 2740
     :cond_0
     return-void
 .end method

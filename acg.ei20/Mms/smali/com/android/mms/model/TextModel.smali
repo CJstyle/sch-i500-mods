@@ -400,7 +400,7 @@
     if-eqz v0, :cond_1
 
     .line 127
-    iput-boolean v3, p0, Lcom/android/mms/model/TextModel;->mVisible:Z
+    iput-boolean v3, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     .line 132
     :cond_0
@@ -412,12 +412,12 @@
 
     .line 128
     :cond_1
-    iget-short v0, p0, Lcom/android/mms/model/TextModel;->mFill:S
+    iget-short v0, p0, Lcom/android/mms/model/MediaModel;->mFill:S
 
     if-eq v0, v3, :cond_0
 
     .line 129
-    iput-boolean v2, p0, Lcom/android/mms/model/TextModel;->mVisible:Z
+    iput-boolean v2, p0, Lcom/android/mms/model/RegionMediaModel;->mVisible:Z
 
     goto :goto_0
 .end method

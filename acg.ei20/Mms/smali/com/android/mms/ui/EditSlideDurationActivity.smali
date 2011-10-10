@@ -217,7 +217,7 @@
     invoke-virtual {p0, v4}, Lcom/android/mms/ui/EditSlideDurationActivity;->requestWindowFeature(I)Z
 
     .line 64
-    const v2, 0x7f030015
+    const v2, 0x7f030018
 
     invoke-virtual {p0, v2}, Lcom/android/mms/ui/EditSlideDurationActivity;->setContentView(I)V
 
@@ -268,7 +268,7 @@
     .end local v1           #intent:Landroid/content/Intent;
     .local v0, dur:I
     :goto_0
-    const v2, 0x7f08005e
+    const v2, 0x7f080083
 
     invoke-virtual {p0, v2}, Lcom/android/mms/ui/EditSlideDurationActivity;->findViewById(I)Landroid/view/View;
 
@@ -328,7 +328,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 90
-    const v2, 0x7f08005f
+    const v2, 0x7f080084
 
     invoke-virtual {p0, v2}, Lcom/android/mms/ui/EditSlideDurationActivity;->findViewById(I)Landroid/view/View;
 
@@ -355,7 +355,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
     .line 95
-    const v2, 0x7f080060
+    const v2, 0x7f080085
 
     invoke-virtual {p0, v2}, Lcom/android/mms/ui/EditSlideDurationActivity;->findViewById(I)Landroid/view/View;
 

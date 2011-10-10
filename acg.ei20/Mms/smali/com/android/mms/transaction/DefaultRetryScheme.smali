@@ -45,17 +45,17 @@
     invoke-direct {p0, p2}, Lcom/android/mms/transaction/AbstractRetryScheme;-><init>(I)V
 
     .line 38
-    iget v0, p0, Lcom/android/mms/transaction/DefaultRetryScheme;->mRetriedTimes:I
+    iget v0, p0, Lcom/android/mms/transaction/AbstractRetryScheme;->mRetriedTimes:I
 
     if-gez v0, :cond_0
 
     const/4 v0, 0x0
 
     :goto_0
-    iput v0, p0, Lcom/android/mms/transaction/DefaultRetryScheme;->mRetriedTimes:I
+    iput v0, p0, Lcom/android/mms/transaction/AbstractRetryScheme;->mRetriedTimes:I
 
     .line 39
-    iget v0, p0, Lcom/android/mms/transaction/DefaultRetryScheme;->mRetriedTimes:I
+    iget v0, p0, Lcom/android/mms/transaction/AbstractRetryScheme;->mRetriedTimes:I
 
     sget-object v1, Lcom/android/mms/transaction/DefaultRetryScheme;->sDefaultRetryScheme:[I
 
@@ -72,20 +72,20 @@
     sub-int/2addr v0, v1
 
     :goto_1
-    iput v0, p0, Lcom/android/mms/transaction/DefaultRetryScheme;->mRetriedTimes:I
+    iput v0, p0, Lcom/android/mms/transaction/AbstractRetryScheme;->mRetriedTimes:I
 
     .line 43
     return-void
 
     .line 38
     :cond_0
-    iget v0, p0, Lcom/android/mms/transaction/DefaultRetryScheme;->mRetriedTimes:I
+    iget v0, p0, Lcom/android/mms/transaction/AbstractRetryScheme;->mRetriedTimes:I
 
     goto :goto_0
 
     .line 39
     :cond_1
-    iget v0, p0, Lcom/android/mms/transaction/DefaultRetryScheme;->mRetriedTimes:I
+    iget v0, p0, Lcom/android/mms/transaction/AbstractRetryScheme;->mRetriedTimes:I
 
     goto :goto_1
 .end method
@@ -123,7 +123,7 @@
 
     sget-object v2, Lcom/android/mms/transaction/DefaultRetryScheme;->sDefaultRetryScheme:[I
 
-    iget v3, p0, Lcom/android/mms/transaction/DefaultRetryScheme;->mRetriedTimes:I
+    iget v3, p0, Lcom/android/mms/transaction/AbstractRetryScheme;->mRetriedTimes:I
 
     aget v2, v2, v3
 
@@ -140,7 +140,7 @@
     .line 55
     sget-object v0, Lcom/android/mms/transaction/DefaultRetryScheme;->sDefaultRetryScheme:[I
 
-    iget v1, p0, Lcom/android/mms/transaction/DefaultRetryScheme;->mRetriedTimes:I
+    iget v1, p0, Lcom/android/mms/transaction/AbstractRetryScheme;->mRetriedTimes:I
 
     aget v0, v0, v1
 

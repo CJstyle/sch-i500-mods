@@ -78,7 +78,7 @@
 
     .prologue
     .line 87
-    const v0, 0x7f030025
+    const v0, 0x7f030028
 
     const/4 v1, 0x0
 
@@ -230,7 +230,7 @@
     const/4 v8, 0x0
 
     .line 163
-    const v6, 0x7f080083
+    const v6, 0x7f0800a8
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -249,7 +249,7 @@
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 166
-    const v6, 0x7f08005e
+    const v6, 0x7f080083
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -334,7 +334,7 @@
 
     .line 191
     :goto_1
-    const v6, 0x7f080084
+    const v6, 0x7f0800a9
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

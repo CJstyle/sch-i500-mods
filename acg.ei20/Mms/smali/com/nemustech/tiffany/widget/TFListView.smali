@@ -187,7 +187,7 @@
     iput v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScrollEffect:I
 
     .line 244
-    iput-boolean v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScrollEnabled:Z
+    iput-boolean v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
 
     .line 245
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -382,7 +382,7 @@
 
     .line 2929
     .local v3, edgeOfNewChild:I
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v0, Landroid/graphics/Rect;->left:I
 
@@ -429,7 +429,7 @@
     .local v3, edgeOfNewChild:I
     const/4 v4, 0x1
 
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v0, Landroid/graphics/Rect;->left:I
 
@@ -457,7 +457,7 @@
     if-lez v1, :cond_2
 
     .line 297
-    iget-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     if-nez v3, :cond_3
 
@@ -474,7 +474,7 @@
 
     move-result v3
 
-    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -482,7 +482,7 @@
 
     .line 302
     .local v2, delta:I
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-eqz v3, :cond_0
 
@@ -534,7 +534,7 @@
 
     move-result v4
 
-    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->bottom:I
 
@@ -544,11 +544,11 @@
 
     .line 316
     .restart local v2       #delta:I
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v1
 
-    iget v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v4, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     if-ge v3, v4, :cond_4
 
@@ -578,7 +578,7 @@
 
     move-result v10
 
-    iget-object v11, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v11, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v11, v11, Landroid/graphics/Rect;->bottom:I
 
@@ -586,7 +586,7 @@
 
     .line 2541
     .local v4, listBottom:I
-    iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v10, Landroid/graphics/Rect;->top:I
 
@@ -614,13 +614,13 @@
     if-eq p2, v10, :cond_0
 
     .line 2548
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     sub-int v3, p2, v10
 
     .line 2551
     :cond_0
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int v8, v10, v3
 
@@ -636,7 +636,7 @@
 
     .line 2555
     .local v1, goalBottom:I
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     const/4 v11, 0x1
 
@@ -701,11 +701,11 @@
 
     .line 2572
     .local v0, amountToScroll:I
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v10, v7
 
-    iget v11, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v11, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     if-ne v10, v11, :cond_4
 
@@ -759,13 +759,13 @@
     if-eq p2, v10, :cond_6
 
     .line 2582
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     sub-int v3, p2, v10
 
     .line 2584
     :cond_6
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int v8, v10, v3
 
@@ -836,7 +836,7 @@
 
     .line 2602
     .restart local v0       #amountToScroll:I
-    iget v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v10, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-nez v10, :cond_a
 
@@ -904,14 +904,14 @@
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
 
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->top:I
 
     if-ge v2, v3, :cond_0
 
     .line 2804
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
 
@@ -942,7 +942,7 @@
 
     move-result v2
 
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->bottom:I
 
@@ -964,7 +964,7 @@
     sub-int v0, v2, v1
 
     .line 2813
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     const/4 v3, 0x1
 
@@ -1044,7 +1044,7 @@
     .local v12, positionOfNewFocus:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move/from16 v17, v0
 
@@ -1058,7 +1058,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move/from16 v17, v0
 
@@ -1128,7 +1128,7 @@
     .line 2704
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move/from16 v17, v0
 
@@ -1143,7 +1143,7 @@
     :goto_2
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v17, v0
 
@@ -1266,7 +1266,7 @@
     :cond_6
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move/from16 v17, v0
 
@@ -1282,7 +1282,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move/from16 v18, v0
 
@@ -1305,7 +1305,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v18, v0
 
@@ -1709,7 +1709,7 @@
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->hideSelector()V
 
     .line 2383
-    iput v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mResurrectToPosition:I
+    iput v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
     .line 2386
     :cond_6
@@ -1726,7 +1726,7 @@
 
     move-result v6
 
-    iput v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedTop:I
+    iput v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
     .line 2391
     :cond_7
@@ -1874,7 +1874,7 @@
     const/4 v3, 0x1
 
     .line 2071
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-nez v2, :cond_0
 
@@ -1886,7 +1886,7 @@
 
     .line 2075
     :cond_0
-    iget-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDataChanged:Z
+    iget-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
 
     if-eqz v2, :cond_1
 
@@ -1908,7 +1908,7 @@
     if-eq v0, v3, :cond_3
 
     .line 2083
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     if-gez v2, :cond_2
 
@@ -2037,7 +2037,7 @@
 
     .line 2127
     :sswitch_5
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     if-lez v2, :cond_7
 
@@ -2059,11 +2059,11 @@
 
     .line 2134
     :sswitch_6
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mPopup:Landroid/widget/PopupWindow;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     if-eqz v2, :cond_8
 
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mPopup:Landroid/widget/PopupWindow;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v2}, Landroid/widget/PopupWindow;->isShowing()Z
 
@@ -2166,7 +2166,7 @@
     const/4 v9, 0x1
 
     .line 1351
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v7, p1
 
@@ -2174,7 +2174,7 @@
 
     .line 1352
     .local v6, lastPosition:I
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v7, v9
 
@@ -2197,13 +2197,13 @@
 
     .line 1361
     .local v4, lastBottom:I
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBottom:I
 
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mTop:I
 
     sub-int/2addr v7, v8
 
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->bottom:I
 
@@ -2231,11 +2231,11 @@
     .local v3, firstTop:I
     if-lez v0, :cond_2
 
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-gtz v7, :cond_0
 
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->top:I
 
@@ -2243,12 +2243,12 @@
 
     .line 1372
     :cond_0
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-nez v7, :cond_1
 
     .line 1374
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->top:I
 
@@ -2263,12 +2263,12 @@
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFListView;->offsetChildrenTopAndBottom(I)V
 
     .line 1378
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-lez v7, :cond_2
 
     .line 1381
-    iget v7, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v7, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     sub-int/2addr v7, v9
 
@@ -2304,7 +2304,7 @@
     const/4 v10, 0x1
 
     .line 1400
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-nez v8, :cond_2
 
@@ -2325,19 +2325,19 @@
 
     .line 1409
     .local v2, firstTop:I
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v8, Landroid/graphics/Rect;->top:I
 
     .line 1412
     .local v6, start:I
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBottom:I
 
-    iget v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
+    iget v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mTop:I
 
     sub-int/2addr v8, v9
 
-    iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->bottom:I
 
@@ -2363,7 +2363,7 @@
 
     .line 1419
     .local v3, lastBottom:I
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v8, p1
 
@@ -2374,7 +2374,7 @@
     if-lez v7, :cond_2
 
     .line 1424
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v8, v10
 
@@ -2384,7 +2384,7 @@
 
     .line 1425
     :cond_0
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v8, v10
 
@@ -2404,7 +2404,7 @@
     invoke-virtual {p0, v8}, Lcom/nemustech/tiffany/widget/TFListView;->offsetChildrenTopAndBottom(I)V
 
     .line 1431
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v8, v10
 
@@ -2449,7 +2449,7 @@
     .restart local v6       #start:I
     .restart local v7       #topOffset:I
     :cond_3
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v8, v10
 
@@ -2481,13 +2481,13 @@
     invoke-virtual {p0, p1, v2}, Lcom/nemustech/tiffany/widget/TFListView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
     .line 2831
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBottom:I
 
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mTop:I
 
     sub-int/2addr v2, v3
 
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->bottom:I
 
@@ -2499,14 +2499,14 @@
 
     iget v2, v2, Landroid/graphics/Rect;->bottom:I
 
-    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->top:I
 
     if-ge v2, v3, :cond_1
 
     .line 2833
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
 
@@ -2552,7 +2552,7 @@
 
     .line 835
     .local v0, dividerHeight:I
-    iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     if-nez v1, :cond_0
 
@@ -2627,13 +2627,13 @@
 
     .line 725
     .local v8, selectedView:Landroid/view/View;
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBottom:I
 
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mTop:I
 
     sub-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
@@ -2644,12 +2644,12 @@
     :goto_0
     if-ge p2, v7, :cond_2
 
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     if-ge p1, v0, :cond_2
 
     .line 729
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     if-ne p1, v0, :cond_1
 
@@ -2658,7 +2658,7 @@
     .line 730
     .local v5, selected:Z
     :goto_1
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v0, Landroid/graphics/Rect;->left:I
 
@@ -2729,7 +2729,7 @@
 
     .line 806
     .local v1, position:I
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v0, Landroid/graphics/Rect;->left:I
 
@@ -2745,7 +2745,7 @@
 
     .line 808
     .local v7, sel:Landroid/view/View;
-    iput v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 810
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
@@ -2768,7 +2768,7 @@
     invoke-direct {p0, v7, v1}, Lcom/nemustech/tiffany/widget/TFListView;->fillAboveAndBelow(Landroid/view/View;I)V
 
     .line 817
-    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     if-nez v0, :cond_1
 
@@ -2810,7 +2810,7 @@
     .local v11, fadingEdgeLength:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v5, v0
 
@@ -2848,7 +2848,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -2916,7 +2916,7 @@
     .line 901
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     move v4, v0
 
@@ -3000,20 +3000,20 @@
 
     .prologue
     .line 782
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 783
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     const/4 v2, 0x1
 
@@ -3023,21 +3023,21 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 784
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-gez v0, :cond_0
 
     .line 785
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 787
     :cond_0
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     invoke-direct {p0, v0, p1}, Lcom/nemustech/tiffany/widget/TFListView;->fillDown(II)Landroid/view/View;
 
@@ -3055,7 +3055,7 @@
     const/4 v3, 0x1
 
     .line 1303
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     if-ne p1, v0, :cond_1
 
@@ -3064,7 +3064,7 @@
     .line 1304
     .local v5, tempIsSelected:Z
     :goto_0
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v0, Landroid/graphics/Rect;->left:I
 
@@ -3080,14 +3080,14 @@
 
     .line 1306
     .local v10, temp:Landroid/view/View;
-    iput p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput p1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 1311
     iget v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     .line 1312
     .local v9, dividerHeight:I
-    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     if-nez v0, :cond_2
 
@@ -3237,7 +3237,7 @@
 
     .line 755
     .local v8, selectedView:Landroid/view/View;
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v0, Landroid/graphics/Rect;->top:I
 
@@ -3249,7 +3249,7 @@
     if-ltz p1, :cond_2
 
     .line 759
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     if-ne p1, v0, :cond_1
 
@@ -3260,7 +3260,7 @@
     .line 760
     .local v5, selected:Z
     :goto_1
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v0, Landroid/graphics/Rect;->left:I
 
@@ -3309,7 +3309,7 @@
     :cond_2
     add-int/lit8 v0, p1, 0x1
 
-    iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 770
     return-object v8
@@ -3345,7 +3345,7 @@
 
     .line 921
     .local v0, bottomSelectionPixel:I
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     const/4 v2, 0x1
 
@@ -3419,7 +3419,7 @@
 
     if-lez v0, :cond_2
 
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     const/4 v1, -0x1
 
@@ -3554,14 +3554,14 @@
 
     .line 2428
     :cond_0
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
     .line 2429
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     sub-int v1, p3, v1
 
@@ -3811,7 +3811,7 @@
     const/4 v7, -0x1
 
     .line 2644
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 2645
     .local v1, firstPosition:I
@@ -3820,11 +3820,11 @@
     if-ne p1, v6, :cond_4
 
     .line 2646
-    iget v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v6, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     if-eq v6, v7, :cond_0
 
-    iget v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v6, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     add-int/lit8 v6, v6, 0x1
 
@@ -3833,7 +3833,7 @@
     .line 2649
     .local v5, startPos:I
     :goto_0
-    iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v6}, Landroid/widget/ListAdapter;->getCount()I
 
@@ -3928,11 +3928,11 @@
 
     .line 2666
     .local v2, last:I
-    iget v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v6, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     if-eq v6, v7, :cond_5
 
-    iget v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v6, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     sub-int/2addr v6, v8
 
@@ -4033,12 +4033,12 @@
 
     .prologue
     .line 1748
-    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDataChanged:Z
+    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
 
     if-nez v0, :cond_0
 
     .line 1750
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->getActiveView(I)Landroid/view/View;
 
@@ -4195,13 +4195,13 @@
     .line 2493
     .restart local v3       #p:Landroid/view/ViewGroup$LayoutParams;
     :cond_0
-    iget v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mWidthMeasureSpec:I
+    iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mWidthMeasureSpec:I
 
-    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->left:I
 
-    iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->right:I
 
@@ -4283,7 +4283,7 @@
 
     .line 1167
     :cond_0
-    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v4, p2}, Landroid/widget/ListAdapter;->getItemViewType(I)I
 
@@ -4292,17 +4292,17 @@
     iput v4, v3, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;->viewType:I
 
     .line 1169
-    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->left:I
 
-    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->right:I
 
     add-int/2addr v4, v5
 
-    iget v5, v3, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;->width:I
+    iget v5, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {p3, v4, v5}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -4310,7 +4310,7 @@
 
     .line 1171
     .local v1, childWidthSpec:I
-    iget v2, v3, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;->height:I
+    iget v2, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1173
     .local v2, lpHeight:I
@@ -4360,7 +4360,7 @@
     .local v12, fadingEdgeLength:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move/from16 v17, v0
 
@@ -4409,7 +4409,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -4442,7 +4442,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -4525,7 +4525,7 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     move v4, v0
 
@@ -4534,7 +4534,7 @@
     .line 1027
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
@@ -4562,7 +4562,7 @@
     .line 1029
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
@@ -4592,7 +4592,7 @@
     :cond_1
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
@@ -4618,7 +4618,7 @@
     .line 1033
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
@@ -4660,7 +4660,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -4756,7 +4756,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -4788,7 +4788,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -4879,7 +4879,7 @@
     if-eqz v2, :cond_0
 
     .line 2770
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v0, v1
 
@@ -4920,7 +4920,7 @@
 
     .line 2513
     .local v4, h:I
-    iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v6, Landroid/graphics/Rect;->left:I
 
@@ -4963,7 +4963,7 @@
 
     move-result v9
 
-    iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
@@ -4971,13 +4971,13 @@
 
     .line 2851
     .local v5, listBottom:I
-    iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v9, Landroid/graphics/Rect;->top:I
 
     .line 2852
     .local v6, listTop:I
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     .line 2854
     .local v8, recycleBin:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
@@ -5006,7 +5006,7 @@
     if-ge v9, v5, :cond_0
 
     .line 2861
-    iget v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v9, v7
 
@@ -5014,7 +5014,7 @@
 
     .line 2862
     .local v3, lastVisiblePosition:I
-    iget v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v9, v11
 
@@ -5094,11 +5094,11 @@
     move-result-object v0
 
     .line 2889
-    iget v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/lit8 v9, v9, 0x1
 
-    iput v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     goto :goto_1
 
@@ -5127,23 +5127,23 @@
 
     if-le v9, v6, :cond_4
 
-    iget v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-lez v9, :cond_4
 
     .line 2897
-    iget v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     invoke-direct {p0, v0, v9}, Lcom/nemustech/tiffany/widget/TFListView;->addViewAbove(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v0
 
     .line 2898
-    iget v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     sub-int/2addr v9, v11
 
-    iput v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput v9, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     goto :goto_3
 
@@ -5280,7 +5280,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTouchMode:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     move v14, v0
 
@@ -5298,7 +5298,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mMotionPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     move/from16 v20, v0
 
@@ -5385,7 +5385,7 @@
     :cond_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object/from16 v20, v0
 
@@ -5529,13 +5529,13 @@
     .line 1832
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mWidthMeasureSpec:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mWidthMeasureSpec:I
 
     move/from16 v20, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v21, v0
 
@@ -5547,7 +5547,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v22, v0
 
@@ -5561,7 +5561,7 @@
 
     move-object/from16 v0, v16
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;->width:I
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     move/from16 v22, v0
 
@@ -5573,7 +5573,7 @@
     .local v9, childWidthSpec:I
     move-object/from16 v0, v16
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView$LayoutParams;->height:I
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     move v13, v0
 
@@ -5656,7 +5656,7 @@
     :goto_a
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mCachingStarted:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCachingStarted:Z
 
     move/from16 v20, v0
 
@@ -5889,7 +5889,7 @@
 
     .line 604
     .local v0, bottomOfBottomChild:I
-    iget v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v4, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v4, v1
 
@@ -5897,7 +5897,7 @@
 
     .line 606
     .local v2, lastVisiblePosition:I
-    iget v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mScrollY:I
+    iget v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollY:I
 
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getHeight()I
 
@@ -5905,7 +5905,7 @@
 
     add-int/2addr v4, v5
 
-    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->bottom:I
 
@@ -5913,7 +5913,7 @@
 
     .line 608
     .local v3, listBottom:I
-    iget v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v4, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v4, v6
 
@@ -5940,9 +5940,9 @@
     const/4 v3, 0x0
 
     .line 594
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mScrollY:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollY:I
 
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
 
@@ -5950,7 +5950,7 @@
 
     .line 595
     .local v0, listTop:I
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     if-gtz v1, :cond_0
 
@@ -6006,12 +6006,12 @@
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 433
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
 
     if-eqz v1, :cond_0
 
     .line 434
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
 
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;->onChanged()V
 
@@ -6044,7 +6044,7 @@
 
     .prologue
     .line 348
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v1, :cond_0
 
@@ -6093,7 +6093,7 @@
     const/4 v1, 0x1
 
     :try_start_0
-    iput-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mInLayout:Z
+    iput-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mInLayout:Z
 
     .line 2308
     invoke-direct {p0, p1}, Lcom/nemustech/tiffany/widget/TFListView;->arrowScrollImpl(I)Z
@@ -6115,7 +6115,7 @@
 
     .line 2314
     :cond_0
-    iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mInLayout:Z
+    iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mInLayout:Z
 
     return v0
 
@@ -6123,7 +6123,7 @@
     :catchall_0
     move-exception v1
 
-    iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mInLayout:Z
+    iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mInLayout:Z
 
     throw v1
 .end method
@@ -6139,7 +6139,7 @@
 
     if-eqz v0, :cond_0
 
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 
@@ -6159,69 +6159,25 @@
     .parameter "canvas"
 
     .prologue
-    .line 2991
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v25, v0
-
-    if-eqz v25, :cond_0
-
-    .line 2992
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScrollEffect:I
-
-    move/from16 v25, v0
-
-    packed-switch v25, :pswitch_data_0
-
-    .line 3003
-    invoke-virtual/range {p0 .. p1}, Lcom/nemustech/tiffany/widget/TFListView;->dispatchDrawWithExcessScroll_Default(Landroid/graphics/Canvas;)V
-
-    .line 3165
-    :goto_0
-    return-void
-
-    .line 2994
-    :pswitch_0
-    invoke-virtual/range {p0 .. p1}, Lcom/nemustech/tiffany/widget/TFListView;->dispatchDrawWithExcessScroll_FlashFrame(Landroid/graphics/Canvas;)V
-
-    goto :goto_0
-
-    .line 2997
-    :pswitch_1
-    invoke-virtual/range {p0 .. p1}, Lcom/nemustech/tiffany/widget/TFListView;->dispatchDrawWithExcessScroll_Tremble(Landroid/graphics/Canvas;)V
-
-    goto :goto_0
-
-    .line 3000
-    :pswitch_2
-    invoke-virtual/range {p0 .. p1}, Lcom/nemustech/tiffany/widget/TFListView;->dispatchDrawWithExcessScroll_ItemSpring(Landroid/graphics/Canvas;)V
-
-    goto :goto_0
-
-    .line 3008
-    :cond_0
+    .line 3010
     const/4 v9, 0x0
 
-    .line 3009
+    .line 3011
     .local v9, clipSaved:Z
     const/16 v23, 0x0
 
-    .line 3010
+    .line 3012
     .local v23, saveClip:I
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
 
     move-result v25
 
-    if-lez v25, :cond_1
+    if-lez v25, :cond_0
 
-    .line 3011
+    .line 3013
     const/4 v9, 0x1
 
-    .line 3012
+    .line 3014
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
@@ -6238,7 +6194,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->left:I
 
-    .line 3013
+    .line 3015
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
@@ -6259,7 +6215,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 3014
+    .line 3016
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
@@ -6282,7 +6238,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->right:I
 
-    .line 3015
+    .line 3017
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
@@ -6307,7 +6263,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 3016
+    .line 3018
     const/16 v25, 0x2
 
     move-object/from16 v0, p1
@@ -6318,7 +6274,7 @@
 
     move-result v23
 
-    .line 3017
+    .line 3019
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
@@ -6331,17 +6287,17 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 3021
-    :cond_1
+    .line 3023
+    :cond_0
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
     move v11, v0
 
-    .line 3023
+    .line 3025
     .local v11, dividerHeight:I
-    if-lez v11, :cond_f
+    if-lez v11, :cond_e
 
     move-object/from16 v0, p0
 
@@ -6349,20 +6305,20 @@
 
     move-object/from16 v25, v0
 
-    if-eqz v25, :cond_f
+    if-eqz v25, :cond_e
 
-    .line 3025
+    .line 3027
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
 
     move-object v7, v0
 
-    .line 3026
+    .line 3028
     .local v7, bounds:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingLeft:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingLeft:I
 
     move/from16 v25, v0
 
@@ -6372,16 +6328,16 @@
 
     iput v0, v1, Landroid/graphics/Rect;->left:I
 
-    .line 3027
+    .line 3029
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mRight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mRight:I
 
     move/from16 v25, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLeft:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mLeft:I
 
     move/from16 v26, v0
 
@@ -6389,7 +6345,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingRight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingRight:I
 
     move/from16 v26, v0
 
@@ -6401,12 +6357,12 @@
 
     iput v0, v1, Landroid/graphics/Rect;->right:I
 
-    .line 3029
+    .line 3031
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
 
     move-result v10
 
-    .line 3030
+    .line 3032
     .local v10, count:I
     move-object/from16 v0, p0
 
@@ -6418,11 +6374,11 @@
 
     move-result v16
 
-    .line 3031
+    .line 3033
     .local v16, headerCount:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move/from16 v25, v0
 
@@ -6442,7 +6398,7 @@
 
     sub-int v15, v25, v26
 
-    .line 3032
+    .line 3034
     .local v15, footerLimit:I
     move-object/from16 v0, p0
 
@@ -6450,7 +6406,7 @@
 
     move/from16 v17, v0
 
-    .line 3033
+    .line 3035
     .local v17, headerDividers:Z
     move-object/from16 v0, p0
 
@@ -6458,15 +6414,15 @@
 
     move v14, v0
 
-    .line 3034
+    .line 3036
     .local v14, footerDividers:Z
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v13, v0
 
-    .line 3035
+    .line 3037
     .local v13, first:I
     move-object/from16 v0, p0
 
@@ -6474,36 +6430,36 @@
 
     move v5, v0
 
-    .line 3036
+    .line 3038
     .local v5, areAllItemsSelectable:Z
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v4, v0
 
-    .line 3041
+    .line 3043
     .local v4, adapter:Landroid/widget/ListAdapter;
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->isOpaque()Z
 
     move-result v25
 
-    if-eqz v25, :cond_7
+    if-eqz v25, :cond_6
 
     invoke-super/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->isOpaque()Z
 
     move-result v25
 
-    if-nez v25, :cond_7
+    if-nez v25, :cond_6
 
     const/16 v25, 0x1
 
     move/from16 v12, v25
 
-    .line 3043
+    .line 3045
     .local v12, fillForMissingDividers:Z
-    :goto_1
-    if-eqz v12, :cond_2
+    :goto_0
+    if-eqz v12, :cond_1
 
     move-object/from16 v0, p0
 
@@ -6511,7 +6467,7 @@
 
     move-object/from16 v25, v0
 
-    if-nez v25, :cond_2
+    if-nez v25, :cond_1
 
     move-object/from16 v0, p0
 
@@ -6519,9 +6475,9 @@
 
     move/from16 v25, v0
 
-    if-eqz v25, :cond_2
+    if-eqz v25, :cond_1
 
-    .line 3044
+    .line 3046
     new-instance v25, Landroid/graphics/Paint;
 
     invoke-direct/range {v25 .. v25}, Landroid/graphics/Paint;-><init>()V
@@ -6532,7 +6488,7 @@
 
     iput-object v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mDividerPaint:Landroid/graphics/Paint;
 
-    .line 3045
+    .line 3047
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerPaint:Landroid/graphics/Paint;
@@ -6545,34 +6501,34 @@
 
     invoke-virtual/range {v25 .. v26}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 3047
-    :cond_2
+    .line 3049
+    :cond_1
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerPaint:Landroid/graphics/Paint;
 
     move-object/from16 v22, v0
 
-    .line 3049
+    .line 3051
     .local v22, paint:Landroid/graphics/Paint;
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     move/from16 v25, v0
 
-    if-nez v25, :cond_9
+    if-nez v25, :cond_8
 
-    .line 3051
+    .line 3053
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBottom:I
 
     move/from16 v25, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mTop:I
 
     move/from16 v26, v0
 
@@ -6580,7 +6536,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v26, v0
 
@@ -6592,20 +6548,20 @@
 
     sub-int v20, v25, v26
 
-    .line 3053
+    .line 3055
     .local v20, listBottom:I
     const/16 v18, 0x0
 
     .local v18, i:I
-    :goto_2
+    :goto_1
     move/from16 v0, v18
 
     move v1, v10
 
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_e
 
-    .line 3054
-    if-nez v17, :cond_3
+    .line 3056
+    if-nez v17, :cond_2
 
     add-int v25, v13, v18
 
@@ -6613,10 +6569,10 @@
 
     move/from16 v1, v16
 
-    if-lt v0, v1, :cond_6
+    if-lt v0, v1, :cond_5
 
-    :cond_3
-    if-nez v14, :cond_4
+    :cond_2
+    if-nez v14, :cond_3
 
     add-int v25, v13, v18
 
@@ -6624,10 +6580,10 @@
 
     move v1, v15
 
-    if-ge v0, v1, :cond_6
+    if-ge v0, v1, :cond_5
 
-    .line 3056
-    :cond_4
+    .line 3058
+    :cond_3
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6636,22 +6592,22 @@
 
     move-result-object v8
 
-    .line 3057
+    .line 3059
     .local v8, child:Landroid/view/View;
     invoke-virtual {v8}, Landroid/view/View;->getBottom()I
 
     move-result v6
 
-    .line 3059
+    .line 3061
     .local v6, bottom:I
     move v0, v6
 
     move/from16 v1, v20
 
-    if-ge v0, v1, :cond_6
+    if-ge v0, v1, :cond_5
 
-    .line 3060
-    if-nez v5, :cond_5
+    .line 3062
+    if-nez v5, :cond_4
 
     add-int v25, v13, v18
 
@@ -6663,7 +6619,7 @@
 
     move/from16 v1, v26
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_7
 
     add-int v25, v13, v18
 
@@ -6675,7 +6631,7 @@
 
     move-result v25
 
-    if-eqz v25, :cond_8
+    if-eqz v25, :cond_7
 
     const/16 v25, 0x1
 
@@ -6685,7 +6641,7 @@
 
     move/from16 v1, v25
 
-    if-eq v0, v1, :cond_5
+    if-eq v0, v1, :cond_4
 
     add-int v25, v13, v18
 
@@ -6699,13 +6655,13 @@
 
     move-result v25
 
-    if-eqz v25, :cond_8
+    if-eqz v25, :cond_7
 
-    .line 3064
-    :cond_5
+    .line 3066
+    :cond_4
     iput v6, v7, Landroid/graphics/Rect;->top:I
 
-    .line 3065
+    .line 3067
     add-int v25, v6, v11
 
     move/from16 v0, v25
@@ -6714,7 +6670,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 3066
+    .line 3068
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -6725,41 +6681,41 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
 
-    .line 3053
+    .line 3055
     .end local v6           #bottom:I
     .end local v8           #child:Landroid/view/View;
-    :cond_6
-    :goto_3
+    :cond_5
+    :goto_2
     add-int/lit8 v18, v18, 0x1
 
-    goto :goto_2
+    goto :goto_1
 
-    .line 3041
+    .line 3043
     .end local v12           #fillForMissingDividers:Z
     .end local v18           #i:I
     .end local v20           #listBottom:I
     .end local v22           #paint:Landroid/graphics/Paint;
-    :cond_7
+    :cond_6
     const/16 v25, 0x0
 
     move/from16 v12, v25
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    .line 3067
+    .line 3069
     .restart local v6       #bottom:I
     .restart local v8       #child:Landroid/view/View;
     .restart local v12       #fillForMissingDividers:Z
     .restart local v18       #i:I
     .restart local v20       #listBottom:I
     .restart local v22       #paint:Landroid/graphics/Paint;
-    :cond_8
-    if-eqz v12, :cond_6
+    :cond_7
+    if-eqz v12, :cond_5
 
-    .line 3068
+    .line 3070
     iput v6, v7, Landroid/graphics/Rect;->top:I
 
-    .line 3069
+    .line 3071
     add-int v25, v6, v11
 
     move/from16 v0, v25
@@ -6768,7 +6724,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 3070
+    .line 3072
     move-object/from16 v0, p1
 
     move-object v1, v7
@@ -6777,17 +6733,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    goto :goto_3
+    goto :goto_2
 
-    .line 3077
+    .line 3079
     .end local v6           #bottom:I
     .end local v8           #child:Landroid/view/View;
     .end local v18           #i:I
     .end local v20           #listBottom:I
-    :cond_9
+    :cond_8
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v25, v0
 
@@ -6797,20 +6753,20 @@
 
     move/from16 v21, v0
 
-    .line 3079
+    .line 3081
     .local v21, listTop:I
     const/16 v18, 0x0
 
     .restart local v18       #i:I
-    :goto_4
+    :goto_3
     move/from16 v0, v18
 
     move v1, v10
 
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_e
 
-    .line 3080
-    if-nez v17, :cond_a
+    .line 3082
+    if-nez v17, :cond_9
 
     add-int v25, v13, v18
 
@@ -6818,10 +6774,10 @@
 
     move/from16 v1, v16
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_c
 
-    :cond_a
-    if-nez v14, :cond_b
+    :cond_9
+    if-nez v14, :cond_a
 
     add-int v25, v13, v18
 
@@ -6829,10 +6785,10 @@
 
     move v1, v15
 
-    if-ge v0, v1, :cond_d
+    if-ge v0, v1, :cond_c
 
-    .line 3082
-    :cond_b
+    .line 3084
+    :cond_a
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6841,22 +6797,22 @@
 
     move-result-object v8
 
-    .line 3083
+    .line 3085
     .restart local v8       #child:Landroid/view/View;
     invoke-virtual {v8}, Landroid/view/View;->getTop()I
 
     move-result v24
 
-    .line 3085
+    .line 3087
     .local v24, top:I
     move/from16 v0, v24
 
     move/from16 v1, v21
 
-    if-le v0, v1, :cond_d
+    if-le v0, v1, :cond_c
 
-    .line 3086
-    if-nez v5, :cond_c
+    .line 3088
+    if-nez v5, :cond_b
 
     add-int v25, v13, v18
 
@@ -6868,7 +6824,7 @@
 
     move/from16 v1, v26
 
-    if-ge v0, v1, :cond_e
+    if-ge v0, v1, :cond_d
 
     add-int v25, v13, v18
 
@@ -6880,11 +6836,11 @@
 
     move-result v25
 
-    if-eqz v25, :cond_e
+    if-eqz v25, :cond_d
 
     add-int v25, v13, v18
 
-    if-eqz v25, :cond_c
+    if-eqz v25, :cond_b
 
     add-int v25, v13, v18
 
@@ -6900,10 +6856,10 @@
 
     move-result v25
 
-    if-eqz v25, :cond_e
+    if-eqz v25, :cond_d
 
-    .line 3093
-    :cond_c
+    .line 3095
+    :cond_b
     sub-int v25, v24, v11
 
     move/from16 v0, v25
@@ -6912,14 +6868,14 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 3094
+    .line 3096
     move/from16 v0, v24
 
     move-object v1, v7
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 3099
+    .line 3101
     const/16 v25, 0x1
 
     sub-int v25, v18, v25
@@ -6934,22 +6890,22 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
 
-    .line 3079
+    .line 3081
     .end local v8           #child:Landroid/view/View;
     .end local v24           #top:I
-    :cond_d
-    :goto_5
+    :cond_c
+    :goto_4
     add-int/lit8 v18, v18, 0x1
 
-    goto :goto_4
+    goto :goto_3
 
-    .line 3100
+    .line 3102
     .restart local v8       #child:Landroid/view/View;
     .restart local v24       #top:I
-    :cond_e
-    if-eqz v12, :cond_d
+    :cond_d
+    if-eqz v12, :cond_c
 
-    .line 3101
+    .line 3103
     sub-int v25, v24, v11
 
     move/from16 v0, v25
@@ -6958,14 +6914,14 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 3102
+    .line 3104
     move/from16 v0, v24
 
     move-object v1, v7
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 3103
+    .line 3105
     move-object/from16 v0, p1
 
     move-object v1, v7
@@ -6974,9 +6930,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    goto :goto_5
+    goto :goto_4
 
-    .line 3112
+    .line 3114
     .end local v4           #adapter:Landroid/widget/ListAdapter;
     .end local v5           #areAllItemsSelectable:Z
     .end local v7           #bounds:Landroid/graphics/Rect;
@@ -6992,8 +6948,8 @@
     .end local v21           #listTop:I
     .end local v22           #paint:Landroid/graphics/Paint;
     .end local v24           #top:I
-    :cond_f
-    if-lez v11, :cond_11
+    :cond_e
+    if-lez v11, :cond_10
 
     move-object/from16 v0, p0
 
@@ -7001,28 +6957,28 @@
 
     move-object/from16 v25, v0
 
-    if-eqz v25, :cond_11
+    if-eqz v25, :cond_10
 
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScrollEnabled:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
 
     move/from16 v25, v0
 
-    if-eqz v25, :cond_11
+    if-eqz v25, :cond_10
 
-    .line 3115
+    .line 3117
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
 
     move-object v7, v0
 
-    .line 3116
+    .line 3118
     .restart local v7       #bounds:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingLeft:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingLeft:I
 
     move/from16 v25, v0
 
@@ -7032,16 +6988,16 @@
 
     iput v0, v1, Landroid/graphics/Rect;->left:I
 
-    .line 3117
+    .line 3119
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mRight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mRight:I
 
     move/from16 v25, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLeft:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mLeft:I
 
     move/from16 v26, v0
 
@@ -7049,7 +7005,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingRight:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingRight:I
 
     move/from16 v26, v0
 
@@ -7061,7 +7017,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->right:I
 
-    .line 3119
+    .line 3121
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
 
     move-result v25
@@ -7072,36 +7028,107 @@
 
     sub-int v10, v25, v26
 
-    .line 3120
+    .line 3122
     .restart local v10       #count:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v4, v0
 
-    .line 3121
+    .line 3123
     .restart local v4       #adapter:Landroid/widget/ListAdapter;
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v13, v0
 
-    .line 3123
+    .line 3125
     .restart local v13       #first:I
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     move/from16 v25, v0
 
-    if-nez v25, :cond_13
+    if-nez v25, :cond_12
 
-    .line 3126
-    if-lez v10, :cond_10
+    .line 3128
+    if-lez v10, :cond_f
 
     const/16 v25, 0x0
+
+    move-object v0, v4
+
+    move/from16 v1, v25
+
+    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
+
+    move-result v25
+
+    if-eqz v25, :cond_f
+
+    .line 3129
+    const/16 v25, 0x0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v25
+
+    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Landroid/view/View;->getTop()I
+
+    move-result v25
+
+    sub-int v25, v25, v11
+
+    move/from16 v0, v25
+
+    move-object v1, v7
+
+    iput v0, v1, Landroid/graphics/Rect;->top:I
+
+    .line 3130
+    move-object v0, v7
+
+    iget v0, v0, Landroid/graphics/Rect;->top:I
+
+    move/from16 v25, v0
+
+    add-int v25, v25, v11
+
+    move/from16 v0, v25
+
+    move-object v1, v7
+
+    iput v0, v1, Landroid/graphics/Rect;->bottom:I
+
+    .line 3131
+    const/16 v25, -0x1
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object v2, v7
+
+    move/from16 v3, v25
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
+
+    .line 3134
+    :cond_f
+    if-lez v10, :cond_10
+
+    add-int v25, v13, v10
+
+    const/16 v26, 0x1
+
+    sub-int v25, v25, v26
 
     move-object v0, v4
 
@@ -7113,78 +7140,7 @@
 
     if-eqz v25, :cond_10
 
-    .line 3127
-    const/16 v25, 0x0
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v25
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v25
-
-    invoke-virtual/range {v25 .. v25}, Landroid/view/View;->getTop()I
-
-    move-result v25
-
-    sub-int v25, v25, v11
-
-    move/from16 v0, v25
-
-    move-object v1, v7
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3128
-    move-object v0, v7
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v25, v0
-
-    add-int v25, v25, v11
-
-    move/from16 v0, v25
-
-    move-object v1, v7
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3129
-    const/16 v25, -0x1
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v7
-
-    move/from16 v3, v25
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3132
-    :cond_10
-    if-lez v10, :cond_11
-
-    add-int v25, v13, v10
-
-    const/16 v26, 0x1
-
-    sub-int v25, v25, v26
-
-    move-object v0, v4
-
-    move/from16 v1, v25
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v25
-
-    if-eqz v25, :cond_11
-
-    .line 3134
+    .line 3136
     const/16 v25, 0x1
 
     sub-int v25, v10, v25
@@ -7201,7 +7157,7 @@
 
     move-result v19
 
-    .line 3136
+    .line 3138
     .local v19, itemBottom:I
     move/from16 v0, v19
 
@@ -7209,7 +7165,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 3137
+    .line 3139
     move-object v0, v7
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -7224,7 +7180,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 3138
+    .line 3140
     const/16 v25, 0x1
 
     sub-int v25, v10, v25
@@ -7239,36 +7195,37 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
 
-    .line 3160
+    .line 3162
     .end local v4           #adapter:Landroid/widget/ListAdapter;
     .end local v7           #bounds:Landroid/graphics/Rect;
     .end local v10           #count:I
     .end local v13           #first:I
     .end local v19           #itemBottom:I
-    :cond_11
-    :goto_6
-    if-eqz v9, :cond_12
+    :cond_10
+    :goto_5
+    if-eqz v9, :cond_11
 
-    .line 3161
+    .line 3163
     move-object/from16 v0, p1
 
     move/from16 v1, v23
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 3164
-    :cond_12
+    .line 3166
+    :cond_11
     invoke-super/range {p0 .. p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    goto/16 :goto_0
+    .line 3167
+    return-void
 
-    .line 3143
+    .line 3145
     .restart local v4       #adapter:Landroid/widget/ListAdapter;
     .restart local v7       #bounds:Landroid/graphics/Rect;
     .restart local v10       #count:I
     .restart local v13       #first:I
-    :cond_13
-    if-lez v10, :cond_14
+    :cond_12
+    if-lez v10, :cond_13
 
     const/16 v25, 0x0
 
@@ -7280,9 +7237,9 @@
 
     move-result v25
 
-    if-eqz v25, :cond_14
+    if-eqz v25, :cond_13
 
-    .line 3144
+    .line 3146
     const/16 v25, 0x0
 
     move-object/from16 v0, p0
@@ -7305,7 +7262,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 3145
+    .line 3147
     move-object v0, v7
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -7320,7 +7277,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 3146
+    .line 3148
     const/16 v25, -0x1
 
     move-object/from16 v0, p0
@@ -7333,9 +7290,9 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
 
-    .line 3149
-    :cond_14
-    if-lez v10, :cond_11
+    .line 3151
+    :cond_13
+    if-lez v10, :cond_10
 
     add-int v25, v13, v10
 
@@ -7351,9 +7308,9 @@
 
     move-result v25
 
-    if-eqz v25, :cond_11
+    if-eqz v25, :cond_10
 
-    .line 3151
+    .line 3153
     const/16 v25, 0x1
 
     sub-int v25, v10, v25
@@ -7370,7 +7327,7 @@
 
     move-result v19
 
-    .line 3153
+    .line 3155
     .restart local v19       #itemBottom:I
     move/from16 v0, v19
 
@@ -7378,7 +7335,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 3154
+    .line 3156
     move-object v0, v7
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -7393,7 +7350,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 3155
+    .line 3157
     const/16 v25, 0x1
 
     sub-int v25, v10, v25
@@ -7408,3590 +7365,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
 
-    goto/16 :goto_6
-
-    .line 2992
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method protected dispatchDrawWithExcessScroll_Default(Landroid/graphics/Canvas;)V
-    .locals 31
-    .parameter "canvas"
-
-    .prologue
-    .line 3192
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getHeight()I
-
-    move-result v28
-
-    move/from16 v0, v28
-
-    int-to-float v0, v0
-
-    move/from16 v20, v0
-
-    .line 3193
-    .local v20, height:F
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getExcessScrollDrawInterpolator()Landroid/view/animation/Interpolator;
-
-    move-result-object v28
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v29, v0
-
-    invoke-static/range {v29 .. v29}, Ljava/lang/Math;->abs(I)I
-
-    move-result v29
-
-    move/from16 v0, v29
-
-    int-to-float v0, v0
-
-    move/from16 v29, v0
-
-    div-float v29, v29, v20
-
-    invoke-interface/range {v28 .. v29}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
-
-    move-result v28
-
-    mul-float v28, v28, v20
-
-    move/from16 v0, v28
-
-    float-to-int v0, v0
-
-    move/from16 v26, v0
-
-    .line 3196
-    .local v26, shift:I
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v28, v0
-
-    if-gez v28, :cond_0
-
-    .line 3197
-    mul-int/lit8 v26, v26, -0x1
-
-    .line 3200
-    :cond_0
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getPaddingLeft()I
-
-    move-result v29
-
-    move/from16 v0, v29
-
-    move-object/from16 v1, v28
-
-    iput v0, v1, Landroid/graphics/Rect;->left:I
-
-    .line 3201
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getPaddingTop()I
-
-    move-result v29
-
-    move/from16 v0, v29
-
-    move-object/from16 v1, v28
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3202
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getWidth()I
-
-    move-result v29
-
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getPaddingRight()I
-
-    move-result v30
-
-    sub-int v29, v29, v30
-
-    move/from16 v0, v29
-
-    move-object/from16 v1, v28
-
-    iput v0, v1, Landroid/graphics/Rect;->right:I
-
-    .line 3203
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getHeight()I
-
-    move-result v29
-
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getPaddingBottom()I
-
-    move-result v30
-
-    sub-int v29, v29, v30
-
-    move/from16 v0, v29
-
-    move-object/from16 v1, v28
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3204
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
-
-    .line 3206
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v25
-
-    .line 3207
-    .local v25, save1:I
-    const/16 v28, 0x0
-
-    move/from16 v0, v26
-
-    int-to-float v0, v0
-
-    move/from16 v29, v0
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v28
-
-    move/from16 v2, v29
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 3209
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v10
-
-    .line 3212
-    .local v10, childCount:I
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
-
-    move v12, v0
-
-    .line 3214
-    .local v12, dividerHeight:I
-    if-lez v12, :cond_a
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDivider:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v28, v0
-
-    if-eqz v28, :cond_a
-
-    .line 3216
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v8, v0
-
-    .line 3217
-    .local v8, bounds:Landroid/graphics/Rect;
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingLeft:I
-
-    move/from16 v28, v0
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->left:I
-
-    .line 3218
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mRight:I
-
-    move/from16 v28, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLeft:I
-
-    move/from16 v29, v0
-
-    sub-int v28, v28, v29
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingRight:I
-
-    move/from16 v29, v0
-
-    sub-int v28, v28, v29
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->right:I
-
-    .line 3220
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v11
-
-    .line 3221
-    .local v11, count:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderViewInfos:Ljava/util/ArrayList;
-
-    move-object/from16 v28, v0
-
-    invoke-virtual/range {v28 .. v28}, Ljava/util/ArrayList;->size()I
-
-    move-result v18
-
-    .line 3222
-    .local v18, headerCount:I
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
-
-    move/from16 v28, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFooterViewInfos:Ljava/util/ArrayList;
-
-    move-object/from16 v29, v0
-
-    invoke-virtual/range {v29 .. v29}, Ljava/util/ArrayList;->size()I
-
-    move-result v29
-
-    sub-int v28, v28, v29
-
-    const/16 v29, 0x1
-
-    sub-int v17, v28, v29
-
-    .line 3223
-    .local v17, footerLimit:I
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderDividersEnabled:Z
-
-    move/from16 v19, v0
-
-    .line 3224
-    .local v19, headerDividers:Z
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFooterDividersEnabled:Z
-
-    move/from16 v16, v0
-
-    .line 3225
-    .local v16, footerDividers:Z
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
-
-    move v15, v0
-
-    .line 3226
-    .local v15, first:I
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAreAllItemsSelectable:Z
-
-    move v6, v0
-
-    .line 3227
-    .local v6, areAllItemsSelectable:Z
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
-
-    move-object v5, v0
-
-    .line 3229
-    .local v5, adapter:Landroid/widget/ListAdapter;
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
-
-    move/from16 v28, v0
-
-    if-nez v28, :cond_5
-
-    .line 3231
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
-
-    move/from16 v28, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
-
-    move/from16 v29, v0
-
-    sub-int v28, v28, v29
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v29, v0
-
-    move-object/from16 v0, v29
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v29, v0
-
-    sub-int v23, v28, v29
-
-    .line 3233
-    .local v23, listBottom:I
-    const/16 v21, 0x0
-
-    .local v21, i:I
-    :goto_0
-    move/from16 v0, v21
-
-    move v1, v11
-
-    if-ge v0, v1, :cond_a
-
-    .line 3234
-    if-nez v19, :cond_1
-
-    add-int v28, v15, v21
-
-    move/from16 v0, v28
-
-    move/from16 v1, v18
-
-    if-lt v0, v1, :cond_4
-
-    :cond_1
-    if-nez v16, :cond_2
-
-    add-int v28, v15, v21
-
-    move/from16 v0, v28
-
-    move/from16 v1, v17
-
-    if-ge v0, v1, :cond_4
-
-    .line 3236
-    :cond_2
-    move-object/from16 v0, p0
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v9
-
-    .line 3237
-    .local v9, child:Landroid/view/View;
-    invoke-virtual {v9}, Landroid/view/View;->getBottom()I
-
-    move-result v7
-
-    .line 3239
-    .local v7, bottom:I
-    move v0, v7
-
-    move/from16 v1, v23
-
-    if-ge v0, v1, :cond_4
-
-    if-nez v6, :cond_3
-
-    add-int v28, v15, v21
-
-    invoke-interface {v5}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v29
-
-    move/from16 v0, v28
-
-    move/from16 v1, v29
-
-    if-ge v0, v1, :cond_4
-
-    add-int v28, v15, v21
-
-    move-object v0, v5
-
-    move/from16 v1, v28
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v28
-
-    if-eqz v28, :cond_4
-
-    const/16 v28, 0x1
-
-    sub-int v28, v11, v28
-
-    move/from16 v0, v21
-
-    move/from16 v1, v28
-
-    if-eq v0, v1, :cond_3
-
-    add-int v28, v15, v21
-
-    add-int/lit8 v28, v28, 0x1
-
-    move-object v0, v5
-
-    move/from16 v1, v28
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v28
-
-    if-eqz v28, :cond_4
-
-    .line 3243
-    :cond_3
-    iput v7, v8, Landroid/graphics/Rect;->top:I
-
-    .line 3244
-    add-int v28, v7, v12
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3245
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v21
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3233
-    .end local v7           #bottom:I
-    .end local v9           #child:Landroid/view/View;
-    :cond_4
-    add-int/lit8 v21, v21, 0x1
-
-    goto :goto_0
-
-    .line 3251
-    .end local v21           #i:I
-    .end local v23           #listBottom:I
-    :cond_5
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    move-object/from16 v0, v28
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v24, v0
-
-    .line 3253
-    .local v24, listTop:I
-    const/16 v21, 0x0
-
-    .restart local v21       #i:I
-    :goto_1
-    move/from16 v0, v21
-
-    move v1, v11
-
-    if-ge v0, v1, :cond_a
-
-    .line 3254
-    if-nez v19, :cond_6
-
-    add-int v28, v15, v21
-
-    move/from16 v0, v28
-
-    move/from16 v1, v18
-
-    if-lt v0, v1, :cond_9
-
-    :cond_6
-    if-nez v16, :cond_7
-
-    add-int v28, v15, v21
-
-    move/from16 v0, v28
-
-    move/from16 v1, v17
-
-    if-ge v0, v1, :cond_9
-
-    .line 3256
-    :cond_7
-    move-object/from16 v0, p0
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v9
-
-    .line 3257
-    .restart local v9       #child:Landroid/view/View;
-    invoke-virtual {v9}, Landroid/view/View;->getTop()I
-
-    move-result v27
-
-    .line 3259
-    .local v27, top:I
-    move/from16 v0, v27
-
-    move/from16 v1, v24
-
-    if-le v0, v1, :cond_9
-
-    if-nez v6, :cond_8
-
-    add-int v28, v15, v21
-
-    invoke-interface {v5}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v29
-
-    move/from16 v0, v28
-
-    move/from16 v1, v29
-
-    if-ge v0, v1, :cond_9
-
-    add-int v28, v15, v21
-
-    move-object v0, v5
-
-    move/from16 v1, v28
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v28
-
-    if-eqz v28, :cond_9
-
-    add-int v28, v15, v21
-
-    if-eqz v28, :cond_8
-
-    add-int v28, v15, v21
-
-    const/16 v29, 0x1
-
-    sub-int v28, v28, v29
-
-    move-object v0, v5
-
-    move/from16 v1, v28
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v28
-
-    if-eqz v28, :cond_9
-
-    .line 3266
-    :cond_8
-    sub-int v28, v27, v12
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3267
-    move/from16 v0, v27
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3272
-    const/16 v28, 0x1
-
-    sub-int v28, v21, v28
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v28
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3253
-    .end local v9           #child:Landroid/view/View;
-    .end local v27           #top:I
-    :cond_9
-    add-int/lit8 v21, v21, 0x1
-
-    goto :goto_1
-
-    .line 3280
-    .end local v5           #adapter:Landroid/widget/ListAdapter;
-    .end local v6           #areAllItemsSelectable:Z
-    .end local v8           #bounds:Landroid/graphics/Rect;
-    .end local v11           #count:I
-    .end local v15           #first:I
-    .end local v16           #footerDividers:Z
-    .end local v17           #footerLimit:I
-    .end local v18           #headerCount:I
-    .end local v19           #headerDividers:Z
-    .end local v21           #i:I
-    .end local v24           #listTop:I
-    :cond_a
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getDrawingTime()J
-
-    move-result-wide v13
-
-    .line 3282
-    .local v13, drawingTime:J
-    const/16 v21, 0x0
-
-    .restart local v21       #i:I
-    :goto_2
-    move/from16 v0, v21
-
-    move v1, v10
-
-    if-ge v0, v1, :cond_c
-
-    .line 3283
-    move-object/from16 v0, p0
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v9
-
-    .line 3284
-    .restart local v9       #child:Landroid/view/View;
-    invoke-virtual {v9}, Landroid/view/View;->getVisibility()I
-
-    move-result v28
-
-    if-nez v28, :cond_b
-
-    .line 3285
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v9
-
-    move-wide v3, v13
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/nemustech/tiffany/widget/TFListView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-
-    .line 3282
-    :cond_b
-    add-int/lit8 v21, v21, 0x1
-
-    goto :goto_2
-
-    .line 3290
-    .end local v9           #child:Landroid/view/View;
-    :cond_c
-    if-lez v12, :cond_e
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDivider:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v28, v0
-
-    if-eqz v28, :cond_e
-
-    .line 3292
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v8, v0
-
-    .line 3293
-    .restart local v8       #bounds:Landroid/graphics/Rect;
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingLeft:I
-
-    move/from16 v28, v0
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->left:I
-
-    .line 3294
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mRight:I
-
-    move/from16 v28, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLeft:I
-
-    move/from16 v29, v0
-
-    sub-int v28, v28, v29
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingRight:I
-
-    move/from16 v29, v0
-
-    sub-int v28, v28, v29
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->right:I
-
-    .line 3296
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v11
-
-    .line 3297
-    .restart local v11       #count:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
-
-    move-object v5, v0
-
-    .line 3298
-    .restart local v5       #adapter:Landroid/widget/ListAdapter;
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
-
-    move v15, v0
-
-    .line 3300
-    .restart local v15       #first:I
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
-
-    move/from16 v28, v0
-
-    if-nez v28, :cond_f
-
-    .line 3303
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v28, v0
-
-    if-lez v28, :cond_d
-
-    if-lez v11, :cond_d
-
-    const/16 v28, 0x0
-
-    move-object v0, v5
-
-    move/from16 v1, v28
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v28
-
-    if-eqz v28, :cond_d
-
-    .line 3304
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getPaddingTop()I
-
-    move-result v28
-
-    sub-int v28, v28, v12
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3305
-    move-object v0, v8
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v28, v0
-
-    add-int v28, v28, v12
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3306
-    const/16 v28, -0x1
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v28
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3309
-    :cond_d
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v28, v0
-
-    if-gez v28, :cond_e
-
-    if-lez v11, :cond_e
-
-    add-int v28, v15, v11
-
-    const/16 v29, 0x1
-
-    sub-int v28, v28, v29
-
-    move-object v0, v5
-
-    move/from16 v1, v28
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v28
-
-    if-eqz v28, :cond_e
-
-    .line 3311
-    const/16 v28, 0x1
-
-    sub-int v28, v11, v28
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v28
-
-    invoke-virtual/range {v28 .. v28}, Landroid/view/View;->getBottom()I
-
-    move-result v22
-
-    .line 3313
-    .local v22, itemBottom:I
-    move/from16 v0, v22
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3314
-    move-object v0, v8
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v28, v0
-
-    add-int v28, v28, v12
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3315
-    const/16 v28, 0x1
-
-    sub-int v28, v11, v28
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v28
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3337
-    .end local v5           #adapter:Landroid/widget/ListAdapter;
-    .end local v8           #bounds:Landroid/graphics/Rect;
-    .end local v11           #count:I
-    .end local v15           #first:I
-    .end local v22           #itemBottom:I
-    :cond_e
-    :goto_3
-    move-object/from16 v0, p1
-
-    move/from16 v1, v25
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 3338
-    return-void
-
-    .line 3320
-    .restart local v5       #adapter:Landroid/widget/ListAdapter;
-    .restart local v8       #bounds:Landroid/graphics/Rect;
-    .restart local v11       #count:I
-    .restart local v15       #first:I
-    :cond_f
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v28, v0
-
-    if-lez v28, :cond_10
-
-    if-lez v11, :cond_10
-
-    const/16 v28, 0x0
-
-    move-object v0, v5
-
-    move/from16 v1, v28
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v28
-
-    if-eqz v28, :cond_10
-
-    .line 3321
-    const/16 v28, 0x0
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v28
-
-    invoke-virtual/range {v28 .. v28}, Landroid/view/View;->getTop()I
-
-    move-result v28
-
-    sub-int v28, v28, v12
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3322
-    move-object v0, v8
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v28, v0
-
-    add-int v28, v28, v12
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3323
-    const/16 v28, -0x1
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v28
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3326
-    :cond_10
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v28, v0
-
-    if-gez v28, :cond_e
-
-    if-lez v11, :cond_e
-
-    add-int v28, v15, v11
-
-    const/16 v29, 0x1
-
-    sub-int v28, v28, v29
-
-    move-object v0, v5
-
-    move/from16 v1, v28
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v28
-
-    if-eqz v28, :cond_e
-
-    .line 3328
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
-
-    move/from16 v28, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
-
-    move/from16 v29, v0
-
-    sub-int v28, v28, v29
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v29, v0
-
-    move-object/from16 v0, v29
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v29, v0
-
-    sub-int v23, v28, v29
-
-    .line 3330
-    .restart local v23       #listBottom:I
-    move/from16 v0, v23
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3331
-    move-object v0, v8
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v28, v0
-
-    add-int v28, v28, v12
-
-    move/from16 v0, v28
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3332
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move v3, v11
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    goto/16 :goto_3
-.end method
-
-.method protected dispatchDrawWithExcessScroll_FlashFrame(Landroid/graphics/Canvas;)V
-    .locals 22
-    .parameter
-
-    .prologue
-    .line 3582
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v5
-
-    .line 3584
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v6
-
-    .line 3587
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
-
-    move v7, v0
-
-    .line 3589
-    if-lez v7, :cond_9
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDivider:Landroid/graphics/drawable/Drawable;
-
-    move-object v8, v0
-
-    if-eqz v8, :cond_9
-
-    .line 3591
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v8, v0
-
-    .line 3592
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingLeft:I
-
-    move v9, v0
-
-    iput v9, v8, Landroid/graphics/Rect;->left:I
-
-    .line 3593
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mRight:I
-
-    move v9, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLeft:I
-
-    move v10, v0
-
-    sub-int/2addr v9, v10
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingRight:I
-
-    move v10, v0
-
-    sub-int/2addr v9, v10
-
-    iput v9, v8, Landroid/graphics/Rect;->right:I
-
-    .line 3595
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v9
-
-    .line 3596
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderViewInfos:Ljava/util/ArrayList;
-
-    move-object v10, v0
-
-    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
-
-    move-result v10
-
-    .line 3597
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
-
-    move v11, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFooterViewInfos:Ljava/util/ArrayList;
-
-    move-object v12, v0
-
-    invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
-
-    move-result v12
-
-    sub-int/2addr v11, v12
-
-    const/4 v12, 0x1
-
-    sub-int/2addr v11, v12
-
-    .line 3598
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderDividersEnabled:Z
-
-    move v12, v0
-
-    .line 3599
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFooterDividersEnabled:Z
-
-    move v13, v0
-
-    .line 3600
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
-
-    move v14, v0
-
-    .line 3601
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAreAllItemsSelectable:Z
-
-    move v15, v0
-
-    .line 3602
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
-
-    move-object/from16 v16, v0
-
-    .line 3604
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
-
-    move/from16 v17, v0
-
-    if-nez v17, :cond_4
-
-    .line 3606
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
-
-    move/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
-
-    move/from16 v18, v0
-
-    sub-int v17, v17, v18
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v18, v0
-
-    sub-int v17, v17, v18
-
-    .line 3608
-    const/16 v18, 0x0
-
-    :goto_0
-    move/from16 v0, v18
-
-    move v1, v9
-
-    if-ge v0, v1, :cond_9
-
-    .line 3609
-    if-nez v12, :cond_0
-
-    add-int v19, v14, v18
-
-    move/from16 v0, v19
-
-    move v1, v10
-
-    if-lt v0, v1, :cond_3
-
-    :cond_0
-    if-nez v13, :cond_1
-
-    add-int v19, v14, v18
-
-    move/from16 v0, v19
-
-    move v1, v11
-
-    if-ge v0, v1, :cond_3
-
-    .line 3611
-    :cond_1
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v19
-
-    .line 3612
-    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getBottom()I
-
-    move-result v19
-
-    .line 3614
-    move/from16 v0, v19
-
-    move/from16 v1, v17
-
-    if-ge v0, v1, :cond_3
-
-    if-nez v15, :cond_2
-
-    add-int v20, v14, v18
-
-    invoke-interface/range {v16 .. v16}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v21
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ge v0, v1, :cond_3
-
-    add-int v20, v14, v18
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v20
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_3
-
-    const/16 v20, 0x1
-
-    sub-int v20, v9, v20
-
-    move/from16 v0, v18
-
-    move/from16 v1, v20
-
-    if-eq v0, v1, :cond_2
-
-    add-int v20, v14, v18
-
-    add-int/lit8 v20, v20, 0x1
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v20
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_3
-
-    .line 3618
-    :cond_2
-    move/from16 v0, v19
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3619
-    add-int v19, v19, v7
-
-    move/from16 v0, v19
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3620
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v18
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3608
-    :cond_3
-    add-int/lit8 v18, v18, 0x1
-
-    goto :goto_0
-
-    .line 3626
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v17, v0
-
-    .line 3628
-    const/16 v18, 0x0
-
-    :goto_1
-    move/from16 v0, v18
-
-    move v1, v9
-
-    if-ge v0, v1, :cond_9
-
-    .line 3629
-    if-nez v12, :cond_5
-
-    add-int v19, v14, v18
-
-    move/from16 v0, v19
-
-    move v1, v10
-
-    if-lt v0, v1, :cond_8
-
-    :cond_5
-    if-nez v13, :cond_6
-
-    add-int v19, v14, v18
-
-    move/from16 v0, v19
-
-    move v1, v11
-
-    if-ge v0, v1, :cond_8
-
-    .line 3631
-    :cond_6
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v19
-
-    .line 3632
-    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getTop()I
-
-    move-result v19
-
-    .line 3634
-    move/from16 v0, v19
-
-    move/from16 v1, v17
-
-    if-le v0, v1, :cond_8
-
-    if-nez v15, :cond_7
-
-    add-int v20, v14, v18
-
-    invoke-interface/range {v16 .. v16}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v21
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ge v0, v1, :cond_8
-
-    add-int v20, v14, v18
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v20
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_8
-
-    add-int v20, v14, v18
-
-    if-eqz v20, :cond_7
-
-    add-int v20, v14, v18
-
-    const/16 v21, 0x1
-
-    sub-int v20, v20, v21
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v20
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_8
-
-    .line 3641
-    :cond_7
-    sub-int v20, v19, v7
-
-    move/from16 v0, v20
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3642
-    move/from16 v0, v19
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3647
-    const/16 v19, 0x1
-
-    sub-int v19, v18, v19
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v19
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3628
-    :cond_8
-    add-int/lit8 v18, v18, 0x1
-
-    goto :goto_1
-
-    .line 3655
-    :cond_9
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getDrawingTime()J
-
-    move-result-wide v7
-
-    .line 3657
-    const/4 v9, 0x0
-
-    :goto_2
-    if-ge v9, v6, :cond_b
-
-    .line 3658
-    move-object/from16 v0, p0
-
-    move v1, v9
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v10
-
-    .line 3659
-    invoke-virtual {v10}, Landroid/view/View;->getVisibility()I
-
-    move-result v11
-
-    if-nez v11, :cond_a
-
-    .line 3660
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v10
-
-    move-wide v3, v7
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/nemustech/tiffany/widget/TFListView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-
-    .line 3657
-    :cond_a
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_2
-
-    .line 3664
-    :cond_b
-    move-object/from16 v0, p1
-
-    move v1, v5
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 3666
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getExcessScrollMode()I
-
-    move-result v5
-
-    const/4 v6, 0x2
-
-    if-eq v5, v6, :cond_c
-
-    .line 3668
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move v5, v0
-
-    rem-int/lit8 v5, v5, 0x2
-
-    if-eqz v5, :cond_c
-
-    .line 3669
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    move-object/from16 v0, p0
-
-    move-object v1, v5
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getDrawingRect(Landroid/graphics/Rect;)V
-
-    .line 3670
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempPaint:Landroid/graphics/Paint;
-
-    move-object v5, v0
-
-    const/4 v6, -0x1
-
-    invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 3671
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempPaint:Landroid/graphics/Paint;
-
-    move-object v5, v0
-
-    const/high16 v6, 0x4040
-
-    invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 3672
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->left:I
-
-    int-to-float v6, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->top:I
-
-    int-to-float v7, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->right:I
-
-    int-to-float v8, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->top:I
-
-    int-to-float v9, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempPaint:Landroid/graphics/Paint;
-
-    move-object v10, v0
-
-    move-object/from16 v5, p1
-
-    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    .line 3673
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->left:I
-
-    int-to-float v6, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v7, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->right:I
-
-    int-to-float v8, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v9, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempPaint:Landroid/graphics/Paint;
-
-    move-object v10, v0
-
-    move-object/from16 v5, p1
-
-    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    .line 3674
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->left:I
-
-    int-to-float v6, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->top:I
-
-    int-to-float v7, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->left:I
-
-    int-to-float v8, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v9, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempPaint:Landroid/graphics/Paint;
-
-    move-object v10, v0
-
-    move-object/from16 v5, p1
-
-    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    .line 3675
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->right:I
-
-    int-to-float v6, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->top:I
-
-    int-to-float v7, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->right:I
-
-    int-to-float v8, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v5, v0
-
-    iget v5, v5, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v9, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempPaint:Landroid/graphics/Paint;
-
-    move-object v10, v0
-
-    move-object/from16 v5, p1
-
-    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    .line 3678
-    :cond_c
-    return-void
-.end method
-
-.method protected dispatchDrawWithExcessScroll_ItemSpring(Landroid/graphics/Canvas;)V
-    .locals 32
-    .parameter "canvas"
-
-    .prologue
-    .line 3345
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getHeight()I
-
-    move-result v30
-
-    move/from16 v0, v30
-
-    int-to-float v0, v0
-
-    move/from16 v20, v0
-
-    .line 3346
-    .local v20, height:F
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getExcessScrollDrawInterpolator()Landroid/view/animation/Interpolator;
-
-    move-result-object v30
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v31, v0
-
-    invoke-static/range {v31 .. v31}, Ljava/lang/Math;->abs(I)I
-
-    move-result v31
-
-    move/from16 v0, v31
-
-    int-to-float v0, v0
-
-    move/from16 v31, v0
-
-    div-float v31, v31, v20
-
-    invoke-interface/range {v30 .. v31}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
-
-    move-result v30
-
-    mul-float v30, v30, v20
-
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v31
-
-    move/from16 v0, v31
-
-    int-to-float v0, v0
-
-    move/from16 v31, v0
-
-    div-float v30, v30, v31
-
-    move/from16 v0, v30
-
-    float-to-int v0, v0
-
-    move/from16 v27, v0
-
-    .line 3349
-    .local v27, shiftPerItem:I
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v30, v0
-
-    if-gez v30, :cond_0
-
-    .line 3350
-    mul-int/lit8 v27, v27, -0x1
-
-    .line 3352
-    :cond_0
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v10
-
-    .line 3355
-    .local v10, childCount:I
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
-
-    move v12, v0
-
-    .line 3357
-    .local v12, dividerHeight:I
-    if-lez v12, :cond_12
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDivider:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v30, v0
-
-    if-eqz v30, :cond_12
-
-    .line 3359
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v8, v0
-
-    .line 3360
-    .local v8, bounds:Landroid/graphics/Rect;
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingLeft:I
-
-    move/from16 v30, v0
-
-    move/from16 v0, v30
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->left:I
-
-    .line 3361
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mRight:I
-
-    move/from16 v30, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLeft:I
-
-    move/from16 v31, v0
-
-    sub-int v30, v30, v31
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingRight:I
-
-    move/from16 v31, v0
-
-    sub-int v30, v30, v31
-
-    move/from16 v0, v30
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->right:I
-
-    .line 3363
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v11
-
-    .line 3364
-    .local v11, count:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderViewInfos:Ljava/util/ArrayList;
-
-    move-object/from16 v30, v0
-
-    invoke-virtual/range {v30 .. v30}, Ljava/util/ArrayList;->size()I
-
-    move-result v18
-
-    .line 3365
-    .local v18, headerCount:I
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
-
-    move/from16 v30, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFooterViewInfos:Ljava/util/ArrayList;
-
-    move-object/from16 v31, v0
-
-    invoke-virtual/range {v31 .. v31}, Ljava/util/ArrayList;->size()I
-
-    move-result v31
-
-    sub-int v30, v30, v31
-
-    const/16 v31, 0x1
-
-    sub-int v17, v30, v31
-
-    .line 3366
-    .local v17, footerLimit:I
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderDividersEnabled:Z
-
-    move/from16 v19, v0
-
-    .line 3367
-    .local v19, headerDividers:Z
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFooterDividersEnabled:Z
-
-    move/from16 v16, v0
-
-    .line 3368
-    .local v16, footerDividers:Z
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
-
-    move v15, v0
-
-    .line 3369
-    .local v15, first:I
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAreAllItemsSelectable:Z
-
-    move v6, v0
-
-    .line 3370
-    .local v6, areAllItemsSelectable:Z
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
-
-    move-object v5, v0
-
-    .line 3372
-    .local v5, adapter:Landroid/widget/ListAdapter;
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
-
-    move/from16 v30, v0
-
-    if-nez v30, :cond_9
-
-    .line 3374
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
-
-    move/from16 v30, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
-
-    move/from16 v31, v0
-
-    sub-int v30, v30, v31
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v31, v0
-
-    move-object/from16 v0, v31
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v31, v0
-
-    sub-int v22, v30, v31
-
-    .line 3376
-    .local v22, listBottom:I
-    const/16 v21, 0x0
-
-    .local v21, i:I
-    :goto_0
-    move/from16 v0, v21
-
-    move v1, v11
-
-    if-ge v0, v1, :cond_12
-
-    .line 3377
-    if-nez v19, :cond_1
-
-    add-int v30, v15, v21
-
-    move/from16 v0, v30
-
-    move/from16 v1, v18
-
-    if-lt v0, v1, :cond_6
-
-    :cond_1
-    if-nez v16, :cond_2
-
-    add-int v30, v15, v21
-
-    move/from16 v0, v30
-
-    move/from16 v1, v17
-
-    if-ge v0, v1, :cond_6
-
-    .line 3379
-    :cond_2
-    move-object/from16 v0, p0
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v9
-
-    .line 3380
-    .local v9, child:Landroid/view/View;
-    invoke-virtual {v9}, Landroid/view/View;->getBottom()I
-
-    move-result v7
-
-    .line 3382
-    .local v7, bottom:I
-    move v0, v7
-
-    move/from16 v1, v22
-
-    if-ge v0, v1, :cond_6
-
-    if-nez v6, :cond_3
-
-    add-int v30, v15, v21
-
-    move-object v0, v5
-
-    move/from16 v1, v30
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v30
-
-    if-eqz v30, :cond_6
-
-    const/16 v30, 0x1
-
-    sub-int v30, v11, v30
-
-    move/from16 v0, v21
-
-    move/from16 v1, v30
-
-    if-eq v0, v1, :cond_3
-
-    add-int v30, v15, v21
-
-    add-int/lit8 v30, v30, 0x1
-
-    move-object v0, v5
-
-    move/from16 v1, v30
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v30
-
-    if-eqz v30, :cond_6
-
-    :cond_3
-    move-object/from16 v0, p0
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v30
-
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v30
-
-    if-nez v30, :cond_6
-
-    const/16 v30, 0x1
-
-    sub-int v30, v11, v30
-
-    move/from16 v0, v21
-
-    move/from16 v1, v30
-
-    if-ge v0, v1, :cond_4
-
-    add-int/lit8 v30, v21, 0x1
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v30
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v30
-
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v30
-
-    if-nez v30, :cond_6
-
-    .line 3390
-    :cond_4
-    iput v7, v8, Landroid/graphics/Rect;->top:I
-
-    .line 3391
-    add-int v30, v7, v12
-
-    move/from16 v0, v30
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3393
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v30, v0
-
-    if-lez v30, :cond_7
-
-    mul-int v30, v27, v21
-
-    move/from16 v25, v30
-
-    .line 3395
-    .local v25, shift:I
-    :goto_1
-    const/16 v30, 0x1
-
-    sub-int v30, v11, v30
-
-    move/from16 v0, v21
-
-    move/from16 v1, v30
-
-    if-eq v0, v1, :cond_5
-
-    .line 3396
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v30, v0
-
-    if-lez v30, :cond_8
-
-    add-int/lit8 v30, v21, 0x1
-
-    mul-int v30, v30, v27
-
-    move/from16 v26, v30
-
-    .line 3397
-    .local v26, shiftNext:I
-    :goto_2
-    add-int v30, v25, v26
-
-    div-int/lit8 v25, v30, 0x2
-
-    .line 3399
-    .end local v26           #shiftNext:I
-    :cond_5
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v24
-
-    .line 3400
-    .local v24, save:I
-    const/16 v30, 0x0
-
-    move/from16 v0, v25
-
-    int-to-float v0, v0
-
-    move/from16 v31, v0
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v30
-
-    move/from16 v2, v31
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 3401
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v21
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3402
-    move-object/from16 v0, p1
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 3376
-    .end local v7           #bottom:I
-    .end local v9           #child:Landroid/view/View;
-    .end local v24           #save:I
-    .end local v25           #shift:I
-    :cond_6
-    add-int/lit8 v21, v21, 0x1
-
-    goto/16 :goto_0
-
-    .line 3393
-    .restart local v7       #bottom:I
-    .restart local v9       #child:Landroid/view/View;
-    :cond_7
-    const/16 v30, 0x1
-
-    sub-int v30, v10, v30
-
-    sub-int v30, v30, v21
-
-    mul-int v30, v30, v27
-
-    move/from16 v25, v30
-
-    goto :goto_1
-
-    .line 3396
-    .restart local v25       #shift:I
-    :cond_8
-    const/16 v30, 0x1
-
-    sub-int v30, v10, v30
-
-    add-int/lit8 v31, v21, 0x1
-
-    sub-int v30, v30, v31
-
-    mul-int v30, v30, v27
-
-    move/from16 v26, v30
-
-    goto :goto_2
-
-    .line 3408
-    .end local v7           #bottom:I
-    .end local v9           #child:Landroid/view/View;
-    .end local v21           #i:I
-    .end local v22           #listBottom:I
-    .end local v25           #shift:I
-    :cond_9
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v30, v0
-
-    move-object/from16 v0, v30
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v23, v0
-
-    .line 3410
-    .local v23, listTop:I
-    const/16 v21, 0x0
-
-    .restart local v21       #i:I
-    :goto_3
-    move/from16 v0, v21
-
-    move v1, v11
-
-    if-ge v0, v1, :cond_12
-
-    .line 3411
-    if-nez v19, :cond_a
-
-    add-int v30, v15, v21
-
-    move/from16 v0, v30
-
-    move/from16 v1, v18
-
-    if-lt v0, v1, :cond_f
-
-    :cond_a
-    if-nez v16, :cond_b
-
-    add-int v30, v15, v21
-
-    move/from16 v0, v30
-
-    move/from16 v1, v17
-
-    if-ge v0, v1, :cond_f
-
-    .line 3413
-    :cond_b
-    move-object/from16 v0, p0
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v9
-
-    .line 3414
-    .restart local v9       #child:Landroid/view/View;
-    invoke-virtual {v9}, Landroid/view/View;->getTop()I
-
-    move-result v29
-
-    .line 3416
-    .local v29, top:I
-    move/from16 v0, v29
-
-    move/from16 v1, v23
-
-    if-le v0, v1, :cond_f
-
-    if-nez v6, :cond_c
-
-    add-int v30, v15, v21
-
-    move-object v0, v5
-
-    move/from16 v1, v30
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v30
-
-    if-eqz v30, :cond_f
-
-    add-int v30, v15, v21
-
-    if-eqz v30, :cond_c
-
-    add-int v30, v15, v21
-
-    const/16 v31, 0x1
-
-    sub-int v30, v30, v31
-
-    move-object v0, v5
-
-    move/from16 v1, v30
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v30
-
-    if-eqz v30, :cond_f
-
-    :cond_c
-    move-object/from16 v0, p0
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v30
-
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v30
-
-    if-nez v30, :cond_f
-
-    if-lez v21, :cond_d
-
-    const/16 v30, 0x1
-
-    sub-int v30, v21, v30
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v30
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v30
-
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v30
-
-    if-nez v30, :cond_f
-
-    .line 3427
-    :cond_d
-    sub-int v30, v29, v12
-
-    move/from16 v0, v30
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3428
-    move/from16 v0, v29
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3434
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v30, v0
-
-    if-lez v30, :cond_10
-
-    mul-int v30, v27, v21
-
-    move/from16 v25, v30
-
-    .line 3436
-    .restart local v25       #shift:I
-    :goto_4
-    if-eqz v21, :cond_e
-
-    .line 3437
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v30, v0
-
-    if-lez v30, :cond_11
-
-    const/16 v30, 0x1
-
-    sub-int v30, v21, v30
-
-    mul-int v30, v30, v27
-
-    move/from16 v28, v30
-
-    .line 3438
-    .local v28, shiftPrev:I
-    :goto_5
-    add-int v30, v25, v28
-
-    div-int/lit8 v25, v30, 0x2
-
-    .line 3440
-    .end local v28           #shiftPrev:I
-    :cond_e
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v24
-
-    .line 3441
-    .restart local v24       #save:I
-    const/16 v30, 0x0
-
-    move/from16 v0, v25
-
-    int-to-float v0, v0
-
-    move/from16 v31, v0
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v30
-
-    move/from16 v2, v31
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 3442
-    const/16 v30, 0x1
-
-    sub-int v30, v21, v30
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v30
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3443
-    move-object/from16 v0, p1
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 3410
-    .end local v9           #child:Landroid/view/View;
-    .end local v24           #save:I
-    .end local v25           #shift:I
-    .end local v29           #top:I
-    :cond_f
-    add-int/lit8 v21, v21, 0x1
-
-    goto/16 :goto_3
-
-    .line 3434
-    .restart local v9       #child:Landroid/view/View;
-    .restart local v29       #top:I
-    :cond_10
-    const/16 v30, 0x1
-
-    sub-int v30, v10, v30
-
-    sub-int v30, v30, v21
-
-    mul-int v30, v30, v27
-
-    move/from16 v25, v30
-
-    goto :goto_4
-
-    .line 3437
-    .restart local v25       #shift:I
-    :cond_11
-    const/16 v30, 0x1
-
-    sub-int v30, v10, v30
-
-    const/16 v31, 0x1
-
-    sub-int v31, v21, v31
-
-    sub-int v30, v30, v31
-
-    mul-int v30, v30, v27
-
-    move/from16 v28, v30
-
-    goto :goto_5
-
-    .line 3451
-    .end local v5           #adapter:Landroid/widget/ListAdapter;
-    .end local v6           #areAllItemsSelectable:Z
-    .end local v8           #bounds:Landroid/graphics/Rect;
-    .end local v9           #child:Landroid/view/View;
-    .end local v11           #count:I
-    .end local v15           #first:I
-    .end local v16           #footerDividers:Z
-    .end local v17           #footerLimit:I
-    .end local v18           #headerCount:I
-    .end local v19           #headerDividers:Z
-    .end local v21           #i:I
-    .end local v23           #listTop:I
-    .end local v25           #shift:I
-    .end local v29           #top:I
-    :cond_12
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getDrawingTime()J
-
-    move-result-wide v13
-
-    .line 3453
-    .local v13, drawingTime:J
-    const/16 v21, 0x0
-
-    .restart local v21       #i:I
-    :goto_6
-    move/from16 v0, v21
-
-    move v1, v10
-
-    if-ge v0, v1, :cond_15
-
-    .line 3454
-    move-object/from16 v0, p0
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v9
-
-    .line 3455
-    .restart local v9       #child:Landroid/view/View;
-    invoke-virtual {v9}, Landroid/view/View;->getVisibility()I
-
-    move-result v30
-
-    if-nez v30, :cond_13
-
-    .line 3456
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move/from16 v30, v0
-
-    if-lez v30, :cond_14
-
-    mul-int v30, v27, v21
-
-    move/from16 v25, v30
-
-    .line 3458
-    .restart local v25       #shift:I
-    :goto_7
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v24
-
-    .line 3459
-    .restart local v24       #save:I
-    const/16 v30, 0x0
-
-    move/from16 v0, v25
-
-    int-to-float v0, v0
-
-    move/from16 v31, v0
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v30
-
-    move/from16 v2, v31
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 3460
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v9
-
-    move-wide v3, v13
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/nemustech/tiffany/widget/TFListView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-
-    .line 3461
-    move-object/from16 v0, p1
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 3453
-    .end local v24           #save:I
-    .end local v25           #shift:I
-    :cond_13
-    add-int/lit8 v21, v21, 0x1
-
-    goto :goto_6
-
-    .line 3456
-    :cond_14
-    const/16 v30, 0x1
-
-    sub-int v30, v10, v30
-
-    sub-int v30, v30, v21
-
-    mul-int v30, v30, v27
-
-    move/from16 v25, v30
-
-    goto :goto_7
-
-    .line 3464
-    .end local v9           #child:Landroid/view/View;
-    :cond_15
-    return-void
-.end method
-
-.method protected dispatchDrawWithExcessScroll_Tremble(Landroid/graphics/Canvas;)V
-    .locals 22
-    .parameter
-
-    .prologue
-    .line 3471
-    const/4 v5, 0x0
-
-    .line 3473
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getExcessScrollMode()I
-
-    move-result v6
-
-    const/4 v7, 0x2
-
-    if-eq v6, v7, :cond_0
-
-    .line 3476
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDensityScale:F
-
-    move v5, v0
-
-    const/high16 v6, 0x4110
-
-    mul-float/2addr v5, v6
-
-    float-to-int v5, v5
-
-    .line 3478
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move v6, v0
-
-    invoke-static {v6}, Ljava/lang/Math;->abs(I)I
-
-    move-result v6
-
-    rem-int/2addr v6, v5
-
-    .line 3479
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move v7, v0
-
-    invoke-static {v7}, Ljava/lang/Math;->abs(I)I
-
-    move-result v7
-
-    mul-int/lit8 v8, v5, 0x2
-
-    rem-int/2addr v7, v8
-
-    .line 3482
-    if-eq v7, v6, :cond_d
-
-    .line 3483
-    sub-int/2addr v5, v6
-
-    .line 3486
-    :goto_0
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
-
-    move v6, v0
-
-    if-gez v6, :cond_0
-
-    .line 3487
-    mul-int/lit8 v5, v5, -0x1
-
-    .line 3491
-    :cond_0
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v6
-
-    .line 3492
-    const/4 v7, 0x0
-
-    int-to-float v5, v5
-
-    move-object/from16 v0, p1
-
-    move v1, v7
-
-    move v2, v5
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 3494
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v5
-
-    .line 3497
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
-
-    move v7, v0
-
-    .line 3499
-    if-lez v7, :cond_a
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDivider:Landroid/graphics/drawable/Drawable;
-
-    move-object v8, v0
-
-    if-eqz v8, :cond_a
-
-    .line 3501
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
-
-    move-object v8, v0
-
-    .line 3502
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingLeft:I
-
-    move v9, v0
-
-    iput v9, v8, Landroid/graphics/Rect;->left:I
-
-    .line 3503
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mRight:I
-
-    move v9, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLeft:I
-
-    move v10, v0
-
-    sub-int/2addr v9, v10
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingRight:I
-
-    move v10, v0
-
-    sub-int/2addr v9, v10
-
-    iput v9, v8, Landroid/graphics/Rect;->right:I
-
-    .line 3505
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
-
-    move-result v9
-
-    .line 3506
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderViewInfos:Ljava/util/ArrayList;
-
-    move-object v10, v0
-
-    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
-
-    move-result v10
-
-    .line 3507
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
-
-    move v11, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFooterViewInfos:Ljava/util/ArrayList;
-
-    move-object v12, v0
-
-    invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
-
-    move-result v12
-
-    sub-int/2addr v11, v12
-
-    const/4 v12, 0x1
-
-    sub-int/2addr v11, v12
-
-    .line 3508
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderDividersEnabled:Z
-
-    move v12, v0
-
-    .line 3509
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFooterDividersEnabled:Z
-
-    move v13, v0
-
-    .line 3510
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
-
-    move v14, v0
-
-    .line 3511
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAreAllItemsSelectable:Z
-
-    move v15, v0
-
-    .line 3512
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
-
-    move-object/from16 v16, v0
-
-    .line 3514
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
-
-    move/from16 v17, v0
-
-    if-nez v17, :cond_5
-
-    .line 3516
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
-
-    move/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
-
-    move/from16 v18, v0
-
-    sub-int v17, v17, v18
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v18, v0
-
-    sub-int v17, v17, v18
-
-    .line 3518
-    const/16 v18, 0x0
-
-    :goto_1
-    move/from16 v0, v18
-
-    move v1, v9
-
-    if-ge v0, v1, :cond_a
-
-    .line 3519
-    if-nez v12, :cond_1
-
-    add-int v19, v14, v18
-
-    move/from16 v0, v19
-
-    move v1, v10
-
-    if-lt v0, v1, :cond_4
-
-    :cond_1
-    if-nez v13, :cond_2
-
-    add-int v19, v14, v18
-
-    move/from16 v0, v19
-
-    move v1, v11
-
-    if-ge v0, v1, :cond_4
-
-    .line 3521
-    :cond_2
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v19
-
-    .line 3522
-    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getBottom()I
-
-    move-result v19
-
-    .line 3524
-    move/from16 v0, v19
-
-    move/from16 v1, v17
-
-    if-ge v0, v1, :cond_4
-
-    if-nez v15, :cond_3
-
-    add-int v20, v14, v18
-
-    invoke-interface/range {v16 .. v16}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v21
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ge v0, v1, :cond_4
-
-    add-int v20, v14, v18
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v20
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_4
-
-    const/16 v20, 0x1
-
-    sub-int v20, v9, v20
-
-    move/from16 v0, v18
-
-    move/from16 v1, v20
-
-    if-eq v0, v1, :cond_3
-
-    add-int v20, v14, v18
-
-    add-int/lit8 v20, v20, 0x1
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v20
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_4
-
-    .line 3528
-    :cond_3
-    move/from16 v0, v19
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3529
-    add-int v19, v19, v7
-
-    move/from16 v0, v19
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3530
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v18
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3518
-    :cond_4
-    add-int/lit8 v18, v18, 0x1
-
-    goto :goto_1
-
-    .line 3536
-    :cond_5
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v17, v0
-
-    .line 3538
-    const/16 v18, 0x0
-
-    :goto_2
-    move/from16 v0, v18
-
-    move v1, v9
-
-    if-ge v0, v1, :cond_a
-
-    .line 3539
-    if-nez v12, :cond_6
-
-    add-int v19, v14, v18
-
-    move/from16 v0, v19
-
-    move v1, v10
-
-    if-lt v0, v1, :cond_9
-
-    :cond_6
-    if-nez v13, :cond_7
-
-    add-int v19, v14, v18
-
-    move/from16 v0, v19
-
-    move v1, v11
-
-    if-ge v0, v1, :cond_9
-
-    .line 3541
-    :cond_7
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v19
-
-    .line 3542
-    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getTop()I
-
-    move-result v19
-
-    .line 3544
-    move/from16 v0, v19
-
-    move/from16 v1, v17
-
-    if-le v0, v1, :cond_9
-
-    if-nez v15, :cond_8
-
-    add-int v20, v14, v18
-
-    invoke-interface/range {v16 .. v16}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v21
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ge v0, v1, :cond_9
-
-    add-int v20, v14, v18
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v20
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_9
-
-    add-int v20, v14, v18
-
-    if-eqz v20, :cond_8
-
-    add-int v20, v14, v18
-
-    const/16 v21, 0x1
-
-    sub-int v20, v20, v21
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v20
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_9
-
-    .line 3551
-    :cond_8
-    sub-int v20, v19, v7
-
-    move/from16 v0, v20
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->top:I
-
-    .line 3552
-    move/from16 v0, v19
-
-    move-object v1, v8
-
-    iput v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    .line 3557
-    const/16 v19, 0x1
-
-    sub-int v19, v18, v19
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v8
-
-    move/from16 v3, v19
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/nemustech/tiffany/widget/TFListView;->drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-
-    .line 3538
-    :cond_9
-    add-int/lit8 v18, v18, 0x1
-
-    goto :goto_2
-
-    .line 3565
-    :cond_a
-    invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->getDrawingTime()J
-
-    move-result-wide v7
-
-    .line 3567
-    const/4 v9, 0x0
-
-    :goto_3
-    if-ge v9, v5, :cond_c
-
-    .line 3568
-    move-object/from16 v0, p0
-
-    move v1, v9
-
-    invoke-virtual {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v10
-
-    .line 3569
-    invoke-virtual {v10}, Landroid/view/View;->getVisibility()I
-
-    move-result v11
-
-    if-nez v11, :cond_b
-
-    .line 3570
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object v2, v10
-
-    move-wide v3, v7
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/nemustech/tiffany/widget/TFListView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-
-    .line 3567
-    :cond_b
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_3
-
-    .line 3574
-    :cond_c
-    move-object/from16 v0, p1
-
-    move v1, v6
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 3575
-    return-void
-
-    :cond_d
-    move v5, v7
-
-    goto/16 :goto_0
+    goto/16 :goto_5
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
@@ -11143,39 +7517,39 @@
     .parameter "childIndex"
 
     .prologue
-    .line 3691
+    .line 3693
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDivider:Landroid/graphics/drawable/Drawable;
 
-    .line 3692
+    .line 3694
     .local v1, divider:Landroid/graphics/drawable/Drawable;
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mClipDivider:Z
 
-    .line 3694
+    .line 3696
     .local v0, clipDivider:Z
     if-nez v0, :cond_1
 
-    .line 3695
+    .line 3697
     invoke-virtual {v1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 3701
+    .line 3703
     :goto_0
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 3703
+    .line 3705
     if-eqz v0, :cond_0
 
-    .line 3704
+    .line 3706
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 3706
+    .line 3708
     :cond_0
     return-void
 
-    .line 3697
+    .line 3699
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 3698
+    .line 3700
     invoke-virtual {p1, p2}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
     goto :goto_0
@@ -11219,7 +7593,7 @@
     .line 701
     .local v1, startOffset:I
     :goto_0
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v2, v0
 
@@ -11270,7 +7644,7 @@
     .line 706
     .restart local v1       #startOffset:I
     :goto_2
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     sub-int/2addr v2, v4
 
@@ -11338,7 +7712,7 @@
     if-gt p1, v3, :cond_0
 
     .line 1284
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v1
 
@@ -11381,16 +7755,16 @@
     .end annotation
 
     .prologue
-    .line 3867
+    .line 3869
     .local p1, where:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/nemustech/tiffany/widget/TFListView$FixedViewInfo;>;"
     if-eqz p1, :cond_1
 
-    .line 3868
+    .line 3870
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 3871
+    .line 3873
     .local v1, len:I
     const/4 v0, 0x0
 
@@ -11399,7 +7773,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 3872
+    .line 3874
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -11408,7 +7782,7 @@
 
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView$FixedViewInfo;->view:Landroid/view/View;
 
-    .line 3874
+    .line 3876
     .local v2, v:Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->isRootNamespace()Z
 
@@ -11416,24 +7790,24 @@
 
     if-nez v3, :cond_0
 
-    .line 3875
+    .line 3877
     invoke-virtual {v2, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 3877
+    .line 3879
     if-eqz v2, :cond_0
 
     move-object v3, v2
 
-    .line 3883
+    .line 3885
     .end local v0           #i:I
     .end local v1           #len:I
     .end local v2           #v:Landroid/view/View;
     :goto_1
     return-object v3
 
-    .line 3871
+    .line 3873
     .restart local v0       #i:I
     .restart local v1       #len:I
     .restart local v2       #v:Landroid/view/View;
@@ -11442,7 +7816,7 @@
 
     goto :goto_0
 
-    .line 3883
+    .line 3885
     .end local v0           #i:I
     .end local v1           #len:I
     .end local v2           #v:Landroid/view/View;
@@ -11470,16 +7844,16 @@
     .end annotation
 
     .prologue
-    .line 3913
+    .line 3915
     .local p1, where:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/nemustech/tiffany/widget/TFListView$FixedViewInfo;>;"
     if-eqz p1, :cond_1
 
-    .line 3914
+    .line 3916
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 3917
+    .line 3919
     .local v1, len:I
     const/4 v0, 0x0
 
@@ -11488,7 +7862,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 3918
+    .line 3920
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -11497,7 +7871,7 @@
 
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView$FixedViewInfo;->view:Landroid/view/View;
 
-    .line 3920
+    .line 3922
     .local v2, v:Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->isRootNamespace()Z
 
@@ -11505,24 +7879,24 @@
 
     if-nez v3, :cond_0
 
-    .line 3921
+    .line 3923
     invoke-virtual {v2, p2}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
     move-result-object v2
 
-    .line 3923
+    .line 3925
     if-eqz v2, :cond_0
 
     move-object v3, v2
 
-    .line 3929
+    .line 3931
     .end local v0           #i:I
     .end local v1           #len:I
     .end local v2           #v:Landroid/view/View;
     :goto_1
     return-object v3
 
-    .line 3917
+    .line 3919
     .restart local v0       #i:I
     .restart local v1       #len:I
     .restart local v2       #v:Landroid/view/View;
@@ -11531,7 +7905,7 @@
 
     goto :goto_0
 
-    .line 3929
+    .line 3931
     .end local v0           #i:I
     .end local v1           #len:I
     .end local v2           #v:Landroid/view/View;
@@ -11546,34 +7920,34 @@
     .parameter "id"
 
     .prologue
-    .line 3848
+    .line 3850
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->findViewTraversal(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 3849
+    .line 3851
     .local v0, v:Landroid/view/View;
     if-nez v0, :cond_1
 
-    .line 3850
+    .line 3852
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderViewInfos:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v2, p1}, Lcom/nemustech/tiffany/widget/TFListView;->findViewInHeadersOrFooters(Ljava/util/ArrayList;I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 3851
+    .line 3853
     if-eqz v0, :cond_0
 
     move-object v1, v0
 
-    .line 3859
+    .line 3861
     .end local v0           #v:Landroid/view/View;
     .local v1, v:Landroid/view/View;
     :goto_0
     return-object v1
 
-    .line 3854
+    .line 3856
     .end local v1           #v:Landroid/view/View;
     .restart local v0       #v:Landroid/view/View;
     :cond_0
@@ -11583,12 +7957,12 @@
 
     move-result-object v0
 
-    .line 3855
+    .line 3857
     if-eqz v0, :cond_1
 
     move-object v1, v0
 
-    .line 3856
+    .line 3858
     .end local v0           #v:Landroid/view/View;
     .restart local v1       #v:Landroid/view/View;
     goto :goto_0
@@ -11598,7 +7972,7 @@
     :cond_1
     move-object v1, v0
 
-    .line 3859
+    .line 3861
     .end local v0           #v:Landroid/view/View;
     .restart local v1       #v:Landroid/view/View;
     goto :goto_0
@@ -11609,34 +7983,34 @@
     .parameter "tag"
 
     .prologue
-    .line 3893
+    .line 3895
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->findViewWithTagTraversal(Ljava/lang/Object;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 3894
+    .line 3896
     .local v0, v:Landroid/view/View;
     if-nez v0, :cond_1
 
-    .line 3895
+    .line 3897
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderViewInfos:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v2, p1}, Lcom/nemustech/tiffany/widget/TFListView;->findViewTagInHeadersOrFooters(Ljava/util/ArrayList;Ljava/lang/Object;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 3896
+    .line 3898
     if-eqz v0, :cond_0
 
     move-object v1, v0
 
-    .line 3905
+    .line 3907
     .end local v0           #v:Landroid/view/View;
     .local v1, v:Landroid/view/View;
     :goto_0
     return-object v1
 
-    .line 3900
+    .line 3902
     .end local v1           #v:Landroid/view/View;
     .restart local v0       #v:Landroid/view/View;
     :cond_0
@@ -11646,12 +8020,12 @@
 
     move-result-object v0
 
-    .line 3901
+    .line 3903
     if-eqz v0, :cond_1
 
     move-object v1, v0
 
-    .line 3902
+    .line 3904
     .end local v0           #v:Landroid/view/View;
     .restart local v1       #v:Landroid/view/View;
     goto :goto_0
@@ -11661,7 +8035,7 @@
     :cond_1
     move-object v1, v0
 
-    .line 3905
+    .line 3907
     .end local v0           #v:Landroid/view/View;
     .restart local v1       #v:Landroid/view/View;
     goto :goto_0
@@ -11684,7 +8058,7 @@
     if-ne p1, v2, :cond_3
 
     .line 2224
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     if-eqz v2, :cond_1
 
@@ -11700,7 +8074,7 @@
     if-ltz v1, :cond_0
 
     .line 2227
-    iput v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iput v4, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     .line 2228
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->setSelectionInt(I)V
@@ -11741,16 +8115,16 @@
     if-ne p1, v2, :cond_1
 
     .line 2234
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v3, v4
 
     if-ge v2, v3, :cond_1
 
     .line 2235
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v2, v4
 
@@ -11765,7 +8139,7 @@
     .line 2237
     const/4 v2, 0x3
 
-    iput v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     .line 2238
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->setSelectionInt(I)V
@@ -11797,7 +8171,7 @@
 
     .prologue
     .line 488
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     return-object v0
 .end method
@@ -11817,34 +8191,34 @@
     .parameter "childIndex"
 
     .prologue
-    .line 3169
-    iget-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScrollEnabled:Z
+    .line 3171
+    iget-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScrollEnabled:Z
 
     if-eqz v2, :cond_1
 
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     if-eqz v2, :cond_1
 
-    .line 3170
+    .line 3172
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScrollEffect:I
 
     if-nez v2, :cond_1
 
-    .line 3171
+    .line 3173
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getHeight()I
 
     move-result v2
 
     int-to-float v0, v2
 
-    .line 3172
+    .line 3174
     .local v0, height:F
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getExcessScrollDrawInterpolator()Landroid/view/animation/Interpolator;
 
     move-result-object v2
 
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     invoke-static {v3}, Ljava/lang/Math;->abs(I)I
 
@@ -11862,19 +8236,19 @@
 
     float-to-int v1, v2
 
-    .line 3175
+    .line 3177
     .local v1, shift:I
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mExcessScroll:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
     if-gez v2, :cond_0
 
-    .line 3176
+    .line 3178
     mul-int/lit8 v1, v1, -0x1
 
     :cond_0
     move v2, v1
 
-    .line 3182
+    .line 3184
     .end local v0           #height:F
     .end local v1           #shift:I
     :goto_0
@@ -11931,9 +8305,9 @@
     .line 283
     const v0, 0x3ea8f5c3
 
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBottom:I
 
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mTop:I
 
     sub-int/2addr v1, v2
 
@@ -11951,7 +8325,7 @@
 
     .prologue
     .line 2967
-    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCachingStarted:Z
+    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mCachingStarted:Z
 
     if-eqz v0, :cond_0
 
@@ -11995,7 +8369,7 @@
     .line 1447
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mBlockLayoutRequests:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBlockLayoutRequests:Z
 
     move v10, v0
 
@@ -12010,7 +8384,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBlockLayoutRequests:Z
 
     .line 1455
     :try_start_0
@@ -12022,7 +8396,7 @@
     .line 1459
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v4, v0
 
@@ -12046,7 +8420,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBlockLayoutRequests:Z
 
     .line 1705
     :cond_0
@@ -12058,7 +8432,7 @@
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -12068,13 +8442,13 @@
     .local v8, childrenTop:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mBottom:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBottom:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTop:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mTop:I
 
     move v5, v0
 
@@ -12082,7 +8456,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object v5, v0
 
@@ -12120,7 +8494,7 @@
     .local v16, focusLayoutRestoreView:Landroid/view/View;
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     move v4, v0
 
@@ -12129,13 +8503,13 @@
     .line 1495
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v6, v0
 
@@ -12176,7 +8550,7 @@
     .line 1503
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mNextSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedPosition:I
 
     move v4, v0
 
@@ -12185,13 +8559,13 @@
     .line 1504
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mNextSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedPosition:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v6, v0
 
@@ -12217,7 +8591,7 @@
     :pswitch_0
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
 
     move v13, v0
 
@@ -12232,7 +8606,7 @@
     :cond_5
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move v4, v0
 
@@ -12256,7 +8630,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBlockLayoutRequests:Z
 
     goto/16 :goto_0
 
@@ -12266,13 +8640,13 @@
     :try_start_2
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mNextSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedPosition:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v11, v0
 
@@ -12305,13 +8679,13 @@
     :cond_6
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v11, v0
 
@@ -12366,7 +8740,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     move-object v6, v0
 
@@ -12414,7 +8788,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBlockLayoutRequests:Z
 
     :cond_7
     throw v4
@@ -12433,7 +8807,7 @@
     :try_start_3
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mNextSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNextSelectedPosition:I
 
     move v4, v0
 
@@ -12446,7 +8820,7 @@
     .line 1535
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v14, v0
 
@@ -12454,7 +8828,7 @@
     .local v14, firstPosition:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     move-object/from16 v24, v0
 
@@ -12589,7 +8963,7 @@
     .line 1588
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     move v4, v0
 
@@ -12601,7 +8975,7 @@
     .line 1616
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     move v4, v0
 
@@ -12733,7 +9107,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedTop:I
+    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
     .line 1683
     :cond_12
@@ -12757,7 +9131,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     .line 1689
     const/4 v4, 0x0
@@ -12766,7 +9140,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mDataChanged:Z
+    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
 
     .line 1690
     const/4 v4, 0x0
@@ -12775,12 +9149,12 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mNeedSync:Z
+    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNeedSync:Z
 
     .line 1691
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
@@ -12796,7 +9170,7 @@
     .line 1695
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move v4, v0
 
@@ -12821,7 +9195,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/nemustech/tiffany/widget/TFAdapterView;->mBlockLayoutRequests:Z
 
     goto/16 :goto_0
 
@@ -12875,13 +9249,13 @@
     :pswitch_3
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSyncPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSyncPosition:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSpecificTop:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSpecificTop:I
 
     move v5, v0
 
@@ -12906,7 +9280,7 @@
     :pswitch_4
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move v4, v0
 
@@ -12941,7 +9315,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 1605
     move-object/from16 v0, p0
@@ -12967,7 +9341,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSpecificTop:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSpecificTop:I
 
     move v5, v0
 
@@ -13005,7 +9379,7 @@
     :cond_16
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move v4, v0
 
@@ -13037,7 +9411,7 @@
     .line 1623
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move v4, v0
 
@@ -13066,7 +9440,7 @@
     :cond_17
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
@@ -13074,13 +9448,13 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move v6, v0
 
@@ -13090,7 +9464,7 @@
     .line 1627
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v4, v0
 
@@ -13126,13 +9500,13 @@
     :cond_19
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move v5, v0
 
@@ -13142,7 +9516,7 @@
     .line 1630
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v4, v0
 
@@ -13211,7 +9585,7 @@
     .line 1659
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectorRect:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -13234,7 +9608,7 @@
     :cond_1f
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTouchMode:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     move v4, v0
 
@@ -13242,7 +9616,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mTouchMode:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
     move v4, v0
 
@@ -13253,13 +9627,13 @@
     .line 1667
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mMotionPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
     move v4, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     move v5, v0
 
@@ -13308,12 +9682,12 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedTop:I
+    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
     .line 1671
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectorRect:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
     move-object v4, v0
 
@@ -13356,7 +9730,7 @@
     const/4 v3, -0x1
 
     .line 1954
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     .line 1955
     .local v0, adapter:Landroid/widget/ListAdapter;
@@ -13484,18 +9858,18 @@
 
     .prologue
     .line 1220
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     .line 1221
     .local v0, adapter:Landroid/widget/ListAdapter;
     if-nez v0, :cond_0
 
     .line 1222
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->top:I
 
-    iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->bottom:I
 
@@ -13507,11 +9881,11 @@
 
     .line 1226
     :cond_0
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->top:I
 
-    iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->bottom:I
 
@@ -13554,7 +9928,7 @@
 
     .line 1236
     :cond_1
-    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     .line 1237
     .local v5, recycleBin:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
@@ -13669,42 +10043,42 @@
     .locals 3
 
     .prologue
-    .line 3830
+    .line 3832
     invoke-super {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->onFinishInflate()V
 
-    .line 3832
+    .line 3834
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
 
     move-result v0
 
-    .line 3833
+    .line 3835
     .local v0, count:I
     if-lez v0, :cond_1
 
-    .line 3834
+    .line 3836
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 3835
+    .line 3837
     invoke-virtual {p0, v1}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {p0, v2}, Lcom/nemustech/tiffany/widget/TFListView;->addHeaderView(Landroid/view/View;)V
 
-    .line 3834
+    .line 3836
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3837
+    .line 3839
     :cond_0
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->removeAllViews()V
 
-    .line 3839
+    .line 3841
     .end local v1           #i:I
     :cond_1
     return-void
@@ -13717,42 +10091,42 @@
     .parameter
 
     .prologue
-    .line 3782
+    .line 3784
     invoke-super {p0, p1, p2, p3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
-    .line 3784
+    .line 3786
     const/4 v0, -0x1
 
-    .line 3785
+    .line 3787
     if-eqz p1, :cond_3
 
     if-eqz p3, :cond_3
 
-    .line 3786
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mScrollX:I
+    .line 3788
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollX:I
 
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mScrollY:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mScrollY:I
 
     invoke-virtual {p3, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 3790
+    .line 3792
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mTempRect:Landroid/graphics/Rect;
 
-    .line 3791
+    .line 3793
     const v2, 0x7fffffff
 
-    .line 3792
+    .line 3794
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
 
     move-result v3
 
-    .line 3793
-    iget v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
-
-    .line 3794
-    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    .line 3795
+    iget v4, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     .line 3796
+    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
+
+    .line 3798
     const/4 v6, 0x0
 
     move v8, v6
@@ -13764,7 +10138,7 @@
     :goto_0
     if-ge v0, v3, :cond_2
 
-    .line 3798
+    .line 3800
     add-int v7, v4, v0
 
     invoke-interface {v5, v7}, Landroid/widget/ListAdapter;->isEnabled(I)Z
@@ -13773,59 +10147,59 @@
 
     if-nez v7, :cond_1
 
-    .line 3796
+    .line 3798
     :cond_0
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 3802
+    .line 3804
     :cond_1
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 3803
+    .line 3805
     invoke-virtual {v7, v1}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 3804
+    .line 3806
     invoke-virtual {p0, v7, v1}, Lcom/nemustech/tiffany/widget/TFListView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 3805
+    .line 3807
     invoke-static {p3, v1, p2}, Lcom/nemustech/tiffany/widget/TFListView;->getDistance(Landroid/graphics/Rect;Landroid/graphics/Rect;I)I
 
     move-result v7
 
-    .line 3807
+    .line 3809
     if-ge v7, v2, :cond_0
 
     move v2, v7
 
     move v6, v0
 
-    .line 3809
+    .line 3811
     goto :goto_1
 
     :cond_2
     move v0, v6
 
-    .line 3814
+    .line 3816
     :cond_3
     if-ltz v0, :cond_4
 
-    .line 3815
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mFirstPosition:I
+    .line 3817
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
 
     add-int/2addr v0, v1
 
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFListView;->setSelection(I)V
 
-    .line 3819
+    .line 3821
     :goto_2
     return-void
 
-    .line 3817
+    .line 3819
     :cond_4
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->requestLayout()V
 
@@ -13925,17 +10299,17 @@
 
     .line 1126
     .local v7, childHeight:I
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-nez v0, :cond_5
 
     move v0, v2
 
     :goto_0
-    iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     .line 1127
-    iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     if-lez v0, :cond_1
 
@@ -13971,7 +10345,7 @@
     if-eqz v0, :cond_1
 
     .line 1137
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v0, v6}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->addScrapView(Landroid/view/View;)V
 
@@ -13981,11 +10355,11 @@
     if-nez v10, :cond_2
 
     .line 1142
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
 
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->right:I
 
@@ -14004,11 +10378,11 @@
     if-nez v9, :cond_3
 
     .line 1147
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
 
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
@@ -14046,14 +10420,14 @@
     invoke-virtual {p0, v11, v4}, Lcom/nemustech/tiffany/widget/TFListView;->setMeasuredDimension(II)V
 
     .line 1157
-    iput p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mWidthMeasureSpec:I
+    iput p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mWidthMeasureSpec:I
 
     .line 1158
     return-void
 
     .line 1126
     :cond_5
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v0}, Landroid/widget/ListAdapter;->getCount()I
 
@@ -14067,10 +10441,10 @@
     .parameter
 
     .prologue
-    .line 4172
+    .line 4174
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->onRestoreInstanceState2(Landroid/os/Bundle;)V
 
-    .line 4174
+    .line 4176
     const-class v0, Lcom/nemustech/tiffany/widget/TFListView$SavedState;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -14079,7 +10453,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
 
-    .line 4175
+    .line 4177
     const-string v0, "com.nemustech.tiffany.tflistview.savedstate"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -14088,19 +10462,19 @@
 
     check-cast v0, Lcom/nemustech/tiffany/widget/TFListView$SavedState;
 
-    .line 4177
+    .line 4179
     if-eqz v0, :cond_0
 
-    .line 4178
+    .line 4180
     iget-object v0, v0, Lcom/nemustech/tiffany/widget/TFListView$SavedState;->checkState:Landroid/util/SparseBooleanArray;
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCheckStates:Landroid/util/SparseBooleanArray;
 
-    .line 4182
+    .line 4184
     :goto_0
     return-void
 
-    .line 4180
+    .line 4182
     :cond_0
     const/4 v0, 0x0
 
@@ -14114,22 +10488,22 @@
     .parameter
 
     .prologue
-    .line 4164
+    .line 4166
     invoke-super {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->onSaveInstanceState2(Landroid/os/Bundle;)V
 
-    .line 4166
+    .line 4168
     new-instance v0, Lcom/nemustech/tiffany/widget/TFListView$SavedState;
 
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0, v1}, Lcom/nemustech/tiffany/widget/TFListView$SavedState;-><init>(Landroid/util/SparseBooleanArray;)V
 
-    .line 4167
+    .line 4169
     const-string v1, "com.nemustech.tiffany.tflistview.savedstate"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 4168
+    .line 4170
     return-void
 .end method
 
@@ -14138,7 +10512,7 @@
     .parameter "ev"
 
     .prologue
-    .line 3934
+    .line 3936
     iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemsCanFocus:Z
 
     if-eqz v0, :cond_0
@@ -14155,10 +10529,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 3937
+    .line 3939
     const/4 v0, 0x0
 
-    .line 3939
+    .line 3941
     :goto_0
     return v0
 
@@ -14193,7 +10567,7 @@
     if-ne p1, v3, :cond_4
 
     .line 2180
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
 
@@ -14224,10 +10598,10 @@
     .line 2189
     const/4 v3, 0x4
 
-    iput v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     .line 2190
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mPaddingTop:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mPaddingTop:I
 
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getVerticalFadingEdgeLength()I
 
@@ -14235,12 +10609,12 @@
 
     add-int/2addr v3, v4
 
-    iput v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSpecificTop:I
+    iput v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSpecificTop:I
 
     .line 2192
     if-eqz v0, :cond_1
 
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
 
@@ -14253,7 +10627,7 @@
     .line 2193
     const/4 v3, 0x3
 
-    iput v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iput v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     .line 2196
     :cond_1
@@ -14266,7 +10640,7 @@
     if-ge v2, v3, :cond_2
 
     .line 2197
-    iput v6, p0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iput v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     .line 2200
     :cond_2
@@ -14300,11 +10674,11 @@
     if-ne p1, v3, :cond_0
 
     .line 2182
-    iget v3, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v3, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v3, v6
 
-    iget v4, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v4, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->getChildCount()I
 
@@ -14341,33 +10715,33 @@
 
     const/4 v4, 0x0
 
-    .line 3969
+    .line 3971
     const/4 v0, 0x0
 
-    .line 3971
+    .line 3973
     .local v0, handled:Z
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mChoiceMode:I
 
     if-eqz v2, :cond_1
 
-    .line 3972
+    .line 3974
     const/4 v0, 0x1
 
-    .line 3974
+    .line 3976
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mChoiceMode:I
 
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_3
 
-    .line 3975
+    .line 3977
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v2, p2, v4}, Landroid/util/SparseBooleanArray;->get(IZ)Z
 
     move-result v1
 
-    .line 3976
+    .line 3978
     .local v1, oldValue:Z
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCheckStates:Landroid/util/SparseBooleanArray;
 
@@ -14378,18 +10752,18 @@
     :goto_0
     invoke-virtual {v2, p2, v3}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 3985
+    .line 3987
     :cond_0
     :goto_1
-    iput-boolean v5, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDataChanged:Z
+    iput-boolean v5, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
 
-    .line 3986
+    .line 3988
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->rememberSyncState()V
 
-    .line 3987
+    .line 3989
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->requestLayout()V
 
-    .line 3990
+    .line 3992
     .end local v1           #oldValue:Z
     :cond_1
     invoke-super {p0, p1, p2, p3, p4}, Lcom/nemustech/tiffany/widget/TFAbsListView;->performItemClick(Landroid/view/View;IJ)Z
@@ -14398,17 +10772,17 @@
 
     or-int/2addr v0, v2
 
-    .line 3992
+    .line 3994
     return v0
 
     .restart local v1       #oldValue:Z
     :cond_2
     move v3, v4
 
-    .line 3976
+    .line 3978
     goto :goto_0
 
-    .line 3978
+    .line 3980
     .end local v1           #oldValue:Z
     :cond_3
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCheckStates:Landroid/util/SparseBooleanArray;
@@ -14417,16 +10791,16 @@
 
     move-result v1
 
-    .line 3979
+    .line 3981
     .restart local v1       #oldValue:Z
     if-nez v1, :cond_0
 
-    .line 3980
+    .line 3982
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v2}, Landroid/util/SparseBooleanArray;->clear()V
 
-    .line 3981
+    .line 3983
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v2, p2, v5}, Landroid/util/SparseBooleanArray;->put(IZ)V
@@ -14535,7 +10909,7 @@
     .line 629
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v15, v0
 
@@ -14582,13 +10956,13 @@
     .line 639
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     move v15, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     move/from16 v16, v0
 
@@ -14706,7 +11080,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedTop:I
+    iput v0, v1, Lcom/nemustech/tiffany/widget/TFAbsListView;->mSelectedTop:I
 
     .line 687
     invoke-virtual/range {p0 .. p0}, Lcom/nemustech/tiffany/widget/TFListView;->invalidate()V
@@ -14839,7 +11213,7 @@
     .line 573
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     .line 574
     return-void
@@ -14855,14 +11229,14 @@
     const/4 v4, 0x1
 
     .line 506
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v1, :cond_0
 
     .line 507
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
 
     invoke-interface {v1, v2}, Landroid/widget/ListAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
@@ -14871,7 +11245,7 @@
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->resetList()V
 
     .line 511
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->clear()V
 
@@ -14902,26 +11276,26 @@
 
     invoke-direct {v1, v2, v3, p1}, Lcom/nemustech/tiffany/widget/TFHeaderViewListAdapter;-><init>(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/widget/ListAdapter;)V
 
-    iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     .line 519
     :goto_0
     const/4 v1, -0x1
 
-    iput v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mOldSelectedPosition:I
+    iput v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mOldSelectedPosition:I
 
     .line 520
     const-wide/high16 v1, -0x8000
 
-    iput-wide v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mOldSelectedRowId:J
+    iput-wide v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mOldSelectedRowId:J
 
     .line 521
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v1, :cond_6
 
     .line 522
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v1}, Landroid/widget/ListAdapter;->areAllItemsEnabled()Z
 
@@ -14930,18 +11304,18 @@
     iput-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAreAllItemsSelectable:Z
 
     .line 523
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
-    iput v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mOldItemCount:I
+    iput v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mOldItemCount:I
 
     .line 524
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v1}, Landroid/widget/ListAdapter;->getCount()I
 
     move-result v1
 
-    iput v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iput v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     .line 525
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->checkFocus()V
@@ -14951,19 +11325,19 @@
 
     invoke-direct {v1, p0}, Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;-><init>(Lcom/nemustech/tiffany/widget/TFAdapterView;)V
 
-    iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
+    iput-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
 
     .line 528
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataSetObserver:Lcom/nemustech/tiffany/widget/TFAdapterView$AdapterDataSetObserver;
 
     invoke-interface {v1, v2}, Landroid/widget/ListAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 530
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v2}, Landroid/widget/ListAdapter;->getViewTypeCount()I
 
@@ -14972,12 +11346,12 @@
     invoke-virtual {v1, v2}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->setViewTypeCount(I)V
 
     .line 533
-    iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mStackFromBottom:Z
+    iget-boolean v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mStackFromBottom:Z
 
     if-eqz v1, :cond_5
 
     .line 534
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     sub-int/2addr v1, v4
 
@@ -14994,7 +11368,7 @@
     invoke-virtual {p0, v0}, Lcom/nemustech/tiffany/widget/TFListView;->setNextSelectedPositionInt(I)V
 
     .line 541
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mItemCount:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     if-nez v1, :cond_2
 
@@ -15023,7 +11397,7 @@
 
     .line 516
     :cond_4
-    iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     goto :goto_0
 
@@ -15114,10 +11488,10 @@
     .parameter "choiceMode"
 
     .prologue
-    .line 3961
+    .line 3963
     iput p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mChoiceMode:I
 
-    .line 3962
+    .line 3964
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mChoiceMode:I
 
     if-eqz v0, :cond_0
@@ -15126,14 +11500,14 @@
 
     if-nez v0, :cond_0
 
-    .line 3963
+    .line 3965
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mCheckStates:Landroid/util/SparseBooleanArray;
 
-    .line 3965
+    .line 3967
     :cond_0
     return-void
 .end method
@@ -15145,26 +11519,26 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3724
+    .line 3726
     if-eqz p1, :cond_1
 
-    .line 3725
+    .line 3727
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v0
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
-    .line 3726
+    .line 3728
     instance-of v0, p1, Landroid/graphics/drawable/ColorDrawable;
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mClipDivider:Z
 
-    .line 3731
+    .line 3733
     :goto_0
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDivider:Landroid/graphics/drawable/Drawable;
 
-    .line 3732
+    .line 3734
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getOpacity()I
@@ -15181,17 +11555,17 @@
     :goto_1
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerIsOpaque:Z
 
-    .line 3733
+    .line 3735
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->requestLayoutIfNecessary()V
 
-    .line 3734
+    .line 3736
     return-void
 
-    .line 3728
+    .line 3730
     :cond_1
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
-    .line 3729
+    .line 3731
     iput-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFListView;->mClipDivider:Z
 
     goto :goto_0
@@ -15199,7 +11573,7 @@
     :cond_2
     move v0, v2
 
-    .line 3732
+    .line 3734
     goto :goto_1
 .end method
 
@@ -15208,13 +11582,13 @@
     .parameter "height"
 
     .prologue
-    .line 3750
+    .line 3752
     iput p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
 
-    .line 3751
+    .line 3753
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->requestLayoutIfNecessary()V
 
-    .line 3752
+    .line 3754
     return-void
 .end method
 
@@ -15223,13 +11597,13 @@
     .parameter "headerDividersEnabled"
 
     .prologue
-    .line 3763
+    .line 3765
     iput-boolean p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mHeaderDividersEnabled:Z
 
-    .line 3764
+    .line 3766
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFListView;->invalidate()V
 
-    .line 3765
+    .line 3767
     return-void
 .end method
 
@@ -15254,7 +11628,7 @@
 
     .prologue
     .line 1891
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-nez v0, :cond_1
 
@@ -15292,33 +11666,33 @@
     .line 1905
     const/4 v0, 0x4
 
-    iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mLayoutMode:I
+    iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mLayoutMode:I
 
     .line 1906
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
 
     add-int/2addr v0, p2
 
-    iput v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSpecificTop:I
+    iput v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSpecificTop:I
 
     .line 1908
-    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mNeedSync:Z
+    iget-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mNeedSync:Z
 
     if-eqz v0, :cond_3
 
     .line 1909
-    iput p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSyncPosition:I
+    iput p1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSyncPosition:I
 
     .line 1910
-    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v0, p1}, Landroid/widget/ListAdapter;->getItemId(I)J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSyncRowId:J
+    iput-wide v0, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSyncRowId:J
 
     .line 1913
     :cond_3
@@ -15328,7 +11702,7 @@
 
     .line 1901
     :cond_4
-    iput p1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mResurrectToPosition:I
+    iput p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mResurrectToPosition:I
 
     goto :goto_1
 .end method
@@ -15346,7 +11720,7 @@
 
     .line 1927
     .local v0, awakeScrollbars:Z
-    iget v1, p0, Lcom/nemustech/tiffany/widget/TFListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mSelectedPosition:I
 
     .line 1929
     .local v1, selectedPosition:I

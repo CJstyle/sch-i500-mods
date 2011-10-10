@@ -42,31 +42,31 @@
     .parameter "count"
 
     .prologue
-    .line 308
+    .line 329
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 309
+    .line 330
     iput-object p1, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mClickIntent:Landroid/content/Intent;
 
-    .line 310
+    .line 331
     iput-object p2, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mDescription:Ljava/lang/String;
 
-    .line 311
+    .line 332
     iput p3, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mIconResourceId:I
 
-    .line 312
+    .line 333
     iput-object p4, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mTicker:Ljava/lang/CharSequence;
 
-    .line 313
+    .line 334
     iput-wide p5, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mTimeMillis:J
 
-    .line 314
+    .line 335
     iput-object p7, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mTitle:Ljava/lang/String;
 
-    .line 315
+    .line 336
     iput p8, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mCount:I
 
-    .line 316
+    .line 337
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .parameter "uniqueThreads"
 
     .prologue
-    .line 319
+    .line 340
     iget-object v1, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mClickIntent:Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mDescription:Ljava/lang/String;
@@ -108,10 +108,10 @@
 
     invoke-static/range {v0 .. v10}, Lcom/android/mms/transaction/MessagingNotification;->access$200(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;IZLjava/lang/CharSequence;JLjava/lang/String;II)V
 
-    .line 323
+    .line 344
     return-void
 
-    .line 319
+    .line 340
     :cond_0
     const/4 v0, 0x0
 
@@ -124,7 +124,7 @@
     .locals 2
 
     .prologue
-    .line 326
+    .line 347
     iget-wide v0, p0, Lcom/android/mms/transaction/MessagingNotification$MmsSmsNotificationInfo;->mTimeMillis:J
 
     return-wide v0

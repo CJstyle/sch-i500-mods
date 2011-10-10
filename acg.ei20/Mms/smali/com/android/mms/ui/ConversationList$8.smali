@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 793
+    .line 880
     iput-object p1, p0, Lcom/android/mms/ui/ConversationList$8;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,24 +44,24 @@
     .parameter "event"
 
     .prologue
-    .line 795
+    .line 882
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 796
+    .line 883
     packed-switch p2, :pswitch_data_0
 
-    .line 806
+    .line 893
     :cond_0
     const/4 v2, 0x0
 
     :goto_0
     return v2
 
-    .line 798
+    .line 885
     :pswitch_0
     iget-object v2, p0, Lcom/android/mms/ui/ConversationList$8;->this$0:Lcom/android/mms/ui/ConversationList;
 
@@ -73,7 +73,7 @@
 
     move-result-wide v0
 
-    .line 799
+    .line 886
     .local v0, id:J
     const-wide/16 v2, 0x0
 
@@ -81,7 +81,7 @@
 
     if-lez v2, :cond_1
 
-    .line 800
+    .line 887
     iget-object v2, p0, Lcom/android/mms/ui/ConversationList$8;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v2}, Lcom/android/mms/ui/ConversationList;->access$900(Lcom/android/mms/ui/ConversationList;)Lcom/android/mms/ui/ConversationList$ThreadListQueryHandler;
@@ -90,13 +90,13 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/mms/ui/ConversationList;->confirmDeleteThread(JLandroid/content/AsyncQueryHandler;)V
 
-    .line 802
+    .line 889
     :cond_1
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 796
+    .line 883
     :pswitch_data_0
     .packed-switch 0x43
         :pswitch_0

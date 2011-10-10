@@ -1,4 +1,4 @@
-.class Lcom/nemustech/tiffany/widget/TFAnimatedListView$1;
+.class synthetic Lcom/nemustech/tiffany/widget/TFAnimatedListView$1;
 .super Ljava/lang/Object;
 .source "TFAnimatedListView.java"
 

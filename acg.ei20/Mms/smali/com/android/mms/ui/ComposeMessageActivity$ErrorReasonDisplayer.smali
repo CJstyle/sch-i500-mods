@@ -30,15 +30,15 @@
     .parameter "errorReason"
 
     .prologue
-    .line 5894
+    .line 5954
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$ErrorReasonDisplayer;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5895
+    .line 5955
     iput-object p2, p0, Lcom/android/mms/ui/ComposeMessageActivity$ErrorReasonDisplayer;->mErrorReason:Ljava/lang/String;
 
-    .line 5896
+    .line 5956
     return-void
 .end method
 
@@ -48,12 +48,12 @@
     .locals 3
 
     .prologue
-    .line 5899
+    .line 5959
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$ErrorReasonDisplayer;->mErrorReason:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 5900
+    .line 5960
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$ErrorReasonDisplayer;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iget-object v1, p0, Lcom/android/mms/ui/ComposeMessageActivity$ErrorReasonDisplayer;->mErrorReason:Ljava/lang/String;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 5903
+    .line 5963
     :cond_0
     return-void
 .end method

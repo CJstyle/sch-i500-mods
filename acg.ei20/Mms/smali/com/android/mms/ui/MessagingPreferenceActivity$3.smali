@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 414
+    .line 436
     iput-object p1, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$3;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "limit"
 
     .prologue
-    .line 416
+    .line 438
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$3;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->access$100(Lcom/android/mms/ui/MessagingPreferenceActivity;)Lcom/android/mms/util/Recycler;
@@ -53,11 +53,11 @@
 
     invoke-virtual {v0, v1, p1}, Lcom/android/mms/util/Recycler;->setMessageLimit(Landroid/content/Context;I)V
 
-    .line 417
+    .line 439
     iget-object v0, p0, Lcom/android/mms/ui/MessagingPreferenceActivity$3;->this$0:Lcom/android/mms/ui/MessagingPreferenceActivity;
 
     invoke-static {v0}, Lcom/android/mms/ui/MessagingPreferenceActivity;->access$200(Lcom/android/mms/ui/MessagingPreferenceActivity;)V
 
-    .line 418
+    .line 440
     return-void
 .end method

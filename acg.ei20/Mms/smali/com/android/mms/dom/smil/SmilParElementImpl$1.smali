@@ -167,7 +167,7 @@
 
     .prologue
     .line 93
-    iget-object v0, p0, Lcom/android/mms/dom/smil/SmilParElementImpl$1;->mSmilElement:Lorg/w3c/dom/smil/SMILElement;
+    iget-object v0, p0, Lcom/android/mms/dom/smil/ElementTimeImpl;->mSmilElement:Lorg/w3c/dom/smil/SMILElement;
 
     invoke-interface {v0}, Lorg/w3c/dom/smil/SMILElement;->getOwnerDocument()Lorg/w3c/dom/Document;
 

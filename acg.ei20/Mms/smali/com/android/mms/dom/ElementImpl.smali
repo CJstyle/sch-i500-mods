@@ -310,7 +310,7 @@
     if-nez v0, :cond_0
 
     .line 108
-    iget-object v1, p0, Lcom/android/mms/dom/ElementImpl;->mOwnerDocument:Lcom/android/mms/dom/DocumentImpl;
+    iget-object v1, p0, Lcom/android/mms/dom/NodeImpl;->mOwnerDocument:Lcom/android/mms/dom/DocumentImpl;
 
     invoke-virtual {v1, p1}, Lcom/android/mms/dom/DocumentImpl;->createAttribute(Ljava/lang/String;)Lorg/w3c/dom/Attr;
 

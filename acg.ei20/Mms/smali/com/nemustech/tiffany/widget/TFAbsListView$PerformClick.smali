@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 1845
+    .line 1898
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     const/4 v0, 0x0
@@ -47,7 +47,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1845
+    .line 1898
     invoke-direct {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     return-void
@@ -59,19 +59,19 @@
     .locals 6
 
     .prologue
-    .line 1852
+    .line 1905
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
-    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
 
     if-eqz v0, :cond_1
 
-    .line 1859
+    .line 1912
     :cond_0
     :goto_0
     return-void
 
-    .line 1854
+    .line 1907
     :cond_1
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
@@ -81,7 +81,7 @@
 
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
-    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 
@@ -103,7 +103,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1856
+    .line 1909
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$PerformClick;->mChild:Landroid/view/View;

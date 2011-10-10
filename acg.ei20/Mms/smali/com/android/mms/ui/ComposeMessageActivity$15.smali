@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 2722
+    .line 2730
     iput-object p1, p0, Lcom/android/mms/ui/ComposeMessageActivity$15;->this$0:Lcom/android/mms/ui/ComposeMessageActivity;
 
     iput-object p2, p0, Lcom/android/mms/ui/ComposeMessageActivity$15;->val$handler:Landroid/os/Handler;
@@ -46,7 +46,7 @@
     .locals 4
 
     .prologue
-    .line 2724
+    .line 2732
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageActivity$15;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/mms/ui/ComposeMessageActivity$15$1;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 2735
+    .line 2743
     return-void
 .end method

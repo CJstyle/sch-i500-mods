@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 67
+    .line 77
     iput-object p1, p0, Lcom/android/mms/ui/MessageContactHeader$1;->this$0:Lcom/android/mms/ui/MessageContactHeader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 69
+    .line 79
     iget-object v0, p0, Lcom/android/mms/ui/MessageContactHeader$1;->this$0:Lcom/android/mms/ui/MessageContactHeader;
 
     invoke-static {v0}, Lcom/android/mms/ui/MessageContactHeader;->access$000(Lcom/android/mms/ui/MessageContactHeader;)Landroid/widget/QuickContactBadge;
@@ -51,6 +51,6 @@
 
     invoke-virtual {v0}, Landroid/widget/QuickContactBadge;->performClick()Z
 
-    .line 70
+    .line 80
     return-void
 .end method

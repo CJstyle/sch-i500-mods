@@ -197,7 +197,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 72
-    const v0, 0x7f080053
+    const v0, 0x7f080078
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/BasicSlideEditorView;->findViewById(I)Landroid/view/View;
 
@@ -208,7 +208,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/BasicSlideEditorView;->mImageView:Landroid/widget/ImageView;
 
     .line 73
-    const v0, 0x7f080054
+    const v0, 0x7f080079
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/BasicSlideEditorView;->findViewById(I)Landroid/view/View;
 
@@ -228,7 +228,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/BasicSlideEditorView;->mAudioNameView:Landroid/widget/TextView;
 
     .line 75
-    const v0, 0x7f08005b
+    const v0, 0x7f080080
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/BasicSlideEditorView;->findViewById(I)Landroid/view/View;
 
@@ -239,7 +239,7 @@
     iput-object v0, p0, Lcom/android/mms/ui/BasicSlideEditorView;->mEditText:Landroid/widget/EditText;
 
     .line 78
-    const v0, 0x7f08005d
+    const v0, 0x7f080082
 
     invoke-virtual {p0, v0}, Lcom/android/mms/ui/BasicSlideEditorView;->findViewById(I)Landroid/view/View;
 
@@ -297,7 +297,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02008f
+    const v2, 0x7f020093
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -409,7 +409,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020090
+    const v2, 0x7f020094
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -548,7 +548,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020090
+    const v2, 0x7f020094
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -778,7 +778,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f020091
+    const v3, 0x7f020095
 
     invoke-static {v2, v3}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

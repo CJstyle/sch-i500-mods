@@ -44,7 +44,7 @@
     .line 172
     iget-object v0, p0, Lcom/android/mms/transaction/SendTransaction$1;->this$0:Lcom/android/mms/transaction/SendTransaction;
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0901ce
 

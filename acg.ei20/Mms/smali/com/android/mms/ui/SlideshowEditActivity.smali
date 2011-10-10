@@ -211,9 +211,9 @@
     .locals 9
 
     .prologue
-    const v8, 0x7f0800a4
+    const v8, 0x7f0800c9
 
-    const v7, 0x7f0800a2
+    const v7, 0x7f0800c7
 
     const v6, 0x7f070004
 
@@ -266,7 +266,7 @@
     .line 349
     iget-object v2, p0, Lcom/android/mms/ui/SlideshowEditActivity;->mAddSlideItem:Landroid/view/View;
 
-    const v3, 0x7f0800a8
+    const v3, 0x7f0800cd
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -298,7 +298,7 @@
 
     .line 353
     .local v0, image:Landroid/widget/ImageView;
-    const v2, 0x7f02002b
+    const v2, 0x7f02002f
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -345,7 +345,7 @@
     .line 362
     iget-object v2, p0, Lcom/android/mms/ui/SlideshowEditActivity;->mAddSlideItem:Landroid/view/View;
 
-    const v3, 0x7f0800a8
+    const v3, 0x7f0800cd
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +379,7 @@
 
     .line 366
     .restart local v0       #image:Landroid/widget/ImageView;
-    const v2, 0x7f02002a
+    const v2, 0x7f02002e
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -426,7 +426,7 @@
     .end local p0
     check-cast p0, Landroid/view/LayoutInflater;
 
-    const v3, 0x7f030031
+    const v3, 0x7f030034
 
     const/4 v4, 0x0
 
@@ -436,7 +436,7 @@
 
     .line 161
     .local v2, v:Landroid/view/View;
-    const v3, 0x7f0800a4
+    const v3, 0x7f0800c9
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -451,7 +451,7 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 
     .line 164
-    const v3, 0x7f0800a8
+    const v3, 0x7f0800cd
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -472,7 +472,7 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 168
-    const v3, 0x7f0800a2
+    const v3, 0x7f0800c7
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -482,7 +482,7 @@
 
     .line 169
     .local v0, image:Landroid/widget/ImageView;
-    const v3, 0x7f02002a
+    const v3, 0x7f02002e
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -530,7 +530,7 @@
     .line 254
     new-instance v0, Lcom/android/mms/ui/SlideshowEditActivity$SlideListAdapter;
 
-    const v1, 0x7f030031
+    const v1, 0x7f030034
 
     iget-object v2, p0, Lcom/android/mms/ui/SlideshowEditActivity;->mSlideshowModel:Lcom/android/mms/model/SlideshowModel;
 
@@ -697,12 +697,12 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 91
-    const v1, 0x7f030032
+    const v1, 0x7f030035
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideshowEditActivity;->setContentView(I)V
 
     .line 94
-    const v1, 0x7f0800a9
+    const v1, 0x7f0800ce
 
     invoke-virtual {p0, v1}, Lcom/android/mms/ui/SlideshowEditActivity;->findViewById(I)Landroid/view/View;
 
@@ -1117,7 +1117,7 @@
     .parameter "menu"
 
     .prologue
-    const v7, 0x7f020030
+    const v7, 0x7f020034
 
     const/16 v6, 0xa
 
@@ -1161,7 +1161,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020048
+    const v2, 0x7f02004c
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -1184,7 +1184,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020047
+    const v2, 0x7f02004b
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -1232,7 +1232,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02003e
+    const v2, 0x7f020042
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 

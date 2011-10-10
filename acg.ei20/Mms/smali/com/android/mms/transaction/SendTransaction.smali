@@ -34,7 +34,7 @@
     iput-object v0, p0, Lcom/android/mms/transaction/SendTransaction;->mSendReqURI:Landroid/net/Uri;
 
     .line 77
-    iput-object p4, p0, Lcom/android/mms/transaction/SendTransaction;->mId:Ljava/lang/String;
+    iput-object p4, p0, Lcom/android/mms/transaction/Transaction;->mId:Ljava/lang/String;
 
     .line 78
     new-instance v0, Landroid/os/Handler;
@@ -123,7 +123,7 @@
     .line 195
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -138,7 +138,7 @@
     .line 196
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -149,7 +149,7 @@
     .line 197
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -183,7 +183,7 @@
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v4, v0
 
@@ -254,13 +254,13 @@
     .line 113
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v4, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -304,7 +304,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v4, v0
 
@@ -383,7 +383,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mId:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mId:Ljava/lang/String;
 
     move-object v6, v0
 
@@ -445,7 +445,7 @@
     .line 195
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -460,7 +460,7 @@
     .line 196
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -471,7 +471,7 @@
     .line 197
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -572,7 +572,7 @@
     .line 195
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -587,7 +587,7 @@
     .line 196
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -598,7 +598,7 @@
     .line 197
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -661,13 +661,13 @@
     .line 165
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v4, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -747,7 +747,7 @@
     :cond_8
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -762,7 +762,7 @@
     .line 196
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -773,7 +773,7 @@
     .line 197
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -818,13 +818,13 @@
     .line 181
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v4, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -867,7 +867,7 @@
     .local v26, uri:Landroid/net/Uri;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mContext:Landroid/content/Context;
 
     move-object v4, v0
 
@@ -884,7 +884,7 @@
     .line 190
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -895,7 +895,7 @@
     .line 191
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -911,7 +911,7 @@
     .line 195
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -926,7 +926,7 @@
     .line 196
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -937,7 +937,7 @@
     .line 197
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -998,7 +998,7 @@
     .line 195
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -1013,7 +1013,7 @@
     .line 196
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -1024,7 +1024,7 @@
     .line 197
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v4, v0
 
@@ -1056,7 +1056,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v5, v0
 
@@ -1071,7 +1071,7 @@
     .line 196
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v5, v0
 
@@ -1082,7 +1082,7 @@
     .line 197
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/mms/transaction/SendTransaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
+    iget-object v0, v0, Lcom/android/mms/transaction/Transaction;->mTransactionState:Lcom/android/mms/transaction/TransactionState;
 
     move-object v5, v0
 

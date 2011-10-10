@@ -30,6 +30,8 @@
 
 
 # instance fields
+.field public mCMASType:Ljava/lang/String;
+
 .field private final mContext:Landroid/content/Context;
 
 .field private mDate:J
@@ -41,6 +43,8 @@
 .field private mHasUnreadMessages:Z
 
 .field private mIsCbSms:Z
+
+.field public mIsCmas:Z
 
 .field private mMarkAsBlockedSyncer:Ljava/lang/Object;
 
@@ -72,7 +76,7 @@
 
     const-string v5, "read"
 
-    .line 38
+    .line 39
     sget-object v0, Landroid/provider/Telephony$Threads;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -93,7 +97,7 @@
 
     sput-object v0, Lcom/android/mms/data/Conversation;->sAllThreadsUri:Landroid/net/Uri;
 
-    .line 41
+    .line 42
     const/16 v0, 0xa
 
     new-array v0, v0, [Ljava/lang/String;
@@ -154,7 +158,7 @@
 
     sput-object v0, Lcom/android/mms/data/Conversation;->ALL_THREADS_PROJECTION:[Ljava/lang/String;
 
-    .line 47
+    .line 48
     new-array v0, v6, [Ljava/lang/String;
 
     const-string v1, "_id"
@@ -167,7 +171,7 @@
 
     sput-object v0, Lcom/android/mms/data/Conversation;->UNREAD_PROJECTION:[Ljava/lang/String;
 
-    .line 57
+    .line 58
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "read"
@@ -176,7 +180,7 @@
 
     sput-object v0, Lcom/android/mms/data/Conversation;->READ_PROJECTION:[Ljava/lang/String;
 
-    .line 1080
+    .line 1136
     sput-boolean v3, Lcom/android/mms/data/Conversation;->isCached:Z
 
     return-void
@@ -187,37 +191,45 @@
     .parameter "context"
 
     .prologue
-    .line 97
+    const/4 v1, 0x0
+
+    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 73
+    iput-boolean v1, p0, Lcom/android/mms/data/Conversation;->mIsCmas:Z
+
+    .line 74
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/mms/data/Conversation;->mIsCbSms:Z
+    iput-object v0, p0, Lcom/android/mms/data/Conversation;->mCMASType:Ljava/lang/String;
 
-    .line 95
+    .line 91
+    iput-boolean v1, p0, Lcom/android/mms/data/Conversation;->mIsCbSms:Z
+
+    .line 97
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/mms/data/Conversation;->mMarkAsBlockedSyncer:Ljava/lang/Object;
 
-    .line 98
+    .line 100
     iput-object p1, p0, Lcom/android/mms/data/Conversation;->mContext:Landroid/content/Context;
 
-    .line 99
+    .line 101
     new-instance v0, Lcom/android/mms/data/ContactList;
 
     invoke-direct {v0}, Lcom/android/mms/data/ContactList;-><init>()V
 
     iput-object v0, p0, Lcom/android/mms/data/Conversation;->mRecipients:Lcom/android/mms/data/ContactList;
 
-    .line 100
+    .line 102
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/mms/data/Conversation;->mThreadId:J
 
-    .line 101
+    .line 103
     return-void
 .end method
 
@@ -228,77 +240,93 @@
     .parameter "allowQuery"
 
     .prologue
-    .line 103
+    const/4 v1, 0x0
+
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 73
+    iput-boolean v1, p0, Lcom/android/mms/data/Conversation;->mIsCmas:Z
+
+    .line 74
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/mms/data/Conversation;->mIsCbSms:Z
+    iput-object v0, p0, Lcom/android/mms/data/Conversation;->mCMASType:Ljava/lang/String;
 
-    .line 95
+    .line 91
+    iput-boolean v1, p0, Lcom/android/mms/data/Conversation;->mIsCbSms:Z
+
+    .line 97
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/mms/data/Conversation;->mMarkAsBlockedSyncer:Ljava/lang/Object;
 
-    .line 104
+    .line 106
     iput-object p1, p0, Lcom/android/mms/data/Conversation;->mContext:Landroid/content/Context;
 
-    .line 105
+    .line 107
     invoke-direct {p0, p2, p3, p4}, Lcom/android/mms/data/Conversation;->loadFromThreadId(JZ)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 106
+    .line 108
     new-instance v0, Lcom/android/mms/data/ContactList;
 
     invoke-direct {v0}, Lcom/android/mms/data/ContactList;-><init>()V
 
     iput-object v0, p0, Lcom/android/mms/data/Conversation;->mRecipients:Lcom/android/mms/data/ContactList;
 
-    .line 107
+    .line 109
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/mms/data/Conversation;->mThreadId:J
 
-    .line 109
+    .line 114
     :cond_0
     return-void
 .end method
 
 .method private constructor <init>(Landroid/content/Context;Landroid/database/Cursor;Z)V
-    .locals 1
+    .locals 2
     .parameter "context"
     .parameter "cursor"
     .parameter "allowQuery"
 
     .prologue
-    .line 111
+    const/4 v1, 0x0
+
+    .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 73
+    iput-boolean v1, p0, Lcom/android/mms/data/Conversation;->mIsCmas:Z
+
+    .line 74
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/mms/data/Conversation;->mIsCbSms:Z
+    iput-object v0, p0, Lcom/android/mms/data/Conversation;->mCMASType:Ljava/lang/String;
 
-    .line 95
+    .line 91
+    iput-boolean v1, p0, Lcom/android/mms/data/Conversation;->mIsCbSms:Z
+
+    .line 97
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/mms/data/Conversation;->mMarkAsBlockedSyncer:Ljava/lang/Object;
 
-    .line 112
+    .line 117
     iput-object p1, p0, Lcom/android/mms/data/Conversation;->mContext:Landroid/content/Context;
 
-    .line 113
+    .line 118
     invoke-static {p1, p0, p2, p3}, Lcom/android/mms/data/Conversation;->fillFromCursor(Landroid/content/Context;Lcom/android/mms/data/Conversation;Landroid/database/Cursor;Z)V
 
-    .line 114
+    .line 121
     return-void
 .end method
 
@@ -306,7 +334,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 35
     sget-object v0, Lcom/android/mms/data/Conversation;->UNREAD_PROJECTION:[Ljava/lang/String;
 
     return-object v0
@@ -317,7 +345,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/android/mms/data/Conversation;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -328,7 +356,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     invoke-static {p0}, Lcom/android/mms/data/Conversation;->cacheAllThreads(Landroid/content/Context;)V
 
     return-void
@@ -339,7 +367,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     invoke-direct {p0}, Lcom/android/mms/data/Conversation;->buildSeenContentValues()V
 
     return-void
@@ -349,7 +377,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 35
     sget-object v0, Lcom/android/mms/data/Conversation;->mSeenContentValues:Landroid/content/ContentValues;
 
     return-object v0
@@ -360,7 +388,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/android/mms/data/Conversation;->mMarkAsBlockedSyncer:Ljava/lang/Object;
 
     return-object v0
@@ -371,7 +399,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     iget-boolean v0, p0, Lcom/android/mms/data/Conversation;->mMarkAsReadBlocked:Z
 
     return v0
@@ -382,7 +410,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     invoke-direct {p0}, Lcom/android/mms/data/Conversation;->buildReadContentValues()V
 
     return-void
@@ -392,7 +420,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 35
     sget-object v0, Lcom/android/mms/data/Conversation;->mReadContentValues:Landroid/content/ContentValues;
 
     return-object v0
@@ -404,7 +432,7 @@
     .parameter "x1"
 
     .prologue
-    .line 34
+    .line 35
     invoke-direct {p0, p1}, Lcom/android/mms/data/Conversation;->setHasUnreadMessages(Z)V
 
     return-void
@@ -415,7 +443,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     iget-wide v0, p0, Lcom/android/mms/data/Conversation;->mThreadId:J
 
     return-wide v0
@@ -429,7 +457,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 629
+    .line 679
     sget-object v3, Landroid/provider/Telephony$Threads;->OBSOLETE_THREADS_URI:Landroid/net/Uri;
 
     move-object v0, p0
@@ -442,7 +470,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/AsyncQueryHandler;->startDelete(ILjava/lang/Object;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 630
+    .line 680
     return-void
 .end method
 
@@ -452,19 +480,19 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 296
+    .line 342
     sget-object v0, Lcom/android/mms/data/Conversation;->mReadContentValues:Landroid/content/ContentValues;
 
     if-nez v0, :cond_0
 
-    .line 297
+    .line 343
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0, v2}, Landroid/content/ContentValues;-><init>(I)V
 
     sput-object v0, Lcom/android/mms/data/Conversation;->mReadContentValues:Landroid/content/ContentValues;
 
-    .line 298
+    .line 344
     sget-object v0, Lcom/android/mms/data/Conversation;->mReadContentValues:Landroid/content/ContentValues;
 
     const-string v1, "read"
@@ -475,7 +503,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 300
+    .line 346
     :cond_0
     return-void
 .end method
@@ -486,19 +514,19 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 290
+    .line 336
     sget-object v0, Lcom/android/mms/data/Conversation;->mSeenContentValues:Landroid/content/ContentValues;
 
     if-nez v0, :cond_0
 
-    .line 291
+    .line 337
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0, v2}, Landroid/content/ContentValues;-><init>(I)V
 
     sput-object v0, Lcom/android/mms/data/Conversation;->mSeenContentValues:Landroid/content/ContentValues;
 
-    .line 292
+    .line 338
     sget-object v0, Lcom/android/mms/data/Conversation;->mSeenContentValues:Landroid/content/ContentValues;
 
     const-string v1, "seen"
@@ -509,7 +537,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 294
+    .line 340
     :cond_0
     return-void
 .end method
@@ -521,12 +549,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1083
+    .line 1139
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v9
 
-    .line 1085
+    .line 1141
     .local v9, startT:J
     invoke-static {}, Lcom/android/mms/data/Conversation$Cache;->getInstance()Lcom/android/mms/data/Conversation$Cache;
 
@@ -534,36 +562,36 @@
 
     monitor-enter v0
 
-    .line 1086
+    .line 1142
     :try_start_0
     sget-boolean v1, Lcom/android/mms/data/Conversation;->mLoadingThreads:Z
 
     if-eqz v1, :cond_0
 
-    .line 1087
+    .line 1143
     monitor-exit v0
 
-    .line 1150
+    .line 1206
     :goto_0
     return-void
 
-    .line 1089
+    .line 1145
     :cond_0
     const/4 v1, 0x1
 
     sput-boolean v1, Lcom/android/mms/data/Conversation;->mLoadingThreads:Z
 
-    .line 1090
+    .line 1146
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 1094
+    .line 1150
     new-instance v13, Ljava/util/HashSet;
 
     invoke-direct {v13}, Ljava/util/HashSet;-><init>()V
 
-    .line 1097
+    .line 1153
     .local v13, threadsOnDisk:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -581,11 +609,11 @@
 
     move-result-object v6
 
-    .line 1100
+    .line 1156
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_3
 
-    .line 1101
+    .line 1157
     :goto_1
     :try_start_1
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
@@ -594,14 +622,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 1102
+    .line 1158
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v11
 
-    .line 1103
+    .line 1159
     .local v11, threadId:J
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -609,7 +637,7 @@
 
     invoke-virtual {v13, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1107
+    .line 1163
     invoke-static {}, Lcom/android/mms/data/Conversation$Cache;->getInstance()Lcom/android/mms/data/Conversation$Cache;
 
     move-result-object v0
@@ -618,22 +646,22 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 1108
+    .line 1164
     :try_start_2
     invoke-static {v11, v12}, Lcom/android/mms/data/Conversation$Cache;->get(J)Lcom/android/mms/data/Conversation;
 
     move-result-object v7
 
-    .line 1109
+    .line 1165
     .local v7, conv:Lcom/android/mms/data/Conversation;
     monitor-exit v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
-    .line 1111
+    .line 1167
     if-nez v7, :cond_2
 
-    .line 1115
+    .line 1171
     :try_start_3
     new-instance v7, Lcom/android/mms/data/Conversation;
 
@@ -644,7 +672,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 1117
+    .line 1173
     .restart local v7       #conv:Lcom/android/mms/data/Conversation;
     :try_start_4
     invoke-static {}, Lcom/android/mms/data/Conversation$Cache;->getInstance()Lcom/android/mms/data/Conversation$Cache;
@@ -657,11 +685,11 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_4 .. :try_end_4} :catch_0
     .catch Ljava/util/ConcurrentModificationException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 1118
+    .line 1174
     :try_start_5
     invoke-static {v7}, Lcom/android/mms/data/Conversation$Cache;->put(Lcom/android/mms/data/Conversation;)V
 
-    .line 1119
+    .line 1175
     monitor-exit v0
 
     goto :goto_1
@@ -680,13 +708,13 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_6 .. :try_end_6} :catch_0
     .catch Ljava/util/ConcurrentModificationException; {:try_start_6 .. :try_end_6} :catch_1
 
-    .line 1120
+    .line 1176
     :catch_0
     move-exception v0
 
     move-object v8, v0
 
-    .line 1121
+    .line 1177
     .local v8, e:Ljava/lang/IllegalStateException;
     :try_start_7
     const-string v0, "Tried to add duplicate Conversation to Cache"
@@ -701,7 +729,7 @@
 
     goto :goto_1
 
-    .line 1134
+    .line 1190
     .end local v7           #conv:Lcom/android/mms/data/Conversation;
     .end local v8           #e:Ljava/lang/IllegalStateException;
     .end local v11           #threadId:J
@@ -710,10 +738,10 @@
 
     if-eqz v6, :cond_1
 
-    .line 1135
+    .line 1191
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 1137
+    .line 1193
     :cond_1
     invoke-static {}, Lcom/android/mms/data/Conversation$Cache;->getInstance()Lcom/android/mms/data/Conversation$Cache;
 
@@ -721,20 +749,20 @@
 
     monitor-enter v1
 
-    .line 1138
+    .line 1194
     const/4 v2, 0x0
 
     :try_start_8
     sput-boolean v2, Lcom/android/mms/data/Conversation;->mLoadingThreads:Z
 
-    .line 1139
+    .line 1195
     monitor-exit v1
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_5
 
     throw v0
 
-    .line 1090
+    .line 1146
     .end local v6           #c:Landroid/database/Cursor;
     .end local v13           #threadsOnDisk:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
     :catchall_2
@@ -747,7 +775,7 @@
 
     throw v1
 
-    .line 1109
+    .line 1165
     .restart local v6       #c:Landroid/database/Cursor;
     .restart local v11       #threadId:J
     .restart local v13       #threadsOnDisk:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
@@ -762,14 +790,14 @@
     :try_start_b
     throw v1
 
-    .line 1122
+    .line 1178
     .restart local v7       #conv:Lcom/android/mms/data/Conversation;
     :catch_1
     move-exception v0
 
     move-object v8, v0
 
-    .line 1123
+    .line 1179
     .local v8, e:Ljava/util/ConcurrentModificationException;
     const-string v0, "Tried to modificated same object in same time"
 
@@ -781,7 +809,7 @@
 
     goto :goto_1
 
-    .line 1129
+    .line 1185
     .end local v8           #e:Ljava/util/ConcurrentModificationException;
     :cond_2
     const/4 v0, 0x0
@@ -792,16 +820,16 @@
 
     goto :goto_1
 
-    .line 1134
+    .line 1190
     .end local v7           #conv:Lcom/android/mms/data/Conversation;
     .end local v11           #threadId:J
     :cond_3
     if-eqz v6, :cond_4
 
-    .line 1135
+    .line 1191
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 1137
+    .line 1193
     :cond_4
     invoke-static {}, Lcom/android/mms/data/Conversation$Cache;->getInstance()Lcom/android/mms/data/Conversation$Cache;
 
@@ -809,21 +837,21 @@
 
     monitor-enter v0
 
-    .line 1138
+    .line 1194
     const/4 v1, 0x0
 
     :try_start_c
     sput-boolean v1, Lcom/android/mms/data/Conversation;->mLoadingThreads:Z
 
-    .line 1139
+    .line 1195
     monitor-exit v0
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_4
 
-    .line 1143
+    .line 1199
     invoke-static {v13}, Lcom/android/mms/data/Conversation$Cache;->keepOnly(Ljava/util/Set;)V
 
-    .line 1149
+    .line 1205
     const-string v0, "Mms/conv"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -860,7 +888,7 @@
 
     goto/16 :goto_0
 
-    .line 1139
+    .line 1195
     :catchall_4
     move-exception v1
 
@@ -887,7 +915,7 @@
     .parameter "context"
 
     .prologue
-    .line 122
+    .line 129
     new-instance v0, Lcom/android/mms/data/Conversation;
 
     invoke-direct {v0, p0}, Lcom/android/mms/data/Conversation;-><init>(Landroid/content/Context;)V
@@ -909,10 +937,10 @@
 
     const/4 v5, 0x0
 
-    .line 758
+    .line 814
     monitor-enter p1
 
-    .line 759
+    .line 815
     const/4 v3, 0x0
 
     :try_start_0
@@ -922,7 +950,7 @@
 
     iput-wide v3, p1, Lcom/android/mms/data/Conversation;->mThreadId:J
 
-    .line 760
+    .line 816
     const/4 v3, 0x1
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getLong(I)J
@@ -931,7 +959,7 @@
 
     iput-wide v3, p1, Lcom/android/mms/data/Conversation;->mDate:J
 
-    .line 761
+    .line 817
     const/4 v3, 0x2
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getInt(I)I
@@ -940,7 +968,7 @@
 
     iput v3, p1, Lcom/android/mms/data/Conversation;->mMessageCount:I
 
-    .line 762
+    .line 818
     const/16 v3, 0x9
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getInt(I)I
@@ -949,7 +977,7 @@
 
     iput v3, p1, Lcom/android/mms/data/Conversation;->mUnreadMessageCount:I
 
-    .line 765
+    .line 821
     const/4 v3, 0x4
 
     const/4 v4, 0x5
@@ -958,7 +986,7 @@
 
     move-result-object v2
 
-    .line 766
+    .line 822
     .local v2, snippet:Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -966,18 +994,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 767
+    .line 823
     const v3, 0x7f090011
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 769
+    .line 825
     :cond_0
     iput-object v2, p1, Lcom/android/mms/data/Conversation;->mSnippet:Ljava/lang/String;
 
-    .line 771
+    .line 827
     const/4 v3, 0x6
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getInt(I)I
@@ -991,7 +1019,7 @@
     :goto_0
     invoke-direct {p1, v3}, Lcom/android/mms/data/Conversation;->setHasUnreadMessages(Z)V
 
-    .line 772
+    .line 828
     const/4 v3, 0x7
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getInt(I)I
@@ -1005,7 +1033,7 @@
     :goto_1
     iput-boolean v3, p1, Lcom/android/mms/data/Conversation;->mHasError:Z
 
-    .line 773
+    .line 829
     const/16 v3, 0x8
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getInt(I)I
@@ -1019,38 +1047,38 @@
     :goto_2
     iput-boolean v3, p1, Lcom/android/mms/data/Conversation;->mHasAttachment:Z
 
-    .line 774
+    .line 830
     monitor-exit p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 777
+    .line 833
     const/4 v3, 0x3
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 778
+    .line 834
     .local v0, recipientIds:Ljava/lang/String;
     invoke-static {v0, p3}, Lcom/android/mms/data/ContactList;->getByIds(Ljava/lang/String;Z)Lcom/android/mms/data/ContactList;
 
     move-result-object v1
 
-    .line 779
+    .line 835
     .local v1, recipients:Lcom/android/mms/data/ContactList;
     monitor-enter p1
 
-    .line 780
+    .line 836
     :try_start_1
     iput-object v1, p1, Lcom/android/mms/data/Conversation;->mRecipients:Lcom/android/mms/data/ContactList;
 
-    .line 781
+    .line 837
     monitor-exit p1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 782
+    .line 838
     invoke-virtual {v1}, Lcom/android/mms/data/ContactList;->size()I
 
     move-result v3
@@ -1076,10 +1104,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 783
+    .line 839
     iput-boolean v6, p1, Lcom/android/mms/data/Conversation;->mIsCbSms:Z
 
-    .line 785
+    .line 841
     :cond_1
     const-string v3, "Mms:threadcache"
 
@@ -1089,7 +1117,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 786
+    .line 842
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1124,7 +1152,7 @@
 
     invoke-static {v3, v4}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 788
+    .line 844
     :cond_2
     return-void
 
@@ -1134,22 +1162,22 @@
     :cond_3
     move v3, v5
 
-    .line 771
+    .line 827
     goto :goto_0
 
     :cond_4
     move v3, v5
 
-    .line 772
+    .line 828
     goto :goto_1
 
     :cond_5
     move v3, v5
 
-    .line 773
+    .line 829
     goto :goto_2
 
-    .line 774
+    .line 830
     .end local v2           #snippet:Ljava/lang/String;
     :catchall_0
     move-exception v3
@@ -1161,7 +1189,7 @@
 
     throw v3
 
-    .line 781
+    .line 837
     .restart local v0       #recipientIds:Ljava/lang/String;
     .restart local v1       #recipients:Lcom/android/mms/data/ContactList;
     .restart local v2       #snippet:Ljava/lang/String;
@@ -1184,12 +1212,12 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 270
+    .line 316
     invoke-interface {p1, v7}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v3
 
-    .line 271
+    .line 317
     .local v3, threadId:J
     const-wide/16 v5, 0x0
 
@@ -1197,34 +1225,34 @@
 
     if-lez v5, :cond_0
 
-    .line 272
+    .line 318
     invoke-static {v3, v4}, Lcom/android/mms/data/Conversation$Cache;->get(J)Lcom/android/mms/data/Conversation;
 
     move-result-object v0
 
-    .line 273
+    .line 319
     .local v0, conv:Lcom/android/mms/data/Conversation;
     if-eqz v0, :cond_0
 
-    .line 274
+    .line 320
     invoke-static {p0, v0, p1, v7}, Lcom/android/mms/data/Conversation;->fillFromCursor(Landroid/content/Context;Lcom/android/mms/data/Conversation;Landroid/database/Cursor;Z)V
 
     move-object v1, v0
 
-    .line 286
+    .line 332
     .end local v0           #conv:Lcom/android/mms/data/Conversation;
     .local v1, conv:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 278
+    .line 324
     .end local v1           #conv:Ljava/lang/Object;
     :cond_0
     new-instance v0, Lcom/android/mms/data/Conversation;
 
     invoke-direct {v0, p0, p1, v7}, Lcom/android/mms/data/Conversation;-><init>(Landroid/content/Context;Landroid/database/Cursor;Z)V
 
-    .line 280
+    .line 326
     .restart local v0       #conv:Lcom/android/mms/data/Conversation;
     :try_start_0
     invoke-static {v0}, Lcom/android/mms/data/Conversation$Cache;->put(Lcom/android/mms/data/Conversation;)V
@@ -1235,16 +1263,16 @@
     :goto_1
     move-object v1, v0
 
-    .line 286
+    .line 332
     .restart local v1       #conv:Ljava/lang/Object;
     goto :goto_0
 
-    .line 281
+    .line 327
     .end local v1           #conv:Ljava/lang/Object;
     :catch_0
     move-exception v2
 
-    .line 282
+    .line 328
     .local v2, e:Ljava/lang/IllegalStateException;
     const-string v5, "Tried to add duplicate Conversation to Cache"
 
@@ -1254,12 +1282,12 @@
 
     goto :goto_1
 
-    .line 283
+    .line 329
     .end local v2           #e:Ljava/lang/IllegalStateException;
     :catch_1
     move-exception v2
 
-    .line 284
+    .line 330
     .local v2, e:Ljava/util/ConcurrentModificationException;
     const-string v5, "Tried to modificated same object in same time"
 
@@ -1279,24 +1307,24 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 129
+    .line 175
     invoke-static {p1, p2}, Lcom/android/mms/data/Conversation$Cache;->get(J)Lcom/android/mms/data/Conversation;
 
     move-result-object v0
 
-    .line 130
+    .line 176
     .local v0, conv:Lcom/android/mms/data/Conversation;
     if-eqz v0, :cond_0
 
     move-object v1, v0
 
-    .line 141
+    .line 187
     .end local v0           #conv:Lcom/android/mms/data/Conversation;
     .local v1, conv:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 133
+    .line 179
     .end local v1           #conv:Ljava/lang/Object;
     .restart local v0       #conv:Lcom/android/mms/data/Conversation;
     :cond_0
@@ -1305,7 +1333,7 @@
     .end local v0           #conv:Lcom/android/mms/data/Conversation;
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/mms/data/Conversation;-><init>(Landroid/content/Context;JZ)V
 
-    .line 135
+    .line 181
     .restart local v0       #conv:Lcom/android/mms/data/Conversation;
     :try_start_0
     invoke-static {v0}, Lcom/android/mms/data/Conversation$Cache;->put(Lcom/android/mms/data/Conversation;)V
@@ -1316,16 +1344,16 @@
     :goto_1
     move-object v1, v0
 
-    .line 141
+    .line 187
     .restart local v1       #conv:Ljava/lang/Object;
     goto :goto_0
 
-    .line 136
+    .line 182
     .end local v1           #conv:Ljava/lang/Object;
     :catch_0
     move-exception v2
 
-    .line 137
+    .line 183
     .local v2, e:Ljava/lang/IllegalStateException;
     const-string v3, "Tried to add duplicate Conversation to Cache"
 
@@ -1335,12 +1363,12 @@
 
     goto :goto_1
 
-    .line 138
+    .line 184
     .end local v2           #e:Ljava/lang/IllegalStateException;
     :catch_1
     move-exception v2
 
-    .line 139
+    .line 185
     .local v2, e:Ljava/util/ConcurrentModificationException;
     const-string v3, "Tried to modificated same object in same time"
 
@@ -1360,19 +1388,19 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 185
+    .line 231
     if-nez p1, :cond_0
 
-    .line 186
+    .line 232
     invoke-static {p0}, Lcom/android/mms/data/Conversation;->createNew(Landroid/content/Context;)Lcom/android/mms/data/Conversation;
 
     move-result-object v4
 
-    .line 205
+    .line 251
     :goto_0
     return-object v4
 
-    .line 192
+    .line 238
     :cond_0
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
@@ -1386,7 +1414,7 @@
 
     if-lt v4, v5, :cond_1
 
-    .line 194
+    .line 240
     :try_start_0
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
@@ -1404,7 +1432,7 @@
 
     move-result-wide v2
 
-    .line 198
+    .line 244
     .local v2, threadId:J
     invoke-static {p0, v2, v3, p2}, Lcom/android/mms/data/Conversation;->get(Landroid/content/Context;JZ)Lcom/android/mms/data/Conversation;
     :try_end_0
@@ -1414,14 +1442,14 @@
 
     goto :goto_0
 
-    .line 199
+    .line 245
     .end local v2           #threadId:J
     :catch_0
     move-exception v4
 
     move-object v0, v4
 
-    .line 200
+    .line 246
     .local v0, exception:Ljava/lang/NumberFormatException;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1447,14 +1475,14 @@
 
     invoke-static {v4, v5}, Lcom/android/mms/LogTag;->error(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 204
+    .line 250
     .end local v0           #exception:Ljava/lang/NumberFormatException;
     :cond_1
     invoke-virtual {p1}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 205
+    .line 251
     .local v1, recipient:Ljava/lang/String;
     invoke-static {v1, p2, v6}, Lcom/android/mms/data/ContactList;->getByNumbers(Ljava/lang/String;ZZ)Lcom/android/mms/data/ContactList;
 
@@ -1478,7 +1506,7 @@
 
     const-string v7, "Mms/conv"
 
-    .line 150
+    .line 196
     invoke-virtual {p1}, Lcom/android/mms/data/ContactList;->size()I
 
     move-result v4
@@ -1487,44 +1515,44 @@
 
     if-ge v4, v5, :cond_0
 
-    .line 151
+    .line 197
     invoke-static {p0}, Lcom/android/mms/data/Conversation;->createNew(Landroid/content/Context;)Lcom/android/mms/data/Conversation;
 
     move-result-object v4
 
-    .line 175
+    .line 221
     :goto_0
     return-object v4
 
-    .line 154
+    .line 200
     :cond_0
     invoke-static {p1}, Lcom/android/mms/data/Conversation$Cache;->get(Lcom/android/mms/data/ContactList;)Lcom/android/mms/data/Conversation;
 
     move-result-object v0
 
-    .line 155
+    .line 201
     .local v0, conv:Lcom/android/mms/data/Conversation;
     if-eqz v0, :cond_1
 
     move-object v4, v0
 
-    .line 156
+    .line 202
     goto :goto_0
 
-    .line 158
+    .line 204
     :cond_1
     invoke-static {p0, p1}, Lcom/android/mms/data/Conversation;->getOrCreateThreadId(Landroid/content/Context;Lcom/android/mms/data/ContactList;)J
 
     move-result-wide v2
 
-    .line 159
+    .line 205
     .local v2, threadId:J
     new-instance v0, Lcom/android/mms/data/Conversation;
 
     .end local v0           #conv:Lcom/android/mms/data/Conversation;
     invoke-direct {v0, p0, v2, v3, p2}, Lcom/android/mms/data/Conversation;-><init>(Landroid/content/Context;JZ)V
 
-    .line 160
+    .line 206
     .restart local v0       #conv:Lcom/android/mms/data/Conversation;
     const-string v4, "Mms/conv"
 
@@ -1552,7 +1580,7 @@
 
     invoke-static {v7, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 162
+    .line 208
     invoke-virtual {v0}, Lcom/android/mms/data/Conversation;->getRecipients()Lcom/android/mms/data/ContactList;
 
     move-result-object v4
@@ -1563,14 +1591,14 @@
 
     if-nez v4, :cond_2
 
-    .line 163
+    .line 209
     const-string v4, "Mms/conv"
 
     const-string v4, "Conversation.get: new conv\'s recipients don\'t match input recpients xxxxxxxx"
 
     invoke-static {v7, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
+    .line 214
     :cond_2
     :try_start_0
     invoke-static {v0}, Lcom/android/mms/data/Conversation$Cache;->put(Lcom/android/mms/data/Conversation;)V
@@ -1581,14 +1609,14 @@
     :goto_1
     move-object v4, v0
 
-    .line 175
+    .line 221
     goto :goto_0
 
-    .line 169
+    .line 215
     :catch_0
     move-exception v1
 
-    .line 170
+    .line 216
     .local v1, e:Ljava/lang/IllegalStateException;
     const-string v4, "Tried to add duplicate Conversation to Cache"
 
@@ -1598,12 +1626,12 @@
 
     goto :goto_1
 
-    .line 171
+    .line 217
     .end local v1           #e:Ljava/lang/IllegalStateException;
     :catch_1
     move-exception v1
 
-    .line 172
+    .line 218
     .local v1, e:Ljava/util/ConcurrentModificationException;
     const-string v4, "Tried to modificated same object in same time"
 
@@ -1635,25 +1663,25 @@
     .local p1, recipientsList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v2, 0x1
 
-    .line 212
+    .line 258
     if-nez p1, :cond_0
 
-    .line 213
+    .line 259
     invoke-static {p0}, Lcom/android/mms/data/Conversation;->createNew(Landroid/content/Context;)Lcom/android/mms/data/Conversation;
 
     move-result-object v2
 
-    .line 218
+    .line 264
     :goto_0
     return-object v2
 
-    .line 216
+    .line 262
     :cond_0
     invoke-static {p1}, Lcom/android/mms/data/Conversation;->getRecipientByList(Ljava/util/ArrayList;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 217
+    .line 263
     .local v1, recipient:Ljava/lang/String;
     invoke-static {v1, v2, v2}, Lcom/android/mms/data/ContactList;->getByNumbers(Ljava/lang/String;ZZ)Lcom/android/mms/data/ContactList;
 
@@ -1666,7 +1694,7 @@
     .local v0, conversation:Lcom/android/mms/data/Conversation;
     move-object v2, v0
 
-    .line 218
+    .line 264
     goto :goto_0
 .end method
 
@@ -1680,16 +1708,16 @@
 
     const/4 v9, 0x0
 
-    .line 574
+    .line 624
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
-    .line 575
+    .line 625
     .local v4, recipients:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     const/4 v1, 0x0
 
-    .line 576
+    .line 626
     .local v1, cacheContact:Lcom/android/mms/data/Contact;
     invoke-virtual {p1}, Lcom/android/mms/data/ContactList;->iterator()Ljava/util/Iterator;
 
@@ -1709,13 +1737,13 @@
 
     check-cast v0, Lcom/android/mms/data/Contact;
 
-    .line 577
+    .line 627
     .local v0, c:Lcom/android/mms/data/Contact;
     invoke-virtual {v0}, Lcom/android/mms/data/Contact;->getNumber()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 579
+    .line 629
     .local v3, number:Ljava/lang/String;
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1723,16 +1751,16 @@
 
     if-nez v7, :cond_0
 
-    .line 580
+    .line 630
     invoke-static {v3, v9}, Lcom/android/mms/data/Contact;->get(Ljava/lang/String;Z)Lcom/android/mms/data/Contact;
 
     move-result-object v1
 
-    .line 584
+    .line 634
     :goto_1
     if-eqz v1, :cond_1
 
-    .line 585
+    .line 635
     invoke-virtual {v1}, Lcom/android/mms/data/Contact;->getNumber()Ljava/lang/String;
 
     move-result-object v7
@@ -1741,19 +1769,19 @@
 
     goto :goto_0
 
-    .line 582
+    .line 632
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_1
 
-    .line 587
+    .line 637
     :cond_1
     invoke-virtual {v4, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 590
+    .line 640
     .end local v0           #c:Lcom/android/mms/data/Contact;
     .end local v3           #number:Ljava/lang/String;
     :cond_2
@@ -1761,7 +1789,7 @@
 
     move-result-wide v5
 
-    .line 591
+    .line 641
     .local v5, retVal:J
     const-string v7, "Mms:app"
 
@@ -1771,7 +1799,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 592
+    .line 642
     const-string v7, "[Conversation] getOrCreateThreadId for (%s) returned %d"
 
     new-array v8, v8, [Ljava/lang/Object;
@@ -1788,7 +1816,7 @@
 
     invoke-static {v7, v8}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 596
+    .line 646
     :cond_3
     return-wide v5
 .end method
@@ -1808,28 +1836,28 @@
     .end annotation
 
     .prologue
-    .line 222
+    .line 268
     .local p0, recipientsList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-nez p0, :cond_0
 
-    .line 223
+    .line 269
     const/4 v6, 0x0
 
-    .line 236
+    .line 282
     :goto_0
     return-object v6
 
-    .line 225
+    .line 271
     :cond_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 227
+    .line 273
     .local v3, recipientCount:I
     const-string v2, ""
 
-    .line 229
+    .line 275
     .local v2, numbers:Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -1837,14 +1865,14 @@
     :goto_1
     if-ge v0, v3, :cond_1
 
-    .line 230
+    .line 276
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Ljava/lang/String;
 
-    .line 231
+    .line 277
     .local v5, tmpl:Ljava/lang/String;
     const-string v6, ";"
 
@@ -1858,13 +1886,13 @@
 
     move-result-object v1
 
-    .line 233
+    .line 279
     .local v1, number:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuffer;
 
     invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 234
+    .line 280
     .local v4, s:Ljava/lang/StringBuffer;
     invoke-virtual {v4, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -1884,7 +1912,7 @@
 
     move-result-object v2
 
-    .line 229
+    .line 275
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
@@ -1895,7 +1923,7 @@
     :cond_1
     move-object v6, v2
 
-    .line 236
+    .line 282
     goto :goto_0
 .end method
 
@@ -1904,7 +1932,7 @@
     .parameter "threadId"
 
     .prologue
-    .line 430
+    .line 480
     sget-object v0, Landroid/provider/Telephony$Threads;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0, p1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
@@ -1918,12 +1946,12 @@
     .locals 1
 
     .prologue
-    .line 965
+    .line 1021
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/mms/data/Conversation;->isCached:Z
 
-    .line 966
+    .line 1022
     return-void
 .end method
 
@@ -1932,15 +1960,15 @@
     .parameter "context"
 
     .prologue
-    .line 969
+    .line 1025
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/mms/data/Conversation;->isCached:Z
 
-    .line 970
+    .line 1026
     invoke-static {p0}, Lcom/android/mms/data/Conversation;->startCaching(Landroid/content/Context;)V
 
-    .line 971
+    .line 1027
     return-void
 .end method
 
@@ -1954,7 +1982,7 @@
 
     const/4 v7, 0x0
 
-    .line 1153
+    .line 1209
     iget-object v0, p0, Lcom/android/mms/data/Conversation;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1993,7 +2021,7 @@
 
     move-result-object v6
 
-    .line 1156
+    .line 1212
     .local v6, c:Landroid/database/Cursor;
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
@@ -2002,19 +2030,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 1157
+    .line 1213
     iget-object v0, p0, Lcom/android/mms/data/Conversation;->mContext:Landroid/content/Context;
 
     invoke-static {v0, p0, v6, p3}, Lcom/android/mms/data/Conversation;->fillFromCursor(Landroid/content/Context;Lcom/android/mms/data/Conversation;Landroid/database/Cursor;Z)V
 
-    .line 1159
+    .line 1215
     iget-wide v0, p0, Lcom/android/mms/data/Conversation;->mThreadId:J
 
     cmp-long v0, p1, v0
 
     if-eqz v0, :cond_0
 
-    .line 1160
+    .line 1216
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2053,17 +2081,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1168
+    .line 1224
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 1170
+    .line 1226
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    .line 1164
+    .line 1220
     :cond_1
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2092,7 +2120,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1168
+    .line 1224
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     move v0, v7
@@ -2111,14 +2139,14 @@
     .locals 2
 
     .prologue
-    .line 1075
+    .line 1131
     invoke-static {}, Lcom/android/mms/data/Conversation$Cache;->getInstance()Lcom/android/mms/data/Conversation$Cache;
 
     move-result-object v0
 
     monitor-enter v0
 
-    .line 1076
+    .line 1132
     :try_start_0
     sget-boolean v1, Lcom/android/mms/data/Conversation;->mLoadingThreads:Z
 
@@ -2126,7 +2154,7 @@
 
     return v1
 
-    .line 1077
+    .line 1133
     :catchall_0
     move-exception v1
 
@@ -2142,20 +2170,20 @@
     .parameter "flag"
 
     .prologue
-    .line 550
+    .line 600
     monitor-enter p0
 
-    .line 551
+    .line 601
     :try_start_0
     iput-boolean p1, p0, Lcom/android/mms/data/Conversation;->mHasUnreadMessages:Z
 
-    .line 552
+    .line 602
     monitor-exit p0
 
-    .line 553
+    .line 603
     return-void
 
-    .line 552
+    .line 602
     :catchall_0
     move-exception v0
 
@@ -2171,22 +2199,22 @@
     .parameter "context"
 
     .prologue
-    .line 974
+    .line 1030
     sget-boolean v0, Lcom/android/mms/data/Conversation;->isCached:Z
 
     if-eqz v0, :cond_0
 
-    .line 982
+    .line 1038
     :goto_0
     return-void
 
-    .line 975
+    .line 1031
     :cond_0
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/mms/data/Conversation;->isCached:Z
 
-    .line 977
+    .line 1033
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lcom/android/mms/data/Conversation$3;
@@ -2211,18 +2239,18 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 688
+    .line 744
     sget-object v0, Landroid/provider/Telephony$Threads;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p3, p4}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
     move-result-object v3
 
-    .line 690
+    .line 746
     .local v3, uri:Landroid/net/Uri;
     if-eqz p5, :cond_1
 
-    .line 692
+    .line 748
     if-eqz p2, :cond_0
 
     const-string v0, "deletable=1"
@@ -2237,13 +2265,13 @@
 
     move-object v5, v2
 
-    .line 696
+    .line 752
     invoke-virtual/range {v0 .. v5}, Landroid/content/AsyncQueryHandler;->startDelete(ILjava/lang/Object;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 697
+    .line 753
     return-void
 
-    .line 692
+    .line 748
     .end local v4           #selection:Ljava/lang/String;
     :cond_0
     const-string v0, "deletable=1 AND locked=0"
@@ -2252,7 +2280,7 @@
 
     goto :goto_0
 
-    .line 695
+    .line 751
     :cond_1
     if-eqz p2, :cond_2
 
@@ -2281,17 +2309,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 709
+    .line 765
     if-eqz p3, :cond_1
 
-    .line 711
+    .line 767
     if-eqz p2, :cond_0
 
     const-string v0, "deletable=1"
 
     move-object v4, v0
 
-    .line 715
+    .line 771
     .local v4, selection:Ljava/lang/String;
     :goto_0
     sget-object v3, Landroid/provider/Telephony$Threads;->CONTENT_URI:Landroid/net/Uri;
@@ -2304,10 +2332,10 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/AsyncQueryHandler;->startDelete(ILjava/lang/Object;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 716
+    .line 772
     return-void
 
-    .line 711
+    .line 767
     .end local v4           #selection:Ljava/lang/String;
     :cond_0
     const-string v0, "deletable=1 AND locked=0"
@@ -2316,7 +2344,7 @@
 
     goto :goto_0
 
-    .line 714
+    .line 770
     :cond_1
     if-eqz p2, :cond_2
 
@@ -2343,17 +2371,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 666
+    .line 718
     invoke-virtual {p0, p1}, Landroid/content/AsyncQueryHandler;->cancelOperation(I)V
 
-    .line 667
+    .line 719
     const-string v0, "Mms/conv"
 
     const-string v1, "speed check : startQueryForAll is called"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 673
+    .line 728
     sget-object v3, Lcom/android/mms/data/Conversation;->sAllThreadsUri:Landroid/net/Uri;
 
     sget-object v4, Lcom/android/mms/data/Conversation;->ALL_THREADS_PROJECTION:[Ljava/lang/String;
@@ -2370,7 +2398,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/content/AsyncQueryHandler;->startQuery(ILjava/lang/Object;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 675
+    .line 731
     return-void
 .end method
 
@@ -2383,17 +2411,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 646
+    .line 696
     invoke-virtual {p0, p1}, Landroid/content/AsyncQueryHandler;->cancelOperation(I)V
 
-    .line 647
+    .line 697
     const-string v0, "Mms/conv"
 
     const-string v1, "speed check : startQueryForFakeView is called"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 653
+    .line 703
     sget-object v3, Lcom/android/mms/data/Conversation;->sAllThreadsUri:Landroid/net/Uri;
 
     sget-object v4, Lcom/android/mms/data/Conversation;->ALL_THREADS_PROJECTION:[Ljava/lang/String;
@@ -2426,7 +2454,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/content/AsyncQueryHandler;->startQuery(ILjava/lang/Object;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 655
+    .line 705
     return-void
 .end method
 
@@ -2439,13 +2467,13 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 727
+    .line 783
     invoke-virtual {p0, p3}, Landroid/content/AsyncQueryHandler;->cancelOperation(I)V
 
-    .line 728
+    .line 784
     sget-object v3, Landroid/provider/Telephony$MmsSms;->CONTENT_LOCKED_URI:Landroid/net/Uri;
 
-    .line 729
+    .line 785
     .local v3, uri:Landroid/net/Uri;
     const-wide/16 v0, -0x1
 
@@ -2453,12 +2481,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 730
+    .line 786
     invoke-static {v3, p1, p2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
     move-result-object v3
 
-    .line 732
+    .line 788
     :cond_0
     new-instance v2, Ljava/lang/Long;
 
@@ -2476,7 +2504,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/content/AsyncQueryHandler;->startQuery(ILjava/lang/Object;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 734
+    .line 790
     return-void
 .end method
 
@@ -2488,17 +2516,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 744
+    .line 800
     invoke-virtual {p0, p1}, Landroid/content/AsyncQueryHandler;->cancelOperation(I)V
 
-    .line 745
+    .line 801
     const-string v0, "content://mms-sms/allLocked"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v3
 
-    .line 746
+    .line 802
     .local v3, uri:Landroid/net/Uri;
     sget-object v4, Lcom/android/mms/data/Conversation;->ALL_THREADS_PROJECTION:[Ljava/lang/String;
 
@@ -2514,7 +2542,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/content/AsyncQueryHandler;->startQuery(ILjava/lang/Object;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 748
+    .line 804
     return-void
 .end method
 
@@ -2525,7 +2553,7 @@
     .parameter "block"
 
     .prologue
-    .line 397
+    .line 447
     const-string v0, "Mms:app"
 
     const/4 v1, 0x2
@@ -2536,7 +2564,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 398
+    .line 448
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2561,39 +2589,39 @@
 
     invoke-static {v0, v1}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 401
+    .line 451
     :cond_0
     iget-object v0, p0, Lcom/android/mms/data/Conversation;->mMarkAsBlockedSyncer:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 402
+    .line 452
     :try_start_0
     iget-boolean v1, p0, Lcom/android/mms/data/Conversation;->mMarkAsReadBlocked:Z
 
     if-eq p1, v1, :cond_1
 
-    .line 403
+    .line 453
     iput-boolean p1, p0, Lcom/android/mms/data/Conversation;->mMarkAsReadBlocked:Z
 
-    .line 404
+    .line 454
     iget-boolean v1, p0, Lcom/android/mms/data/Conversation;->mMarkAsReadBlocked:Z
 
     if-nez v1, :cond_1
 
-    .line 405
+    .line 455
     iget-object v1, p0, Lcom/android/mms/data/Conversation;->mMarkAsBlockedSyncer:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
-    .line 409
+    .line 459
     :cond_1
     monitor-exit v0
 
-    .line 410
+    .line 460
     return-void
 
-    .line 409
+    .line 459
     :catchall_0
     move-exception v1
 
@@ -2610,7 +2638,7 @@
     .parameter "exit"
 
     .prologue
-    .line 305
+    .line 351
     monitor-enter p0
 
     :try_start_0
@@ -2618,13 +2646,13 @@
 
     move-result-object v2
 
-    .line 306
+    .line 352
     .local v2, threadUri:Landroid/net/Uri;
     invoke-virtual {p0}, Lcom/android/mms/data/Conversation;->getThreadId()J
 
     move-result-wide v0
 
-    .line 308
+    .line 354
     .local v0, threadId:J
     const-wide/16 v3, 0x0
 
@@ -2632,7 +2660,7 @@
 
     if-lez v3, :cond_0
 
-    .line 309
+    .line 355
     const/16 v3, 0x80
 
     new-instance v4, Lcom/android/mms/data/Conversation$1;
@@ -2643,13 +2671,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 338
+    .line 384
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 337
+    .line 383
     :cond_0
     :try_start_1
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
@@ -2658,7 +2686,7 @@
 
     goto :goto_0
 
-    .line 305
+    .line 351
     .end local v0           #threadId:J
     .end local v2           #threadUri:Landroid/net/Uri;
     :catchall_0
@@ -2673,7 +2701,7 @@
     .locals 3
 
     .prologue
-    .line 465
+    .line 515
     monitor-enter p0
 
     :try_start_0
@@ -2687,7 +2715,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 466
+    .line 516
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2720,25 +2748,25 @@
 
     invoke-static {v0, v1}, Lcom/android/mms/LogTag;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 468
+    .line 518
     :cond_0
     iget-wide v0, p0, Lcom/android/mms/data/Conversation;->mThreadId:J
 
     invoke-static {v0, v1}, Lcom/android/mms/data/Conversation$Cache;->remove(J)V
 
-    .line 470
+    .line 520
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/mms/data/Conversation;->mThreadId:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 471
+    .line 521
     monitor-exit p0
 
     return-void
 
-    .line 465
+    .line 515
     :catchall_0
     move-exception v0
 
@@ -2751,7 +2779,7 @@
     .locals 3
 
     .prologue
-    .line 452
+    .line 502
     monitor-enter p0
 
     :try_start_0
@@ -2768,7 +2796,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 460
+    .line 510
     :goto_0
     :try_start_1
     iget-wide v1, p0, Lcom/android/mms/data/Conversation;->mThreadId:J
@@ -2779,13 +2807,13 @@
 
     return-wide v1
 
-    .line 453
+    .line 503
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 454
+    .line 504
     .local v0, e:Ljava/lang/Exception;
     :try_start_2
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2816,7 +2844,7 @@
 
     goto :goto_0
 
-    .line 452
+    .line 502
     .end local v0           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v1
@@ -2831,7 +2859,7 @@
     .parameter "obj"
 
     .prologue
-    .line 607
+    .line 657
     monitor-enter p0
 
     :try_start_0
@@ -2841,7 +2869,7 @@
 
     move-object v2, v0
 
-    .line 608
+    .line 658
     .local v2, other:Lcom/android/mms/data/Conversation;
     iget-object v3, p0, Lcom/android/mms/data/Conversation;->mRecipients:Lcom/android/mms/data/ContactList;
 
@@ -2854,26 +2882,26 @@
 
     move-result v3
 
-    .line 610
+    .line 660
     .end local v2           #other:Lcom/android/mms/data/Conversation;
     :goto_0
     monitor-exit p0
 
     return v3
 
-    .line 609
+    .line 659
     :catch_0
     move-exception v3
 
     move-object v1, v3
 
-    .line 610
+    .line 660
     .local v1, e:Ljava/lang/ClassCastException;
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 607
+    .line 657
     .end local v1           #e:Ljava/lang/ClassCastException;
     :catchall_0
     move-exception v3
@@ -2887,7 +2915,7 @@
     .locals 2
 
     .prologue
-    .line 518
+    .line 568
     monitor-enter p0
 
     :try_start_0
@@ -2911,7 +2939,7 @@
     .locals 1
 
     .prologue
-    .line 526
+    .line 576
     monitor-enter p0
 
     :try_start_0
@@ -2935,7 +2963,7 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 540
     monitor-enter p0
 
     :try_start_0
@@ -2959,7 +2987,7 @@
     .locals 1
 
     .prologue
-    .line 537
+    .line 587
     monitor-enter p0
 
     :try_start_0
@@ -2983,7 +3011,7 @@
     .locals 2
 
     .prologue
-    .line 438
+    .line 488
     monitor-enter p0
 
     :try_start_0
@@ -3007,7 +3035,7 @@
     .locals 1
 
     .prologue
-    .line 531
+    .line 581
     monitor-enter p0
 
     :try_start_0
@@ -3031,7 +3059,7 @@
     .locals 4
 
     .prologue
-    .line 417
+    .line 467
     monitor-enter p0
 
     :try_start_0
@@ -3045,10 +3073,10 @@
 
     if-gtz v0, :cond_0
 
-    .line 418
+    .line 468
     const/4 v0, 0x0
 
-    .line 420
+    .line 470
     :goto_0
     monitor-exit p0
 
@@ -3068,7 +3096,7 @@
 
     goto :goto_0
 
-    .line 417
+    .line 467
     :catchall_0
     move-exception v0
 
@@ -3081,7 +3109,7 @@
     .locals 1
 
     .prologue
-    .line 559
+    .line 609
     monitor-enter p0
 
     :try_start_0
@@ -3105,7 +3133,7 @@
     .locals 4
 
     .prologue
-    .line 497
+    .line 547
     monitor-enter p0
 
     :try_start_0
@@ -3119,10 +3147,10 @@
 
     if-gtz v0, :cond_0
 
-    .line 498
+    .line 548
     const/4 v0, 0x0
 
-    .line 500
+    .line 550
     :goto_0
     monitor-exit p0
 
@@ -3144,7 +3172,7 @@
 
     goto :goto_0
 
-    .line 497
+    .line 547
     :catchall_0
     move-exception v0
 
@@ -3157,7 +3185,7 @@
     .locals 1
 
     .prologue
-    .line 566
+    .line 616
     monitor-enter p0
 
     :try_start_0
@@ -3181,10 +3209,10 @@
     .locals 1
 
     .prologue
-    .line 544
+    .line 594
     monitor-enter p0
 
-    .line 545
+    .line 595
     :try_start_0
     iget-boolean v0, p0, Lcom/android/mms/data/Conversation;->mHasUnreadMessages:Z
 
@@ -3192,7 +3220,7 @@
 
     return v0
 
-    .line 546
+    .line 596
     :catchall_0
     move-exception v0
 
@@ -3207,7 +3235,7 @@
     .locals 1
 
     .prologue
-    .line 616
+    .line 666
     monitor-enter p0
 
     :try_start_0
@@ -3235,7 +3263,7 @@
     .locals 1
 
     .prologue
-    .line 570
+    .line 620
     monitor-enter p0
 
     :try_start_0
@@ -3259,12 +3287,12 @@
     .locals 3
 
     .prologue
-    .line 348
+    .line 394
     invoke-virtual {p0}, Lcom/android/mms/data/Conversation;->getUri()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 350
+    .line 396
     .local v0, threadUri:Landroid/net/Uri;
     new-instance v1, Ljava/lang/Thread;
 
@@ -3276,7 +3304,7 @@
 
     invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
-    .line 394
+    .line 444
     return-void
 .end method
 
@@ -3289,28 +3317,28 @@
 
     const/4 v5, 0x0
 
-    .line 243
+    .line 289
     iget-object v3, p0, Lcom/android/mms/data/Conversation;->mRecipients:Lcom/android/mms/data/ContactList;
 
     invoke-virtual {v3}, Lcom/android/mms/data/ContactList;->size()I
 
     move-result v2
 
-    .line 244
+    .line 290
     .local v2, size:I
     if-le v2, v4, :cond_0
 
     move v3, v5
 
-    .line 256
+    .line 302
     :goto_0
     return v3
 
-    .line 247
+    .line 293
     :cond_0
     if-nez p1, :cond_2
 
-    .line 248
+    .line 294
     if-nez v2, :cond_1
 
     move v3, v4
@@ -3322,7 +3350,7 @@
 
     goto :goto_0
 
-    .line 250
+    .line 296
     :cond_2
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
@@ -3338,22 +3366,22 @@
 
     move v3, v5
 
-    .line 251
+    .line 297
     goto :goto_0
 
-    .line 253
+    .line 299
     :cond_3
     invoke-virtual {p1}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 254
+    .line 300
     .local v1, recipient:Ljava/lang/String;
     invoke-static {v1, v5, v5}, Lcom/android/mms/data/ContactList;->getByNumbers(Ljava/lang/String;ZZ)Lcom/android/mms/data/ContactList;
 
     move-result-object v0
 
-    .line 256
+    .line 302
     .local v0, incomingRecipient:Lcom/android/mms/data/ContactList;
     iget-object v3, p0, Lcom/android/mms/data/Conversation;->mRecipients:Lcom/android/mms/data/ContactList;
 
@@ -3369,7 +3397,7 @@
     .parameter "hasDraft"
 
     .prologue
-    .line 507
+    .line 557
     monitor-enter p0
 
     :try_start_0
@@ -3383,13 +3411,13 @@
 
     if-gtz v0, :cond_0
 
-    .line 511
+    .line 561
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 510
+    .line 560
     :cond_0
     :try_start_1
     invoke-static {}, Lcom/android/mms/util/DraftCache;->getInstance()Lcom/android/mms/util/DraftCache;
@@ -3404,7 +3432,7 @@
 
     goto :goto_0
 
-    .line 507
+    .line 557
     :catchall_0
     move-exception v0
 
@@ -3418,25 +3446,25 @@
     .parameter "list"
 
     .prologue
-    .line 480
+    .line 530
     monitor-enter p0
 
     :try_start_0
     iput-object p1, p0, Lcom/android/mms/data/Conversation;->mRecipients:Lcom/android/mms/data/ContactList;
 
-    .line 483
+    .line 533
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/mms/data/Conversation;->mThreadId:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 484
+    .line 534
     monitor-exit p0
 
     return-void
 
-    .line 480
+    .line 530
     :catchall_0
     move-exception v0
 
@@ -3449,7 +3477,7 @@
     .locals 5
 
     .prologue
-    .line 621
+    .line 671
     monitor-enter p0
 
     :try_start_0

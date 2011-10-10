@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 305
+    .line 315
     iput-object p1, p0, Lcom/android/mms/ui/ConversationList$3;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const-string v1, "Mms/ConversationList"
 
-    .line 307
+    .line 317
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$3;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v0}, Lcom/android/mms/util/Recycler;->checkForThreadsOverLimit(Landroid/content/Context;)Z
@@ -52,14 +52,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 308
+    .line 318
     const-string v0, "Mms/ConversationList"
 
     const-string v0, "checkForThreadsOverLimit TRUE"
 
     invoke-static {v1, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 312
+    .line 322
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$3;->this$0:Lcom/android/mms/ui/ConversationList;
 
     invoke-static {v0}, Lcom/android/mms/ui/ConversationList;->access$100(Lcom/android/mms/ui/ConversationList;)Landroid/os/Handler;
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 332
+    .line 342
     :goto_0
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$3;->this$0:Lcom/android/mms/ui/ConversationList;
 
@@ -84,10 +84,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/ConversationList;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 337
+    .line 347
     return-void
 
-    .line 320
+    .line 330
     :cond_0
     const-string v0, "Mms/ConversationList"
 
@@ -95,7 +95,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 322
+    .line 332
     iget-object v0, p0, Lcom/android/mms/ui/ConversationList$3;->this$0:Lcom/android/mms/ui/ConversationList;
 
     new-instance v1, Lcom/android/mms/ui/ConversationList$3$2;
