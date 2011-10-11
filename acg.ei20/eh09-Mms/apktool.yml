@@ -1,7 +1,0 @@
-version: 1.4.1
-apkFileName: Mms.apk
-isFrameworkApk: false
-usesFramework:
-  ids:
-  - 1
-  - 2
