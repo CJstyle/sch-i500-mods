@@ -31,6 +31,7 @@ ANDROID.POLICY.JAR
 
 - Modified for addition of Reboot and Recovery power menu options
 - Add back in support for Puzzle lockscreen
+- Stop animation services (samsungani/bootanim) at the same time
 
 BROWSER.APK
 ===========
