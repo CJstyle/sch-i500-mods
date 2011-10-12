@@ -25,6 +25,7 @@ FRAMEWORK-RES.APK
 
 - NOTE: Was decompiled with "apktool d --keep-broken-res"
 - Modified for addition of Reboot and Recovery power menu options
+- Use CRT screen-off animation (mod courtesy of nitsuj17)
 
 ANDROID.POLICY.JAR
 ==================
