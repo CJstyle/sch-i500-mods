@@ -55,8 +55,8 @@ JOBMANAGER.APK
 MMS.APK
 =======
 
-- NOTE: Mms.apk from EH09 USCC ROM rather than the EI20 ACG ROM
 - Set mms_config.xml options from ED05 Froyo Mms.apk as well as some settings ccampos784 used
+- Port MmsConfig.smali from USCC EH09 version
 
 MUSICPLAYER.APK
 ===============
