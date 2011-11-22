@@ -28,3 +28,9 @@ BROWSER.APK
 - Set proper Bing search engine URL
 - Allow all bookmarks to be deleted and/or edited
 
+DESKCRADLE.APK
+==============
+
+- Change voice search button to invoke Google Voice Search instead of Bing
+
+

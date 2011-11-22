@@ -53,3 +53,18 @@ zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build
 rm -f -r Browser/dist
 
+# DESKCRADLE.APK
+echo
+echo DESKCRADLE.APK
+echo
+apktool b DeskCradle
+rm DeskCradle/dist/DeskCradle.apk
+cp stock-apks/DeskCradle.apk DeskCradle/dist/
+pushd DeskCradle/build/apk
+zip -u ../../dist/DeskCradle.apk classes.dex
+popd
+zipalign -f 4 DeskCradle/dist/DeskCradle.apk ./DeskCradle.apk
+rm -f -r DeskCradle/build
+rm -f -r DeskCradle/dist
+
+

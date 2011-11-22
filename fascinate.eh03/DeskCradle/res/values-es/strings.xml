@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Base para escritorio</string>
+    <string name="icon_alarm">Alarma</string>
+    <string name="icon_browser">Navegador</string>
+    <string name="icon_voice_command">Comando de voz</string>
+    <string name="icon_daily_briefing">Info diaria</string>
+    <string name="icon_music">Música</string>
+    <string name="icon_gallery">Galería</string>
+    <string name="icon_voice_search">Buscar de voz</string>
+    <string name="not_found_activity">No Activity found</string>
+    <string name="setting_ok">Aceptar</string>
+    <string name="setting_cancel">Cancelar</string>
+    <string name="cradle_home_settings">Ajustes</string>
+    <string name="cradle_weather_settings">Configuración de tiempo</string>
+    <string name="setting_wallpaper">Fondos</string>
+    <string name="setting_time_display">Tipo de visualización de Hora/Calendario</string>
+    <string name="setting_weather">AccuWeather</string>
+    <string name="weather_setting_selectcity">Seleccionar ciudad</string>
+    <string name="weather_setting_refresh">Actualización automática</string>
+    <string name="weather_setting_unit">Unidad</string>
+    <string name="weather_unit_f">°F</string>
+    <string name="weather_unit_c">°C</string>
+    <string name="weather_unit_c_full">Celsius</string>
+    <string name="weather_unit_f_full">Fahrenheit</string>
+    <string name="weather_no_selected_city">No hay ciudades seleccionadas en Resumen del día</string>
+    <string name="setting_wallpaper_title">Seleccionar fondo de pantalla desde</string>
+    <string name="setting_wallpaper_default">Predeterminado</string>
+    <string name="setting_wallpaper_album">Álbum</string>
+    <string name="setting_wallpaper_gallery">Galería de fondos de pantalla</string>
+    <string name="setting_display_digital">Reloj digital</string>
+    <string name="setting_display_analog">Reloj analógico</string>
+    <string name="setting_display_calendar">Calendario</string>
+    <string name="weather_refresh_every_hours">Cada %d horas</string>
+    <string name="weather_refresh_3_hours">Cada 3 horas</string>
+    <string name="weather_refresh_6_hours">Cada 6 horas</string>
+    <string name="weather_refresh_12_hours">Cada 12 horas</string>
+    <string name="weather_refresh_24_hours">Cada 24 horas</string>
+    <string name="msg_please_wait">Por favor, espere...</string>
+    <string name="msg_loading_weather">Cargando...</string>
+    <string name="setting_internal_speaker">Altavoz interno</string>
+    <string name="msg_internal_speaker">Usar altavoz interno cuando se encuentre en la base de escritorio</string>
+    <string name="wallpaper_instructions">Set wallpaper</string>
+    <string name="pick_wallpaper">Wallpaper gallery</string>
+    <string name="dialog_external_speaker_connect">"Conecte el altavoz externo
+al accesorio"</string>
+    <string name="select_city_daily_briefing_footer">Establecer la ciudad en el Info diaria</string>
+    <string name="add_city">Añadir Ciudades</string>
+</resources>
