@@ -45,6 +45,7 @@ apktool b Browser
 rm Browser/dist/Browser.apk
 cp stock-apks/Browser.apk Browser/dist/
 pushd Browser/build/apk
+zip -u ../../dist/Browser.apk classes.dex
 zip -u ../../dist/Browser.apk resources.arsc
 popd
 zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk

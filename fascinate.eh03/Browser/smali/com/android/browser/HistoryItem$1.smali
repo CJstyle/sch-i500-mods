@@ -96,85 +96,85 @@
 
     .line 61
     :cond_0
-    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
-
-    invoke-virtual {v0}, Lcom/android/browser/HistoryItem;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "VZW Home"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
-
-    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
-
-    const-string v1, "http://converge.vzwwap.com/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
-
-    invoke-virtual {v0}, Lcom/android/browser/HistoryItem;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "My Verizon"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
-
-    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
-
-    const-string v1, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    :cond_2
-    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
-
-    invoke-virtual {v0}, Lcom/android/browser/HistoryItem;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Your Guide Mobile"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
-
-    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
-
-    const-string v1, "http://yourguide.vzw.com/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
+#    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
+#
+#    invoke-virtual {v0}, Lcom/android/browser/HistoryItem;->getName()Ljava/lang/String;
+#
+#    move-result-object v0
+#
+#    const-string v1, "VZW Home"
+#
+#    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v0
+#
+#    if-eqz v0, :cond_1
+#
+#    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
+#
+#    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
+#
+#    const-string v1, "http://converge.vzwwap.com/"
+#
+#    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v0
+#
+#    if-nez v0, :cond_3
+#
+#    :cond_1
+#    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
+#
+#    invoke-virtual {v0}, Lcom/android/browser/HistoryItem;->getName()Ljava/lang/String;
+#
+#    move-result-object v0
+#
+#    const-string v1, "My Verizon"
+#
+#    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v0
+#
+#    if-eqz v0, :cond_2
+#
+#    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
+#
+#    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
+#
+#    const-string v1, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
+#
+#    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v0
+#
+#    if-nez v0, :cond_3
+#
+#    :cond_2
+#    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
+#
+#    invoke-virtual {v0}, Lcom/android/browser/HistoryItem;->getName()Ljava/lang/String;
+#
+#    move-result-object v0
+#
+#    const-string v1, "Your Guide Mobile"
+#
+#    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v0
+#
+#    if-eqz v0, :cond_5
+#
+#    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
+#
+#    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
+#
+#    const-string v1, "http://yourguide.vzw.com/"
+#
+#    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v0
+#
+#    if-eqz v0, :cond_5
 
     .line 65
     :cond_3

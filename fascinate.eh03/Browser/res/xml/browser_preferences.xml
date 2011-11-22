@@ -31,7 +31,7 @@
         <CheckBoxPreference android:title="@string/pref_security_show_security_warning" android:key="show_security_warnings" android:summary="@string/pref_security_show_security_warning_summary" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_extras_title">
-        <com.android.browser.search.SearchEnginePreference android:title="@string/pref_content_search_engine" android:key="search_engine" android:summary="@string/pref_content_search_engine_summary" android:defaultValue="bing" android:dialogTitle="@string/pref_content_search_engine" />
+        <com.android.browser.search.SearchEnginePreference android:title="@string/pref_content_search_engine" android:key="search_engine" android:summary="@string/pref_content_search_engine_summary" android:defaultValue="google" android:dialogTitle="@string/pref_content_search_engine" />
         <PreferenceScreen android:title="@string/pref_extras_website_settings" android:key="website_settings" android:summary="@string/pref_extras_website_settings_summary" />
         <com.android.browser.BrowserYesNoPreference android:title="@string/pref_extras_reset_default" android:key="reset_default_preferences" android:summary="@string/pref_extras_reset_default_summary" android:dialogTitle="@string/pref_extras_reset_default_dlg_title" android:dialogMessage="@string/pref_extras_reset_default_dlg" android:dialogIcon="@android:drawable/ic_dialog_alert" />
         <ListPreference android:entries="@array/pref_extras_ua_choices" android:title="@string/pref_extras_useragent_settings" android:key="user_agent" android:defaultValue="0" android:entryValues="@array/pref_extras_ua_values" />

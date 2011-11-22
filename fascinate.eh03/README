@@ -24,5 +24,7 @@ BROWSER.APK
 
 - Removed all default bookmarks
 - Set default home page to "about:blank"
-- TODO: Fix bookmark deletion prevention like ED05
+- Set default search engine to Google
+- Set proper Bing search engine URL
+- Allow all bookmarks to be deleted and/or edited
 

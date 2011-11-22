@@ -1203,58 +1203,58 @@
 
     .line 1124
     if-eqz v0, :cond_4
-
-    const-string v2, "VZW Home"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const-string v2, "http://converge.vzwwap.com/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    :cond_0
-    const-string v2, "My Verizon"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-string v2, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    :cond_1
-    const-string v2, "Your Guide Mobile"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    const-string v2, "http://yourguide.vzw.com/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    .line 1128
+#
+#    const-string v2, "VZW Home"
+#
+#    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-eqz v2, :cond_0
+#
+#    const-string v2, "http://converge.vzwwap.com/"
+#
+#    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-nez v2, :cond_2
+#
+#    :cond_0
+#    const-string v2, "My Verizon"
+#
+#    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-eqz v2, :cond_1
+#
+#    const-string v2, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
+#
+#    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-nez v2, :cond_2
+#
+#    :cond_1
+#    const-string v2, "Your Guide Mobile"
+#
+#    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-eqz v2, :cond_4
+#
+#    const-string v2, "http://yourguide.vzw.com/"
+#
+#    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-eqz v2, :cond_4
+#
+#    .line 1128
     :cond_2
     const-string v2, "BrowserBookmarksPage"
 
@@ -1477,55 +1477,55 @@
     .line 1011
     if-eqz v0, :cond_3
 
-    const-string v2, "VZW Home"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const-string v2, "http://converge.vzwwap.com/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    :cond_0
-    const-string v2, "My Verizon"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-string v2, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    :cond_1
-    const-string v2, "Your Guide Mobile"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    const-string v2, "http://yourguide.vzw.com/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
+#    const-string v2, "VZW Home"
+#
+#    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-eqz v2, :cond_0
+#
+#    const-string v2, "http://converge.vzwwap.com/"
+#
+#    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-nez v2, :cond_2
+#
+#    :cond_0
+#    const-string v2, "My Verizon"
+#
+#    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-eqz v2, :cond_1
+#
+#    const-string v2, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
+#
+#    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-nez v2, :cond_2
+#
+#    :cond_1
+#    const-string v2, "Your Guide Mobile"
+#
+#    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v2
+#
+#    if-eqz v2, :cond_3
+#
+#    const-string v2, "http://yourguide.vzw.com/"
+#
+#    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v1
+#
+#    if-eqz v1, :cond_3
 
     .line 1015
     :cond_2
@@ -3098,30 +3098,30 @@
     :goto_2
     if-eqz v2, :cond_5
 
-    .line 197
-    const-string v6, "VZW Home"
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    const-string v6, "My Verizon"
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    const-string v6, "Your Guide Mobile"
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_4
+#    .line 197
+#    const-string v6, "VZW Home"
+#
+#    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v6
+#
+#    if-nez v6, :cond_4
+#
+#    const-string v6, "My Verizon"
+#
+#    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v6
+#
+#    if-nez v6, :cond_4
+#
+#    const-string v6, "Your Guide Mobile"
+#
+#    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v6
+#
+#    if-nez v6, :cond_4
 
     .line 198
     invoke-virtual {p0}, Lcom/android/browser/BrowserBookmarksPage;->getContentResolver()Landroid/content/ContentResolver;
