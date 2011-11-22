@@ -47,6 +47,7 @@ cp stock-apks/Browser.apk Browser/dist/
 pushd Browser/build/apk
 zip -u ../../dist/Browser.apk classes.dex
 zip -u ../../dist/Browser.apk resources.arsc
+zip -u ../../dist/Browser.apk res/xml/browser_preferences.xml
 popd
 zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build

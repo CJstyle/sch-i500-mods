@@ -289,57 +289,60 @@
     move-result v4
 
     if-eqz v4, :cond_4
+    
+    # djp952: much easier way
+    goto :cond_3
 
-#    .line 275
-#    const-string v4, "VZW Home"
-#
-#    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-#
-#    move-result v4
-#
-#    if-eqz v4, :cond_0
-#
-#    const-string v4, "http://converge.vzwwap.com/"
-#
-#    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-#
-#    move-result v4
-#
-#    if-nez v4, :cond_2
-#
-#    :cond_0
-#    const-string v4, "My Verizon"
-#
-#    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-#
-#    move-result v4
-#
-#    if-eqz v4, :cond_1
-#
-#    const-string v4, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
-#
-#    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-#
-#    move-result v4
-#
-#    if-nez v4, :cond_2
-#
-#    :cond_1
-#    const-string v4, "Your Guide Mobile"
-#
-#    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-#
-#    move-result v4
-#
-#    if-eqz v4, :cond_3
-#
-#    const-string v4, "http://yourguide.vzw.com/"
-#
-#    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-#
-#    move-result v4
-#
-#    if-eqz v4, :cond_3
+    .line 275
+    const-string v4, "VZW Home"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    const-string v4, "http://converge.vzwwap.com/"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    :cond_0
+    const-string v4, "My Verizon"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    const-string v4, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    :cond_1
+    const-string v4, "Your Guide Mobile"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    const-string v4, "http://yourguide.vzw.com/"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
 
     .line 278
     :cond_2
