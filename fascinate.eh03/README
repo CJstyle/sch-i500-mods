@@ -13,3 +13,16 @@ FRAMEWORK-RES.APK
 =================
 
 - NOTE: Was decompiled with "apktool d --keep-broken-res"
+
+SERVICES.JAR
+============
+
+- Changed default LiveWallpaper to com.android.wallpaper/.nexus.NexusWallpaper
+
+BROWSER.APK
+===========
+
+- Removed all default bookmarks
+- Set default home page to "about:blank"
+- TODO: Fix bookmark deletion prevention like ED05
+
