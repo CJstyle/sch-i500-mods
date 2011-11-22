@@ -1,0 +1,15 @@
+SAMSUNG FASCINATE APP MODS
+==========================
+
+BASE VERSION: EH03
+
+REQUIRED TOOLS: apktool
+
+FRAMEWORKS USED IN DECOMPILE (apktool -if <framework>):
+    EH03 framework-res.apk (deodexed)
+    EH03 twframework-res.apk (deodexed)
+
+FRAMEWORK-RES.APK
+=================
+
+- NOTE: Was decompiled with "apktool d --keep-broken-res"
