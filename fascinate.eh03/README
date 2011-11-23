@@ -32,6 +32,11 @@ BROWSER.APK
 - Set proper Bing search engine URL
 - Allow all bookmarks to be deleted and/or edited
 
+CAMERA.APK
+==========
+
+- Remap power button to trigger the shutter rather than locking the controls
+
 DESKCRADLE.APK
 ==============
 

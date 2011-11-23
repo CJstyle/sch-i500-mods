@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/CamcorderSettingsMenuLayout" android:background="@drawable/tw30_camera_settings_view_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:custom="http://schemas.android.com/apk/res/com.sec.android.app.camera">
+    <LinearLayout android:orientation="vertical" android:id="@id/CamcorderSettingBGLayout" android:layout_width="776.0px" android:layout_height="357.0px" android:layout_marginLeft="11.0px" android:layout_marginTop="14.0px" android:layout_below="@id/CamcorderSettingsMenuLayout">
+        <RelativeLayout android:id="@id/SettingsTabBGLayout" android:background="@drawable/tw30_camera_settings_bg_tab" android:layout_width="fill_parent" android:layout_height="81.0px" android:layout_below="@id/CamcorderSettingsMenuLayout">
+            <RelativeLayout android:id="@id/SettingsTabLayout" android:layout_width="364.0px" android:layout_height="70.0px" android:layout_marginLeft="10.0px" android:layout_marginTop="20.0px" android:layout_below="@id/SettingsTabBGLayout">
+                <com.sec.android.app.camera.widget.TwSelectButton android:id="@id/CamcorderTabButton" android:layout_width="wrap_content" android:layout_height="wrap_content" custom:twimagebutton_image_n="@drawable/tw30_camera_settings_tab_camcoder_n" custom:twimagebutton_image_p="@drawable/tw30_camera_settings_tab_camcoder_p" />
+                <com.sec.android.app.camera.widget.TwSelectButton android:id="@id/SetupTabButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="182.0px" custom:twimagebutton_image_n="@drawable/tw30_camera_settings_tab_setup_n" custom:twimagebutton_image_p="@drawable/tw30_camera_settings_tab_setup_p" />
+            </RelativeLayout>
+            <ImageButton android:id="@id/SettingsBackButton" android:background="@drawable/tw30_back" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="701.0px" android:layout_marginTop="5.0px" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/SettingsPageBGLayout" android:background="@drawable/tw30_camera_settings_bg" android:layout_width="fill_parent" android:layout_height="276.0px" android:layout_below="@id/CamcorderSettingsMenuLayout">
+            <com.sec.android.app.camera.widget.TwSettingList android:id="@id/CamcorderSettingsList" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.sec.android.app.camera.widget.TwSettingList android:id="@id/CamcorderSetupSettingsList" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </RelativeLayout>
+    </LinearLayout>
+    <com.sec.android.app.camera.widget.TwTickerView android:textSize="15.0sp" android:ellipsize="none" android:gravity="left" android:id="@id/CamcorderSettingHelpTextLayout" android:layout_width="500.0dip" android:layout_height="60.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="257.0dip" android:singleLine="true" android:layout_below="@id/CamcorderSettingsMenuLayout" />
+</RelativeLayout>
