@@ -13,6 +13,10 @@ FRAMEWORK-RES.APK
 =================
 
 - NOTE: Was decompiled with "apktool d --keep-broken-res"
+- Enable slow-blur effect from power button popup
+- Enable CRT screen off animation (nitsuj17)
+- Use EI20 edge glow PNGs
+- Use EI20 battery graphics
 
 SERVICES.JAR
 ============

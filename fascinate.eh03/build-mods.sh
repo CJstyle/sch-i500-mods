@@ -11,11 +11,11 @@ echo
 apktool b framework-res
 rm framework-res/dist/framework-res.apk
 cp stock-apks/framework-res.apk framework-res/dist/
-#pushd framework-res/build/apk
-#zip -u ../../dist/framework-res.apk res/drawable-hdpi/reboot.png
-#zip -u ../../dist/framework-res.apk res/drawable-hdpi/recovery.png
-#zip -u ../../dist/framework-res.apk resources.arsc
-#popd
+pushd framework-res/build/apk
+zip -u ../../dist/framework-res.apk res/drawable-hdpi/reboot.png
+zip -u ../../dist/framework-res.apk res/drawable-hdpi/recovery.png
+zip -u ../../dist/framework-res.apk resources.arsc
+popd
 zipalign -f 4 framework-res/dist/framework-res.apk ./framework-res.apk
 rm -f -r framework-res/build
 rm -f -r framework-res/dist
