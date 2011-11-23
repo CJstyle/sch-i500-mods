@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/richinfo_moveto_another_page_row" android:paddingLeft="12.659973dip" android:paddingRight="13.329987dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.659973sp" android:textColor="@touchwiz:color/tw_color002" android:gravity="left" android:id="@id/richinfo_page_name" android:layout_width="156.0dip" android:layout_height="wrap_content" />
+    <TextView android:textSize="18.0sp" android:textColor="@touchwiz:color/tw_color002" android:gravity="right" android:id="@id/richinfo_page_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+</LinearLayout>

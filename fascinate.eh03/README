@@ -37,6 +37,12 @@ DESKCRADLE.APK
 
 - Change voice search button to invoke Google Voice Search instead of Bing
 
+MUSICPLAYER.APK
+===============
+
+- Localize some strings for US English
+- Remove "Download from V cast?" prompt when no media exists
+
 SYSTEMUI.APK
 ============
 

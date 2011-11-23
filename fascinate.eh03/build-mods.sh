@@ -67,6 +67,21 @@ zipalign -f 4 DeskCradle/dist/DeskCradle.apk ./DeskCradle.apk
 rm -f -r DeskCradle/build
 rm -f -r DeskCradle/dist
 
+# MUSICPLAYER.APK
+echo
+echo MUSICPLAYER.APK
+echo
+apktool b MusicPlayer
+rm MusicPlayer/dist/MusicPlayer.apk
+cp stock-apks/MusicPlayer.apk MusicPlayer/dist/
+pushd MusicPlayer/build/apk
+zip -u ../../dist/MusicPlayer.apk classes.dex
+zip -u ../../dist/MusicPlayer.apk resources.arsc
+popd
+zipalign -f 4 MusicPlayer/dist/MusicPlayer.apk ./MusicPlayer.apk
+rm -f -r MusicPlayer/build
+rm -f -r MusicPlayer/dist
+
 # SYSTEMUI.APK
 echo
 echo SYSTEMUI.APK

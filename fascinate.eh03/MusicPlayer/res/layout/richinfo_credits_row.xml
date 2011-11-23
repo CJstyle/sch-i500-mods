@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/richinfo_credits_row" android:paddingRight="13.329987dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:textColor="@touchwiz:color/tw_color086" android:ellipsize="marquee" android:gravity="left" android:id="@id/richinfo_credits_role" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    <TextView android:textSize="17.329987sp" android:textColor="@touchwiz:color/tw_color002" android:ellipsize="marquee" android:gravity="left" android:id="@id/richinfo_credits_performer_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:singleLine="true" android:layout_below="@id/richinfo_credits_role" android:marqueeRepeatLimit="marquee_forever" />
+</LinearLayout>
