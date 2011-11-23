@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/Detail_ViewContact" android:title="@string/view_contact" />
+    <item android:id="@id/Detail_Clear" android:title="@string/delete" />
+    <item android:id="@id/Detail_EditNumber" android:title="@string/edit_number_before_call" />
+</menu>

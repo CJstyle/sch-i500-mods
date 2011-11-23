@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="data" />
+    <item type="id" name="header_phones" />
+    <item type="id" name="dialog_delete" />
+    <item type="id" name="dialog_photo" />
+    <item type="id" name="dialog_name" />
+    <item type="id" name="dialog_label" />
+    <item type="id" name="dialog_label_custom" />
+    <item type="id" name="dialog_sync_add" />
+    <item type="id" name="dialog_import_export" />
+    <item type="id" name="dialog_searching_vcard" />
+    <item type="id" name="dialog_sdcard_not_found" />
+    <item type="id" name="dialog_vcard_not_found" />
+    <item type="id" name="dialog_select_import_type" />
+    <item type="id" name="dialog_select_one_vcard" />
+    <item type="id" name="dialog_select_multiple_vcard" />
+    <item type="id" name="dialog_reading_vcard" />
+    <item type="id" name="dialog_io_exception" />
+    <item type="id" name="dialog_error_with_message" />
+    <item type="id" name="dialog_delete_contact_confirmation" />
+    <item type="id" name="dialog_readonly_contact_hide_confirmation" />
+    <item type="id" name="dialog_multiple_contact_delete_confirmation" />
+    <item type="id" name="dialog_readonly_contact_delete_confirmation" />
+    <item type="id" name="dialog_export_confirmation" />
+    <item type="id" name="dialog_exporting_vcard" />
+    <item type="id" name="dialog_fail_to_export_with_reason" />
+    <item type="id" name="last_voicecall_number">false</item>
+    <item type="id" name="last_videocall_text">false</item>
+    <item type="id" name="last_videocall_number">false</item>
+    <item type="id" name="dialled_voicecall_number">false</item>
+    <item type="id" name="dialled_videocall_text">false</item>
+    <item type="id" name="dialled_videocall_number">false</item>
+    <item type="id" name="received_voicecall_number">false</item>
+    <item type="id" name="received_videocall_text">false</item>
+    <item type="id" name="received_videocall_number">false</item>
+    <item type="id" name="all_voicecall_number">false</item>
+    <item type="id" name="all_videocall_text">false</item>
+    <item type="id" name="all_videocall_number">false</item>
+    <item type="id" name="Anilayout">false</item>
+    <item type="id" name="icon_makecall">false</item>
+    <item type="id" name="icon_makemsg">false</item>
+    <item type="id" name="icon_close_item">false</item>
+    <item type="id" name="name">false</item>
+    <item type="id" name="itemlayout">false</item>
+    <item type="id" name="CallInfoLayout">false</item>
+    <item type="id" name="image1_layout">false</item>
+    <item type="id" name="image1">false</item>
+    <item type="id" name="image1_quick">false</item>
+    <item type="id" name="callinfo_layout">false</item>
+    <item type="id" name="phonelayout">false</item>
+    <item type="id" name="Username">false</item>
+    <item type="id" name="nameText">false</item>
+    <item type="id" name="CallImageInfo">false</item>
+    <item type="id" name="call_indi_image">false</item>
+    <item type="id" name="callinfo_number">false</item>
+    <item type="id" name="numberText">false</item>
+    <item type="id" name="callinfo_time">false</item>
+    <item type="id" name="allinfo_number">false</item>
+    <item type="id" name="timeText">false</item>
+    <item type="id" name="PhoneLayout">false</item>
+    <item type="id" name="vert_separator">false</item>
+    <item type="id" name="log_type_image">false</item>
+    <item type="id" name="detail_item_type">false</item>
+    <item type="id" name="detail_item_logtype">false</item>
+    <item type="id" name="detail_item_date">false</item>
+    <item type="id" name="detail_item_number">false</item>
+    <item type="id" name="detail_item_duration">false</item>
+    <item type="id" name="selector_title2">false</item>
+    <item type="id" name="alertdialogsample3title">false</item>
+    <item type="id" name="titletext1">false</item>
+    <item type="id" name="detail_header">false</item>
+    <item type="id" name="detail_photo_layout">false</item>
+    <item type="id" name="detail_photo">false</item>
+    <item type="id" name="detail_photo_Quick">false</item>
+    <item type="id" name="detail_contact_starred">false</item>
+    <item type="id" name="detail_data_info">false</item>
+    <item type="id" name="detail_name">false</item>
+    <item type="id" name="detail_number">false</item>
+    <item type="id" name="detail_contact_btn_layout">false</item>
+    <item type="id" name="action_button_layout_email">false</item>
+    <item type="id" name="detail_button_make_call_email">false</item>
+    <item type="id" name="detail_button_send_msg_email">false</item>
+    <item type="id" name="detail_button_send_email">false</item>
+    <item type="id" name="action_button_layout">false</item>
+    <item type="id" name="detail_button_make_call">false</item>
+    <item type="id" name="detail_button_send_msg">false</item>
+    <item type="id" name="detail_button_make_vcall">false</item>
+    <item type="id" name="line_sec">false</item>
+    <item type="id" name="detail_btn_layout">false</item>
+    <item type="id" name="contact_button_layout">false</item>
+    <item type="id" name="detail_button_createcontacts">false</item>
+    <item type="id" name="detail_button_updatecontacts">false</item>
+    <item type="id" name="detail_item_list">false</item>
+    <item type="id" name="detail_list_item_type">false</item>
+    <item type="id" name="detail_list_item_date">false</item>
+    <item type="id" name="detail_list_item_duration">false</item>
+    <item type="id" name="dialer_part">false</item>
+    <item type="id" name="dialer_view">false</item>
+    <item type="id" name="searchpart">false</item>
+    <item type="id" name="searchNum">false</item>
+    <item type="id" name="digits">false</item>
+    <item type="id" name="imageclear">false</item>
+    <item type="id" name="searchresult_main">false</item>
+    <item type="id" name="searchresult_list">false</item>
+    <item type="id" name="searchresult_picture">false</item>
+    <item type="id" name="searchresult_list_sub">false</item>
+    <item type="id" name="searchresult_list_sub_name">false</item>
+    <item type="id" name="searchresult_name">false</item>
+    <item type="id" name="searchresult_name_color">false</item>
+    <item type="id" name="searchresult_name_end">false</item>
+    <item type="id" name="searchresult_list_sub_number">false</item>
+    <item type="id" name="searchresult_number">false</item>
+    <item type="id" name="searchresult_number_color">false</item>
+    <item type="id" name="searchresult_number_end">false</item>
+    <item type="id" name="layout_drop">false</item>
+    <item type="id" name="searchresult_counter">false</item>
+    <item type="id" name="searchresult_viewbtn">false</item>
+    <item type="id" name="add_contacts_btn">false</item>
+    <item type="id" name="Linewrapper">false</item>
+    <item type="id" name="keypadpart_portrait">false</item>
+    <item type="id" name="onetwothree">false</item>
+    <item type="id" name="one">false</item>
+    <item type="id" name="two">false</item>
+    <item type="id" name="three">false</item>
+    <item type="id" name="fourfivesix">false</item>
+    <item type="id" name="four">false</item>
+    <item type="id" name="five">false</item>
+    <item type="id" name="six">false</item>
+    <item type="id" name="seveneightnine">false</item>
+    <item type="id" name="seven">false</item>
+    <item type="id" name="eight">false</item>
+    <item type="id" name="nine">false</item>
+    <item type="id" name="starzeropound">false</item>
+    <item type="id" name="star">false</item>
+    <item type="id" name="zero">false</item>
+    <item type="id" name="pound">false</item>
+    <item type="id" name="dialbuttonset">false</item>
+    <item type="id" name="FrameLayout01">false</item>
+    <item type="id" name="voiceMailButton">false</item>
+    <item type="id" name="info">false</item>
+    <item type="id" name="callbutton">false</item>
+    <item type="id" name="videocallbutton">false</item>
+    <item type="id" name="messagebutton">false</item>
+    <item type="id" name="dialpadChooser">false</item>
+    <item type="id" name="button_set_layout">false</item>
+    <item type="id" name="dialer_searchdialog_contents_layout">false</item>
+    <item type="id" name="dialer_searchdialog_picture">false</item>
+    <item type="id" name="row_text1">false</item>
+    <item type="id" name="row_text2">false</item>
+    <item type="id" name="dialer_searchdialog_name">false</item>
+    <item type="id" name="dialer_searchdialog_name_color">false</item>
+    <item type="id" name="dialer_searchdialog_name_end">false</item>
+    <item type="id" name="row_text3">false</item>
+    <item type="id" name="dialer_searchdialog_number">false</item>
+    <item type="id" name="dialer_searchdialog_number_color">false</item>
+    <item type="id" name="dialer_searchdialog_number_end">false</item>
+    <item type="id" name="dialog_list">false</item>
+    <item type="id" name="icon">false</item>
+    <item type="id" name="text">false</item>
+    <item type="id" name="contact_photo">false</item>
+    <item type="id" name="contact_name">false</item>
+    <item type="id" name="freq_favo_list">false</item>
+    <item type="id" name="freq_favo_list_noitem">false</item>
+    <item type="id" name="freq_favo_selector_title">false</item>
+    <item type="id" name="sep_itemlayout">false</item>
+    <item type="id" name="freq_favo_selector_title2">false</item>
+    <item type="id" name="sep_noitem">false</item>
+    <item type="id" name="grid_data_layout">false</item>
+    <item type="id" name="grid_contact_photo">false</item>
+    <item type="id" name="checkbox1">false</item>
+    <item type="id" name="gridview_star">false</item>
+    <item type="id" name="list_item_layout">false</item>
+    <item type="id" name="aniText">false</item>
+    <item type="id" name="frequent_list_item_photo_layout">false</item>
+    <item type="id" name="frequent_list_item_photo_quick_contact">false</item>
+    <item type="id" name="frequent_list_item_photo">false</item>
+    <item type="id" name="favo_layout">false</item>
+    <item type="id" name="favo_contact_name">false</item>
+    <item type="id" name="ImageView01">false</item>
+    <item type="id" name="favo_star">false</item>
+    <item type="id" name="freq_layout">false</item>
+    <item type="id" name="LinearLayout07">false</item>
+    <item type="id" name="frequent_list_item_name">false</item>
+    <item type="id" name="LinearLayout03">false</item>
+    <item type="id" name="frequent_list_item_number">false</item>
+    <item type="id" name="frequent_list_item_count">false</item>
+    <item type="id" name="list_noitem">false</item>
+    <item type="id" name="row">false</item>
+    <item type="id" name="photo1">false</item>
+    <item type="id" name="text1">false</item>
+    <item type="id" name="text2">false</item>
+    <item type="id" name="text3">false</item>
+    <item type="id" name="allitem">false</item>
+    <item type="id" name="allitemtext">false</item>
+    <item type="id" name="allitemcheck">false</item>
+    <item type="id" name="grid_scroll">false</item>
+    <item type="id" name="grid_type_layout">false</item>
+    <item type="id" name="separator_title1">false</item>
+    <item type="id" name="first_noitem">false</item>
+    <item type="id" name="photo_grid1">false</item>
+    <item type="id" name="separator_title2">false</item>
+    <item type="id" name="second_noitem">false</item>
+    <item type="id" name="photo_grid2">false</item>
+    <item type="id" name="softkeyleft">false</item>
+    <item type="id" name="softkeyright">false</item>
+    <item type="id" name="frequent_delete_list_view">false</item>
+    <item type="id" name="frequent_scroll">false</item>
+    <item type="id" name="frequent_list">false</item>
+    <item type="id" name="contactCheckList">false</item>
+    <item type="id" name="LinearLayout01">false</item>
+    <item type="id" name="mainText">false</item>
+    <item type="id" name="row_text">false</item>
+    <item type="id" name="subText">false</item>
+    <item type="id" name="time">false</item>
+    <item type="id" name="contactDetailCheckList">false</item>
+    <item type="id" name="calllogSeperator">false</item>
+    <item type="id" name="logslist_noitem_layout">false</item>
+    <item type="id" name="logslist_noitem">false</item>
+    <item type="id" name="call_duration_reset">false</item>
+    <item type="id" name="Detail_ViewContact">false</item>
+    <item type="id" name="Detail_Clear">false</item>
+    <item type="id" name="Detail_EditNumber">false</item>
+    <item type="id" name="Favorites_Add">false</item>
+    <item type="id" name="Favorites_Remove">false</item>
+    <item type="id" name="Frequent_add_favo">false</item>
+    <item type="id" name="Frequent_Remove">false</item>
+    <item type="id" name="Frequent_view_status">false</item>
+    <item type="id" name="isFrequent">false</item>
+    <item type="id" name="CallLog_ViewBy">false</item>
+    <item type="id" name="CallLog_Delete">false</item>
+    <item type="id" name="CallLog_CallDuration">false</item>
+</resources>

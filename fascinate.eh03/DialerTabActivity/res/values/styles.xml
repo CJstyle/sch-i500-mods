@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DialtactsTheme" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="TallTitleBarTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="BackgroundOnly">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowNoDisplay">true</item>
+    </style>
+    <style name="FullyTranslucent" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="FullyTranslucent.QuickContact" parent="@style/FullyTranslucent">
+        <item name="android:windowAnimationStyle">@style/DummyAnimation</item>
+    </style>
+    <style name="QuickContact">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="QuickContactAboveAnimation">
+        <item name="android:windowEnterAnimation">@anim/quickcontact_above_enter</item>
+        <item name="android:windowExitAnimation">@anim/quickcontact_above_exit</item>
+    </style>
+    <style name="QuickContactBelowAnimation">
+        <item name="android:windowEnterAnimation">@anim/quickcontact_below_enter</item>
+        <item name="android:windowExitAnimation">@anim/quickcontact_below_exit</item>
+    </style>
+    <style name="DummyAnimation">
+        <item name="android:windowExitAnimation">@anim/dummy_animation</item>
+    </style>
+    <style name="TwTextAppearanceListOneLine">
+        <item name="android:textSize">22.599976sp</item>
+        <item name="android:textColor">@color/tw_color001</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLinePrimary">
+        <item name="android:textSize">22.599976sp</item>
+        <item name="android:textColor">@color/tw_color013</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondaryOrange">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/tw_color003</item>
+    </style>
+    <style name="TwTextAppearanceGroupTitle">
+        <item name="android:textSize">14.599976sp</item>
+        <item name="android:textColor">@color/tw_color013</item>
+    </style>
+    <style name="TwTextAppearanceListTwoLineSecondaryGrey">
+        <item name="android:textSize">13.299988sp</item>
+        <item name="android:textColor">@color/tw_color005</item>
+    </style>
+</resources>

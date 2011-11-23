@@ -83,6 +83,20 @@ zipalign -f 4 DeskCradle/dist/DeskCradle.apk ./DeskCradle.apk
 rm -f -r DeskCradle/build
 rm -f -r DeskCradle/dist
 
+# DIALERTABACTIVITY.APK
+echo
+echo DIALERTABACTIVITY.APK
+echo
+apktool b DialerTabActivity
+rm DialerTabActivity/dist/DialerTabActivity.apk
+cp stock-apks/DialerTabActivity.apk DialerTabActivity/dist/
+pushd DialerTabActivity/build/apk
+zip -u ../../dist/DialerTabActivity.apk classes.dex
+popd
+zipalign -f 4 DialerTabActivity/dist/DialerTabActivity.apk ./DialerTabActivity.apk
+rm -f -r DialerTabActivity/build
+rm -f -r DialerTabActivity/dist
+
 # JOBMANAGER.APK
 echo
 echo JOBMANAGER.APK
