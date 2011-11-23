@@ -33,4 +33,9 @@ DESKCRADLE.APK
 
 - Change voice search button to invoke Google Voice Search instead of Bing
 
+SYSTEMUI.APK
+============
+
+- NOTE: Was decompiled with "apktool d -r" due to problem linking back to twframework-res.apk
+- Remove full battery notification
 

@@ -67,4 +67,18 @@ zipalign -f 4 DeskCradle/dist/DeskCradle.apk ./DeskCradle.apk
 rm -f -r DeskCradle/build
 rm -f -r DeskCradle/dist
 
+# SYSTEMUI.APK
+echo
+echo SYSTEMUI.APK
+echo
+apktool b SystemUI
+rm SystemUI/dist/SystemUI.apk
+cp stock-apks/SystemUI.apk SystemUI/dist/
+pushd SystemUI/build/apk
+zip -u ../../dist/SystemUI.apk classes.dex
+popd
+zipalign -f 4 SystemUI/dist/SystemUI.apk ./SystemUI.apk
+rm -f -r SystemUI/build
+rm -f -r SystemUI/dist
+
 
