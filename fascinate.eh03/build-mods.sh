@@ -83,6 +83,20 @@ zipalign -f 4 DeskCradle/dist/DeskCradle.apk ./DeskCradle.apk
 rm -f -r DeskCradle/build
 rm -f -r DeskCradle/dist
 
+# JOBMANAGER.APK
+echo
+echo JOBMANAGER.APK
+echo
+apktool b JobManager
+rm JobManager/dist/JobManager.apk
+cp stock-apks/JobManager.apk JobManager/dist/
+pushd JobManager/build/apk
+zip -u ../../dist/JobManager.apk classes.dex
+popd
+zipalign -f 4 JobManager/dist/JobManager.apk ./JobManager.apk
+rm -f -r JobManager/build
+rm -f -r JobManager/dist
+
 # MUSICPLAYER.APK
 echo
 echo MUSICPLAYER.APK
