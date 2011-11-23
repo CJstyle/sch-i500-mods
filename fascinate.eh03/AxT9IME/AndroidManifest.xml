@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="10" android:versionName="2.3.5" package="com.sec.android.inputmethod.axt9"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <application android:label="@string/s_app_name">
+        <receiver android:name="CSCReadAndSet">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service android:name="AxT9IME" android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
+        <activity android:name="AxT9Option" android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/s_xt9_advanced_settings" android:name="AxT9OptonAdvancedSettings" android:excludeFromRecents="true" />
+        <activity android:label="@string/s_writing_language" android:name="AxT9OptionWritingLanguage" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name="AxT9optionsAbout" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name="AxT9optionsHelp" android:excludeFromRecents="true" />
+        <activity android:label="@string/s_T9_My_Words" android:name="AxT9optionsMyWords" android:excludeFromRecents="true" android:configChanges="orientation" />
+        <activity android:label="@string/s_T9_My_Words" android:name="AxT9optionsMyWordsAdd" android:excludeFromRecents="true" android:configChanges="orientation" />
+        <activity android:label="@string/s_T9_Auto_substitution" android:name="AxT9optionsAutoSubs" android:excludeFromRecents="true" android:configChanges="orientation" />
+        <activity android:label="@string/s_T9_Auto_substitution" android:name="AxT9optionsAutoSubsAdd" android:excludeFromRecents="true" android:configChanges="orientation" />
+        <activity android:label="@string/s_Add_Word" android:name="AxT9AddWord" android:taskAffinity="com.sec.android.inputmethod.axt9.AxT9AddWord" android:excludeFromRecents="true" android:configChanges="orientation" />
+        <activity android:label="@string/s_T9_My_Words" android:name="AxT9optionsMyWordsDel" android:excludeFromRecents="true" android:configChanges="orientation" />
+        <activity android:label="@string/s_T9_Auto_substitution" android:name="AxT9optionsAutoSubsDel" android:excludeFromRecents="true" android:configChanges="orientation" />
+        <activity android:label="@string/s_about" android:name="com.diotek.dhwr.eur.b2b.DioHWRAbout" android:excludeFromRecents="true" />
+        <activity android:label="@string/s_Tutorial" android:name="AxT9IMETutorial" android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="com.sec.android.inputmethod.axt9.tutorial" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <uses-library android:name="touchwiz" />
+    </application>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10" />
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+</manifest>

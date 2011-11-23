@@ -39,6 +39,20 @@ zipalign -f 4 services.jar.out/dist/services.jar ./services.jar
 rm -f -r services.jar.out/build
 rm -f -r services.jar.out/dist
 
+# AXT9IME.APK
+echo
+echo AXT9IME.APK
+echo
+apktool b AxT9IME
+rm AxT9IME/dist/AxT9IME.apk
+cp stock-apks/AxT9IME.apk AxT9IME/dist/
+pushd AxT9IME/build/apk
+zip -u ../../dist/AxT9IME.apk classes.dex
+popd
+zipalign -f 4 AxT9IME/dist/AxT9IME.apk ./AxT9IME.apk
+rm -f -r AxT9IME/build
+rm -f -r AxT9IME/dist
+
 # BROWSER.APK
 echo
 echo BROWSER.APK

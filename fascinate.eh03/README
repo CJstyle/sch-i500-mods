@@ -23,6 +23,11 @@ SERVICES.JAR
 
 - Changed default LiveWallpaper to com.android.wallpaper/.nexus.NexusWallpaper
 
+AXT9IME.APK
+===========
+
+- Disabled key sound
+
 BROWSER.APK
 ===========
 
