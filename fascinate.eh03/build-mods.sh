@@ -69,6 +69,20 @@ zipalign -f 4 Camera/dist/Camera.apk ./Camera.apk
 rm -f -r Camera/build
 rm -f -r Camera/dist
 
+# CARCRADLE.APK
+echo
+echo CARCRADLE.APK
+echo
+apktool b CarCradle
+rm CarCradle/dist/CarCradle.apk
+cp stock-apks/CarCradle.apk CarCradle/dist/
+pushd CarCradle/build/apk
+zip -u ../../dist/CarCradle.apk classes.dex
+popd
+zipalign -f 4 CarCradle/dist/CarCradle.apk ./CarCradle.apk
+rm -f -r CarCradle/build
+rm -f -r CarCradle/dist
+
 # DESKCRADLE.APK
 echo
 echo DESKCRADLE.APK

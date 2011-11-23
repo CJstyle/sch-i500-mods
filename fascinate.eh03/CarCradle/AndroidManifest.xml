@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="1.0" package="com.sec.android.app.carcradle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <application android:label="@string/app_name" android:icon="@drawable/mainmenu_icon_carmount">
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:name=".CarCradleMain" android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:keepScreenOn="true" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.dock_home" android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.CAR_DOCK" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".CarDockInReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOCK_EVENT" />
+                <action android:name="android.app.action.ENTER_CAR_MODE" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10" />
+    <uses-feature android:name="samsung.feature.octa" />
+</manifest>
