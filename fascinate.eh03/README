@@ -77,3 +77,10 @@ SYSTEMUI.APK
 - NOTE: Was decompiled with "apktool d -r" due to problem linking back to twframework-res.apk
 - Remove full battery notification
 
+TOUCHWIZ30LAUNCHER.APK
+======================
+
+- Modified default application list order to match my ROM
+- Modified default shortcut and widget layouts
+ 
+
