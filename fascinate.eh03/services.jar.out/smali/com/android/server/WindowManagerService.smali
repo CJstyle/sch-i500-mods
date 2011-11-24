@@ -563,14 +563,14 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;Lcom/android/server/PowerManagerService;Z)V
-    .locals 11
+    .locals 12	# djp952: was 11, added new constant below
     .parameter "context"
     .parameter "pm"
     .parameter "haveInputMethods"
 
     .prologue
-    # djp952: add v11 = 0x3f00, which is 0.5 in floating point; for transition animation speed below
-    const/high16 v11, 0x3f00
+    
+    const/high16 v11, 0x3f00	# djp952: (0x3f00 = 0.5 in floating point); for transition animation speed below
 
     const/high16 v10, 0x3f80
 
