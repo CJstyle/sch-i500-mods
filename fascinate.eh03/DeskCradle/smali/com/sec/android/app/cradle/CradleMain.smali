@@ -4343,9 +4343,9 @@
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
     .line 723
-    const-string v2, "com.microsoft.mobileexperiences.bing"
+    const-string v2, "com.google.android.googlequicksearchbox"
 
-    const-string v3, "com.microsoft.mobileexperiences.bing.views.Splash"
+    const-string v3, "com.google.android.googlequicksearchbox.SearchActivity"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
