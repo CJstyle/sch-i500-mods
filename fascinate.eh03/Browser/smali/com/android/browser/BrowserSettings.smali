@@ -1500,7 +1500,7 @@
     .line 311
     const-string v7, "search_engine"
 
-    const-string v8, "bing"
+    const-string v8, "google"			# djp952: was "bing"
 
     invoke-interface {p2, v7, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
