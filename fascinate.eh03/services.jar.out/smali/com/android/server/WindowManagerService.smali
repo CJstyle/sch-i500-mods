@@ -569,6 +569,9 @@
     .parameter "haveInputMethods"
 
     .prologue
+    # djp952: add v11 = 0x3f00, which is 0.5 in floating point; for transition animation speed below
+    const/high16 v11, 0x3f00
+
     const/high16 v10, 0x3f80
 
     const/high16 v9, -0x4080
@@ -901,7 +904,8 @@
     iput v10, p0, Lcom/android/server/WindowManagerService;->mWindowAnimationScale:F
 
     .line 493
-    iput v10, p0, Lcom/android/server/WindowManagerService;->mTransitionAnimationScale:F
+    # djp952: Decrease default transition animation scale (v11 is a new constant above; equates to 0.5 or "Fast")
+    iput v11, p0, Lcom/android/server/WindowManagerService;->mTransitionAnimationScale:F
 
     .line 507
     iput-boolean v6, p0, Lcom/android/server/WindowManagerService;->mInTouchMode:Z
