@@ -14,7 +14,6 @@ cp stock-apks/framework-res.apk framework-res/dist/
 pushd framework-res/build/apk
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/reboot.png
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/recovery.png
-zip -u ../../dist/framework-res.apk res/drawable-hdpi/overscroll_*
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/stat_sys_battery_*
 zip -u ../../dist/framework-res.apk resources.arsc
 popd
