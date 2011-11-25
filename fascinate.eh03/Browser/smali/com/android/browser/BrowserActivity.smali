@@ -14332,12 +14332,15 @@
 .end method
 
 .method smartUrlFilter(Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
+    .locals 7
     .parameter
 
     .prologue
     const/4 v4, 0x1
 
+    const-string v6, "google"
+
+    const-string v5, "%s"
     .line 5259
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -14465,7 +14468,77 @@
 
     invoke-static {v1, v0}, Landroid/provider/Browser;->addSearchUrl(Landroid/content/ContentResolver;Ljava/lang/String;)V
 
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    .line 5327
+    const-string v2, "search_engine"
+
+    const-string v3, "google"
+
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
     .line 5289
+    const-string v2, "google"
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    .line 5329
+    const-string v1, "http://www.google.com/m?q=%s"
+
+    const-string v2, "%s"
+
+    invoke-static {v0, v1, v5}, Landroid/webkit/URLUtil;->composeSearchUrl(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    .line 5330
+    :cond_5
+    const-string v2, "yahoo"
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    .line 5331
+    const-string v1, "http://search.yahoo.com/search?ei=UTF-8&fr=crmas&p=%s"
+
+    const-string v2, "%s"
+
+    invoke-static {v0, v1, v5}, Landroid/webkit/URLUtil;->composeSearchUrl(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_1
+    :cond_6
+
+    const-string v2, "bing"
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    const-string v1, "http://m.bing.com/search/?q=%s"
+
+    const-string v2, "%s"
+
+    invoke-static {v0, v1, v5}, Landroid/webkit/URLUtil;->composeSearchUrl(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_1
+    :cond_7
+
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v1}, Lcom/android/browser/BrowserSettings;->getSearchEngine()Lcom/android/browser/search/SearchEngine;

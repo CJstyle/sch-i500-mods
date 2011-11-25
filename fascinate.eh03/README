@@ -35,8 +35,8 @@ BROWSER.APK
 - Removed all default bookmarks
 - Set default home page to "about:blank"
 - Set default search engine to Google
-- Set proper Bing search engine URL
 - Allow all bookmarks to be deleted and/or edited
+- Fix Smart URL Filter so that all search engines function (google/yahoo/bing)
 
 CAMERA.APK
 ==========
