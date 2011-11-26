@@ -18,6 +18,17 @@ FRAMEWORK-RES.APK
 - Use EI20 edge glow PNGs
 - Use EI20 battery graphics
 
+ANDROID.POLICY.JAR
+==================
+
+- Modified for addition of Reboot and Recovery power menu options
+- Stop animation services (samsungani/bootanim) at the same time
+
+FRAMEWORK.JAR
+=============
+
+- Modified for addition of Reboot and Recovery power menu options
+
 SERVICES.JAR
 ============
 

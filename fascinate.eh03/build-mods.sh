@@ -24,6 +24,34 @@ rm -f -r framework-res/dist
 apktool if ./framework-res.apk
 apktool if ./stock-apks/twframework-res.apk
 
+# ANDROID.POLICY.JAR
+echo
+echo ANDROID.POLICY.JAR
+echo
+apktool b android.policy.jar.out
+rm android.policy.jar.out/dist/android.policy.jar
+cp stock-apks/android.policy.jar android.policy.jar.out/dist/
+pushd android.policy.jar.out/build/apk
+zip -u ../../dist/android.policy.jar classes.dex
+popd
+zipalign -f 4 android.policy.jar.out/dist/android.policy.jar ./android.policy.jar
+rm -f -r android.policy.jar.out/build
+rm -f -r android.policy.jar.out/dist
+
+# FRAMEWORK.JAR
+echo
+echo FRAMEWORK.JAR
+echo
+apktool b framework.jar.out
+rm framework.jar.out/dist/framework.jar
+cp stock-apks/framework.jar framework.jar.out/dist/
+pushd framework.jar.out/build/apk
+zip -u ../../dist/framework.jar classes.dex
+popd
+zipalign -f 4 framework.jar.out/dist/framework.jar ./framework.jar
+rm -f -r framework.jar.out/build
+rm -f -r framework.jar.out/dist
+
 # SERVICES.JAR
 echo
 echo SERVICES.JAR
