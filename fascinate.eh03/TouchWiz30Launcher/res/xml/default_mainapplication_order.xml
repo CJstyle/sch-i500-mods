@@ -22,7 +22,7 @@
     <mainapp launcher:className="com.android.vending.AssetBrowserActivity" launcher:packageName="com.android.vending" />
     <mainapp launcher:className="com.sec.android.app.memo.Memo" launcher:packageName="com.sec.android.app.memo" />
     <mainapp launcher:className="com.google.android.apps.plus.phone.ConversationListActivity" launcher:packageName="com.google.android.apps.plus" />
-    <mainapp launcher:className="com.google.android.music.activitymanagement.TopLevelActivity" launcher:packageName="com.google.android.music" />
+    <mainapp launcher:className="com.android.music.activitymanagement.TopLevelActivity" launcher:packageName="com.google.android.music" />
     <mainapp launcher:className="com.android.music.list.activity.MpMainTabActivity" launcher:packageName="com.android.music" />
     <mainapp launcher:className="com.sec.android.app.myfiles.MainActivity" launcher:packageName="com.sec.android.app.myfiles" />
     <mainapp launcher:className="com.google.android.maps.driveabout.app.DestinationActivity" launcher:packageName="com.google.android.apps.maps" />
