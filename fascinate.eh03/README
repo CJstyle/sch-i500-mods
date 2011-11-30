@@ -33,7 +33,7 @@ SERVICES.JAR
 ============
 
 - Changed default LiveWallpaper to com.android.wallpaper/.nexus.NexusWallpaper
-- Increase default transition animation speed to "Fast"
+- Increase default transition animation speed to 50% (Fast/0.5)
 
 AXT9IME.APK
 ===========
@@ -82,6 +82,11 @@ MUSICPLAYER.APK
 
 - Localize some strings for US English
 - Remove "Download from V cast?" prompt when no media exists
+
+SETTINGSPROVIDER.APK
+====================
+
+- Change default transition animation speed to 50% (Fast/0.5)
 
 SYSTEMUI.APK
 ============
