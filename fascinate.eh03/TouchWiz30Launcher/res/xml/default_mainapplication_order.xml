@@ -13,7 +13,6 @@
     <mainapp launcher:className="com.sec.android.app.cradle.CradleMain" launcher:packageName="com.sec.android.app.cradle" />
     <mainapp launcher:className="com.android.providers.downloads.ui.DownloadsListTab" launcher:packageName="com.android.providers.downloads.ui" />
     <mainapp launcher:className="com.android.email.activity.Welcome" launcher:packageName="com.android.email" />
-    <mainapp launcher:className="com.adobe.flashplayer.SettingsManager" launcher:packageName="com.adobe.flashplayer" />
     <mainapp launcher:className="com.cooliris.media.Gallery" launcher:packageName="com.cooliris.media" />
     <mainapp launcher:className="com.google.android.gm.ConversationListActivityGmail" launcher:packageName="com.google.android.gm" />
     <mainapp launcher:className="com.google.android.apps.plus.phone.HomeActivity" launcher:packageName="com.google.android.apps.plus" />
