@@ -82,3 +82,9 @@ AX9TIME.APK
 
 - Use playSound() code from old Froyo version; this Gingerbread version will force close
 
+SETTINGSPROVIDER.APK
+====================
+
+- Change default transition animation speed to 50% (Fast/0.5)
+
+

@@ -150,3 +150,19 @@ rm -f -r AxT9IME/build
 rm -f -r AxT9IME/dist
 
 
+# SETTINGSPROVIDER.APK
+echo
+echo SETTINGSPROVIDER.APK
+echo
+apktool b SettingsProvider
+rm SettingsProvider/dist/SettingsProvider.apk
+cp stock-apks/SettingsProvider.apk SettingsProvider/dist/
+pushd SettingsProvider/build/apk
+zip -u ../../dist/SettingsProvider.apk resources.arsc
+popd
+zipalign -f 4 SettingsProvider/dist/SettingsProvider.apk ./SettingsProvider.apk
+rm -f -r SettingsProvider/build
+rm -f -r SettingsProvider/dist
+
+
+
