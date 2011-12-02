@@ -22473,7 +22473,7 @@
 
     .line 5270
     :goto_0
-    invoke-direct {p0, v0}, Lcom/sec/android/inputmethod/axt9/AxT9IME;->playKeySound(I)V
+    #invoke-direct {p0, v0}, Lcom/sec/android/inputmethod/axt9/AxT9IME;->playKeySound(I)V
 
     .line 5272
     .end local v0           #sound:I
