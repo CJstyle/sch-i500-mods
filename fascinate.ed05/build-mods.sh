@@ -149,7 +149,6 @@ zipalign -f 4 AxT9IME/dist/AxT9IME.apk ./AxT9IME.apk
 rm -f -r AxT9IME/build
 rm -f -r AxT9IME/dist
 
-
 # SETTINGSPROVIDER.APK
 echo
 echo SETTINGSPROVIDER.APK
@@ -164,5 +163,18 @@ zipalign -f 4 SettingsProvider/dist/SettingsProvider.apk ./SettingsProvider.apk
 rm -f -r SettingsProvider/build
 rm -f -r SettingsProvider/dist
 
+# MUSICPLAYER.APK
+echo
+echo MUSICPLAYER.APK
+echo
+apktool b MusicPlayer
+rm MusicPlayer/dist/MusicPlayer.apk
+cp stock-apks/MusicPlayer.apk MusicPlayer/dist/
+pushd MusicPlayer/build/apk
+zip -u ../../dist/MusicPlayer.apk classes.dex
+popd
+zipalign -f 4 MusicPlayer/dist/MusicPlayer.apk ./MusicPlayer.apk
+rm -f -r MusicPlayer/build
+rm -f -r MusicPlayer/dist
 
 

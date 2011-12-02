@@ -54,6 +54,7 @@ DESKCRADLE.APK
 ==============
 
 - Modified Voice Search to use Google Voice Search instead of Bing
+- Modified physical Search button to launch Google Search instead of Bin
 
 DIALERTABACTIVITY.APK
 =====================
@@ -81,10 +82,17 @@ AX9TIME.APK
 ===========
 
 - Use playSound() code from old Froyo version; this Gingerbread version will force close
+- Updated to not play any sound at all
 
 SETTINGSPROVIDER.APK
 ====================
 
 - Change default transition animation speed to 50% (Fast/0.5)
+
+MUSICPLAYER.APK
+===============
+
+- Remove "Download from V cast?" prompt when no media exists on the device
+
 
 

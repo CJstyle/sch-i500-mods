@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TwSeekBar">
+        <item name="android:maxHeight">8.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/music_play_tw3_horizontal_seekbar</item>
+        <item name="android:minHeight">8.0dip</item>
+        <item name="android:thumb">@drawable/music_play_tw3_progressive_point</item>
+        <item name="android:thumbOffset">0.0dip</item>
+    </style>
+</resources>

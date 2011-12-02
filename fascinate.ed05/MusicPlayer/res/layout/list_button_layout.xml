@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/MiddleLayout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="0.9" />
+    <RelativeLayout android:gravity="center_horizontal" android:id="@id/TwoButtonLayout" android:background="@drawable/winset_softkey_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="59.329987dip">
+        <LinearLayout android:id="@id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.659973dip" android:layout_marginBottom="2.6599731dip">
+            <Button android:textSize="16.0sp" android:typeface="sans" android:textColor="@color/twcolor002" android:ellipsize="marquee" android:gravity="center" android:id="@id/Softkey1" android:background="@drawable/list_softkey_btn_selector" android:saveEnabled="false" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="3.3299866dip" android:singleLine="true" android:layout_weight="1.0" android:marqueeRepeatLimit="marquee_forever" />
+            <Button android:textSize="16.0sp" android:typeface="sans" android:textColor="@color/twcolor002" android:id="@id/Softkey2" android:background="@drawable/list_softkey_btn_selector" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginRight="3.3299866dip" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/PlayButtonLayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
+        <Button android:textSize="18.659973sp" android:textColor="@drawable/list_item_large_text" android:id="@id/ShowPlayerButton" android:background="@drawable/list_music_button_selector" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="40.0dip" android:minWidth="165.32999dip" android:text="@string/now_playing" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

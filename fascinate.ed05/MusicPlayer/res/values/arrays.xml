@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="listType">
+        <item>@string/current_playlist</item>
+        <item>@string/all_songs</item>
+        <item>@string/playlists</item>
+        <item>@string/albums</item>
+        <item>@string/artists</item>
+        <item>@string/genres</item>
+        <item>@string/composers</item>
+        <item>@string/years</item>
+        <item>@string/podcasts</item>
+        <item>@string/quicklist</item>
+        <item>@string/mostplayed</item>
+        <item>@string/recentlyplayed</item>
+        <item>@string/recently_added</item>
+    </array>
+    <array name="equalizer">
+        <item>@string/normal</item>
+        <item>@string/rock</item>
+        <item>@string/jazz</item>
+        <item>@string/live</item>
+        <item>@string/classic</item>
+        <item>@string/wide</item>
+        <item>@string/externalization</item>
+        <item>@string/custom</item>
+    </array>
+    <array name="share_track_via_normal">
+        <item>@string/email</item>
+    </array>
+    <array name="share_track_via_preview">
+        <item>@string/message</item>
+        <item>@string/email</item>
+    </array>
+    <array name="list_menu">
+        <item>@string/list_menu_saveasplaylist</item>
+        <item>@string/list_menu_remove</item>
+        <item>@string/list_menu_search</item>
+        <item>@string/list_menu_musicplayer</item>
+        <item>@string/list_menu_wishlist</item>
+        <item>@string/settings</item>
+        <item>@string/list_menu_addtoplaylist</item>
+        <item>@string/list_menu_add</item>
+        <item>@string/list_menu_edittitle</item>
+        <item>@string/list_menu_delete</item>
+        <item>@string/list_menu_create</item>
+        <item>@string/list_menu_edit</item>
+        <item>@string/list_menu_gridview</item>
+        <item>@string/save</item>
+        <item>@string/cancel</item>
+        <item>@string/IDS_COM_POP_COUNT</item>
+        <item>@string/list_menu_reorder</item>
+        <item>@string/list_menu_goto_discplus</item>
+        <item>@string/list_menu_shop</item>
+    </array>
+</resources>

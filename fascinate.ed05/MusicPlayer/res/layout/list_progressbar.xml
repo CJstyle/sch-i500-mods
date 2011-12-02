@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="274.66406dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@id/PopupProgressBar" android:layout_width="46.669983dip" android:layout_height="46.669983dip" android:layout_marginLeft="5.3299866dip" android:indeterminateOnly="false" android:indeterminateDrawable="@anim/list_progressbar" style="?android:attr/progressBarStyle" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/ProgressBarText" android:layout_width="222.66998dip" android:layout_height="wrap_content" />
+</LinearLayout>

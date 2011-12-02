@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/MusicPlayer_View_new" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="320.0dip" android:layout_height="320.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:id="@id/ImageViewAlbumImage" android:visibility="visible" android:clickable="true" android:layout_width="320.0dip" android:layout_height="320.0dip" android:src="@drawable/music_player_thumb_00" />
+        <ImageView android:id="@id/ImageViewAlbumImageTemp" android:visibility="invisible" android:clickable="false" android:layout_width="320.0dip" android:layout_height="320.0dip" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/MusicPlayerEQRelativeLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:id="@id/MusicPlayerEQLinearLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_marginTop="88.0dip">
+                <ImageView android:id="@id/ImageViewTopEQ0" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ1" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ2" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ3" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ4" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ5" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ6" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ7" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ8" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ9" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ10" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ11" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ12" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ13" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ14" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ15" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ16" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ17" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewTopEQ18" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/MusicPlayerEQLinearLayout2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_marginTop="197.32999dip">
+                <ImageView android:id="@id/ImageViewBottomEQ0" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ1" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ2" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ3" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ4" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ5" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ6" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ7" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ8" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ9" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ10" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ11" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ12" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ13" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ14" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ15" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ16" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ17" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+                <ImageView android:id="@id/ImageViewBottomEQ18" android:layout_width="16.0dip" android:layout_height="109.32999dip" />
+            </LinearLayout>
+        </RelativeLayout>
+        <ScrollView android:id="@id/LyricScrollView" android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="220.0dip">
+            <TextView android:textSize="17.329987sp" android:textColor="@touchwiz:color/tw_color001" android:id="@id/LyricTextView" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:clickable="true" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="220.0dip" />
+        </ScrollView>
+        <RelativeLayout android:id="@id/MusicPlayerProgressBarRelativeLayout" android:background="@drawable/music_play_progressive_box_bg" android:layout_width="fill_parent" android:layout_height="101.32999dip" android:layout_alignParentBottom="true">
+            <ImageView android:id="@id/ImageButtonShuffle" android:paddingLeft="2.0dip" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="66.66dip" android:layout_height="40.0dip" android:layout_marginTop="1.0dip" android:scaleType="centerCrop" android:layout_alignParentLeft="true" />
+            <ImageView android:id="@id/ImageButtonRepeat" android:paddingRight="2.0dip" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="66.66dip" android:layout_height="40.0dip" android:layout_marginTop="1.0dip" android:scaleType="centerCrop" android:layout_alignParentRight="true" />
+            <SeekBar android:id="@id/MusicPlayerProgressBar" android:paddingLeft="18.659973dip" android:paddingRight="18.659973dip" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="38.659973dip" android:layout_marginTop="40.0dip" android:max="100" android:progress="0" style="@style/TwSeekBar" />
+            <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color001" android:id="@id/MusicPlayerPlayedTime" android:focusable="false" android:layout_width="wrap_content" android:layout_height="22.0dip" android:layout_marginLeft="16.0dip" android:layout_below="@id/MusicPlayerProgressBar" android:layout_alignParentLeft="true" />
+            <TextView android:textSize="16.0sp" android:textColor="@touchwiz:color/tw_color001" android:id="@id/MusicPlayerMediaDuration" android:focusable="false" android:layout_width="wrap_content" android:layout_height="22.0dip" android:layout_marginRight="16.0dip" android:layout_below="@id/MusicPlayerProgressBar" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <com.sec.android.touchwiz.widget.TwSeekBarBubble android:id="@id/volumeseekbubble" android:paddingLeft="58.0dip" android:layout_width="102.0dip" android:layout_height="fill_parent" android:layout_marginLeft="218.0dip"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <LinearLayout android:orientation="vertical" android:background="@drawable/music_play_sound_box_bg" android:layout_width="46.659973dip" android:layout_height="fill_parent">
+                <com.sec.android.touchwiz.widget.TwSeekBar android:id="@id/volumeseekbar" android:paddingTop="21.659973dip" android:paddingBottom="21.659973dip" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" touchwiz:twMax="15" touchwiz:progress="12" touchwiz:twBackgroundDrawable="@drawable/music_play_vol_progressive_bg" touchwiz:twProgressDrawable="@drawable/music_play_vol_progressive_bar" touchwiz:twIndicatorThickness="9.329987dip" touchwiz:twProgressOrientation="vertical" touchwiz:twSeekBarThumb="@drawable/music_play_tw3_progressive_point"
+                  xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz" />
+            </LinearLayout>
+        </com.sec.android.touchwiz.widget.TwSeekBarBubble>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="213.32999dip" android:layout_height="320.0dip">
+        <LinearLayout android:orientation="vertical" android:id="@id/album_appwidget" android:layout_width="213.32999dip" android:layout_height="218.66dip">
+            <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="96.0dip" android:layout_marginTop="6.659973dip">
+                <TextView android:textSize="21.0sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:gravity="left" android:layout_gravity="center_horizontal" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="1.3299866dip" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+                <TextView android:textSize="14.0sp" android:textColor="@touchwiz:color/tw_color081" android:ellipsize="marquee" android:gravity="left" android:layout_gravity="center_horizontal" android:id="@id/artist" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="5.3299866dip" android:layout_marginRight="1.3299866dip" android:singleLine="true" android:layout_below="@id/title" android:marqueeRepeatLimit="marquee_forever" />
+                <TextView android:textSize="14.0sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:gravity="left" android:layout_gravity="center_horizontal" android:id="@id/album" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="1.3299866dip" android:singleLine="true" android:layout_below="@id/artist" android:marqueeRepeatLimit="marquee_forever" />
+                <View android:id="@id/album_appwidget_button" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </RelativeLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="37.329987dip">
+                <ImageView android:id="@id/ImageButtonTopVolume" android:background="@drawable/music_play_volume_button_bg" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="69.32999dip" android:layout_height="37.329987dip" android:src="@drawable/music_play_volume_button" />
+                <ImageView android:id="@id/buttonSpeaker" android:background="@drawable/music_play_button_speaker_bg" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="69.32999dip" android:layout_height="37.329987dip" />
+                <ImageView android:id="@id/ImageButtonTopSrs" android:background="@drawable/music_play_srs_button_bg" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="69.32999dip" android:layout_height="37.329987dip" android:src="@drawable/music_play_srs_button" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/MusicPlayerControls" android:background="@drawable/music_play_controller_bg" android:layout_width="fill_parent" android:layout_height="101.32999dip" android:layout_below="@id/album_appwidget">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="56.0dip" android:layout_marginTop="5.659973dip">
+                <ImageView android:id="@id/ImageButtonREW" android:paddingLeft="0.0dip" android:paddingTop="0.0dip" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="74.66dip" android:layout_height="fill_parent" android:layout_marginLeft="7.0dip" android:src="@drawable/music_play_control_rew_btn_selector" android:layout_weight="1.0" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/ImageButtonPlay" android:paddingLeft="0.0dip" android:paddingTop="0.0dip" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="74.66dip" android:layout_height="fill_parent" android:layout_marginLeft="0.0dip" android:layout_weight="1.0" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/ImageButtonPause" android:paddingLeft="0.0dip" android:paddingTop="0.0dip" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="74.66dip" android:layout_height="fill_parent" android:layout_marginLeft="0.0dip" android:layout_weight="1.0" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/ImageButtonFF" android:paddingLeft="0.0dip" android:paddingTop="0.0dip" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="74.66dip" android:layout_height="fill_parent" android:layout_marginRight="7.0dip" android:src="@drawable/music_play_control_ff_btn_selector" android:layout_weight="1.0" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </LinearLayout>
+            <RelativeLayout android:id="@id/ListButtonLayout" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <Button android:textSize="18.659973sp" android:textColor="@drawable/list_item_large_text" android:id="@id/ShowListButton" android:background="@drawable/list_music_button_selector" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:text="@string/IDS_MUSIC_SK_SLIDESHOW_LIST" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
