@@ -5307,9 +5307,9 @@
 
     .line 688
     .local v3, intent:Landroid/content/Intent;
-    const-string v4, "com.microsoft.mobileexperiences.bing"
+    const-string v4, "com.google.android.googlequicksearchbox"
 
-    const-string v5, "com.microsoft.mobileexperiences.bing.views.Splash"
+    const-string v5, "com.google.android.googlequicksearchbox.SearchActivity"
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
