@@ -96,6 +96,20 @@ zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build
 rm -f -r Browser/dist
 
+# BROWSEREI20.APK
+echo
+echo BROWSEREI20.APK
+echo
+apktool b BrowserEI20
+rm BrowserEI20/dist/BrowserEI20.apk
+cp stock-apks/BrowserEI20.apk BrowserEI20/dist/
+pushd BrowserEI20/build/apk
+zip -u ../../dist/BrowserEI20.apk resources.arsc
+popd
+zipalign -f 4 BrowserEI20/dist/BrowserEI20.apk ./BrowserEI20.apk
+rm -f -r BrowserEI20/build
+rm -f -r BrowserEI20/dist
+
 # CAMERA.APK
 echo
 echo CAMERA.APK

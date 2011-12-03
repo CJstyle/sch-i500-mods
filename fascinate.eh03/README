@@ -49,6 +49,13 @@ BROWSER.APK
 - Allow all bookmarks to be deleted and/or edited
 - Fix Smart URL Filter so that all search engines function (google/yahoo/bing)
 
+BROWSEREI20.APK
+===============
+
+- This is the Browser from the ACG EI20 ROM; rename to Browser.apk if using it
+- Set default home page to "about:blank"
+- Remove all default bookmarks
+
 CAMERA.APK
 ==========
 
