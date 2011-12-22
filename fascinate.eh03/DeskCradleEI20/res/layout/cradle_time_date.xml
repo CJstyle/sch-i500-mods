@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="left|center" android:orientation="vertical" android:id="@id/time_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sec.android.app.cradle.DigitalClock android:id="@id/time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip">
+        <View android:id="@id/SaverView01" android:layout_width="61.329987dip" android:layout_height="93.32999dip" android:layout_weight="1.0" />
+        <View android:id="@id/SaverView02" android:layout_width="61.329987dip" android:layout_height="93.32999dip" android:layout_marginLeft="2.0dip" android:layout_weight="1.0" />
+        <View android:id="@id/SaverView03" android:background="@drawable/clock_n_10" android:layout_width="16.0dip" android:layout_height="93.32999dip" android:layout_marginLeft="9.329987dip" android:layout_weight="1.0" />
+        <View android:id="@id/SaverView04" android:layout_width="61.329987dip" android:layout_height="93.32999dip" android:layout_marginLeft="9.329987dip" android:layout_weight="1.0" />
+        <View android:id="@id/SaverView05" android:layout_width="61.329987dip" android:layout_height="93.32999dip" android:layout_marginLeft="2.0dip" android:layout_weight="1.0" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:ellipsize="none" android:gravity="bottom" android:id="@id/am_pm" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip" android:singleLine="true" android:shadowColor="#c0000000" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="3.0" />
+    </com.sec.android.app.cradle.DigitalClock>
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:gravity="left" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:shadowColor="#c0000000" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="3.0" />
+</LinearLayout>

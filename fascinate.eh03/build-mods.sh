@@ -138,6 +138,21 @@ zipalign -f 4 CarCradle/dist/CarCradle.apk ./CarCradle.apk
 rm -f -r CarCradle/build
 rm -f -r CarCradle/dist
 
+# CARCRADLEEI20.APK
+echo
+echo CARCRADLEEI20.APK
+echo
+apktool b CarCradleEI20
+rm CarCradleEI20/dist/CarCradleEI20.apk
+cp stock-apks/CarCradleEI20.apk CarCradleEI20/dist/
+pushd CarCradleEI20/build/apk
+zip -u ../../dist/CarCradleEI20.apk classes.dex
+zip -u ../../dist/CarCradleEI20.apk resources.arsc
+popd
+zipalign -f 4 CarCradleEI20/dist/CarCradleEI20.apk ./CarCradleEI20.apk
+rm -f -r CarCradleEI20/build
+rm -f -r CarCradleEI20/dist
+
 # DESKCRADLE.APK
 echo
 echo DESKCRADLE.APK
@@ -151,6 +166,21 @@ popd
 zipalign -f 4 DeskCradle/dist/DeskCradle.apk ./DeskCradle.apk
 rm -f -r DeskCradle/build
 rm -f -r DeskCradle/dist
+
+# DESKCRADLEEI20.APK
+echo
+echo DESKCRADLEEI20.APK
+echo
+apktool b DeskCradleEI20
+rm DeskCradleEI20/dist/DeskCradleEI20.apk
+cp stock-apks/DeskCradleEI20.apk DeskCradleEI20/dist/
+pushd DeskCradleEI20/build/apk
+zip -u ../../dist/DeskCradleEI20.apk classes.dex
+zip -u ../../dist/DeskCradleEI20.apk resources.arsc
+popd
+zipalign -f 4 DeskCradleEI20/dist/DeskCradleEI20.apk ./DeskCradleEI20.apk
+rm -f -r DeskCradleEI20/build
+rm -f -r DeskCradleEI20/dist
 
 # DIALERTABACTIVITY.APK
 echo

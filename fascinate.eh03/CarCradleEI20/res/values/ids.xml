@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="cradle_main">false</item>
+    <item type="id" name="button_exit">false</item>
+    <item type="id" name="button_speaker">false</item>
+    <item type="id" name="button_mode">false</item>
+    <item type="id" name="button_navigator">false</item>
+    <item type="id" name="button_contacts">false</item>
+    <item type="id" name="button_maps">false</item>
+    <item type="id" name="button_voicesearch">false</item>
+    <item type="id" name="button_search">false</item>
+    <item type="id" name="night">false</item>
+    <item type="id" name="RelativeLayout01">false</item>
+    <item type="id" name="disclaimer_agreement">false</item>
+    <item type="id" name="disclaimer_checkbox">false</item>
+</resources>

@@ -68,10 +68,20 @@ CARCRADLE.APK
 - Modified Voice Search to use Google Voice Search instead of Bing
 - Modified Navigation to launch Google Maps instead of VZNavigator
 
+CARCRADLEEI20.APK
+=================
+
+- This is the Car Cradle from the ACG EI20 ROM; rename to CarCradle.apk if using it
+
 DESKCRADLE.APK
 ==============
 
 - Change voice search button to invoke Google Voice Search instead of Bing
+
+DESKCRADLEEI20.APK
+==================
+
+- This is the Desk Cradle from the ACG EI20 ROM; rename to DeskCradle.apk if using it
 
 DIALERTABACTIVITY.APK
 =====================

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Desk Cradle</string>
+    <string name="icon_alarm">Alarm</string>
+    <string name="icon_browser">Browser</string>
+    <string name="icon_voice_command">Voice command</string>
+    <string name="icon_daily_briefing">Daily briefing</string>
+    <string name="icon_music">Music</string>
+    <string name="icon_gallery">Gallery</string>
+    <string name="icon_voice_search">Voice Search</string>
+    <string name="not_found_activity">No Activity found</string>
+    <string name="setting_ok">OK</string>
+    <string name="setting_cancel">Cancel</string>
+    <string name="cradle_home_settings">Settings</string>
+    <string name="setting_wallpaper">Wallpaper</string>
+    <string name="setting_time_display">Time/Calendar display type</string>
+    <string name="setting_weather">AccuWeather</string>
+    <string name="weather_setting_selectcity">Select city</string>
+    <string name="weather_setting_refresh">Auto refresh</string>
+    <string name="weather_setting_unit">Unit</string>
+    <string name="weather_unit_f">°F</string>
+    <string name="weather_unit_c">°C</string>
+    <string name="weather_unit_c_full">Celsius</string>
+    <string name="weather_unit_f_full">Fahrenheit</string>
+    <string name="weather_no_selected_city">No cities selected in Daily briefing</string>
+    <string name="setting_wallpaper_title">Select wallpaper from</string>
+    <string name="setting_wallpaper_default">Default</string>
+    <string name="setting_wallpaper_album">Album</string>
+    <string name="setting_wallpaper_gallery">Wallpaper gallery</string>
+    <string name="setting_display_digital">Digital clock</string>
+    <string name="setting_display_analog">Analog clock</string>
+    <string name="setting_display_calendar">Calendar</string>
+    <string name="weather_refresh_every_hours">Every %d hours</string>
+    <string name="weather_refresh_3_hours">Every 3 hours</string>
+    <string name="weather_refresh_6_hours">Every 6 hours</string>
+    <string name="weather_refresh_12_hours">Every 12 hours</string>
+    <string name="weather_refresh_24_hours">Every 24 hours</string>
+    <string name="msg_please_wait">Please wait</string>
+    <string name="msg_loading_weather">Loading...</string>
+    <string name="setting_internal_speaker">Internal Speaker</string>
+    <string name="msg_internal_speaker">Internal Speaker mode in desk cradle</string>
+    <string name="wallpaper_instructions">Set wallpaper</string>
+    <string name="pick_wallpaper">Wallpaper gallery</string>
+    <string name="select_city">Select city</string>
+    <item type="string" name="APKTOOL_DUMMY_002a">false</item>
+</resources>
