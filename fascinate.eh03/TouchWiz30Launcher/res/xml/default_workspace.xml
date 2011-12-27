@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <favorites
   xmlns:launcher="http://schemas.android.com/apk/res/com.sec.android.app.twlauncher">
-	<favorite launcher:className="com.google.android.gm.ConversationListActivityGmail" launcher:packageName="com.google.android.gm" launcher:screen="2" launcher:x="0" launcher:y="2" />
-	<favorite launcher:className="com.google.android.apps.docs.app.MainProxyActivity" launcher:packageName="com.google.android.apps.docs" launcher:screen="2" launcher:x="1" launcher:y="2" />
-    	<favorite launcher:className="com.google.android.maps.MapsActivity" launcher:packageName="com.google.android.apps.maps" launcher:screen="2" launcher:x="2" launcher:y="2" />
-    	<favorite launcher:className="com.google.android.apps.translate.HomeActivity" launcher:packageName="com.google.android.apps.translate" launcher:screen="2" launcher:x="3" launcher:y="2" />
-	<favorite launcher:className="com.android.vending.AssetBrowserActivity" launcher:packageName="com.android.vending" launcher:screen="2" launcher:x="0" launcher:y="3" />
-	<favorite launcher:className="com.cooliris.media.Gallery" launcher:packageName="com.cooliris.media" launcher:screen="2" launcher:x="1" launcher:y="3" />
-	<favorite launcher:className="com.google.android.maps.driveabout.app.DestinationActivity" launcher:packageName="com.google.android.apps.maps" launcher:screen="2" launcher:x="2" launcher:y="3" />
-	<favorite launcher:className="com.google.android.maps.PlacesActivity" launcher:packageName="com.google.android.apps.maps" launcher:screen="2" launcher:x="3" launcher:y="3" />
 	<search launcher:screen="3" launcher:x="0" launcher:y="0" />
 	<favorite launcher:className="com.android.email.activity.Welcome" launcher:packageName="com.android.email" launcher:screen="3" launcher:x="0" launcher:y="3" />
     	<favorite launcher:className="com.android.browser.BrowserActivity" launcher:packageName="com.android.browser" launcher:screen="3" launcher:x="1" launcher:y="3" />
