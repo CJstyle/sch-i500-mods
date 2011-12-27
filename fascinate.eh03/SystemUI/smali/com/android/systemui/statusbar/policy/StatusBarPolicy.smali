@@ -1191,14 +1191,16 @@
     :goto_0
     aget v0, v3, v0
 
-    invoke-virtual {v1, v2, v0, v4}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;II)V
+    # djp952: don't display the LBS icon
+    #invoke-virtual {v1, v2, v0, v4}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;II)V
 
     .line 807
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mService:Landroid/app/StatusBarManager;
 
     const-string v1, "lbs"
 
-    invoke-virtual {v0, v1, v5}, Landroid/app/StatusBarManager;->setIconVisibility(Ljava/lang/String;Z)V
+    # djp952: don't display the LBS icon
+    #invoke-virtual {v0, v1, v5}, Landroid/app/StatusBarManager;->setIconVisibility(Ljava/lang/String;Z)V
 
     .line 810
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mService:Landroid/app/StatusBarManager;
@@ -2276,6 +2278,7 @@
 
     .prologue
     .line 2449
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5823,7 +5826,8 @@
 
     aget v4, v4, v1
 
-    invoke-virtual {v2, v3, v4, v5}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;II)V
+    # djp952: don't display the LBS icon
+    # invoke-virtual {v2, v3, v4, v5}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;II)V
 
     .line 2234
     const-string v2, "LBSsettings"
