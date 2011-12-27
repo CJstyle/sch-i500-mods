@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PATH=$PATH:/opt/android-sdk-linux_x86/tools/
+PATH=$PATH:/opt/android-sdk-linux/tools/
 
 rm -f -r ~/apktool
 
