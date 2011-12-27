@@ -15,8 +15,7 @@ FRAMEWORK-RES.APK
 - NOTE: Was decompiled with "apktool d --keep-broken-res"
 - Enable slow-blur effect from power button popup
 - Enable CRT screen off animation (nitsuj17)
-- Use EI20 edge glow PNGs
-- Use EI20 battery graphics
+- Use AOSP Gingerbread 2.3.5 battery graphics
 
 ANDROID.POLICY.JAR
 ==================
@@ -110,6 +109,7 @@ SYSTEMUI.APK
 
 - NOTE: Was decompiled with "apktool d -r" due to problem linking back to twframework-res.apk
 - Remove full battery notification
+- Remove LBS (location-based services) icon from the status bar
 
 TOUCHWIZ30LAUNCHER.APK
 ======================

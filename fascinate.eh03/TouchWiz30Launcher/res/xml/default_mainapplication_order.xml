@@ -11,6 +11,7 @@
     <mainapp launcher:className="com.sec.android.app.clockpackage.ClockPackage" launcher:packageName="com.sec.android.app.clockpackage" />
     <mainapp launcher:className="com.sec.android.widgetapp.infoalarm.activity.InfoAlarm" launcher:packageName="com.sec.android.widgetapp.infoalarm" />
     <mainapp launcher:className="com.sec.android.app.cradle.CradleMain" launcher:packageName="com.sec.android.app.cradle" />
+    <mainapp launcher:className="com.google.android.apps.docs.app.MainProxyActivity" launcher:packageName="com.google.android.apps.docs" />
     <mainapp launcher:className="com.android.providers.downloads.ui.DownloadsListTab" launcher:packageName="com.android.providers.downloads.ui" />
     <mainapp launcher:className="com.android.email.activity.Welcome" launcher:packageName="com.android.email" />
     <mainapp launcher:className="com.cooliris.media.Gallery" launcher:packageName="com.cooliris.media" />
@@ -32,6 +33,7 @@
     <mainapp launcher:className="com.noshufou.android.su.Su" launcher:packageName="com.noshufou.android.su" />
     <mainapp launcher:className="com.google.android.talk.SigningInActivity" launcher:packageName="com.google.android.talk" />
     <mainapp launcher:className="com.sec.android.app.controlpanel.activity.JobManagerActivity" launcher:packageName="com.sec.android.app.controlpanel" />
+    <mainapp launcher:className="com.google.android.apps.translate.HomeActivity" launcher:packageName="com.google.android.apps.translate" />
     <mainapp launcher:className="com.sec.android.app.videoplayer.activity.VideoList" launcher:packageName="com.sec.android.app.videoplayer" />
     <mainapp launcher:className="com.sec.android.app.voicerecorder.VoiceRecorder" launcher:packageName="com.sec.android.app.voicerecorder" />
     <mainapp launcher:className="com.google.android.voicesearch.RecognitionActivity" launcher:packageName="com.google.android.voicesearch" />

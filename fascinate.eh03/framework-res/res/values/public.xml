@@ -4065,6 +4065,20 @@
     <public type="drawable" name="APKTOOL_DUMMY_02ce" id="0x010802ce" />
     <public type="drawable" name="reboot" id="0x010803f1" />
     <public type="drawable" name="recovery" id="0x010803f2" />
+    <public type="drawable" name="stat_sys_battery_5" id="0x010803f3" />
+    <public type="drawable" name="stat_sys_battery_15" id="0x010803f4" />
+    <public type="drawable" name="stat_sys_battery_25" id="0x010803f5" />
+    <public type="drawable" name="stat_sys_battery_30" id="0x010803f6" />
+    <public type="drawable" name="stat_sys_battery_35" id="0x010803f7" />
+    <public type="drawable" name="stat_sys_battery_45" id="0x010803f8" />
+    <public type="drawable" name="stat_sys_battery_50" id="0x010803f9" />
+    <public type="drawable" name="stat_sys_battery_55" id="0x010803fa" />
+    <public type="drawable" name="stat_sys_battery_65" id="0x010803fb" />
+    <public type="drawable" name="stat_sys_battery_70" id="0x010803fc" />
+    <public type="drawable" name="stat_sys_battery_75" id="0x010803fd" />
+    <public type="drawable" name="stat_sys_battery_85" id="0x010803fe" />
+    <public type="drawable" name="stat_sys_battery_90" id="0x010803ff" />
+    <public type="drawable" name="stat_sys_battery_95" id="0x01080400" />
     <public type="layout" name="activity_list_item" id="0x01090000" />
     <public type="layout" name="expandable_list_content" id="0x01090001" />
     <public type="layout" name="preference_category" id="0x01090002" />

@@ -12,6 +12,8 @@ apktool b framework-res
 rm framework-res/dist/framework-res.apk
 cp stock-apks/framework-res.apk framework-res/dist/
 pushd framework-res/build/apk
+zip -u ../../dist/framework-res.apk res/drawable/stat_sys_battery.xml
+zip -u ../../dist/framework-res.apk res/drawable/stat_sys_battery_charge.xml
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/reboot.png
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/recovery.png
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/stat_sys_battery_*
