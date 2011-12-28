@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="pageindicator_showhide_enable">false</bool>
+    <bool name="menu_pageindicator_showhide_enable">false</bool>
+</resources>

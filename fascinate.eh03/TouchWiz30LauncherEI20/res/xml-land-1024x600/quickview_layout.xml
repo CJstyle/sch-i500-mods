@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quickviewlayout
+  xmlns:launcher="http://schemas.android.com/apk/res/com.sec.android.app.twlauncher">
+    <quickviewset launcher:count="2">
+        <quickview launcher:left="55" launcher:top="19" launcher:right="448" launcher:bottom="297" />
+        <quickview launcher:left="461" launcher:top="19" launcher:right="854" launcher:bottom="297" />
+    </quickviewset>
+    <quickviewset launcher:count="3">
+        <quickview launcher:left="55" launcher:top="19" launcher:right="448" launcher:bottom="297" />
+        <quickview launcher:left="461" launcher:top="19" launcher:right="854" launcher:bottom="297" />
+        <quickview launcher:left="55" launcher:top="309" launcher:right="448" launcher:bottom="587" />
+    </quickviewset>
+    <quickviewset launcher:count="4">
+        <quickview launcher:left="55" launcher:top="19" launcher:right="448" launcher:bottom="297" />
+        <quickview launcher:left="461" launcher:top="19" launcher:right="854" launcher:bottom="297" />
+        <quickview launcher:left="55" launcher:top="309" launcher:right="448" launcher:bottom="587" />
+        <quickview launcher:left="461" launcher:top="309" launcher:right="854" launcher:bottom="587" />
+    </quickviewset>
+    <quickviewset launcher:count="5">
+        <quickview launcher:left="49" launcher:top="12" launcher:right="317" launcher:bottom="206" />
+        <quickview launcher:left="322" launcher:top="12" launcher:right="590" launcher:bottom="206" />
+        <quickview launcher:left="595" launcher:top="12" launcher:right="863" launcher:bottom="206" />
+        <quickview launcher:left="49" launcher:top="206" launcher:right="317" launcher:bottom="400" />
+        <quickview launcher:left="322" launcher:top="206" launcher:right="590" launcher:bottom="400" />
+    </quickviewset>
+    <quickviewset launcher:count="6">
+        <quickview launcher:left="49" launcher:top="12" launcher:right="317" launcher:bottom="206" />
+        <quickview launcher:left="322" launcher:top="12" launcher:right="590" launcher:bottom="206" />
+        <quickview launcher:left="595" launcher:top="12" launcher:right="863" launcher:bottom="206" />
+        <quickview launcher:left="49" launcher:top="206" launcher:right="317" launcher:bottom="400" />
+        <quickview launcher:left="322" launcher:top="206" launcher:right="590" launcher:bottom="400" />
+        <quickview launcher:left="595" launcher:top="206" launcher:right="863" launcher:bottom="400" />
+    </quickviewset>
+    <quickviewset launcher:count="7">
+        <quickview launcher:left="49" launcher:top="12" launcher:right="317" launcher:bottom="206" />
+        <quickview launcher:left="322" launcher:top="12" launcher:right="590" launcher:bottom="206" />
+        <quickview launcher:left="595" launcher:top="12" launcher:right="863" launcher:bottom="206" />
+        <quickview launcher:left="49" launcher:top="206" launcher:right="317" launcher:bottom="400" />
+        <quickview launcher:left="322" launcher:top="206" launcher:right="590" launcher:bottom="400" />
+        <quickview launcher:left="595" launcher:top="206" launcher:right="863" launcher:bottom="400" />
+        <quickview launcher:left="49" launcher:top="400" launcher:right="317" launcher:bottom="594" />
+    </quickviewset>
+    <quickviewset launcher:count="8">
+        <quickview launcher:left="49" launcher:top="12" launcher:right="317" launcher:bottom="206" />
+        <quickview launcher:left="322" launcher:top="12" launcher:right="590" launcher:bottom="206" />
+        <quickview launcher:left="595" launcher:top="12" launcher:right="863" launcher:bottom="206" />
+        <quickview launcher:left="49" launcher:top="206" launcher:right="317" launcher:bottom="400" />
+        <quickview launcher:left="322" launcher:top="206" launcher:right="590" launcher:bottom="400" />
+        <quickview launcher:left="595" launcher:top="206" launcher:right="863" launcher:bottom="400" />
+        <quickview launcher:left="49" launcher:top="400" launcher:right="317" launcher:bottom="594" />
+        <quickview launcher:left="322" launcher:top="400" launcher:right="590" launcher:bottom="594" />
+    </quickviewset>
+    <quickviewset launcher:count="9">
+        <quickview launcher:left="49" launcher:top="12" launcher:right="317" launcher:bottom="206" />
+        <quickview launcher:left="322" launcher:top="12" launcher:right="590" launcher:bottom="206" />
+        <quickview launcher:left="595" launcher:top="12" launcher:right="863" launcher:bottom="206" />
+        <quickview launcher:left="49" launcher:top="206" launcher:right="317" launcher:bottom="400" />
+        <quickview launcher:left="322" launcher:top="206" launcher:right="590" launcher:bottom="400" />
+        <quickview launcher:left="595" launcher:top="206" launcher:right="863" launcher:bottom="400" />
+        <quickview launcher:left="49" launcher:top="400" launcher:right="317" launcher:bottom="594" />
+        <quickview launcher:left="322" launcher:top="400" launcher:right="590" launcher:bottom="594" />
+        <quickview launcher:left="595" launcher:top="400" launcher:right="863" launcher:bottom="594" />
+    </quickviewset>
+</quickviewlayout>

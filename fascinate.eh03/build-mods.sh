@@ -270,3 +270,18 @@ zipalign -f 4 TouchWiz30Launcher/dist/TouchWiz30Launcher.apk ./TouchWiz30Launche
 rm -f -r TouchWiz30Launcher/build
 rm -f -r TouchWiz30Launcher/dist
 
+# TOUCHWIZ30LAUNCHEREI20.APK
+echo
+echo TOUCHWIZ30LAUNCHEREI20.APK
+echo
+apktool b TouchWiz30LauncherEI20
+rm TouchWiz30LauncherEI20/dist/TouchWiz30LauncherEI20.apk
+cp stock-apks/TouchWiz30LauncherEI20.apk TouchWiz30LauncherEI20/dist/
+pushd TouchWiz30LauncherEI20/build/apk
+zip -u ../../dist/TouchWiz30LauncherEI20.apk classes.dex
+zip -u ../../dist/TouchWiz30LauncherEI20.apk res/xml/default_workspace.xml
+popd
+zipalign -f 4 TouchWiz30LauncherEI20/dist/TouchWiz30LauncherEI20.apk ./TouchWiz30LauncherEI20.apk
+rm -f -r TouchWiz30LauncherEI20/build
+rm -f -r TouchWiz30LauncherEI20/dist
+
