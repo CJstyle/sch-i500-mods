@@ -17,6 +17,14 @@ FRAMEWORK-RES.APK
 - Enable CRT screen off animation (nitsuj17)
 - Use AOSP Gingerbread 2.3.5 battery graphics
 
+FRAMEWORK-RES-STOCKBATTERYMETER.APK
+===================================
+
+- NOTE: Was decompiled with "apktool d --keep-broken-res"
+- Enable slow-blur effect from power button popup
+- Enable CRT screen off animation (nitsuj17)
+- Use Stock EH03 (Froyo) battery meter and graphics
+
 ANDROID.POLICY.JAR
 ==================
 

@@ -54,6 +54,22 @@ zipalign -f 4 framework.jar.out/dist/framework.jar ./framework.jar
 rm -f -r framework.jar.out/build
 rm -f -r framework.jar.out/dist
 
+# FRAMEWORK-RES-STOCKBATTERYMETER.APK
+echo
+echo FRAMEWORK-RES-STOCKBATTERYMETER.APK
+echo
+apktool b framework-res-stockbatterymeter
+rm framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk
+cp stock-apks/framework-res.apk framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk
+pushd framework-res-stockbatterymeter/build/apk
+zip -u ../../dist/framework-res-stockbatterymeter.apk res/drawable-hdpi/reboot.png
+zip -u ../../dist/framework-res-stockbatterymeter.apk res/drawable-hdpi/recovery.png
+zip -u ../../dist/framework-res-stockbatterymeter.apk resources.arsc
+popd
+zipalign -f 4 framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk ./framework-res-stockbatterymeter.apk
+rm -f -r framework-res-stockbatterymeter/build
+rm -f -r framework-res-stockbatterymeter/dist
+
 # SERVICES.JAR
 echo
 echo SERVICES.JAR
