@@ -54,6 +54,25 @@ zipalign -f 4 framework.jar.out/dist/framework.jar ./framework.jar
 rm -f -r framework.jar.out/build
 rm -f -r framework.jar.out/dist
 
+# FRAMEWORK-RES-SBRISSENMETER.APK
+echo
+echo FRAMEWORK-RES-SBRISSENMETER.APK
+echo
+apktool b framework-res-sbrissenmeter
+rm framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk
+cp stock-apks/framework-res.apk framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk
+pushd framework-res-sbrissenmeter/build/apk
+zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable/stat_sys_battery.xml
+zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable/stat_sys_battery_charge.xml
+zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/reboot.png
+zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/recovery.png
+zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/stat_sys_battery_*
+zip -u ../../dist/framework-res-sbrissenmeter.apk resources.arsc
+popd
+zipalign -f 4 framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk ./framework-res-sbrissenmeter.apk
+rm -f -r framework-res-sbrissenmeter/build
+rm -f -r framework-res-sbrissenmeter/dist
+
 # FRAMEWORK-RES-STOCKBATTERYMETER.APK
 echo
 echo FRAMEWORK-RES-STOCKBATTERYMETER.APK
