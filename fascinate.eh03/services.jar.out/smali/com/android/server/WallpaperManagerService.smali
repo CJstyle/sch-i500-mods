@@ -1223,11 +1223,11 @@
     if-nez p1, :cond_4
 
     .line 531
-    const-string v12, "com.android.wallpaper/.nexus.NexusWallpaper"
+    move-object/from16 v0, p0
 
-    invoke-static {v12}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
+    iget-object v0, v0, Lcom/android/server/WallpaperManagerService;->mImageWallpaperComponent:Landroid/content/ComponentName;
 
-    move-result-object p1
+    move-object/from16 p1, v0
 
     .line 537
     .end local v3           #defaultComponent:Ljava/lang/String;
