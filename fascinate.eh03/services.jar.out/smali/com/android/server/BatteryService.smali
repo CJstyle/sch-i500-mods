@@ -1221,6 +1221,9 @@
 
     move-result v5
 
+    # djp952: skip the audio/vibrate notification to better support the GeeWiz kernel auto-recharge function
+    goto :goto_1
+
     .line 262
     if-ne v5, v11, :cond_4
 

@@ -46,6 +46,28 @@
     <public type="drawable" name="APKTOOL_DUMMY_002b" id="0x7f02002b" />
     <public type="drawable" name="wallpaper_crazyness" id="0x7f02002c" />
     <public type="drawable" name="wallpaper_crazyness_small" id="0x7f02002d" />
+    <public type="drawable" name="wallpaper_bluecrystal" id="0x7f02002e" />
+    <public type="drawable" name="wallpaper_bluecrystal_small" id="0x7f02002f" />
+    <public type="drawable" name="wallpaper_bridges" id="0x7f020030" />
+    <public type="drawable" name="wallpaper_bridges_small" id="0x7f020031" />
+    <public type="drawable" name="wallpaper_bonneville" id="0x7f020032" />
+    <public type="drawable" name="wallpaper_bonneville_small" id="0x7f020033" />
+    <public type="drawable" name="wallpaper_fragile" id="0x7f020034" />
+    <public type="drawable" name="wallpaper_fragile_small" id="0x7f020035" />
+    <public type="drawable" name="wallpaper_goodmorning" id="0x7f020036" />
+    <public type="drawable" name="wallpaper_goodmorning_small" id="0x7f020037" />
+    <public type="drawable" name="wallpaper_icefence" id="0x7f020038" />
+    <public type="drawable" name="wallpaper_icefence_small" id="0x7f020039" />
+    <public type="drawable" name="wallpaper_nature" id="0x7f02003a" />
+    <public type="drawable" name="wallpaper_nature_small" id="0x7f02003b" />
+    <public type="drawable" name="wallpaper_purplerocks" id="0x7f02003c" />
+    <public type="drawable" name="wallpaper_purplerocks_small" id="0x7f02003d" />
+    <public type="drawable" name="wallpaper_rb" id="0x7f02003e" />
+    <public type="drawable" name="wallpaper_rb_small" id="0x7f02003f" />
+    <public type="drawable" name="wallpaper_tracks" id="0x7f020040" />
+    <public type="drawable" name="wallpaper_tracks_small" id="0x7f020041" />
+    <public type="drawable" name="wallpaper_tunnel" id="0x7f020042" />
+    <public type="drawable" name="wallpaper_tunnel_small" id="0x7f020043" />
     <public type="layout" name="wallpaper_chooser" id="0x7f030000" />
     <public type="layout" name="wallpaper_item" id="0x7f030001" />
     <public type="array" name="extra_wallpapers" id="0x7f040000" />
