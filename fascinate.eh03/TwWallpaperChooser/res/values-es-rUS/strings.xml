@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wallpaper_instructions">Definir papel tapiz</string>
+    <string name="pick_wallpaper">Galería de papel tapiz</string>
+</resources>

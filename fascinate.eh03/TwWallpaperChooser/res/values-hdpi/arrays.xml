@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wallpapers">
+	<item>wallpaper_crazyness</item>
+        <item>wallpaper_galaxys</item>
+        <item>wallpaper_purple</item>
+        <item>wallpaper_bridge</item>
+        <item>wallpaper_desert</item>
+        <item>wallpaper_dolphins</item>
+        <item>wallpaper_earth</item>
+        <item>wallpaper_flowingdessert</item>
+        <item>wallpaper_seashore</item>
+        <item>wallpaper_space</item>
+        <item>wallpaper_sunset</item>
+    </string-array>
+</resources>

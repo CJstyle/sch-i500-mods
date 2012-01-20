@@ -320,3 +320,18 @@ zipalign -f 4 TouchWiz30LauncherEI20/dist/TouchWiz30LauncherEI20.apk ./TouchWiz3
 rm -f -r TouchWiz30LauncherEI20/build
 rm -f -r TouchWiz30LauncherEI20/dist
 
+# TWWALLPAPERCHOOSER.APK
+echo
+echo TWWALLPAPERCHOOSER.APK
+echo
+apktool b TwWallpaperChooser
+rm TwWallpaperChooser/dist/TwWallpaperChooser.apk
+cp stock-apks/TwWallpaperChooser.apk TwWallpaperChooser/dist/
+pushd TwWallpaperChooser/build/apk
+zip -u ../../dist/TwWallpaperChooser.apk resources.arsc
+zip -u ../../dist/TwWallpaperChooser.apk res/drawable-hdpi/*.jpg
+popd
+zipalign -f 4 TwWallpaperChooser/dist/TwWallpaperChooser.apk ./TwWallpaperChooser.apk
+rm -f -r TwWallpaperChooser/build
+rm -f -r TwWallpaperChooser/dist
+
