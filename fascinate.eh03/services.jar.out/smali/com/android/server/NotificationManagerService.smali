@@ -756,9 +756,9 @@
     if-eqz p1, :cond_0
 
     #     Slog.i(TAG, "djp952: Clearing mLights and setting mLedNotification to NULL due to screen-on event");
-    const-string v0, "NotificationService"
-    const-string v1, "djp952: Clearing mLights and setting mLedNotification to NULL due to screen-on event"
-    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    # const-string v0, "NotificationService"
+    # const-string v1, "djp952: Clearing mLights and setting mLedNotification to NULL due to screen-on event"
+    # invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     #     mLights.clear();
     iget-object v0, p0, Lcom/android/server/NotificationManagerService;->mLights:Ljava/util/ArrayList;
