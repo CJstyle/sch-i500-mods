@@ -1263,7 +1263,7 @@
     .line 1260
     const-string v1, "usb_setting_mode"
 
-    const/4 v2, 0x2
+    const/4 v2, 0x4		# djp952: was 0x2 [UMS], 0x4 is [ASKON]
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

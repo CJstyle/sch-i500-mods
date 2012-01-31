@@ -270,6 +270,7 @@ apktool b SettingsProvider
 rm SettingsProvider/dist/SettingsProvider.apk
 cp stock-apks/SettingsProvider.apk SettingsProvider/dist/
 pushd SettingsProvider/build/apk
+zip -u ../../dist/SettingsProvider.apk classes.dex
 zip -u ../../dist/SettingsProvider.apk resources.arsc
 popd
 zipalign -f 4 SettingsProvider/dist/SettingsProvider.apk ./SettingsProvider.apk

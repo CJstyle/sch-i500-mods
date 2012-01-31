@@ -119,6 +119,7 @@ SETTINGSPROVIDER.APK
 ====================
 
 - Change default transition animation speed to 50% (Fast/0.5)
+- Change default USB mode to "Ask on connection" (4)
 
 SYSTEMUI.APK
 ============
