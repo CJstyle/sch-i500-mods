@@ -272,6 +272,7 @@ cp stock-apks/Settings.apk Settings/dist/
 pushd Settings/build/apk
 zip -u ../../dist/Settings.apk classes.dex
 zip -u ../../dist/Settings.apk resources.arsc
+zip -u ../../dist/Settings.apk res/xml/device_info_settings.xml
 popd
 zipalign -f 4 Settings/dist/Settings.apk ./Settings.apk
 rm -f -r Settings/build

@@ -223,35 +223,37 @@
 
     .line 265
     :cond_1
-    sget-object v6, Landroid/os/Build;->TYPE:Ljava/lang/String;
-
-    const-string v7, "user"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    .line 266
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const/4 v7, 0x1
-
-    invoke-virtual {v2, v7}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    goto :goto_0
-
-    .line 268
-    :cond_2
+# djp952: allow full kernel version to show in settings
+#
+#    sget-object v6, Landroid/os/Build;->TYPE:Ljava/lang/String;
+#
+#    const-string v7, "user"
+#
+#    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+#
+#    move-result v6
+#
+#    if-eqz v6, :cond_2
+#
+#    .line 266
+#    new-instance v6, Ljava/lang/StringBuilder;
+#
+#    const/4 v7, 0x1
+#
+#    invoke-virtual {v2, v7}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+#
+#    move-result-object v7
+#
+#    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+#
+#    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+#
+#    move-result-object v6
+#
+#    goto :goto_0
+#
+#    .line 268
+#    :cond_2
     new-instance v6, Ljava/lang/StringBuilder;
 
     const/4 v7, 0x1
@@ -747,6 +749,11 @@
     move-result-object v10
 
     invoke-virtual {v9, v10}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+
+    # djp952: Add ro.modversion
+    const-string v9, "mod_version"
+    const-string v10, "ro.modversion"
+    invoke-direct {p0, v9, v10}, Lcom/android/settings/DeviceInfoSettings;->setValueSummary(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 106
     const-string v9, "ril.hw_ver"

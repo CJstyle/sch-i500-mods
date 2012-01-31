@@ -1790,4 +1790,6 @@ Do you still want to connect?"</string>
     <string name="bluetooth_notif_sap_title">Remote SIM mode</string>
     <string name="bluetooth_notif_sap_message">Bluetooth is connected with %1$s</string>
     <string name="bluetooth_dialog_sap_deactivate">Deactivate Remote SIM mode?</string>
+    <string name="mod_version">ROM version</string>
+    <string name="mod_version_default">Unknown</string>
 </resources>

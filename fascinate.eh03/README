@@ -115,6 +115,11 @@ MUSICPLAYER.APK
 - Localize some strings for US English
 - Remove "Download from V cast?" prompt when no media exists
 
+SETTINGS.APK
+============
+
+- Show full kernel version and mod/ROM version in About Phone (s0niqu3)
+
 SETTINGSPROVIDER.APK
 ====================
 
