@@ -262,6 +262,21 @@ zipalign -f 4 MusicPlayer/dist/MusicPlayer.apk ./MusicPlayer.apk
 rm -f -r MusicPlayer/build
 rm -f -r MusicPlayer/dist
 
+# SETTINGS.APK
+echo
+echo SETTINGS.APK
+echo
+apktool b Settings
+rm Settings/dist/Settings.apk
+cp stock-apks/Settings.apk Settings/dist/
+pushd Settings/build/apk
+zip -u ../../dist/Settings.apk classes.dex
+zip -u ../../dist/Settings.apk resources.arsc
+popd
+zipalign -f 4 Settings/dist/Settings.apk ./Settings.apk
+rm -f -r Settings/build
+rm -f -r Settings/dist
+
 # SETTINGSPROVIDER.APK
 echo
 echo SETTINGSPROVIDER.APK
