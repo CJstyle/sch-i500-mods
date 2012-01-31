@@ -738,13 +738,40 @@
 .end method
 
 .method static synthetic access$1702(Lcom/android/server/NotificationManagerService;Z)Z
-    .locals 0
+    .locals 2
     .parameter "x0"
     .parameter "x1"
 
     .prologue
     .line 82
     iput-boolean p1, p0, Lcom/android/server/NotificationManagerService;->mScreenOn:Z
+
+    # # # # # # # # # # # # #
+
+    # djp952: Clear the lights and set mLedNotification to NULL when the screen is on, this should prevent the
+    # problem where the status bar panel must be dropped-down to reset the notification LED.  This is undoubtedly
+    # an improper use of this access$XXXX function, but code is code, right?
+
+    # if(mScreenOn == true) {
+    if-eqz p1, :cond_0
+
+    #     Slog.i(TAG, "djp952: Clearing mLights and setting mLedNotification to NULL due to screen-on event");
+    const-string v0, "NotificationService"
+    const-string v1, "djp952: Clearing mLights and setting mLedNotification to NULL due to screen-on event"
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    #     mLights.clear();
+    iget-object v0, p0, Lcom/android/server/NotificationManagerService;->mLights:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    #     mLedNotification = null;
+    const/4 v1, 0x0
+    iput-object v1, p0, Lcom/android/server/NotificationManagerService;->mLedNotification:Lcom/android/server/NotificationManagerService$NotificationRecord;
+
+    # }
+    :cond_0
+
+    # # # # # # # # # # # # #
 
     return p1
 .end method
