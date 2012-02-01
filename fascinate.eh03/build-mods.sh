@@ -17,6 +17,7 @@ zip -u ../../dist/framework-res.apk res/drawable/stat_sys_battery_charge.xml
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/reboot.png
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/recovery.png
 zip -u ../../dist/framework-res.apk res/drawable-hdpi/stat_sys_battery_*
+zip -u ../../dist/framework-res.apk res/layout/preference_information.xml
 zip -u ../../dist/framework-res.apk resources.arsc
 popd
 zipalign -f 4 framework-res/dist/framework-res.apk ./framework-res.apk
@@ -67,6 +68,7 @@ zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable/stat_sys_battery_
 zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/reboot.png
 zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/recovery.png
 zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/stat_sys_battery_*
+zip -u ../../dist/framework-res-sbrissenmeter.apk res/layout/preference_information.xml
 zip -u ../../dist/framework-res-sbrissenmeter.apk resources.arsc
 popd
 zipalign -f 4 framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk ./framework-res-sbrissenmeter.apk
@@ -83,6 +85,7 @@ cp stock-apks/framework-res.apk framework-res-stockbatterymeter/dist/framework-r
 pushd framework-res-stockbatterymeter/build/apk
 zip -u ../../dist/framework-res-stockbatterymeter.apk res/drawable-hdpi/reboot.png
 zip -u ../../dist/framework-res-stockbatterymeter.apk res/drawable-hdpi/recovery.png
+zip -u ../../dist/framework-res-stockbatterymeter.apk res/layout/preference_information.xml
 zip -u ../../dist/framework-res-stockbatterymeter.apk resources.arsc
 popd
 zipalign -f 4 framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk ./framework-res-stockbatterymeter.apk
