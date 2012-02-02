@@ -8,4 +8,5 @@
     <integer name="def_lockscreen_sounds_enabled">0</integer>
     <integer name="def_tv_out">1</integer>
     <integer name="def_tv_system">2</integer>
+    <integer name="def_charge_tone_enabled">0</integer>
 </resources>

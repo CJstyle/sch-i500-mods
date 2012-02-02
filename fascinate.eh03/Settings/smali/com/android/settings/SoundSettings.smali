@@ -31,6 +31,8 @@
 
 .field private mVibrationIntensity:Lcom/android/settings/VibrationFeedbackPreference;
 
+# djp952: charge_tone --> mChargeTone
+.field private mChargeTone:Landroid/preference/CheckBoxPreference;
 
 # direct methods
 .method public constructor <init>()V
@@ -728,6 +730,35 @@
     :goto_4
     invoke-virtual {v4, v5}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
+    # djp952: mChargeTone initialization
+    # 
+    # v6 = Constant 0 / False
+    # v7 = Constant 1 / True
+    #
+    # The logic at the end of this seems unnecessary, but I wanted to match what the existing
+    # code was doing.  You should be able to just pass v5 into setChecked(), but this works too
+
+    const-string v4, "charge_tone"
+    invoke-virtual {p0, v4}, Lcom/android/settings/SoundSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    move-result-object v4
+    check-cast v4, Landroid/preference/CheckBoxPreference;
+    iput-object v4, p0, Lcom/android/settings/SoundSettings;->mChargeTone:Landroid/preference/CheckBoxPreference;
+    iget-object v4, p0, Lcom/android/settings/SoundSettings;->mChargeTone:Landroid/preference/CheckBoxPreference;
+    invoke-virtual {v4, v6}, Landroid/preference/CheckBoxPreference;->setPersistent(Z)V
+    iget-object v4, p0, Lcom/android/settings/SoundSettings;->mChargeTone:Landroid/preference/CheckBoxPreference;
+    const-string v5, "charge_tone_enabled"
+    invoke-static {v2, v5, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result v5
+    if-eqz v5, :cond_9
+    move v5, v7
+    goto :goto_7
+    :cond_9
+    move v5, v6
+    :goto_7
+    invoke-virtual {v4, v5}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+
+    # end: mChargeTone initialization
+
     .line 149
     if-ne v9, v0, :cond_1
 
@@ -1225,7 +1256,7 @@
     :cond_b
     iget-object v2, p0, Lcom/android/settings/SoundSettings;->mLockSounds:Landroid/preference/CheckBoxPreference;
 
-    if-ne p2, v2, :cond_d
+    if-ne p2, v2, :cond_f	# djp952: was :cond_d
 
     .line 326
     invoke-virtual {p0}, Lcom/android/settings/SoundSettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -1253,6 +1284,31 @@
     move v4, v6
 
     goto :goto_8
+
+    # djp952: Set charge_tone_enabled from mChargeTone
+    #
+    # v6 = Constant 0 / False
+    # v5 = Constant 1 / True
+    
+    :cond_f
+    iget-object v2, p0, Lcom/android/settings/SoundSettings;->mChargeTone:Landroid/preference/CheckBoxPreference;
+    if-ne p2, v2, :cond_d
+    invoke-virtual {p0}, Lcom/android/settings/SoundSettings;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v2
+    const-string v3, "charge_tone_enabled"
+    iget-object v4, p0, Lcom/android/settings/SoundSettings;->mChargeTone:Landroid/preference/CheckBoxPreference;
+    invoke-virtual {v4}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    move-result v4
+    if-eqz v4, :cond_10
+    move v4, v5
+    :goto_a
+    invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    goto/16 :goto_3
+    :cond_10
+    move v4, v6
+    goto :goto_a
+
+    # end: djp952: Set charge_tone_enabled from mChargeTone
 
     .line 329
     :cond_d

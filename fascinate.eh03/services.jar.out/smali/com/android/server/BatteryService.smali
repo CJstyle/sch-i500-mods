@@ -1054,7 +1054,7 @@
 .end method
 
 .method private final notifyPlugCharger()V
-    .locals 12
+    .locals 13	# djp952: was 12, added new v12
 
     .prologue
     const/4 v11, 0x2
@@ -1196,6 +1196,19 @@
     :cond_3
     if-eqz v2, :cond_0
 
+    # djp952: skip the tone/vibrate event if charge_tone is false
+ 
+    const/4 v12, 0x0
+    iget-object v7, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
+    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v0
+    const-string v8, "charge_tone_enabled"
+    invoke-static {v0, v8, v12}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result v0
+    if-eqz v0, :goto_1
+
+    # end: djp952: skip the tone/vibrate event if charge_tone is false
+
     .line 254
     const v1, 0x108001e
 
@@ -1220,9 +1233,6 @@
     invoke-virtual {v6}, Landroid/media/AudioManager;->getRingerMode()I
 
     move-result v5
-
-    # djp952: skip the audio/vibrate notification to better support the GeeWiz kernel auto-recharge function
-    goto :goto_1
 
     .line 262
     if-ne v5, v11, :cond_4

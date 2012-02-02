@@ -1792,4 +1792,7 @@ Do you still want to connect?"</string>
     <string name="bluetooth_dialog_sap_deactivate">Deactivate Remote SIM mode?</string>
     <string name="mod_version">ROM version</string>
     <string name="mod_version_default">Unknown</string>
+    <string name="charge_tone_enable_title">Charger activation</string>
+    <string name="charge_tone_enable_summary_on">Play sound when battery charger is activated</string>
+    <string name="charge_tone_enable_summary_off">Play sound when battery charger is activated</string>
 </resources>

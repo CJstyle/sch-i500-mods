@@ -1879,6 +1879,11 @@
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    # djp952: charge_tone_enabled --> 0x7f050008
+    const-string v0, "charge_tone_enabled"
+    const v1, 0x7f050008
+    invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
+
     .line 1180
     const-string v0, "lock_sound"
 

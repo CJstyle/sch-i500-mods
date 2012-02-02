@@ -46,12 +46,14 @@ FRAMEWORK.JAR
 =============
 
 - Modified for addition of Reboot and Recovery power menu options
+- Modified to add Settings/Sound/Charge Activation boolean option
 
 SERVICES.JAR
 ============
 
 - Changed default LiveWallpaper to com.android.wallpaper/.nexus.NexusWallpaper
 - Increase default transition animation speed to 50% (Fast/0.5)
+- Modified to add Settings/Sound/Charge Activation boolean option
 
 AXT9IME.APK
 ===========
@@ -122,12 +124,14 @@ SETTINGS.APK
 ============
 
 - Show full kernel version and mod/ROM version in About Phone (s0niqu3)
+- Modified to add Settings/Sound/Charge Activation boolean option
 
 SETTINGSPROVIDER.APK
 ====================
 
 - Change default transition animation speed to 50% (Fast/0.5)
 - Change default USB mode to "Ask on connection" (4)
+- Modified to add Settings/Sound/Charge Activation boolean option
 
 SYSTEMUI.APK
 ============

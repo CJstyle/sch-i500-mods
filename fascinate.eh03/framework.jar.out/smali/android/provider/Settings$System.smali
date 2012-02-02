@@ -580,6 +580,8 @@
 
 .field private static sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
+# djp952: CHARGE_TONE_ENABLED
+.field public static final CHARGE_TONE_ENABLED:Ljava/lang/String; = "charge_tone_enabled"
 
 # direct methods
 .method static constructor <clinit>()V
@@ -1148,7 +1150,7 @@
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
     .line 2093
-    const/16 v0, 0x60
+    const/16 v0, 0x61		# djp952: was 0x60, adding 1 new property
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -1716,6 +1718,11 @@
 
     const-string/jumbo v2, "sip_receive_calls"
 
+    aput-object v2, v0, v1
+
+    # djp952: charge_tone_enabled
+    const/16 v1, 0x60
+    const-string/jumbo v2, "charge_tone_enabled"
     aput-object v2, v0, v1
 
     sput-object v0, Landroid/provider/Settings$System;->SETTINGS_TO_BACKUP:[Ljava/lang/String;
