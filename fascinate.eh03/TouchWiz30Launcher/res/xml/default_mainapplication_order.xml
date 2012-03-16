@@ -38,9 +38,6 @@
     <mainapp launcher:className="com.sec.android.app.voicerecorder.VoiceRecorder" launcher:packageName="com.sec.android.app.voicerecorder" />
     <mainapp launcher:className="com.google.android.voicesearch.RecognitionActivity" launcher:packageName="com.google.android.voicesearch" />
     <mainapp launcher:className="com.google.android.youtube.app.froyo.phone.HomeActivity" launcher:packageName="com.google.android.youtube" />
-
-com.google.android.youtube/.app.froyo.phone.HomeActivity
-
 </mainapps>
 
 
