@@ -42,7 +42,7 @@
     .parameter
 
     .prologue
-    .line 629
+    .line 640
     iput-object p1, p0, Lcom/android/browser/BrowserSettings$2;->this$0:Lcom/android/browser/BrowserSettings;
 
     iput-object p2, p0, Lcom/android/browser/BrowserSettings$2;->val$screen:Landroid/preference/PreferenceScreen;
@@ -59,7 +59,7 @@
     .parameter "x0"
 
     .prologue
-    .line 629
+    .line 640
     check-cast p1, Ljava/util/Set;
 
     .end local p1
@@ -82,7 +82,7 @@
     .end annotation
 
     .prologue
-    .line 631
+    .line 642
     .local p1, geolocationOrigins:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     if-eqz p1, :cond_0
 
@@ -92,14 +92,14 @@
 
     if-nez v0, :cond_0
 
-    .line 632
+    .line 643
     iget-object v0, p0, Lcom/android/browser/BrowserSettings$2;->val$screen:Landroid/preference/PreferenceScreen;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
 
-    .line 634
+    .line 645
     :cond_0
     return-void
 .end method

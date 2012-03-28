@@ -138,7 +138,7 @@
     .line 86
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mDragItemDestinationPosition:I
 
-    .line 97
+    .line 96
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mDropGranted:Z
@@ -358,7 +358,7 @@
     .line 554
     iget v7, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mDragItemRectHeight:I
 
-    iget v8, p0, Lcom/nemustech/tiffany/widget/TFListView;->mDividerHeight:I
+    iget v8, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mDividerHeight:I
 
     add-int v1, v7, v8
 
@@ -384,7 +384,7 @@
 
     .line 560
     .local v4, t:Lcom/nemustech/tiffany/widget/TFAnimatedListView$TranslateItemAnimation;
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v7, v3}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->getItemAnimation(I)Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimation;
 
@@ -429,7 +429,7 @@
 
     .line 570
     :goto_1
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v7, v3, v4}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->putItemAnimation(ILcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimation;)V
 
@@ -479,7 +479,7 @@
 
     .line 575
     .restart local v4       #t:Lcom/nemustech/tiffany/widget/TFAnimatedListView$TranslateItemAnimation;
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v7, v3}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->getItemAnimation(I)Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimation;
 
@@ -522,7 +522,7 @@
 
     .line 585
     :goto_3
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v7, v3, v4}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->putItemAnimation(ILcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimation;)V
 
@@ -864,9 +864,9 @@
 
     .line 539
     .local v4, yPosAdjust:I
-    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
-    iget v6, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
+    iget v6, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mFirstPosition:I
 
     add-int/2addr v6, v1
 
@@ -903,7 +903,7 @@
     if-gt p1, v5, :cond_1
 
     .line 545
-    iget v5, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
+    iget v5, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mFirstPosition:I
 
     add-int/2addr v5, v1
 
@@ -927,7 +927,7 @@
     .end local v3           #v:Landroid/view/View;
     .end local v4           #yPosAdjust:I
     :cond_2
-    iget v5, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
+    iget v5, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mFirstPosition:I
 
     add-int/2addr v5, v0
 
@@ -1545,7 +1545,7 @@
     .line 179
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mDragItemOriginalPosition:I
 
-    iget v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
+    iget v2, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mFirstPosition:I
 
     sub-int/2addr v1, v2
 
@@ -1592,15 +1592,15 @@
 
     if-nez v2, :cond_2
 
-    iget-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
+    iget-boolean v2, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mDataChanged:Z
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v2}, Landroid/widget/ListAdapter;->hasStableIds()Z
 
@@ -1666,7 +1666,7 @@
     iput-boolean v7, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mDndMode:Z
 
     .line 975
-    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v2, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v2}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->removeAll()V
 
@@ -2166,7 +2166,7 @@
     invoke-virtual {p2, v7}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
     .line 877
-    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v7, v6}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->getItemAnimation(I)Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimation;
 
@@ -2408,7 +2408,7 @@
     invoke-direct {p0, v5, v8}, Lcom/nemustech/tiffany/widget/TFDndListView;->adjustItemsYPosOffset(II)V
 
     .line 653
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v8}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->start()V
 
@@ -2567,7 +2567,7 @@
     .line 710
     .end local v2           #dropGranted:Z
     :cond_b
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v8}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->removeAll()V
 
@@ -2647,7 +2647,7 @@
     .end local v1           #actuallyMoved:Z
     .end local v2           #dropGranted:Z
     :cond_f
-    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v8, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v8}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->removeAll()V
 
@@ -2773,7 +2773,7 @@
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFDndListView$DragGrabHandleAnimator;->hide()V
 
     .line 268
-    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->removeAll()V
 

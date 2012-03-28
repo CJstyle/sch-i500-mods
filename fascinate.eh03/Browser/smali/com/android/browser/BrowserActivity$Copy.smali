@@ -30,15 +30,15 @@
     .parameter "toCopy"
 
     .prologue
-    .line 2944
+    .line 2955
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$Copy;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2945
+    .line 2956
     iput-object p2, p0, Lcom/android/browser/BrowserActivity$Copy;->mText:Ljava/lang/CharSequence;
 
-    .line 2946
+    .line 2957
     return-void
 .end method
 
@@ -49,14 +49,14 @@
     .parameter "item"
 
     .prologue
-    .line 2940
+    .line 2951
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$Copy;->this$0:Lcom/android/browser/BrowserActivity;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$Copy;->mText:Ljava/lang/CharSequence;
 
     invoke-static {v0, v1}, Lcom/android/browser/BrowserActivity;->access$800(Lcom/android/browser/BrowserActivity;Ljava/lang/CharSequence;)V
 
-    .line 2941
+    .line 2952
     const/4 v0, 0x1
 
     return v0

@@ -1,11 +1,14 @@
 .class Lcom/sec/android/app/twlauncher/Launcher$8;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "Launcher.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/sec/android/app/twlauncher/Launcher;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/sec/android/app/twlauncher/Launcher;->closeQuickViewWorkspace()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,124 +20,44 @@
 # instance fields
 .field final synthetic this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+.field final synthetic val$newScreen:I
+
 
 # direct methods
-.method constructor <init>(Lcom/sec/android/app/twlauncher/Launcher;)V
+.method constructor <init>(Lcom/sec/android/app/twlauncher/Launcher;I)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 3892
+    .line 3302
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput p2, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->val$newScreen:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 9
-    .parameter "context"
-    .parameter "intent"
+.method public run()V
+    .locals 2
 
     .prologue
-    const/16 v8, 0xa
+    .line 3304
+    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    const/4 v7, 0x3
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mWorkspace:Lcom/sec/android/app/twlauncher/Workspace;
+    invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$1100(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/Workspace;
 
-    const/4 v6, 0x1
+    move-result-object v0
 
-    const/4 v5, 0x0
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->val$newScreen:I
 
-    .line 3896
-    iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->resumeScreen(I)V
 
-    const-string v4, "power"
-
-    invoke-virtual {v3, v4}, Lcom/sec/android/app/twlauncher/Launcher;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/os/PowerManager;
-
-    .line 3897
-    .local v1, pm:Landroid/os/PowerManager;
-    if-eqz v1, :cond_0
-
-    .line 3898
-    const-string v3, "Headset"
-
-    invoke-virtual {v1, v6, v3}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v2
-
-    .line 3899
-    .local v2, wl:Landroid/os/PowerManager$WakeLock;
-    if-eqz v2, :cond_0
-
-    const-wide/16 v3, 0x1388
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
-
-    .line 3901
-    .end local v2           #wl:Landroid/os/PowerManager$WakeLock;
-    :cond_0
-    iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$2900(Lcom/sec/android/app/twlauncher/Launcher;)Landroid/media/AudioManager;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_1
-
-    .line 3902
-    iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$2900(Lcom/sec/android/app/twlauncher/Launcher;)Landroid/media/AudioManager;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v7}, Landroid/media/AudioManager;->getStreamVolume(I)I
-
-    move-result v0
-
-    .line 3903
-    .local v0, curVolume:I
-    iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$2900(Lcom/sec/android/app/twlauncher/Launcher;)Landroid/media/AudioManager;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/media/AudioManager;->isMusicActive()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    const-string v3, "state"
-
-    invoke-virtual {p2, v3, v5}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v3
-
-    if-ne v3, v6, :cond_1
-
-    if-le v0, v8, :cond_1
-
-    .line 3904
-    iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$8;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$2900(Lcom/sec/android/app/twlauncher/Launcher;)Landroid/media/AudioManager;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v7, v8, v5}, Landroid/media/AudioManager;->setStreamVolume(III)V
-
-    .line 3907
-    .end local v0           #curVolume:I
-    :cond_1
+    .line 3305
     return-void
 .end method

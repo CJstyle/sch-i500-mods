@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1624
+    .line 1635
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/MenuManager$3;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     iput-object p2, p0, Lcom/sec/android/app/twlauncher/MenuManager$3;->val$listadapter:Lcom/sec/android/app/twlauncher/ApplicationsListAdapter;
@@ -59,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 1628
+    .line 1639
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/MenuManager$3;->val$listadapter:Lcom/sec/android/app/twlauncher/ApplicationsListAdapter;
 
@@ -69,10 +69,11 @@
 
     check-cast v0, Lcom/sec/android/app/twlauncher/ApplicationInfo;
 
-    .line 1629
+    .line 1640
     .local v0, app:Lcom/sec/android/app/twlauncher/ApplicationInfo;
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/MenuManager$3;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mDragger:Lcom/sec/android/app/twlauncher/DragController;
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/MenuManager;->access$200(Lcom/sec/android/app/twlauncher/MenuManager;)Lcom/sec/android/app/twlauncher/DragController;
 
     move-result-object v1
@@ -83,16 +84,17 @@
 
     invoke-interface {v1, p2, v2, v0, v3}, Lcom/sec/android/app/twlauncher/DragController;->startDrag(Landroid/view/View;Lcom/sec/android/app/twlauncher/DragSource;Ljava/lang/Object;I)V
 
-    .line 1630
+    .line 1641
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/MenuManager$3;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/MenuManager;->access$100(Lcom/sec/android/app/twlauncher/MenuManager;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->closeAllApplications()V
 
-    .line 1631
+    .line 1642
     const/4 v1, 0x1
 
     return v1

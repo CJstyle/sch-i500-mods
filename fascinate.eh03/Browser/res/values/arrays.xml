@@ -684,7 +684,7 @@
         <item>Bing</item>
         <item>bing.com</item>
         <item>http://www.bing.com/s/wlflag.ico</item>
-        <item>http://www.bing.com/search?q={searchTerms}</item>
+        <item>http://search.vzwwap.com/vzwsearch/?q={searchTerms}</item>
         <item>UTF-8</item>
         <item>http://api.bing.com/osjson.aspx?query={searchTerms}&amp;amp;language={language}</item>
     </string-array>
@@ -752,7 +752,7 @@
         <item>CLOSE</item>
     </string-array>
     <string-array name="pref_extras_ua_choices">
-        <item>Mobile</item>
+        <item>Android</item>
         <item>Desktop</item>
     </string-array>
     <string-array name="pref_extras_ua_values">

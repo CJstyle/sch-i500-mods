@@ -228,7 +228,7 @@
     const/4 v4, 0x1
 
     .line 218
-    iget-object v2, p0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v2, p0, Lcom/android/browser/FindDialog;->mWebView:Landroid/webkit/WebView;
 
     if-nez v2, :cond_0
 
@@ -261,7 +261,7 @@
     invoke-direct {p0}, Lcom/android/browser/FindDialog;->disableButtons()V
 
     .line 225
-    iget-object v2, p0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v2, p0, Lcom/android/browser/FindDialog;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->clearMatches()V
 
@@ -286,7 +286,7 @@
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 229
-    iget-object v2, p0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v2, p0, Lcom/android/browser/FindDialog;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -345,7 +345,7 @@
 
     .prologue
     .line 174
-    iget-object v0, p0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, p0, Lcom/android/browser/FindDialog;->mWebView:Landroid/webkit/WebView;
 
     if-nez v0, :cond_0
 
@@ -360,7 +360,7 @@
 
     .line 177
     :cond_0
-    iget-object v0, p0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, p0, Lcom/android/browser/FindDialog;->mWebView:Landroid/webkit/WebView;
 
     const/4 v1, 0x1
 
@@ -396,7 +396,7 @@
 
     .prologue
     .line 264
-    iget-object v1, p0, Lcom/android/browser/WebDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
+    iget-object v1, p0, Lcom/android/browser/FindDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v1}, Lcom/android/browser/BrowserActivity;->getResources()Landroid/content/res/Resources;
 
@@ -475,7 +475,7 @@
     invoke-super {p0}, Lcom/android/browser/WebDialog;->dismiss()V
 
     .line 129
-    iget-object v0, p0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, p0, Lcom/android/browser/FindDialog;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->notifyFindDialogDismissed()V
 
@@ -635,7 +635,7 @@
     if-eqz v2, :cond_1
 
     .line 145
-    iget-object v2, p0, Lcom/android/browser/WebDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
+    iget-object v2, p0, Lcom/android/browser/FindDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v2}, Lcom/android/browser/BrowserActivity;->closeDialogs()V
 

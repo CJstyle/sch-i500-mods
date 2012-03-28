@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1750
+    .line 1761
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/MenuManager$4;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "view"
 
     .prologue
-    .line 1752
+    .line 1763
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 1753
+    .line 1764
     .local v2, tag:Ljava/lang/Object;
     if-eqz v2, :cond_0
 
@@ -55,17 +55,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 1754
+    .line 1765
     move-object v0, v2
 
     check-cast v0, Lcom/sec/android/app/twlauncher/ApplicationInfo;
 
     move-object v1, v0
 
-    .line 1755
+    .line 1766
     .local v1, app:Lcom/sec/android/app/twlauncher/ApplicationInfo;
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/MenuManager$4;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mMode:I
     invoke-static {v3}, Lcom/sec/android/app/twlauncher/MenuManager;->access$300(Lcom/sec/android/app/twlauncher/MenuManager;)I
 
     move-result v3
@@ -74,13 +75,14 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 1757
+    .line 1768
     iget-boolean v3, v1, Lcom/sec/android/app/twlauncher/ApplicationInfo;->systemApp:Z
 
     if-nez v3, :cond_0
 
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/MenuManager$4;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v3}, Lcom/sec/android/app/twlauncher/MenuManager;->access$100(Lcom/sec/android/app/twlauncher/MenuManager;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v3
@@ -97,17 +99,18 @@
 
     invoke-virtual {v3, v4}, Lcom/sec/android/app/twlauncher/Launcher;->showDeleteApplication(Ljava/lang/String;)V
 
-    .line 1763
+    .line 1774
     .end local v1           #app:Lcom/sec/android/app/twlauncher/ApplicationInfo;
     :cond_0
     :goto_0
     return-void
 
-    .line 1760
+    .line 1771
     .restart local v1       #app:Lcom/sec/android/app/twlauncher/ApplicationInfo;
     :cond_1
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/MenuManager$4;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v3}, Lcom/sec/android/app/twlauncher/MenuManager;->access$100(Lcom/sec/android/app/twlauncher/MenuManager;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v3

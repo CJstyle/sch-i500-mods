@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3462
+    .line 3495
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -47,17 +47,17 @@
 
     const-string v6, "title"
 
-    .line 3465
+    .line 3498
     iget v1, p1, Landroid/os/Message;->what:I
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 3607
+    .line 3640
     :cond_0
     :goto_0
     return-void
 
-    .line 3468
+    .line 3501
     :sswitch_0
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
@@ -75,7 +75,7 @@
 
     move-object v7, v0
 
-    .line 3469
+    .line 3502
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v1
@@ -88,7 +88,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 3470
+    .line 3503
     if-eqz v7, :cond_0
 
     invoke-virtual {v7}, Ljava/lang/String;->length()I
@@ -97,12 +97,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 3473
+    .line 3506
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/HashMap;
 
-    .line 3474
+    .line 3507
     const-string v3, "webview"
 
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -111,7 +111,7 @@
 
     check-cast v2, Landroid/webkit/WebView;
 
-    .line 3476
+    .line 3509
     iget-object v3, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v3}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
@@ -120,14 +120,14 @@
 
     if-ne v3, v2, :cond_0
 
-    .line 3479
+    .line 3512
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     sparse-switch v2, :sswitch_data_1
 
     goto :goto_0
 
-    .line 3482
+    .line 3515
     :sswitch_1
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -141,7 +141,7 @@
 
     goto :goto_0
 
-    .line 3485
+    .line 3518
     :sswitch_2
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -153,24 +153,24 @@
 
     move-result-object v1
 
-    .line 3486
+    .line 3519
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v2, v7}, Lcom/android/browser/BrowserActivity;->openTab(Ljava/lang/String;)Lcom/android/browser/Tab;
 
     move-result-object v2
 
-    .line 3487
+    .line 3520
     if-eqz v2, :cond_0
 
     if-eq v2, v1, :cond_0
 
-    .line 3488
+    .line 3521
     invoke-virtual {v1, v2}, Lcom/android/browser/Tab;->addChildTab(Lcom/android/browser/Tab;)V
 
     goto :goto_0
 
-    .line 3492
+    .line 3525
     :sswitch_3
     new-instance v2, Landroid/content/Intent;
 
@@ -180,24 +180,24 @@
 
     invoke-direct {v2, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3494
+    .line 3527
     const-string v3, "url"
 
     invoke-virtual {v2, v9, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3495
+    .line 3528
     const-string v3, "title"
 
     invoke-virtual {v2, v6, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3496
+    .line 3529
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v1, v2}, Lcom/android/browser/BrowserActivity;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 3500
+    .line 3533
     :sswitch_4
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -205,10 +205,10 @@
 
     invoke-direct {v4, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 3502
+    .line 3535
     invoke-static {v4, v7}, Landroid/database/DatabaseUtils;->appendEscapedSQLString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    .line 3503
+    .line 3536
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v1}, Lcom/android/browser/BrowserActivity;->access$1100(Lcom/android/browser/BrowserActivity;)Landroid/content/ContentResolver;
@@ -229,38 +229,38 @@
 
     move-result-object v1
 
-    .line 3508
+    .line 3541
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 3513
+    .line 3546
     const/4 v2, 0x5
 
     invoke-interface {v1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3515
+    .line 3548
     const/4 v3, 0x6
 
     invoke-interface {v1, v3}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v3
 
-    .line 3517
+    .line 3550
     if-eqz v3, :cond_4
 
-    .line 3518
+    .line 3551
     array-length v4, v3
 
     invoke-static {v3, v8, v4}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 3521
+    .line 3554
     :goto_1
     const/4 v4, 0x7
 
@@ -268,17 +268,17 @@
 
     move-result-object v1
 
-    .line 3523
+    .line 3556
     if-eqz v1, :cond_3
 
-    .line 3524
+    .line 3557
     array-length v4, v1
 
     invoke-static {v1, v8, v4}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 3527
+    .line 3560
     :goto_2
     iget-object v4, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -286,7 +286,7 @@
 
     goto/16 :goto_0
 
-    .line 3530
+    .line 3563
     :cond_1
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -302,7 +302,7 @@
 
     goto/16 :goto_0
 
-    .line 3536
+    .line 3569
     :sswitch_5
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -310,7 +310,7 @@
 
     goto/16 :goto_0
 
-    .line 3540
+    .line 3573
     :sswitch_6
     iget-object v3, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -326,7 +326,7 @@
 
     goto/16 :goto_0
 
-    .line 3547
+    .line 3580
     :sswitch_7
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -344,7 +344,7 @@
 
     goto/16 :goto_0
 
-    .line 3551
+    .line 3584
     :sswitch_8
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -352,7 +352,7 @@
 
     goto/16 :goto_0
 
-    .line 3555
+    .line 3588
     :sswitch_9
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -366,7 +366,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3556
+    .line 3589
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v1}, Lcom/android/browser/BrowserActivity;->access$1200(Lcom/android/browser/BrowserActivity;)Landroid/os/PowerManager$WakeLock;
@@ -375,7 +375,7 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 3560
+    .line 3593
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v1}, Lcom/android/browser/BrowserActivity;->access$1000(Lcom/android/browser/BrowserActivity;)Lcom/android/browser/TabControl;
@@ -386,23 +386,23 @@
 
     goto/16 :goto_0
 
-    .line 3565
+    .line 3598
     :sswitch_a
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/webkit/WebView;
 
-    .line 3566
+    .line 3599
     if-eqz v1, :cond_0
 
-    .line 3567
+    .line 3600
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v2, v1}, Lcom/android/browser/BrowserActivity;->access$1300(Lcom/android/browser/BrowserActivity;Landroid/webkit/WebView;)V
 
     goto/16 :goto_0
 
-    .line 3574
+    .line 3607
     :sswitch_b
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -422,22 +422,22 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 3576
+    .line 3609
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v1}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v2
 
-    .line 3577
+    .line 3610
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/String;
 
-    .line 3583
+    .line 3616
     if-eqz v2, :cond_2
 
-    .line 3584
+    .line 3617
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v1}, Lcom/android/browser/BrowserActivity;->access$1400(Lcom/android/browser/BrowserActivity;)Lcom/android/browser/TitleBar;
@@ -452,7 +452,7 @@
 
     goto/16 :goto_0
 
-    .line 3588
+    .line 3621
     :cond_2
     const-string v1, "browser"
 
@@ -462,7 +462,7 @@
 
     goto/16 :goto_0
 
-    .line 3598
+    .line 3631
     :sswitch_c
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -470,14 +470,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 3601
+    .line 3634
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     iget-object v1, v1, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v1, v8}, Lcom/android/browser/BitmapWebView;->setVisible(I)V
 
-    .line 3602
+    .line 3635
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$12;->this$0:Lcom/android/browser/BrowserActivity;
 
     iget-object v1, v1, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
@@ -496,7 +496,7 @@
 
     goto/16 :goto_1
 
-    .line 3465
+    .line 3498
     nop
 
     :sswitch_data_0
@@ -510,7 +510,7 @@
         0x3ea -> :sswitch_8
     .end sparse-switch
 
-    .line 3479
+    .line 3512
     :sswitch_data_1
     .sparse-switch
         0x7f0d0099 -> :sswitch_1

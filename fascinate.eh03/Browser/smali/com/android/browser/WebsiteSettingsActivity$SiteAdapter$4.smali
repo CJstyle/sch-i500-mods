@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 452
+    .line 453
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$4;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     iput-object p2, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$4;->val$locationIcon:Landroid/widget/ImageView;
@@ -57,17 +57,17 @@
     .parameter "allowed"
 
     .prologue
-    .line 454
+    .line 455
     if-eqz p1, :cond_0
 
-    .line 455
+    .line 456
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 456
+    .line 457
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$4;->val$locationIcon:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$4;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
@@ -78,12 +78,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 461
+    .line 462
     :cond_0
     :goto_0
     return-void
 
-    .line 458
+    .line 459
     :cond_1
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$4;->val$locationIcon:Landroid/widget/ImageView;
 
@@ -103,7 +103,7 @@
     .parameter "x0"
 
     .prologue
-    .line 452
+    .line 453
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1

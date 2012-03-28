@@ -978,7 +978,7 @@
 
     .line 364
     .local v0, cr:Landroid/content/ContentResolver;
-    iget-wide v1, p1, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v1, p1, Lcom/sec/android/app/twlauncher/UserFolderInfo;->id:J
 
     const/4 v3, 0x0
 
@@ -1001,7 +1001,7 @@
 
     move-result-object v2
 
-    iget-wide v3, p1, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v3, p1, Lcom/sec/android/app/twlauncher/UserFolderInfo;->id:J
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -1161,7 +1161,7 @@
     .local v6, info:Lcom/sec/android/app/twlauncher/ShortcutInfo;
     const/4 v11, 0x1
 
-    iput v11, v6, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v11, v6, Lcom/sec/android/app/twlauncher/ShortcutInfo;->itemType:I
 
     .line 1891
     move-object v0, p1
@@ -3298,7 +3298,7 @@
 
     move-object v2, v13
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/FolderInfo;->id:J
 
     .line 249
     invoke-interface {v9, v12}, Landroid/database/Cursor;->getInt(I)I
@@ -3307,28 +3307,28 @@
 
     int-to-long v4, v4
 
-    iput-wide v4, v13, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+    iput-wide v4, v13, Lcom/sec/android/app/twlauncher/FolderInfo;->container:J
 
     .line 250
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
 
-    iput v4, v13, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iput v4, v13, Lcom/sec/android/app/twlauncher/FolderInfo;->screen:I
 
     .line 251
     invoke-interface {v9, v10}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
 
-    iput v4, v13, Lcom/sec/android/app/twlauncher/ItemInfo;->cellX:I
+    iput v4, v13, Lcom/sec/android/app/twlauncher/FolderInfo;->cellX:I
 
     .line 252
     invoke-interface {v9, v11}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
 
-    iput v4, v13, Lcom/sec/android/app/twlauncher/ItemInfo;->cellY:I
+    iput v4, v13, Lcom/sec/android/app/twlauncher/FolderInfo;->cellY:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -3605,7 +3605,7 @@
 
     .line 1809
     :cond_6
-    iput v7, v3, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v7, v3, Lcom/sec/android/app/twlauncher/ShortcutInfo;->itemType:I
 
     .line 1812
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/LauncherModel;->isStoredExternalStorageUnmounted(Landroid/content/ComponentName;)Z

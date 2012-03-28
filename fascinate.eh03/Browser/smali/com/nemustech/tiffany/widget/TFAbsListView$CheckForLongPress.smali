@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1862
+    .line 1915
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     const/4 v0, 0x0
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1862
+    .line 1915
     invoke-direct {p0, p1}, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;-><init>(Lcom/nemustech/tiffany/widget/TFAbsListView;)V
 
     return-void
@@ -57,18 +57,18 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 1864
+    .line 1917
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     iget v5, v6, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
-    .line 1865
+    .line 1918
     .local v5, motionPosition:I
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     iget-object v7, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
-    iget v7, v7, Lcom/nemustech/tiffany/widget/TFAdapterView;->mFirstPosition:I
+    iget v7, v7, Lcom/nemustech/tiffany/widget/TFAbsListView;->mFirstPosition:I
 
     sub-int v7, v5, v7
 
@@ -76,16 +76,16 @@
 
     move-result-object v0
 
-    .line 1866
+    .line 1919
     .local v0, child:Landroid/view/View;
     if-eqz v0, :cond_1
 
-    .line 1867
+    .line 1920
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     iget v4, v6, Lcom/nemustech/tiffany/widget/TFAbsListView;->mMotionPosition:I
 
-    .line 1868
+    .line 1921
     .local v4, longPressPosition:I
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
@@ -99,11 +99,11 @@
 
     move-result-wide v2
 
-    .line 1870
+    .line 1923
     .local v2, longPressId:J
     const/4 v1, 0x0
 
-    .line 1871
+    .line 1924
     .local v1, handled:Z
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->sameWindow()Z
 
@@ -113,37 +113,37 @@
 
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
-    iget-boolean v6, v6, Lcom/nemustech/tiffany/widget/TFAdapterView;->mDataChanged:Z
+    iget-boolean v6, v6, Lcom/nemustech/tiffany/widget/TFAbsListView;->mDataChanged:Z
 
     if-nez v6, :cond_0
 
-    .line 1872
+    .line 1925
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v6, v0, v4, v2, v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->performLongPress(Landroid/view/View;IJ)Z
 
     move-result v1
 
-    .line 1874
+    .line 1927
     :cond_0
     if-eqz v1, :cond_2
 
-    .line 1875
+    .line 1928
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     const/4 v7, -0x1
 
     iput v7, v6, Lcom/nemustech/tiffany/widget/TFAbsListView;->mTouchMode:I
 
-    .line 1876
+    .line 1929
     iget-object v6, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$CheckForLongPress;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v6, v8}, Lcom/nemustech/tiffany/widget/TFAbsListView;->setPressed(Z)V
 
-    .line 1877
+    .line 1930
     invoke-virtual {v0, v8}, Landroid/view/View;->setPressed(Z)V
 
-    .line 1883
+    .line 1936
     .end local v1           #handled:Z
     .end local v2           #longPressId:J
     .end local v4           #longPressPosition:I
@@ -151,7 +151,7 @@
     :goto_0
     return-void
 
-    .line 1879
+    .line 1932
     .restart local v1       #handled:Z
     .restart local v2       #longPressId:J
     .restart local v4       #longPressPosition:I

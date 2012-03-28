@@ -177,6 +177,7 @@
 
     move-object v14, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/TopFourZone;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v14}, Lcom/sec/android/app/twlauncher/TopFourZone;->access$000(Lcom/sec/android/app/twlauncher/TopFourZone;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v14
@@ -249,6 +250,7 @@
 
     move-object v15, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/TopFourZone;->mVirtualView:[Landroid/view/View;
     invoke-static {v15}, Lcom/sec/android/app/twlauncher/TopFourZone;->access$200(Lcom/sec/android/app/twlauncher/TopFourZone;)[Landroid/view/View;
 
     move-result-object v15

@@ -32,18 +32,6 @@
 
 .field private mAnimationStyle:I
 
-.field private mBtnSetDefaultPageBig:Landroid/graphics/drawable/Drawable;
-
-.field private mBtnSetDefaultPageFocusedBig:Landroid/graphics/drawable/Drawable;
-
-.field private mBtnSetDefaultPageFocusedSmall:Landroid/graphics/drawable/Drawable;
-
-.field private mBtnSetDefaultPagePressedBig:Landroid/graphics/drawable/Drawable;
-
-.field private mBtnSetDefaultPagePressedSmall:Landroid/graphics/drawable/Drawable;
-
-.field private mBtnSetDefaultPageSmall:Landroid/graphics/drawable/Drawable;
-
 .field private mChildAnimate:[Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;
 
 .field private mChildRects:[Landroid/graphics/Rect;
@@ -137,8 +125,6 @@
 .field private mWorkspaceScreenCountOnOpen:I
 
 .field private mWorkspaceScreenIndexOnOpen:I
-
-.field private nDefaultPageTextSize:I
 
 
 # direct methods
@@ -295,12 +281,12 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationState:I
 
-    .line 1060
+    .line 1068
     new-array v0, v3, [I
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
-    .line 1061
+    .line 1069
     new-array v0, v3, [I
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation2:[I
@@ -316,52 +302,52 @@
     .locals 5
 
     .prologue
-    .line 1120
+    .line 1128
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
 
     move-result v1
 
-    .line 1121
+    .line 1129
     .local v1, count:I
     const/4 v4, 0x1
 
     sub-int v2, v1, v4
 
-    .line 1122
+    .line 1130
     .local v2, index:I
     if-gez v2, :cond_0
 
     const/4 v2, 0x0
 
-    .line 1123
+    .line 1131
     :cond_0
     invoke-virtual {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1125
+    .line 1133
     .local v0, add:Landroid/view/View;
     invoke-direct {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->makeScreen(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1126
+    .line 1134
     .local v3, screen:Landroid/view/View;
     invoke-virtual {v3, p0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 1128
+    .line 1136
     sget v4, Lcom/sec/android/app/twlauncher/Launcher;->SCREEN_COUNT:I
 
     if-lt v1, v4, :cond_1
 
-    .line 1129
+    .line 1137
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeView(Landroid/view/View;)V
 
-    .line 1132
+    .line 1140
     :cond_1
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->onAdd()V
 
-    .line 1133
+    .line 1141
     return-void
 .end method
 
@@ -373,140 +359,153 @@
 
     const/4 v1, 0x0
 
-    .line 1078
+    .line 1086
     iput v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
 
-    .line 1079
+    .line 1087
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->buildDrawingCache()V
 
-    .line 1080
+    .line 1088
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getDrawingCache()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 1081
+    .line 1089
     .local v0, viewBitmap:Landroid/graphics/Bitmap;
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 1082
+    .line 1090
     .local v3, width:I
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v4
 
-    .line 1084
+    .line 1092
     .local v4, height:I
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 1085
+    .line 1093
     .local v5, scale:Landroid/graphics/Matrix;
     const/high16 v7, 0x3f80
 
-    .line 1086
+    .line 1094
     .local v7, scaleFactor:F
     invoke-virtual {v5, v7, v7}, Landroid/graphics/Matrix;->setScale(FF)V
 
     move v2, v1
 
-    .line 1088
+    .line 1096
     invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragBitmap:Landroid/graphics/Bitmap;
 
-    .line 1089
+    .line 1097
     return-void
 .end method
 
 .method private drop(II)V
-    .locals 4
-    .parameter
-    .parameter
+    .locals 5
+    .parameter "x"
+    .parameter "y"
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    const-string v3, "QuickViewWorkspace"
-
-    .line 999
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    .line 1000
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
-
-    .line 1003
-    invoke-direct {p0, p1, p2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->isDeleteZone(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1
-
-    .line 1006
-    invoke-direct {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->setDeleteZoneState(Z)V
+    const-string v4, "QuickViewWorkspace"
 
     .line 1007
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getDefaultHomeScreen()I
+    invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    move-result v0
+    .line 1008
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
-    .line 1009
-    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
+    invoke-virtual {v1}, Landroid/view/View;->requestLayout()V
+
+    .line 1011
+    invoke-direct {p0, p1, p2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->isDeleteZone(II)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_1
+
+    .line 1030
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
+
+    invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeView(Landroid/view/View;)V
+
+    .line 1031
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
+
+    iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
+
+    invoke-virtual {p0, v1, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->addView(Landroid/view/View;I)V
+
+    .line 1032
+    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
+
+    invoke-direct {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->swapScreen(I)V
+
+    .line 1034
+    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
 
-    .line 1010
+    .line 1035
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
-    .line 1012
-    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
+    .line 1037
+    invoke-direct {p0, v3}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->setDeleteZoneState(Z)V
 
-    if-ne v1, v0, :cond_0
+    .line 1039
+    invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->isIncludeItem()Z
 
-    .line 1013
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    move-result v1
 
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->showDeleteWorkScreen()V
+    if-eqz v1, :cond_0
 
-    .line 1058
+    .line 1040
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->showDeleteWorkScreen()V
+
+    .line 1066
     :goto_0
     return-void
 
-    .line 1016
+    .line 1043
     :cond_0
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeScreen()V
 
     goto :goto_0
 
-    .line 1040
+    .line 1048
     :cond_1
     invoke-direct {p0, p1, p2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getTouchedIndex(II)I
 
     move-result v0
 
-    .line 1041
+    .line 1049
+    .local v0, dropedIndex:I
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_2
@@ -523,10 +522,7 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 1044
-    invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->swapSetButton(I)V
-
-    .line 1047
+    .line 1055
     const-string v1, "QuickViewWorkspace"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -547,20 +543,15 @@
 
     move-result-object v1
 
-    invoke-static {v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1048
+    .line 1056
     invoke-direct {p0, v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->swapScreen(I)V
 
     goto :goto_0
 
-    .line 1052
+    .line 1063
     :cond_2
-    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
-
-    invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->swapSetButton(I)V
-
-    .line 1055
     const-string v1, "QuickViewWorkspace"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -575,18 +566,18 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1056
-    iget v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
+    .line 1064
+    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->swapScreen(I)V
+    invoke-direct {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->swapScreen(I)V
 
     goto :goto_0
 .end method
@@ -597,20 +588,20 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 762
+    .line 770
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v3
 
-    .line 763
+    .line 771
     .local v3, ws:Lcom/sec/android/app/twlauncher/Workspace;
     invoke-virtual {v3}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v1
 
-    .line 765
+    .line 773
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -618,26 +609,26 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 766
+    .line 774
     invoke-virtual {v3, v2}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 767
+    .line 775
     .local v0, celllayout:Lcom/sec/android/app/twlauncher/CellLayout;
     invoke-virtual {v0, v5}, Lcom/sec/android/app/twlauncher/CellLayout;->setChildrenDrawingCacheEnabled(Z)V
 
-    .line 768
+    .line 776
     invoke-virtual {v0, v5}, Lcom/sec/android/app/twlauncher/CellLayout;->setChildrenDrawnWithCacheEnabled(Z)V
 
-    .line 765
+    .line 773
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 770
+    .line 778
     .end local v0           #celllayout:Lcom/sec/android/app/twlauncher/CellLayout;
     :cond_0
     return-void
@@ -653,31 +644,28 @@
 
     const/4 v0, -0x1
 
-    .line 983
+    .line 991
     iput v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
-    .line 984
+    .line 992
     iput v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
 
-    .line 985
+    .line 993
     iput-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
-    .line 986
+    .line 994
     iput-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchedView:Landroid/view/View;
 
-    .line 987
+    .line 995
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPinchIndex:I
 
-    .line 988
+    .line 996
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
 
-    .line 989
+    .line 997
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
 
-    .line 993
-    iput-boolean v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mSkipSetButtonAction:Z
-
-    .line 996
+    .line 1004
     return-void
 .end method
 
@@ -689,24 +677,24 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 814
+    .line 822
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
     if-nez v2, :cond_0
 
     move v2, v5
 
-    .line 822
+    .line 830
     :goto_0
     return v2
 
-    .line 815
+    .line 823
     :cond_0
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
     array-length v0, v2
 
-    .line 816
+    .line 824
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -714,20 +702,20 @@
     :goto_1
     if-ge v1, v0, :cond_3
 
-    .line 817
+    .line 825
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
 
     if-nez v2, :cond_2
 
-    .line 816
+    .line 824
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 818
+    .line 826
     :cond_2
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
@@ -749,13 +737,13 @@
 
     move v2, v1
 
-    .line 819
+    .line 827
     goto :goto_0
 
     :cond_3
     move v2, v5
 
-    .line 822
+    .line 830
     goto :goto_0
 .end method
 
@@ -764,12 +752,12 @@
     .parameter
 
     .prologue
-    .line 1545
+    .line 1553
     new-array v0, p1, [Landroid/graphics/Rect;
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTempRects:[Landroid/graphics/Rect;
 
-    .line 1548
+    .line 1556
     :try_start_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mContext:Landroid/content/Context;
 
@@ -783,22 +771,22 @@
 
     move-result-object v0
 
-    .line 1549
+    .line 1557
     invoke-static {v0}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v1
 
-    .line 1550
+    .line 1558
     const-string v2, "quickviewlayout"
 
     invoke-static {v0, v2}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
-    .line 1552
+    .line 1560
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v2
 
-    .line 1556
+    .line 1564
     :cond_0
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->next()I
 
@@ -819,17 +807,17 @@
 
     if-eq v3, v4, :cond_5
 
-    .line 1558
+    .line 1566
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_0
 
-    .line 1561
+    .line 1569
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1562
+    .line 1570
     const-string v4, "quickviewset"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -838,14 +826,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 1563
+    .line 1571
     const/4 v3, 0x0
 
     invoke-interface {v0, v3}, Landroid/content/res/XmlResourceParser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1564
+    .line 1572
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v4
@@ -856,15 +844,15 @@
 
     if-eqz v3, :cond_0
 
-    .line 1565
+    .line 1573
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v3
 
-    .line 1566
+    .line 1574
     const/4 v4, 0x0
 
-    .line 1568
+    .line 1576
     :cond_2
     :goto_0
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->next()I
@@ -886,12 +874,12 @@
 
     if-eq v5, v6, :cond_4
 
-    .line 1569
+    .line 1577
     const/4 v6, 0x2
 
     if-eq v5, v6, :cond_6
 
-    .line 1570
+    .line 1578
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -904,11 +892,11 @@
 
     if-eqz v5, :cond_2
 
-    .line 1586
+    .line 1594
     :cond_4
     if-eq v4, p1, :cond_0
 
-    .line 1587
+    .line 1595
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -946,33 +934,33 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1592
+    .line 1600
     :catch_0
     move-exception v0
 
-    .line 1593
+    .line 1601
     const-string v1, "QuickViewWorkspace"
 
     const-string v2, "Got exception parsing quickviews."
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1594
+    .line 1602
     invoke-virtual {v0}, Lorg/xmlpull/v1/XmlPullParserException;->printStackTrace()V
 
-    .line 1599
+    .line 1607
     :cond_5
     :goto_1
     return-void
 
-    .line 1573
+    .line 1581
     :cond_6
     :try_start_1
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1574
+    .line 1582
     const-string v6, "quickview"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -981,7 +969,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 1575
+    .line 1583
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mContext:Landroid/content/Context;
 
     sget-object v6, Lcom/sec/android/app/twlauncher/R$styleable;->QuickView:[I
@@ -990,7 +978,7 @@
 
     move-result-object v5
 
-    .line 1576
+    .line 1584
     const/4 v6, 0x0
 
     invoke-virtual {v5, v6}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -1005,7 +993,7 @@
 
     move-result v6
 
-    .line 1577
+    .line 1585
     const/4 v7, 0x1
 
     invoke-virtual {v5, v7}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -1020,7 +1008,7 @@
 
     move-result v7
 
-    .line 1578
+    .line 1586
     const/4 v8, 0x2
 
     invoke-virtual {v5, v8}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -1035,7 +1023,7 @@
 
     move-result v8
 
-    .line 1579
+    .line 1587
     const/4 v9, 0x3
 
     invoke-virtual {v5, v9}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -1050,7 +1038,7 @@
 
     move-result v9
 
-    .line 1580
+    .line 1588
     iget-object v10, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTempRects:[Landroid/graphics/Rect;
 
     aget-object v10, v10, v4
@@ -1065,7 +1053,7 @@
 
     aput-object v11, v10, v4
 
-    .line 1581
+    .line 1589
     :cond_7
     iget-object v10, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTempRects:[Landroid/graphics/Rect;
 
@@ -1073,29 +1061,29 @@
 
     invoke-virtual {v10, v6, v7, v8, v9}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1582
+    .line 1590
     invoke-virtual {v5}, Landroid/content/res/TypedArray;->recycle()V
     :try_end_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1583
+    .line 1591
     add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_0
 
-    .line 1595
+    .line 1603
     :catch_1
     move-exception v0
 
-    .line 1596
+    .line 1604
     const-string v1, "QuickViewWorkspace"
 
     const-string v2, "Got exception parsing quickviews."
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1597
+    .line 1605
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_1
@@ -1261,7 +1249,7 @@
     .parameter "rect"
 
     .prologue
-    .line 1522
+    .line 1530
     iget v0, p1, Landroid/graphics/Rect;->right:I
 
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenRect:Landroid/graphics/Rect;
@@ -1294,11 +1282,11 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1526
+    .line 1534
     :cond_0
     const/4 v0, 0x0
 
-    .line 1528
+    .line 1536
     :goto_0
     return v0
 
@@ -1318,30 +1306,30 @@
 
     const/4 v4, 0x0
 
-    .line 1065
+    .line 1073
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getDeleteZone()Lcom/sec/android/app/twlauncher/DeleteZone;
 
     move-result-object v0
 
-    .line 1066
+    .line 1074
     .local v0, dz:Lcom/sec/android/app/twlauncher/DeleteZone;
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/DeleteZone;->getDeleteAreaRect(Landroid/graphics/Rect;)V
 
-    .line 1069
+    .line 1077
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/DeleteZone;->getLocationOnScreen([I)V
 
-    .line 1070
+    .line 1078
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation2:[I
 
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getLocationInWindow([I)V
 
-    .line 1071
+    .line 1079
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpRect:Landroid/graphics/Rect;
 
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
@@ -1366,7 +1354,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1073
+    .line 1081
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
@@ -1376,11 +1364,116 @@
     return v1
 .end method
 
+.method private isIncludeItem()Z
+    .locals 13
+
+    .prologue
+    .line 1100
+    const/4 v5, 0x0
+
+    .line 1101
+    .local v5, ret:Z
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
+
+    move-result-object v8
+
+    .line 1103
+    .local v8, workspace:Lcom/sec/android/app/twlauncher/Workspace;
+    iget v9, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
+
+    invoke-virtual {v8, v9}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/sec/android/app/twlauncher/CellLayout;
+
+    .line 1104
+    .local v4, layout:Lcom/sec/android/app/twlauncher/CellLayout;
+    invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
+
+    move-result v1
+
+    .line 1106
+    .local v1, childCount:I
+    const/4 v2, 0x0
+
+    .local v2, i:I
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    .line 1107
+    invoke-virtual {v4, v2}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v7
+
+    .line 1108
+    .local v7, view:Landroid/view/View;
+    invoke-virtual {v7}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v6
+
+    .line 1110
+    .local v6, tag:Ljava/lang/Object;
+    move-object v0, v6
+
+    check-cast v0, Lcom/sec/android/app/twlauncher/ItemInfo;
+
+    move-object v3, v0
+
+    .line 1112
+    .local v3, item:Lcom/sec/android/app/twlauncher/ItemInfo;
+    iget-wide v9, v3, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+
+    const-wide/16 v11, -0x1
+
+    cmp-long v9, v9, v11
+
+    if-nez v9, :cond_1
+
+    .line 1113
+    const/4 v5, 0x0
+
+    .line 1124
+    .end local v3           #item:Lcom/sec/android/app/twlauncher/ItemInfo;
+    .end local v6           #tag:Ljava/lang/Object;
+    .end local v7           #view:Landroid/view/View;
+    :cond_0
+    :goto_1
+    return v5
+
+    .line 1117
+    .restart local v3       #item:Lcom/sec/android/app/twlauncher/ItemInfo;
+    .restart local v6       #tag:Ljava/lang/Object;
+    .restart local v7       #view:Landroid/view/View;
+    :cond_1
+    iget-wide v9, v3, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+
+    const-wide/16 v11, -0x64
+
+    cmp-long v9, v9, v11
+
+    if-nez v9, :cond_2
+
+    .line 1119
+    const/4 v5, 0x1
+
+    .line 1120
+    goto :goto_1
+
+    .line 1106
+    :cond_2
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+.end method
+
 .method private makeAddBtn()Landroid/view/View;
     .locals 2
 
     .prologue
-    .line 944
+    .line 952
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
 
     move-result v1
@@ -1389,13 +1482,13 @@
 
     move-result-object v0
 
-    .line 945
+    .line 953
     .local v0, v:Landroid/view/View;
     sget-object v1, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->ADD_BTN_TAG:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 946
+    .line 954
     return-object v0
 .end method
 
@@ -1404,7 +1497,7 @@
     .parameter "index"
 
     .prologue
-    .line 950
+    .line 958
     new-instance v0, Landroid/view/View;
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getContext()Landroid/content/Context;
@@ -1413,29 +1506,29 @@
 
     invoke-direct {v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 951
+    .line 959
     .local v0, v:Landroid/view/View;
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 953
+    .line 961
     invoke-virtual {p0, v0, p1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->addView(Landroid/view/View;I)V
 
-    .line 954
+    .line 962
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 956
+    .line 964
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 957
+    .line 965
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 958
+    .line 966
     return-object v0
 .end method
 
@@ -1445,19 +1538,19 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 1196
+    .line 1204
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
 
     move-result v1
 
-    .line 1197
+    .line 1205
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v2
 
-    .line 1199
+    .line 1207
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -1474,12 +1567,12 @@
 
     check-cast v0, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1200
+    .line 1208
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0, v3}, Lcom/sec/android/app/twlauncher/CellLayout;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 1201
+    .line 1209
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v3, v1}, Lcom/sec/android/app/twlauncher/Launcher;->getCellLayoutId(I)I
@@ -1488,32 +1581,32 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/CellLayout;->setId(I)V
 
-    .line 1202
+    .line 1210
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/CellLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    .line 1203
+    .line 1211
     if-nez v1, :cond_0
 
-    .line 1204
+    .line 1212
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v1, v5, v5}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 1206
+    .line 1214
     :cond_0
     invoke-virtual {v2, v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1208
+    .line 1216
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->saveScreenInfo()V
 
-    .line 1210
+    .line 1218
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->updateTag()V
 
-    .line 1211
+    .line 1219
     return-void
 .end method
 
@@ -1521,14 +1614,14 @@
     .locals 12
 
     .prologue
-    .line 1215
+    .line 1223
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v5
 
-    .line 1219
+    .line 1227
     iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
 
     invoke-virtual {v5, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -1537,12 +1630,12 @@
 
     check-cast v1, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1220
+    .line 1228
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v6
 
-    .line 1221
+    .line 1229
     const/4 v2, 0x0
 
     move v7, v2
@@ -1550,22 +1643,22 @@
     :goto_0
     if-ge v7, v6, :cond_b
 
-    .line 1222
+    .line 1230
     invoke-virtual {v1, v7}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1223
+    .line 1231
     invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 1225
+    .line 1233
     instance-of v2, v2, Lcom/sec/android/app/twlauncher/Folder;
 
     if-eqz v2, :cond_0
 
-    .line 1221
+    .line 1229
     :goto_1
     add-int/lit8 v2, v7, 0x1
 
@@ -1573,7 +1666,7 @@
 
     goto :goto_0
 
-    .line 1231
+    .line 1239
     :cond_0
     move-object v0, v3
 
@@ -1581,7 +1674,7 @@
 
     move-object v2, v0
 
-    .line 1233
+    .line 1241
     iget-wide v8, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
 
     const-wide/16 v10, -0x1
@@ -1590,11 +1683,11 @@
 
     if-nez v4, :cond_1
 
-    .line 1290
+    .line 1298
     :goto_2
     return-void
 
-    .line 1235
+    .line 1243
     :cond_1
     iget-wide v8, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
 
@@ -1604,12 +1697,12 @@
 
     if-nez v4, :cond_8
 
-    .line 1236
+    .line 1244
     instance-of v3, v2, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
 
     if-eqz v3, :cond_4
 
-    .line 1237
+    .line 1245
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     move-object v0, v2
@@ -1620,31 +1713,31 @@
 
     invoke-virtual {v4, v3}, Lcom/sec/android/app/twlauncher/Launcher;->removeSamsungAppWidget(Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;)V
 
-    .line 1256
+    .line 1264
     :cond_2
     :goto_3
     instance-of v3, v2, Lcom/sec/android/app/twlauncher/UserFolderInfo;
 
     if-eqz v3, :cond_9
 
-    .line 1257
+    .line 1265
     move-object v0, v2
 
     check-cast v0, Lcom/sec/android/app/twlauncher/UserFolderInfo;
 
     move-object v3, v0
 
-    .line 1258
+    .line 1266
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-static {v4, v3}, Lcom/sec/android/app/twlauncher/LauncherModel;->deleteUserFolderContentsFromDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/UserFolderInfo;)V
 
-    .line 1259
+    .line 1267
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v4, v3}, Lcom/sec/android/app/twlauncher/Launcher;->removeFolder(Lcom/sec/android/app/twlauncher/FolderInfo;)V
 
-    .line 1271
+    .line 1279
     :cond_3
     :goto_4
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
@@ -1653,13 +1746,13 @@
 
     goto :goto_1
 
-    .line 1238
+    .line 1246
     :cond_4
     instance-of v3, v2, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;
 
     if-eqz v3, :cond_5
 
-    .line 1239
+    .line 1247
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     move-object v0, v2
@@ -1672,13 +1765,13 @@
 
     goto :goto_3
 
-    .line 1240
+    .line 1248
     :cond_5
     instance-of v3, v2, Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
     if-eqz v3, :cond_6
 
-    .line 1241
+    .line 1249
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     move-object v0, v2
@@ -1691,13 +1784,13 @@
 
     goto :goto_3
 
-    .line 1242
+    .line 1250
     :cond_6
     instance-of v3, v2, Lcom/sec/android/app/twlauncher/FolderInfo;
 
     if-eqz v3, :cond_7
 
-    .line 1243
+    .line 1251
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     move-object v0, v2
@@ -1710,7 +1803,7 @@
 
     goto :goto_3
 
-    .line 1245
+    .line 1253
     :cond_7
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -1736,23 +1829,23 @@
 
     throw v1
 
-    .line 1248
+    .line 1256
     :cond_8
     instance-of v4, v3, Lcom/sec/android/app/twlauncher/UserFolder;
 
     if-eqz v4, :cond_2
 
-    .line 1249
+    .line 1257
     check-cast v3, Lcom/sec/android/app/twlauncher/UserFolder;
 
-    .line 1250
+    .line 1258
     invoke-virtual {v3}, Lcom/sec/android/app/twlauncher/UserFolder;->getInfo()Lcom/sec/android/app/twlauncher/FolderInfo;
 
     move-result-object v3
 
     check-cast v3, Lcom/sec/android/app/twlauncher/UserFolderInfo;
 
-    .line 1253
+    .line 1261
     move-object v0, v2
 
     check-cast v0, Lcom/sec/android/app/twlauncher/ShortcutInfo;
@@ -1763,62 +1856,62 @@
 
     goto :goto_3
 
-    .line 1260
+    .line 1268
     :cond_9
     instance-of v3, v2, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;
 
     if-eqz v3, :cond_a
 
-    .line 1261
+    .line 1269
     move-object v0, v2
 
     check-cast v0, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;
 
     move-object v3, v0
 
-    .line 1262
+    .line 1270
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/Launcher;->getAppWidgetHost()Lcom/sec/android/app/twlauncher/LauncherAppWidgetHost;
 
     move-result-object v4
 
-    .line 1263
+    .line 1271
     if-eqz v4, :cond_3
 
-    .line 1264
+    .line 1272
     iget v3, v3, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->appWidgetId:I
 
     invoke-virtual {v4, v3}, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHost;->deleteAppWidgetId(I)V
 
     goto :goto_4
 
-    .line 1266
+    .line 1274
     :cond_a
     instance-of v3, v2, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
 
     if-eqz v3, :cond_3
 
-    .line 1267
+    .line 1275
     move-object v0, v2
 
     check-cast v0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
 
     move-object v3, v0
 
-    .line 1268
+    .line 1276
     invoke-static {}, Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;->getInstance()Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
 
     move-result-object v4
 
-    .line 1269
+    .line 1277
     iget-object v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v4, v8, v3}, Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;->destroyWidget(Landroid/app/ActivityGroup;Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;)V
 
     goto/16 :goto_4
 
-    .line 1274
+    .line 1282
     :cond_b
     iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
 
@@ -1826,33 +1919,33 @@
 
     move-result-object v1
 
-    .line 1275
+    .line 1283
     invoke-virtual {v5, v1}, Lcom/sec/android/app/twlauncher/Workspace;->removeView(Landroid/view/View;)V
 
-    .line 1277
+    .line 1285
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->updateAppInfoInDatabase()V
 
-    .line 1278
+    .line 1286
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->saveScreenInfo()V
 
-    .line 1280
+    .line 1288
     const/4 v1, -0x1
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
 
-    .line 1281
+    .line 1289
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
-    .line 1283
+    .line 1291
     invoke-virtual {v5}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v1
 
-    .line 1284
+    .line 1292
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -1865,7 +1958,7 @@
 
     if-gt v1, v2, :cond_c
 
-    .line 1285
+    .line 1293
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -1878,7 +1971,7 @@
 
     invoke-virtual {v2, v1}, Lcom/sec/android/app/twlauncher/Workspace;->setCurrentScreen(I)V
 
-    .line 1286
+    .line 1294
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -1891,7 +1984,7 @@
 
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher;->setScreen(I)V
 
-    .line 1289
+    .line 1297
     :cond_c
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->updateTag()V
 
@@ -1903,14 +1996,14 @@
     .parameter "dropedIndex"
 
     .prologue
-    .line 1179
+    .line 1187
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v1
 
-    .line 1181
+    .line 1189
     .local v1, workspace:Lcom/sec/android/app/twlauncher/Workspace;
     iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
 
@@ -1918,7 +2011,7 @@
 
     move-result-object v0
 
-    .line 1185
+    .line 1193
     .local v0, v:Landroid/view/View;
     invoke-virtual {v1, v0}, Lcom/sec/android/app/twlauncher/Workspace;->indexOfChild(Landroid/view/View;)I
 
@@ -1928,18 +2021,18 @@
 
     invoke-static {v1, v2, p1, v3}, Lcom/sec/android/app/twlauncher/Utilities;->zOrderTweakMoveChild(Landroid/view/ViewGroup;IIZ)V
 
-    .line 1187
+    .line 1195
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->updateTag()V
 
-    .line 1190
+    .line 1198
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->updateAppInfoInDatabase()V
 
-    .line 1191
+    .line 1199
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->saveScreenInfo()V
 
-    .line 1192
+    .line 1200
     return-void
 .end method
 
@@ -1948,24 +2041,24 @@
     .parameter
 
     .prologue
-    .line 1420
+    .line 1428
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
 
     move-result v0
 
-    .line 1422
+    .line 1430
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getLocationOnScreen([I)V
 
-    .line 1423
+    .line 1431
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     const/4 v2, 0x1
 
     aget v1, v1, v2
 
-    .line 1426
+    .line 1434
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -1978,44 +2071,44 @@
 
     move-result-object v2
 
-    .line 1428
+    .line 1436
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     invoke-virtual {v2, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1429
+    .line 1437
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    .line 1430
+    .line 1438
     invoke-virtual {v2}, Landroid/view/View;->getHeight()I
 
     move-result v4
 
-    .line 1431
+    .line 1439
     invoke-virtual {v2}, Landroid/view/View;->getLeft()I
 
     move-result v5
 
-    .line 1432
+    .line 1440
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v2
 
-    .line 1434
+    .line 1442
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v6}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v6
 
-    .line 1435
+    .line 1443
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     invoke-virtual {v6, v7}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1436
+    .line 1444
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     const/4 v7, 0x1
@@ -2040,27 +2133,27 @@
 
     add-int/2addr v6, v7
 
-    .line 1439
+    .line 1447
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->left:I
 
-    .line 1440
+    .line 1448
     iget-object v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->right:I
 
-    .line 1441
+    .line 1449
     iget-object v9, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
 
-    .line 1442
+    .line 1450
     iget-object v10, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
-    .line 1444
+    .line 1452
     iget-object v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     if-eqz v11, :cond_0
@@ -2071,19 +2164,19 @@
 
     if-eq v11, v0, :cond_1
 
-    .line 1445
+    .line 1453
     :cond_0
     new-array v11, v0, [Landroid/graphics/Rect;
 
     iput-object v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
-    .line 1446
+    .line 1454
     const/4 v11, 0x0
 
     :goto_0
     if-ge v11, v0, :cond_1
 
-    .line 1447
+    .line 1455
     iget-object v12, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     new-instance v13, Landroid/graphics/Rect;
@@ -2092,12 +2185,12 @@
 
     aput-object v13, v12, v11
 
-    .line 1446
+    .line 1454
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_0
 
-    .line 1451
+    .line 1459
     :cond_1
     iget-object v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
@@ -2117,7 +2210,7 @@
 
     invoke-virtual {v11, v7, v9, v3, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1457
+    .line 1465
     iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOrientation:I
 
     const/4 v3, 0x2
@@ -2128,7 +2221,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1459
+    .line 1467
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, p1
@@ -2139,7 +2232,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1462
+    .line 1470
     :cond_2
     iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationStyle:I
 
@@ -2149,7 +2242,7 @@
 
     if-nez v1, :cond_8
 
-    .line 1464
+    .line 1472
     :cond_3
     sget v1, Lcom/sec/android/app/twlauncher/Launcher;->SCREEN_COUNT:I
 
@@ -2157,49 +2250,49 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 1465
+    .line 1473
     const-string v1, "QuickViewWorkspace"
 
     const-string v2, "setCloseEndRect : 9:"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1467
+    .line 1475
     const/4 v1, 0x4
 
     if-le v0, v1, :cond_4
 
     const/4 v1, 0x3
 
-    .line 1469
+    .line 1477
     :goto_1
     div-int v2, p1, v1
 
-    .line 1470
+    .line 1478
     rem-int v3, p1, v1
 
-    .line 1472
+    .line 1480
     const/4 v4, 0x0
 
     :goto_2
     if-ge v4, v0, :cond_a
 
-    .line 1473
+    .line 1481
     if-ne v4, p1, :cond_5
 
-    .line 1472
+    .line 1480
     :goto_3
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
-    .line 1467
+    .line 1475
     :cond_4
     const/4 v1, 0x2
 
     goto :goto_1
 
-    .line 1475
+    .line 1483
     :cond_5
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
@@ -2211,13 +2304,13 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1476
+    .line 1484
     div-int v5, v4, v1
 
-    .line 1477
+    .line 1485
     rem-int v6, v4, v1
 
-    .line 1479
+    .line 1487
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     aget-object v7, v7, v4
@@ -2250,7 +2343,7 @@
 
     goto :goto_3
 
-    .line 1482
+    .line 1490
     :cond_6
     const-string v1, "QuickViewWorkspace"
 
@@ -2258,7 +2351,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1484
+    .line 1492
     const/4 v1, 0x1
 
     sub-int v1, p1, v1
@@ -2266,7 +2359,7 @@
     :goto_4
     if-ltz v1, :cond_7
 
-    .line 1485
+    .line 1493
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
@@ -2279,7 +2372,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1486
+    .line 1494
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
@@ -2298,19 +2391,19 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1484
+    .line 1492
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_4
 
-    .line 1489
+    .line 1497
     :cond_7
     add-int/lit8 v1, p1, 0x1
 
     :goto_5
     if-ge v1, v0, :cond_a
 
-    .line 1490
+    .line 1498
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
@@ -2325,7 +2418,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1491
+    .line 1499
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
@@ -2342,12 +2435,12 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1489
+    .line 1497
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 1495
+    .line 1503
     :cond_8
     const-string v1, "QuickViewWorkspace"
 
@@ -2355,17 +2448,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1496
+    .line 1504
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     aget-object v1, v1, p1
 
-    .line 1497
+    .line 1505
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, p1
 
-    .line 1504
+    .line 1512
     invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
 
     move-result v3
@@ -2380,7 +2473,7 @@
 
     div-float/2addr v3, v4
 
-    .line 1505
+    .line 1513
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
 
     move-result v4
@@ -2395,56 +2488,56 @@
 
     div-float/2addr v4, v5
 
-    .line 1507
+    .line 1515
     const/4 v5, 0x0
 
     :goto_6
     if-ge v5, v0, :cond_a
 
-    .line 1508
+    .line 1516
     if-ne v5, p1, :cond_9
 
-    .line 1507
+    .line 1515
     :goto_7
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_6
 
-    .line 1509
+    .line 1517
     :cond_9
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
     aget-object v6, v6, v5
 
-    .line 1510
+    .line 1518
     iget v7, v6, Landroid/graphics/Rect;->left:I
 
     iget v8, v2, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v7, v8
 
-    .line 1511
+    .line 1519
     iget v6, v6, Landroid/graphics/Rect;->top:I
 
     iget v8, v2, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v6, v8
 
-    .line 1513
+    .line 1521
     int-to-float v7, v7
 
     mul-float/2addr v7, v3
 
     float-to-int v7, v7
 
-    .line 1514
+    .line 1522
     int-to-float v6, v6
 
     mul-float/2addr v6, v4
 
     float-to-int v6, v6
 
-    .line 1515
+    .line 1523
     iget-object v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mFinishRects:[Landroid/graphics/Rect;
 
     aget-object v8, v8, v5
@@ -2469,7 +2562,7 @@
 
     goto :goto_7
 
-    .line 1519
+    .line 1527
     :cond_a
     return-void
 .end method
@@ -2479,7 +2572,7 @@
     .parameter "dragOver"
 
     .prologue
-    .line 1293
+    .line 1301
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getDeleteZone()Lcom/sec/android/app/twlauncher/DeleteZone;
@@ -2488,7 +2581,7 @@
 
     invoke-virtual {v0, p1}, Lcom/sec/android/app/twlauncher/DeleteZone;->setDragEnterForced(Z)V
 
-    .line 1294
+    .line 1302
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getDeleteZone()Lcom/sec/android/app/twlauncher/DeleteZone;
@@ -2497,7 +2590,7 @@
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/DeleteZone;->invalidate()V
 
-    .line 1295
+    .line 1303
     return-void
 .end method
 
@@ -2506,24 +2599,24 @@
     .parameter
 
     .prologue
-    .line 1320
+    .line 1328
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
 
     move-result v0
 
-    .line 1322
+    .line 1330
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getLocationOnScreen([I)V
 
-    .line 1323
+    .line 1331
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     const/4 v2, 0x1
 
     aget v1, v1, v2
 
-    .line 1326
+    .line 1334
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -2536,44 +2629,44 @@
 
     move-result-object v2
 
-    .line 1328
+    .line 1336
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     invoke-virtual {v2, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1329
+    .line 1337
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    .line 1330
+    .line 1338
     invoke-virtual {v2}, Landroid/view/View;->getHeight()I
 
     move-result v4
 
-    .line 1331
+    .line 1339
     invoke-virtual {v2}, Landroid/view/View;->getLeft()I
 
     move-result v5
 
-    .line 1332
+    .line 1340
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v2
 
-    .line 1334
+    .line 1342
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v6}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v6
 
-    .line 1335
+    .line 1343
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     invoke-virtual {v6, v7}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1336
+    .line 1344
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpLocation:[I
 
     const/4 v7, 0x1
@@ -2598,27 +2691,27 @@
 
     add-int/2addr v6, v7
 
-    .line 1339
+    .line 1347
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->left:I
 
-    .line 1340
+    .line 1348
     iget-object v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->right:I
 
-    .line 1341
+    .line 1349
     iget-object v9, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
 
-    .line 1342
+    .line 1350
     iget-object v10, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
-    .line 1344
+    .line 1352
     iget-object v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     if-eqz v11, :cond_0
@@ -2629,19 +2722,19 @@
 
     if-eq v11, v0, :cond_1
 
-    .line 1345
+    .line 1353
     :cond_0
     new-array v11, v0, [Landroid/graphics/Rect;
 
     iput-object v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
-    .line 1346
+    .line 1354
     const/4 v11, 0x0
 
     :goto_0
     if-ge v11, v0, :cond_1
 
-    .line 1347
+    .line 1355
     iget-object v12, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     new-instance v13, Landroid/graphics/Rect;
@@ -2650,12 +2743,12 @@
 
     aput-object v13, v12, v11
 
-    .line 1346
+    .line 1354
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_0
 
-    .line 1351
+    .line 1359
     :cond_1
     iget-object v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
@@ -2675,7 +2768,7 @@
 
     invoke-virtual {v11, v7, v9, v3, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1358
+    .line 1366
     iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOrientation:I
 
     const/4 v3, 0x2
@@ -2686,7 +2779,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1360
+    .line 1368
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, p1
@@ -2697,7 +2790,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1363
+    .line 1371
     :cond_2
     iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationStyle:I
 
@@ -2707,7 +2800,7 @@
 
     if-nez v1, :cond_8
 
-    .line 1365
+    .line 1373
     :cond_3
     sget v1, Lcom/sec/android/app/twlauncher/Launcher;->SCREEN_COUNT:I
 
@@ -2715,42 +2808,42 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 1366
+    .line 1374
     const/4 v1, 0x4
 
     if-le v0, v1, :cond_4
 
     const/4 v1, 0x3
 
-    .line 1368
+    .line 1376
     :goto_1
     div-int v2, p1, v1
 
-    .line 1369
+    .line 1377
     rem-int v3, p1, v1
 
-    .line 1371
+    .line 1379
     const/4 v4, 0x0
 
     :goto_2
     if-ge v4, v0, :cond_a
 
-    .line 1372
+    .line 1380
     if-ne v4, p1, :cond_5
 
-    .line 1371
+    .line 1379
     :goto_3
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
-    .line 1366
+    .line 1374
     :cond_4
     const/4 v1, 0x2
 
     goto :goto_1
 
-    .line 1374
+    .line 1382
     :cond_5
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
@@ -2762,13 +2855,13 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1375
+    .line 1383
     div-int v5, v4, v1
 
-    .line 1376
+    .line 1384
     rem-int v6, v4, v1
 
-    .line 1378
+    .line 1386
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v7, v7, v4
@@ -2801,7 +2894,7 @@
 
     goto :goto_3
 
-    .line 1381
+    .line 1389
     :cond_6
     const/4 v1, 0x1
 
@@ -2810,7 +2903,7 @@
     :goto_4
     if-ltz v1, :cond_7
 
-    .line 1382
+    .line 1390
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
@@ -2823,7 +2916,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1383
+    .line 1391
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
@@ -2842,19 +2935,19 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1381
+    .line 1389
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_4
 
-    .line 1386
+    .line 1394
     :cond_7
     add-int/lit8 v1, p1, 0x1
 
     :goto_5
     if-ge v1, v0, :cond_a
 
-    .line 1387
+    .line 1395
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
@@ -2869,7 +2962,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1388
+    .line 1396
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, v1
@@ -2886,12 +2979,12 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1386
+    .line 1394
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 1392
+    .line 1400
     :cond_8
     const-string v1, "QuickViewWorkspace"
 
@@ -2899,17 +2992,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1393
+    .line 1401
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v1, v1, p1
 
-    .line 1394
+    .line 1402
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
     aget-object v2, v2, p1
 
-    .line 1401
+    .line 1409
     invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
 
     move-result v3
@@ -2924,7 +3017,7 @@
 
     div-float/2addr v3, v4
 
-    .line 1402
+    .line 1410
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
 
     move-result v4
@@ -2939,56 +3032,56 @@
 
     div-float/2addr v4, v5
 
-    .line 1404
+    .line 1412
     const/4 v4, 0x0
 
     :goto_6
     if-ge v4, v0, :cond_a
 
-    .line 1405
+    .line 1413
     if-ne v4, p1, :cond_9
 
-    .line 1404
+    .line 1412
     :goto_7
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_6
 
-    .line 1406
+    .line 1414
     :cond_9
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
     aget-object v5, v5, v4
 
-    .line 1407
+    .line 1415
     iget v6, v5, Landroid/graphics/Rect;->left:I
 
     iget v7, v2, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v6, v7
 
-    .line 1408
+    .line 1416
     iget v5, v5, Landroid/graphics/Rect;->top:I
 
     iget v7, v2, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v5, v7
 
-    .line 1410
+    .line 1418
     int-to-float v6, v6
 
     mul-float/2addr v6, v3
 
     float-to-int v6, v6
 
-    .line 1411
+    .line 1419
     int-to-float v5, v5
 
     mul-float/2addr v5, v3
 
     float-to-int v5, v5
 
-    .line 1412
+    .line 1420
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v7, v7, v4
@@ -3013,7 +3106,7 @@
 
     goto :goto_7
 
-    .line 1417
+    .line 1425
     :cond_a
     return-void
 .end method
@@ -3025,12 +3118,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 962
+    .line 970
     const/4 v2, 0x2
 
     iput v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
-    .line 963
+    .line 971
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
@@ -3043,56 +3136,56 @@
 
     iput v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
 
-    .line 964
+    .line 972
     iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
 
     iput v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
 
-    .line 965
+    .line 973
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
-    .line 966
+    .line 974
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchedView:Landroid/view/View;
 
-    .line 968
+    .line 976
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->buildDrawingCache()V
 
-    .line 969
+    .line 977
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getDrawingCache()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 970
+    .line 978
     .local v0, viewBitmap:Landroid/graphics/Bitmap;
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 971
+    .line 979
     .local v3, width:I
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v4
 
-    .line 973
+    .line 981
     .local v4, height:I
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 974
+    .line 982
     .local v5, scale:Landroid/graphics/Matrix;
     const/high16 v7, 0x3f80
 
-    .line 975
+    .line 983
     .local v7, scaleFactor:F
     invoke-virtual {v5, v7, v7}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 977
+    .line 985
     const/4 v6, 0x1
 
     move v2, v1
@@ -3103,10 +3196,10 @@
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressBitmap:Landroid/graphics/Bitmap;
 
-    .line 979
+    .line 987
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 980
+    .line 988
     return-void
 .end method
 
@@ -3115,7 +3208,7 @@
     .parameter "index"
 
     .prologue
-    .line 1173
+    .line 1181
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->indexOfChild(Landroid/view/View;)I
@@ -3126,10 +3219,10 @@
 
     invoke-static {p0, v0, p1, v1}, Lcom/sec/android/app/twlauncher/Utilities;->zOrderTweakMoveChild(Landroid/view/ViewGroup;IIZ)V
 
-    .line 1175
+    .line 1183
     invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->onSwap(I)V
 
-    .line 1176
+    .line 1184
     return-void
 .end method
 
@@ -3137,20 +3230,20 @@
     .locals 11
 
     .prologue
-    .line 1298
+    .line 1306
     iget-object v10, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v10}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v8
 
-    .line 1299
+    .line 1307
     .local v8, work:Lcom/sec/android/app/twlauncher/Workspace;
     invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v9
 
-    .line 1302
+    .line 1310
     .local v9, workCount:I
     const/4 v3, 0x0
 
@@ -3158,20 +3251,20 @@
     :goto_0
     if-ge v3, v9, :cond_2
 
-    .line 1303
+    .line 1311
     invoke-virtual {v8, v3}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 1304
+    .line 1312
     .local v1, child:Landroid/view/ViewGroup;
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
-    .line 1305
+    .line 1313
     .local v2, childCount:I
     const/4 v6, 0x0
 
@@ -3179,50 +3272,50 @@
     :goto_1
     if-ge v6, v2, :cond_1
 
-    .line 1306
+    .line 1314
     invoke-virtual {v1, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1307
+    .line 1315
     .local v5, itemView:Landroid/view/View;
     invoke-virtual {v5}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 1308
+    .line 1316
     .local v7, tag:Ljava/lang/Object;
     if-eqz v7, :cond_0
 
-    .line 1309
+    .line 1317
     move-object v0, v7
 
     check-cast v0, Lcom/sec/android/app/twlauncher/ItemInfo;
 
     move-object v4, v0
 
-    .line 1310
+    .line 1318
     .local v4, item:Lcom/sec/android/app/twlauncher/ItemInfo;
     iget v10, v4, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
 
     if-eq v10, v3, :cond_0
 
-    .line 1311
+    .line 1319
     iput v3, v4, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
 
-    .line 1312
+    .line 1320
     iget-object v10, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-static {v10, v4}, Lcom/sec/android/app/twlauncher/LauncherModel;->updateItemInDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;)V
 
-    .line 1305
+    .line 1313
     .end local v4           #item:Lcom/sec/android/app/twlauncher/ItemInfo;
     :cond_0
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 1302
+    .line 1310
     .end local v5           #itemView:Landroid/view/View;
     .end local v7           #tag:Ljava/lang/Object;
     :cond_1
@@ -3230,7 +3323,7 @@
 
     goto :goto_0
 
-    .line 1317
+    .line 1325
     .end local v1           #child:Landroid/view/ViewGroup;
     .end local v2           #childCount:I
     .end local v6           #j:I
@@ -3242,12 +3335,12 @@
     .locals 5
 
     .prologue
-    .line 1136
+    .line 1144
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
 
     move-result v1
 
-    .line 1137
+    .line 1145
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -3255,37 +3348,37 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 1138
+    .line 1146
     invoke-virtual {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1139
+    .line 1147
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 1140
+    .line 1148
     .local v3, tag:Ljava/lang/Object;
     sget-object v4, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->ADD_BTN_TAG:Ljava/lang/Object;
 
     if-eq v3, v4, :cond_0
 
-    .line 1141
+    .line 1149
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 1137
+    .line 1145
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1144
+    .line 1152
     .end local v0           #child:Landroid/view/View;
     .end local v3           #tag:Ljava/lang/Object;
     :cond_1
@@ -3419,39 +3512,39 @@
     .locals 2
 
     .prologue
-    .line 883
+    .line 891
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
-    .line 891
+    .line 899
     :goto_0
     return-void
 
-    .line 885
+    .line 893
     :cond_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeView(Landroid/view/View;)V
 
-    .line 886
+    .line 894
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
 
     invoke-virtual {p0, v0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->addView(Landroid/view/View;I)V
 
-    .line 888
+    .line 896
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
 
-    .line 889
+    .line 897
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
-    .line 890
+    .line 898
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
@@ -3469,142 +3562,66 @@
 
     const/4 v2, 0x0
 
-    .line 858
+    .line 866
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 859
+    .line 867
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 860
+    .line 868
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeView(Landroid/view/View;)V
 
-    .line 861
+    .line 869
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
 
     invoke-virtual {p0, v0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->addView(Landroid/view/View;I)V
 
-    .line 862
+    .line 870
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 864
+    .line 872
     :cond_0
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->updateTag()V
 
-    .line 866
+    .line 874
     invoke-direct {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->setDeleteZoneState(Z)V
 
-    .line 872
+    .line 880
     iput v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
 
-    .line 873
+    .line 881
     iput v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
-    .line 874
+    .line 882
     iput v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
 
-    .line 875
+    .line 883
     iput-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
-    .line 876
+    .line 884
     iput-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchedView:Landroid/view/View;
 
-    .line 877
+    .line 885
     iput v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPinchIndex:I
 
-    .line 878
+    .line 886
     iput v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
 
-    .line 879
+    .line 887
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->postInvalidate()V
 
-    .line 880
+    .line 888
     return-void
-.end method
-
-.method checkButtonArea(II)I
-    .locals 6
-    .parameter "x"
-    .parameter "y"
-
-    .prologue
-    const/4 v5, -0x1
-
-    .line 1747
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    .line 1748
-    .local v0, buttonArea:Landroid/graphics/Rect;
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
-
-    move-result v1
-
-    .line 1749
-    .local v1, count:I
-    const/4 v4, 0x1
-
-    if-gt v1, v4, :cond_0
-
-    move v4, v5
-
-    .line 1758
-    :goto_0
-    return v4
-
-    .line 1751
-    :cond_0
-    const/4 v2, 0x0
-
-    .local v2, i:I
-    :goto_1
-    if-ge v2, v1, :cond_2
-
-    .line 1752
-    invoke-virtual {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    .line 1753
-    .local v3, view:Landroid/view/View;
-    invoke-virtual {p0, v3}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getButtonBounds(Landroid/view/View;)Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    .line 1754
-    invoke-virtual {v0, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    move v4, v2
-
-    .line 1755
-    goto :goto_0
-
-    .line 1751
-    :cond_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    .end local v3           #view:Landroid/view/View;
-    :cond_2
-    move v4, v5
-
-    .line 1758
-    goto :goto_0
 .end method
 
 .method close()V
@@ -3615,30 +3632,30 @@
 
     const/4 v1, 0x0
 
-    .line 799
+    .line 807
     iput v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScrollY:I
 
-    .line 800
+    .line 808
     iput-boolean v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mEnabledChildAnimation:Z
 
-    .line 801
+    .line 809
     invoke-virtual {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->setVisibility(I)V
 
-    .line 803
+    .line 811
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getDeleteZone()Lcom/sec/android/app/twlauncher/DeleteZone;
 
     move-result-object v0
 
-    .line 804
+    .line 812
     .local v0, vDeleteZone:Lcom/sec/android/app/twlauncher/DeleteZone;
     invoke-virtual {v0, v2}, Lcom/sec/android/app/twlauncher/DeleteZone;->setVisibility(I)V
 
-    .line 806
+    .line 814
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->disableWorkspaceScreensCache()V
 
-    .line 807
+    .line 815
     return-void
 .end method
 
@@ -3646,20 +3663,20 @@
     .locals 5
 
     .prologue
-    .line 773
+    .line 781
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v3
 
-    .line 774
+    .line 782
     .local v3, ws:Lcom/sec/android/app/twlauncher/Workspace;
     invoke-virtual {v3}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v1
 
-    .line 776
+    .line 784
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -3667,25 +3684,25 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 777
+    .line 785
     invoke-virtual {v3, v2}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 779
+    .line 787
     .local v0, celllayout:Lcom/sec/android/app/twlauncher/CellLayout;
     const/4 v4, 0x0
 
     invoke-virtual {v0, v4}, Lcom/sec/android/app/twlauncher/CellLayout;->setChildrenDrawnWithCacheEnabled(Z)V
 
-    .line 776
+    .line 784
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 781
+    .line 789
     .end local v0           #celllayout:Lcom/sec/android/app/twlauncher/CellLayout;
     :cond_0
     return-void
@@ -4875,10 +4892,10 @@
     .parameter "drawingTime"
 
     .prologue
-    .line 661
+    .line 669
     const/4 v12, 0x0
 
-    .line 662
+    .line 670
     .local v12, ret:Z
     move-object/from16 v0, p0
 
@@ -4908,7 +4925,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 663
+    .line 671
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -4928,7 +4945,7 @@
 
     move v7, v0
 
-    .line 665
+    .line 673
     .local v7, current:I
     move v0, v7
 
@@ -4950,7 +4967,7 @@
 
     div-float v11, v22, v23
 
-    .line 666
+    .line 674
     .local v11, progress:F
     move-object/from16 v0, p0
 
@@ -4968,7 +4985,7 @@
 
     move v5, v11
 
-    .line 667
+    .line 675
     .local v5, backgroundAlpha:F
     :goto_0
     const/high16 v22, 0x3f80
@@ -4981,7 +4998,7 @@
 
     move-result v5
 
-    .line 668
+    .line 676
     const/16 v22, 0x0
 
     move/from16 v0, v22
@@ -4992,7 +5009,7 @@
 
     move-result v5
 
-    .line 670
+    .line 678
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawable2:Landroid/graphics/drawable/Drawable;
@@ -5011,7 +5028,7 @@
 
     invoke-virtual/range {v22 .. v23}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 671
+    .line 679
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawable2:Landroid/graphics/drawable/Drawable;
@@ -5036,7 +5053,7 @@
 
     invoke-virtual/range {v22 .. v26}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 672
+    .line 680
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawable2:Landroid/graphics/drawable/Drawable;
@@ -5049,7 +5066,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 679
+    .line 687
     .end local v5           #backgroundAlpha:F
     .end local v7           #current:I
     .end local v11           #progress:F
@@ -5058,7 +5075,7 @@
 
     move-result-object v17
 
-    .line 681
+    .line 689
     .local v17, tag:Ljava/lang/Object;
     sget-object v22, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->ADD_BTN_TAG:Ljava/lang/Object;
 
@@ -5066,7 +5083,7 @@
 
     move-object/from16 v1, v22
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_7
 
     move-object/from16 v0, p0
 
@@ -5074,7 +5091,7 @@
 
     move-object/from16 v22, v0
 
-    if-eqz v22, :cond_8
+    if-eqz v22, :cond_7
 
     move-object/from16 v0, v17
 
@@ -5082,9 +5099,9 @@
 
     move/from16 v22, v0
 
-    if-eqz v22, :cond_8
+    if-eqz v22, :cond_7
 
-    .line 682
+    .line 690
     check-cast v17, Ljava/lang/Integer;
 
     .end local v17           #tag:Ljava/lang/Object;
@@ -5092,7 +5109,7 @@
 
     move-result v16
 
-    .line 685
+    .line 693
     .local v16, screen:I
     move-object/from16 v0, p0
 
@@ -5112,14 +5129,14 @@
 
     move-result-object v6
 
-    .line 687
+    .line 695
     .local v6, child:Landroid/view/View;
     if-eqz v6, :cond_1
 
-    .line 688
+    .line 696
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 690
+    .line 698
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getHeight()I
 
     move-result v22
@@ -5154,7 +5171,7 @@
 
     div-float v15, v22, v23
 
-    .line 691
+    .line 699
     .local v15, scaleV:F
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getWidth()I
 
@@ -5190,7 +5207,7 @@
 
     div-float v14, v22, v23
 
-    .line 692
+    .line 700
     .local v14, scaleH:F
     cmpl-float v22, v15, v14
 
@@ -5198,7 +5215,7 @@
 
     move v13, v14
 
-    .line 694
+    .line 702
     .local v13, scale:F
     :goto_2
     move-object/from16 v0, p0
@@ -5217,7 +5234,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->left:I
 
-    .line 695
+    .line 703
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpRect:Landroid/graphics/Rect;
@@ -5234,7 +5251,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 696
+    .line 704
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpRect:Landroid/graphics/Rect;
@@ -5257,7 +5274,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->right:I
 
-    .line 697
+    .line 705
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpRect:Landroid/graphics/Rect;
@@ -5280,7 +5297,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 699
+    .line 707
     const/16 v22, 0x11
 
     invoke-virtual {v6}, Landroid/view/View;->getWidth()I
@@ -5333,7 +5350,7 @@
 
     invoke-static/range {v22 .. v26}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 702
+    .line 710
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpRect:Landroid/graphics/Rect;
@@ -5346,7 +5363,7 @@
 
     move/from16 v20, v0
 
-    .line 703
+    .line 711
     .local v20, xOffset:I
     move-object/from16 v0, p0
 
@@ -5360,7 +5377,7 @@
 
     move/from16 v21, v0
 
-    .line 705
+    .line 713
     .local v21, yOffset:I
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLeft()I
 
@@ -5394,7 +5411,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 707
+    .line 715
     move-object/from16 v0, p1
 
     move v1, v13
@@ -5403,51 +5420,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 708
+    .line 716
     move-object v0, v6
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 716
+    .line 724
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 720
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildIndex(Landroid/view/View;)I
-
-    move-result v22
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    move/from16 v23, v0
-
-    move/from16 v0, v22
-
-    move/from16 v1, v23
-
-    if-ne v0, v1, :cond_7
-
-    .line 721
-    const/16 v22, 0x2
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    move/from16 v3, v22
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawSetButton(Landroid/graphics/Canvas;Landroid/view/View;I)V
-
-    .line 740
+    .line 748
     .end local v6           #child:Landroid/view/View;
     .end local v13           #scale:F
     .end local v14           #scaleH:F
@@ -5469,7 +5452,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 741
+    .line 749
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
@@ -5482,16 +5465,16 @@
 
     move/from16 v1, v23
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_8
 
-    .line 742
+    .line 750
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragBitmap:Landroid/graphics/Bitmap;
 
     move-object v8, v0
 
-    .line 743
+    .line 751
     .local v8, dragBitmap:Landroid/graphics/Bitmap;
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLeft()I
 
@@ -5531,13 +5514,13 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 758
+    .line 766
     .end local v8           #dragBitmap:Landroid/graphics/Bitmap;
     :cond_2
     :goto_4
     return v12
 
-    .line 666
+    .line 674
     .restart local v7       #current:I
     .restart local v11       #progress:F
     :cond_3
@@ -5549,7 +5532,7 @@
 
     goto/16 :goto_0
 
-    .line 673
+    .line 681
     .end local v7           #current:I
     .end local v11           #progress:F
     :cond_4
@@ -5567,12 +5550,12 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 674
+    .line 682
     const/4 v12, 0x0
 
     goto/16 :goto_1
 
-    .line 676
+    .line 684
     :cond_5
     invoke-super/range {p0 .. p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -5587,38 +5570,16 @@
     :cond_6
     move v13, v15
 
-    .line 692
+    .line 700
     goto/16 :goto_2
 
-    .line 723
-    .restart local v13       #scale:F
-    .restart local v20       #xOffset:I
-    .restart local v21       #yOffset:I
-    :cond_7
-    const/16 v22, 0x0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    move/from16 v3, v22
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawSetButton(Landroid/graphics/Canvas;Landroid/view/View;I)V
-
-    goto :goto_3
-
-    .line 731
+    .line 739
     .end local v6           #child:Landroid/view/View;
-    .end local v13           #scale:F
     .end local v14           #scaleH:F
     .end local v15           #scaleV:F
     .end local v16           #screen:I
-    .end local v20           #xOffset:I
-    .end local v21           #yOffset:I
     .restart local v17       #tag:Ljava/lang/Object;
-    :cond_8
+    :cond_7
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAddDrawable:Landroid/graphics/drawable/Drawable;
@@ -5629,7 +5590,7 @@
 
     move-result v19
 
-    .line 732
+    .line 740
     .local v19, width:I
     move-object/from16 v0, p0
 
@@ -5641,7 +5602,7 @@
 
     move-result v9
 
-    .line 733
+    .line 741
     .local v9, height:I
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLeft()I
 
@@ -5657,7 +5618,7 @@
 
     add-int v10, v22, v23
 
-    .line 734
+    .line 742
     .local v10, left:I
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getTop()I
 
@@ -5673,7 +5634,7 @@
 
     add-int v18, v22, v23
 
-    .line 736
+    .line 744
     .local v18, top:I
     move-object/from16 v0, p0
 
@@ -5697,7 +5658,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 737
+    .line 745
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAddDrawable:Landroid/graphics/drawable/Drawable;
@@ -5712,20 +5673,20 @@
 
     goto/16 :goto_3
 
-    .line 745
+    .line 753
     .end local v9           #height:I
     .end local v10           #left:I
     .end local v17           #tag:Ljava/lang/Object;
     .end local v18           #top:I
     .end local v19           #width:I
-    :cond_9
+    :cond_8
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressBitmap:Landroid/graphics/Bitmap;
 
     move-object v8, v0
 
-    .line 746
+    .line 754
     .restart local v8       #dragBitmap:Landroid/graphics/Bitmap;
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLeft()I
 
@@ -5765,19 +5726,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 752
-    const/16 v22, 0x1
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    move/from16 v3, v22
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawSetButton(Landroid/graphics/Canvas;Landroid/view/View;I)V
-
     goto/16 :goto_4
 .end method
 
@@ -5785,24 +5733,24 @@
     .locals 2
 
     .prologue
-    .line 1538
+    .line 1546
     iget v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationState:I
 
     const/4 v1, 0x7
 
     if-ne v0, v1, :cond_0
 
-    .line 1539
+    .line 1547
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationState:I
 
-    .line 1540
+    .line 1548
     const/16 v0, 0x12c
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationDuration:I
 
-    .line 1542
+    .line 1550
     :cond_0
     return-void
 .end method
@@ -5811,587 +5759,25 @@
     .locals 1
 
     .prologue
-    .line 1533
+    .line 1541
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationState:I
 
-    .line 1534
+    .line 1542
     const/16 v0, 0x190
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationDuration:I
 
-    .line 1535
+    .line 1543
     return-void
-.end method
-
-.method drawSetButton(Landroid/graphics/Canvas;Landroid/view/View;I)V
-    .locals 8
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v6, 0x2
-
-    const/4 v5, 0x1
-
-    const-string v7, " height = "
-
-    const-string v4, "QuickViewWorkspace"
-
-    .line 1655
-    iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mSkipSetButtonAction:Z
-
-    if-eqz v0, :cond_0
-
-    .line 1691
-    :goto_0
-    return-void
-
-    .line 1657
-    :cond_0
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
-
-    move-result v0
-
-    .line 1660
-    invoke-virtual {p0, p2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getButtonBounds(Landroid/view/View;)Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    .line 1662
-    const-string v2, "QuickViewWorkspace"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, " drawSetButton : child count = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v4, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1664
-    const/4 v2, 0x4
-
-    if-le v0, v2, :cond_4
-
-    .line 1665
-    const-string v0, "QuickViewWorkspace"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " drawSetButton : small button | width = "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v2, v1, Landroid/graphics/Rect;->right:I
-
-    iget v3, v1, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v2, v3
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " height = "
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v2, v1, Landroid/graphics/Rect;->bottom:I
-
-    iget v3, v1, Landroid/graphics/Rect;->top:I
-
-    sub-int/2addr v2, v3
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v4, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1666
-    if-nez p3, :cond_2
-
-    .line 1667
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageSmall:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 1668
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageSmall:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 1690
-    :cond_1
-    :goto_1
-    invoke-virtual {p0, p1, p2, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawSetButtonText(Landroid/graphics/Canvas;Landroid/view/View;Landroid/graphics/Rect;)V
-
-    goto :goto_0
-
-    .line 1669
-    :cond_2
-    if-ne p3, v5, :cond_3
-
-    .line 1670
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPagePressedSmall:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 1671
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPagePressedSmall:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    goto :goto_1
-
-    .line 1672
-    :cond_3
-    if-ne p3, v6, :cond_1
-
-    .line 1673
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageFocusedSmall:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 1674
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageFocusedSmall:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    goto :goto_1
-
-    .line 1678
-    :cond_4
-    const-string v0, "QuickViewWorkspace"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " drawSetButton : large button | width = "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v2, v1, Landroid/graphics/Rect;->right:I
-
-    iget v3, v1, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v2, v3
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " height = "
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v2, v1, Landroid/graphics/Rect;->bottom:I
-
-    iget v3, v1, Landroid/graphics/Rect;->top:I
-
-    sub-int/2addr v2, v3
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v4, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1679
-    if-nez p3, :cond_5
-
-    .line 1680
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageBig:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 1681
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageBig:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    goto :goto_1
-
-    .line 1682
-    :cond_5
-    if-ne p3, v5, :cond_6
-
-    .line 1683
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPagePressedBig:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 1684
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPagePressedBig:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    goto :goto_1
-
-    .line 1685
-    :cond_6
-    if-ne p3, v6, :cond_1
-
-    .line 1686
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageFocusedBig:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 1687
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageFocusedBig:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    goto :goto_1
-.end method
-
-.method drawSetButtonText(Landroid/graphics/Canvas;Landroid/view/View;Landroid/graphics/Rect;)V
-    .locals 6
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v4, 0x1
-
-    .line 1695
-    invoke-virtual {p0, p2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildIndex(Landroid/view/View;)I
-
-    move-result v0
-
-    .line 1696
-    iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getDefaultHomeScreen()I
-
-    move-result v1
-
-    .line 1697
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
-
-    .line 1699
-    iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    .line 1700
-    iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPaint:Landroid/graphics/Paint;
-
-    iget v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->nDefaultPageTextSize:I
-
-    int-to-float v3, v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setTextSize(F)V
-
-    .line 1704
-    if-ne v0, v1, :cond_1
-
-    .line 1705
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0a003e
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 1706
-    const-string v1, "Home"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-ne v1, v4, :cond_0
-
-    .line 1707
-    const/16 v1, 0x38
-
-    move v5, v1
-
-    move-object v1, v0
-
-    move v0, v5
-
-    .line 1715
-    :goto_0
-    iget v2, p3, Landroid/graphics/Rect;->right:I
-
-    iget v3, p3, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v2, v3
-
-    sub-int v0, v2, v0
-
-    div-int/lit8 v0, v0, 0x2
-
-    .line 1716
-    const/16 v2, 0xd
-
-    .line 1717
-    iget v3, p3, Landroid/graphics/Rect;->left:I
-
-    add-int/2addr v0, v3
-
-    int-to-float v0, v0
-
-    iget v3, p3, Landroid/graphics/Rect;->bottom:I
-
-    sub-int v2, v3, v2
-
-    int-to-float v2, v2
-
-    iget-object v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v1, v0, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    .line 1719
-    return-void
-
-    .line 1709
-    :cond_0
-    const/16 v1, 0x24
-
-    move v5, v1
-
-    move-object v1, v0
-
-    move v0, v5
-
-    goto :goto_0
-
-    .line 1712
-    :cond_1
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0a003f
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 1713
-    const/16 v1, 0x5a
-
-    move v5, v1
-
-    move-object v1, v0
-
-    move v0, v5
-
-    goto :goto_0
-.end method
-
-.method getButtonBounds(Landroid/view/View;)Landroid/graphics/Rect;
-    .locals 15
-    .parameter "view"
-
-    .prologue
-    .line 1722
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
-
-    move-result v3
-
-    .line 1723
-    .local v3, count:I
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getRight()I
-
-    move-result v13
-
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getLeft()I
-
-    move-result v14
-
-    sub-int v7, v13, v14
-
-    .line 1724
-    .local v7, view_width:I
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getBottom()I
-
-    move-result v13
-
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getTop()I
-
-    move-result v14
-
-    sub-int v6, v13, v14
-
-    .line 1725
-    .local v6, view_height:I
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getLeft()I
-
-    move-result v8
-
-    .line 1726
-    .local v8, view_x:I
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getTop()I
-
-    move-result v9
-
-    .line 1728
-    .local v9, view_y:I
-    const/4 v1, 0x5
-
-    .line 1729
-    .local v1, buttonLeftMargin:I
-    const/16 v2, 0xa
-
-    .line 1730
-    .local v2, buttonRightMargin:I
-    const/16 v0, 0xa
-
-    .line 1732
-    .local v0, buttonBottomMargin:I
-    add-int v13, v1, v2
-
-    sub-int v10, v7, v13
-
-    .line 1733
-    .local v10, w:I
-    const/16 v4, 0x25
-
-    .line 1734
-    .local v4, h:I
-    move v11, v1
-
-    .line 1735
-    .local v11, x:I
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getBottom()I
-
-    move-result v13
-
-    sub-int/2addr v13, v4
-
-    sub-int v12, v13, v0
-
-    .line 1737
-    .local v12, y:I
-    new-instance v5, Landroid/graphics/Rect;
-
-    invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
-
-    .line 1739
-    .local v5, rect:Landroid/graphics/Rect;
-    add-int/lit8 v13, v8, 0x5
-
-    iput v13, v5, Landroid/graphics/Rect;->left:I
-
-    .line 1740
-    add-int/lit8 v13, v10, 0x5
-
-    add-int/2addr v13, v8
-
-    iput v13, v5, Landroid/graphics/Rect;->right:I
-
-    .line 1741
-    iput v12, v5, Landroid/graphics/Rect;->top:I
-
-    .line 1742
-    add-int v13, v12, v4
-
-    iput v13, v5, Landroid/graphics/Rect;->bottom:I
-
-    .line 1743
-    return-object v5
-.end method
-
-.method getChildIndex(Landroid/view/View;)I
-    .locals 4
-    .parameter "view"
-
-    .prologue
-    .line 1762
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
-
-    move-result v1
-
-    .line 1763
-    .local v1, childCount:I
-    const/4 v2, -0x1
-
-    .line 1765
-    .local v2, childIndex:I
-    const/4 v3, 0x0
-
-    .local v3, i:I
-    :goto_0
-    if-ge v3, v1, :cond_1
-
-    .line 1766
-    invoke-virtual {p0, v3}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 1767
-    .local v0, child:Landroid/view/View;
-    if-ne v0, p1, :cond_0
-
-    .line 1768
-    move v2, v3
-
-    .line 1765
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    .line 1771
-    .end local v0           #child:Landroid/view/View;
-    :cond_1
-    return v2
 .end method
 
 .method public getCurrentPage()I
     .locals 1
 
     .prologue
-    .line 839
+    .line 847
     iget v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mCurrentPage:I
 
     return v0
@@ -6401,7 +5787,7 @@
     .locals 1
 
     .prologue
-    .line 826
+    .line 834
     iget v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
 
     return v0
@@ -6414,20 +5800,20 @@
     .prologue
     const v7, 0x7f020091
 
-    .line 894
+    .line 902
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeAllViews()V
 
-    .line 896
+    .line 904
     const/4 v5, 0x0
 
     invoke-virtual {p0, v5}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->setBackgroundResource(I)V
 
-    .line 898
+    .line 906
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 899
+    .line 907
     .local v3, res:Landroid/content/res/Resources;
     invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
@@ -6437,24 +5823,24 @@
 
     iput v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOrientation:I
 
-    .line 901
+    .line 909
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 902
+    .line 910
     .local v1, context:Landroid/content/Context;
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    .line 904
+    .line 912
     .local v4, resources:Landroid/content/res/Resources;
     invoke-static {v1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
 
-    .line 905
+    .line 913
     .local v0, configuration:Landroid/view/ViewConfiguration;
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
@@ -6462,21 +5848,21 @@
 
     iput v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchSlop:I
 
-    .line 907
+    .line 915
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 908
+    .line 916
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawable:Landroid/graphics/drawable/Drawable;
 
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawablePadding:Landroid/graphics/Rect;
 
     invoke-virtual {v5, v6}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 909
+    .line 917
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
@@ -6487,7 +5873,7 @@
 
     iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenBgDrawable2:Landroid/graphics/drawable/Drawable;
 
-    .line 911
+    .line 919
     const v5, 0x7f020030
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -6496,7 +5882,7 @@
 
     iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 913
+    .line 921
     const v5, 0x7f02002e
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -6505,100 +5891,37 @@
 
     iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAddDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 917
-    const v5, 0x7f020012
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageSmall:Landroid/graphics/drawable/Drawable;
-
-    .line 918
-    const v5, 0x7f020017
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPagePressedSmall:Landroid/graphics/drawable/Drawable;
-
-    .line 919
-    const v5, 0x7f020016
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageFocusedSmall:Landroid/graphics/drawable/Drawable;
-
-    .line 920
-    const v5, 0x7f020013
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageBig:Landroid/graphics/drawable/Drawable;
-
-    .line 921
-    const v5, 0x7f020015
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPagePressedBig:Landroid/graphics/drawable/Drawable;
-
-    .line 922
-    const v5, 0x7f020014
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mBtnSetDefaultPageFocusedBig:Landroid/graphics/drawable/Drawable;
-
-    .line 923
-    const v5, 0x7f080048
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v5
-
-    iput v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->nDefaultPageTextSize:I
-
-    .line 927
+    .line 935
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_0
     if-ge v2, p1, :cond_0
 
-    .line 928
+    .line 936
     invoke-direct {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->makeScreen(I)Landroid/view/View;
 
-    .line 927
+    .line 935
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 931
+    .line 939
     :cond_0
     sget v5, Lcom/sec/android/app/twlauncher/Launcher;->SCREEN_COUNT:I
 
     if-ge p1, v5, :cond_1
 
-    .line 932
+    .line 940
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->makeAddBtn()Landroid/view/View;
 
-    .line 939
+    .line 947
     :cond_1
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScreenRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v5}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 941
+    .line 949
     return-void
 .end method
 
@@ -6606,7 +5929,7 @@
     .locals 2
 
     .prologue
-    .line 843
+    .line 851
     iget v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationState:I
 
     const/4 v1, 0x7
@@ -6619,11 +5942,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 845
+    .line 853
     :cond_0
     const/4 v0, 0x0
 
-    .line 847
+    .line 855
     :goto_0
     return v0
 
@@ -6637,7 +5960,7 @@
     .locals 1
 
     .prologue
-    .line 810
+    .line 818
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getVisibility()I
 
     move-result v0
@@ -6660,16 +5983,16 @@
     .parameter "v"
 
     .prologue
-    .line 634
+    .line 642
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     sget-object v1, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->ADD_BTN_TAG:Ljava/lang/Object;
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_0
 
-    .line 635
+    .line 643
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -6682,68 +6005,50 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mCurrentPage:I
 
-    .line 639
-    iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mIsSetButtonPressed:Z
-
-    if-nez v0, :cond_0
-
-    .line 640
+    .line 656
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawCloseAnimation()V
 
-    .line 641
+    .line 657
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->postInvalidate()V
 
-    .line 656
+    .line 664
     :goto_0
     return-void
 
-    .line 644
+    .line 662
     :cond_0
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mIsSetButtonPressed:Z
-
-    .line 645
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->invalidate()V
-
-    goto :goto_0
-
-    .line 654
-    :cond_1
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->addScreen()V
 
     goto :goto_0
 .end method
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 14
+    .locals 13
     .parameter "ev"
 
     .prologue
-    const/4 v13, -0x1
-
     const/4 v12, 0x1
 
     const/4 v11, 0x0
 
-    .line 405
+    .line 413
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 407
+    .line 415
     .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
 
-    .line 408
+    .line 416
     .local v2, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v5
 
-    .line 410
+    .line 418
     .local v5, y:F
     iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationState:I
 
@@ -6759,26 +6064,26 @@
 
     move v8, v12
 
-    .line 513
+    .line 521
     :goto_0
     return v8
 
-    .line 414
+    .line 422
     :cond_0
     sparse-switch v0, :sswitch_data_0
 
-    .line 513
+    .line 521
     :cond_1
     :goto_1
     iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_3
 
     move v8, v12
 
     goto :goto_0
 
-    .line 416
+    .line 424
     :sswitch_0
     iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMultiTouchUsed:Z
 
@@ -6788,17 +6093,17 @@
 
     if-eqz v8, :cond_1
 
-    .line 417
+    .line 425
     iput v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
-    .line 419
+    .line 427
     invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v8
 
     float-to-int v6, v8
 
-    .line 420
+    .line 428
     .local v6, y1:I
     invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getX(I)F
 
@@ -6806,7 +6111,7 @@
 
     float-to-int v3, v8
 
-    .line 421
+    .line 429
     .local v3, x1:I
     invoke-virtual {p1, v12}, Landroid/view/MotionEvent;->getY(I)F
 
@@ -6814,7 +6119,7 @@
 
     float-to-int v7, v8
 
-    .line 422
+    .line 430
     .local v7, y2:I
     invoke-virtual {p1, v12}, Landroid/view/MotionEvent;->getX(I)F
 
@@ -6822,7 +6127,7 @@
 
     float-to-int v4, v8
 
-    .line 424
+    .line 432
     .local v4, x2:I
     sub-int v8, v6, v7
 
@@ -6852,33 +6157,21 @@
 
     iput v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMovePinch:I
 
-    .line 428
-    iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    if-eq v8, v13, :cond_2
-
-    .line 429
-    iput v13, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    .line 430
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->invalidate()V
-
-    .line 435
-    :cond_2
+    .line 443
     iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMovePinch:I
 
     const/16 v9, 0x64
 
     if-le v8, v9, :cond_1
 
-    .line 436
+    .line 444
     iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPinchOutIndex:I
 
     invoke-virtual {p0, v8}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 437
+    .line 445
     .local v1, childOnPinch:Landroid/view/View;
     if-eqz v1, :cond_1
 
@@ -6890,29 +6183,29 @@
 
     if-eq v8, v9, :cond_1
 
-    .line 439
+    .line 447
     iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMultiTouchUsed:Z
 
-    .line 440
+    .line 448
     iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPinchOutProcess:Z
 
-    .line 441
+    .line 449
     iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPinchOutIndex:I
 
     iput v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mCurrentPage:I
 
-    .line 442
+    .line 450
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawCloseAnimation()V
 
-    .line 443
+    .line 451
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->postInvalidate()V
 
     move v8, v12
 
-    .line 444
+    .line 452
     goto :goto_0
 
-    .line 451
+    .line 459
     .end local v1           #childOnPinch:Landroid/view/View;
     .end local v3           #x1:I
     .end local v4           #x2:I
@@ -6921,130 +6214,39 @@
     :sswitch_1
     iput v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLastMotionX:F
 
-    .line 452
+    .line 460
     iput v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLastMotionY:F
 
-    .line 456
-    iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mSkipSetButtonAction:Z
+    goto :goto_1
 
-    if-nez v8, :cond_1
-
-    .line 457
-    iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mIsSetButtonPressed:Z
-
-    if-nez v8, :cond_1
-
-    .line 458
-    float-to-int v8, v2
-
-    iget v9, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScrollX:I
-
-    add-int/2addr v8, v9
-
-    float-to-int v9, v5
-
-    iget v10, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mScrollY:I
-
-    add-int/2addr v9, v10
-
-    invoke-virtual {p0, v8, v9}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->checkButtonArea(II)I
-
-    move-result v8
-
-    iput v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    .line 460
-    iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    if-eq v8, v13, :cond_1
-
-    .line 461
-    iput-boolean v12, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mIsSetButtonPressed:Z
-
-    .line 462
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->invalidate()V
-
-    goto/16 :goto_1
-
-    .line 473
+    .line 493
     :sswitch_2
-    iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mSkipSetButtonAction:Z
-
-    if-nez v8, :cond_3
-
-    .line 474
-    iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mIsSetButtonPressed:Z
-
-    if-eqz v8, :cond_3
-
-    .line 475
-    iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    if-eq v8, v13, :cond_3
-
-    .line 476
-    const-string v8, "QuickViewWorkspace"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "setDefaultHomeScreen is called : Focused Button "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    iget v10, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 477
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    iget v9, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    invoke-virtual {v8, v9}, Lcom/sec/android/app/twlauncher/Launcher;->setDefaultHomeScreen(I)V
-
-    .line 478
-    iput v13, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    .line 485
-    :cond_3
     iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMultiTouchUsed:Z
 
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_2
 
-    .line 486
+    .line 494
     iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMultiTouchUsed:Z
 
-    .line 487
+    .line 495
     iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPinchOutProcess:Z
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    .line 489
-    :cond_4
+    .line 497
+    :cond_2
     iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
     const/4 v9, 0x2
 
     if-ne v8, v9, :cond_1
 
-    .line 490
+    .line 498
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->endDrag()V
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    .line 495
+    .line 503
     :sswitch_3
     iget v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
@@ -7054,17 +6256,17 @@
 
     if-nez v8, :cond_1
 
-    .line 496
+    .line 504
     iput-boolean v12, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMultiTouchUsed:Z
 
-    .line 498
+    .line 506
     invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v8
 
     float-to-int v6, v8
 
-    .line 499
+    .line 507
     .restart local v6       #y1:I
     invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getX(I)F
 
@@ -7072,7 +6274,7 @@
 
     float-to-int v3, v8
 
-    .line 500
+    .line 508
     .restart local v3       #x1:I
     invoke-virtual {p1, v12}, Landroid/view/MotionEvent;->getY(I)F
 
@@ -7080,7 +6282,7 @@
 
     float-to-int v7, v8
 
-    .line 501
+    .line 509
     .restart local v7       #y2:I
     invoke-virtual {p1, v12}, Landroid/view/MotionEvent;->getX(I)F
 
@@ -7088,7 +6290,7 @@
 
     float-to-int v4, v8
 
-    .line 503
+    .line 511
     .restart local v4       #x2:I
     invoke-direct {p0, v3, v6}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getTouchedIndex(II)I
 
@@ -7100,10 +6302,10 @@
 
     if-ne v8, v9, :cond_1
 
-    .line 504
+    .line 512
     iput-boolean v12, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPinchOutProcess:Z
 
-    .line 505
+    .line 513
     sub-int v8, v6, v7
 
     sub-int v9, v6, v7
@@ -7128,7 +6330,7 @@
 
     iput v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMovePinchStart:I
 
-    .line 507
+    .line 515
     invoke-direct {p0, v3, v6}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getTouchedIndex(II)I
 
     move-result v8
@@ -7141,13 +6343,15 @@
     .end local v4           #x2:I
     .end local v6           #y1:I
     .end local v7           #y2:I
-    :cond_5
+    :cond_3
     move v8, v11
 
-    .line 513
+    .line 521
     goto/16 :goto_0
 
-    .line 414
+    .line 422
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_1
@@ -7159,7 +6363,7 @@
 .end method
 
 .method protected onLayout(ZIIII)V
-    .locals 8
+    .locals 9
     .parameter "changed"
     .parameter "left"
     .parameter "top"
@@ -7174,169 +6378,192 @@
 
     .line 367
     .local v1, count:I
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    if-ge v1, v4, :cond_1
+    if-ge v1, v5, :cond_1
 
-    .line 394
+    .line 402
     :cond_0
     return-void
 
     .line 369
     :cond_1
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_2
 
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
-    array-length v4, v4
+    array-length v5, v5
 
-    if-eq v4, v1, :cond_3
+    if-eq v5, v1, :cond_3
 
     .line 370
     :cond_2
     if-lez v1, :cond_3
 
-    new-array v4, v1, [Landroid/graphics/Rect;
+    new-array v5, v1, [Landroid/graphics/Rect;
 
-    iput-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+    iput-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
     .line 373
     :cond_3
     invoke-direct {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getViewLayout(I)V
 
     .line 374
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    .local v2, i:I
+    .local v3, i:I
     :goto_0
-    if-ge v2, v1, :cond_0
+    if-ge v3, v1, :cond_0
 
     .line 375
-    invoke-virtual {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 376
     .local v0, child:Landroid/view/View;
-    new-instance v3, Landroid/graphics/Rect;
+    new-instance v4, Landroid/graphics/Rect;
 
-    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
-
-    .line 378
-    .local v3, r:Landroid/graphics/Rect;
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
-
-    move-result v4
-
-    const/16 v5, 0x8
-
-    if-eq v4, v5, :cond_5
-
-    .line 379
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
-
-    aget-object v4, v4, v2
-
-    if-nez v4, :cond_4
-
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
-
-    new-instance v5, Landroid/graphics/Rect;
-
-    invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
-
-    aput-object v5, v4, v2
+    invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
     .line 381
+    .local v4, r:Landroid/graphics/Rect;
+    :try_start_0
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v5
+
+    const/16 v6, 0x8
+
+    if-eq v5, v6, :cond_5
+
+    .line 382
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+
+    aget-object v5, v5, v3
+
+    if-nez v5, :cond_4
+
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+
+    new-instance v6, Landroid/graphics/Rect;
+
+    invoke-direct {v6}, Landroid/graphics/Rect;-><init>()V
+
+    aput-object v6, v5, v3
+
+    .line 384
     :cond_4
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTempRects:[Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTempRects:[Landroid/graphics/Rect;
 
-    aget-object v4, v4, v2
+    aget-object v5, v5, v3
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
     .line 374
     :cond_5
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 382
-    :cond_6
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
-
-    aget-object v4, v4, v2
-
-    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTempRects:[Landroid/graphics/Rect;
-
-    aget-object v5, v5, v2
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    .line 384
-    invoke-virtual {v0, v3}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
-
     .line 385
-    invoke-virtual {v3}, Landroid/graphics/Rect;->isEmpty()Z
+    :cond_6
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
-    move-result v4
+    aget-object v5, v5, v3
 
-    if-nez v4, :cond_7
+    iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTempRects:[Landroid/graphics/Rect;
 
-    iget-boolean v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mEnabledChildAnimation:Z
+    aget-object v6, v6, v3
 
-    if-eqz v4, :cond_7
-
-    .line 386
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
-
-    move-result v4
-
-    if-nez v4, :cond_5
+    invoke-virtual {v5, v6}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
     .line 387
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildAnimate:[Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;
+    invoke-virtual {v0, v4}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    aget-object v4, v4, v2
+    .line 388
+    invoke-virtual {v4}, Landroid/graphics/Rect;->isEmpty()Z
 
-    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+    move-result v5
 
-    aget-object v5, v5, v2
+    if-nez v5, :cond_7
 
-    invoke-virtual {v4, v0, v5}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->start(Landroid/view/View;Landroid/graphics/Rect;)V
+    iget-boolean v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mEnabledChildAnimation:Z
 
-    goto :goto_1
+    if-eqz v5, :cond_7
+
+    .line 389
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v5
+
+    if-nez v5, :cond_5
 
     .line 390
-    :cond_7
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildAnimate:[Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;
 
-    aget-object v4, v4, v2
-
-    iget v4, v4, Landroid/graphics/Rect;->left:I
-
-    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
-
-    aget-object v5, v5, v2
-
-    iget v5, v5, Landroid/graphics/Rect;->top:I
+    aget-object v5, v5, v3
 
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
-    aget-object v6, v6, v2
+    aget-object v6, v6, v3
 
-    iget v6, v6, Landroid/graphics/Rect;->right:I
+    invoke-virtual {v5, v0, v6}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->start(Landroid/view/View;Landroid/graphics/Rect;)V
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    .line 397
+    :catch_0
+    move-exception v5
+
+    move-object v2, v5
+
+    .line 398
+    .local v2, e:Ljava/lang/NullPointerException;
+    const-string v5, "QuickViewWorkspace"
+
+    const-string v6, "NullPointerException"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
+    .line 393
+    .end local v2           #e:Ljava/lang/NullPointerException;
+    :cond_7
+    :try_start_1
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+
+    aget-object v5, v5, v3
+
+    iget v5, v5, Landroid/graphics/Rect;->left:I
+
+    iget-object v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+
+    aget-object v6, v6, v3
+
+    iget v6, v6, Landroid/graphics/Rect;->top:I
 
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
 
-    aget-object v7, v7, v2
+    aget-object v7, v7, v3
 
-    iget v7, v7, Landroid/graphics/Rect;->bottom:I
+    iget v7, v7, Landroid/graphics/Rect;->right:I
 
-    invoke-virtual {v0, v4, v5, v6, v7}, Landroid/view/View;->layout(IIII)V
+    iget-object v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mChildRects:[Landroid/graphics/Rect;
+
+    aget-object v8, v8, v3
+
+    iget v8, v8, Landroid/graphics/Rect;->bottom:I
+
+    invoke-virtual {v0, v5, v6, v7, v8}, Landroid/view/View;->layout(IIII)V
+    :try_end_1
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_1
 .end method
@@ -7348,18 +6575,18 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 609
+    .line 617
     iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mMultiTouchUsed:Z
 
     if-eqz v0, :cond_0
 
     move v0, v2
 
-    .line 629
+    .line 637
     :goto_0
     return v0
 
-    .line 610
+    .line 618
     :cond_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -7369,7 +6596,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 611
+    .line 619
     const-string v0, "QuickViewWorkspace"
 
     const-string v1, "ignoring long click. Desktop is loading. Editing not allowed."
@@ -7378,10 +6605,10 @@
 
     move v0, v2
 
-    .line 612
+    .line 620
     goto :goto_0
 
-    .line 614
+    .line 622
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -7389,7 +6616,7 @@
 
     sget-object v1, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->ADD_BTN_TAG:Ljava/lang/Object;
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_2
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
 
@@ -7397,37 +6624,15 @@
 
     const/4 v1, 0x2
 
-    if-le v0, v1, :cond_3
-
-    .line 616
-    invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->startDrag(Landroid/view/View;)V
-
-    .line 620
-    iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mIsSetButtonPressed:Z
-
-    if-eqz v0, :cond_2
-
-    .line 621
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mPressedDefaultButton:I
-
-    .line 622
-    iput-boolean v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mIsSetButtonPressed:Z
+    if-le v0, v1, :cond_2
 
     .line 624
+    invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->startDrag(Landroid/view/View;)V
+
     :cond_2
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mSkipSetButtonAction:Z
-
-    .line 625
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->invalidate()V
-
-    :cond_3
     move v0, v2
 
-    .line 629
+    .line 637
     goto :goto_0
 .end method
 
@@ -7437,10 +6642,10 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 399
+    .line 407
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 400
+    .line 408
     return-void
 .end method
 
@@ -7449,24 +6654,24 @@
     .parameter "ev"
 
     .prologue
-    .line 518
+    .line 526
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 519
+    .line 527
     .local v0, action:I
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v8
 
-    .line 520
+    .line 528
     .local v8, x:F
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v9
 
-    .line 523
+    .line 531
     .local v9, y:F
     iget v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mAnimationState:I
 
@@ -7482,15 +6687,15 @@
 
     const/4 v11, 0x0
 
-    .line 605
+    .line 613
     :goto_0
     return v11
 
-    .line 525
+    .line 533
     :cond_0
     packed-switch v0, :pswitch_data_0
 
-    .line 605
+    .line 613
     :cond_1
     :goto_1
     :pswitch_0
@@ -7498,7 +6703,7 @@
 
     goto :goto_0
 
-    .line 529
+    .line 537
     :pswitch_1
     iget v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLastMotionX:F
 
@@ -7506,7 +6711,7 @@
 
     float-to-int v2, v11
 
-    .line 530
+    .line 538
     .local v2, deltaX:I
     iget v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLastMotionY:F
 
@@ -7514,11 +6719,11 @@
 
     float-to-int v3, v11
 
-    .line 532
+    .line 540
     .local v3, deltaY:I
     iget v6, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchSlop:I
 
-    .line 533
+    .line 541
     .local v6, touchSlop:I
     invoke-static {v3}, Ljava/lang/Math;->abs(I)I
 
@@ -7530,7 +6735,7 @@
 
     move v10, v11
 
-    .line 535
+    .line 543
     .local v10, yMoved:Z
     :goto_2
     if-eqz v10, :cond_2
@@ -7539,12 +6744,12 @@
 
     if-nez v11, :cond_2
 
-    .line 536
+    .line 544
     const/4 v11, 0x1
 
     iput v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
-    .line 539
+    .line 547
     :cond_2
     iget v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTouchState:I
 
@@ -7552,49 +6757,49 @@
 
     if-ne v11, v12, :cond_1
 
-    .line 540
+    .line 548
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
-    .line 541
+    .line 549
     .local v1, child:Landroid/view/View;
     if-eqz v1, :cond_3
 
-    .line 542
+    .line 550
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 543
+    .line 551
     .local v5, r:Landroid/graphics/Rect;
     invoke-virtual {v1, v5}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 544
+    .line 552
     iget v11, v5, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v11, v2
 
     iput v11, v5, Landroid/graphics/Rect;->left:I
 
-    .line 545
+    .line 553
     iget v11, v5, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v11, v3
 
     iput v11, v5, Landroid/graphics/Rect;->top:I
 
-    .line 546
+    .line 554
     iget v11, v5, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v11, v2
 
     iput v11, v5, Landroid/graphics/Rect;->right:I
 
-    .line 547
+    .line 555
     iget v11, v5, Landroid/graphics/Rect;->bottom:I
 
     sub-int/2addr v11, v3
 
     iput v11, v5, Landroid/graphics/Rect;->bottom:I
 
-    .line 549
+    .line 557
     iget v11, v5, Landroid/graphics/Rect;->left:I
 
     iget v12, v5, Landroid/graphics/Rect;->top:I
@@ -7605,18 +6810,18 @@
 
     invoke-virtual {v1, v11, v12, v13, v14}, Landroid/view/View;->layout(IIII)V
 
-    .line 551
+    .line 559
     .end local v5           #r:Landroid/graphics/Rect;
     :cond_3
     iput v8, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLastMotionX:F
 
-    .line 552
+    .line 560
     iput v9, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLastMotionY:F
 
-    .line 555
+    .line 563
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
-    .line 557
+    .line 565
     .local v7, v:Landroid/view/View;
     float-to-int v11, v8
 
@@ -7626,7 +6831,7 @@
 
     move-result v4
 
-    .line 558
+    .line 566
     .local v4, index:I
     const/4 v11, -0x1
 
@@ -7648,21 +6853,21 @@
 
     if-eq v11, v12, :cond_4
 
-    .line 559
+    .line 567
     invoke-virtual {p0, v7}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeView(Landroid/view/View;)V
 
-    .line 560
+    .line 568
     invoke-virtual {p0, v7, v4}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->addView(Landroid/view/View;I)V
 
-    .line 561
+    .line 569
     const/4 v11, 0x4
 
     invoke-virtual {v7, v11}, Landroid/view/View;->setVisibility(I)V
 
-    .line 562
+    .line 570
     iput v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
 
-    .line 567
+    .line 575
     :cond_4
     float-to-int v11, v8
 
@@ -7674,17 +6879,17 @@
 
     if-eqz v11, :cond_6
 
-    .line 568
+    .line 576
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->applyDeleteZone()V
 
-    .line 569
+    .line 577
     const/4 v11, 0x1
 
     invoke-direct {p0, v11}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->setDeleteZoneState(Z)V
 
     goto/16 :goto_1
 
-    .line 533
+    .line 541
     .end local v1           #child:Landroid/view/View;
     .end local v4           #index:I
     .end local v7           #v:Landroid/view/View;
@@ -7696,7 +6901,7 @@
 
     goto :goto_2
 
-    .line 571
+    .line 579
     .restart local v1       #child:Landroid/view/View;
     .restart local v4       #index:I
     .restart local v7       #v:Landroid/view/View;
@@ -7704,25 +6909,25 @@
     :cond_6
     iget-object v7, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
-    .line 572
+    .line 580
     iget v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
 
     const/4 v12, 0x1
 
     if-ne v11, v12, :cond_7
 
-    .line 574
+    .line 582
     const/4 v11, 0x0
 
     invoke-direct {p0, v11}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->setDeleteZoneState(Z)V
 
-    .line 576
+    .line 584
     :cond_7
     const/4 v11, 0x0
 
     iput v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDragState:I
 
-    .line 577
+    .line 585
     float-to-int v11, v8
 
     float-to-int v12, v9
@@ -7731,7 +6936,7 @@
 
     move-result v4
 
-    .line 578
+    .line 586
     const/4 v11, -0x1
 
     if-eq v4, v11, :cond_1
@@ -7752,23 +6957,23 @@
 
     if-eq v11, v12, :cond_1
 
-    .line 579
+    .line 587
     invoke-virtual {p0, v7}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeView(Landroid/view/View;)V
 
-    .line 580
+    .line 588
     invoke-virtual {p0, v7, v4}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->addView(Landroid/view/View;I)V
 
-    .line 581
+    .line 589
     const/4 v11, 0x4
 
     invoke-virtual {v7, v11}, Landroid/view/View;->setVisibility(I)V
 
-    .line 582
+    .line 590
     iput v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingIndex:I
 
     goto/16 :goto_1
 
-    .line 590
+    .line 598
     .end local v1           #child:Landroid/view/View;
     .end local v2           #deltaX:I
     .end local v3           #deltaY:I
@@ -7783,14 +6988,14 @@
 
     if-ne v11, v12, :cond_8
 
-    .line 591
+    .line 599
     float-to-int v11, v8
 
     float-to-int v12, v9
 
     invoke-direct {p0, v11, v12}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drop(II)V
 
-    .line 594
+    .line 602
     :cond_8
     iget-object v11, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDraggingView:Landroid/view/View;
 
@@ -7800,17 +7005,17 @@
 
     if-eqz v11, :cond_a
 
-    .line 596
+    .line 604
     :cond_9
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->postInvalidate()V
 
-    .line 599
+    .line 607
     :cond_a
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->endDrag()V
 
     goto/16 :goto_1
 
-    .line 525
+    .line 533
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -7826,15 +7031,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 784
+    .line 792
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mEnabledChildAnimation:Z
 
-    .line 785
+    .line 793
     invoke-virtual {p0, v2}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->setVisibility(I)V
 
-    .line 787
+    .line 795
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -7847,21 +7052,21 @@
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mCurrentPage:I
 
-    .line 788
+    .line 796
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getDeleteZone()Lcom/sec/android/app/twlauncher/DeleteZone;
 
     move-result-object v0
 
-    .line 789
+    .line 797
     .local v0, vDeleteZone:Lcom/sec/android/app/twlauncher/DeleteZone;
     invoke-virtual {v0, v2}, Lcom/sec/android/app/twlauncher/DeleteZone;->setVisibility(I)V
 
-    .line 790
+    .line 798
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/DeleteZone;->resetMode()V
 
-    .line 792
+    .line 800
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -7874,15 +7079,15 @@
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mWorkspaceScreenCountOnOpen:I
 
-    .line 793
+    .line 801
     iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mCurrentPage:I
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mWorkspaceScreenIndexOnOpen:I
 
-    .line 795
+    .line 803
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->enableWorkspaceScreensCache()V
 
-    .line 796
+    .line 804
     return-void
 .end method
 
@@ -7892,7 +7097,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 1147
+    .line 1155
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->indexOfChild(Landroid/view/View;)I
@@ -7907,31 +7112,28 @@
 
     if-nez v1, :cond_1
 
-    .line 1148
+    .line 1156
     :cond_0
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
-    .line 1168
+    .line 1176
     :goto_0
     return-void
 
-    .line 1153
+    .line 1165
     :cond_1
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeSetButtonOnDeletedView()V
-
-    .line 1157
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeView(Landroid/view/View;)V
 
-    .line 1159
+    .line 1167
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
 
     move-result v0
 
-    .line 1160
+    .line 1168
     .local v0, count:I
     if-lt v0, v3, :cond_2
 
@@ -7949,15 +7151,15 @@
 
     if-eq v1, v2, :cond_3
 
-    .line 1162
+    .line 1170
     :cond_2
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->makeAddBtn()Landroid/view/View;
 
-    .line 1165
+    .line 1173
     :cond_3
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->onRemove()V
 
-    .line 1167
+    .line 1175
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -7973,464 +7175,14 @@
     goto :goto_0
 .end method
 
-.method removeSetButtonOnDeletedView()V
-    .locals 7
-
-    .prologue
-    const/4 v6, 0x1
-
-    const-string v5, "QuickViewWorkspace"
-
-    const-string v4, " childCount = "
-
-    .line 1774
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
-
-    move-result-object v0
-
-    .line 1777
-    iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getDefaultHomeScreen()I
-
-    move-result v1
-
-    .line 1778
-    iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
-
-    if-ge v2, v1, :cond_1
-
-    .line 1779
-    const-string v2, "QuickViewWorkspace"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Remove Home : mDeleteIndex < homeScreen  homeScreen = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " childCount = "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v5, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1780
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    sub-int/2addr v1, v6
-
-    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->setDefaultHomeScreen(I)V
-
-    .line 1801
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 1782
-    :cond_1
-    iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
-
-    if-le v2, v1, :cond_2
-
-    .line 1783
-    const-string v2, "QuickViewWorkspace"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Remove Home : mDeleteIndex > homeScreen  homeScreen = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " childCount = "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v5, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1784
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->setDefaultHomeScreen(I)V
-
-    goto :goto_0
-
-    .line 1786
-    :cond_2
-    iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mDeleteIndex:I
-
-    if-ne v2, v1, :cond_0
-
-    .line 1787
-    if-nez v1, :cond_3
-
-    .line 1788
-    iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v2, v1}, Lcom/sec/android/app/twlauncher/Launcher;->setDefaultHomeScreen(I)V
-
-    .line 1789
-    const-string v2, "QuickViewWorkspace"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Remove Home : home is 0  homeScreen = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " childCount = "
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v5, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 1791
-    :cond_3
-    add-int/lit8 v2, v1, 0x1
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v3
-
-    if-ne v2, v3, :cond_4
-
-    .line 1792
-    iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    sub-int v3, v1, v6
-
-    invoke-virtual {v2, v3}, Lcom/sec/android/app/twlauncher/Launcher;->setDefaultHomeScreen(I)V
-
-    .line 1793
-    const-string v2, "QuickViewWorkspace"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Remove Home : home is last one  homeScreen = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " childCount = "
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v5, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
-
-    .line 1795
-    :cond_4
-    iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v2, v1}, Lcom/sec/android/app/twlauncher/Launcher;->setDefaultHomeScreen(I)V
-
-    .line 1796
-    const-string v2, "QuickViewWorkspace"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Remove Home : home is not last  homeScreen = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " childCount = "
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v5, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
-.end method
-
 .method setLauncher(Lcom/sec/android/app/twlauncher/Launcher;)V
     .locals 0
     .parameter "launcher"
 
     .prologue
-    .line 852
+    .line 860
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    .line 853
+    .line 861
     return-void
-.end method
-
-.method swapSetButton(I)V
-    .locals 5
-    .parameter
-
-    .prologue
-    const-string v4, " to "
-
-    const-string v3, "QuickViewWorkspace"
-
-    .line 1803
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
-
-    move-result-object v0
-
-    .line 1804
-    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
-
-    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
-
-    .line 1807
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getDefaultHomeScreen()I
-
-    move-result v0
-
-    .line 1808
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getChildCount()I
-
-    move-result v1
-
-    if-eq v1, p1, :cond_0
-
-    .line 1809
-    const-string v1, "QuickViewWorkspace"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onSwap : dropIndex =  "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "mOriginDragIndex = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v3, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1810
-    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
-
-    if-ne v1, v0, :cond_1
-
-    .line 1811
-    const-string v1, "QuickViewWorkspace"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onSwap : Home Screen is draged , change from "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " to "
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1812
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v0, p1}, Lcom/sec/android/app/twlauncher/Launcher;->setDefaultHomeScreen(I)V
-
-    .line 1819
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 1813
-    :cond_1
-    if-ne p1, v0, :cond_0
-
-    .line 1814
-    const-string v1, "QuickViewWorkspace"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onSwap : Home Screen is selected , change from "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " to "
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1815
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    iget v1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->mOriginDragIndex:I
-
-    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->setDefaultHomeScreen(I)V
-
-    goto :goto_0
 .end method

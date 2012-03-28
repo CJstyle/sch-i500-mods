@@ -808,10 +808,10 @@
     <public type="id" name="MAIN_MENU" id="0x7f0d00a2" />
     <public type="id" name="new_tab_menu_id" id="0x7f0d00a3" />
     <public type="id" name="active_tabs_menu_id" id="0x7f0d00a4" />
-    <public type="id" name="brightness_menu_id" id="0x7f0d00a5" />
-    <public type="id" name="stop_reload_menu_id" id="0x7f0d00a6" />
+    <public type="id" name="stop_reload_menu_id" id="0x7f0d00a5" />
+    <public type="id" name="add_bookmark_menu_id" id="0x7f0d00a6" />
     <public type="id" name="forward_menu_id" id="0x7f0d00a7" />
-    <public type="id" name="add_bookmark_menu_id" id="0x7f0d00a8" />
+    <public type="id" name="brightness_menu_id" id="0x7f0d00a8" />
     <public type="id" name="add_shortcut_to_home" id="0x7f0d00a9" />
     <public type="id" name="add_rss_menu_id" id="0x7f0d00aa" />
     <public type="id" name="find_menu_id" id="0x7f0d00ab" />

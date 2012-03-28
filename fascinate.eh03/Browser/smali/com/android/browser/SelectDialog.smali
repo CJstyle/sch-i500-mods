@@ -150,7 +150,7 @@
     invoke-super {p0}, Lcom/android/browser/WebDialog;->dismiss()V
 
     .line 82
-    iget-object v0, p0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, p0, Lcom/android/browser/SelectDialog;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->notifySelectDialogDismissed()V
 

@@ -34,7 +34,7 @@
     .line 33
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v0, p0, Lcom/sec/android/app/twlauncher/UserFolderInfo;->itemType:I
 
     .line 34
     return-void
@@ -67,7 +67,7 @@
     .line 57
     const-string v0, "title"
 
-    iget-object v1, p0, Lcom/sec/android/app/twlauncher/FolderInfo;->title:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/UserFolderInfo;->title:Ljava/lang/CharSequence;
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

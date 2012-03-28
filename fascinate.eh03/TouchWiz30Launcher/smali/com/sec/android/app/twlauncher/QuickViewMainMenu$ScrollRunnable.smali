@@ -54,18 +54,21 @@
     .line 1311
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #getter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mScroller:Landroid/widget/Scroller;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$300(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;)Landroid/widget/Scroller;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #getter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mScrollX:I
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$000(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;)I
 
     move-result v1
 
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #getter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mScrollY:I
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$100(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;)I
 
     move-result v2
@@ -80,6 +83,7 @@
 
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #getter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mMaxDeltaY:I
     invoke-static {v5}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$200(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;)I
 
     move-result v8
@@ -96,6 +100,7 @@
     :goto_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #setter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mScrollState:I
     invoke-static {v0, v3}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$602(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;I)I
 
     .line 1317
@@ -105,18 +110,21 @@
     :cond_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #getter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mScroller:Landroid/widget/Scroller;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$300(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;)Landroid/widget/Scroller;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #getter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mScrollX:I
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$400(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;)I
 
     move-result v1
 
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #getter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mScrollY:I
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$500(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;)I
 
     move-result v2
@@ -129,6 +137,7 @@
 
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/QuickViewMainMenu$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
+    #getter for: Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->mMaxDeltaY:I
     invoke-static {v5}, Lcom/sec/android/app/twlauncher/QuickViewMainMenu;->access$200(Lcom/sec/android/app/twlauncher/QuickViewMainMenu;)I
 
     move-result v8

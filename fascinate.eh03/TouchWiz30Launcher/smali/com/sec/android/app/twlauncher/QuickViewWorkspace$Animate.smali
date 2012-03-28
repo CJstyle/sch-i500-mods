@@ -43,12 +43,12 @@
 
     const/4 v2, 0x0
 
-    .line 1610
+    .line 1618
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->this$0:Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1603
+    .line 1611
     new-array v0, v3, [Landroid/graphics/Rect;
 
     new-instance v1, Landroid/graphics/Rect;
@@ -59,7 +59,7 @@
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mStartRects:[Landroid/graphics/Rect;
 
-    .line 1604
+    .line 1612
     new-array v0, v3, [Landroid/graphics/Rect;
 
     new-instance v1, Landroid/graphics/Rect;
@@ -70,7 +70,7 @@
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mDestRects:[Landroid/graphics/Rect;
 
-    .line 1605
+    .line 1613
     new-array v0, v3, [Landroid/graphics/Rect;
 
     new-instance v1, Landroid/graphics/Rect;
@@ -81,14 +81,14 @@
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mResultRects:[Landroid/graphics/Rect;
 
-    .line 1607
+    .line 1615
     new-instance v0, Lcom/nemustech/tiffany/widget/TFAnimateEngine;
 
     invoke-direct {v0}, Lcom/nemustech/tiffany/widget/TFAnimateEngine;-><init>()V
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mAnimateEngine:Lcom/nemustech/tiffany/widget/TFAnimateEngine;
 
-    .line 1611
+    .line 1619
     new-instance v0, Landroid/widget/Scroller;
 
     invoke-virtual {p1}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->getContext()Landroid/content/Context;
@@ -103,7 +103,7 @@
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mScroller:Landroid/widget/Scroller;
 
-    .line 1612
+    .line 1620
     return-void
 .end method
 
@@ -115,22 +115,22 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 1632
+    .line 1640
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mScroller:Landroid/widget/Scroller;
 
-    .line 1633
+    .line 1641
     .local v2, scroller:Landroid/widget/Scroller;
     invoke-virtual {v2}, Landroid/widget/Scroller;->computeScrollOffset()Z
 
     move-result v0
 
-    .line 1635
+    .line 1643
     .local v0, more:Z
     invoke-virtual {v2}, Landroid/widget/Scroller;->getCurrX()I
 
     move-result v1
 
-    .line 1636
+    .line 1644
     .local v1, progress:I
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mAnimateEngine:Lcom/nemustech/tiffany/widget/TFAnimateEngine;
 
@@ -148,14 +148,14 @@
 
     invoke-virtual {v4, v5, v6, v7, v8}, Lcom/nemustech/tiffany/widget/TFAnimateEngine;->getRect([Landroid/graphics/Rect;[Landroid/graphics/Rect;[Landroid/graphics/Rect;F)[Landroid/graphics/Rect;
 
-    .line 1638
+    .line 1646
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mTargetView:Landroid/view/View;
 
-    .line 1639
+    .line 1647
     .local v3, target:Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 1640
+    .line 1648
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mResultRects:[Landroid/graphics/Rect;
 
     aget-object v4, v4, v10
@@ -182,21 +182,21 @@
 
     invoke-virtual {v3, v4, v5, v6, v7}, Landroid/view/View;->layout(IIII)V
 
-    .line 1642
+    .line 1650
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->this$0:Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
 
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->invalidate()V
 
-    .line 1644
+    .line 1652
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->this$0:Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
 
     invoke-virtual {v4, p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->post(Ljava/lang/Runnable;)Z
 
-    .line 1650
+    .line 1658
     :goto_0
     return-void
 
-    .line 1646
+    .line 1654
     :cond_0
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mDestRects:[Landroid/graphics/Rect;
 
@@ -224,7 +224,7 @@
 
     invoke-virtual {v3, v4, v5, v6, v7}, Landroid/view/View;->layout(IIII)V
 
-    .line 1648
+    .line 1656
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->this$0:Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
 
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->invalidate()V
@@ -240,27 +240,27 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1615
+    .line 1623
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->stop()V
 
-    .line 1616
+    .line 1624
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mTargetView:Landroid/view/View;
 
-    .line 1617
+    .line 1625
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mStartRects:[Landroid/graphics/Rect;
 
     aget-object v0, v0, v1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 1618
+    .line 1626
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mDestRects:[Landroid/graphics/Rect;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1619
+    .line 1627
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->mScroller:Landroid/widget/Scroller;
 
     const/16 v3, 0x64
@@ -273,12 +273,12 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
 
-    .line 1620
+    .line 1628
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->this$0:Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
 
     invoke-virtual {v0, p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->post(Ljava/lang/Runnable;)Z
 
-    .line 1621
+    .line 1629
     return-void
 .end method
 
@@ -286,11 +286,11 @@
     .locals 1
 
     .prologue
-    .line 1624
+    .line 1632
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/QuickViewWorkspace$Animate;->this$0:Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
 
     invoke-virtual {v0, p0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1625
+    .line 1633
     return-void
 .end method

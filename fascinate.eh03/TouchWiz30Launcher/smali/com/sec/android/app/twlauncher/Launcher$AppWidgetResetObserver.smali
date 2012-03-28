@@ -24,17 +24,17 @@
     .parameter
 
     .prologue
-    .line 3929
+    .line 3958
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$AppWidgetResetObserver;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    .line 3930
+    .line 3959
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 3931
+    .line 3960
     return-void
 .end method
 
@@ -45,11 +45,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 3935
+    .line 3964
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$AppWidgetResetObserver;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->onAppWidgetReset()V
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$3000(Lcom/sec/android/app/twlauncher/Launcher;)V
 
-    .line 3936
+    .line 3965
     return-void
 .end method

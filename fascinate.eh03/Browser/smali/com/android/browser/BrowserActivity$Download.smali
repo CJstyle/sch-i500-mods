@@ -30,15 +30,15 @@
     .parameter "toDownload"
 
     .prologue
-    .line 2957
+    .line 2968
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$Download;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2958
+    .line 2969
     iput-object p2, p0, Lcom/android/browser/BrowserActivity$Download;->mText:Ljava/lang/String;
 
-    .line 2959
+    .line 2970
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2953
+    .line 2964
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$Download;->this$0:Lcom/android/browser/BrowserActivity;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$Download;->mText:Ljava/lang/String;
@@ -64,7 +64,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/browser/BrowserActivity;->onDownloadStartNoStream(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 2954
+    .line 2965
     const/4 v0, 0x1
 
     return v0

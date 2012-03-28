@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3441
+    .line 3489
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,11 +43,12 @@
     .parameter "which"
 
     .prologue
-    .line 3443
+    .line 3491
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;
 
-    invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->access$1500(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)V
+    #calls: Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->changeFolderName()V
+    invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->access$1600(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)V
 
-    .line 3444
+    .line 3492
     return-void
 .end method

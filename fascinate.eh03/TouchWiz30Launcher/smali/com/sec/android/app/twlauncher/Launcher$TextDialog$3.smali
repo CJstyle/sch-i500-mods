@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3697
+    .line 3745
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,61 +43,63 @@
     .parameter "which"
 
     .prologue
-    .line 3699
+    .line 3747
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     iget v0, v1, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->mId:I
 
-    .line 3700
+    .line 3748
     .local v0, id:I
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_1
 
-    .line 3701
+    .line 3749
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->uninstallPackage()V
 
-    .line 3702
+    .line 3750
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
-    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->access$2600(Lcom/sec/android/app/twlauncher/Launcher$TextDialog;)V
+    #calls: Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->cleanup()V
+    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->access$2700(Lcom/sec/android/app/twlauncher/Launcher$TextDialog;)V
 
-    .line 3709
+    .line 3757
     :cond_0
     :goto_0
     return-void
 
-    .line 3703
+    .line 3751
     :cond_1
     const/4 v1, 0x5
 
     if-ne v0, v1, :cond_2
 
-    .line 3704
+    .line 3752
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->menudiscard()V
 
-    .line 3705
+    .line 3753
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
-    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->access$2600(Lcom/sec/android/app/twlauncher/Launcher$TextDialog;)V
+    #calls: Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->cleanup()V
+    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->access$2700(Lcom/sec/android/app/twlauncher/Launcher$TextDialog;)V
 
     goto :goto_0
 
-    .line 3706
+    .line 3754
     :cond_2
     const/4 v1, 0x6
 
     if-ne v0, v1, :cond_0
 
-    .line 3707
+    .line 3755
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$3;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->this$0:Lcom/sec/android/app/twlauncher/Launcher;

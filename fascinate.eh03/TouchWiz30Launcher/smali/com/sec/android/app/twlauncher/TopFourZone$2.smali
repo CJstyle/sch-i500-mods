@@ -61,6 +61,7 @@
     check-cast v0, Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
     .end local v0           #tag:Ljava/lang/Object;
+    #calls: Lcom/sec/android/app/twlauncher/TopFourZone;->startDragItem(Landroid/view/View;Lcom/sec/android/app/twlauncher/ShortcutInfo;)V
     invoke-static {v1, p1, v0}, Lcom/sec/android/app/twlauncher/TopFourZone;->access$100(Lcom/sec/android/app/twlauncher/TopFourZone;Landroid/view/View;Lcom/sec/android/app/twlauncher/ShortcutInfo;)V
 
     .line 354

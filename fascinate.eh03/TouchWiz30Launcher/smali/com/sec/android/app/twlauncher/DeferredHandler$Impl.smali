@@ -57,6 +57,7 @@
     .line 41
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/DeferredHandler$Impl;->this$0:Lcom/sec/android/app/twlauncher/DeferredHandler;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DeferredHandler;->mQueue:Ljava/util/LinkedList;
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/DeferredHandler;->access$100(Lcom/sec/android/app/twlauncher/DeferredHandler;)Ljava/util/LinkedList;
 
     move-result-object v1
@@ -67,6 +68,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/DeferredHandler$Impl;->this$0:Lcom/sec/android/app/twlauncher/DeferredHandler;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DeferredHandler;->mQueue:Ljava/util/LinkedList;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/DeferredHandler;->access$100(Lcom/sec/android/app/twlauncher/DeferredHandler;)Ljava/util/LinkedList;
 
     move-result-object v2
@@ -88,6 +90,7 @@
     :cond_0
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/DeferredHandler$Impl;->this$0:Lcom/sec/android/app/twlauncher/DeferredHandler;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DeferredHandler;->mQueue:Ljava/util/LinkedList;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/DeferredHandler;->access$100(Lcom/sec/android/app/twlauncher/DeferredHandler;)Ljava/util/LinkedList;
 
     move-result-object v2
@@ -110,6 +113,7 @@
     .line 48
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/DeferredHandler$Impl;->this$0:Lcom/sec/android/app/twlauncher/DeferredHandler;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DeferredHandler;->mQueue:Ljava/util/LinkedList;
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/DeferredHandler;->access$100(Lcom/sec/android/app/twlauncher/DeferredHandler;)Ljava/util/LinkedList;
 
     move-result-object v1

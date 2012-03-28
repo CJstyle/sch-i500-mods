@@ -96,7 +96,7 @@
     invoke-virtual {v1, v5, v0, v5, v5}, Lcom/sec/android/app/twlauncher/FolderIcon;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 54
-    iget-object v3, p3, Lcom/sec/android/app/twlauncher/FolderInfo;->title:Ljava/lang/CharSequence;
+    iget-object v3, p3, Lcom/sec/android/app/twlauncher/UserFolderInfo;->title:Ljava/lang/CharSequence;
 
     invoke-virtual {v1, v3}, Lcom/sec/android/app/twlauncher/FolderIcon;->setText(Ljava/lang/CharSequence;)V
 
@@ -152,7 +152,7 @@
 
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/FolderIcon;->mInfo:Lcom/sec/android/app/twlauncher/UserFolderInfo;
 
-    iget-wide v5, v5, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v5, v5, Lcom/sec/android/app/twlauncher/UserFolderInfo;->id:J
 
     cmp-long v3, v3, v5
 
@@ -270,7 +270,7 @@
 
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/FolderIcon;->mInfo:Lcom/sec/android/app/twlauncher/UserFolderInfo;
 
-    iget-wide v3, v3, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v3, v3, Lcom/sec/android/app/twlauncher/UserFolderInfo;->id:J
 
     move v6, v5
 

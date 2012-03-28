@@ -57,16 +57,16 @@
     .parameter "rsc"
 
     .prologue
-    .line 170
+    .line 171
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
 
-    .line 171
+    .line 172
     invoke-direct {p0, p2, p3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
 
-    .line 172
+    .line 173
     iput p3, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mResource:I
 
-    .line 173
+    .line 174
     const-string v0, "layout_inflater"
 
     invoke-virtual {p2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -77,7 +77,7 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 174
+    .line 175
     invoke-virtual {p1}, Lcom/android/browser/WebsiteSettingsActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -90,7 +90,7 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mDefaultIcon:Landroid/graphics/Bitmap;
 
-    .line 176
+    .line 177
     invoke-virtual {p1}, Lcom/android/browser/WebsiteSettingsActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -103,7 +103,7 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mUsageEmptyIcon:Landroid/graphics/Bitmap;
 
-    .line 178
+    .line 179
     invoke-virtual {p1}, Lcom/android/browser/WebsiteSettingsActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -116,7 +116,7 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mUsageLowIcon:Landroid/graphics/Bitmap;
 
-    .line 180
+    .line 181
     invoke-virtual {p1}, Lcom/android/browser/WebsiteSettingsActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -129,7 +129,7 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mUsageHighIcon:Landroid/graphics/Bitmap;
 
-    .line 182
+    .line 183
     invoke-virtual {p1}, Lcom/android/browser/WebsiteSettingsActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -142,7 +142,7 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mLocationAllowedIcon:Landroid/graphics/Bitmap;
 
-    .line 184
+    .line 185
     invoke-virtual {p1}, Lcom/android/browser/WebsiteSettingsActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -155,10 +155,10 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mLocationDisallowedIcon:Landroid/graphics/Bitmap;
 
-    .line 186
+    .line 187
     invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->askForOrigins()V
 
-    .line 187
+    .line 188
     return-void
 .end method
 
@@ -170,7 +170,7 @@
     .parameter "x3"
 
     .prologue
-    .line 158
+    .line 159
     invoke-direct {p0, p1, p2, p3}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->addFeatureToSite(Ljava/util/Map;Ljava/lang/String;I)V
 
     return-void
@@ -181,7 +181,7 @@
     .parameter "x0"
 
     .prologue
-    .line 158
+    .line 159
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mLocationAllowedIcon:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -192,7 +192,7 @@
     .parameter "x0"
 
     .prologue
-    .line 158
+    .line 159
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mLocationDisallowedIcon:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -203,7 +203,7 @@
     .parameter "x0"
 
     .prologue
-    .line 158
+    .line 159
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     return-object v0
@@ -215,7 +215,7 @@
     .parameter "x1"
 
     .prologue
-    .line 158
+    .line 159
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     return-object p1
@@ -240,11 +240,11 @@
     .end annotation
 
     .prologue
-    .line 194
+    .line 195
     .local p1, sites:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     const/4 v0, 0x0
 
-    .line 195
+    .line 196
     .local v0, site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     invoke-interface {p1, p2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -252,7 +252,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 196
+    .line 197
     invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -260,22 +260,22 @@
     .end local v0           #site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     check-cast v0, Lcom/android/browser/WebsiteSettingsActivity$Site;
 
-    .line 201
+    .line 202
     .restart local v0       #site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     :goto_0
     invoke-virtual {v0, p3}, Lcom/android/browser/WebsiteSettingsActivity$Site;->addFeature(I)V
 
-    .line 202
+    .line 203
     return-void
 
-    .line 198
+    .line 199
     :cond_0
     new-instance v0, Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     .end local v0           #site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     invoke-direct {v0, p2}, Lcom/android/browser/WebsiteSettingsActivity$Site;-><init>(Ljava/lang/String;)V
 
-    .line 199
+    .line 200
     .restart local v0       #site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     invoke-interface {p1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -299,7 +299,7 @@
     .end annotation
 
     .prologue
-    .line 229
+    .line 230
     .local p1, sites:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     invoke-static {}, Landroid/webkit/GeolocationPermissions;->getInstance()Landroid/webkit/GeolocationPermissions;
 
@@ -311,7 +311,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/GeolocationPermissions;->getOrigins(Landroid/webkit/ValueCallback;)V
 
-    .line 241
+    .line 242
     return-void
 .end method
 
@@ -319,7 +319,7 @@
     .locals 2
 
     .prologue
-    .line 214
+    .line 215
     invoke-static {}, Landroid/webkit/WebStorage;->getInstance()Landroid/webkit/WebStorage;
 
     move-result-object v0
@@ -330,7 +330,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebStorage;->getOrigins(Landroid/webkit/ValueCallback;)V
 
-    .line 226
+    .line 227
     return-void
 .end method
 
@@ -338,23 +338,23 @@
     .locals 1
 
     .prologue
-    .line 356
+    .line 357
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     if-eqz v0, :cond_0
 
-    .line 357
+    .line 358
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
-    .line 358
+    .line 359
     invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->askForOrigins()V
 
-    .line 359
+    .line 360
     const/4 v0, 0x1
 
-    .line 361
+    .line 362
     :goto_0
     return v0
 
@@ -368,7 +368,7 @@
     .locals 1
 
     .prologue
-    .line 562
+    .line 563
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     return-object v0
@@ -378,17 +378,17 @@
     .locals 1
 
     .prologue
-    .line 330
+    .line 331
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     if-nez v0, :cond_0
 
-    .line 331
+    .line 332
     invoke-super {p0}, Landroid/widget/ArrayAdapter;->getCount()I
 
     move-result v0
 
-    .line 333
+    .line 334
     :goto_0
     return v0
 
@@ -409,10 +409,10 @@
     .parameter "parent"
 
     .prologue
-    .line 393
+    .line 394
     if-nez p2, :cond_3
 
-    .line 394
+    .line 395
     iget-object v11, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     const v12, 0x7f03002a
@@ -423,7 +423,7 @@
 
     move-result-object v10
 
-    .line 399
+    .line 400
     .local v10, view:Landroid/view/View;
     :goto_0
     const v11, 0x7f0d0007
@@ -434,7 +434,7 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    .line 400
+    .line 401
     .local v8, title:Landroid/widget/TextView;
     const v11, 0x7f0d0093
 
@@ -444,7 +444,7 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    .line 401
+    .line 402
     .local v6, subtitle:Landroid/widget/TextView;
     const v11, 0x7f0d000c
 
@@ -454,7 +454,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 402
+    .line 403
     .local v2, icon:Landroid/widget/ImageView;
     const v11, 0x7f0d0092
 
@@ -464,7 +464,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 403
+    .line 404
     .local v1, featureIcon:Landroid/widget/ImageView;
     const v11, 0x7f0d0091
 
@@ -474,7 +474,7 @@
 
     check-cast v9, Landroid/widget/ImageView;
 
-    .line 404
+    .line 405
     .local v9, usageIcon:Landroid/widget/ImageView;
     const v11, 0x7f0d0090
 
@@ -484,23 +484,23 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 405
+    .line 406
     .local v3, locationIcon:Landroid/widget/ImageView;
     const/16 v11, 0x8
 
     invoke-virtual {v9, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 406
+    .line 407
     const/16 v11, 0x8
 
     invoke-virtual {v3, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 408
+    .line 409
     iget-object v11, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     if-nez v11, :cond_5
 
-    .line 409
+    .line 410
     iget-object v11, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
 
     iget-object v12, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
@@ -513,14 +513,14 @@
 
     invoke-virtual {v11, v12}, Lcom/android/browser/WebsiteSettingsActivity;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 411
+    .line 412
     invoke-virtual {p0, p1}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/browser/WebsiteSettingsActivity$Site;
 
-    .line 412
+    .line 413
     .local v5, site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     invoke-virtual {v5}, Lcom/android/browser/WebsiteSettingsActivity$Site;->getPrettyTitle()Ljava/lang/String;
 
@@ -528,79 +528,79 @@
 
     invoke-virtual {v8, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 413
+    .line 414
     invoke-virtual {v5}, Lcom/android/browser/WebsiteSettingsActivity$Site;->getPrettyOrigin()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 414
+    .line 415
     .local v7, subtitleText:Ljava/lang/String;
     if-eqz v7, :cond_4
-
-    .line 415
-    const/4 v11, 0x1
-
-    invoke-virtual {v8, v11}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 416
     const/4 v11, 0x1
 
-    invoke-virtual {v8, v11}, Landroid/widget/TextView;->setSingleLine(Z)V
+    invoke-virtual {v8, v11}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 417
+    const/4 v11, 0x1
+
+    invoke-virtual {v8, v11}, Landroid/widget/TextView;->setSingleLine(Z)V
+
+    .line 418
     const/4 v11, 0x0
 
     invoke-virtual {v6, v11}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 418
+    .line 419
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 425
+    .line 426
     :goto_1
     const/4 v11, 0x0
 
     invoke-virtual {v2, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 426
+    .line 427
     const/4 v11, 0x4
 
     invoke-virtual {v9, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 427
+    .line 428
     const/4 v11, 0x4
 
     invoke-virtual {v3, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 428
+    .line 429
     const/16 v11, 0x8
 
     invoke-virtual {v1, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 429
+    .line 430
     invoke-virtual {v5}, Lcom/android/browser/WebsiteSettingsActivity$Site;->getIcon()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 430
+    .line 431
     .local v0, bmp:Landroid/graphics/Bitmap;
     if-nez v0, :cond_0
 
-    .line 431
+    .line 432
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mDefaultIcon:Landroid/graphics/Bitmap;
 
-    .line 433
+    .line 434
     :cond_0
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 436
+    .line 437
     invoke-virtual {v10, v5}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 438
+    .line 439
     invoke-virtual {v5}, Lcom/android/browser/WebsiteSettingsActivity$Site;->getOrigin()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 439
+    .line 440
     .local v4, origin:Ljava/lang/String;
     const/4 v11, 0x0
 
@@ -610,7 +610,7 @@
 
     if-eqz v11, :cond_1
 
-    .line 440
+    .line 441
     invoke-static {}, Landroid/webkit/WebStorage;->getInstance()Landroid/webkit/WebStorage;
 
     move-result-object v11
@@ -621,7 +621,7 @@
 
     invoke-virtual {v11, v4, v12}, Landroid/webkit/WebStorage;->getUsageForOrigin(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
 
-    .line 450
+    .line 451
     :cond_1
     const/4 v11, 0x1
 
@@ -631,12 +631,12 @@
 
     if-eqz v11, :cond_2
 
-    .line 451
+    .line 452
     const/4 v11, 0x0
 
     invoke-virtual {v3, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 452
+    .line 453
     invoke-static {}, Landroid/webkit/GeolocationPermissions;->getInstance()Landroid/webkit/GeolocationPermissions;
 
     move-result-object v11
@@ -647,7 +647,7 @@
 
     invoke-virtual {v11, v4, v12}, Landroid/webkit/GeolocationPermissions;->getAllowed(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
 
-    .line 505
+    .line 506
     .end local v0           #bmp:Landroid/graphics/Bitmap;
     .end local v5           #site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     .end local v7           #subtitleText:Ljava/lang/String;
@@ -655,7 +655,7 @@
     :goto_2
     return-object v10
 
-    .line 396
+    .line 397
     .end local v1           #featureIcon:Landroid/widget/ImageView;
     .end local v2           #icon:Landroid/widget/ImageView;
     .end local v3           #locationIcon:Landroid/widget/ImageView;
@@ -670,7 +670,7 @@
     .restart local v10       #view:Landroid/view/View;
     goto/16 :goto_0
 
-    .line 420
+    .line 421
     .restart local v1       #featureIcon:Landroid/widget/ImageView;
     .restart local v2       #icon:Landroid/widget/ImageView;
     .restart local v3       #locationIcon:Landroid/widget/ImageView;
@@ -684,19 +684,19 @@
 
     invoke-virtual {v6, v11}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 421
+    .line 422
     const/4 v11, 0x2
 
     invoke-virtual {v8, v11}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 422
+    .line 423
     const/4 v11, 0x0
 
     invoke-virtual {v8, v11}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     goto :goto_1
 
-    .line 465
+    .line 466
     .end local v5           #site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     .end local v7           #subtitleText:Ljava/lang/String;
     :cond_5
@@ -704,22 +704,22 @@
 
     invoke-virtual {v2, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 466
+    .line 467
     const/16 v11, 0x8
 
     invoke-virtual {v3, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 467
+    .line 468
     const/16 v11, 0x8
 
     invoke-virtual {v9, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 468
+    .line 469
     const/4 v11, 0x0
 
     invoke-virtual {v1, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 469
+    .line 470
     iget-object v11, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
 
     iget-object v12, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
@@ -730,14 +730,14 @@
 
     invoke-virtual {v11, v12}, Lcom/android/browser/WebsiteSettingsActivity;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 470
+    .line 471
     iget-object v11, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     invoke-virtual {v11}, Lcom/android/browser/WebsiteSettingsActivity$Site;->getOrigin()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 471
+    .line 472
     .restart local v4       #origin:Ljava/lang/String;
     iget-object v11, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
@@ -749,7 +749,7 @@
 
     goto :goto_2
 
-    .line 473
+    .line 474
     :pswitch_0
     invoke-static {}, Landroid/webkit/WebStorage;->getInstance()Landroid/webkit/WebStorage;
 
@@ -763,13 +763,13 @@
 
     goto :goto_2
 
-    .line 486
+    .line 487
     :pswitch_1
     const v11, 0x7f0900fb
 
     invoke-virtual {v8, v11}, Landroid/widget/TextView;->setText(I)V
 
-    .line 487
+    .line 488
     invoke-static {}, Landroid/webkit/GeolocationPermissions;->getInstance()Landroid/webkit/GeolocationPermissions;
 
     move-result-object v11
@@ -782,7 +782,7 @@
 
     goto :goto_2
 
-    .line 471
+    .line 472
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -812,12 +812,12 @@
 
     const v3, 0x1080027
 
-    .line 512
+    .line 513
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     if-eqz v0, :cond_0
 
-    .line 513
+    .line 514
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
     invoke-virtual {v0, p3}, Lcom/android/browser/WebsiteSettingsActivity$Site;->getFeatureByIndex(I)I
@@ -826,11 +826,11 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 559
+    .line 560
     :goto_0
     return-void
 
-    .line 515
+    .line 516
     :pswitch_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -876,7 +876,7 @@
 
     goto :goto_0
 
-    .line 536
+    .line 537
     :pswitch_1
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -922,7 +922,7 @@
 
     goto :goto_0
 
-    .line 556
+    .line 557
     :cond_0
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -932,12 +932,12 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mCurrentSite:Lcom/android/browser/WebsiteSettingsActivity$Site;
 
-    .line 557
+    .line 558
     invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->notifyDataSetChanged()V
 
     goto :goto_0
 
-    .line 513
+    .line 514
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -960,25 +960,25 @@
     .end annotation
 
     .prologue
-    .line 246
+    .line 247
     .local p1, sites:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     new-instance v17, Ljava/util/HashMap;
 
     invoke-direct/range {v17 .. v17}, Ljava/util/HashMap;-><init>()V
 
-    .line 247
+    .line 248
     .local v17, hosts:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/util/Set<Lcom/android/browser/WebsiteSettingsActivity$Site;>;>;"
     invoke-interface/range {p1 .. p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v12
 
-    .line 248
+    .line 249
     .local v12, elements:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;>;"
     invoke-interface {v12}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v19
 
-    .line 249
+    .line 250
     .end local p1           #sites:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     .local v19, originIter:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;>;"
     :goto_0
@@ -988,14 +988,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 250
+    .line 251
     invoke-interface/range {v19 .. v19}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v13
 
     check-cast v13, Ljava/util/Map$Entry;
 
-    .line 251
+    .line 252
     .local v13, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     invoke-interface {v13}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1003,7 +1003,7 @@
 
     check-cast v20, Lcom/android/browser/WebsiteSettingsActivity$Site;
 
-    .line 252
+    .line 253
     .local v20, site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     invoke-interface {v13}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -1019,11 +1019,11 @@
 
     move-result-object v15
 
-    .line 253
+    .line 254
     .local v15, host:Ljava/lang/String;
     const/16 v16, 0x0
 
-    .line 254
+    .line 255
     .local v16, hostSites:Ljava/util/Set;,"Ljava/util/Set<Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     move-object/from16 v0, v17
 
@@ -1035,7 +1035,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 255
+    .line 256
     move-object/from16 v0, v17
 
     move-object v1, v15
@@ -1047,7 +1047,7 @@
     .end local v16           #hostSites:Ljava/util/Set;,"Ljava/util/Set<Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     check-cast v16, Ljava/util/Set;
 
-    .line 260
+    .line 261
     .restart local v16       #hostSites:Ljava/util/Set;,"Ljava/util/Set<Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     :goto_1
     move-object/from16 v0, v16
@@ -1058,14 +1058,14 @@
 
     goto :goto_0
 
-    .line 257
+    .line 258
     :cond_0
     new-instance v16, Ljava/util/HashSet;
 
     .end local v16           #hostSites:Ljava/util/Set;,"Ljava/util/Set<Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     invoke-direct/range {v16 .. v16}, Ljava/util/HashSet;-><init>()V
 
-    .line 258
+    .line 259
     .restart local v16       #hostSites:Ljava/util/Set;,"Ljava/util/Set<Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     move-object/from16 v0, v17
 
@@ -1077,7 +1077,7 @@
 
     goto :goto_1
 
-    .line 265
+    .line 266
     .end local v13           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     .end local v15           #host:Ljava/lang/String;
     .end local v16           #hostSites:Ljava/util/Set;,"Ljava/util/Set<Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
@@ -1125,25 +1125,25 @@
 
     move-result-object v10
 
-    .line 269
+    .line 270
     .local v10, c:Landroid/database/Cursor;
     if-eqz v10, :cond_9
 
-    .line 270
+    .line 271
     invoke-interface {v10}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v3
 
     if-eqz v3, :cond_8
 
-    .line 271
+    .line 272
     const-string v3, "url"
 
     invoke-interface {v10, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v25
 
-    .line 272
+    .line 273
     .local v25, urlIndex:I
     const-string v3, "title"
 
@@ -1151,7 +1151,7 @@
 
     move-result v23
 
-    .line 273
+    .line 274
     .local v23, titleIndex:I
     const-string v3, "favicon"
 
@@ -1159,7 +1159,7 @@
 
     move-result v14
 
-    .line 275
+    .line 276
     .local v14, faviconIndex:I
     :cond_2
     move-object v0, v10
@@ -1170,7 +1170,7 @@
 
     move-result-object v24
 
-    .line 276
+    .line 277
     .local v24, url:Ljava/lang/String;
     invoke-static/range {v24 .. v24}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -1180,7 +1180,7 @@
 
     move-result-object v15
 
-    .line 277
+    .line 278
     .restart local v15       #host:Ljava/lang/String;
     move-object/from16 v0, v17
 
@@ -1192,7 +1192,7 @@
 
     if-eqz v3, :cond_7
 
-    .line 278
+    .line 279
     move-object v0, v10
 
     move/from16 v1, v23
@@ -1201,21 +1201,21 @@
 
     move-result-object v22
 
-    .line 279
+    .line 280
     .local v22, title:Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 280
+    .line 281
     .local v9, bmp:Landroid/graphics/Bitmap;
     invoke-interface {v10, v14}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v11
 
-    .line 281
+    .line 282
     .local v11, data:[B
     if-eqz v11, :cond_3
 
-    .line 282
+    .line 283
     const/4 v3, 0x0
 
     array-length v4, v11
@@ -1224,7 +1224,7 @@
 
     move-result-object v9
 
-    .line 284
+    .line 285
     :cond_3
     move-object/from16 v0, v17
 
@@ -1236,13 +1236,13 @@
 
     check-cast v18, Ljava/util/Set;
 
-    .line 285
+    .line 286
     .local v18, matchingSites:Ljava/util/Set;
     invoke-interface/range {v18 .. v18}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v21
 
-    .line 286
+    .line 287
     .local v21, sitesIter:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     :cond_4
     :goto_2
@@ -1252,14 +1252,14 @@
 
     if-eqz v3, :cond_7
 
-    .line 287
+    .line 288
     invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v20
 
     check-cast v20, Lcom/android/browser/WebsiteSettingsActivity$Site;
 
-    .line 294
+    .line 295
     .restart local v20       #site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     invoke-virtual/range {v20 .. v20}, Lcom/android/browser/WebsiteSettingsActivity$Site;->getOrigin()Ljava/lang/String;
 
@@ -1311,7 +1311,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 296
+    .line 297
     :cond_5
     move-object/from16 v0, v20
 
@@ -1319,11 +1319,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/browser/WebsiteSettingsActivity$Site;->setTitle(Ljava/lang/String;)V
 
-    .line 298
+    .line 299
     :cond_6
     if-eqz v9, :cond_4
 
-    .line 299
+    .line 300
     move-object/from16 v0, v20
 
     move-object v1, v9
@@ -1332,7 +1332,7 @@
 
     goto :goto_2
 
-    .line 303
+    .line 304
     .end local v9           #bmp:Landroid/graphics/Bitmap;
     .end local v11           #data:[B
     .end local v18           #matchingSites:Ljava/util/Set;
@@ -1346,7 +1346,7 @@
 
     if-nez v3, :cond_2
 
-    .line 305
+    .line 306
     .end local v14           #faviconIndex:I
     .end local v15           #host:Ljava/lang/String;
     .end local v23           #titleIndex:I
@@ -1355,7 +1355,7 @@
     :cond_8
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
-    .line 307
+    .line 308
     :cond_9
     return-void
 .end method
@@ -1375,22 +1375,22 @@
     .end annotation
 
     .prologue
-    .line 311
+    .line 312
     .local p1, sites:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->clear()V
 
-    .line 314
+    .line 315
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    .line 315
+    .line 316
     .local v0, elements:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;>;"
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .line 316
+    .line 317
     .local v2, entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;>;"
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -1399,14 +1399,14 @@
 
     if-eqz v4, :cond_0
 
-    .line 317
+    .line 318
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 318
+    .line 319
     .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1414,31 +1414,31 @@
 
     check-cast v3, Lcom/android/browser/WebsiteSettingsActivity$Site;
 
-    .line 319
+    .line 320
     .local v3, site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     invoke-virtual {p0, v3}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->add(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 322
+    .line 323
     .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/browser/WebsiteSettingsActivity$Site;>;"
     .end local v3           #site:Lcom/android/browser/WebsiteSettingsActivity$Site;
     :cond_0
     invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->notifyDataSetChanged()V
 
-    .line 324
+    .line 325
     invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->getCount()I
 
     move-result v4
 
     if-nez v4, :cond_1
 
-    .line 325
+    .line 326
     iget-object v4, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
 
     invoke-virtual {v4}, Lcom/android/browser/WebsiteSettingsActivity;->finish()V
 
-    .line 327
+    .line 328
     :cond_1
     return-void
 .end method
@@ -1453,14 +1453,14 @@
 
     const-wide v3, 0x3fb999999999999aL
 
-    .line 370
+    .line 371
     long-to-float v1, p2
 
     const/high16 v2, 0x4980
 
     div-float v0, v1, v2
 
-    .line 375
+    .line 376
     .local v0, usageInMegabytes:F
     float-to-double v1, v0
 
@@ -1468,17 +1468,17 @@
 
     if-gtz v1, :cond_1
 
-    .line 376
+    .line 377
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mUsageEmptyIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 382
+    .line 383
     :cond_0
     :goto_0
     return-void
 
-    .line 377
+    .line 378
     :cond_1
     float-to-double v1, v0
 
@@ -1490,20 +1490,20 @@
 
     if-gtz v1, :cond_2
 
-    .line 378
+    .line 379
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mUsageLowIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     goto :goto_0
 
-    .line 379
+    .line 380
     :cond_2
     cmpl-float v1, v0, v5
 
     if-lez v1, :cond_0
 
-    .line 380
+    .line 381
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->mUsageHighIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
@@ -1518,14 +1518,14 @@
     .prologue
     const/high16 v5, 0x4120
 
-    .line 339
+    .line 340
     const-wide/16 v3, 0x0
 
     cmp-long v3, p1, v3
 
     if-gtz v3, :cond_0
 
-    .line 340
+    .line 341
     iget-object v3, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
 
     invoke-static {v3}, Lcom/android/browser/WebsiteSettingsActivity;->access$100(Lcom/android/browser/WebsiteSettingsActivity;)Ljava/lang/String;
@@ -1552,14 +1552,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 341
+    .line 342
     const-string v3, "0"
 
-    .line 346
+    .line 347
     :goto_0
     return-object v3
 
-    .line 343
+    .line 344
     :cond_0
     long-to-float v3, p1
 
@@ -1567,7 +1567,7 @@
 
     div-float v0, v3, v4
 
-    .line 344
+    .line 345
     .local v0, megabytes:F
     mul-float v3, v0, v5
 
@@ -1579,13 +1579,13 @@
 
     double-to-int v2, v3
 
-    .line 345
+    .line 346
     .local v2, truncated:I
     int-to-float v3, v2
 
     div-float v1, v3, v5
 
-    .line 346
+    .line 347
     .local v1, result:F
     invoke-static {v1}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 

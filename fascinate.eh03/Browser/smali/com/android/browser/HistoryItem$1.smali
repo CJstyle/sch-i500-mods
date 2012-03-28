@@ -69,7 +69,7 @@
 
     iget-object v2, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
-    iget-object v2, v2, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
+    iget-object v2, v2, Lcom/android/browser/HistoryItem;->mUrl:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
@@ -84,22 +84,18 @@
     .line 58
     iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
-    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/browser/HistoryItem;->mUrl:Ljava/lang/String;
 
     const-string v1, "history"
 
     invoke-static {v0, v1}, Lcom/android/browser/LogTag;->logBookmarkAdded(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 82
+    .line 81
     :goto_0
     return-void
 
     .line 61
     :cond_0
-
-    # djp952: much easier way
-    goto :cond_5
-
     iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
     invoke-virtual {v0}, Lcom/android/browser/HistoryItem;->getName()Ljava/lang/String;
@@ -116,7 +112,7 @@
 
     iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
-    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/browser/HistoryItem;->mUrl:Ljava/lang/String;
 
     const-string v1, "http://converge.vzwwap.com/"
 
@@ -124,7 +120,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     :cond_1
     iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
@@ -139,11 +135,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
-    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/browser/HistoryItem;->mUrl:Ljava/lang/String;
 
     const-string v1, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
 
@@ -151,37 +147,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_4
 
+    .line 64
     :cond_2
-    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
-
-    invoke-virtual {v0}, Lcom/android/browser/HistoryItem;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Your Guide Mobile"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
-
-    iget-object v0, v0, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
-
-    const-string v1, "http://yourguide.vzw.com/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 65
-    :cond_3
     iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
     invoke-static {v0}, Lcom/android/browser/HistoryItem;->access$200(Lcom/android/browser/HistoryItem;)Landroid/content/Context;
@@ -222,29 +191,29 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 67
+    .line 66
     iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
     invoke-static {v0}, Lcom/android/browser/HistoryItem;->access$400(Lcom/android/browser/HistoryItem;)Landroid/widget/CompoundButton;
 
     move-result-object v0
 
-    if-nez p2, :cond_4
+    if-nez p2, :cond_3
 
     move v1, v5
 
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    :cond_4
+    :cond_3
     move v1, v6
 
     goto :goto_1
 
-    .line 72
-    :cond_5
+    .line 71
+    :cond_4
     iget-object v0, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
     invoke-static {v0}, Lcom/android/browser/HistoryItem;->access$500(Lcom/android/browser/HistoryItem;)Landroid/content/Context;
@@ -263,7 +232,7 @@
 
     iget-object v2, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 
-    iget-object v2, v2, Lcom/android/browser/BookmarkItem;->mUrl:Ljava/lang/String;
+    iget-object v2, v2, Lcom/android/browser/HistoryItem;->mUrl:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/android/browser/HistoryItem$1;->this$0:Lcom/android/browser/HistoryItem;
 

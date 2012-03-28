@@ -86,7 +86,7 @@
     invoke-virtual {v1, v5, v3, v5, v5}, Lcom/sec/android/app/twlauncher/LiveFolderIcon;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 48
-    iget-object v3, p3, Lcom/sec/android/app/twlauncher/FolderInfo;->title:Ljava/lang/CharSequence;
+    iget-object v3, p3, Lcom/sec/android/app/twlauncher/LiveFolderInfo;->title:Ljava/lang/CharSequence;
 
     invoke-virtual {v1, v3}, Lcom/sec/android/app/twlauncher/LiveFolderIcon;->setText(Ljava/lang/CharSequence;)V
 

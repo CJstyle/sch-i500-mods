@@ -32,24 +32,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 80
+    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 82
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mOrigin:Ljava/lang/String;
 
-    .line 82
+    .line 83
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mTitle:Ljava/lang/String;
 
-    .line 83
+    .line 84
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mIcon:Landroid/graphics/Bitmap;
 
-    .line 84
+    .line 85
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mFeatures:I
 
-    .line 85
+    .line 86
     return-void
 .end method
 
@@ -58,12 +58,12 @@
     .parameter "str"
 
     .prologue
-    .line 153
+    .line 154
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 154
+    .line 155
     .local v0, uri:Landroid/net/Uri;
     const-string v1, "http"
 
@@ -99,7 +99,7 @@
     .parameter "feature"
 
     .prologue
-    .line 88
+    .line 89
     iget v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mFeatures:I
 
     const/4 v1, 0x1
@@ -110,7 +110,7 @@
 
     iput v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mFeatures:I
 
-    .line 89
+    .line 90
     return-void
 .end method
 
@@ -119,10 +119,10 @@
     .parameter "n"
 
     .prologue
-    .line 118
+    .line 119
     const/4 v1, -0x1
 
-    .line 119
+    .line 120
     .local v1, j:I
     const/4 v0, 0x0
 
@@ -132,7 +132,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 120
+    .line 121
     invoke-virtual {p0, v0}, Lcom/android/browser/WebsiteSettingsActivity$Site;->hasFeature(I)Z
 
     move-result v2
@@ -144,28 +144,28 @@
     :goto_1
     add-int/2addr v1, v2
 
-    .line 121
+    .line 122
     if-ne v1, p1, :cond_1
 
     move v2, v0
 
-    .line 125
+    .line 126
     :goto_2
     return v2
 
-    .line 120
+    .line 121
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_1
 
-    .line 119
+    .line 120
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 125
+    .line 126
     :cond_2
     const/4 v2, -0x1
 
@@ -176,10 +176,10 @@
     .locals 3
 
     .prologue
-    .line 103
+    .line 104
     const/4 v0, 0x0
 
-    .line 104
+    .line 105
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -189,7 +189,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 105
+    .line 106
     invoke-virtual {p0, v1}, Lcom/android/browser/WebsiteSettingsActivity$Site;->hasFeature(I)Z
 
     move-result v2
@@ -201,18 +201,18 @@
     :goto_1
     add-int/2addr v0, v2
 
-    .line 104
+    .line 105
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 105
+    .line 106
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_1
 
-    .line 107
+    .line 108
     :cond_1
     return v0
 .end method
@@ -221,7 +221,7 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 142
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mIcon:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -231,7 +231,7 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 130
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mOrigin:Ljava/lang/String;
 
     return-object v0
@@ -241,7 +241,7 @@
     .locals 1
 
     .prologue
-    .line 145
+    .line 146
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mTitle:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -265,7 +265,7 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 150
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mTitle:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -292,7 +292,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 96
+    .line 97
     iget v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mFeatures:I
 
     shl-int v1, v2, p1
@@ -317,7 +317,7 @@
     .parameter "feature"
 
     .prologue
-    .line 92
+    .line 93
     iget v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mFeatures:I
 
     const/4 v1, 0x1
@@ -330,7 +330,7 @@
 
     iput v0, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mFeatures:I
 
-    .line 93
+    .line 94
     return-void
 .end method
 
@@ -339,10 +339,10 @@
     .parameter "icon"
 
     .prologue
-    .line 137
+    .line 138
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mIcon:Landroid/graphics/Bitmap;
 
-    .line 138
+    .line 139
     return-void
 .end method
 
@@ -351,9 +351,9 @@
     .parameter "title"
 
     .prologue
-    .line 133
+    .line 134
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$Site;->mTitle:Ljava/lang/String;
 
-    .line 134
+    .line 135
     return-void
 .end method

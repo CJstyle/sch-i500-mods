@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 3516
+    .line 3564
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3516
+    .line 3564
     invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;-><init>(Lcom/sec/android/app/twlauncher/Launcher;)V
 
     return-void
@@ -56,7 +56,7 @@
     .locals 2
 
     .prologue
-    .line 3549
+    .line 3597
     :try_start_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -66,11 +66,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3553
+    .line 3601
     :goto_0
     return-void
 
-    .line 3550
+    .line 3598
     :catch_0
     move-exception v0
 
@@ -83,7 +83,7 @@
     .locals 4
 
     .prologue
-    .line 3523
+    .line 3571
     new-instance v2, Lcom/sec/android/app/twlauncher/AddAdapter;
 
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
@@ -92,14 +92,14 @@
 
     iput-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->mAdapter:Lcom/sec/android/app/twlauncher/AddAdapter;
 
-    .line 3525
+    .line 3573
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 3526
+    .line 3574
     .local v0, builder:Landroid/app/AlertDialog$Builder;
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -111,32 +111,32 @@
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 3527
+    .line 3575
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->mAdapter:Lcom/sec/android/app/twlauncher/AddAdapter;
 
     invoke-virtual {v0, v2, p0}, Landroid/app/AlertDialog$Builder;->setAdapter(Landroid/widget/ListAdapter;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 3529
+    .line 3577
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setInverseBackgroundForced(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 3531
+    .line 3579
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
-    .line 3532
+    .line 3580
     .local v1, dialog:Landroid/app/AlertDialog;
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 3533
+    .line 3581
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 3534
+    .line 3582
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
-    .line 3536
+    .line 3584
     return-object v1
 .end method
 
@@ -145,17 +145,18 @@
     .parameter "dialog"
 
     .prologue
-    .line 3540
+    .line 3588
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$1602(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mWaitingForResult:Z
+    invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$1702(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
 
-    .line 3541
+    .line 3589
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->cleanup()V
 
-    .line 3542
+    .line 3590
     return-void
 .end method
 
@@ -165,7 +166,7 @@
     .parameter "which"
 
     .prologue
-    .line 3559
+    .line 3607
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
@@ -176,18 +177,18 @@
 
     move-result-object v17
 
-    .line 3560
+    .line 3608
     .local v17, res:Landroid/content/res/Resources;
     invoke-direct/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->cleanup()V
 
-    .line 3562
+    .line 3610
     packed-switch p2, :pswitch_data_0
 
-    .line 3644
+    .line 3692
     :goto_0
     return-void
 
-    .line 3565
+    .line 3613
     :pswitch_0
     move-object/from16 v0, p0
 
@@ -199,11 +200,12 @@
 
     const v25, 0x7f0a0022
 
-    invoke-static/range {v23 .. v25}, Lcom/sec/android/app/twlauncher/Launcher;->access$2200(Lcom/sec/android/app/twlauncher/Launcher;II)V
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->pickShortcut(II)V
+    invoke-static/range {v23 .. v25}, Lcom/sec/android/app/twlauncher/Launcher;->access$2300(Lcom/sec/android/app/twlauncher/Launcher;II)V
 
     goto :goto_0
 
-    .line 3570
+    .line 3618
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -211,7 +213,8 @@
 
     move-object/from16 v23, v0
 
-    invoke-static/range {v23 .. v23}, Lcom/sec/android/app/twlauncher/Launcher;->access$2300(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/LauncherAppWidgetHost;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mAppWidgetHost:Lcom/sec/android/app/twlauncher/LauncherAppWidgetHost;
+    invoke-static/range {v23 .. v23}, Lcom/sec/android/app/twlauncher/Launcher;->access$2400(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/LauncherAppWidgetHost;
 
     move-result-object v23
 
@@ -219,7 +222,7 @@
 
     move-result v3
 
-    .line 3572
+    .line 3620
     .local v3, appWidgetId:I
     new-instance v16, Landroid/content/Intent;
 
@@ -231,7 +234,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3573
+    .line 3621
     .local v16, pickIntent:Landroid/content/Intent;
     const-string v23, "appWidgetId"
 
@@ -243,12 +246,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 3576
+    .line 3624
     new-instance v14, Landroid/content/Intent;
 
     invoke-direct {v14}, Landroid/content/Intent;-><init>()V
 
-    .line 3577
+    .line 3625
     .local v14, intent:Landroid/content/Intent;
     const-string v23, "com.samsung.sec.android.SAMSUNG_APP_WIDGET_ACTION"
 
@@ -258,7 +261,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3578
+    .line 3626
     const-string v23, "com.samsung.sec.android.SAMSUNG_APP_WIDGET"
 
     move-object v0, v14
@@ -267,7 +270,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3579
+    .line 3627
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
@@ -290,7 +293,7 @@
 
     move-result-object v4
 
-    .line 3580
+    .line 3628
     .local v4, apps:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     const/16 v23, 0x0
 
@@ -310,19 +313,19 @@
 
     check-cast v5, [Landroid/content/pm/ResolveInfo;
 
-    .line 3581
+    .line 3629
     .local v5, appsArray:[Landroid/content/pm/ResolveInfo;
     new-instance v19, Ljava/util/ArrayList;
 
     invoke-direct/range {v19 .. v19}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3583
+    .line 3631
     .local v19, samsungWidgetInfos:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/appwidget/AppWidgetProviderInfo;>;"
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3584
+    .line 3632
     .local v9, customExtras:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Bundle;>;"
     move-object/from16 v0, p0
 
@@ -330,7 +333,8 @@
 
     move-object/from16 v23, v0
 
-    invoke-static/range {v23 .. v23}, Lcom/sec/android/app/twlauncher/Launcher;->access$2400(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mSamsungWidgetPackageManager:Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
+    invoke-static/range {v23 .. v23}, Lcom/sec/android/app/twlauncher/Launcher;->access$2500(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
 
     move-result-object v23
 
@@ -355,11 +359,11 @@
 
     check-cast v22, Lcom/sec/android/app/twlauncher/SamsungAppWidgetItem;
 
-    .line 3585
+    .line 3633
     .local v22, swi:Lcom/sec/android/app/twlauncher/SamsungAppWidgetItem;
     const/4 v12, 0x0
 
-    .line 3586
+    .line 3634
     .local v12, icon:I
     move-object v6, v5
 
@@ -375,7 +379,7 @@
 
     aget-object v18, v6, v11
 
-    .line 3587
+    .line 3635
     .local v18, ri:Landroid/content/pm/ResolveInfo;
     move-object/from16 v0, v18
 
@@ -425,7 +429,7 @@
 
     if-eqz v23, :cond_1
 
-    .line 3589
+    .line 3637
     move-object/from16 v0, v18
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -436,14 +440,14 @@
 
     move-result v12
 
-    .line 3594
+    .line 3642
     .end local v18           #ri:Landroid/content/pm/ResolveInfo;
     :cond_0
     new-instance v13, Landroid/appwidget/AppWidgetProviderInfo;
 
     invoke-direct {v13}, Landroid/appwidget/AppWidgetProviderInfo;-><init>()V
 
-    .line 3595
+    .line 3643
     .local v13, info:Landroid/appwidget/AppWidgetProviderInfo;
     move-object/from16 v0, v22
 
@@ -457,10 +461,10 @@
 
     iput-object v0, v1, Landroid/appwidget/AppWidgetProviderInfo;->label:Ljava/lang/String;
 
-    .line 3596
+    .line 3644
     iput v12, v13, Landroid/appwidget/AppWidgetProviderInfo;->icon:I
 
-    .line 3597
+    .line 3645
     new-instance v23, Landroid/content/ComponentName;
 
     move-object/from16 v0, v22
@@ -483,19 +487,19 @@
 
     iput-object v0, v1, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    .line 3598
+    .line 3646
     move-object/from16 v0, v19
 
     move-object v1, v13
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3600
+    .line 3648
     new-instance v7, Landroid/os/Bundle;
 
     invoke-direct {v7}, Landroid/os/Bundle;-><init>()V
 
-    .line 3601
+    .line 3649
     .local v7, b:Landroid/os/Bundle;
     const-string v23, "custom_widget"
 
@@ -535,12 +539,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3602
+    .line 3650
     invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
-    .line 3586
+    .line 3634
     .end local v7           #b:Landroid/os/Bundle;
     .end local v13           #info:Landroid/appwidget/AppWidgetProviderInfo;
     .restart local v18       #ri:Landroid/content/pm/ResolveInfo;
@@ -549,7 +553,7 @@
 
     goto/16 :goto_2
 
-    .line 3604
+    .line 3652
     .end local v6           #arr$:[Landroid/content/pm/ResolveInfo;
     .end local v11           #i$:I
     .end local v12           #icon:I
@@ -567,7 +571,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
 
-    .line 3606
+    .line 3654
     const-string v23, "customExtras"
 
     move-object/from16 v0, v16
@@ -578,7 +582,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
 
-    .line 3610
+    .line 3658
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
@@ -597,7 +601,7 @@
 
     goto/16 :goto_0
 
-    .line 3616
+    .line 3664
     .end local v3           #appWidgetId:I
     .end local v4           #apps:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     .end local v5           #appsArray:[Landroid/content/pm/ResolveInfo;
@@ -610,13 +614,13 @@
 
     invoke-direct {v8}, Landroid/os/Bundle;-><init>()V
 
-    .line 3618
+    .line 3666
     .local v8, bundle:Landroid/os/Bundle;
     new-instance v21, Ljava/util/ArrayList;
 
     invoke-direct/range {v21 .. v21}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3619
+    .line 3667
     .local v21, shortcutNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const v23, 0x7f0a0016
 
@@ -634,7 +638,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3620
+    .line 3668
     const-string v23, "android.intent.extra.shortcut.NAME"
 
     move-object v0, v8
@@ -645,12 +649,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 3622
+    .line 3670
     new-instance v20, Ljava/util/ArrayList;
 
     invoke-direct/range {v20 .. v20}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3624
+    .line 3672
     .local v20, shortcutIcons:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Intent$ShortcutIconResource;>;"
     move-object/from16 v0, p0
 
@@ -670,7 +674,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3626
+    .line 3674
     const-string v23, "android.intent.extra.shortcut.ICON_RESOURCE"
 
     move-object v0, v8
@@ -681,7 +685,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 3628
+    .line 3676
     new-instance v16, Landroid/content/Intent;
 
     const-string v23, "android.intent.action.PICK_ACTIVITY"
@@ -692,7 +696,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3629
+    .line 3677
     .restart local v16       #pickIntent:Landroid/content/Intent;
     const-string v23, "android.intent.extra.INTENT"
 
@@ -710,7 +714,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3631
+    .line 3679
     const-string v23, "android.intent.extra.TITLE"
 
     move-object/from16 v0, p0
@@ -733,14 +737,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 3633
+    .line 3681
     move-object/from16 v0, v16
 
     move-object v1, v8
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 3635
+    .line 3683
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
@@ -759,7 +763,7 @@
 
     goto/16 :goto_0
 
-    .line 3640
+    .line 3688
     .end local v8           #bundle:Landroid/os/Bundle;
     .end local v16           #pickIntent:Landroid/content/Intent;
     .end local v20           #shortcutIcons:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Intent$ShortcutIconResource;>;"
@@ -771,11 +775,12 @@
 
     move-object/from16 v23, v0
 
-    invoke-static/range {v23 .. v23}, Lcom/sec/android/app/twlauncher/Launcher;->access$2500(Lcom/sec/android/app/twlauncher/Launcher;)V
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->startWallpaper()V
+    invoke-static/range {v23 .. v23}, Lcom/sec/android/app/twlauncher/Launcher;->access$2600(Lcom/sec/android/app/twlauncher/Launcher;)V
 
     goto/16 :goto_0
 
-    .line 3562
+    .line 3610
     nop
 
     :pswitch_data_0
@@ -792,7 +797,7 @@
     .parameter "dialog"
 
     .prologue
-    .line 3545
+    .line 3593
     return-void
 .end method
 
@@ -801,13 +806,14 @@
     .parameter "dialog"
 
     .prologue
-    .line 3647
+    .line 3695
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$CreateShortcut;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$1602(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mWaitingForResult:Z
+    invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$1702(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
 
-    .line 3648
+    .line 3696
     return-void
 .end method

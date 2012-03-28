@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3684
+    .line 3732
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$2;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,46 +43,48 @@
     .parameter "which"
 
     .prologue
-    .line 3686
+    .line 3734
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$2;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     iget v0, v1, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->mId:I
 
-    .line 3687
+    .line 3735
     .local v0, id:I
     const/4 v1, 0x6
 
     if-ne v0, v1, :cond_1
 
-    .line 3688
+    .line 3736
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$2;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->cancelRemovePage()V
 
-    .line 3692
+    .line 3740
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$2;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
-    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->access$2600(Lcom/sec/android/app/twlauncher/Launcher$TextDialog;)V
+    #calls: Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->cleanup()V
+    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->access$2700(Lcom/sec/android/app/twlauncher/Launcher$TextDialog;)V
 
-    .line 3693
+    .line 3741
     return-void
 
-    .line 3689
+    .line 3737
     :cond_1
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_0
 
-    .line 3690
+    .line 3738
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$2;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$2700(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/DragLayer;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mDragLayer:Lcom/sec/android/app/twlauncher/DragLayer;
+    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$2800(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/DragLayer;
 
     move-result-object v1
 

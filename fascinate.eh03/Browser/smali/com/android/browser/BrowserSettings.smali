@@ -161,7 +161,7 @@
 
     const-string v4, ""
 
-    .line 680
+    .line 691
     invoke-direct {p0}, Ljava/util/Observable;-><init>()V
 
     .line 82
@@ -191,7 +191,7 @@
     iput v2, p0, Lcom/android/browser/BrowserSettings;->userAgent:I
 
     .line 110
-    const/16 v0, 0x14
+    const/16 v0, 0x22
 
     iput v0, p0, Lcom/android/browser/BrowserSettings;->brightness:I
 
@@ -217,10 +217,10 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserSettings;->mWebSettingsToObservers:Ljava/util/HashMap;
 
-    .line 681
+    .line 692
     invoke-direct {p0}, Lcom/android/browser/BrowserSettings;->reset()V
 
-    .line 682
+    .line 693
     return-void
 .end method
 
@@ -543,7 +543,7 @@
     .prologue
     const-string v3, "{CID}"
 
-    .line 667
+    .line 678
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -554,7 +554,7 @@
 
     move-result-object v0
 
-    .line 668
+    .line 679
     .local v0, url:Ljava/lang/String;
     const-string v1, "{CID}"
 
@@ -566,7 +566,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 669
+    .line 680
     const-string v1, "{CID}"
 
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -581,7 +581,7 @@
 
     move-result-object v0
 
-    .line 672
+    .line 683
     :cond_0
     const-string v1, "SCH-I500"
 
@@ -595,10 +595,10 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 674
+    .line 685
     const-string v0, "http://www.dcm-gate.com"
 
-    .line 676
+    .line 687
     :cond_1
     return-object v0
 .end method
@@ -607,19 +607,19 @@
     .locals 1
 
     .prologue
-    .line 549
+    .line 560
     sget-object v0, Lcom/android/browser/BrowserSettings;->sSingleton:Lcom/android/browser/BrowserSettings;
 
     if-nez v0, :cond_0
 
-    .line 550
+    .line 561
     new-instance v0, Lcom/android/browser/BrowserSettings;
 
     invoke-direct {v0}, Lcom/android/browser/BrowserSettings;-><init>()V
 
     sput-object v0, Lcom/android/browser/BrowserSettings;->sSingleton:Lcom/android/browser/BrowserSettings;
 
-    .line 552
+    .line 563
     :cond_0
     sget-object v0, Lcom/android/browser/BrowserSettings;->sSingleton:Lcom/android/browser/BrowserSettings;
 
@@ -631,14 +631,14 @@
     .parameter "context"
 
     .prologue
-    .line 617
+    .line 628
     move-object v0, p1
 
     check-cast v0, Landroid/preference/PreferenceActivity;
 
     move-object v1, v0
 
-    .line 618
+    .line 629
     .local v1, activity:Landroid/preference/PreferenceActivity;
     const-string v3, "website_settings"
 
@@ -648,13 +648,13 @@
 
     check-cast v2, Landroid/preference/PreferenceScreen;
 
-    .line 620
+    .line 631
     .local v2, screen:Landroid/preference/PreferenceScreen;
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
 
-    .line 621
+    .line 632
     invoke-static {}, Landroid/webkit/WebStorage;->getInstance()Landroid/webkit/WebStorage;
 
     move-result-object v3
@@ -665,7 +665,7 @@
 
     invoke-virtual {v3, v4}, Landroid/webkit/WebStorage;->getOrigins(Landroid/webkit/ValueCallback;)V
 
-    .line 629
+    .line 640
     invoke-static {}, Landroid/webkit/GeolocationPermissions;->getInstance()Landroid/webkit/GeolocationPermissions;
 
     move-result-object v3
@@ -676,7 +676,7 @@
 
     invoke-virtual {v3, v4}, Landroid/webkit/GeolocationPermissions;->getOrigins(Landroid/webkit/ValueCallback;)V
 
-    .line 636
+    .line 647
     return-void
 .end method
 
@@ -688,60 +688,60 @@
 
     const/4 v1, 0x1
 
-    .line 689
+    .line 700
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->loadsImagesAutomatically:Z
 
-    .line 690
+    .line 701
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->javaScriptEnabled:Z
 
-    .line 691
+    .line 702
     sget-object v0, Landroid/webkit/WebSettings$PluginState;->OFF:Landroid/webkit/WebSettings$PluginState;
 
     iput-object v0, p0, Lcom/android/browser/BrowserSettings;->pluginState:Landroid/webkit/WebSettings$PluginState;
 
-    .line 692
+    .line 703
     iput-boolean v2, p0, Lcom/android/browser/BrowserSettings;->javaScriptCanOpenWindowsAutomatically:Z
 
-    .line 693
+    .line 704
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->showSecurityWarnings:Z
 
-    .line 694
+    .line 705
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->rememberPasswords:Z
 
-    .line 695
+    .line 706
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->saveFormData:Z
 
-    .line 696
+    .line 707
     iput-boolean v2, p0, Lcom/android/browser/BrowserSettings;->openInBackground:Z
 
-    .line 697
+    .line 708
     iput-boolean v2, p0, Lcom/android/browser/BrowserSettings;->autoFitPage:Z
 
-    .line 698
+    .line 709
     iput-boolean v2, p0, Lcom/android/browser/BrowserSettings;->landscapeOnly:Z
 
-    .line 699
+    .line 710
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->loadsPageInOverviewMode:Z
 
-    .line 700
+    .line 711
     iput-boolean v2, p0, Lcom/android/browser/BrowserSettings;->showDebugSettings:Z
 
-    .line 702
+    .line 713
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->appCacheEnabled:Z
 
-    .line 703
+    .line 714
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->databaseEnabled:Z
 
-    .line 704
+    .line 715
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->domStorageEnabled:Z
 
-    .line 705
+    .line 716
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->geolocationEnabled:Z
 
-    .line 706
+    .line 717
     iput-boolean v1, p0, Lcom/android/browser/BrowserSettings;->workersEnabled:Z
 
-    .line 707
+    .line 718
     return-void
 .end method
 
@@ -751,7 +751,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 609
+    .line 620
     iget-object v0, p0, Lcom/android/browser/BrowserSettings;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getBrowserActivity()Lcom/android/browser/BrowserActivity;
@@ -771,7 +771,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Lcom/android/browser/BrowserActivity;->setShouldShowErrorConsole(Z)V
 
-    .line 611
+    .line 622
     iget-object v0, p0, Lcom/android/browser/BrowserSettings;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getBrowserActivity()Lcom/android/browser/BrowserActivity;
@@ -787,16 +787,16 @@
     :goto_1
     invoke-virtual {v0, v1}, Lcom/android/browser/BrowserActivity;->setRequestedOrientation(I)V
 
-    .line 614
+    .line 625
     return-void
 
     :cond_0
     move v1, v2
 
-    .line 609
+    .line 620
     goto :goto_0
 
-    .line 611
+    .line 622
     :cond_1
     const/4 v1, -0x1
 
@@ -810,7 +810,7 @@
     .parameter "s"
 
     .prologue
-    .line 522
+    .line 533
     iget-object v2, p0, Lcom/android/browser/BrowserSettings;->mWebSettingsToObservers:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -819,29 +819,29 @@
 
     check-cast v1, Lcom/android/browser/BrowserSettings$Observer;
 
-    .line 523
+    .line 534
     .local v1, old:Lcom/android/browser/BrowserSettings$Observer;
     if-eqz v1, :cond_0
 
-    .line 524
+    .line 535
     invoke-super {p0, v1}, Ljava/util/Observable;->deleteObserver(Ljava/util/Observer;)V
 
-    .line 526
+    .line 537
     :cond_0
     new-instance v0, Lcom/android/browser/BrowserSettings$Observer;
 
     invoke-direct {v0, p1}, Lcom/android/browser/BrowserSettings$Observer;-><init>(Landroid/webkit/WebSettings;)V
 
-    .line 527
+    .line 538
     .local v0, o:Lcom/android/browser/BrowserSettings$Observer;
     iget-object v2, p0, Lcom/android/browser/BrowserSettings;->mWebSettingsToObservers:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 528
+    .line 539
     invoke-super {p0, v0}, Ljava/util/Observable;->addObserver(Ljava/util/Observer;)V
 
-    .line 529
+    .line 540
     return-object v0
 .end method
 
@@ -850,35 +850,35 @@
     .parameter "context"
 
     .prologue
-    .line 572
+    .line 583
     invoke-static {}, Landroid/webkit/WebIconDatabase;->getInstance()Landroid/webkit/WebIconDatabase;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/webkit/WebIconDatabase;->removeAllIcons()V
 
-    .line 573
+    .line 584
     iget-object v1, p0, Lcom/android/browser/BrowserSettings;->mTabControl:Lcom/android/browser/TabControl;
 
     if-eqz v1, :cond_0
 
-    .line 574
+    .line 585
     iget-object v1, p0, Lcom/android/browser/BrowserSettings;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 575
+    .line 586
     .local v0, current:Landroid/webkit/WebView;
     if-eqz v0, :cond_0
 
-    .line 576
+    .line 587
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->clearCache(Z)V
 
-    .line 579
+    .line 590
     .end local v0           #current:Landroid/webkit/WebView;
     :cond_0
     return-void
@@ -889,14 +889,14 @@
     .parameter "context"
 
     .prologue
-    .line 582
+    .line 593
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/webkit/CookieManager;->removeAllCookie()V
 
-    .line 583
+    .line 594
     return-void
 .end method
 
@@ -905,17 +905,17 @@
     .parameter "context"
 
     .prologue
-    .line 639
+    .line 650
     invoke-static {}, Landroid/webkit/WebStorage;->getInstance()Landroid/webkit/WebStorage;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/webkit/WebStorage;->deleteAllData()V
 
-    .line 640
+    .line 651
     invoke-direct {p0, p1}, Lcom/android/browser/BrowserSettings;->maybeDisableWebsiteSettings(Landroid/content/Context;)V
 
-    .line 641
+    .line 652
     return-void
 .end method
 
@@ -924,33 +924,33 @@
     .parameter "context"
 
     .prologue
-    .line 592
+    .line 603
     invoke-static {p1}, Landroid/webkit/WebViewDatabase;->getInstance(Landroid/content/Context;)Landroid/webkit/WebViewDatabase;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/webkit/WebViewDatabase;->clearFormData()V
 
-    .line 593
+    .line 604
     iget-object v1, p0, Lcom/android/browser/BrowserSettings;->mTabControl:Lcom/android/browser/TabControl;
 
     if-eqz v1, :cond_0
 
-    .line 594
+    .line 605
     iget-object v1, p0, Lcom/android/browser/BrowserSettings;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentTopWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 595
+    .line 606
     .local v0, currentTopView:Landroid/webkit/WebView;
     if-eqz v0, :cond_0
 
-    .line 596
+    .line 607
     invoke-virtual {v0}, Landroid/webkit/WebView;->clearFormData()V
 
-    .line 599
+    .line 610
     .end local v0           #currentTopView:Landroid/webkit/WebView;
     :cond_0
     return-void
@@ -961,19 +961,19 @@
     .parameter "context"
 
     .prologue
-    .line 586
+    .line 597
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 587
+    .line 598
     .local v0, resolver:Landroid/content/ContentResolver;
     invoke-static {v0}, Landroid/provider/Browser;->clearHistory(Landroid/content/ContentResolver;)V
 
-    .line 588
+    .line 599
     invoke-static {v0}, Landroid/provider/Browser;->clearSearches(Landroid/content/ContentResolver;)V
 
-    .line 589
+    .line 600
     return-void
 .end method
 
@@ -982,17 +982,17 @@
     .parameter "context"
 
     .prologue
-    .line 644
+    .line 655
     invoke-static {}, Landroid/webkit/GeolocationPermissions;->getInstance()Landroid/webkit/GeolocationPermissions;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/webkit/GeolocationPermissions;->clearAll()V
 
-    .line 645
+    .line 656
     invoke-direct {p0, p1}, Lcom/android/browser/BrowserSettings;->maybeDisableWebsiteSettings(Landroid/content/Context;)V
 
-    .line 646
+    .line 657
     return-void
 .end method
 
@@ -1001,19 +1001,19 @@
     .parameter "context"
 
     .prologue
-    .line 602
+    .line 613
     invoke-static {p1}, Landroid/webkit/WebViewDatabase;->getInstance(Landroid/content/Context;)Landroid/webkit/WebViewDatabase;
 
     move-result-object v0
 
-    .line 603
+    .line 614
     .local v0, db:Landroid/webkit/WebViewDatabase;
     invoke-virtual {v0}, Landroid/webkit/WebViewDatabase;->clearUsernamePassword()V
 
-    .line 604
+    .line 615
     invoke-virtual {v0}, Landroid/webkit/WebViewDatabase;->clearHttpAuthUsernamePassword()V
 
-    .line 605
+    .line 616
     return-void
 .end method
 
@@ -1022,7 +1022,7 @@
     .parameter "s"
 
     .prologue
-    .line 537
+    .line 548
     iget-object v1, p0, Lcom/android/browser/BrowserSettings;->mWebSettingsToObservers:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1031,19 +1031,19 @@
 
     check-cast v0, Lcom/android/browser/BrowserSettings$Observer;
 
-    .line 538
+    .line 549
     .local v0, o:Lcom/android/browser/BrowserSettings$Observer;
     if-eqz v0, :cond_0
 
-    .line 539
+    .line 550
     iget-object v1, p0, Lcom/android/browser/BrowserSettings;->mWebSettingsToObservers:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 540
+    .line 551
     invoke-super {p0, v0}, Ljava/util/Observable;->deleteObserver(Ljava/util/Observer;)V
 
-    .line 542
+    .line 553
     :cond_0
     return-void
 .end method
@@ -1052,7 +1052,7 @@
     .locals 1
 
     .prologue
-    .line 429
+    .line 440
     iget v0, p0, Lcom/android/browser/BrowserSettings;->brightness:I
 
     return v0
@@ -1062,7 +1062,7 @@
     .locals 1
 
     .prologue
-    .line 437
+    .line 448
     iget-object v0, p0, Lcom/android/browser/BrowserSettings;->homeUrl:Ljava/lang/String;
 
     return-object v0
@@ -1072,7 +1072,7 @@
     .locals 1
 
     .prologue
-    .line 449
+    .line 460
     iget-object v0, p0, Lcom/android/browser/BrowserSettings;->jsFlags:Ljava/lang/String;
 
     return-object v0
@@ -1082,7 +1082,7 @@
     .locals 1
 
     .prologue
-    .line 441
+    .line 452
     iget-object v0, p0, Lcom/android/browser/BrowserSettings;->searchEngine:Lcom/android/browser/search/SearchEngine;
 
     return-object v0
@@ -1092,7 +1092,7 @@
     .locals 1
 
     .prologue
-    .line 453
+    .line 464
     iget-object v0, p0, Lcom/android/browser/BrowserSettings;->webStorageSizeManager:Lcom/android/browser/WebStorageSizeManager;
 
     return-object v0
@@ -1102,7 +1102,7 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 456
     iget-boolean v0, p0, Lcom/android/browser/BrowserSettings;->bDownloadInternalMemory:Z
 
     return v0
@@ -1112,7 +1112,7 @@
     .locals 1
 
     .prologue
-    .line 501
+    .line 512
     iget-boolean v0, p0, Lcom/android/browser/BrowserSettings;->navDump:Z
 
     return v0
@@ -1122,7 +1122,7 @@
     .locals 1
 
     .prologue
-    .line 493
+    .line 504
     iget-boolean v0, p0, Lcom/android/browser/BrowserSettings;->tracing:Z
 
     return v0
@@ -1275,7 +1275,7 @@
     .locals 1
 
     .prologue
-    .line 485
+    .line 496
     iget-boolean v0, p0, Lcom/android/browser/BrowserSettings;->openInBackground:Z
 
     return v0
@@ -1286,15 +1286,15 @@
     .parameter "ctx"
 
     .prologue
-    .line 649
+    .line 660
     invoke-direct {p0}, Lcom/android/browser/BrowserSettings;->reset()V
 
-    .line 650
+    .line 661
     invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 652
+    .line 663
     .local v1, p:Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -1306,14 +1306,14 @@
 
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 653
+    .line 664
     const v2, 0x7f050002
 
     const/4 v3, 0x1
 
     invoke-static {p1, v2, v3}, Landroid/preference/PreferenceManager;->setDefaultValues(Landroid/content/Context;IZ)V
 
-    .line 656
+    .line 667
     invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v2
@@ -1322,7 +1322,7 @@
 
     move-result-object v0
 
-    .line 657
+    .line 668
     .local v0, ed:Landroid/content/SharedPreferences$Editor;
     const-string v2, "landscape_only"
 
@@ -1330,17 +1330,17 @@
 
     invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 658
+    .line 669
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 661
+    .line 672
     invoke-direct {p0, p1}, Lcom/android/browser/BrowserSettings;->getFactoryResetHomeUrl(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p0, p1, v2}, Lcom/android/browser/BrowserSettings;->setHomePage(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 663
+    .line 674
     iget-object v2, p0, Lcom/android/browser/BrowserSettings;->webStorageSizeManager:Lcom/android/browser/WebStorageSizeManager;
 
     invoke-virtual {v2}, Lcom/android/browser/WebStorageSizeManager;->getAppCacheMaxSize()J
@@ -1349,7 +1349,7 @@
 
     iput-wide v2, p0, Lcom/android/browser/BrowserSettings;->appCacheMaxSize:J
 
-    .line 664
+    .line 675
     return-void
 .end method
 
@@ -1358,10 +1358,10 @@
     .parameter "newBrightness"
 
     .prologue
-    .line 433
+    .line 444
     iput p1, p0, Lcom/android/browser/BrowserSettings;->brightness:I
 
-    .line 434
+    .line 445
     return-void
 .end method
 
@@ -1373,7 +1373,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 465
+    .line 476
     invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -1382,26 +1382,26 @@
 
     move-result-object v0
 
-    .line 466
+    .line 477
     .local v0, ed:Landroid/content/SharedPreferences$Editor;
     const-string v1, "default_download_storage"
 
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 467
+    .line 478
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 468
+    .line 479
     if-ne p2, v2, :cond_0
 
-    .line 469
+    .line 480
     iput-boolean v2, p0, Lcom/android/browser/BrowserSettings;->bDownloadInternalMemory:Z
 
-    .line 474
+    .line 485
     :goto_0
     return-void
 
-    .line 472
+    .line 483
     :cond_0
     const/4 v1, 0x0
 
@@ -1416,7 +1416,7 @@
     .parameter "url"
 
     .prologue
-    .line 457
+    .line 468
     invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -1425,19 +1425,19 @@
 
     move-result-object v0
 
-    .line 459
+    .line 470
     .local v0, ed:Landroid/content/SharedPreferences$Editor;
     const-string v1, "homepage"
 
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 460
+    .line 471
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 461
+    .line 472
     iput-object p2, p0, Lcom/android/browser/BrowserSettings;->homeUrl:Ljava/lang/String;
 
-    .line 462
+    .line 473
     return-void
 .end method
 
@@ -1446,13 +1446,13 @@
     .parameter "tabControl"
 
     .prologue
-    .line 559
+    .line 570
     iput-object p1, p0, Lcom/android/browser/BrowserSettings;->mTabControl:Lcom/android/browser/TabControl;
 
-    .line 560
+    .line 571
     invoke-direct {p0}, Lcom/android/browser/BrowserSettings;->updateTabControlSettings()V
 
-    .line 561
+    .line 572
     return-void
 .end method
 
@@ -1460,7 +1460,7 @@
     .locals 1
 
     .prologue
-    .line 505
+    .line 516
     iget-boolean v0, p0, Lcom/android/browser/BrowserSettings;->showDebugSettings:Z
 
     return v0
@@ -1470,7 +1470,7 @@
     .locals 1
 
     .prologue
-    .line 489
+    .line 500
     iget-boolean v0, p0, Lcom/android/browser/BrowserSettings;->showSecurityWarnings:Z
 
     return v0
@@ -1497,16 +1497,16 @@
 
     iput-object v7, p0, Lcom/android/browser/BrowserSettings;->homeUrl:Ljava/lang/String;
 
-    .line 311
+    .line 320
     const-string v7, "search_engine"
 
-    const-string v8, "google"			# djp952: was "bing"
+    const-string v8, "google"
 
     invoke-interface {p2, v7, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 313
+    .line 324
     .local v5, searchEngineName:Ljava/lang/String;
     iget-object v7, p0, Lcom/android/browser/BrowserSettings;->searchEngine:Lcom/android/browser/search/SearchEngine;
 
@@ -1524,13 +1524,13 @@
 
     if-nez v7, :cond_3
 
-    .line 314
+    .line 325
     :cond_0
     iget-object v7, p0, Lcom/android/browser/BrowserSettings;->searchEngine:Lcom/android/browser/search/SearchEngine;
 
     if-eqz v7, :cond_2
 
-    .line 315
+    .line 326
     iget-object v7, p0, Lcom/android/browser/BrowserSettings;->searchEngine:Lcom/android/browser/search/SearchEngine;
 
     invoke-interface {v7}, Lcom/android/browser/search/SearchEngine;->supportsVoiceSearch()Z
@@ -1539,7 +1539,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 319
+    .line 330
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -1552,7 +1552,7 @@
 
     if-ge v1, v7, :cond_1
 
-    .line 320
+    .line 331
     iget-object v7, p0, Lcom/android/browser/BrowserSettings;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v7, v1}, Lcom/android/browser/TabControl;->getTab(I)Lcom/android/browser/Tab;
@@ -1561,19 +1561,19 @@
 
     invoke-virtual {v7}, Lcom/android/browser/Tab;->revertVoiceSearchMode()V
 
-    .line 319
+    .line 330
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 323
+    .line 334
     .end local v1           #i:I
     :cond_1
     iget-object v7, p0, Lcom/android/browser/BrowserSettings;->searchEngine:Lcom/android/browser/search/SearchEngine;
 
     invoke-interface {v7}, Lcom/android/browser/search/SearchEngine;->close()V
 
-    .line 325
+    .line 336
     :cond_2
     invoke-static {p1, v5}, Lcom/android/browser/search/SearchEngines;->get(Landroid/content/Context;Ljava/lang/String;)Lcom/android/browser/search/SearchEngine;
 
@@ -1581,7 +1581,7 @@
 
     iput-object v7, p0, Lcom/android/browser/BrowserSettings;->searchEngine:Lcom/android/browser/search/SearchEngine;
 
-    .line 327
+    .line 338
     :cond_3
     const-string v7, "BrowserSettings"
 
@@ -1607,7 +1607,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 329
+    .line 340
     const-string v7, "load_images"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->loadsImagesAutomatically:Z
@@ -1618,7 +1618,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->loadsImagesAutomatically:Z
 
-    .line 331
+    .line 342
     const-string v7, "enable_javascript"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->javaScriptEnabled:Z
@@ -1629,7 +1629,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->javaScriptEnabled:Z
 
-    .line 333
+    .line 344
     const-string v7, "plugin_state"
 
     iget-object v8, p0, Lcom/android/browser/BrowserSettings;->pluginState:Landroid/webkit/WebSettings$PluginState;
@@ -1648,7 +1648,7 @@
 
     iput-object v7, p0, Lcom/android/browser/BrowserSettings;->pluginState:Landroid/webkit/WebSettings$PluginState;
 
-    .line 335
+    .line 346
     const-string v7, "brightness"
 
     iget v8, p0, Lcom/android/browser/BrowserSettings;->brightness:I
@@ -1659,7 +1659,7 @@
 
     iput v7, p0, Lcom/android/browser/BrowserSettings;->brightness:I
 
-    .line 336
+    .line 347
     const-string v7, "block_popup_windows"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->javaScriptCanOpenWindowsAutomatically:Z
@@ -1680,7 +1680,7 @@
     :goto_2
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->javaScriptCanOpenWindowsAutomatically:Z
 
-    .line 339
+    .line 350
     const-string v7, "show_security_warnings"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->showSecurityWarnings:Z
@@ -1691,7 +1691,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->showSecurityWarnings:Z
 
-    .line 341
+    .line 352
     const-string v7, "remember_passwords"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->rememberPasswords:Z
@@ -1702,7 +1702,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->rememberPasswords:Z
 
-    .line 343
+    .line 354
     const-string v7, "save_formdata"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->saveFormData:Z
@@ -1713,7 +1713,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->saveFormData:Z
 
-    .line 345
+    .line 356
     const-string v7, "accept_cookies"
 
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
@@ -1728,7 +1728,7 @@
 
     move-result v0
 
-    .line 347
+    .line 358
     .local v0, accept_cookies:Z
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
@@ -1736,7 +1736,7 @@
 
     invoke-virtual {v7, v0}, Landroid/webkit/CookieManager;->setAcceptCookie(Z)V
 
-    .line 348
+    .line 359
     const-string v7, "open_in_background"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->openInBackground:Z
@@ -1747,7 +1747,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->openInBackground:Z
 
-    .line 349
+    .line 360
     const-string v7, "text_size"
 
     sget-object v8, Lcom/android/browser/BrowserSettings;->textSize:Landroid/webkit/WebSettings$TextSize;
@@ -1766,7 +1766,7 @@
 
     sput-object v7, Lcom/android/browser/BrowserSettings;->textSize:Landroid/webkit/WebSettings$TextSize;
 
-    .line 351
+    .line 362
     const-string v7, "default_zoom"
 
     sget-object v8, Lcom/android/browser/BrowserSettings;->zoomDensity:Landroid/webkit/WebSettings$ZoomDensity;
@@ -1785,7 +1785,7 @@
 
     sput-object v7, Lcom/android/browser/BrowserSettings;->zoomDensity:Landroid/webkit/WebSettings$ZoomDensity;
 
-    .line 353
+    .line 364
     const-string v7, "autofit_pages"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->autoFitPage:Z
@@ -1796,7 +1796,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->autoFitPage:Z
 
-    .line 354
+    .line 365
     const-string v7, "load_page"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->loadsPageInOverviewMode:Z
@@ -1807,7 +1807,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->loadsPageInOverviewMode:Z
 
-    .line 356
+    .line 367
     const-string v7, "landscape_only"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->landscapeOnly:Z
@@ -1816,30 +1816,30 @@
 
     move-result v3
 
-    .line 358
+    .line 369
     .local v3, landscapeOnlyTemp:Z
     iget-boolean v7, p0, Lcom/android/browser/BrowserSettings;->landscapeOnly:Z
 
     if-eq v3, v7, :cond_4
 
-    .line 359
+    .line 370
     iput-boolean v3, p0, Lcom/android/browser/BrowserSettings;->landscapeOnly:Z
 
-    .line 361
+    .line 372
     :cond_4
     iput-boolean v11, p0, Lcom/android/browser/BrowserSettings;->useWideViewPort:Z
 
-    .line 362
+    .line 373
     iget-boolean v7, p0, Lcom/android/browser/BrowserSettings;->autoFitPage:Z
 
     if-eqz v7, :cond_9
 
-    .line 363
+    .line 374
     sget-object v7, Landroid/webkit/WebSettings$LayoutAlgorithm;->NARROW_COLUMNS:Landroid/webkit/WebSettings$LayoutAlgorithm;
 
     iput-object v7, p0, Lcom/android/browser/BrowserSettings;->layoutAlgorithm:Landroid/webkit/WebSettings$LayoutAlgorithm;
 
-    .line 367
+    .line 378
     :goto_3
     const-string v7, "default_text_encoding"
 
@@ -1851,7 +1851,7 @@
 
     iput-object v7, p0, Lcom/android/browser/BrowserSettings;->defaultTextEncodingName:Ljava/lang/String;
 
-    .line 371
+    .line 382
     const-string v7, "debug_menu"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->showDebugSettings:Z
@@ -1862,12 +1862,12 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->showDebugSettings:Z
 
-    .line 374
+    .line 385
     iget-boolean v7, p0, Lcom/android/browser/BrowserSettings;->showDebugSettings:Z
 
     if-eqz v7, :cond_5
 
-    .line 375
+    .line 386
     const-string v7, "small_screen"
 
     iget-object v8, p0, Lcom/android/browser/BrowserSettings;->layoutAlgorithm:Landroid/webkit/WebSettings$LayoutAlgorithm;
@@ -1883,16 +1883,16 @@
 
     move-result v6
 
-    .line 378
+    .line 389
     .local v6, small_screen:Z
     if-eqz v6, :cond_b
 
-    .line 379
+    .line 390
     sget-object v7, Landroid/webkit/WebSettings$LayoutAlgorithm;->SINGLE_COLUMN:Landroid/webkit/WebSettings$LayoutAlgorithm;
 
     iput-object v7, p0, Lcom/android/browser/BrowserSettings;->layoutAlgorithm:Landroid/webkit/WebSettings$LayoutAlgorithm;
 
-    .line 390
+    .line 401
     :goto_5
     const-string v7, "wide_viewport"
 
@@ -1904,7 +1904,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->useWideViewPort:Z
 
-    .line 391
+    .line 402
     const-string v7, "enable_tracing"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->tracing:Z
@@ -1915,7 +1915,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->tracing:Z
 
-    .line 392
+    .line 403
     const-string v7, "enable_light_touch"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->lightTouch:Z
@@ -1926,7 +1926,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->lightTouch:Z
 
-    .line 393
+    .line 404
     const-string v7, "enable_nav_dump"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->navDump:Z
@@ -1937,7 +1937,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->navDump:Z
 
-    .line 396
+    .line 407
     .end local v6           #small_screen:Z
     :cond_5
     const-string v7, "user_agent"
@@ -1954,7 +1954,7 @@
 
     iput v7, p0, Lcom/android/browser/BrowserSettings;->userAgent:I
 
-    .line 400
+    .line 411
     const-string v7, "js_engine_flags"
 
     const-string v8, ""
@@ -1965,7 +1965,7 @@
 
     iput-object v7, p0, Lcom/android/browser/BrowserSettings;->jsFlags:Ljava/lang/String;
 
-    .line 407
+    .line 418
     const-string v7, "javascript_console"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->showConsole:Z
@@ -1976,7 +1976,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->showConsole:Z
 
-    .line 410
+    .line 421
     const-string v7, "enable_appcache"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->appCacheEnabled:Z
@@ -1987,7 +1987,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->appCacheEnabled:Z
 
-    .line 411
+    .line 422
     const-string v7, "enable_database"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->databaseEnabled:Z
@@ -1998,7 +1998,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->databaseEnabled:Z
 
-    .line 412
+    .line 423
     const-string v7, "enable_domstorage"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->domStorageEnabled:Z
@@ -2009,7 +2009,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->domStorageEnabled:Z
 
-    .line 413
+    .line 424
     const-string v7, "enable_geolocation"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->geolocationEnabled:Z
@@ -2020,7 +2020,7 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->geolocationEnabled:Z
 
-    .line 414
+    .line 425
     const-string v7, "enable_workers"
 
     iget-boolean v8, p0, Lcom/android/browser/BrowserSettings;->workersEnabled:Z
@@ -2031,10 +2031,10 @@
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserSettings;->workersEnabled:Z
 
-    .line 417
+    .line 428
     const/4 v2, 0x0
 
-    .line 418
+    .line 429
     .local v2, iDefaultStorageType:I
     const-string v7, "default_download_storage"
 
@@ -2042,19 +2042,19 @@
 
     move-result v2
 
-    .line 419
+    .line 430
     const/4 v7, 0x2
 
     if-eq v2, v7, :cond_6
 
-    .line 422
+    .line 433
     :cond_6
     iput-boolean v10, p0, Lcom/android/browser/BrowserSettings;->bDownloadInternalMemory:Z
 
-    .line 425
+    .line 436
     invoke-virtual {p0}, Lcom/android/browser/BrowserSettings;->update()V
 
-    .line 426
+    .line 437
     return-void
 
     .end local v0           #accept_cookies:Z
@@ -2063,7 +2063,7 @@
     :cond_7
     move v8, v10
 
-    .line 336
+    .line 347
     goto/16 :goto_1
 
     :cond_8
@@ -2071,7 +2071,7 @@
 
     goto/16 :goto_2
 
-    .line 365
+    .line 376
     .restart local v0       #accept_cookies:Z
     .restart local v3       #landscapeOnlyTemp:Z
     :cond_9
@@ -2084,10 +2084,10 @@
     :cond_a
     move v8, v10
 
-    .line 375
+    .line 386
     goto/16 :goto_4
 
-    .line 381
+    .line 392
     .restart local v6       #small_screen:Z
     :cond_b
     const-string v7, "normal_layout"
@@ -2105,11 +2105,11 @@
 
     move-result v4
 
-    .line 383
+    .line 394
     .local v4, normal_layout:Z
     if-eqz v4, :cond_d
 
-    .line 384
+    .line 395
     sget-object v7, Landroid/webkit/WebSettings$LayoutAlgorithm;->NORMAL:Landroid/webkit/WebSettings$LayoutAlgorithm;
 
     iput-object v7, p0, Lcom/android/browser/BrowserSettings;->layoutAlgorithm:Landroid/webkit/WebSettings$LayoutAlgorithm;
@@ -2120,10 +2120,10 @@
     :cond_c
     move v8, v10
 
-    .line 381
+    .line 392
     goto :goto_6
 
-    .line 386
+    .line 397
     .restart local v4       #normal_layout:Z
     :cond_d
     sget-object v7, Landroid/webkit/WebSettings$LayoutAlgorithm;->NARROW_COLUMNS:Landroid/webkit/WebSettings$LayoutAlgorithm;
@@ -2137,7 +2137,7 @@
     .locals 1
 
     .prologue
-    .line 509
+    .line 520
     iget-boolean v0, p0, Lcom/android/browser/BrowserSettings;->showDebugSettings:Z
 
     if-nez v0, :cond_0
@@ -2147,18 +2147,18 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/browser/BrowserSettings;->showDebugSettings:Z
 
-    .line 510
+    .line 521
     iget-boolean v0, p0, Lcom/android/browser/BrowserSettings;->showDebugSettings:Z
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserSettings;->navDump:Z
 
-    .line 511
+    .line 522
     invoke-virtual {p0}, Lcom/android/browser/BrowserSettings;->update()V
 
-    .line 512
+    .line 523
     return-void
 
-    .line 509
+    .line 520
     :cond_0
     const/4 v0, 0x0
 
@@ -2169,12 +2169,12 @@
     .locals 0
 
     .prologue
-    .line 567
+    .line 578
     invoke-virtual {p0}, Lcom/android/browser/BrowserSettings;->setChanged()V
 
-    .line 568
+    .line 579
     invoke-virtual {p0}, Lcom/android/browser/BrowserSettings;->notifyObservers()V
 
-    .line 569
+    .line 580
     return-void
 .end method

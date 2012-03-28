@@ -29,13 +29,13 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 690
+    .line 694
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 692
+    .line 696
     iput v0, p0, Lcom/sec/android/app/twlauncher/Launcher$LocaleConfiguration;->mcc:I
 
-    .line 693
+    .line 697
     iput v0, p0, Lcom/sec/android/app/twlauncher/Launcher$LocaleConfiguration;->mnc:I
 
     return-void
@@ -46,7 +46,7 @@
     .parameter "x0"
 
     .prologue
-    .line 690
+    .line 694
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Launcher$LocaleConfiguration;-><init>()V
 
     return-void

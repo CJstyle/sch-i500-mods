@@ -68,6 +68,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$100(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/ref/WeakReference;
 
     move-result-object v9
@@ -99,6 +100,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -146,6 +148,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -177,6 +180,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -192,6 +196,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -207,6 +212,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -251,7 +257,7 @@
 
     .line 1367
     .local v8, widget:Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;
-    iget v9, v8, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iget v9, v8, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->screen:I
 
     if-ne v9, v2, :cond_3
 
@@ -260,6 +266,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -297,7 +304,7 @@
 
     .line 1381
     .restart local v8       #widget:Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;
-    iget v9, v8, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iget v9, v8, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->screen:I
 
     if-eq v9, v2, :cond_5
 
@@ -306,6 +313,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -329,6 +337,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -367,7 +376,7 @@
 
     .line 1408
     .local v8, widget:Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
-    iget v9, v8, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iget v9, v8, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->screen:I
 
     if-ne v9, v2, :cond_7
 
@@ -376,6 +385,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -413,7 +423,7 @@
 
     .line 1422
     .restart local v8       #widget:Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
-    iget v9, v8, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iget v9, v8, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->screen:I
 
     if-eq v9, v2, :cond_9
 
@@ -422,6 +432,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -445,6 +456,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -460,6 +472,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -475,6 +488,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v9
@@ -708,6 +722,7 @@
 
     iget-object v5, v5, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
     invoke-static {v5}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$100(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/ref/WeakReference;
 
     move-result-object v5
@@ -812,6 +827,7 @@
 
     iget-object v14, v14, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsListLock:Ljava/lang/Object;
     invoke-static {v14}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1300(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/Object;
 
     move-result-object v14
@@ -831,6 +847,7 @@
 
     iget-object v6, v6, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsList:Lcom/sec/android/app/twlauncher/AllAppsList;
     invoke-static {v6}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1200(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/AllAppsList;
 
     move-result-object v6
@@ -889,6 +906,7 @@
 
     const/4 v13, 0x0
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mBeforeFirstQuery:Z
     invoke-static {v12, v13}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1402(Lcom/sec/android/app/twlauncher/LauncherModel;Z)Z
 
     .line 1569
@@ -900,6 +918,7 @@
 
     iget-object v12, v12, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mBatchSize:I
     invoke-static {v12}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1500(Lcom/sec/android/app/twlauncher/LauncherModel;)I
 
     move-result v12
@@ -954,6 +973,7 @@
 
     iget-object v6, v6, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsList:Lcom/sec/android/app/twlauncher/AllAppsList;
     invoke-static {v6}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1200(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/AllAppsList;
 
     move-result-object v17
@@ -978,6 +998,7 @@
 
     move-object/from16 v19, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mIconCache:Lcom/sec/android/app/twlauncher/IconCache;
     invoke-static/range {v19 .. v19}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1600(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/IconCache;
 
     move-result-object v19
@@ -1012,6 +1033,7 @@
 
     iget-object v12, v12, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mBatchSize:I
     invoke-static {v12}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1500(Lcom/sec/android/app/twlauncher/LauncherModel;)I
 
     move-result v12
@@ -1106,6 +1128,7 @@
 
     iget-object v6, v6, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mIconCache:Lcom/sec/android/app/twlauncher/IconCache;
     invoke-static {v6}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1600(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/IconCache;
 
     move-result-object v6
@@ -1193,6 +1216,7 @@
 
     move-object/from16 v22, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsList:Lcom/sec/android/app/twlauncher/AllAppsList;
     invoke-static/range {v22 .. v22}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1200(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/AllAppsList;
 
     move-result-object v22
@@ -1227,6 +1251,7 @@
 
     move-object/from16 v25, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsList:Lcom/sec/android/app/twlauncher/AllAppsList;
     invoke-static/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1200(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/AllAppsList;
 
     move-result-object v25
@@ -1463,7 +1488,7 @@
 
     move-object/from16 v1, v17
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/ApplicationInfo;->itemType:I
 
     .line 1646
     move v0, v9
@@ -1500,7 +1525,7 @@
 
     move-object/from16 v2, v17
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ApplicationInfo;->container:J
 
     .line 1651
     const/high16 v9, 0x1020
@@ -1589,6 +1614,7 @@
 
     iget-object v6, v6, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsList:Lcom/sec/android/app/twlauncher/AllAppsList;
     invoke-static {v6}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1200(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/AllAppsList;
 
     move-result-object v6
@@ -1632,6 +1658,7 @@
 
     iget-object v9, v9, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsList:Lcom/sec/android/app/twlauncher/AllAppsList;
     invoke-static {v9}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1200(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/AllAppsList;
 
     move-result-object v9
@@ -1651,6 +1678,7 @@
 
     move-object/from16 v17, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsList:Lcom/sec/android/app/twlauncher/AllAppsList;
     invoke-static/range {v17 .. v17}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1200(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/AllAppsList;
 
     move-result-object v17
@@ -1678,6 +1706,7 @@
 
     move-object/from16 v17, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static/range {v17 .. v17}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v17
@@ -1712,6 +1741,7 @@
 
     iget-object v6, v6, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsLoadDelay:I
     invoke-static {v6}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1800(Lcom/sec/android/app/twlauncher/LauncherModel;)I
 
     move-result v6
@@ -1734,6 +1764,7 @@
 
     iget-object v6, v6, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsLoadDelay:I
     invoke-static {v6}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1800(Lcom/sec/android/app/twlauncher/LauncherModel;)I
 
     move-result v6
@@ -1918,6 +1949,7 @@
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsLoaded:Z
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1100(Lcom/sec/android/app/twlauncher/LauncherModel;)Z
 
     move-result v0
@@ -1930,6 +1962,7 @@
 
     const/4 v2, 0x1
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsLoaded:Z
     invoke-static {v1, v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1102(Lcom/sec/android/app/twlauncher/LauncherModel;Z)Z
 
     .line 1474
@@ -1955,6 +1988,7 @@
 
     const/4 v2, 0x0
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsLoaded:Z
     invoke-static {v1, v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1102(Lcom/sec/android/app/twlauncher/LauncherModel;Z)Z
 
     .line 1486
@@ -1995,6 +2029,7 @@
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mWorkspaceLoaded:Z
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$300(Lcom/sec/android/app/twlauncher/LauncherModel;)Z
 
     move-result v0
@@ -2007,6 +2042,7 @@
 
     const/4 v2, 0x1
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mWorkspaceLoaded:Z
     invoke-static {v1, v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$302(Lcom/sec/android/app/twlauncher/LauncherModel;Z)Z
 
     .line 749
@@ -2032,6 +2068,7 @@
 
     const/4 v2, 0x0
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mWorkspaceLoaded:Z
     invoke-static {v1, v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$302(Lcom/sec/android/app/twlauncher/LauncherModel;Z)Z
 
     .line 765
@@ -2595,7 +2632,7 @@
 
     move-object/from16 v2, v44
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ShortcutInfo;->id:J
 
     .line 1031
     move-object v0, v10
@@ -2618,7 +2655,7 @@
 
     move-object/from16 v2, v44
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ShortcutInfo;->container:J
 
     .line 1033
     move-object v0, v10
@@ -2633,7 +2670,7 @@
 
     move-object/from16 v1, v44
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/ShortcutInfo;->screen:I
 
     .line 1034
     move-object v0, v10
@@ -2648,7 +2685,7 @@
 
     move-object/from16 v1, v44
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellX:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/ShortcutInfo;->cellX:I
 
     .line 1035
     move-object v0, v10
@@ -2663,12 +2700,12 @@
 
     move-object/from16 v1, v44
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellY:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/ShortcutInfo;->cellY:I
 
     .line 1037
     move-object/from16 v0, v44
 
-    iget v0, v0, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iget v0, v0, Lcom/sec/android/app/twlauncher/ShortcutInfo;->screen:I
 
     move v6, v0
 
@@ -2708,6 +2745,7 @@
 
     move-wide v7, v0
 
+    #calls: Lcom/sec/android/app/twlauncher/LauncherModel;->findOrMakeUserFolder(Ljava/util/HashMap;J)Lcom/sec/android/app/twlauncher/UserFolderInfo;
     invoke-static {v6, v7, v8}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$800(Ljava/util/HashMap;J)Lcom/sec/android/app/twlauncher/UserFolderInfo;
 
     move-result-object v37
@@ -2827,6 +2865,7 @@
 
     move/from16 v20, v12
 
+    #calls: Lcom/sec/android/app/twlauncher/LauncherModel;->getShortcutInfo(Landroid/database/Cursor;Landroid/content/Context;IIIII)Lcom/sec/android/app/twlauncher/ShortcutInfo;
     invoke-static/range {v13 .. v20}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$700(Lcom/sec/android/app/twlauncher/LauncherModel;Landroid/database/Cursor;Landroid/content/Context;IIIII)Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
     move-result-object v44
@@ -2945,6 +2984,7 @@
 
     move-wide/from16 v1, v41
 
+    #calls: Lcom/sec/android/app/twlauncher/LauncherModel;->findOrMakeUserFolder(Ljava/util/HashMap;J)Lcom/sec/android/app/twlauncher/UserFolderInfo;
     invoke-static {v0, v1, v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$800(Ljava/util/HashMap;J)Lcom/sec/android/app/twlauncher/UserFolderInfo;
 
     move-result-object v37
@@ -2959,14 +2999,14 @@
 
     move-object/from16 v1, v37
 
-    iput-object v0, v1, Lcom/sec/android/app/twlauncher/FolderInfo;->title:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lcom/sec/android/app/twlauncher/UserFolderInfo;->title:Ljava/lang/CharSequence;
 
     .line 1073
     move-wide/from16 v0, v41
 
     move-object/from16 v2, v37
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/UserFolderInfo;->id:J
 
     .line 1074
     move-object v0, v10
@@ -2989,7 +3029,7 @@
 
     move-object/from16 v2, v37
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/UserFolderInfo;->container:J
 
     .line 1076
     move-object v0, v10
@@ -3004,7 +3044,7 @@
 
     move-object/from16 v1, v37
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/UserFolderInfo;->screen:I
 
     .line 1077
     move-object v0, v10
@@ -3019,7 +3059,7 @@
 
     move-object/from16 v1, v37
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellX:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/UserFolderInfo;->cellX:I
 
     .line 1078
     move-object v0, v10
@@ -3034,7 +3074,7 @@
 
     move-object/from16 v1, v37
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellY:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/UserFolderInfo;->cellY:I
 
     .line 1081
     move-object/from16 v0, p0
@@ -3064,7 +3104,7 @@
 
     move-object/from16 v0, v37
 
-    iget-wide v0, v0, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v0, v0, Lcom/sec/android/app/twlauncher/UserFolderInfo;->id:J
 
     move-wide v7, v0
 
@@ -3176,6 +3216,7 @@
 
     move-wide/from16 v1, v41
 
+    #calls: Lcom/sec/android/app/twlauncher/LauncherModel;->findOrMakeLiveFolder(Ljava/util/HashMap;J)Lcom/sec/android/app/twlauncher/LiveFolderInfo;
     invoke-static {v0, v1, v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$900(Ljava/util/HashMap;J)Lcom/sec/android/app/twlauncher/LiveFolderInfo;
 
     move-result-object v24
@@ -3229,14 +3270,14 @@
 
     move-object/from16 v1, v24
 
-    iput-object v0, v1, Lcom/sec/android/app/twlauncher/FolderInfo;->title:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lcom/sec/android/app/twlauncher/LiveFolderInfo;->title:Ljava/lang/CharSequence;
 
     .line 1119
     move-wide/from16 v0, v41
 
     move-object/from16 v2, v24
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/LiveFolderInfo;->id:J
 
     .line 1120
     move-object/from16 v0, v64
@@ -3266,7 +3307,7 @@
 
     move-object/from16 v2, v24
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/LiveFolderInfo;->container:J
 
     .line 1123
     move-object v0, v10
@@ -3281,7 +3322,7 @@
 
     move-object/from16 v1, v24
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/LiveFolderInfo;->screen:I
 
     .line 1124
     move-object v0, v10
@@ -3296,7 +3337,7 @@
 
     move-object/from16 v1, v24
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellX:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/LiveFolderInfo;->cellX:I
 
     .line 1125
     move-object v0, v10
@@ -3311,7 +3352,7 @@
 
     move-object/from16 v1, v24
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellY:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/LiveFolderInfo;->cellY:I
 
     .line 1126
     move-object v0, v8
@@ -3359,6 +3400,7 @@
     move/from16 v23, v18
 
     .line 1134
+    #calls: Lcom/sec/android/app/twlauncher/LauncherModel;->loadLiveFolderIcon(Landroid/content/Context;Landroid/database/Cursor;IIILcom/sec/android/app/twlauncher/LiveFolderInfo;)V
     invoke-static/range {v19 .. v24}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1000(Landroid/content/Context;Landroid/database/Cursor;IIILcom/sec/android/app/twlauncher/LiveFolderInfo;)V
 
     .line 1137
@@ -3376,7 +3418,7 @@
 
     move-object/from16 v0, v24
 
-    iget-wide v0, v0, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v0, v0, Lcom/sec/android/app/twlauncher/LiveFolderInfo;->id:J
 
     move-wide v7, v0
 
@@ -3552,7 +3594,7 @@
 
     move-object/from16 v2, v28
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->id:J
 
     .line 1162
     move-object v0, v10
@@ -3567,7 +3609,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->screen:I
 
     .line 1163
     move-object v0, v10
@@ -3582,7 +3624,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellX:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->cellX:I
 
     .line 1164
     move-object v0, v10
@@ -3597,7 +3639,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellY:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->cellY:I
 
     .line 1165
     move-object v0, v10
@@ -3612,7 +3654,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->spanX:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->spanX:I
 
     .line 1166
     move-object v0, v10
@@ -3627,7 +3669,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->spanY:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->spanY:I
 
     .line 1168
     move-object v0, v10
@@ -3673,7 +3715,7 @@
 
     move-object/from16 v2, v28
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->container:J
 
     .line 1177
     move-object/from16 v0, p0
@@ -3732,7 +3774,7 @@
 
     move-object/from16 v2, v58
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->id:J
 
     .line 1190
     move-object v0, v10
@@ -3747,7 +3789,7 @@
 
     move-object/from16 v1, v58
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->screen:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->screen:I
 
     .line 1191
     move-object v0, v10
@@ -3762,7 +3804,7 @@
 
     move-object/from16 v1, v58
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellX:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->cellX:I
 
     .line 1192
     move-object v0, v10
@@ -3777,7 +3819,7 @@
 
     move-object/from16 v1, v58
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellY:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->cellY:I
 
     .line 1193
     move-object v0, v10
@@ -3792,7 +3834,7 @@
 
     move-object/from16 v1, v58
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->spanX:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->spanX:I
 
     .line 1194
     move-object v0, v10
@@ -3807,7 +3849,7 @@
 
     move-object/from16 v1, v58
 
-    iput v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->spanY:I
+    iput v0, v1, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->spanY:I
 
     .line 1195
     move-object v0, v10
@@ -3864,7 +3906,7 @@
 
     move-object/from16 v2, v58
 
-    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->container:J
 
     .line 1205
     move-object v0, v10
@@ -4018,7 +4060,7 @@
 
     move-object/from16 v1, v58
 
-    iput-object v0, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->packageName:Ljava/lang/String;
+    iput-object v0, v1, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->packageName:Ljava/lang/String;
 
     .line 1232
     move-object/from16 v0, p0
@@ -4367,6 +4409,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$100(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/ref/WeakReference;
 
     move-result-object v2
@@ -4398,6 +4441,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mAllAppsList:Lcom/sec/android/app/twlauncher/AllAppsList;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1200(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/AllAppsList;
 
     move-result-object v2
@@ -4416,6 +4460,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v2
@@ -4510,6 +4555,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$100(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/ref/WeakReference;
 
     move-result-object v2
@@ -4539,6 +4585,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mLock:Ljava/lang/Object;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$000(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/Object;
 
     move-result-object v2
@@ -4573,6 +4620,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mLock:Ljava/lang/Object;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$000(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/Object;
 
     move-result-object v2
@@ -4611,6 +4659,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mLock:Ljava/lang/Object;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$000(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/Object;
 
     move-result-object v2
@@ -4623,6 +4672,7 @@
 
     const/4 v4, 0x0
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->mLoaderThread:Lcom/sec/android/app/twlauncher/LauncherModel$Loader$LoaderThread;
     invoke-static {v3, v4}, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->access$602(Lcom/sec/android/app/twlauncher/LauncherModel$Loader;Lcom/sec/android/app/twlauncher/LauncherModel$Loader$LoaderThread;)Lcom/sec/android/app/twlauncher/LauncherModel$Loader$LoaderThread;
 
     .line 853
@@ -4635,6 +4685,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mHandler:Lcom/sec/android/app/twlauncher/DeferredHandler;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$500(Lcom/sec/android/app/twlauncher/LauncherModel;)Lcom/sec/android/app/twlauncher/DeferredHandler;
 
     move-result-object v2
@@ -4758,6 +4809,7 @@
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mLock:Ljava/lang/Object;
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$000(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/Object;
 
     move-result-object v1
@@ -4785,6 +4837,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$100(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/ref/WeakReference;
 
     move-result-object v2
@@ -4804,6 +4857,7 @@
 
     iget-object v2, v2, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$100(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/ref/WeakReference;
 
     move-result-object v2

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 614
+    .line 633
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$1;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,24 +43,24 @@
     .parameter "which"
 
     .prologue
-    .line 616
+    .line 635
     invoke-static {}, Landroid/webkit/WebStorage;->getInstance()Landroid/webkit/WebStorage;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/webkit/WebStorage;->deleteAllData()V
 
-    .line 617
+    .line 636
     invoke-static {}, Landroid/webkit/GeolocationPermissions;->getInstance()Landroid/webkit/GeolocationPermissions;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/webkit/GeolocationPermissions;->clearAll()V
 
-    .line 618
+    .line 637
     invoke-static {}, Lcom/android/browser/WebStorageSizeManager;->resetLastOutOfSpaceNotificationTime()V
 
-    .line 619
+    .line 638
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$1;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
 
     invoke-static {v0}, Lcom/android/browser/WebsiteSettingsActivity;->access$600(Lcom/android/browser/WebsiteSettingsActivity;)Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
@@ -69,11 +69,11 @@
 
     invoke-virtual {v0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->askForOrigins()V
 
-    .line 620
+    .line 639
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$1;->this$0:Lcom/android/browser/WebsiteSettingsActivity;
 
     invoke-virtual {v0}, Lcom/android/browser/WebsiteSettingsActivity;->finish()V
 
-    .line 621
+    .line 640
     return-void
 .end method

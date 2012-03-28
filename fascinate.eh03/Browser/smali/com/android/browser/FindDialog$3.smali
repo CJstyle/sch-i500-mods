@@ -45,7 +45,7 @@
     .line 82
     iget-object v0, p0, Lcom/android/browser/FindDialog$3;->this$0:Lcom/android/browser/FindDialog;
 
-    iget-object v0, v0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, v0, Lcom/android/browser/FindDialog;->mWebView:Landroid/webkit/WebView;
 
     if-nez v0, :cond_0
 
@@ -62,7 +62,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/browser/FindDialog$3;->this$0:Lcom/android/browser/FindDialog;
 
-    iget-object v0, v0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, v0, Lcom/android/browser/FindDialog;->mWebView:Landroid/webkit/WebView;
 
     const/4 v1, 0x0
 

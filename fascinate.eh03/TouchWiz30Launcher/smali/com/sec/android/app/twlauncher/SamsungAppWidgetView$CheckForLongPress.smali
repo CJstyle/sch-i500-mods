@@ -46,6 +46,7 @@
     .line 108
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView$CheckForLongPress;->this$0:Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;
 
+    #calls: Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->getWindowAttachCount()I
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->access$300(Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;)I
 
     move-result v0
@@ -63,6 +64,7 @@
     .line 98
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView$CheckForLongPress;->this$0:Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;
 
+    #getter for: Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->mParent:Landroid/view/ViewParent;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->access$000(Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;)Landroid/view/ViewParent;
 
     move-result-object v0
@@ -81,6 +83,7 @@
 
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView$CheckForLongPress;->this$0:Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;
 
+    #calls: Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->getWindowAttachCount()I
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->access$100(Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;)I
 
     move-result v1
@@ -89,6 +92,7 @@
 
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView$CheckForLongPress;->this$0:Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;
 
+    #getter for: Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->mHasPerformedLongPress:Z
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->access$200(Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;)Z
 
     move-result v0
@@ -109,6 +113,7 @@
 
     const/4 v1, 0x1
 
+    #setter for: Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->mHasPerformedLongPress:Z
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;->access$202(Lcom/sec/android/app/twlauncher/SamsungAppWidgetView;Z)Z
 
     .line 105

@@ -200,7 +200,7 @@
 
     .line 99
     :cond_0
-    iget-object v1, p0, Lcom/sec/android/app/twlauncher/Folder;->mContent:Landroid/widget/AbsListView;
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/LiveFolder;->mContent:Landroid/widget/AbsListView;
 
     invoke-virtual {v1}, Landroid/widget/AbsListView;->getAdapter()Landroid/widget/Adapter;
 
@@ -252,7 +252,7 @@
     if-eqz v4, :cond_1
 
     .line 57
-    iget-object p1, p0, Lcom/sec/android/app/twlauncher/Folder;->mInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    iget-object p1, p0, Lcom/sec/android/app/twlauncher/LiveFolder;->mInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
 
     .end local p1           #parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     check-cast p1, Lcom/sec/android/app/twlauncher/LiveFolderInfo;
@@ -298,7 +298,7 @@
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
     .line 63
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/Folder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    iget-object v4, p0, Lcom/sec/android/app/twlauncher/LiveFolder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -352,7 +352,7 @@
     if-eqz v4, :cond_0
 
     .line 66
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/Folder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    iget-object v4, p0, Lcom/sec/android/app/twlauncher/LiveFolder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     iget-object v5, v1, Lcom/sec/android/app/twlauncher/LiveFolderAdapter$ViewHolder;->intent:Landroid/content/Intent;
 

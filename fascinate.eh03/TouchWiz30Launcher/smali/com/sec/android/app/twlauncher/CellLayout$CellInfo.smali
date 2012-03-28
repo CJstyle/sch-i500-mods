@@ -397,6 +397,7 @@
 
     move v4, p3
 
+    #calls: Lcom/sec/android/app/twlauncher/CellLayout;->findIntersectingVacantCells(Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;IIII[[Z)V
     invoke-static/range {v0 .. v5}, Lcom/sec/android/app/twlauncher/CellLayout;->access$000(Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;IIII[[Z)V
 
     goto :goto_0

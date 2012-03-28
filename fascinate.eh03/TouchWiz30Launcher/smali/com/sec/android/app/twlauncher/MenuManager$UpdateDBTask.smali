@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 2061
+    .line 2072
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/MenuManager$UpdateDBTask;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -49,7 +49,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2061
+    .line 2072
     invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/MenuManager$UpdateDBTask;-><init>(Lcom/sec/android/app/twlauncher/MenuManager;)V
 
     return-void
@@ -62,7 +62,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2061
+    .line 2072
     check-cast p1, [Lcom/sec/android/app/twlauncher/ApplicationsAdapter;
 
     .end local p1
@@ -78,30 +78,30 @@
     .parameter "adapters"
 
     .prologue
-    .line 2065
+    .line 2076
     if-nez p1, :cond_0
 
     const/4 v6, 0x0
 
-    .line 2126
+    .line 2137
     .end local p0
     :goto_0
     return-object v6
 
-    .line 2066
+    .line 2077
     .restart local p0
     :cond_0
     const/4 v6, 0x0
 
     aget-object v13, p1, v6
 
-    .line 2067
+    .line 2078
     .local v13, adapter:Lcom/sec/android/app/twlauncher/ApplicationsAdapter;
     sget-object v22, Lcom/sec/android/app/twlauncher/LauncherModel;->mDBLock:Ljava/lang/Object;
 
     monitor-enter v22
 
-    .line 2068
+    .line 2079
     :try_start_0
     move-object/from16 v0, p0
 
@@ -109,6 +109,7 @@
 
     move-object v6, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v6}, Lcom/sec/android/app/twlauncher/MenuManager;->access$100(Lcom/sec/android/app/twlauncher/MenuManager;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v6
@@ -123,7 +124,7 @@
 
     move-result-object v20
 
-    .line 2069
+    .line 2080
     .local v20, path:Ljava/lang/String;
     const/4 v6, 0x0
 
@@ -139,13 +140,13 @@
 
     move-result-object v5
 
-    .line 2070
+    .line 2081
     .local v5, db:Landroid/database/sqlite/SQLiteDatabase;
     invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 2073
+    .line 2084
     const/16 v17, 0x0
 
     .local v17, i:I
@@ -167,7 +168,7 @@
 
     if-ge v0, v1, :cond_8
 
-    .line 2074
+    .line 2085
     move-object v0, v13
 
     move/from16 v1, v17
@@ -178,13 +179,13 @@
 
     check-cast v19, Lcom/sec/android/app/twlauncher/ApplicationInfo;
 
-    .line 2075
+    .line 2086
     .local v19, info:Lcom/sec/android/app/twlauncher/ApplicationInfo;
     new-instance v21, Landroid/content/ContentValues;
 
     invoke-direct/range {v21 .. v21}, Landroid/content/ContentValues;-><init>()V
 
-    .line 2076
+    .line 2087
     .local v21, values:Landroid/content/ContentValues;
     move-object/from16 v0, v19
 
@@ -192,7 +193,7 @@
 
     move-object v14, v0
 
-    .line 2078
+    .line 2089
     .local v14, componentName:Landroid/content/ComponentName;
     const-string v6, "top_number"
 
@@ -214,7 +215,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 2079
+    .line 2090
     const-string v6, "page_number"
 
     move-object/from16 v0, v19
@@ -235,7 +236,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 2080
+    .line 2091
     const-string v6, "cell_number"
 
     move-object/from16 v0, v19
@@ -256,7 +257,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 2081
+    .line 2092
     const/4 v6, 0x1
 
     move v0, v6
@@ -267,14 +268,14 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2083
+    .line 2094
     const/4 v15, 0x0
 
-    .line 2084
+    .line 2095
     .local v15, cursor:Landroid/database/Cursor;
     const/16 v18, -0x1
 
-    .line 2087
+    .line 2098
     .local v18, id:I
     :try_start_2
     const-string v6, "apps"
@@ -333,10 +334,10 @@
 
     move-result-object v15
 
-    .line 2096
+    .line 2107
     if-eqz v15, :cond_2
 
-    .line 2097
+    .line 2108
     :try_start_3
     invoke-interface {v15}, Landroid/database/Cursor;->getCount()I
 
@@ -344,21 +345,21 @@
 
     if-lez v6, :cond_1
 
-    .line 2098
+    .line 2109
     invoke-interface {v15}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 2099
+    .line 2110
     const/4 v6, 0x0
 
     invoke-interface {v15, v6}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v18
 
-    .line 2101
+    .line 2112
     :cond_1
     invoke-interface {v15}, Landroid/database/Cursor;->close()V
 
-    .line 2105
+    .line 2116
     :cond_2
     :goto_2
     const/4 v6, -0x1
@@ -369,7 +370,7 @@
 
     if-eq v0, v1, :cond_7
 
-    .line 2106
+    .line 2117
     const-string v6, "apps"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -410,19 +411,19 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 2073
+    .line 2084
     :goto_3
     add-int/lit8 v17, v17, 0x1
 
     goto/16 :goto_1
 
-    .line 2091
+    .line 2102
     :catch_0
     move-exception v6
 
     move-object/from16 v16, v6
 
-    .line 2092
+    .line 2103
     .local v16, e:Landroid/database/sqlite/SQLiteException;
     :try_start_4
     const-string v6, "Launcher.MenuManager"
@@ -453,10 +454,10 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 2096
+    .line 2107
     if-eqz v15, :cond_2
 
-    .line 2097
+    .line 2108
     :try_start_5
     invoke-interface {v15}, Landroid/database/Cursor;->getCount()I
 
@@ -464,17 +465,17 @@
 
     if-lez v6, :cond_3
 
-    .line 2098
+    .line 2109
     invoke-interface {v15}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 2099
+    .line 2110
     const/4 v6, 0x0
 
     invoke-interface {v15, v6}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v18
 
-    .line 2101
+    .line 2112
     :cond_3
     invoke-interface {v15}, Landroid/database/Cursor;->close()V
     :try_end_5
@@ -482,7 +483,7 @@
 
     goto :goto_2
 
-    .line 2121
+    .line 2132
     .end local v14           #componentName:Landroid/content/ComponentName;
     .end local v15           #cursor:Landroid/database/Cursor;
     .end local v16           #e:Landroid/database/sqlite/SQLiteException;
@@ -496,12 +497,12 @@
     :try_start_6
     invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 2122
+    .line 2133
     invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
     throw v6
 
-    .line 2124
+    .line 2135
     .end local v5           #db:Landroid/database/sqlite/SQLiteDatabase;
     .end local v17           #i:I
     .end local v20           #path:Ljava/lang/String;
@@ -514,7 +515,7 @@
 
     throw v6
 
-    .line 2093
+    .line 2104
     .restart local v5       #db:Landroid/database/sqlite/SQLiteDatabase;
     .restart local v14       #componentName:Landroid/content/ComponentName;
     .restart local v15       #cursor:Landroid/database/Cursor;
@@ -529,7 +530,7 @@
 
     move-object/from16 v16, v6
 
-    .line 2094
+    .line 2105
     .local v16, e:Ljava/lang/IllegalStateException;
     :try_start_7
     const-string v6, "Launcher.MenuManager"
@@ -560,10 +561,10 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
-    .line 2096
+    .line 2107
     if-eqz v15, :cond_2
 
-    .line 2097
+    .line 2108
     :try_start_8
     invoke-interface {v15}, Landroid/database/Cursor;->getCount()I
 
@@ -571,54 +572,54 @@
 
     if-lez v6, :cond_4
 
-    .line 2098
+    .line 2109
     invoke-interface {v15}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 2099
+    .line 2110
     const/4 v6, 0x0
 
     invoke-interface {v15, v6}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v18
 
-    .line 2101
+    .line 2112
     :cond_4
     invoke-interface {v15}, Landroid/database/Cursor;->close()V
 
     goto/16 :goto_2
 
-    .line 2096
+    .line 2107
     .end local v16           #e:Ljava/lang/IllegalStateException;
     :catchall_2
     move-exception v6
 
     if-eqz v15, :cond_6
 
-    .line 2097
+    .line 2108
     invoke-interface {v15}, Landroid/database/Cursor;->getCount()I
 
     move-result v7
 
     if-lez v7, :cond_5
 
-    .line 2098
+    .line 2109
     invoke-interface {v15}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 2099
+    .line 2110
     const/4 v7, 0x0
 
     invoke-interface {v15, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v18
 
-    .line 2101
+    .line 2112
     :cond_5
     invoke-interface {v15}, Landroid/database/Cursor;->close()V
 
     :cond_6
     throw v6
 
-    .line 2108
+    .line 2119
     :cond_7
     const-string v6, "componentname"
 
@@ -634,7 +635,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2109
+    .line 2120
     const-string v6, "apps"
 
     const/4 v7, 0x0
@@ -651,7 +652,7 @@
 
     goto/16 :goto_3
 
-    .line 2113
+    .line 2124
     .end local v14           #componentName:Landroid/content/ComponentName;
     .end local v15           #cursor:Landroid/database/Cursor;
     .end local v18           #id:I
@@ -664,10 +665,10 @@
 
     if-nez v6, :cond_9
 
-    .line 2114
+    .line 2125
     invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    .line 2116
+    .line 2127
     const/16 v17, 0x0
 
     .end local p0
@@ -682,7 +683,7 @@
 
     if-ge v0, v1, :cond_9
 
-    .line 2117
+    .line 2128
     move-object v0, v13
 
     move/from16 v1, v17
@@ -703,25 +704,25 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
-    .line 2116
+    .line 2127
     add-int/lit8 v17, v17, 0x1
 
     goto :goto_4
 
-    .line 2121
+    .line 2132
     :cond_9
     :try_start_9
     invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 2122
+    .line 2133
     invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    .line 2124
+    .line 2135
     monitor-exit v22
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    .line 2126
+    .line 2137
     const/4 v6, 0x0
 
     goto/16 :goto_0

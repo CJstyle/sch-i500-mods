@@ -36,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 2234
+    .line 2496
     new-instance v0, Lcom/sec/android/app/twlauncher/Workspace$SavedState$1;
 
     invoke-direct {v0}, Lcom/sec/android/app/twlauncher/Workspace$SavedState$1;-><init>()V
@@ -51,22 +51,22 @@
     .parameter "in"
 
     .prologue
-    .line 2224
+    .line 2486
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 2217
+    .line 2479
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace$SavedState;->currentScreen:I
 
-    .line 2225
+    .line 2487
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace$SavedState;->currentScreen:I
 
-    .line 2226
+    .line 2488
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2216
+    .line 2478
     invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -87,15 +87,15 @@
     .parameter "superState"
 
     .prologue
-    .line 2220
+    .line 2482
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 2217
+    .line 2479
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace$SavedState;->currentScreen:I
 
-    .line 2221
+    .line 2483
     return-void
 .end method
 
@@ -107,14 +107,14 @@
     .parameter "flags"
 
     .prologue
-    .line 2230
+    .line 2492
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 2231
+    .line 2493
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace$SavedState;->currentScreen:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2232
+    .line 2494
     return-void
 .end method

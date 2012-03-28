@@ -64,7 +64,7 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/browser/ToolTipItem;->mstrText:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/browser/SearchText;->mstrText:Ljava/lang/String;
 
     .line 332
     const-string v2, "SearchText"
@@ -79,7 +79,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/browser/ToolTipItem;->mstrText:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/browser/SearchText;->mstrText:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

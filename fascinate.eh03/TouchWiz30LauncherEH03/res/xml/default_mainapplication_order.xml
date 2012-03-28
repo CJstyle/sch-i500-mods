@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mainapps
+  xmlns:launcher="http://schemas.android.com/apk/res/com.sec.android.app.twlauncher">
+    <mainapp launcher:className="com.android.settings.wifi.WifiApSettings" launcher:packageName="com.android.settings" />
+    <mainapp launcher:className="com.android.browser.BrowserActivity" launcher:packageName="com.android.browser" />
+    <mainapp launcher:className="com.sec.android.app.calculator.Calculator" launcher:packageName="com.sec.android.app.calculator" />
+    <mainapp launcher:className="com.android.calendar.LaunchActivity" launcher:packageName="com.android.calendar" />
+    <mainapp launcher:className="com.sec.android.app.camera.Camera" launcher:packageName="com.sec.android.app.camera" />
+    <mainapp launcher:className="com.sec.android.app.carcradle.CarCradleMain" launcher:packageName="com.sec.android.app.carcradle" />
+    <mainapp launcher:className="com.sec.android.app.clockpackage.ClockPackage" launcher:packageName="com.sec.android.app.clockpackage" />
+    <mainapp launcher:className="com.sec.android.widgetapp.infoalarm.activity.InfoAlarm" launcher:packageName="com.sec.android.widgetapp.infoalarm" />
+    <mainapp launcher:className="com.sec.android.app.cradle.CradleMain" launcher:packageName="com.sec.android.app.cradle" />
+    <mainapp launcher:className="com.google.android.apps.docs.app.MainProxyActivity" launcher:packageName="com.google.android.apps.docs" />
+    <mainapp launcher:className="com.android.providers.downloads.ui.DownloadsListTab" launcher:packageName="com.android.providers.downloads.ui" />
+    <mainapp launcher:className="com.android.email.activity.Welcome" launcher:packageName="com.android.email" />
+    <mainapp launcher:className="com.cooliris.media.Gallery" launcher:packageName="com.cooliris.media" />
+    <mainapp launcher:className="com.google.android.gm.ConversationListActivityGmail" launcher:packageName="com.google.android.gm" />
+    <mainapp launcher:className="com.google.android.apps.plus.phone.HomeActivity" launcher:packageName="com.google.android.apps.plus" />
+    <mainapp launcher:className="com.google.android.maps.LatitudeActivity" launcher:packageName="com.google.android.apps.maps" />
+    <mainapp launcher:className="com.google.android.maps.MapsActivity" launcher:packageName="com.google.android.apps.maps" />
+    <mainapp launcher:className="com.sec.android.app.memo.Memo" launcher:packageName="com.sec.android.app.memo" />
+    <mainapp launcher:className="com.google.android.apps.plus.phone.ConversationListActivity" launcher:packageName="com.google.android.apps.plus" />
+    <mainapp launcher:className="com.android.music.list.activity.MpMainTabActivity" launcher:packageName="com.android.music" />
+    <mainapp launcher:className="com.sec.android.app.myfiles.MainActivity" launcher:packageName="com.sec.android.app.myfiles" />
+    <mainapp launcher:className="com.google.android.maps.driveabout.app.DestinationActivity" launcher:packageName="com.google.android.apps.maps" />
+    <mainapp launcher:className="com.google.android.maps.PlacesActivity" launcher:packageName="com.google.android.apps.maps" />
+    <mainapp launcher:className="com.google.android.apps.books.app.HomeActivity" launcher:packageName="com.google.android.apps.books" />
+    <mainapp launcher:className="com.android.music.activitymanagement.TopLevelActivity" launcher:packageName="com.google.android.music" />
+    <mainapp launcher:className="com.android.vending.AssetBrowserActivity" launcher:packageName="com.android.vending" />
+    <mainapp launcher:className="com.google.android.googlequicksearchbox.SearchActivity" launcher:packageName="com.google.android.googlequicksearchbox" />
+    <mainapp launcher:className="com.android.settings.Settings" launcher:packageName="com.android.settings" />
+    <mainapp launcher:className="com.android.spare_parts.SpareParts" launcher:packageName="com.android.spare_parts" />
+    <mainapp launcher:className="com.noshufou.android.su.Su" launcher:packageName="com.noshufou.android.su" />
+    <mainapp launcher:className="com.google.android.talk.SigningInActivity" launcher:packageName="com.google.android.talk" />
+    <mainapp launcher:className="com.sec.android.app.controlpanel.activity.JobManagerActivity" launcher:packageName="com.sec.android.app.controlpanel" />
+    <mainapp launcher:className="com.google.android.apps.translate.HomeActivity" launcher:packageName="com.google.android.apps.translate" />
+    <mainapp launcher:className="com.sec.android.app.videoplayer.activity.VideoList" launcher:packageName="com.sec.android.app.videoplayer" />
+    <mainapp launcher:className="com.sec.android.app.voicerecorder.VoiceRecorder" launcher:packageName="com.sec.android.app.voicerecorder" />
+    <mainapp launcher:className="com.google.android.voicesearch.RecognitionActivity" launcher:packageName="com.google.android.voicesearch" />
+    <mainapp launcher:className="com.google.android.youtube.app.froyo.phone.HomeActivity" launcher:packageName="com.google.android.youtube" />
+</mainapps>
+
+
+

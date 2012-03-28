@@ -33,10 +33,10 @@
     .prologue
     const/16 v1, 0x100
 
-    .line 222
+    .line 225
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 223
+    .line 226
     sget-object v0, Lcom/android/browser/BitmapWebView;->TEXTURE_FORMAT:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v1, v1, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -45,19 +45,19 @@
 
     iput-object v0, p0, Lcom/android/browser/BitmapWebView$Tile;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 224
+    .line 227
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/browser/BitmapWebView$Tile;->mTexID:I
 
-    .line 225
+    .line 228
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/browser/BitmapWebView$Tile;->mBoundary:Landroid/graphics/Rect;
 
-    .line 226
+    .line 229
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 243
     :try_start_0
     iget-object v0, p0, Lcom/android/browser/BitmapWebView$Tile;->mBitmap:Landroid/graphics/Bitmap;
 
@@ -75,11 +75,11 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 242
+    .line 245
     :goto_0
     return-void
 
-    .line 241
+    .line 244
     :catch_0
     move-exception v0
 
@@ -94,20 +94,20 @@
     .parameter "texID"
 
     .prologue
-    .line 230
+    .line 233
     iput p1, p0, Lcom/android/browser/BitmapWebView$Tile;->x:I
 
-    .line 231
+    .line 234
     iput p2, p0, Lcom/android/browser/BitmapWebView$Tile;->y:I
 
-    .line 233
+    .line 236
     iput p4, p0, Lcom/android/browser/BitmapWebView$Tile;->mTexID:I
 
-    .line 235
+    .line 238
     iget-object v0, p0, Lcom/android/browser/BitmapWebView$Tile;->mBoundary:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 236
+    .line 239
     return-void
 .end method

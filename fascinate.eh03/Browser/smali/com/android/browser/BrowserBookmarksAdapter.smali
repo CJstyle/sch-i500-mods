@@ -311,7 +311,7 @@
 
     .line 103
     .restart local v5       #whereClause:Ljava/lang/String;
-    const-string v7, "(CASE WHEN _id > 3 THEN 1 END), visits DESC"
+    const-string v7, "(CASE WHEN _id > 2 THEN 1 END), visits DESC"
 
     .restart local v7       #orderBy:Ljava/lang/String;
     goto :goto_2
@@ -324,7 +324,7 @@
 
     .line 107
     .restart local v5       #whereClause:Ljava/lang/String;
-    const-string v7, "(CASE WHEN _id > 3 THEN 1 END), visits DESC"
+    const-string v7, "(CASE WHEN _id > 2 THEN 1 END), visits DESC"
 
     .restart local v7       #orderBy:Ljava/lang/String;
     goto :goto_2

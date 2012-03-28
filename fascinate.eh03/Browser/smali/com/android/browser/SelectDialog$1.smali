@@ -45,14 +45,14 @@
     .line 47
     iget-object v0, p0, Lcom/android/browser/SelectDialog$1;->this$0:Lcom/android/browser/SelectDialog;
 
-    iget-object v0, v0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, v0, Lcom/android/browser/SelectDialog;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->copySelection()Z
 
     .line 48
     iget-object v0, p0, Lcom/android/browser/SelectDialog$1;->this$0:Lcom/android/browser/SelectDialog;
 
-    iget-object v0, v0, Lcom/android/browser/WebDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
+    iget-object v0, v0, Lcom/android/browser/SelectDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v0}, Lcom/android/browser/BrowserActivity;->closeDialogs()V
 

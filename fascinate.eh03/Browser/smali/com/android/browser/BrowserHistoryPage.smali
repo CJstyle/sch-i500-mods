@@ -39,7 +39,7 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserHistoryPage;->mIconReceiver:Lcom/android/browser/BrowserHistoryPage$IconReceiver;
 
-    .line 329
+    .line 328
     return-void
 .end method
 
@@ -158,7 +158,7 @@
     .parameter "data"
 
     .prologue
-    .line 325
+    .line 324
     invoke-virtual {p0}, Lcom/android/browser/BrowserHistoryPage;->getParent()Landroid/app/Activity;
 
     move-result-object p0
@@ -168,7 +168,7 @@
 
     invoke-virtual {p0, p1, p2}, Lcom/android/browser/CombinedBookmarkHistoryActivity;->setResultFromChild(ILandroid/content/Intent;)V
 
-    .line 327
+    .line 326
     return-void
 .end method
 
@@ -185,12 +185,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 314
+    .line 313
     instance-of v0, p2, Lcom/android/browser/HistoryItem;
 
     if-eqz v0, :cond_0
 
-    .line 315
+    .line 314
     check-cast p2, Lcom/android/browser/HistoryItem;
 
     .end local p2
@@ -200,10 +200,10 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/browser/BrowserHistoryPage;->loadUrl(Ljava/lang/String;Z)V
 
-    .line 316
+    .line 315
     const/4 v0, 0x1
 
-    .line 318
+    .line 317
     :goto_0
     return v0
 
@@ -254,7 +254,7 @@
 
     sparse-switch v4, :sswitch_data_0
 
-    .line 308
+    .line 307
     invoke-super {p0, p1}, Landroid/app/ExpandableListActivity;->onContextItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v4
@@ -288,10 +288,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
-    
-    # djp952: much easier way
-    goto :cond_3
+    if-eqz v4, :cond_3
 
     .line 275
     const-string v4, "VZW Home"
@@ -308,7 +305,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_1
 
     :cond_0
     const-string v4, "My Verizon"
@@ -317,7 +314,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     const-string v4, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
 
@@ -325,27 +322,10 @@
 
     move-result v4
 
-    if-nez v4, :cond_2
+    if-eqz v4, :cond_2
 
+    .line 277
     :cond_1
-    const-string v4, "Your Guide Mobile"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    const-string v4, "http://yourguide.vzw.com/"
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    .line 278
-    :cond_2
     const v4, 0x7f090048
 
     invoke-virtual {p0, v4}, Lcom/android/browser/BrowserHistoryPage;->getText(I)Ljava/lang/CharSequence;
@@ -371,11 +351,11 @@
     :goto_1
     move v4, v6
 
-    .line 288
+    .line 287
     goto :goto_0
 
-    .line 282
-    :cond_3
+    .line 281
+    :cond_2
     invoke-virtual {p0}, Lcom/android/browser/BrowserHistoryPage;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
@@ -384,13 +364,13 @@
 
     goto :goto_1
 
-    .line 286
-    :cond_4
+    .line 285
+    :cond_3
     invoke-static {p0, v2, v3}, Landroid/provider/Browser;->saveBookmark(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 290
+    .line 289
     :sswitch_3
     const v4, 0x7f090064
 
@@ -406,19 +386,19 @@
 
     move v4, v6
 
-    .line 292
+    .line 291
     goto :goto_0
 
-    .line 294
+    .line 293
     :sswitch_4
     invoke-direct {p0, v3}, Lcom/android/browser/BrowserHistoryPage;->copy(Ljava/lang/CharSequence;)V
 
     move v4, v6
 
-    .line 295
+    .line 294
     goto :goto_0
 
-    .line 297
+    .line 296
     :sswitch_5
     invoke-virtual {p0}, Lcom/android/browser/BrowserHistoryPage;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -426,17 +406,17 @@
 
     invoke-static {v4, v3}, Landroid/provider/Browser;->deleteFromHistory(Landroid/content/ContentResolver;Ljava/lang/String;)V
 
-    .line 298
+    .line 297
     iget-object v4, p0, Lcom/android/browser/BrowserHistoryPage;->mAdapter:Lcom/android/browser/BrowserHistoryPage$HistoryAdapter;
 
     invoke-virtual {v4}, Lcom/android/browser/BrowserHistoryPage$HistoryAdapter;->refreshData()V
 
     move v4, v6
 
-    .line 299
-    goto/16 :goto_0
+    .line 298
+    goto :goto_0
 
-    .line 301
+    .line 300
     :sswitch_6
     invoke-static {}, Lcom/android/browser/BrowserSettings;->getInstance()Lcom/android/browser/BrowserSettings;
 
@@ -444,7 +424,7 @@
 
     invoke-virtual {v4, p0, v3}, Lcom/android/browser/BrowserSettings;->setHomePage(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 302
+    .line 301
     const v4, 0x7f09003b
 
     invoke-static {p0, v4, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
@@ -455,10 +435,12 @@
 
     move v4, v6
 
-    .line 304
+    .line 303
     goto/16 :goto_0
 
     .line 266
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x7f0d0099 -> :sswitch_0

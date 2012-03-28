@@ -89,6 +89,7 @@
 
     const/4 v4, 0x0
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mBeforeFirstLoad:Z
     invoke-static {v3, v4}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$1702(Lcom/sec/android/app/twlauncher/LauncherModel;Z)Z
 
     .line 1684

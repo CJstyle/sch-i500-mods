@@ -22,7 +22,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 50
     new-instance v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;
 
     invoke-direct {v0}, Lcom/sec/android/app/twlauncher/LauncherCustomer;-><init>()V
@@ -36,17 +36,17 @@
     .locals 2
 
     .prologue
-    .line 79
+    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 80
+    .line 90
     const-string v0, "customer.xml"
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->loadXMLFile(Ljava/lang/String;I)V
 
-    .line 81
+    .line 91
     return-void
 .end method
 
@@ -56,23 +56,23 @@
     .parameter "mode"
 
     .prologue
-    .line 84
+    .line 94
     if-nez p0, :cond_0
 
-    .line 85
+    .line 95
     sget-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->sInstance:Lcom/sec/android/app/twlauncher/LauncherCustomer;
 
     const-string v1, "customer.xml"
 
     invoke-direct {v0, v1, p1}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->loadXMLFile(Ljava/lang/String;I)V
 
-    .line 88
+    .line 98
     :goto_0
     sget-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->sInstance:Lcom/sec/android/app/twlauncher/LauncherCustomer;
 
     return-object v0
 
-    .line 87
+    .line 97
     :cond_0
     sget-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->sInstance:Lcom/sec/android/app/twlauncher/LauncherCustomer;
 
@@ -86,19 +86,19 @@
     .parameter "list"
 
     .prologue
-    .line 165
+    .line 175
     const/4 v0, 0x0
 
-    .line 166
+    .line 176
     .local v0, count:I
     if-eqz p1, :cond_0
 
-    .line 167
+    .line 177
     invoke-interface {p1}, Lorg/w3c/dom/NodeList;->getLength()I
 
     move-result v0
 
-    .line 168
+    .line 178
     :cond_0
     return v0
 .end method
@@ -109,22 +109,22 @@
     .parameter "name"
 
     .prologue
-    .line 139
+    .line 149
     sget-object v5, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mDoc:Lorg/w3c/dom/Document;
 
     if-eqz v5, :cond_0
 
     if-nez p1, :cond_1
 
-    .line 140
+    .line 150
     :cond_0
     const/4 v5, 0x0
 
-    .line 154
+    .line 164
     :goto_0
     return-object v5
 
-    .line 142
+    .line 152
     :cond_1
     sget-object v5, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mDoc:Lorg/w3c/dom/Document;
 
@@ -136,22 +136,22 @@
 
     move-result-object v3
 
-    .line 143
+    .line 153
     .local v3, list:Lorg/w3c/dom/Element;
     invoke-interface {p1}, Lorg/w3c/dom/Node;->getChildNodes()Lorg/w3c/dom/NodeList;
 
     move-result-object v1
 
-    .line 144
+    .line 154
     .local v1, children:Lorg/w3c/dom/NodeList;
     if-eqz v1, :cond_3
 
-    .line 145
+    .line 155
     invoke-interface {v1}, Lorg/w3c/dom/NodeList;->getLength()I
 
     move-result v4
 
-    .line 146
+    .line 156
     .local v4, n:I
     const/4 v2, 0x0
 
@@ -159,12 +159,12 @@
     :goto_1
     if-ge v2, v4, :cond_3
 
-    .line 147
+    .line 157
     invoke-interface {v1, v2}, Lorg/w3c/dom/NodeList;->item(I)Lorg/w3c/dom/Node;
 
     move-result-object v0
 
-    .line 148
+    .line 158
     .local v0, child:Lorg/w3c/dom/Node;
     invoke-interface {v0}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
@@ -176,16 +176,16 @@
 
     if-eqz v5, :cond_2
 
-    .line 149
+    .line 159
     invoke-interface {v3, v0}, Lorg/w3c/dom/Element;->appendChild(Lorg/w3c/dom/Node;)Lorg/w3c/dom/Node;
 
-    .line 146
+    .line 156
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 154
+    .line 164
     .end local v0           #child:Lorg/w3c/dom/Node;
     .end local v2           #i:I
     .end local v4           #n:I
@@ -204,22 +204,22 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 109
+    .line 119
     sget-object v3, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mRoot:Lorg/w3c/dom/Node;
 
     if-nez v3, :cond_0
 
     move-object v3, v4
 
-    .line 122
+    .line 132
     :goto_0
     return-object v3
 
-    .line 112
+    .line 122
     :cond_0
     sget-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mRoot:Lorg/w3c/dom/Node;
 
-    .line 113
+    .line 123
     .local v0, node:Lorg/w3c/dom/Node;
     new-instance v2, Ljava/util/StringTokenizer;
 
@@ -227,7 +227,7 @@
 
     invoke-direct {v2, p1, v3}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 115
+    .line 125
     .local v2, tokenizer:Ljava/util/StringTokenizer;
     :goto_1
     invoke-virtual {v2}, Ljava/util/StringTokenizer;->hasMoreTokens()Z
@@ -236,34 +236,34 @@
 
     if-eqz v3, :cond_2
 
-    .line 116
+    .line 126
     invoke-virtual {v2}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 117
+    .line 127
     .local v1, tagName:Ljava/lang/String;
     if-nez v0, :cond_1
 
     move-object v3, v4
 
-    .line 118
+    .line 128
     goto :goto_0
 
-    .line 119
+    .line 129
     :cond_1
     invoke-direct {p0, v0, v1}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->getTagNode(Lorg/w3c/dom/Node;Ljava/lang/String;)Lorg/w3c/dom/Node;
 
     move-result-object v0
 
-    .line 120
+    .line 130
     goto :goto_1
 
     .end local v1           #tagName:Ljava/lang/String;
     :cond_2
     move-object v3, v0
 
-    .line 122
+    .line 132
     goto :goto_0
 .end method
 
@@ -273,21 +273,21 @@
     .parameter "tagName"
 
     .prologue
-    .line 126
+    .line 136
     invoke-interface {p1}, Lorg/w3c/dom/Node;->getChildNodes()Lorg/w3c/dom/NodeList;
 
     move-result-object v1
 
-    .line 127
+    .line 137
     .local v1, children:Lorg/w3c/dom/NodeList;
     if-eqz v1, :cond_1
 
-    .line 128
+    .line 138
     invoke-interface {v1}, Lorg/w3c/dom/NodeList;->getLength()I
 
     move-result v3
 
-    .line 129
+    .line 139
     .local v3, n:I
     const/4 v2, 0x0
 
@@ -295,12 +295,12 @@
     :goto_0
     if-ge v2, v3, :cond_1
 
-    .line 130
+    .line 140
     invoke-interface {v1, v2}, Lorg/w3c/dom/NodeList;->item(I)Lorg/w3c/dom/Node;
 
     move-result-object v0
 
-    .line 131
+    .line 141
     .local v0, child:Lorg/w3c/dom/Node;
     invoke-interface {v0}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
@@ -314,14 +314,14 @@
 
     move-object v4, v0
 
-    .line 135
+    .line 145
     .end local v0           #child:Lorg/w3c/dom/Node;
     .end local v2           #i:I
     .end local v3           #n:I
     :goto_1
     return-object v4
 
-    .line 129
+    .line 139
     .restart local v0       #child:Lorg/w3c/dom/Node;
     .restart local v2       #i:I
     .restart local v3       #n:I
@@ -330,7 +330,7 @@
 
     goto :goto_0
 
-    .line 135
+    .line 145
     .end local v0           #child:Lorg/w3c/dom/Node;
     .end local v2           #i:I
     .end local v3           #n:I
@@ -345,13 +345,13 @@
     .parameter "node"
 
     .prologue
-    .line 158
+    .line 168
     if-nez p1, :cond_0
 
-    .line 159
+    .line 169
     const/4 v0, 0x0
 
-    .line 161
+    .line 171
     :goto_0
     return-object v0
 
@@ -373,18 +373,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 172
+    .line 182
     sput-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerNode:Lorg/w3c/dom/Node;
 
-    .line 173
+    .line 183
     sput-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerList:Lorg/w3c/dom/NodeList;
 
-    .line 174
+    .line 184
     const/4 v0, 0x0
 
     sput v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerCount:I
 
-    .line 175
+    .line 185
     return-void
 .end method
 
@@ -396,22 +396,22 @@
     .prologue
     const-string v6, "Launcher.LauncherCustomer"
 
-    .line 93
+    .line 103
     :try_start_0
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->initLauncherCustomer()V
 
-    .line 94
+    .line 104
     invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
 
     move-result-object v2
 
-    .line 95
+    .line 105
     .local v2, factory:Ljavax/xml/parsers/DocumentBuilderFactory;
     invoke-virtual {v2}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
 
     move-result-object v0
 
-    .line 96
+    .line 106
     .local v0, builder:Ljavax/xml/parsers/DocumentBuilder;
     new-instance v3, Ljava/io/File;
 
@@ -441,7 +441,7 @@
 
     sput-object v3, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mDoc:Lorg/w3c/dom/Document;
 
-    .line 97
+    .line 107
     sget-object v3, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mDoc:Lorg/w3c/dom/Document;
 
     invoke-interface {v3}, Lorg/w3c/dom/Document;->getDocumentElement()Lorg/w3c/dom/Element;
@@ -450,26 +450,26 @@
 
     sput-object v3, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mRoot:Lorg/w3c/dom/Node;
 
-    .line 98
+    .line 108
     invoke-direct {p0, p2}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->setLauncherCustomer(I)V
     :try_end_0
     .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lorg/xml/sax/SAXException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 106
+    .line 116
     .end local v0           #builder:Ljavax/xml/parsers/DocumentBuilder;
     .end local v2           #factory:Ljavax/xml/parsers/DocumentBuilderFactory;
     :goto_0
     return-void
 
-    .line 99
+    .line 109
     :catch_0
     move-exception v3
 
     move-object v1, v3
 
-    .line 100
+    .line 110
     .local v1, ex:Ljavax/xml/parsers/ParserConfigurationException;
     const-string v3, "Launcher.LauncherCustomer"
 
@@ -495,14 +495,14 @@
 
     goto :goto_0
 
-    .line 101
+    .line 111
     .end local v1           #ex:Ljavax/xml/parsers/ParserConfigurationException;
     :catch_1
     move-exception v3
 
     move-object v1, v3
 
-    .line 102
+    .line 112
     .local v1, ex:Lorg/xml/sax/SAXException;
     const-string v3, "Launcher.LauncherCustomer"
 
@@ -528,14 +528,14 @@
 
     goto :goto_0
 
-    .line 103
+    .line 113
     .end local v1           #ex:Lorg/xml/sax/SAXException;
     :catch_2
     move-exception v3
 
     move-object v1, v3
 
-    .line 104
+    .line 114
     .local v1, ex:Ljava/io/IOException;
     const-string v3, "Launcher.LauncherCustomer"
 
@@ -567,10 +567,10 @@
     .parameter "mode"
 
     .prologue
-    .line 180
+    .line 190
     if-nez p1, :cond_1
 
-    .line 181
+    .line 191
     const-string v0, "Settings.Main.Display"
 
     invoke-direct {p0, v0}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->getTagNode(Ljava/lang/String;)Lorg/w3c/dom/Node;
@@ -579,7 +579,7 @@
 
     sput-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerNode:Lorg/w3c/dom/Node;
 
-    .line 182
+    .line 192
     sget-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerNode:Lorg/w3c/dom/Node;
 
     const-string v1, "Wallpaper"
@@ -590,7 +590,7 @@
 
     sput-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerList:Lorg/w3c/dom/NodeList;
 
-    .line 183
+    .line 193
     sget-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerList:Lorg/w3c/dom/NodeList;
 
     invoke-direct {p0, v0}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->getTagCount(Lorg/w3c/dom/NodeList;)I
@@ -599,18 +599,18 @@
 
     sput v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerCount:I
 
-    .line 189
+    .line 199
     :cond_0
     :goto_0
     return-void
 
-    .line 184
+    .line 194
     :cond_1
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 185
+    .line 195
     const-string v0, "Launcher"
 
     invoke-direct {p0, v0}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->getTagNode(Ljava/lang/String;)Lorg/w3c/dom/Node;
@@ -619,7 +619,7 @@
 
     sput-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerNode:Lorg/w3c/dom/Node;
 
-    .line 186
+    .line 196
     sget-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerNode:Lorg/w3c/dom/Node;
 
     const-string v1, "favorites"
@@ -630,7 +630,7 @@
 
     sput-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerList:Lorg/w3c/dom/NodeList;
 
-    .line 187
+    .line 197
     sget-object v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerList:Lorg/w3c/dom/NodeList;
 
     invoke-direct {p0, v0}, Lcom/sec/android/app/twlauncher/LauncherCustomer;->getTagCount(Lorg/w3c/dom/NodeList;)I
@@ -648,7 +648,7 @@
     .locals 1
 
     .prologue
-    .line 225
+    .line 235
     sget v0, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerCount:I
 
     return v0
@@ -660,22 +660,22 @@
     .parameter "favoritesInfo"
 
     .prologue
-    .line 330
+    .line 425
     sget-object v1, Lcom/sec/android/app/twlauncher/LauncherCustomer;->mCustomerList:Lorg/w3c/dom/NodeList;
 
     invoke-interface {v1, p1}, Lorg/w3c/dom/NodeList;->item(I)Lorg/w3c/dom/Node;
 
     move-result-object v0
 
-    .line 332
+    .line 427
     .local v0, node:Lorg/w3c/dom/Node;
     if-nez v0, :cond_0
 
-    .line 344
+    .line 439
     :goto_0
     return-void
 
-    .line 336
+    .line 431
     :cond_0
     const/4 v1, 0x0
 
@@ -691,7 +691,7 @@
 
     aput-object v2, p2, v1
 
-    .line 337
+    .line 432
     const/4 v1, 0x1
 
     const-string v2, "packageName"
@@ -706,7 +706,7 @@
 
     aput-object v2, p2, v1
 
-    .line 338
+    .line 433
     const/4 v1, 0x2
 
     const-string v2, "className"
@@ -721,7 +721,7 @@
 
     aput-object v2, p2, v1
 
-    .line 339
+    .line 434
     const/4 v1, 0x3
 
     const-string v2, "screen"
@@ -736,7 +736,7 @@
 
     aput-object v2, p2, v1
 
-    .line 340
+    .line 435
     const/4 v1, 0x4
 
     const-string v2, "launcher_x"
@@ -751,7 +751,7 @@
 
     aput-object v2, p2, v1
 
-    .line 341
+    .line 436
     const/4 v1, 0x5
 
     const-string v2, "launcher_y"
@@ -766,7 +766,7 @@
 
     aput-object v2, p2, v1
 
-    .line 342
+    .line 437
     const/4 v1, 0x6
 
     const-string v2, "launcher_spanX"
@@ -781,7 +781,7 @@
 
     aput-object v2, p2, v1
 
-    .line 343
+    .line 438
     const/4 v1, 0x7
 
     const-string v2, "launcher_spanY"

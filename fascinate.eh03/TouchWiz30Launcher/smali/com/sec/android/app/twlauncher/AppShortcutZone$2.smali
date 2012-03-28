@@ -66,6 +66,7 @@
     .local v1, app:Lcom/sec/android/app/twlauncher/ApplicationInfo;
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/AppShortcutZone$2;->this$0:Lcom/sec/android/app/twlauncher/AppShortcutZone;
 
+    #getter for: Lcom/sec/android/app/twlauncher/AppShortcutZone;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v3}, Lcom/sec/android/app/twlauncher/AppShortcutZone;->access$000(Lcom/sec/android/app/twlauncher/AppShortcutZone;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v3
@@ -89,6 +90,7 @@
 
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/AppShortcutZone$2;->this$0:Lcom/sec/android/app/twlauncher/AppShortcutZone;
 
+    #getter for: Lcom/sec/android/app/twlauncher/AppShortcutZone;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v3}, Lcom/sec/android/app/twlauncher/AppShortcutZone;->access$000(Lcom/sec/android/app/twlauncher/AppShortcutZone;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v3
@@ -116,6 +118,7 @@
     :cond_1
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/AppShortcutZone$2;->this$0:Lcom/sec/android/app/twlauncher/AppShortcutZone;
 
+    #getter for: Lcom/sec/android/app/twlauncher/AppShortcutZone;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v3}, Lcom/sec/android/app/twlauncher/AppShortcutZone;->access$000(Lcom/sec/android/app/twlauncher/AppShortcutZone;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v3

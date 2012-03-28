@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 5021
+    .line 5056
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$27;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
     .parameter "which"
 
     .prologue
-    .line 5027
+    .line 5062
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.settings.WIRELESS_SETTINGS"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 5030
+    .line 5065
     .local v1, intentShowSetting:Landroid/content/Intent;
     :try_start_0
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$27;->this$0:Lcom/android/browser/BrowserActivity;
@@ -59,17 +59,17 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5034
+    .line 5069
     :goto_0
     return-void
 
-    .line 5031
+    .line 5066
     :catch_0
     move-exception v2
 
     move-object v0, v2
 
-    .line 5032
+    .line 5067
     .local v0, ex:Landroid/content/ActivityNotFoundException;
     const-string v2, "browser"
 

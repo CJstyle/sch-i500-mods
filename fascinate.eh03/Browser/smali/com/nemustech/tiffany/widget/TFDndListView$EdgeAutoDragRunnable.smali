@@ -115,13 +115,13 @@
     .line 784
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFDndListView$EdgeAutoDragRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFDndListView;
 
-    iget-boolean v3, v4, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockExcessScroll:Z
+    iget-boolean v3, v4, Lcom/nemustech/tiffany/widget/TFDndListView;->mBlockExcessScroll:Z
 
     .line 785
     .local v3, savedBlockExcessScroll:Z
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFDndListView$EdgeAutoDragRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFDndListView;
 
-    iput-boolean v6, v4, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockExcessScroll:Z
+    iput-boolean v6, v4, Lcom/nemustech/tiffany/widget/TFDndListView;->mBlockExcessScroll:Z
 
     .line 786
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFDndListView$EdgeAutoDragRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFDndListView;
@@ -131,7 +131,7 @@
     .line 787
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFDndListView$EdgeAutoDragRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFDndListView;
 
-    iput-boolean v3, v4, Lcom/nemustech/tiffany/widget/TFAbsListView;->mBlockExcessScroll:Z
+    iput-boolean v3, v4, Lcom/nemustech/tiffany/widget/TFDndListView;->mBlockExcessScroll:Z
 
     .line 789
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFDndListView$EdgeAutoDragRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFDndListView;
@@ -181,7 +181,7 @@
     .line 800
     iget-object v4, p0, Lcom/nemustech/tiffany/widget/TFDndListView$EdgeAutoDragRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFDndListView;
 
-    iget-object v4, v4, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
+    iget-object v4, v4, Lcom/nemustech/tiffany/widget/TFDndListView;->mItemAnimator:Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;
 
     invoke-virtual {v4}, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->start()V
 

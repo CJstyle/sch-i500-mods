@@ -52,7 +52,7 @@
     :pswitch_0
     iget-object v1, p0, Lcom/android/browser/FindDialog$1;->this$0:Lcom/android/browser/FindDialog;
 
-    iget-object v1, v1, Lcom/android/browser/WebDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
+    iget-object v1, v1, Lcom/android/browser/FindDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
 
     const-string v2, "input_method"
 

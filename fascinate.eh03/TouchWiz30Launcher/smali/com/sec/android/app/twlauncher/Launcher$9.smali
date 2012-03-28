@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 4234
+    .line 4263
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$9;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -41,17 +41,17 @@
     .prologue
     const-string v2, "Launcher"
 
-    .line 4236
+    .line 4265
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 4258
+    .line 4287
     :cond_0
     :goto_0
     return-void
 
-    .line 4239
+    .line 4268
     :pswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -59,17 +59,18 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 4240
+    .line 4269
     const-string v0, "Launcher"
 
     const-string v0, "uninstall succeeded"
 
     invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4244
+    .line 4273
     :goto_1
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$9;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mMenuManager:Lcom/sec/android/app/twlauncher/MenuManager;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$3400(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/MenuManager;
 
     move-result-object v0
@@ -78,7 +79,7 @@
 
     goto :goto_0
 
-    .line 4242
+    .line 4271
     :cond_1
     const-string v0, "Launcher"
 
@@ -88,7 +89,7 @@
 
     goto :goto_1
 
-    .line 4250
+    .line 4279
     :pswitch_1
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$9;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -98,14 +99,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 4251
+    .line 4280
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$9;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->setSomethingsInDefaultIMEI()V
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$3500(Lcom/sec/android/app/twlauncher/Launcher;)V
 
     goto :goto_0
 
-    .line 4236
+    .line 4265
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

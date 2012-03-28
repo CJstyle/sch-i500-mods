@@ -35,17 +35,17 @@
     .parameter "url"
 
     .prologue
-    .line 2968
+    .line 2979
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 2966
+    .line 2977
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mCanceled:Z
 
-    .line 2970
+    .line 2981
     :try_start_0
     new-instance v1, Ljava/net/URL;
 
@@ -55,17 +55,17 @@
     :try_end_0
     .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2974
+    .line 2985
     :goto_0
     return-void
 
-    .line 2971
+    .line 2982
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 2972
+    .line 2983
     .local v0, e:Ljava/net/MalformedURLException;
     const/4 v1, 0x0
 
@@ -81,7 +81,7 @@
     .parameter "dialog"
 
     .prologue
-    .line 2978
+    .line 2989
     return-void
 .end method
 
@@ -92,12 +92,12 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 2981
+    .line 2992
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mUrl:Ljava/net/URL;
 
     if-eqz v0, :cond_0
 
-    .line 2985
+    .line 2996
     new-instance v0, Landroid/app/ProgressDialog;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->this$0:Lcom/android/browser/BrowserActivity;
@@ -106,12 +106,12 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mWallpaperProgress:Landroid/app/ProgressDialog;
 
-    .line 2986
+    .line 2997
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mWallpaperProgress:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0, v3}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    .line 2987
+    .line 2998
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mWallpaperProgress:Landroid/app/ProgressDialog;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->this$0:Lcom/android/browser/BrowserActivity;
@@ -124,25 +124,25 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 2988
+    .line 2999
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mWallpaperProgress:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0, v3}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
-    .line 2989
+    .line 3000
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mWallpaperProgress:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0, p0}, Landroid/app/ProgressDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 2990
+    .line 3001
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mWallpaperProgress:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
 
-    .line 2991
+    .line 3002
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->start()V
 
-    .line 2993
+    .line 3004
     :cond_0
     return v3
 .end method
@@ -151,7 +151,7 @@
     .locals 13
 
     .prologue
-    .line 2998
+    .line 3009
     iget-object v10, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->this$0:Lcom/android/browser/BrowserActivity;
 
     const-string v11, "wallpaper"
@@ -162,13 +162,13 @@
 
     check-cast v9, Landroid/app/WallpaperManager;
 
-    .line 2999
+    .line 3010
     .local v9, wpm:Landroid/app/WallpaperManager;
     invoke-virtual {v9}, Landroid/app/WallpaperManager;->getFastDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v8
 
-    .line 3006
+    .line 3017
     .local v8, oldWallpaper:Landroid/graphics/drawable/Drawable;
     :try_start_0
     iget-object v10, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mUrl:Ljava/net/URL;
@@ -177,11 +177,11 @@
 
     move-result-object v7
 
-    .line 3007
+    .line 3018
     .local v7, inputstream:Ljava/io/InputStream;
     if-eqz v7, :cond_0
 
-    .line 3008
+    .line 3019
     iget-object v10, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mUrl:Ljava/net/URL;
 
     invoke-virtual {v10}, Ljava/net/URL;->getFile()Ljava/lang/String;
@@ -198,12 +198,12 @@
 
     if-ne v10, v11, :cond_2
 
-    .line 3009
+    .line 3020
     invoke-virtual {v9, v7}, Landroid/app/WallpaperManager;->setStream(Ljava/io/InputStream;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 3061
+    .line 3072
     .end local v7           #inputstream:Ljava/io/InputStream;
     :cond_0
     :goto_0
@@ -215,16 +215,16 @@
 
     if-eqz v10, :cond_1
 
-    .line 3062
+    .line 3073
     iget-object v10, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mWallpaperProgress:Landroid/app/ProgressDialog;
 
     invoke-virtual {v10}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 3064
+    .line 3075
     :cond_1
     return-void
 
-    .line 3012
+    .line 3023
     .restart local v7       #inputstream:Ljava/io/InputStream;
     :cond_2
     :try_start_1
@@ -234,11 +234,11 @@
 
     move-result-object v0
 
-    .line 3014
+    .line 3025
     .local v0, bm:Landroid/graphics/Bitmap;
     const/4 v2, 0x0
 
-    .line 3015
+    .line 3026
     .local v2, fOut:Ljava/io/OutputStream;
     :try_start_2
     const-string v10, "temp_wallpaper"
@@ -255,7 +255,7 @@
 
     move-result-object v4
 
-    .line 3016
+    .line 3027
     .local v4, file:Ljava/io/File;
     new-instance v3, Ljava/io/FileOutputStream;
 
@@ -264,7 +264,7 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 3018
+    .line 3029
     .end local v2           #fOut:Ljava/io/OutputStream;
     .local v3, fOut:Ljava/io/OutputStream;
     :try_start_3
@@ -274,19 +274,19 @@
 
     invoke-virtual {v0, v10, v11, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 3019
+    .line 3030
     invoke-virtual {v3}, Ljava/io/OutputStream;->flush()V
 
-    .line 3020
+    .line 3031
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 3021
+    .line 3032
     const/4 v5, 0x0
 
-    .line 3023
+    .line 3034
     .local v5, in:Ljava/io/InputStream;
     :try_start_4
     new-instance v6, Ljava/io/BufferedInputStream;
@@ -299,7 +299,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 3024
+    .line 3035
     .end local v5           #in:Ljava/io/InputStream;
     .local v6, in:Ljava/io/InputStream;
     :try_start_5
@@ -307,14 +307,14 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 3026
+    .line 3037
     if-eqz v6, :cond_3
 
-    .line 3027
+    .line 3038
     :try_start_6
     invoke-virtual {v6}, Ljava/io/InputStream;->close()V
 
-    .line 3029
+    .line 3040
     :cond_3
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
     :try_end_6
@@ -323,7 +323,7 @@
 
     goto :goto_0
 
-    .line 3031
+    .line 3042
     .end local v6           #in:Ljava/io/InputStream;
     :catch_0
     move-exception v10
@@ -332,7 +332,7 @@
 
     move-object v2, v3
 
-    .line 3032
+    .line 3043
     .end local v3           #fOut:Ljava/io/OutputStream;
     .end local v4           #file:Ljava/io/File;
     .local v1, e:Ljava/lang/Exception;
@@ -345,7 +345,7 @@
 
     goto :goto_0
 
-    .line 3037
+    .line 3048
     .end local v0           #bm:Landroid/graphics/Bitmap;
     .end local v1           #e:Ljava/lang/Exception;
     .end local v2           #fOut:Ljava/io/OutputStream;
@@ -355,7 +355,7 @@
 
     move-object v1, v10
 
-    .line 3038
+    .line 3049
     .local v1, e:Ljava/io/IOException;
     const-string v10, "browser"
 
@@ -363,14 +363,14 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3041
+    .line 3052
     const/4 v10, 0x1
 
     iput-boolean v10, p0, Lcom/android/browser/BrowserActivity$SetAsWallpaper;->mCanceled:Z
 
     goto :goto_0
 
-    .line 3026
+    .line 3037
     .end local v1           #e:Ljava/io/IOException;
     .restart local v0       #bm:Landroid/graphics/Bitmap;
     .restart local v3       #fOut:Ljava/io/OutputStream;
@@ -383,11 +383,11 @@
     :goto_2
     if-eqz v5, :cond_4
 
-    .line 3027
+    .line 3038
     :try_start_8
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
 
-    .line 3029
+    .line 3040
     :cond_4
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
 
@@ -396,7 +396,7 @@
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_1
 
-    .line 3031
+    .line 3042
     .end local v3           #fOut:Ljava/io/OutputStream;
     .end local v4           #file:Ljava/io/File;
     .end local v5           #in:Ljava/io/InputStream;
@@ -408,7 +408,7 @@
 
     goto :goto_1
 
-    .line 3026
+    .line 3037
     .end local v2           #fOut:Ljava/io/OutputStream;
     .restart local v3       #fOut:Ljava/io/OutputStream;
     .restart local v4       #file:Ljava/io/File;

@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/android/browser/HistoryItem;->mListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
-    .line 84
+    .line 83
     return-void
 .end method
 
@@ -131,10 +131,21 @@
     .parameter "item"
 
     .prologue
-    .line 87
-    iget-object v0, p1, Lcom/android/browser/BookmarkItem;->mTextView:Landroid/widget/TextView;
+    .line 86
+    iget-object v0, p1, Lcom/android/browser/HistoryItem;->mTextView:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/browser/BookmarkItem;->mTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/browser/HistoryItem;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 87
+    iget-object v0, p1, Lcom/android/browser/HistoryItem;->mUrlText:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/android/browser/HistoryItem;->mUrlText:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -143,17 +154,6 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 88
-    iget-object v0, p1, Lcom/android/browser/BookmarkItem;->mUrlText:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/android/browser/BookmarkItem;->mUrlText:Landroid/widget/TextView;
-
-    invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 89
     iget-object v0, p0, Lcom/android/browser/HistoryItem;->mStar:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
@@ -162,10 +162,10 @@
 
     invoke-virtual {p1, v0}, Lcom/android/browser/HistoryItem;->setIsBookmark(Z)V
 
-    .line 90
-    iget-object v0, p1, Lcom/android/browser/BookmarkItem;->mImageView:Landroid/widget/ImageView;
+    .line 89
+    iget-object v0, p1, Lcom/android/browser/HistoryItem;->mImageView:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/android/browser/BookmarkItem;->mImageView:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/browser/HistoryItem;->mImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -173,7 +173,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 91
+    .line 90
     return-void
 .end method
 
@@ -182,23 +182,23 @@
     .parameter "check"
 
     .prologue
-    .line 104
+    .line 103
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 105
+    .line 104
     iget-object v0, p0, Lcom/android/browser/HistoryItem;->mStar:Landroid/widget/CompoundButton;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setVisibility(I)V
 
-    .line 108
+    .line 107
     :goto_0
     return-void
 
-    .line 107
+    .line 106
     :cond_0
     iget-object v0, p0, Lcom/android/browser/HistoryItem;->mStar:Landroid/widget/CompoundButton;
 
@@ -213,7 +213,7 @@
     .locals 1
 
     .prologue
-    .line 97
+    .line 96
     iget-object v0, p0, Lcom/android/browser/HistoryItem;->mStar:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
@@ -228,25 +228,25 @@
     .parameter "isBookmark"
 
     .prologue
-    .line 115
+    .line 114
     iget-object v0, p0, Lcom/android/browser/HistoryItem;->mStar:Landroid/widget/CompoundButton;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 116
+    .line 115
     iget-object v0, p0, Lcom/android/browser/HistoryItem;->mStar:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0, p1}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    .line 117
+    .line 116
     iget-object v0, p0, Lcom/android/browser/HistoryItem;->mStar:Landroid/widget/CompoundButton;
 
     iget-object v1, p0, Lcom/android/browser/HistoryItem;->mListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 118
+    .line 117
     return-void
 .end method

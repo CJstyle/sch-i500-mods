@@ -10,50 +10,50 @@
     .parameter "attrs"
 
     .prologue
-    .line 37
+    .line 38
     invoke-direct {p0, p1, p2}, Landroid/preference/ListPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 39
+    .line 40
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 40
+    .line 41
     .local v3, entryValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 42
+    .line 43
     .local v2, entries:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     invoke-static {p1}, Lcom/android/browser/search/SearchEngines;->getDefaultSearchEngine(Landroid/content/Context;)Lcom/android/browser/search/SearchEngine;
 
     move-result-object v0
 
-    .line 43
+    .line 44
     .local v0, defaultSearchEngine:Lcom/android/browser/search/SearchEngine;
     const/4 v1, 0x0
 
-    .line 44
+    .line 45
     .local v1, defaultSearchEngineName:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 45
+    .line 46
     invoke-interface {v0}, Lcom/android/browser/search/SearchEngine;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 46
+    .line 47
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 47
+    .line 48
     invoke-interface {v0}, Lcom/android/browser/search/SearchEngine;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v7
 
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 49
+    .line 50
     :cond_0
     invoke-static {p1}, Lcom/android/browser/search/SearchEngines;->getSearchEngineInfos(Landroid/content/Context;)Ljava/util/List;
 
@@ -78,13 +78,13 @@
 
     check-cast v6, Lcom/android/browser/search/SearchEngineInfo;
 
-    .line 50
+    .line 51
     .local v6, searchEngineInfo:Lcom/android/browser/search/SearchEngineInfo;
     invoke-virtual {v6}, Lcom/android/browser/search/SearchEngineInfo;->getName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 52
+    .line 53
     .local v5, name:Ljava/lang/String;
     invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -92,19 +92,16 @@
 
     if-nez v7, :cond_1
 
-    .line 53
-    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 57
+    const-string v7, "bing"
 
-    .line 54
-    invoke-virtual {v6}, Lcom/android/browser/search/SearchEngineInfo;->getLabel()Ljava/lang/String;
+    invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v7
+    move-result v7
 
-    invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-eqz v7, :cond_3
 
-    goto :goto_0
-
-    .line 58
+    .line 68
     .end local v5           #name:Ljava/lang/String;
     .end local v6           #searchEngineInfo:Lcom/android/browser/search/SearchEngineInfo;
     :cond_2
@@ -122,7 +119,7 @@
 
     invoke-virtual {p0, v7}, Lcom/android/browser/search/SearchEnginePreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
-    .line 59
+    .line 69
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v7
@@ -137,6 +134,21 @@
 
     invoke-virtual {p0, v7}, Lcom/android/browser/search/SearchEnginePreference;->setEntries([Ljava/lang/CharSequence;)V
 
-    .line 60
+    .line 70
     return-void
+
+    .line 63
+    .restart local v5       #name:Ljava/lang/String;
+    .restart local v6       #searchEngineInfo:Lcom/android/browser/search/SearchEngineInfo;
+    :cond_3
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 64
+    invoke-virtual {v6}, Lcom/android/browser/search/SearchEngineInfo;->getLabel()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 .end method

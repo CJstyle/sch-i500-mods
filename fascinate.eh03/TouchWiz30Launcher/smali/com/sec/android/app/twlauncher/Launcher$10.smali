@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4774
+    .line 4803
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$10;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,12 @@
     .locals 1
 
     .prologue
-    .line 4776
+    .line 4805
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$10;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->onBadgeChanged()V
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$3600(Lcom/sec/android/app/twlauncher/Launcher;)V
 
-    .line 4777
+    .line 4806
     return-void
 .end method

@@ -5702,25 +5702,11 @@
 .end method
 
 .method public pause()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 1840
-    sget-object v0, Lcom/android/browser/BitmapWebViewSurface3D;->LOGTAG:Ljava/lang/String;
-
-    const-string v1, "pause start"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1842
     invoke-virtual {p0}, Lcom/android/browser/BitmapWebViewSurface3D;->unloadExtraTextures()V
-
-    .line 1843
-    sget-object v0, Lcom/android/browser/BitmapWebViewSurface3D;->LOGTAG:Ljava/lang/String;
-
-    const-string v1, "pause end"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1844
     return-void

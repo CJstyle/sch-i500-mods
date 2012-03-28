@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 383
+    .line 389
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/MenuManager$1;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,20 +41,21 @@
     .locals 1
 
     .prologue
-    .line 385
+    .line 391
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/MenuManager$1;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/MenuManager;->access$000(Lcom/sec/android/app/twlauncher/MenuManager;)Lcom/sec/android/app/twlauncher/PageIndicator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/PageIndicator;->hide()V
 
-    .line 386
+    .line 392
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/MenuManager$1;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/MenuManager;->postInvalidate()V
 
-    .line 387
+    .line 393
     return-void
 .end method

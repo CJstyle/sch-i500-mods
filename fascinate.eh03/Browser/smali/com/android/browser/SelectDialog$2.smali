@@ -45,7 +45,7 @@
     .line 54
     iget-object v0, p0, Lcom/android/browser/SelectDialog$2;->this$0:Lcom/android/browser/SelectDialog;
 
-    iget-object v0, v0, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, v0, Lcom/android/browser/SelectDialog;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->selectAll()V
 

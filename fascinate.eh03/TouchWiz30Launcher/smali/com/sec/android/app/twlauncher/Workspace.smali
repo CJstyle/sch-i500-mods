@@ -17,6 +17,14 @@
 
 
 # instance fields
+.field private LAUNCHER_LOOP_WORKSPACE:Z
+
+.field private final LOOP_LEFT:I
+
+.field private final LOOP_NONE:I
+
+.field private final LOOP_RIGHT:I
+
 .field private SNAP_VELOCITY:I
 
 .field private isSettingsButtonShown:Z
@@ -75,6 +83,8 @@
 
 .field private mIsSingleTap:Z
 
+.field private mIsWallpaperLooping:Z
+
 .field private mLastMotionX:F
 
 .field private mLastMotionY:F
@@ -121,6 +131,8 @@
 
 .field private mSnapToScreenDuration:I
 
+.field private mSnaptoScreenStartTime:J
+
 .field private mStartScreen:I
 
 .field private mTargetCell:[I
@@ -145,6 +157,8 @@
 
 .field private mVelocityTracker:Landroid/view/VelocityTracker;
 
+.field private mWallpaperLooingState:I
+
 .field private final mWallpaperManager:Landroid/app/WallpaperManager;
 
 
@@ -155,12 +169,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 217
+    .line 234
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/sec/android/app/twlauncher/Workspace;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 218
+    .line 235
     return-void
 .end method
 
@@ -171,156 +185,174 @@
     .parameter "defStyle"
 
     .prologue
-    const/4 v6, 0x2
+    const/4 v6, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x2
 
-    const/4 v4, 0x1
+    const/4 v4, -0x1
 
-    const/4 v3, -0x1
+    const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    .line 228
+    .line 245
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 87
+    .line 91
     const/16 v1, 0xc8
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->SNAP_VELOCITY:I
 
-    .line 95
-    iput-boolean v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mFirstLayout:Z
-
-    .line 98
-    iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+    .line 99
+    iput-boolean v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mFirstLayout:Z
 
     .line 102
+    iput v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    .line 106
     const/16 v1, 0x190
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSnapToScreenDuration:I
 
-    .line 111
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTargetCell:[I
+    .line 115
+    iput-object v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTargetCell:[I
 
-    .line 123
+    .line 127
     iput v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    .line 134
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
+    .line 138
+    iput-object v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
-    .line 136
-    new-array v1, v6, [I
+    .line 140
+    new-array v1, v5, [I
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTempCell:[I
 
-    .line 137
-    new-array v1, v6, [I
+    .line 141
+    new-array v1, v5, [I
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTempEstimate:[I
 
-    .line 140
+    .line 144
     iput-boolean v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mOpenFlag:Z
 
-    .line 145
+    .line 149
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDrawerBounds:Landroid/graphics/Rect;
 
-    .line 146
+    .line 150
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mClipBounds:Landroid/graphics/Rect;
 
-    .line 161
+    .line 165
     iput-boolean v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonTouched:Z
 
-    .line 162
+    .line 166
     iput-boolean v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonShown:Z
 
-    .line 172
-    iput-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideTime:Ljava/util/Calendar;
+    .line 176
+    iput-object v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideTime:Ljava/util/Calendar;
 
-    .line 174
+    .line 178
     iput-boolean v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMultiTouchUsed:Z
 
-    .line 183
-    iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mStartScreen:I
+    .line 187
+    iput v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mStartScreen:I
 
-    .line 184
-    iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
+    .line 188
+    iput v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
 
-    .line 185
+    .line 189
     iput v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollDirection:I
 
-    .line 679
+    .line 215
+    iput-boolean v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    .line 216
+    iput v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->LOOP_NONE:I
+
+    .line 217
+    iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->LOOP_LEFT:I
+
+    .line 218
+    iput v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->LOOP_RIGHT:I
+
+    .line 221
+    iput-boolean v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    .line 222
+    iput v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    .line 730
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDimPaint:Landroid/graphics/Paint;
 
-    .line 680
+    .line 731
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 2256
+    .line 2518
     new-instance v1, Lcom/sec/android/app/twlauncher/Workspace$4;
 
     invoke-direct {v1, p0}, Lcom/sec/android/app/twlauncher/Workspace$4;-><init>(Lcom/sec/android/app/twlauncher/Workspace;)V
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAutoScrollRunnable:Ljava/lang/Runnable;
 
-    .line 230
+    .line 247
     invoke-static {p1}, Landroid/app/WallpaperManager;->getInstance(Landroid/content/Context;)Landroid/app/WallpaperManager;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperManager:Landroid/app/WallpaperManager;
 
-    .line 231
+    .line 248
     invoke-static {p1}, Lcom/sec/android/app/twlauncher/LauncherConfig;->pageIndicator_getUseLargeDrawablesOnly(Landroid/content/Context;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mUseLargeDrawablesOnlyForPageIndicator:Z
 
-    .line 233
+    .line 250
     sget-object v1, Lcom/sec/android/app/twlauncher/R$styleable;->Workspace:[I
 
     invoke-virtual {p1, p2, v1, p3, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 234
+    .line 251
     .local v0, a:Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultScreen:I
 
-    .line 235
-    invoke-virtual {v0, v4, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 252
+    invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDelayedShortcutDisplay:Z
 
-    .line 236
+    .line 253
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 238
+    .line 255
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->initWorkspace()V
 
-    .line 239
+    .line 256
     return-void
 .end method
 
@@ -329,7 +361,7 @@
     .parameter "x0"
 
     .prologue
-    .line 74
+    .line 78
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
     return-object v0
@@ -340,7 +372,7 @@
     .parameter "x0"
 
     .prologue
-    .line 74
+    .line 78
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     return-object v0
@@ -351,7 +383,7 @@
     .parameter "x0"
 
     .prologue
-    .line 74
+    .line 78
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     return v0
@@ -362,7 +394,7 @@
     .parameter "x0"
 
     .prologue
-    .line 74
+    .line 78
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
 
     return v0
@@ -373,7 +405,7 @@
     .parameter "x0"
 
     .prologue
-    .line 74
+    .line 78
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollDirection:I
 
     return v0
@@ -384,7 +416,7 @@
     .parameter "x0"
 
     .prologue
-    .line 74
+    .line 78
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollDirection:I
 
     add-int/lit8 v1, v0, 0x1
@@ -399,7 +431,7 @@
     .parameter "x0"
 
     .prologue
-    .line 74
+    .line 78
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollDirection:I
 
     const/4 v1, 0x1
@@ -417,7 +449,7 @@
     .parameter "x1"
 
     .prologue
-    .line 74
+    .line 78
     iput p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
     return p1
@@ -429,7 +461,7 @@
     .parameter "x1"
 
     .prologue
-    .line 74
+    .line 78
     iput-boolean p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
 
     return p1
@@ -439,22 +471,22 @@
     .locals 1
 
     .prologue
-    .line 580
+    .line 605
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     if-eqz v0, :cond_0
 
-    .line 581
+    .line 606
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->clearVacantCells()V
 
-    .line 582
+    .line 607
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
-    .line 584
+    .line 609
     :cond_0
     return-void
 .end method
@@ -464,10 +496,10 @@
     .parameter "canvas"
 
     .prologue
-    .line 819
+    .line 927
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 820
+    .line 928
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
     int-to-float v0, v0
@@ -476,7 +508,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 822
+    .line 930
     sget-object v0, Lcom/sec/android/app/twlauncher/Launcher;->mHwVer:Ljava/lang/String;
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultIMEIPosX:I
@@ -491,7 +523,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 823
+    .line 931
     sget-object v0, Lcom/sec/android/app/twlauncher/Launcher;->mBootVer:Ljava/lang/String;
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultIMEIPosX:I
@@ -510,7 +542,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 824
+    .line 932
     sget-object v0, Lcom/sec/android/app/twlauncher/Launcher;->mPdaVer:Ljava/lang/String;
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultIMEIPosX:I
@@ -531,7 +563,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 825
+    .line 933
     sget-object v0, Lcom/sec/android/app/twlauncher/Launcher;->mPhoneVer:Ljava/lang/String;
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultIMEIPosX:I
@@ -552,137 +584,65 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 827
+    .line 935
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 828
+    .line 936
     return-void
 .end method
 
 .method private drawPageIndicator(Landroid/graphics/Canvas;)V
-    .locals 6
+    .locals 5
     .parameter "canvas"
 
     .prologue
-    .line 859
-    const/4 v4, 0x0
-
-    iput-boolean v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonShown:Z
-
-    .line 861
+    .line 973
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWhichScreen()I
 
-    move-result v3
+    move-result v2
 
-    .line 862
-    .local v3, updatedScreen:I
+    .line 974
+    .local v2, updatedScreen:I
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
-    .line 863
+    .line 975
     .local v0, indicator:Lcom/sec/android/app/twlauncher/PageIndicator;
     if-nez v0, :cond_1
 
-    .line 879
+    .line 1000
     :cond_0
     :goto_0
     return-void
 
-    .line 865
+    .line 988
     :cond_1
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    iget-boolean v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mUseLargeDrawablesOnlyForPageIndicator:Z
 
-    move-result-object v2
+    invoke-virtual {v0, v2, v3}, Lcom/sec/android/app/twlauncher/PageIndicator;->setCurrentPage(IZ)V
 
-    .line 867
-    .local v2, rightNow:Ljava/util/Calendar;
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideTime:Ljava/util/Calendar;
+    .line 989
+    iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLeft:I
 
-    if-eqz v4, :cond_0
+    iget v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideTime:Ljava/util/Calendar;
+    add-int/2addr v3, v4
 
-    if-eqz v4, :cond_2
+    iget v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorTop:I
 
-    iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideTime:Ljava/util/Calendar;
+    invoke-virtual {v0, v3, v4}, Lcom/sec/android/app/twlauncher/PageIndicator;->setOffset(II)V
 
-    invoke-virtual {v4, v2}, Ljava/util/Calendar;->before(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    .line 871
-    :cond_2
-    iget-boolean v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mUseLargeDrawablesOnlyForPageIndicator:Z
-
-    invoke-virtual {v0, v3, v4}, Lcom/sec/android/app/twlauncher/PageIndicator;->setCurrentPage(IZ)V
-
-    .line 872
-    iget v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLeft:I
-
-    iget v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
-
-    add-int/2addr v4, v5
-
-    iget v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorTop:I
-
-    invoke-virtual {v0, v4, v5}, Lcom/sec/android/app/twlauncher/PageIndicator;->setOffset(II)V
-
-    .line 873
+    .line 990
     invoke-virtual {v0, p1}, Lcom/sec/android/app/twlauncher/PageIndicator;->draw(Landroid/graphics/Canvas;)Z
 
     move-result v1
 
-    .line 876
+    .line 999
     .local v1, redraw:Z
-    invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->drawSettingButton(Landroid/graphics/Canvas;)V
-
-    .line 878
     if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->postInvalidate()V
 
     goto :goto_0
-.end method
-
-.method private drawSettingButton(Landroid/graphics/Canvas;)V
-    .locals 2
-    .parameter "canvas"
-
-    .prologue
-    .line 883
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 885
-    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorGap:I
-
-    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
-
-    add-int/2addr v0, v1
-
-    int-to-float v0, v0
-
-    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorTop:I
-
-    int-to-float v1, v1
-
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 886
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsButton:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->draw(Landroid/graphics/Canvas;)V
-
-    .line 887
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    .line 888
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonShown:Z
-
-    .line 889
-    return-void
 .end method
 
 .method private estimateDropCell(IIIILandroid/view/View;Lcom/sec/android/app/twlauncher/CellLayout;[I)[I
@@ -696,12 +656,12 @@
     .parameter "recycle"
 
     .prologue
-    .line 1777
+    .line 2009
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     if-nez v0, :cond_0
 
-    .line 1778
+    .line 2010
     const/4 v0, 0x0
 
     invoke-virtual {p6, v0, p5}, Lcom/sec/android/app/twlauncher/CellLayout;->findAllVacantCells([ZLandroid/view/View;)Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
@@ -710,7 +670,7 @@
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
-    .line 1782
+    .line 2014
     :cond_0
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
@@ -737,7 +697,7 @@
     .locals 2
 
     .prologue
-    .line 1717
+    .line 1949
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v1}, Landroid/widget/Scroller;->isFinished()Z
@@ -750,7 +710,7 @@
 
     move v0, v1
 
-    .line 1718
+    .line 1950
     .local v0, index:I
     :goto_0
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -762,7 +722,7 @@
 
     return-object p0
 
-    .line 1717
+    .line 1949
     .end local v0           #index:I
     .restart local p0
     :cond_0
@@ -779,27 +739,61 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 1437
+    .line 1640
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
     move-result v2
 
-    .line 1438
+    .line 1641
     .local v2, screenWidth:I
     const/4 v4, 0x0
 
-    .line 1439
+    .line 1642
     .local v4, whichScreen:I
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v1
 
-    .line 1440
+    .line 1643
     .local v1, count:I
     iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    .line 1442
+    .line 1646
     .local v3, scrollX:I
+    iget-boolean v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v5, :cond_1
+
+    const/4 v5, 0x2
+
+    if-lt v1, v5, :cond_1
+
+    .line 1647
+    if-gez v3, :cond_0
+
+    .line 1648
+    div-int/lit8 v5, v2, 0x2
+
+    sub-int v5, v3, v5
+
+    div-int v4, v5, v2
+
+    .line 1666
+    :goto_0
+    return v4
+
+    .line 1650
+    :cond_0
+    div-int/lit8 v5, v2, 0x2
+
+    add-int/2addr v5, v3
+
+    div-int v4, v5, v2
+
+    goto :goto_0
+
+    .line 1655
+    :cond_1
     sub-int v5, v1, v7
 
     invoke-virtual {p0, v5}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -818,28 +812,26 @@
 
     sub-int v0, v5, v6
 
-    .line 1444
+    .line 1657
     .local v0, availableToScroll:I
-    if-gez v3, :cond_0
+    if-gez v3, :cond_2
 
-    .line 1445
+    .line 1658
     const/4 v4, 0x0
 
-    .line 1452
-    :goto_0
-    return v4
+    goto :goto_0
 
-    .line 1446
-    :cond_0
-    if-gtz v0, :cond_1
+    .line 1659
+    :cond_2
+    if-gtz v0, :cond_3
 
-    .line 1447
+    .line 1660
     sub-int v4, v1, v7
 
     goto :goto_0
 
-    .line 1449
-    :cond_1
+    .line 1662
+    :cond_3
     div-int/lit8 v5, v2, 0x2
 
     add-int/2addr v5, v3
@@ -857,25 +849,25 @@
 
     const/4 v6, 0x0
 
-    .line 835
+    .line 943
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
     if-nez v4, :cond_0
 
-    .line 836
+    .line 944
     new-instance v4, Lcom/sec/android/app/twlauncher/PageIndicator;
 
     invoke-direct {v4}, Lcom/sec/android/app/twlauncher/PageIndicator;-><init>()V
 
     iput-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
-    .line 839
+    .line 947
     :cond_0
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v3
 
-    .line 840
+    .line 948
     .local v3, pageCount:I
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLarge:Landroid/graphics/drawable/Drawable;
 
@@ -883,38 +875,38 @@
 
     move-result v2
 
-    .line 842
+    .line 950
     .local v2, indicatorWidth:I
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
-    .line 843
+    .line 951
     .local v0, indicator:Lcom/sec/android/app/twlauncher/PageIndicator;
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLarge:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v4}, Lcom/sec/android/app/twlauncher/PageIndicator;->setPageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 844
+    .line 952
     invoke-virtual {v0, v3}, Lcom/sec/android/app/twlauncher/PageIndicator;->setPageCount(I)V
 
-    .line 845
+    .line 953
     iget v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorGap:I
 
     invoke-virtual {v0, v4}, Lcom/sec/android/app/twlauncher/PageIndicator;->setGap(I)V
 
-    .line 846
+    .line 954
     iget v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTextSize:I
 
     invoke-virtual {v0, v4}, Lcom/sec/android/app/twlauncher/PageIndicator;->setTextSize(I)V
 
-    .line 847
+    .line 955
     iget-boolean v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEnablePageIndicatorShowHide:Z
 
     if-eqz v4, :cond_2
 
-    .line 848
+    .line 956
     invoke-virtual {v0, v7}, Lcom/sec/android/app/twlauncher/PageIndicator;->enableShowHide(Z)V
 
-    .line 853
+    .line 961
     :goto_0
     mul-int v4, v2, v3
 
@@ -929,7 +921,7 @@
 
     add-int v1, v4, v5
 
-    .line 854
+    .line 962
     .local v1, indicatorTotalWidth:I
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
@@ -941,10 +933,10 @@
 
     iput v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLeft:I
 
-    .line 855
+    .line 963
     return-void
 
-    .line 850
+    .line 958
     .end local v1           #indicatorTotalWidth:I
     :cond_2
     invoke-virtual {v0, v6}, Lcom/sec/android/app/twlauncher/PageIndicator;->enableShowHide(Z)V
@@ -953,14 +945,16 @@
 .end method
 
 .method private initWorkspace()V
-    .locals 9
+    .locals 10
 
     .prologue
+    const/4 v9, 0x0
+
     const/4 v8, 0x1
 
     const/4 v7, 0x0
 
-    .line 245
+    .line 262
     new-instance v3, Landroid/widget/Scroller;
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getContext()Landroid/content/Context;
@@ -971,17 +965,17 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
-    .line 246
+    .line 263
     iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultScreen:I
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
-    .line 247
+    .line 264
     iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->setScreen(I)V
 
-    .line 248
+    .line 265
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -992,7 +986,7 @@
 
     check-cast v0, Lcom/sec/android/app/twlauncher/LauncherApplication;
 
-    .line 249
+    .line 266
     .local v0, app:Lcom/sec/android/app/twlauncher/LauncherApplication;
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/LauncherApplication;->getIconCache()Lcom/sec/android/app/twlauncher/IconCache;
 
@@ -1000,7 +994,7 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIconCache:Lcom/sec/android/app/twlauncher/IconCache;
 
-    .line 251
+    .line 268
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -1009,7 +1003,7 @@
 
     move-result-object v1
 
-    .line 252
+    .line 269
     .local v1, configuration:Landroid/view/ViewConfiguration;
     invoke-virtual {v1}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
@@ -1017,14 +1011,14 @@
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchSlop:I
 
-    .line 253
+    .line 270
     invoke-virtual {v1}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
     move-result v3
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMaximumVelocity:I
 
-    .line 254
+    .line 271
     invoke-virtual {v1}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
     move-result v3
@@ -1033,12 +1027,12 @@
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->SNAP_VELOCITY:I
 
-    .line 256
+    .line 273
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 257
+    .line 274
     .local v2, res:Landroid/content/res/Resources;
     const v3, 0x7f02002b
 
@@ -1048,7 +1042,7 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorSmall:Landroid/graphics/drawable/Drawable;
 
-    .line 258
+    .line 275
     const v3, 0x7f02002a
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1057,7 +1051,7 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorMiddle:Landroid/graphics/drawable/Drawable;
 
-    .line 259
+    .line 276
     const v3, 0x7f020029
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1066,7 +1060,7 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLarge:Landroid/graphics/drawable/Drawable;
 
-    .line 261
+    .line 278
     const v3, 0x7f080025
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1075,7 +1069,7 @@
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorTop:I
 
-    .line 262
+    .line 279
     const v3, 0x7f080027
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1084,7 +1078,7 @@
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorGap:I
 
-    .line 264
+    .line 281
     const v3, 0x7f080006
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1093,7 +1087,7 @@
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mChildTopOffset:I
 
-    .line 266
+    .line 283
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorSmall:Landroid/graphics/drawable/Drawable;
 
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorSmall:Landroid/graphics/drawable/Drawable;
@@ -1110,7 +1104,7 @@
 
     invoke-virtual {v3, v7, v7, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 267
+    .line 284
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorMiddle:Landroid/graphics/drawable/Drawable;
 
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorMiddle:Landroid/graphics/drawable/Drawable;
@@ -1127,7 +1121,7 @@
 
     invoke-virtual {v3, v7, v7, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 268
+    .line 285
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLarge:Landroid/graphics/drawable/Drawable;
 
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLarge:Landroid/graphics/drawable/Drawable;
@@ -1144,7 +1138,7 @@
 
     invoke-virtual {v3, v7, v7, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 270
+    .line 287
     const v3, 0x7f080026
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1153,7 +1147,7 @@
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTextSize:I
 
-    .line 272
+    .line 289
     const/high16 v3, 0x7f09
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -1162,10 +1156,10 @@
 
     iput-boolean v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEnablePageIndicatorShowHide:Z
 
-    .line 273
+    .line 290
     iput-boolean v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mOpenFlag:Z
 
-    .line 274
+    .line 291
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDimPaint:Landroid/graphics/Paint;
 
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
@@ -1178,7 +1172,7 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 277
+    .line 294
     const v3, 0x7f020036
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1187,7 +1181,7 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 278
+    .line 295
     const v3, 0x7f020035
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1196,7 +1190,7 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsBg:Landroid/graphics/drawable/Drawable;
 
-    .line 279
+    .line 296
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getContext()Landroid/content/Context;
@@ -1207,21 +1201,21 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsButton:Landroid/widget/ImageView;
 
-    .line 280
+    .line 297
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsButton:Landroid/widget/ImageView;
 
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsBg:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 281
+    .line 298
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsButton:Landroid/widget/ImageView;
 
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 282
+    .line 299
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsButton:Landroid/widget/ImageView;
 
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsBg:Landroid/graphics/drawable/Drawable;
@@ -1238,7 +1232,16 @@
 
     invoke-virtual {v3, v7, v7, v4, v5}, Landroid/widget/ImageView;->layout(IIII)V
 
-    .line 284
+    .line 303
+    iput-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsIcon:Landroid/graphics/drawable/Drawable;
+
+    .line 304
+    iput-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsBg:Landroid/graphics/drawable/Drawable;
+
+    .line 305
+    iput-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsButton:Landroid/widget/ImageView;
+
+    .line 309
     invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v3
@@ -1247,12 +1250,12 @@
 
     if-ne v3, v8, :cond_0
 
-    .line 285
+    .line 310
     const/16 v3, 0x190
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSnapToScreenDuration:I
 
-    .line 295
+    .line 320
     :goto_0
     new-instance v3, Landroid/graphics/Paint;
 
@@ -1260,19 +1263,19 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIMEITextPaint:Landroid/graphics/Paint;
 
-    .line 296
+    .line 321
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIMEITextPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v8}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 297
+    .line 322
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIMEITextPaint:Landroid/graphics/Paint;
 
     sget-object v4, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
-    .line 298
+    .line 323
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIMEITextPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getResources()Landroid/content/res/Resources;
@@ -1289,97 +1292,22 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 299
+    .line 324
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIMEITextPaint:Landroid/graphics/Paint;
 
     const/high16 v4, -0x1
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 300
+    .line 325
     return-void
 
-    .line 287
+    .line 312
     :cond_0
     const/16 v3, 0x258
 
     iput v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSnapToScreenDuration:I
 
-    goto :goto_0
-.end method
-
-.method private isSettingsButtonArea(II)Z
-    .locals 5
-    .parameter "x"
-    .parameter "y"
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 1609
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v1
-
-    .line 1610
-    .local v1, rightNow:Ljava/util/Calendar;
-    iget-boolean v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonShown:Z
-
-    if-nez v2, :cond_0
-
-    move v2, v4
-
-    .line 1622
-    :goto_0
-    return v2
-
-    .line 1614
-    :cond_0
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    .line 1615
-    .local v0, rect:Landroid/graphics/Rect;
-    iput v4, v0, Landroid/graphics/Rect;->top:I
-
-    .line 1616
-    iput v4, v0, Landroid/graphics/Rect;->left:I
-
-    .line 1617
-    iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorLeft:I
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 1618
-    iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicatorTop:I
-
-    iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSettingsButton:Landroid/widget/ImageView;
-
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 1619
-    invoke-virtual {v0, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 1620
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    move v2, v4
-
-    .line 1622
     goto :goto_0
 .end method
 
@@ -1392,7 +1320,7 @@
     .parameter "cellLayout"
 
     .prologue
-    .line 1653
+    .line 1885
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -1409,7 +1337,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/sec/android/app/twlauncher/Workspace;->onDropExternal(Lcom/sec/android/app/twlauncher/DragSource;IILjava/lang/Object;Lcom/sec/android/app/twlauncher/CellLayout;Z)V
 
-    .line 1654
+    .line 1886
     return-void
 .end method
 
@@ -1423,35 +1351,35 @@
     .parameter
 
     .prologue
-    .line 1658
+    .line 1890
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getOpenFolder()Lcom/sec/android/app/twlauncher/Folder;
 
     move-result-object v12
 
-    .line 1659
+    .line 1891
     if-eqz v12, :cond_1
 
     const/4 v4, 0x1
 
     move v13, v4
 
-    .line 1660
+    .line 1892
     :goto_0
     if-eqz v13, :cond_2
 
-    .line 1661
+    .line 1893
     instance-of v4, v12, Lcom/sec/android/app/twlauncher/UserFolder;
 
     if-eqz v4, :cond_2
 
-    .line 1662
+    .line 1894
     move-object v0, v12
 
     check-cast v0, Lcom/sec/android/app/twlauncher/UserFolder;
 
     move-object v4, v0
 
-    .line 1663
+    .line 1895
     const/4 v5, 0x0
 
     const/4 v8, 0x0
@@ -1466,12 +1394,12 @@
 
     invoke-virtual/range {v4 .. v10}, Lcom/sec/android/app/twlauncher/UserFolder;->onDrop(Lcom/sec/android/app/twlauncher/DragSource;IIIILjava/lang/Object;)V
 
-    .line 1710
+    .line 1942
     :cond_0
     :goto_1
     return-void
 
-    .line 1659
+    .line 1891
     :cond_1
     const/4 v4, 0x0
 
@@ -1479,11 +1407,11 @@
 
     goto :goto_0
 
-    .line 1669
+    .line 1901
     :cond_2
     check-cast p4, Lcom/sec/android/app/twlauncher/ItemInfo;
 
-    .line 1673
+    .line 1905
     move-object/from16 v0, p4
 
     iget v0, v0, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
@@ -1492,7 +1420,7 @@
 
     packed-switch v4, :pswitch_data_0
 
-    .line 1687
+    .line 1919
     new-instance v4, Ljava/lang/IllegalStateException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1523,7 +1451,7 @@
 
     throw v4
 
-    .line 1676
+    .line 1908
     :pswitch_0
     move-object/from16 v0, p4
 
@@ -1545,7 +1473,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 1678
+    .line 1910
     new-instance v4, Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
     check-cast p4, Lcom/sec/android/app/twlauncher/ApplicationInfo;
@@ -1556,7 +1484,7 @@
 
     invoke-direct {v0, v1}, Lcom/sec/android/app/twlauncher/ShortcutInfo;-><init>(Lcom/sec/android/app/twlauncher/ApplicationInfo;)V
 
-    .line 1680
+    .line 1912
     :goto_2
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -1584,7 +1512,7 @@
 
     move-object/from16 p4, v4
 
-    .line 1690
+    .line 1922
     :goto_3
     if-eqz p6, :cond_4
 
@@ -1599,12 +1527,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/CellLayout;->addView(Landroid/view/View;I)V
 
-    .line 1691
+    .line 1923
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLongClickListener:Landroid/view/View$OnLongClickListener;
 
     invoke-virtual {v9, v4}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 1692
+    .line 1924
     const/4 v7, 0x1
 
     const/4 v8, 0x1
@@ -1625,12 +1553,12 @@
 
     iput-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTargetCell:[I
 
-    .line 1693
+    .line 1925
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTargetCell:[I
 
     if-eqz v4, :cond_0
 
-    .line 1694
+    .line 1926
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTargetCell:[I
 
     move-object/from16 v0, p5
@@ -1641,14 +1569,14 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/CellLayout;->onDropChild(Landroid/view/View;[I)V
 
-    .line 1695
+    .line 1927
     invoke-virtual {v9}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p2
 
     check-cast p2, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
 
-    .line 1697
+    .line 1929
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/Launcher;->getTopFourZone()Lcom/sec/android/app/twlauncher/TopFourZone;
@@ -1657,7 +1585,7 @@
 
     if-nez v4, :cond_5
 
-    .line 1699
+    .line 1931
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     move-object/from16 v0, p4
@@ -1668,7 +1596,7 @@
 
     invoke-virtual {v4, p1}, Lcom/sec/android/app/twlauncher/Launcher;->addShortcut(Lcom/sec/android/app/twlauncher/ShortcutInfo;)V
 
-    .line 1706
+    .line 1938
     :cond_3
     :goto_5
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
@@ -1693,14 +1621,14 @@
 
     invoke-static/range {v4 .. v10}, Lcom/sec/android/app/twlauncher/LauncherModel;->addOrMoveItemInDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;JIII)V
 
-    .line 1709
+    .line 1941
     if-eqz v13, :cond_0
 
     invoke-virtual {v12}, Lcom/sec/android/app/twlauncher/Folder;->bringToFront()V
 
     goto/16 :goto_1
 
-    .line 1683
+    .line 1915
     :pswitch_1
     const v6, 0x7f030007
 
@@ -1726,16 +1654,16 @@
 
     move-object v9, v4
 
-    .line 1685
+    .line 1917
     goto :goto_3
 
-    .line 1690
+    .line 1922
     :cond_4
     const/4 v4, -0x1
 
     goto :goto_4
 
-    .line 1701
+    .line 1933
     :cond_5
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -1745,7 +1673,7 @@
 
     if-eq p1, v4, :cond_3
 
-    .line 1702
+    .line 1934
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     move-object/from16 v0, p4
@@ -1767,7 +1695,7 @@
 
     goto/16 :goto_2
 
-    .line 1673
+    .line 1905
     nop
 
     :pswitch_data_0
@@ -1782,14 +1710,14 @@
     .locals 1
 
     .prologue
-    .line 1456
+    .line 1670
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWhichScreen()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
 
-    .line 1457
+    .line 1671
     return-void
 .end method
 
@@ -1804,7 +1732,7 @@
 
     const/4 v8, 0x0
 
-    .line 607
+    .line 632
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v6
@@ -1815,7 +1743,7 @@
 
     div-float v5, v10, v6
 
-    .line 608
+    .line 633
     .local v5, xStep:F
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperManager:Landroid/app/WallpaperManager;
 
@@ -1828,16 +1756,16 @@
     :goto_0
     invoke-virtual {v6, v7, v8}, Landroid/app/WallpaperManager;->setWallpaperOffsetSteps(FF)V
 
-    .line 610
+    .line 635
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v1
 
-    .line 611
+    .line 636
     .local v1, count:I
     iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    .line 612
+    .line 637
     .local v3, scrollX:I
     sub-int v6, v1, v9
 
@@ -1849,35 +1777,35 @@
 
     sub-int v0, v6, v3
 
-    .line 614
+    .line 639
     .local v0, availableToScroll:I
     if-gez v3, :cond_3
 
-    .line 615
+    .line 640
     const/4 v3, 0x0
 
-    .line 620
+    .line 645
     :cond_0
     :goto_1
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v4
 
-    .line 622
+    .line 647
     .local v4, token:Landroid/os/IBinder;
     if-eqz v4, :cond_1
 
-    .line 623
+    .line 648
     if-nez p1, :cond_4
 
-    .line 624
+    .line 649
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     const/high16 v7, 0x3f00
 
     invoke-virtual {v6, v4, v7, v8}, Landroid/app/WallpaperManager;->setWallpaperOffsets(Landroid/os/IBinder;FF)V
 
-    .line 634
+    .line 659
     :cond_1
     :goto_2
     return-void
@@ -1889,17 +1817,17 @@
     :cond_2
     move v7, v5
 
-    .line 608
+    .line 633
     goto :goto_0
 
-    .line 616
+    .line 641
     .restart local v0       #availableToScroll:I
     .restart local v1       #count:I
     .restart local v3       #scrollX:I
     :cond_3
     if-gtz v0, :cond_0
 
-    .line 617
+    .line 642
     sub-int v6, v1, v9
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getMeasuredWidth()I
@@ -1910,7 +1838,7 @@
 
     goto :goto_1
 
-    .line 626
+    .line 651
     .restart local v4       #token:Landroid/os/IBinder;
     :cond_4
     int-to-float v6, v3
@@ -1919,7 +1847,7 @@
 
     div-float v2, v6, v7
 
-    .line 631
+    .line 656
     .local v2, offset:F
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperManager:Landroid/app/WallpaperManager;
 
@@ -1944,41 +1872,41 @@
 
     const/4 v6, 0x1
 
-    .line 1726
+    .line 1958
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getCurrentDropLayout()Lcom/sec/android/app/twlauncher/CellLayout;
 
     move-result-object v2
 
-    .line 1727
+    .line 1959
     .local v2, layout:Lcom/sec/android/app/twlauncher/CellLayout;
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
-    .line 1728
+    .line 1960
     .local v0, cellInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
     if-nez v0, :cond_1
 
     move v3, v6
 
-    .line 1729
+    .line 1961
     .local v3, spanX:I
     :goto_0
     if-nez v0, :cond_2
 
     move v4, v6
 
-    .line 1731
+    .line 1963
     .local v4, spanY:I
     :goto_1
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     if-nez v5, :cond_0
 
-    .line 1732
+    .line 1964
     if-nez v0, :cond_3
 
     move-object v1, v7
 
-    .line 1733
+    .line 1965
     .local v1, ignoreView:Landroid/view/View;
     :goto_2
     invoke-virtual {v2, v7, v1}, Lcom/sec/android/app/twlauncher/CellLayout;->findAllVacantCells([ZLandroid/view/View;)Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
@@ -1987,7 +1915,7 @@
 
     iput-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
-    .line 1736
+    .line 1968
     .end local v1           #ignoreView:Landroid/view/View;
     :cond_0
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVacantCache:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
@@ -2002,7 +1930,7 @@
 
     return v5
 
-    .line 1728
+    .line 1960
     .end local v3           #spanX:I
     .end local v4           #spanY:I
     :cond_1
@@ -2012,7 +1940,7 @@
 
     goto :goto_0
 
-    .line 1729
+    .line 1961
     .restart local v3       #spanX:I
     :cond_2
     iget v5, v0, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->spanY:I
@@ -2021,7 +1949,7 @@
 
     goto :goto_1
 
-    .line 1732
+    .line 1964
     .restart local v4       #spanY:I
     :cond_3
     iget-object v5, v0, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->cell:Landroid/view/View;
@@ -2038,7 +1966,7 @@
     .parameter "insertAtFirst"
 
     .prologue
-    .line 1550
+    .line 1782
     iget v0, p2, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->screen:I
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -2047,13 +1975,13 @@
 
     check-cast v5, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1551
+    .line 1783
     .local v5, layout:Lcom/sec/android/app/twlauncher/CellLayout;
     const/4 v0, 0x2
 
     new-array v7, v0, [I
 
-    .line 1553
+    .line 1785
     .local v7, result:[I
     iget v0, p2, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->cellX:I
 
@@ -2061,7 +1989,7 @@
 
     invoke-virtual {v5, v0, v1, v7}, Lcom/sec/android/app/twlauncher/CellLayout;->cellToPoint(II[I)V
 
-    .line 1554
+    .line 1786
     const/4 v1, 0x0
 
     const/4 v0, 0x0
@@ -2080,7 +2008,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/sec/android/app/twlauncher/Workspace;->onDropExternal(Lcom/sec/android/app/twlauncher/DragSource;IILjava/lang/Object;Lcom/sec/android/app/twlauncher/CellLayout;Z)V
 
-    .line 1555
+    .line 1787
     return-void
 .end method
 
@@ -2103,7 +2031,7 @@
     .local p1, views:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v3, 0x1
 
-    .line 992
+    .line 1113
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->getMenuManager()Lcom/sec/android/app/twlauncher/MenuManager;
@@ -2116,16 +2044,16 @@
 
     if-nez v1, :cond_0
 
-    .line 993
+    .line 1114
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getOpenFolder()Lcom/sec/android/app/twlauncher/Folder;
 
     move-result-object v0
 
-    .line 994
+    .line 1115
     .local v0, openFolder:Lcom/sec/android/app/twlauncher/Folder;
     if-nez v0, :cond_2
 
-    .line 995
+    .line 1116
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -2134,17 +2062,17 @@
 
     invoke-virtual {v1, p1, p2}, Landroid/view/View;->addFocusables(Ljava/util/ArrayList;I)V
 
-    .line 996
+    .line 1117
     const/16 v1, 0x11
 
     if-ne p2, v1, :cond_1
 
-    .line 997
+    .line 1118
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     if-lez v1, :cond_0
 
-    .line 998
+    .line 1119
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     sub-int/2addr v1, v3
@@ -2155,20 +2083,20 @@
 
     invoke-virtual {v1, p1, p2}, Landroid/view/View;->addFocusables(Ljava/util/ArrayList;I)V
 
-    .line 1009
+    .line 1130
     .end local v0           #openFolder:Lcom/sec/android/app/twlauncher/Folder;
     :cond_0
     :goto_0
     return-void
 
-    .line 1000
+    .line 1121
     .restart local v0       #openFolder:Lcom/sec/android/app/twlauncher/Folder;
     :cond_1
     const/16 v1, 0x42
 
     if-ne p2, v1, :cond_0
 
-    .line 1001
+    .line 1122
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
@@ -2179,7 +2107,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 1002
+    .line 1123
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     add-int/lit8 v1, v1, 0x1
@@ -2192,7 +2120,7 @@
 
     goto :goto_0
 
-    .line 1006
+    .line 1127
     :cond_2
     invoke-virtual {v0, p1, p2}, Lcom/sec/android/app/twlauncher/Folder;->addFocusables(Ljava/util/ArrayList;I)V
 
@@ -2208,7 +2136,7 @@
     .parameter "spanY"
 
     .prologue
-    .line 458
+    .line 483
     iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     const/4 v7, 0x0
@@ -2227,7 +2155,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/sec/android/app/twlauncher/Workspace;->addInScreen(Landroid/view/View;IIIIIZ)V
 
-    .line 459
+    .line 484
     return-void
 .end method
 
@@ -2241,7 +2169,7 @@
     .parameter "insert"
 
     .prologue
-    .line 473
+    .line 498
     iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     move-object v0, p0
@@ -2260,7 +2188,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/sec/android/app/twlauncher/Workspace;->addInScreen(Landroid/view/View;IIIIIZ)V
 
-    .line 474
+    .line 499
     return-void
 .end method
 
@@ -2274,7 +2202,7 @@
     .parameter "spanY"
 
     .prologue
-    .line 488
+    .line 513
     const/4 v7, 0x0
 
     move-object v0, p0
@@ -2293,7 +2221,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/sec/android/app/twlauncher/Workspace;->addInScreen(Landroid/view/View;IIIIIZ)V
 
-    .line 489
+    .line 514
     return-void
 .end method
 
@@ -2308,7 +2236,7 @@
     .parameter "insert"
 
     .prologue
-    .line 504
+    .line 529
     if-ltz p2, :cond_0
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
@@ -2317,7 +2245,7 @@
 
     if-lt p2, v5, :cond_2
 
-    .line 506
+    .line 531
     :cond_0
     const-string v5, "Launcher.Workspace"
 
@@ -2373,16 +2301,16 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 509
+    .line 534
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mContext:Landroid/content/Context;
 
-    .line 510
+    .line 535
     .local v1, context:Landroid/content/Context;
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 511
+    .line 536
     .local v0, contentResolver:Landroid/content/ContentResolver;
     sget-object v5, Lcom/sec/android/app/twlauncher/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
 
@@ -2408,29 +2336,29 @@
 
     invoke-virtual {v0, v5, v6, v7}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 541
+    .line 566
     .end local v0           #contentResolver:Landroid/content/ContentResolver;
     .end local v1           #context:Landroid/content/Context;
     :cond_1
     :goto_0
     return-void
 
-    .line 518
+    .line 543
     :cond_2
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
 
-    .line 520
+    .line 545
     invoke-virtual {p0, p2}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     check-cast v3, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 521
+    .line 546
     .local v3, group:Lcom/sec/android/app/twlauncher/CellLayout;
     const/4 v4, 0x0
 
-    .line 522
+    .line 547
     .local v4, lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2446,7 +2374,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 523
+    .line 548
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
@@ -2454,18 +2382,18 @@
     .end local v4           #lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     check-cast v4, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
 
-    .line 526
+    .line 551
     .restart local v4       #lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     :cond_3
     if-nez v4, :cond_5
 
-    .line 527
+    .line 552
     new-instance v4, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
 
     .end local v4           #lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     invoke-direct {v4, p3, p4, p5, p6}, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;-><init>(IIII)V
 
-    .line 534
+    .line 559
     .restart local v4       #lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     :goto_1
     if-eqz p7, :cond_6
@@ -2475,23 +2403,23 @@
     :goto_2
     invoke-virtual {v3, p1, v5, v4}, Lcom/sec/android/app/twlauncher/CellLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 535
+    .line 560
     instance-of v5, p1, Lcom/sec/android/app/twlauncher/Folder;
 
     if-nez v5, :cond_4
 
-    .line 536
+    .line 561
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLongClickListener:Landroid/view/View$OnLongClickListener;
 
     invoke-virtual {p1, v5}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 539
+    .line 564
     :cond_4
     invoke-virtual {p0, p2}, Lcom/sec/android/app/twlauncher/Workspace;->getOpenFolder(I)Lcom/sec/android/app/twlauncher/Folder;
 
     move-result-object v2
 
-    .line 540
+    .line 565
     .local v2, folder:Lcom/sec/android/app/twlauncher/Folder;
     if-eqz v2, :cond_1
 
@@ -2499,23 +2427,23 @@
 
     goto :goto_0
 
-    .line 529
+    .line 554
     .end local v2           #folder:Lcom/sec/android/app/twlauncher/Folder;
     :cond_5
     iput p3, v4, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;->cellX:I
 
-    .line 530
+    .line 555
     iput p4, v4, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;->cellY:I
 
-    .line 531
+    .line 556
     iput p5, v4, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;->cellHSpan:I
 
-    .line 532
+    .line 557
     iput p6, v4, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;->cellVSpan:I
 
     goto :goto_1
 
-    .line 534
+    .line 559
     :cond_6
     const/4 v5, -0x1
 
@@ -2527,12 +2455,12 @@
     .parameter "child"
 
     .prologue
-    .line 331
+    .line 356
     instance-of v0, p1, Lcom/sec/android/app/twlauncher/CellLayout;
 
     if-nez v0, :cond_0
 
-    .line 332
+    .line 357
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "A Workspace can only have CellLayout children."
@@ -2541,11 +2469,11 @@
 
     throw v0
 
-    .line 334
+    .line 359
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 335
+    .line 360
     return-void
 .end method
 
@@ -2555,12 +2483,12 @@
     .parameter "index"
 
     .prologue
-    .line 339
+    .line 364
     instance-of v0, p1, Lcom/sec/android/app/twlauncher/CellLayout;
 
     if-nez v0, :cond_0
 
-    .line 340
+    .line 365
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "A Workspace can only have CellLayout children."
@@ -2569,11 +2497,11 @@
 
     throw v0
 
-    .line 342
+    .line 367
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 343
+    .line 368
     return-void
 .end method
 
@@ -2584,12 +2512,12 @@
     .parameter "height"
 
     .prologue
-    .line 347
+    .line 372
     instance-of v0, p1, Lcom/sec/android/app/twlauncher/CellLayout;
 
     if-nez v0, :cond_0
 
-    .line 348
+    .line 373
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "A Workspace can only have CellLayout children."
@@ -2598,11 +2526,11 @@
 
     throw v0
 
-    .line 350
+    .line 375
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
 
-    .line 351
+    .line 376
     return-void
 .end method
 
@@ -2613,12 +2541,12 @@
     .parameter "params"
 
     .prologue
-    .line 323
+    .line 348
     instance-of v0, p1, Lcom/sec/android/app/twlauncher/CellLayout;
 
     if-nez v0, :cond_0
 
-    .line 324
+    .line 349
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "A Workspace can only have CellLayout children."
@@ -2627,11 +2555,11 @@
 
     throw v0
 
-    .line 326
+    .line 351
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 327
+    .line 352
     return-void
 .end method
 
@@ -2641,12 +2569,12 @@
     .parameter "params"
 
     .prologue
-    .line 355
+    .line 380
     instance-of v0, p1, Lcom/sec/android/app/twlauncher/CellLayout;
 
     if-nez v0, :cond_0
 
-    .line 356
+    .line 381
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "A Workspace can only have CellLayout children."
@@ -2655,11 +2583,11 @@
 
     throw v0
 
-    .line 358
+    .line 383
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 359
+    .line 384
     return-void
 .end method
 
@@ -2667,7 +2595,7 @@
     .locals 1
 
     .prologue
-    .line 1883
+    .line 2134
     iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
     return v0
@@ -2679,12 +2607,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1285
+    .line 1415
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
 
-    .line 1286
+    .line 1416
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -2692,23 +2620,23 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 1287
+    .line 1417
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1288
+    .line 1418
     .local v2, layout:Lcom/sec/android/app/twlauncher/CellLayout;
     invoke-virtual {v2, v5}, Lcom/sec/android/app/twlauncher/CellLayout;->setChildrenDrawnWithCacheEnabled(Z)V
 
-    .line 1286
+    .line 1416
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1291
+    .line 1421
     .end local v2           #layout:Lcom/sec/android/app/twlauncher/CellLayout;
     :cond_0
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
@@ -2717,36 +2645,40 @@
 
     move-result-object v3
 
-    .line 1292
+    .line 1422
     .local v3, tfz:Lcom/sec/android/app/twlauncher/TopFourZone;
     if-eqz v3, :cond_1
 
-    .line 1293
+    .line 1423
     invoke-virtual {v3, v5}, Lcom/sec/android/app/twlauncher/TopFourZone;->setDrawingCacheEnabled(Z)V
 
-    .line 1295
+    .line 1425
     :cond_1
     return-void
 .end method
 
 .method public computeScroll()V
-    .locals 6
+    .locals 7
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v6, -0x1
 
-    const/4 v4, -0x1
+    const/4 v3, 0x2
 
-    .line 638
+    const/4 v5, 0x0
+
+    const/4 v4, 0x1
+
+    .line 663
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v1}, Landroid/widget/Scroller;->computeScrollOffset()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_4
 
-    .line 639
+    .line 664
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v1}, Landroid/widget/Scroller;->getCurrX()I
@@ -2755,7 +2687,7 @@
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    .line 640
+    .line 665
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v1}, Landroid/widget/Scroller;->getCurrY()I
@@ -2764,104 +2696,240 @@
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollY:I
 
-    .line 641
+    .line 668
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v0
+
+    .line 669
+    .local v0, count:I
+    iget-boolean v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v1, :cond_0
+
+    if-lt v0, v3, :cond_0
+
+    .line 670
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v2
+
+    neg-int v2, v2
+
+    div-int/lit8 v2, v2, 0x2
+
+    if-ge v1, v2, :cond_3
+
+    .line 671
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v2
+
+    mul-int/2addr v2, v0
+
+    add-int/2addr v1, v2
+
+    iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    .line 678
+    :cond_0
+    :goto_0
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->isWindowOpaque()Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
-    .line 642
+    .line 679
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->updateWallpaperOffset()V
 
-    .line 644
-    :cond_0
+    .line 681
+    :cond_1
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->postInvalidate()V
 
-    .line 672
-    :cond_1
-    :goto_0
+    .line 723
+    .end local v0           #count:I
+    :cond_2
+    :goto_1
     return-void
 
-    .line 645
-    :cond_2
-    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+    .line 672
+    .restart local v0       #count:I
+    :cond_3
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    if-eq v1, v4, :cond_1
+    sub-int v2, v0, v4
 
-    .line 646
-    const/4 v1, 0x0
-
-    iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
-
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
     move-result v3
 
-    sub-int/2addr v3, v5
+    mul-int/2addr v2, v3
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v3
+
+    div-int/lit8 v3, v3, 0x2
+
+    add-int/2addr v2, v3
+
+    if-le v1, v2, :cond_0
+
+    .line 673
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
     move-result v2
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+    mul-int/2addr v2, v0
+
+    sub-int/2addr v1, v2
+
+    iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    goto :goto_0
+
+    .line 682
+    .end local v0           #count:I
+    :cond_4
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    if-eq v1, v6, :cond_2
+
+    .line 683
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v2
+
+    sub-int/2addr v2, v4
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    invoke-static {v5, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
-    .line 647
+    .line 684
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
 
-    .line 648
-    .local v0, count:I
-    const/4 v1, 0x2
+    .line 685
+    .restart local v0       #count:I
+    if-lt v0, v3, :cond_7
 
-    if-lt v0, v1, :cond_3
-
-    .line 649
+    .line 686
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWhichScreen()I
 
     move-result v1
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
-    .line 651
-    :cond_3
+    .line 688
+    iget-boolean v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v1, :cond_7
+
+    if-lt v0, v3, :cond_7
+
+    .line 689
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    if-gez v1, :cond_9
+
+    .line 690
+    sub-int v1, v0, v4
+
+    iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    .line 694
+    :cond_5
+    :goto_2
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    if-ltz v1, :cond_6
+
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    sub-int v2, v0, v4
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v3
+
+    mul-int/2addr v2, v3
+
+    if-le v1, v2, :cond_7
+
+    .line 695
+    :cond_6
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v2
+
+    rem-int/2addr v1, v2
+
+    if-nez v1, :cond_7
+
+    .line 696
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v2
+
+    mul-int/2addr v1, v2
+
+    invoke-virtual {p0, v1, v5}, Lcom/sec/android/app/twlauncher/Workspace;->scrollTo(II)V
+
+    .line 702
+    :cond_7
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher;->setScreen(I)V
 
-    .line 652
+    .line 703
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->saveScreenInfo()V
 
-    .line 653
-    iput v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+    .line 704
+    iput v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
 
-    .line 654
+    .line 705
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearChildrenCache()V
 
-    .line 655
+    .line 706
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    if-eq v1, v5, :cond_6
+    if-eq v1, v4, :cond_b
 
-    .line 656
+    .line 707
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->isAddWidgetState()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_a
 
-    .line 657
+    .line 708
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
@@ -2872,46 +2940,57 @@
 
     iput-boolean v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mExistWidgetSpace:Z
 
-    .line 661
-    :goto_1
+    .line 712
+    :goto_3
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_8
 
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/PageIndicator;->hide()V
 
-    .line 668
-    :cond_4
-    :goto_2
+    .line 719
+    :cond_8
+    :goto_4
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->postInvalidate()V
 
-    goto :goto_0
+    goto/16 :goto_1
 
-    .line 659
-    :cond_5
+    .line 691
+    :cond_9
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    if-lt v1, v0, :cond_5
+
+    .line 692
+    iput v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    goto :goto_2
+
+    .line 710
+    :cond_a
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->resumeScreen(I)V
 
-    goto :goto_1
+    goto :goto_3
 
-    .line 663
-    :cond_6
+    .line 714
+    :cond_b
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->isAddWidgetState()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_8
 
     iget-boolean v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_8
 
-    .line 664
+    .line 715
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
@@ -2922,314 +3001,496 @@
 
     iput-boolean v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mExistWidgetSpace:Z
 
-    goto :goto_2
+    goto :goto_4
 .end method
 
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 13
+    .locals 12
     .parameter "canvas"
 
     .prologue
-    const/4 v12, 0x0
+    .line 813
+    const/4 v8, 0x0
 
-    const/4 v11, 0x1
+    .line 817
+    .local v8, restore:Z
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    .line 739
-    const/4 v7, 0x0
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/Launcher;->getMenuManager()Lcom/sec/android/app/twlauncher/MenuManager;
 
-    .line 743
-    .local v7, restore:Z
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    move-result-object v9
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getMenuManager()Lcom/sec/android/app/twlauncher/MenuManager;
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/MenuManager;->isOpened()Z
 
-    move-result-object v8
+    move-result v9
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/MenuManager;->isOpened()Z
+    if-eqz v9, :cond_1
 
-    move-result v8
-
-    if-eqz v8, :cond_1
-
-    .line 815
+    .line 923
     :cond_0
     :goto_0
     return-void
 
-    .line 744
+    .line 818
     :cond_1
-    iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDelayedShortcutDisplay:Z
+    iget-boolean v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDelayedShortcutDisplay:Z
 
-    if-eqz v8, :cond_2
+    if-eqz v9, :cond_2
 
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getMenuManager()Lcom/sec/android/app/twlauncher/MenuManager;
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/Launcher;->getMenuManager()Lcom/sec/android/app/twlauncher/MenuManager;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/MenuManager;->isClosing()Z
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/MenuManager;->isClosing()Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_2
+    if-eqz v9, :cond_2
 
-    .line 745
+    .line 819
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->postInvalidate()V
 
     goto :goto_0
 
-    .line 749
+    .line 824
     :cond_2
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getQuickViewWorkspace()Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->isOpened()Z
-
-    move-result v8
-
-    if-nez v8, :cond_0
-
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getStateQuickNavigation()I
-
-    move-result v8
-
-    if-gez v8, :cond_0
-
-    .line 757
-    iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEnablePageIndicatorShowHide:Z
-
-    if-eqz v8, :cond_5
-
-    iget-boolean v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mOpenFlag:Z
-
-    if-eqz v8, :cond_5
-
-    .line 758
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
-
-    if-eqz v8, :cond_3
-
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
-
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/PageIndicator;->show()V
-
-    .line 759
-    :cond_3
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideIndicator:Ljava/lang/Runnable;
-
-    if-nez v8, :cond_4
-
-    .line 760
-    new-instance v8, Lcom/sec/android/app/twlauncher/Workspace$1;
-
-    invoke-direct {v8, p0}, Lcom/sec/android/app/twlauncher/Workspace$1;-><init>(Lcom/sec/android/app/twlauncher/Workspace;)V
-
-    iput-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideIndicator:Ljava/lang/Runnable;
-
-    .line 767
-    :cond_4
-    iput-boolean v12, p0, Lcom/sec/android/app/twlauncher/Workspace;->mOpenFlag:Z
-
-    .line 768
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideIndicator:Ljava/lang/Runnable;
-
-    const-wide/16 v9, 0x3e8
-
-    invoke-virtual {p0, v8, v9, v10}, Lcom/sec/android/app/twlauncher/Workspace;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 771
-    :cond_5
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
 
-    .line 773
+    .line 825
     .local v0, childCount:I
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
+    if-lez v0, :cond_0
 
-    if-eq v8, v11, :cond_8
+    .line 828
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/Launcher;->getQuickViewWorkspace()Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
 
-    const/4 v9, -0x1
+    move-result-object v9
 
-    if-ne v8, v9, :cond_8
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->isOpened()Z
 
-    move v5, v11
+    move-result v9
 
-    .line 775
-    .local v5, fastDraw:Z
+    if-nez v9, :cond_0
+
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/Launcher;->getStateQuickNavigation()I
+
+    move-result v9
+
+    if-gez v9, :cond_0
+
+    .line 836
+    const/4 v9, 0x1
+
+    sub-int v9, v0, v9
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getMeasuredWidth()I
+
+    move-result v10
+
+    mul-int v7, v9, v10
+
+    .line 837
+    .local v7, maxScrollX:I
+    iget-boolean v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v9, :cond_3
+
+    .line 838
+    const/4 v9, 0x1
+
+    if-le v0, v9, :cond_3
+
+    .line 839
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    if-gez v9, :cond_9
+
+    .line 840
+    const/4 v9, 0x1
+
+    sub-int v9, v0, v9
+
+    iput v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    .line 848
+    :cond_3
     :goto_1
-    if-eqz v5, :cond_9
+    iget-boolean v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEnablePageIndicatorShowHide:Z
 
-    .line 776
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+    if-eqz v9, :cond_6
 
-    invoke-virtual {p0, v8}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+    iget-boolean v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mOpenFlag:Z
 
-    move-result-object v8
+    if-eqz v9, :cond_6
 
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getDrawingTime()J
+    .line 849
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
-    move-result-wide v9
+    if-eqz v9, :cond_4
 
-    invoke-virtual {p0, p1, v8, v9, v10}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
-    .line 805
+    invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/PageIndicator;->show()V
+
+    .line 850
+    :cond_4
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideIndicator:Ljava/lang/Runnable;
+
+    if-nez v9, :cond_5
+
+    .line 851
+    new-instance v9, Lcom/sec/android/app/twlauncher/Workspace$1;
+
+    invoke-direct {v9, p0}, Lcom/sec/android/app/twlauncher/Workspace$1;-><init>(Lcom/sec/android/app/twlauncher/Workspace;)V
+
+    iput-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideIndicator:Ljava/lang/Runnable;
+
+    .line 858
+    :cond_5
+    const/4 v9, 0x0
+
+    iput-boolean v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mOpenFlag:Z
+
+    .line 859
+    iget-object v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideIndicator:Ljava/lang/Runnable;
+
+    const-wide/16 v10, 0x3e8
+
+    invoke-virtual {p0, v9, v10, v11}, Lcom/sec/android/app/twlauncher/Workspace;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 864
     :cond_6
-    :goto_2
-    invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->drawPageIndicator(Landroid/graphics/Canvas;)V
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    .line 808
-    sget-boolean v8, Lcom/sec/android/app/twlauncher/Launcher;->mIsDefaultIMEI:Z
+    const/4 v10, 0x1
 
-    if-eqz v8, :cond_7
-
-    .line 809
-    invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->drawDefaultIMEIText(Landroid/graphics/Canvas;)V
-
-    .line 812
-    :cond_7
-    if-eqz v7, :cond_0
-
-    .line 813
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    goto :goto_0
-
-    .end local v5           #fastDraw:Z
-    :cond_8
-    move v5, v12
-
-    .line 773
-    goto :goto_1
-
-    .line 778
-    .restart local v5       #fastDraw:Z
-    :cond_9
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+    if-eq v9, v10, :cond_a
 
     iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
 
-    sub-int v2, v8, v9
+    const/4 v10, -0x1
 
-    .line 779
+    if-ne v9, v10, :cond_a
+
+    const/4 v9, 0x1
+
+    move v5, v9
+
+    .line 866
+    .local v5, fastDraw:Z
+    :goto_2
+    if-eqz v5, :cond_b
+
+    .line 867
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    invoke-virtual {p0, v9}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v9
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getDrawingTime()J
+
+    move-result-wide v10
+
+    invoke-virtual {p0, p1, v9, v10, v11}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+    .line 913
+    :cond_7
+    :goto_3
+    invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->drawPageIndicator(Landroid/graphics/Canvas;)V
+
+    .line 916
+    sget-boolean v9, Lcom/sec/android/app/twlauncher/Launcher;->mIsDefaultIMEI:Z
+
+    if-eqz v9, :cond_8
+
+    .line 917
+    invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->drawDefaultIMEIText(Landroid/graphics/Canvas;)V
+
+    .line 920
+    :cond_8
+    if-eqz v8, :cond_0
+
+    .line 921
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    goto/16 :goto_0
+
+    .line 841
+    .end local v5           #fastDraw:Z
+    :cond_9
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    if-lt v9, v0, :cond_3
+
+    .line 842
+    const/4 v9, 0x0
+
+    iput v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    goto :goto_1
+
+    .line 864
+    :cond_a
+    const/4 v9, 0x0
+
+    move v5, v9
+
+    goto :goto_2
+
+    .line 869
+    .restart local v5       #fastDraw:Z
+    :cond_b
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    iget v10, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    sub-int v2, v9, v10
+
+    .line 870
     .local v2, diff:I
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getDrawingTime()J
 
     move-result-wide v3
 
-    .line 781
+    .line 872
     .local v3, drawingTime:J
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
 
-    if-ltz v8, :cond_c
+    if-ltz v9, :cond_10
 
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
 
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v9
-
-    if-ge v8, v9, :cond_c
+    if-ge v9, v0, :cond_10
 
     invoke-static {v2}, Ljava/lang/Math;->abs(I)I
 
-    move-result v8
+    move-result v9
 
-    if-ne v8, v11, :cond_c
+    const/4 v10, 0x1
 
-    .line 783
-    if-lez v2, :cond_b
+    if-eq v9, v10, :cond_c
 
-    .line 784
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+    iget-boolean v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
 
-    sub-int v9, v0, v11
+    if-eqz v9, :cond_10
 
-    if-ge v8, v9, :cond_a
+    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
 
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+    move-result v9
 
-    add-int/lit8 v8, v8, 0x1
+    const/4 v10, 0x1
 
-    invoke-virtual {p0, v8}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+    sub-int v10, v0, v10
 
-    move-result-object v8
+    if-ne v9, v10, :cond_10
 
-    invoke-virtual {p0, p1, v8, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    .line 788
-    :cond_a
-    :goto_3
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+    if-ltz v9, :cond_c
 
-    invoke-virtual {p0, v8}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    move-result-object v8
+    if-le v9, v7, :cond_10
 
-    invoke-virtual {p0, p1, v8, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-
-    .line 789
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
-
-    invoke-virtual {p0, v8}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v8
-
-    invoke-virtual {p0, p1, v8, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-
-    goto :goto_2
-
-    .line 786
-    :cond_b
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
-
-    if-lez v8, :cond_a
-
-    iget v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
-
-    sub-int/2addr v8, v11
-
-    invoke-virtual {p0, v8}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v8
-
-    invoke-virtual {p0, p1, v8, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-
-    goto :goto_3
-
-    .line 792
+    .line 877
     :cond_c
+    if-lez v2, :cond_f
+
+    .line 878
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    const/4 v10, 0x1
+
+    sub-int v10, v0, v10
+
+    if-ge v9, v10, :cond_d
+
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    add-int/lit8 v9, v9, 0x1
+
+    invoke-virtual {p0, v9}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v9
+
+    invoke-virtual {p0, p1, v9, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+    .line 882
+    :cond_d
+    :goto_4
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    invoke-virtual {p0, v9}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v9
+
+    invoke-virtual {p0, p1, v9, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+    .line 883
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    invoke-virtual {p0, v9}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v9
+
+    invoke-virtual {p0, p1, v9, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+    .line 893
+    :cond_e
+    iget-boolean v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v9, :cond_7
+
+    const/4 v9, 0x2
+
+    if-lt v0, v9, :cond_7
+
+    .line 894
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    if-gez v9, :cond_11
+
+    .line 895
+    neg-int v9, v0
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v10
+
+    mul-int/2addr v9, v10
+
+    int-to-float v9, v9
+
+    const/4 v10, 0x0
+
+    invoke-virtual {p1, v9, v10}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 896
+    const/4 v9, 0x1
+
+    sub-int v9, v0, v9
+
+    invoke-virtual {p0, v9}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v9
+
+    invoke-virtual {p0, p1, v9, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+    .line 897
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v9
+
+    mul-int/2addr v9, v0
+
+    int-to-float v9, v9
+
+    const/4 v10, 0x0
+
+    invoke-virtual {p1, v9, v10}, Landroid/graphics/Canvas;->translate(FF)V
+
+    goto/16 :goto_3
+
+    .line 880
+    :cond_f
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    if-lez v9, :cond_d
+
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    const/4 v10, 0x1
+
+    sub-int/2addr v9, v10
+
+    invoke-virtual {p0, v9}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v9
+
+    invoke-virtual {p0, p1, v9, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+    goto :goto_4
+
+    .line 886
+    :cond_10
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v1
 
-    .line 793
+    .line 887
     .local v1, count:I
     const/4 v6, 0x0
 
     .local v6, i:I
-    :goto_4
-    if-ge v6, v1, :cond_6
+    :goto_5
+    if-ge v6, v1, :cond_e
 
-    .line 794
+    .line 888
     invoke-virtual {p0, v6}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {p0, p1, v8, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    invoke-virtual {p0, p1, v9, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
-    .line 793
+    .line 887
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_4
+    goto :goto_5
+
+    .line 898
+    .end local v1           #count:I
+    .end local v6           #i:I
+    :cond_11
+    iget v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    if-le v9, v7, :cond_7
+
+    .line 899
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v9
+
+    mul-int/2addr v9, v0
+
+    int-to-float v9, v9
+
+    const/4 v10, 0x0
+
+    invoke-virtual {p1, v9, v10}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 900
+    const/4 v9, 0x0
+
+    invoke-virtual {p0, v9}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v9
+
+    invoke-virtual {p0, p1, v9, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+    .line 901
+    neg-int v9, v0
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v10
+
+    mul-int/2addr v9, v10
+
+    int-to-float v9, v9
+
+    const/4 v10, 0x0
+
+    invoke-virtual {p1, v9, v10}, Landroid/graphics/Canvas;->translate(FF)V
+
+    goto/16 :goto_3
 .end method
 
 .method public dispatchUnhandledMove(Landroid/view/View;I)Z
@@ -3240,19 +3501,19 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 976
+    .line 1097
     const/16 v0, 0x11
 
     if-ne p2, v0, :cond_0
 
-    .line 977
+    .line 1098
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getCurrentScreen()I
 
     move-result v0
 
     if-lez v0, :cond_1
 
-    .line 978
+    .line 1099
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getCurrentScreen()I
 
     move-result v0
@@ -3263,17 +3524,17 @@
 
     move v0, v2
 
-    .line 987
+    .line 1108
     :goto_0
     return v0
 
-    .line 981
+    .line 1102
     :cond_0
     const/16 v0, 0x42
 
     if-ne p2, v0, :cond_1
 
-    .line 982
+    .line 1103
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getCurrentScreen()I
 
     move-result v0
@@ -3286,7 +3547,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 983
+    .line 1104
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getCurrentScreen()I
 
     move-result v0
@@ -3297,10 +3558,10 @@
 
     move v0, v2
 
-    .line 984
+    .line 1105
     goto :goto_0
 
-    .line 987
+    .line 1108
     :cond_1
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->dispatchUnhandledMove(Landroid/view/View;I)Z
 
@@ -3310,246 +3571,480 @@
 .end method
 
 .method public drawWallpaperImage(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-    .locals 11
+    .locals 17
     .parameter "canvas"
     .parameter "drawDst"
 
     .prologue
-    const/4 v10, 0x1
+    .line 735
+    move-object/from16 v0, p0
 
-    .line 684
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageWallpaperDrawable()Landroid/graphics/drawable/Drawable;
+    move-object v13, v0
 
-    move-result-object v8
+    invoke-virtual {v13}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageWallpaperDrawable()Landroid/graphics/drawable/Drawable;
 
-    if-eqz v8, :cond_8
+    move-result-object v13
 
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    if-eqz v13, :cond_a
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageWallpaperDrawable()Landroid/graphics/drawable/Drawable;
+    move-object/from16 v0, p0
 
-    move-result-object v8
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-virtual {v8}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    move-object v13, v0
 
-    move-result v8
+    invoke-virtual {v13}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageWallpaperDrawable()Landroid/graphics/drawable/Drawable;
 
-    move v7, v8
+    move-result-object v13
 
-    .line 687
-    .local v7, wallpaperDrawableWidth:I
+    invoke-virtual {v13}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v13
+
+    move v12, v13
+
+    .line 738
+    .local v12, wallpaperDrawableWidth:I
     :goto_0
-    const/4 v0, 0x0
+    const/4 v4, 0x0
 
-    .line 689
-    .local v0, d:Landroid/graphics/drawable/Drawable;
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    .line 740
+    .local v4, d:Landroid/graphics/drawable/Drawable;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getMenuManager()Lcom/sec/android/app/twlauncher/MenuManager;
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    move-result-object v8
+    move-object v13, v0
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/MenuManager;->isOpened()Z
+    invoke-virtual {v13}, Lcom/sec/android/app/twlauncher/Launcher;->getMenuManager()Lcom/sec/android/app/twlauncher/MenuManager;
 
-    move-result v8
+    move-result-object v13
 
-    if-eqz v8, :cond_9
+    invoke-virtual {v13}, Lcom/sec/android/app/twlauncher/MenuManager;->isOpened()Z
 
-    .line 690
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    move-result v13
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageMenuWallpaperDrawable()Landroid/graphics/drawable/Drawable;
+    if-eqz v13, :cond_b
 
-    move-result-object v0
+    .line 741
+    move-object/from16 v0, p0
 
-    .line 691
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    .line 692
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    move-object v13, v0
+
+    invoke-virtual {v13}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageMenuWallpaperDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    .line 742
+    if-eqz v4, :cond_0
+
+    .line 743
+    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v12
+
+    .line 748
+    :cond_0
+    :goto_1
+    if-eqz v4, :cond_9
+
+    .line 750
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object v13, v0
+
+    move-object v0, v13
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    .line 751
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object v13, v0
+
+    const/4 v14, 0x0
+
+    iput v14, v13, Landroid/graphics/Rect;->left:I
+
+    .line 752
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object v13, v0
+
+    iput v12, v13, Landroid/graphics/Rect;->right:I
+
+    .line 753
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object v13, v0
+
+    invoke-virtual {v4, v13}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+
+    .line 755
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v13
+
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v14
+
+    const/4 v15, 0x1
+
+    sub-int/2addr v14, v15
+
+    mul-int v9, v13, v14
+
+    .line 756
+    .local v9, scrollXMax:I
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    move v8, v0
+
+    .line 757
+    .local v8, scrollX:I
+    if-gez v8, :cond_1
+
+    const/4 v8, 0x0
+
+    .line 758
+    :cond_1
+    if-le v8, v9, :cond_2
+
+    move v8, v9
+
+    .line 760
+    :cond_2
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v7
 
-    .line 697
-    :cond_0
-    :goto_1
-    if-eqz v0, :cond_7
+    .line 761
+    .local v7, savedCanvas:I
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->width()I
 
-    .line 699
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
+    move-result v13
 
-    invoke-virtual {v8, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    sub-int v10, v12, v13
 
-    .line 700
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
+    .line 762
+    .local v10, scrollableWidth:I
+    const/4 v11, 0x0
 
-    const/4 v9, 0x0
+    .line 763
+    .local v11, translateX:F
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
-    iput v9, v8, Landroid/graphics/Rect;->left:I
+    move-result v13
 
-    .line 701
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
+    const/4 v14, 0x1
 
-    iput v7, v8, Landroid/graphics/Rect;->right:I
+    if-le v13, v14, :cond_3
 
-    .line 702
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTmpRect:Landroid/graphics/Rect;
+    .line 764
+    neg-int v13, v10
 
-    invoke-virtual {v0, v8}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+    int-to-float v13, v13
 
-    .line 704
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+    int-to-float v14, v8
 
-    move-result v8
+    int-to-float v15, v9
 
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+    div-float/2addr v14, v15
 
-    move-result v9
+    mul-float v11, v13, v14
 
-    sub-int/2addr v9, v10
-
-    mul-int v4, v8, v9
-
-    .line 705
-    .local v4, scrollXMax:I
-    iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
-
-    .line 706
-    .local v3, scrollX:I
-    if-gez v3, :cond_1
-
-    const/4 v3, 0x0
-
-    .line 707
-    :cond_1
-    if-le v3, v4, :cond_2
-
-    move v3, v4
-
-    .line 709
-    :cond_2
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v2
-
-    .line 710
-    .local v2, savedCanvas:I
-    invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
-
-    move-result v8
-
-    sub-int v5, v7, v8
-
-    .line 711
-    .local v5, scrollableWidth:I
-    const/4 v6, 0x0
-
-    .line 712
-    .local v6, translateX:F
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v8
-
-    if-le v8, v10, :cond_3
-
-    .line 713
-    neg-int v8, v5
-
-    int-to-float v8, v8
-
-    int-to-float v9, v3
-
-    int-to-float v10, v4
-
-    div-float/2addr v9, v10
-
-    mul-float v6, v8, v9
-
-    .line 717
+    .line 768
     :cond_3
-    const/4 v1, 0x0
+    const/4 v5, 0x0
 
-    .line 718
-    .local v1, fillOuterSpace:Z
-    if-gtz v5, :cond_4
+    .line 769
+    .local v5, fillOuterSpace:Z
+    if-gtz v10, :cond_4
 
-    .line 720
-    const/4 v1, 0x1
+    .line 771
+    const/4 v5, 0x1
 
-    .line 721
-    int-to-float v8, v5
+    .line 772
+    int-to-float v13, v10
 
-    const/high16 v9, -0x4100
+    const/high16 v14, -0x4100
 
-    mul-float v6, v8, v9
+    mul-float v11, v13, v14
 
-    .line 723
+    .line 774
     :cond_4
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v8
+    move-result v13
 
-    invoke-virtual {p2}, Landroid/graphics/Rect;->height()I
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->height()I
 
-    move-result v9
+    move-result v14
 
-    if-ge v8, v9, :cond_5
+    if-ge v13, v14, :cond_5
 
-    .line 724
-    const/4 v1, 0x1
+    .line 775
+    const/4 v5, 0x1
 
-    .line 726
+    .line 777
     :cond_5
-    if-eqz v1, :cond_6
+    if-eqz v5, :cond_6
 
-    .line 727
-    const/high16 v8, -0x100
+    .line 778
+    const/high16 v13, -0x100
 
-    invoke-virtual {p1, v8}, Landroid/graphics/Canvas;->drawColor(I)V
+    move-object/from16 v0, p1
 
-    .line 731
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->drawColor(I)V
+
+    .line 783
     :cond_6
-    const/4 v8, 0x0
+    move-object/from16 v0, p0
 
-    invoke-virtual {p1, v6, v8}, Landroid/graphics/Canvas;->translate(FF)V
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
 
-    .line 732
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    move v13, v0
 
-    .line 733
-    invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    if-eqz v13, :cond_8
 
-    .line 735
-    .end local v1           #fillOuterSpace:Z
-    .end local v2           #savedCanvas:I
-    .end local v3           #scrollX:I
-    .end local v4           #scrollXMax:I
-    .end local v5           #scrollableWidth:I
-    .end local v6           #translateX:F
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    move v13, v0
+
+    if-eqz v13, :cond_8
+
+    .line 784
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v13
+
+    move-object/from16 v0, p0
+
+    iget-wide v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mSnaptoScreenStartTime:J
+
+    move-wide v15, v0
+
+    sub-long/2addr v13, v15
+
+    long-to-int v3, v13
+
+    .line 785
+    .local v3, current:I
+    int-to-float v13, v3
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mSnapToScreenDuration:I
+
+    move v14, v0
+
+    int-to-float v14, v14
+
+    div-float v6, v13, v14
+
+    .line 787
+    .local v6, progress:F
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    move v13, v0
+
+    const/4 v14, 0x2
+
+    if-ne v13, v14, :cond_c
+
+    .line 788
+    const/high16 v13, 0x3f80
+
+    cmpl-float v13, v6, v13
+
+    if-lez v13, :cond_7
+
+    .line 789
+    const/high16 v6, 0x3f80
+
+    .line 790
+    const/4 v13, 0x0
+
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    .line 791
+    const/4 v13, 0x0
+
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    .line 793
     :cond_7
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->width()I
+
+    move-result v13
+
+    int-to-float v13, v13
+
+    mul-float/2addr v13, v6
+
+    neg-float v11, v13
+
+    .line 805
+    .end local v3           #current:I
+    .end local v6           #progress:F
+    :cond_8
+    :goto_2
+    const/4 v13, 0x0
+
+    move-object/from16 v0, p1
+
+    move v1, v11
+
+    move v2, v13
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 806
+    move-object v0, v4
+
+    move-object/from16 v1, p1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 807
+    move-object/from16 v0, p1
+
+    move v1, v7
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
+
+    .line 809
+    .end local v5           #fillOuterSpace:Z
+    .end local v7           #savedCanvas:I
+    .end local v8           #scrollX:I
+    .end local v9           #scrollXMax:I
+    .end local v10           #scrollableWidth:I
+    .end local v11           #translateX:F
+    :cond_9
     return-void
 
-    .end local v0           #d:Landroid/graphics/drawable/Drawable;
-    .end local v7           #wallpaperDrawableWidth:I
-    :cond_8
-    move v7, v10
+    .line 735
+    .end local v4           #d:Landroid/graphics/drawable/Drawable;
+    .end local v12           #wallpaperDrawableWidth:I
+    :cond_a
+    const/4 v13, 0x1
 
-    .line 684
-    goto :goto_0
+    move v12, v13
 
-    .line 694
-    .restart local v0       #d:Landroid/graphics/drawable/Drawable;
-    .restart local v7       #wallpaperDrawableWidth:I
-    :cond_9
-    iget-object v8, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    goto/16 :goto_0
 
-    invoke-virtual {v8}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageWallpaperDrawable()Landroid/graphics/drawable/Drawable;
+    .line 745
+    .restart local v4       #d:Landroid/graphics/drawable/Drawable;
+    .restart local v12       #wallpaperDrawableWidth:I
+    :cond_b
+    move-object/from16 v0, p0
 
-    move-result-object v0
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    goto :goto_1
+    move-object v13, v0
+
+    invoke-virtual {v13}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageWallpaperDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    goto/16 :goto_1
+
+    .line 794
+    .restart local v3       #current:I
+    .restart local v5       #fillOuterSpace:Z
+    .restart local v6       #progress:F
+    .restart local v7       #savedCanvas:I
+    .restart local v8       #scrollX:I
+    .restart local v9       #scrollXMax:I
+    .restart local v10       #scrollableWidth:I
+    .restart local v11       #translateX:F
+    :cond_c
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    move v13, v0
+
+    const/4 v14, 0x1
+
+    if-ne v13, v14, :cond_8
+
+    .line 795
+    const/high16 v13, 0x3f80
+
+    cmpl-float v13, v6, v13
+
+    if-lez v13, :cond_d
+
+    .line 796
+    const/high16 v6, 0x3f80
+
+    .line 797
+    const/4 v13, 0x0
+
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    .line 798
+    const/4 v13, 0x0
+
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    .line 800
+    :cond_d
+    const/high16 v13, 0x3f80
+
+    sub-float/2addr v13, v6
+
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->width()I
+
+    move-result v14
+
+    int-to-float v14, v14
+
+    mul-float/2addr v13, v14
+
+    neg-float v11, v13
+
+    goto :goto_2
 .end method
 
 .method enableChildrenCache(II)V
@@ -3560,22 +4055,22 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 1261
+    .line 1391
     if-le p1, p2, :cond_0
 
-    .line 1262
+    .line 1392
     move p1, p2
 
-    .line 1263
+    .line 1393
     move p2, p1
 
-    .line 1266
+    .line 1396
     :cond_0
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
 
-    .line 1268
+    .line 1398
     .local v0, count:I
     const/4 v4, 0x0
 
@@ -3583,40 +4078,40 @@
 
     move-result p1
 
-    .line 1269
+    .line 1399
     sub-int v4, v0, v5
 
     invoke-static {p2, v4}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    .line 1271
+    .line 1401
     move v1, p1
 
     .local v1, i:I
     :goto_0
     if-gt v1, p2, :cond_1
 
-    .line 1272
+    .line 1402
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1273
+    .line 1403
     .local v2, layout:Lcom/sec/android/app/twlauncher/CellLayout;
     invoke-virtual {v2, v5}, Lcom/sec/android/app/twlauncher/CellLayout;->setChildrenDrawnWithCacheEnabled(Z)V
 
-    .line 1274
+    .line 1404
     invoke-virtual {v2, v5}, Lcom/sec/android/app/twlauncher/CellLayout;->setChildrenDrawingCacheEnabled(Z)V
 
-    .line 1271
+    .line 1401
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1277
+    .line 1407
     .end local v2           #layout:Lcom/sec/android/app/twlauncher/CellLayout;
     :cond_1
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
@@ -3625,17 +4120,17 @@
 
     move-result-object v3
 
-    .line 1278
+    .line 1408
     .local v3, tfz:Lcom/sec/android/app/twlauncher/TopFourZone;
     if-eqz v3, :cond_2
 
-    .line 1279
+    .line 1409
     invoke-virtual {v3, v5}, Lcom/sec/android/app/twlauncher/TopFourZone;->setDrawingCacheEnabled(Z)V
 
-    .line 1280
+    .line 1410
     invoke-virtual {v3, v5}, Lcom/sec/android/app/twlauncher/TopFourZone;->buildDrawingCache(Z)V
 
-    .line 1282
+    .line 1412
     :cond_2
     return-void
 .end method
@@ -3647,7 +4142,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 560
+    .line 585
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -3656,16 +4151,16 @@
 
     check-cast v0, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 561
+    .line 586
     .local v0, group:Lcom/sec/android/app/twlauncher/CellLayout;
     if-eqz v0, :cond_0
 
-    .line 562
+    .line 587
     invoke-virtual {v0, p1, v2}, Lcom/sec/android/app/twlauncher/CellLayout;->findAllVacantCells([ZLandroid/view/View;)Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     move-result-object v1
 
-    .line 564
+    .line 589
     :goto_0
     return-object v1
 
@@ -3679,7 +4174,7 @@
     .locals 1
 
     .prologue
-    .line 428
+    .line 453
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     return v0
@@ -3690,12 +4185,12 @@
     .parameter "tag"
 
     .prologue
-    .line 1846
+    .line 2097
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v8
 
-    .line 1847
+    .line 2098
     .local v8, screenCount:I
     const/4 v7, 0x0
 
@@ -3703,20 +4198,20 @@
     :goto_0
     if-ge v7, v8, :cond_2
 
-    .line 1848
+    .line 2099
     invoke-virtual {p0, v7}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     check-cast v3, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1849
+    .line 2100
     .local v3, currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     invoke-virtual {v3}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v2
 
-    .line 1850
+    .line 2101
     .local v2, count:I
     const/4 v5, 0x0
 
@@ -3724,12 +4219,12 @@
     :goto_1
     if-ge v5, v2, :cond_1
 
-    .line 1851
+    .line 2102
     invoke-virtual {v3, v5}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1852
+    .line 2103
     .local v1, child:Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3737,7 +4232,7 @@
 
     check-cast v6, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
 
-    .line 1853
+    .line 2104
     .local v6, lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     iget v9, v6, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;->cellHSpan:I
 
@@ -3759,14 +4254,14 @@
 
     if-eqz v9, :cond_0
 
-    .line 1854
+    .line 2105
     move-object v0, v1
 
     check-cast v0, Lcom/sec/android/app/twlauncher/Folder;
 
     move-object v4, v0
 
-    .line 1855
+    .line 2106
     .local v4, f:Lcom/sec/android/app/twlauncher/Folder;
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/Folder;->getInfo()Lcom/sec/android/app/twlauncher/FolderInfo;
 
@@ -3776,7 +4271,7 @@
 
     move-object v9, v4
 
-    .line 1861
+    .line 2112
     .end local v1           #child:Landroid/view/View;
     .end local v2           #count:I
     .end local v3           #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -3786,7 +4281,7 @@
     :goto_2
     return-object v9
 
-    .line 1850
+    .line 2101
     .restart local v1       #child:Landroid/view/View;
     .restart local v2       #count:I
     .restart local v3       #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -3797,7 +4292,7 @@
 
     goto :goto_1
 
-    .line 1847
+    .line 2098
     .end local v1           #child:Landroid/view/View;
     .end local v6           #lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     :cond_1
@@ -3805,7 +4300,7 @@
 
     goto :goto_0
 
-    .line 1861
+    .line 2112
     .end local v2           #count:I
     .end local v3           #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     .end local v5           #i:I
@@ -3821,7 +4316,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 379
+    .line 404
     iget-object v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v6}, Landroid/widget/Scroller;->isFinished()Z
@@ -3834,18 +4329,18 @@
 
     move v4, v6
 
-    .line 380
+    .line 405
     .local v4, index:I
     :goto_0
     const/4 v2, 0x0
 
-    .line 381
+    .line 406
     .local v2, currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     const/4 v6, -0x1
 
     if-ne v4, v6, :cond_1
 
-    .line 382
+    .line 407
     iget v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v6}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -3855,18 +4350,18 @@
     .end local v2           #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     check-cast v2, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 386
+    .line 411
     .restart local v2       #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     :goto_1
     if-nez v2, :cond_2
 
     move-object v6, v8
 
-    .line 395
+    .line 420
     :goto_2
     return-object v6
 
-    .line 379
+    .line 404
     .end local v2           #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     .end local v4           #index:I
     :cond_0
@@ -3876,7 +4371,7 @@
 
     goto :goto_0
 
-    .line 384
+    .line 409
     .restart local v2       #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     .restart local v4       #index:I
     :cond_1
@@ -3890,13 +4385,13 @@
     .restart local v2       #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     goto :goto_1
 
-    .line 387
+    .line 412
     :cond_2
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v1
 
-    .line 388
+    .line 413
     .local v1, count:I
     const/4 v3, 0x0
 
@@ -3904,12 +4399,12 @@
     :goto_3
     if-ge v3, v1, :cond_4
 
-    .line 389
+    .line 414
     invoke-virtual {v2, v3}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 390
+    .line 415
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3917,7 +4412,7 @@
 
     check-cast v5, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
 
-    .line 391
+    .line 416
     .local v5, lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     iget v6, v5, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;->cellHSpan:I
 
@@ -3939,7 +4434,7 @@
 
     if-eqz v6, :cond_3
 
-    .line 392
+    .line 417
     check-cast v0, Lcom/sec/android/app/twlauncher/Folder;
 
     .end local v0           #child:Landroid/view/View;
@@ -3947,7 +4442,7 @@
 
     goto :goto_2
 
-    .line 388
+    .line 413
     .restart local v0       #child:Landroid/view/View;
     :cond_3
     add-int/lit8 v3, v3, 0x1
@@ -3959,7 +4454,7 @@
     :cond_4
     move-object v6, v8
 
-    .line 395
+    .line 420
     goto :goto_2
 .end method
 
@@ -3970,30 +4465,30 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 362
+    .line 387
     invoke-virtual {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 363
+    .line 388
     .local v2, currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     if-nez v2, :cond_0
 
     move-object v5, v7
 
-    .line 372
+    .line 397
     :goto_0
     return-object v5
 
-    .line 364
+    .line 389
     :cond_0
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v1
 
-    .line 365
+    .line 390
     .local v1, count:I
     const/4 v3, 0x0
 
@@ -4001,12 +4496,12 @@
     :goto_1
     if-ge v3, v1, :cond_2
 
-    .line 366
+    .line 391
     invoke-virtual {v2, v3}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 367
+    .line 392
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -4014,7 +4509,7 @@
 
     check-cast v4, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
 
-    .line 368
+    .line 393
     .local v4, lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     iget v5, v4, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;->cellHSpan:I
 
@@ -4036,7 +4531,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 369
+    .line 394
     check-cast v0, Lcom/sec/android/app/twlauncher/Folder;
 
     .end local v0           #child:Landroid/view/View;
@@ -4044,7 +4539,7 @@
 
     goto :goto_0
 
-    .line 365
+    .line 390
     .restart local v0       #child:Landroid/view/View;
     :cond_1
     add-int/lit8 v3, v3, 0x1
@@ -4056,7 +4551,7 @@
     :cond_2
     move-object v5, v7
 
-    .line 372
+    .line 397
     goto :goto_0
 .end method
 
@@ -4073,18 +4568,18 @@
     .end annotation
 
     .prologue
-    .line 399
+    .line 424
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v7
 
-    .line 400
+    .line 425
     .local v7, screens:I
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v7}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 402
+    .line 427
     .local v3, folders:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sec/android/app/twlauncher/Folder;>;"
     const/4 v6, 0x0
 
@@ -4092,20 +4587,20 @@
     :goto_0
     if-ge v6, v7, :cond_2
 
-    .line 403
+    .line 428
     invoke-virtual {p0, v6}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 404
+    .line 429
     .local v2, currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v1
 
-    .line 405
+    .line 430
     .local v1, count:I
     const/4 v4, 0x0
 
@@ -4113,12 +4608,12 @@
     :goto_1
     if-ge v4, v1, :cond_0
 
-    .line 406
+    .line 431
     invoke-virtual {v2, v4}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 407
+    .line 432
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -4126,7 +4621,7 @@
 
     check-cast v5, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
 
-    .line 408
+    .line 433
     .local v5, lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     iget v8, v5, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;->cellHSpan:I
 
@@ -4148,20 +4643,20 @@
 
     if-eqz v8, :cond_1
 
-    .line 409
+    .line 434
     check-cast v0, Lcom/sec/android/app/twlauncher/Folder;
 
     .end local v0           #child:Landroid/view/View;
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 402
+    .line 427
     .end local v5           #lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     :cond_0
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 405
+    .line 430
     .restart local v0       #child:Landroid/view/View;
     .restart local v5       #lp:Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
     :cond_1
@@ -4169,7 +4664,7 @@
 
     goto :goto_1
 
-    .line 415
+    .line 440
     .end local v0           #child:Landroid/view/View;
     .end local v1           #count:I
     .end local v2           #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -4185,14 +4680,14 @@
     .parameter "y"
 
     .prologue
-    .line 2206
+    .line 2468
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
     if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
-    .line 2207
+    .line 2469
     :goto_0
     return v0
 
@@ -4211,25 +4706,25 @@
     .parameter "v"
 
     .prologue
-    .line 1832
+    .line 2083
     const/4 v2, -0x1
 
-    .line 1833
+    .line 2084
     .local v2, result:I
     if-eqz p1, :cond_1
 
-    .line 1834
+    .line 2085
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
-    .line 1835
+    .line 2086
     .local v3, vp:Landroid/view/ViewParent;
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
 
-    .line 1836
+    .line 2087
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -4237,7 +4732,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1837
+    .line 2088
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
@@ -4246,14 +4741,14 @@
 
     move v4, v1
 
-    .line 1842
+    .line 2093
     .end local v0           #count:I
     .end local v1           #i:I
     .end local v3           #vp:Landroid/view/ViewParent;
     :goto_1
     return v4
 
-    .line 1836
+    .line 2087
     .restart local v0       #count:I
     .restart local v1       #i:I
     .restart local v3       #vp:Landroid/view/ViewParent;
@@ -4268,7 +4763,7 @@
     :cond_1
     move v4, v2
 
-    .line 1842
+    .line 2093
     goto :goto_1
 .end method
 
@@ -4277,12 +4772,12 @@
     .parameter "tag"
 
     .prologue
-    .line 1865
+    .line 2116
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v5
 
-    .line 1866
+    .line 2117
     .local v5, screenCount:I
     const/4 v4, 0x0
 
@@ -4290,20 +4785,20 @@
     :goto_0
     if-ge v4, v5, :cond_2
 
-    .line 1867
+    .line 2118
     invoke-virtual {p0, v4}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1868
+    .line 2119
     .local v2, currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v1
 
-    .line 1869
+    .line 2120
     .local v1, count:I
     const/4 v3, 0x0
 
@@ -4311,12 +4806,12 @@
     :goto_1
     if-ge v3, v1, :cond_1
 
-    .line 1870
+    .line 2121
     invoke-virtual {v2, v3}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1871
+    .line 2122
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -4326,7 +4821,7 @@
 
     move-object v6, v0
 
-    .line 1876
+    .line 2127
     .end local v0           #child:Landroid/view/View;
     .end local v1           #count:I
     .end local v2           #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -4334,7 +4829,7 @@
     :goto_2
     return-object v6
 
-    .line 1869
+    .line 2120
     .restart local v0       #child:Landroid/view/View;
     .restart local v1       #count:I
     .restart local v2       #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -4344,14 +4839,14 @@
 
     goto :goto_1
 
-    .line 1866
+    .line 2117
     .end local v0           #child:Landroid/view/View;
     :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 1876
+    .line 2127
     .end local v1           #count:I
     .end local v2           #currentScreen:Lcom/sec/android/app/twlauncher/CellLayout;
     .end local v3           #i:I
@@ -4365,12 +4860,12 @@
     .locals 1
 
     .prologue
-    .line 831
+    .line 939
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mExistWidgetSpace:Z
 
-    .line 832
+    .line 940
     return-void
 .end method
 
@@ -4378,7 +4873,7 @@
     .locals 1
 
     .prologue
-    .line 676
+    .line 727
     const/4 v0, 0x0
 
     return v0
@@ -4388,23 +4883,35 @@
     .locals 2
 
     .prologue
-    .line 2155
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getDefaultHomeScreen()I
+    .line 2414
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
 
+    div-int/lit8 v0, v0, 0x2
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v1
+
+    rem-int/lit8 v1, v1, 0x2
+
+    add-int/2addr v0, v1
+
+    const/4 v1, 0x1
+
+    sub-int/2addr v0, v1
+
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultScreen:I
 
-    .line 2159
+    .line 2421
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultScreen:I
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSnapToScreenDuration:I
 
     invoke-virtual {p0, v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(II)V
 
-    .line 2160
+    .line 2422
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultScreen:I
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -4413,7 +4920,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    .line 2161
+    .line 2423
     return-void
 .end method
 
@@ -4427,10 +4934,10 @@
     .parameter "dragInfo"
 
     .prologue
-    .line 1627
+    .line 1859
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
 
-    .line 1631
+    .line 1863
     return-void
 .end method
 
@@ -4444,10 +4951,10 @@
     .parameter "dragInfo"
 
     .prologue
-    .line 1642
+    .line 1874
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
 
-    .line 1650
+    .line 1882
     return-void
 .end method
 
@@ -4461,7 +4968,7 @@
     .parameter "dragInfo"
 
     .prologue
-    .line 1638
+    .line 1870
     return-void
 .end method
 
@@ -4475,7 +4982,7 @@
     .parameter
 
     .prologue
-    .line 1558
+    .line 1790
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getQuickViewWorkspace()Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
@@ -4488,21 +4995,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 1559
+    .line 1791
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->closeQuickViewWorkspace()V
 
-    .line 1562
+    .line 1794
     :cond_0
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getCurrentDropLayout()Lcom/sec/android/app/twlauncher/CellLayout;
 
     move-result-object v5
 
-    .line 1563
+    .line 1795
     if-eq p1, p0, :cond_2
 
-    .line 1564
+    .line 1796
     sub-int v2, p2, p4
 
     sub-int v3, p3, p5
@@ -4515,23 +5022,23 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/sec/android/app/twlauncher/Workspace;->onDropExternal(Lcom/sec/android/app/twlauncher/DragSource;IILjava/lang/Object;Lcom/sec/android/app/twlauncher/CellLayout;)V
 
-    .line 1605
+    .line 1837
     :cond_1
     :goto_0
     return-void
 
-    .line 1567
+    .line 1799
     :cond_2
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     if-eqz v0, :cond_1
 
-    .line 1568
+    .line 1800
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     iget-object v11, v0, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->cell:Landroid/view/View;
 
-    .line 1569
+    .line 1801
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
@@ -4544,7 +5051,7 @@
 
     move v4, v0
 
-    .line 1570
+    .line 1802
     :goto_1
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
@@ -4552,7 +5059,7 @@
 
     if-eq v4, v0, :cond_5
 
-    .line 1571
+    .line 1803
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     iget v0, v0, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->screen:I
@@ -4563,10 +5070,10 @@
 
     check-cast p1, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1572
+    .line 1804
     invoke-virtual {p1, v11}, Lcom/sec/android/app/twlauncher/CellLayout;->removeView(Landroid/view/View;)V
 
-    .line 1575
+    .line 1807
     if-eqz v11, :cond_4
 
     invoke-virtual {v11}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -4575,7 +5082,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1576
+    .line 1808
     const-string v0, "Launcher.Workspace"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4626,21 +5133,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1578
+    .line 1810
     invoke-virtual {v11}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    .line 1579
+    .line 1811
     invoke-virtual {v11}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/sec/android/app/twlauncher/ItemInfo;
 
-    .line 1580
+    .line 1812
     const-string v0, "Launcher.Workspace"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4665,7 +5172,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1582
+    .line 1814
     :cond_3
     invoke-virtual {v11}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -4675,11 +5182,11 @@
 
     invoke-virtual {p1, v11}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1585
+    .line 1817
     :cond_4
     invoke-virtual {v5, v11}, Lcom/sec/android/app/twlauncher/CellLayout;->addView(Landroid/view/View;)V
 
-    .line 1587
+    .line 1819
     :cond_5
     sub-int v7, p2, p4
 
@@ -4705,31 +5212,31 @@
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTargetCell:[I
 
-    .line 1589
+    .line 1821
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTargetCell:[I
 
     if-eqz v0, :cond_1
 
-    .line 1590
+    .line 1822
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTargetCell:[I
 
     invoke-virtual {v5, v11, v0}, Lcom/sec/android/app/twlauncher/CellLayout;->onDropChild(Landroid/view/View;[I)V
 
-    .line 1592
+    .line 1824
     invoke-virtual {v11}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/sec/android/app/twlauncher/ItemInfo;
 
-    .line 1593
+    .line 1825
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p1
 
     check-cast p1, Lcom/sec/android/app/twlauncher/CellLayout$LayoutParams;
 
-    .line 1594
+    .line 1826
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     const-wide/16 v2, -0x64
@@ -4740,12 +5247,12 @@
 
     invoke-static/range {v0 .. v6}, Lcom/sec/android/app/twlauncher/LauncherModel;->moveItemInDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;JIII)V
 
-    .line 1597
+    .line 1829
     instance-of v0, v1, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
 
     if-eqz v0, :cond_6
 
-    .line 1598
+    .line 1830
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getSamsungWidgetPackageManager()Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
@@ -4758,20 +5265,20 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;->resumeWidget(Landroid/app/ActivityGroup;Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;)V
 
-    .line 1601
+    .line 1833
     :cond_6
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getOpenFolder()Lcom/sec/android/app/twlauncher/Folder;
 
     move-result-object v0
 
-    .line 1602
+    .line 1834
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Folder;->bringToFront()V
 
     goto/16 :goto_0
 
-    .line 1569
+    .line 1801
     :cond_7
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
 
@@ -4787,20 +5294,20 @@
     .parameter "dragInfo"
 
     .prologue
-    .line 1795
+    .line 2027
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
 
-    .line 1797
+    .line 2029
     if-eqz p2, :cond_1
 
-    .line 1798
+    .line 2030
     if-eq p1, p0, :cond_0
 
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     if-eqz v3, :cond_0
 
-    .line 1799
+    .line 2031
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     iget v3, v3, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->screen:I
@@ -4811,13 +5318,13 @@
 
     check-cast v1, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1800
+    .line 2032
     .local v1, cellLayout:Lcom/sec/android/app/twlauncher/CellLayout;
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     iget-object v0, v3, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->cell:Landroid/view/View;
 
-    .line 1801
+    .line 2033
     .local v0, cell:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -4825,11 +5332,11 @@
 
     check-cast v2, Lcom/sec/android/app/twlauncher/ItemInfo;
 
-    .line 1804
+    .line 2036
     .local v2, itemInfo:Lcom/sec/android/app/twlauncher/ItemInfo;
     invoke-virtual {v1, v0}, Lcom/sec/android/app/twlauncher/CellLayout;->removeView(Landroid/view/View;)V
 
-    .line 1813
+    .line 2045
     .end local v0           #cell:Landroid/view/View;
     .end local v1           #cellLayout:Lcom/sec/android/app/twlauncher/CellLayout;
     .end local v2           #itemInfo:Lcom/sec/android/app/twlauncher/ItemInfo;
@@ -4839,16 +5346,16 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
-    .line 1814
+    .line 2046
     return-void
 
-    .line 1807
+    .line 2039
     :cond_1
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     if-eqz v3, :cond_0
 
-    .line 1808
+    .line 2040
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     iget v3, v3, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->screen:I
@@ -4859,7 +5366,7 @@
 
     check-cast v1, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1809
+    .line 2041
     .restart local v1       #cellLayout:Lcom/sec/android/app/twlauncher/CellLayout;
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
@@ -4883,21 +5390,21 @@
 
     const/4 v5, 0x0
 
-    .line 1034
+    .line 1155
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->isWorkspaceLocked()Z
 
     move-result v0
 
-    .line 1035
+    .line 1156
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->isAllAppsVisible()Z
 
     move-result v1
 
-    .line 1036
+    .line 1157
     if-nez v0, :cond_0
 
     if-eqz v1, :cond_1
@@ -4905,48 +5412,48 @@
     :cond_0
     move v0, v5
 
-    .line 1257
+    .line 1387
     :goto_0
     return v0
 
-    .line 1051
+    .line 1172
     :cond_1
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_2
 
-    .line 1052
+    .line 1173
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1054
+    .line 1175
     :cond_2
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 1056
+    .line 1177
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 1057
+    .line 1178
     if-ne v0, v6, :cond_4
 
-    .line 1058
+    .line 1179
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
     if-ne v1, v7, :cond_3
 
     move v0, v7
 
-    .line 1059
+    .line 1180
     goto :goto_0
 
-    .line 1060
+    .line 1181
     :cond_3
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
@@ -4954,92 +5461,92 @@
 
     move v0, v5
 
-    .line 1061
+    .line 1182
     goto :goto_0
 
-    .line 1065
+    .line 1186
     :cond_4
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
 
-    .line 1066
+    .line 1187
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
-    .line 1069
+    .line 1190
     packed-switch v0, :pswitch_data_0
 
-    .line 1257
+    .line 1387
     :cond_5
     :goto_1
     :pswitch_0
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    if-ne v0, v7, :cond_17
+    if-ne v0, v7, :cond_15
 
     move v0, v7
 
     goto :goto_0
 
-    .line 1071
+    .line 1192
     :pswitch_1
     iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMultiTouchUsed:Z
 
     if-eqz v0, :cond_9
 
-    .line 1072
+    .line 1193
     iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
     if-eqz v0, :cond_6
 
-    .line 1073
+    .line 1194
     iput-boolean v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
-    .line 1077
+    .line 1198
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1078
+    .line 1199
     invoke-virtual {v0}, Landroid/view/View;->cancelLongPress()V
 
-    .line 1080
+    .line 1201
     :cond_6
     iput v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    .line 1082
+    .line 1203
     invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v0
 
     float-to-int v0, v0
 
-    .line 1083
+    .line 1204
     invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
 
     float-to-int v1, v1
 
-    .line 1084
+    .line 1205
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 1085
+    .line 1206
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v3
 
     float-to-int v3, v3
 
-    .line 1087
+    .line 1208
     iget v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMovePinchStart:I
 
     sub-int v6, v0, v2
@@ -5068,7 +5575,7 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMovePinch:I
 
-    .line 1089
+    .line 1210
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getQuickViewWorkspace()Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
@@ -5094,16 +5601,16 @@
 
     goto/16 :goto_0
 
-    .line 1091
+    .line 1212
     :cond_8
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMovePinch:I
 
     if-le v0, v8, :cond_5
 
-    .line 1092
+    .line 1213
     iput-boolean v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMultiTouchUsed:Z
 
-    .line 1093
+    .line 1214
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getQuickViewWorkspace()Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
@@ -5112,17 +5619,17 @@
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawOpenAnimation()V
 
-    .line 1094
+    .line 1215
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->openQuickViewWorkspace()V
 
     move v0, v7
 
-    .line 1095
+    .line 1216
     goto/16 :goto_0
 
-    .line 1114
+    .line 1235
     :cond_9
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDownX:F
 
@@ -5134,7 +5641,7 @@
 
     float-to-int v0, v0
 
-    .line 1118
+    .line 1239
     iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionY:F
 
     sub-float/2addr v2, v3
@@ -5145,52 +5652,52 @@
 
     float-to-int v2, v2
 
-    .line 1120
+    .line 1241
     iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchSlop:I
 
-    .line 1121
+    .line 1242
     if-le v0, v3, :cond_b
 
     move v4, v7
 
-    .line 1122
+    .line 1243
     :goto_2
     if-le v2, v3, :cond_c
 
     move v3, v7
 
-    .line 1124
+    .line 1245
     :goto_3
     if-nez v4, :cond_a
 
     if-eqz v3, :cond_f
 
-    .line 1126
+    .line 1247
     :cond_a
     if-ge v0, v2, :cond_d
 
     if-eqz v3, :cond_d
 
-    .line 1127
+    .line 1248
     iput v6, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    .line 1139
+    .line 1260
     :goto_4
     iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
     if-eqz v0, :cond_5
 
-    .line 1140
+    .line 1261
     iput-boolean v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
-    .line 1144
+    .line 1265
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1145
+    .line 1266
     invoke-virtual {v0}, Landroid/view/View;->cancelLongPress()V
 
     goto/16 :goto_1
@@ -5198,23 +5705,23 @@
     :cond_b
     move v4, v5
 
-    .line 1121
+    .line 1242
     goto :goto_2
 
     :cond_c
     move v3, v5
 
-    .line 1122
+    .line 1243
     goto :goto_3
 
-    .line 1128
+    .line 1249
     :cond_d
     if-eqz v4, :cond_e
 
-    .line 1130
+    .line 1251
     iput v7, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    .line 1131
+    .line 1252
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     sub-int/2addr v0, v7
@@ -5227,58 +5734,43 @@
 
     goto :goto_4
 
-    .line 1135
+    .line 1256
     :cond_e
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
 
     goto :goto_4
 
-    .line 1148
+    .line 1269
     :cond_f
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
 
     goto/16 :goto_1
 
-    .line 1155
+    .line 1276
     :pswitch_2
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
 
     iput v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDownX:F
 
-    .line 1156
+    .line 1277
     iput v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionY:F
 
-    .line 1157
+    .line 1278
     iput-boolean v7, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
-    .line 1158
+    .line 1279
     const-wide/16 v3, 0x4e20
 
     invoke-virtual {p0, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->reserveIndicatorHideTime(J)V
 
-    .line 1161
-    float-to-int v0, v1
-
-    float-to-int v3, v2
-
-    invoke-direct {p0, v0, v3}, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonArea(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    .line 1162
-    iput-boolean v7, p0, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonTouched:Z
-
-    .line 1169
-    :cond_10
+    .line 1294
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_10
 
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -5286,7 +5778,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_10
 
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
@@ -5308,9 +5800,9 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_12
+    if-eq v0, v1, :cond_11
 
-    :cond_11
+    :cond_10
     move v0, v7
 
     :goto_5
@@ -5318,56 +5810,18 @@
 
     goto/16 :goto_1
 
-    :cond_12
+    :cond_11
     move v0, v5
 
     goto :goto_5
 
-    .line 1176
+    .line 1313
     :pswitch_3
-    iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonTouched:Z
-
-    if-eqz v0, :cond_13
-
-    float-to-int v0, v1
-
-    float-to-int v1, v2
-
-    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonArea(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13
-
-    .line 1177
-    iput-boolean v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->isSettingsButtonTouched:Z
-
-    .line 1178
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getQuickViewWorkspace()Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawOpenAnimation()V
-
-    .line 1179
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->openQuickViewWorkspace()V
-
-    move v0, v5
-
-    .line 1180
-    goto/16 :goto_0
-
-    .line 1183
-    :cond_13
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    if-eq v0, v7, :cond_14
+    if-eq v0, v7, :cond_12
 
-    .line 1185
+    .line 1315
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -5376,14 +5830,14 @@
 
     check-cast v0, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1186
+    .line 1316
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/CellLayout;->lastDownOnOccupiedCell()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_12
 
-    .line 1188
+    .line 1318
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWindowToken()Landroid/os/IBinder;
@@ -5408,25 +5862,25 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/app/WallpaperManager;->sendWallpaperCommand(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V
 
-    .line 1194
-    :cond_14
+    .line 1324
+    :cond_12
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearChildrenCache()V
 
-    .line 1195
+    .line 1325
     iput v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    .line 1196
+    .line 1326
     iput-boolean v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
-    .line 1198
+    .line 1328
     iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMultiTouchUsed:Z
 
     if-eqz v0, :cond_5
 
-    .line 1199
+    .line 1329
     iput-boolean v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMultiTouchUsed:Z
 
-    .line 1200
+    .line 1330
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getQuickViewWorkspace()Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
@@ -5437,7 +5891,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_13
 
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -5445,20 +5899,20 @@
 
     move-result v0
 
-    if-ltz v0, :cond_16
+    if-ltz v0, :cond_14
 
-    :cond_15
+    :cond_13
     move v0, v5
 
     goto/16 :goto_0
 
-    .line 1201
-    :cond_16
+    .line 1331
+    :cond_14
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMovePinch:I
 
     if-le v0, v8, :cond_5
 
-    .line 1202
+    .line 1332
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->getQuickViewWorkspace()Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
@@ -5467,51 +5921,51 @@
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/QuickViewWorkspace;->drawOpenAnimation()V
 
-    .line 1203
+    .line 1333
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->openQuickViewWorkspace()V
 
     goto/16 :goto_1
 
-    .line 1221
+    .line 1351
     :pswitch_4
     iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMultiTouchUsed:Z
 
     if-nez v0, :cond_5
 
-    .line 1222
+    .line 1352
     invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v0
 
     float-to-int v0, v0
 
-    .line 1223
+    .line 1353
     invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
 
     float-to-int v1, v1
 
-    .line 1224
+    .line 1354
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 1225
+    .line 1355
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v3
 
     float-to-int v3, v3
 
-    .line 1227
+    .line 1357
     iput-boolean v7, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMultiTouchUsed:Z
 
-    .line 1228
+    .line 1358
     sub-int v4, v0, v2
 
     sub-int/2addr v0, v2
@@ -5536,33 +5990,35 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMovePinchStart:I
 
-    .line 1234
+    .line 1364
     iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
     if-eqz v0, :cond_5
 
-    .line 1235
+    .line 1365
     iput-boolean v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
-    .line 1239
+    .line 1369
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1240
+    .line 1370
     invoke-virtual {v0}, Landroid/view/View;->cancelLongPress()V
 
     goto/16 :goto_1
 
-    :cond_17
+    :cond_15
     move v0, v5
 
-    .line 1257
+    .line 1387
     goto/16 :goto_0
 
-    .line 1069
+    .line 1190
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2
@@ -5583,20 +6039,20 @@
     .parameter "bottom"
 
     .prologue
-    .line 926
+    .line 1047
     const/4 v1, 0x0
 
-    .line 927
+    .line 1048
     .local v1, childLeft:I
     const/4 v2, 0x0
 
-    .line 929
+    .line 1050
     .local v2, childTop:I
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v4
 
-    .line 930
+    .line 1051
     .local v4, count:I
     const/4 v5, 0x0
 
@@ -5604,12 +6060,12 @@
     :goto_0
     if-ge v5, v4, :cond_1
 
-    .line 931
+    .line 1052
     invoke-virtual {p0, v5}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 932
+    .line 1053
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -5619,12 +6075,12 @@
 
     if-eq v6, v7, :cond_0
 
-    .line 933
+    .line 1054
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
 
-    .line 934
+    .line 1055
     .local v3, childWidth:I
     add-int v6, v1, v3
 
@@ -5634,22 +6090,22 @@
 
     invoke-virtual {v0, v1, v2, v6, v7}, Landroid/view/View;->layout(IIII)V
 
-    .line 935
+    .line 1056
     add-int/2addr v1, v3
 
-    .line 930
+    .line 1051
     .end local v3           #childWidth:I
     :cond_0
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 939
+    .line 1060
     .end local v0           #child:Landroid/view/View;
     :cond_1
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->initPageIndicator()V
 
-    .line 940
+    .line 1061
     return-void
 .end method
 
@@ -5665,23 +6121,23 @@
 
     const-string v3, "Workspace can only be used in EXACTLY mode."
 
-    .line 893
+    .line 1014
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onMeasure(II)V
 
-    .line 895
+    .line 1016
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 896
+    .line 1017
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v1
 
-    .line 897
+    .line 1018
     if-eq v1, v2, :cond_0
 
-    .line 898
+    .line 1019
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Workspace can only be used in EXACTLY mode."
@@ -5690,16 +6146,16 @@
 
     throw v0
 
-    .line 901
+    .line 1022
     :cond_0
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v1
 
-    .line 902
+    .line 1023
     if-eq v1, v2, :cond_1
 
-    .line 903
+    .line 1024
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Workspace can only be used in EXACTLY mode."
@@ -5708,7 +6164,7 @@
 
     throw v0
 
-    .line 907
+    .line 1028
     :cond_1
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
@@ -5716,23 +6172,23 @@
 
     move v2, v4
 
-    .line 908
+    .line 1029
     :goto_0
     if-ge v2, v1, :cond_2
 
-    .line 909
+    .line 1030
     invoke-virtual {p0, v2}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v3, p1, p2}, Landroid/view/View;->measure(II)V
 
-    .line 908
+    .line 1029
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 913
+    .line 1034
     :cond_2
     iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
@@ -5752,14 +6208,14 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 914
+    .line 1035
     iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     mul-int/2addr v2, v0
 
     invoke-virtual {p0, v2, v4}, Lcom/sec/android/app/twlauncher/Workspace;->scrollTo(II)V
 
-    .line 915
+    .line 1036
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->isWindowOpaque()Z
@@ -5768,7 +6224,7 @@
 
     if-nez v2, :cond_3
 
-    .line 916
+    .line 1037
     const/4 v2, 0x1
 
     sub-int/2addr v1, v2
@@ -5777,14 +6233,14 @@
 
     invoke-direct {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->updateWallpaperOffset(I)V
 
-    .line 919
+    .line 1040
     :cond_3
     iput-boolean v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mFirstLayout:Z
 
-    .line 920
+    .line 1041
     iput-boolean v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIgnoreRestore:Z
 
-    .line 922
+    .line 1043
     return-void
 .end method
 
@@ -5794,7 +6250,7 @@
     .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 956
+    .line 1077
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v3}, Lcom/sec/android/app/twlauncher/Launcher;->getMenuManager()Lcom/sec/android/app/twlauncher/MenuManager;
@@ -5807,26 +6263,26 @@
 
     if-nez v3, :cond_1
 
-    .line 957
+    .line 1078
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getOpenFolder()Lcom/sec/android/app/twlauncher/Folder;
 
     move-result-object v2
 
-    .line 958
+    .line 1079
     .local v2, openFolder:Lcom/sec/android/app/twlauncher/Folder;
     if-eqz v2, :cond_0
 
-    .line 959
+    .line 1080
     invoke-virtual {v2, p1, p2}, Lcom/sec/android/app/twlauncher/Folder;->requestFocus(ILandroid/graphics/Rect;)Z
 
     move-result v3
 
-    .line 971
+    .line 1092
     .end local v2           #openFolder:Lcom/sec/android/app/twlauncher/Folder;
     :goto_0
     return v3
 
-    .line 962
+    .line 1083
     .restart local v2       #openFolder:Lcom/sec/android/app/twlauncher/Folder;
     :cond_0
     iget v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
@@ -5835,23 +6291,23 @@
 
     if-eq v3, v4, :cond_2
 
-    .line 963
+    .line 1084
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
 
-    .line 967
+    .line 1088
     .local v1, focusableScreen:I
     :goto_1
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 968
+    .line 1089
     .local v0, child:Landroid/view/View;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0, p1, p2}, Landroid/view/View;->requestFocus(ILandroid/graphics/Rect;)Z
 
-    .line 971
+    .line 1092
     .end local v0           #child:Landroid/view/View;
     .end local v1           #focusableScreen:I
     .end local v2           #openFolder:Lcom/sec/android/app/twlauncher/Folder;
@@ -5860,7 +6316,7 @@
 
     goto :goto_0
 
-    .line 965
+    .line 1086
     .restart local v2       #openFolder:Lcom/sec/android/app/twlauncher/Folder;
     :cond_2
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
@@ -5874,7 +6330,7 @@
     .parameter "state"
 
     .prologue
-    .line 1532
+    .line 1764
     move-object v0, p1
 
     check-cast v0, Landroid/view/AbsSavedState;
@@ -5887,17 +6343,17 @@
 
     invoke-super {p0, v2}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 1533
+    .line 1765
     instance-of v2, p1, Lcom/sec/android/app/twlauncher/Workspace$SavedState;
 
     if-nez v2, :cond_1
 
-    .line 1542
+    .line 1774
     :cond_0
     :goto_0
     return-void
 
-    .line 1537
+    .line 1769
     :cond_1
     move-object v0, p1
 
@@ -5905,7 +6361,7 @@
 
     move-object v1, v0
 
-    .line 1538
+    .line 1770
     .local v1, savedState:Lcom/sec/android/app/twlauncher/Workspace$SavedState;
     iget v2, v1, Lcom/sec/android/app/twlauncher/Workspace$SavedState;->currentScreen:I
 
@@ -5917,12 +6373,12 @@
 
     if-nez v2, :cond_0
 
-    .line 1539
+    .line 1771
     iget v2, v1, Lcom/sec/android/app/twlauncher/Workspace$SavedState;->currentScreen:I
 
     iput v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
-    .line 1540
+    .line 1772
     iget v2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->setScreen(I)V
@@ -5934,7 +6390,7 @@
     .locals 2
 
     .prologue
-    .line 1525
+    .line 1757
     new-instance v0, Lcom/sec/android/app/twlauncher/Workspace$SavedState;
 
     invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
@@ -5943,13 +6399,13 @@
 
     invoke-direct {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace$SavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1526
+    .line 1758
     .local v0, state:Lcom/sec/android/app/twlauncher/Workspace$SavedState;
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     iput v1, v0, Lcom/sec/android/app/twlauncher/Workspace$SavedState;->currentScreen:I
 
-    .line 1527
+    .line 1759
     return-object v0
 .end method
 
@@ -5963,7 +6419,7 @@
     .prologue
     const-string v3, ","
 
-    .line 305
+    .line 330
     const-string v0, "Launcher.Workspace"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6050,7 +6506,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 308
+    .line 333
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
     move-result v0
@@ -6061,7 +6517,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 309
+    .line 334
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -6074,7 +6530,7 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultIMEIPosX:I
 
-    .line 310
+    .line 335
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -6087,7 +6543,7 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultIMEIPosY:I
 
-    .line 316
+    .line 341
     :goto_0
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getResources()Landroid/content/res/Resources;
 
@@ -6101,13 +6557,13 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultIMEIPosYGap:I
 
-    .line 318
+    .line 343
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->onSizeChanged(IIII)V
 
-    .line 319
+    .line 344
     return-void
 
-    .line 313
+    .line 338
     :cond_0
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getResources()Landroid/content/res/Resources;
 
@@ -6121,7 +6577,7 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDefaultIMEIPosX:I
 
-    .line 314
+    .line 339
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -6138,687 +6594,1686 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 14
+    .locals 21
     .parameter "ev"
 
     .prologue
-    .line 1299
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    .line 1429
+    move-object/from16 v0, p0
 
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->isWorkspaceLocked()Z
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    move-result v11
+    move-object/from16 v18, v0
 
-    if-nez v11, :cond_0
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->isWorkspaceLocked()Z
 
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    move-result v18
 
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->isAllAppsVisible()Z
+    if-nez v18, :cond_0
 
-    move-result v11
+    move-object/from16 v0, p0
 
-    if-eqz v11, :cond_1
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    .line 1300
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->isAllAppsVisible()Z
+
+    move-result v18
+
+    if-eqz v18, :cond_1
+
+    .line 1430
     :cond_0
-    const/4 v11, 0x0
+    const/16 v18, 0x0
+
+    .line 1636
+    :goto_0
+    return v18
 
     .line 1433
-    :goto_0
-    return v11
-
-    .line 1303
     :cond_1
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
+    move-object/from16 v0, p0
 
-    if-nez v11, :cond_2
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1304
+    move-object/from16 v18, v0
+
+    if-nez v18, :cond_2
+
+    .line 1434
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
-    move-result-object v11
+    move-result-object v18
 
-    iput-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
+    move-object/from16 v0, v18
 
-    .line 1306
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 1436
     :cond_2
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v11, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1308
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    move-object/from16 v18, v0
 
-    move-result v0
+    move-object/from16 v0, v18
 
-    .line 1309
-    .local v0, action:I
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+    move-object/from16 v1, p1
 
-    move-result v9
+    invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 1310
-    .local v9, x:F
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+    .line 1438
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
-    move-result v10
+    move-result v3
 
-    .line 1312
-    .local v10, y:F
-    packed-switch v0, :pswitch_data_0
+    .line 1439
+    .local v3, action:I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
-    .line 1433
+    move-result v16
+
+    .line 1440
+    .local v16, x:F
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v17
+
+    .line 1443
+    .local v17, y:F
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_4
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_4
+
+    .line 1444
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    move/from16 v18, v0
+
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v19
+
+    const/16 v20, 0x1
+
+    sub-int v19, v19, v20
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-eq v0, v1, :cond_3
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    move/from16 v18, v0
+
+    if-nez v18, :cond_4
+
+    .line 1445
     :cond_3
-    :goto_1
-    const/4 v11, 0x1
+    const/16 v18, 0x0
 
     goto :goto_0
 
-    .line 1318
-    :pswitch_0
-    iget-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
-
-    if-nez v11, :cond_5
-
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v11}, Landroid/widget/Scroller;->isFinished()Z
-
-    move-result v11
-
-    if-nez v11, :cond_5
-
-    .line 1319
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v11}, Landroid/widget/Scroller;->abortAnimation()V
-
-    .line 1326
+    .line 1450
     :cond_4
+    packed-switch v3, :pswitch_data_0
+
+    .line 1636
+    :cond_5
+    :goto_1
+    const/16 v18, 0x1
+
+    goto :goto_0
+
+    .line 1456
+    :pswitch_0
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
+
+    move/from16 v18, v0
+
+    if-nez v18, :cond_7
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/Scroller;->isFinished()Z
+
+    move-result v18
+
+    if-nez v18, :cond_7
+
+    .line 1457
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 1464
+    :cond_6
     :goto_2
-    iput v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
+    move/from16 v0, v16
 
-    iput v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDownX:F
+    move-object/from16 v1, p0
 
-    .line 1327
-    iput v10, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionY:F
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
+
+    move/from16 v0, v16
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mDownX:F
+
+    .line 1465
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionY:F
 
     goto :goto_1
 
-    .line 1321
-    :cond_5
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    .line 1459
+    :cond_7
+    move-object/from16 v0, p0
 
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->isAddWidgetState()Z
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    move-result v11
+    move-object/from16 v18, v0
 
-    if-eqz v11, :cond_6
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->isAddWidgetState()Z
 
-    const/4 v11, 0x1
+    move-result v18
 
-    iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
+    if-eqz v18, :cond_8
 
-    .line 1322
-    :cond_6
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+    const/16 v18, 0x1
 
-    float-to-int v12, v9
+    move/from16 v0, v18
 
-    add-int/2addr v11, v12
+    move-object/from16 v1, p0
 
-    iget v12, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollY:I
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
 
-    float-to-int v13, v10
+    .line 1460
+    :cond_8
+    move-object/from16 v0, p0
 
-    add-int/2addr v12, v13
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    invoke-virtual {p0, v11, v12}, Lcom/sec/android/app/twlauncher/Workspace;->getPageIndicatorArea(II)I
+    move/from16 v18, v0
 
-    move-result v11
+    move/from16 v0, v16
 
-    iput v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchedPageIndicatorIndex:I
+    float-to-int v0, v0
 
-    const/4 v12, -0x1
+    move/from16 v19, v0
 
-    if-eq v11, v12, :cond_4
+    add-int v18, v18, v19
 
-    const/4 v11, 0x1
+    move-object/from16 v0, p0
 
-    iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollY:I
+
+    move/from16 v19, v0
+
+    move/from16 v0, v17
+
+    float-to-int v0, v0
+
+    move/from16 v20, v0
+
+    add-int v19, v19, v20
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move/from16 v2, v19
+
+    invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/Workspace;->getPageIndicatorArea(II)I
+
+    move-result v18
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mTouchedPageIndicatorIndex:I
+
+    const/16 v19, -0x1
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-eq v0, v1, :cond_6
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
 
     goto :goto_2
 
-    .line 1331
+    .line 1469
     :pswitch_1
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
+    move-object/from16 v0, p0
 
-    const/4 v12, 0x1
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
 
-    if-ne v11, v12, :cond_3
+    move/from16 v18, v0
 
-    .line 1332
-    iget-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
+    const/16 v19, 0x1
 
-    if-eqz v11, :cond_7
+    move/from16 v0, v18
 
-    .line 1333
-    const/4 v11, 0x1
+    move/from16 v1, v19
 
-    iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
+    if-ne v0, v1, :cond_5
 
-    goto :goto_1
+    .line 1470
+    move-object/from16 v0, p0
 
-    .line 1337
-    :cond_7
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
 
-    sub-float/2addr v11, v9
+    move/from16 v18, v0
 
-    float-to-int v2, v11
+    if-eqz v18, :cond_9
 
-    .line 1338
-    .local v2, deltaX:I
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionY:F
+    .line 1471
+    const/16 v18, 0x1
 
-    sub-float/2addr v11, v10
+    move/from16 v0, v18
 
-    float-to-int v3, v11
+    move-object/from16 v1, p0
 
-    .line 1340
-    .local v3, deltaY:I
-    iget-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
 
-    if-eqz v11, :cond_9
+    goto/16 :goto_1
 
-    .line 1341
-    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
-
-    move-result v11
-
-    iget v12, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchSlop:I
-
-    if-gt v11, v12, :cond_8
-
-    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
-
-    move-result v11
-
-    iget v12, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchSlop:I
-
-    if-le v11, v12, :cond_3
-
-    .line 1342
-    :cond_8
-    const/4 v11, 0x0
-
-    iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
-
-    .line 1347
+    .line 1475
     :cond_9
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
+    move-object/from16 v0, p0
 
-    if-eqz v11, :cond_a
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
 
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
+    move/from16 v18, v0
 
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/PageIndicator;->show()V
+    sub-float v18, v18, v16
 
-    .line 1350
+    move/from16 v0, v18
+
+    float-to-int v0, v0
+
+    move v5, v0
+
+    .line 1476
+    .local v5, deltaX:I
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionY:F
+
+    move/from16 v18, v0
+
+    sub-float v18, v18, v17
+
+    move/from16 v0, v18
+
+    float-to-int v0, v0
+
+    move v6, v0
+
+    .line 1478
+    .local v6, deltaY:I
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_b
+
+    .line 1479
+    invoke-static {v5}, Ljava/lang/Math;->abs(I)I
+
+    move-result v18
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchSlop:I
+
+    move/from16 v19, v0
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-gt v0, v1, :cond_a
+
+    invoke-static {v6}, Ljava/lang/Math;->abs(I)I
+
+    move-result v18
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchSlop:I
+
+    move/from16 v19, v0
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-le v0, v1, :cond_5
+
+    .line 1480
     :cond_a
-    iput v9, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
+    const/16 v18, 0x0
 
-    .line 1352
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+    move/from16 v0, v18
 
-    move-result v1
+    move-object/from16 v1, p0
 
-    .line 1353
-    .local v1, childCount:I
-    const/4 v11, 0x1
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
 
-    sub-int v11, v1, v11
-
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
-
-    move-result v12
-
-    mul-int v5, v11, v12
-
-    .line 1354
-    .local v5, maxScrollX:I
-    if-gez v2, :cond_c
-
-    .line 1355
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
-
-    move-result v11
-
-    div-int/lit8 v11, v11, 0x2
-
-    neg-int v6, v11
-
-    .line 1356
-    .local v6, minScrollX:I
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
-
-    if-le v11, v6, :cond_3
-
-    .line 1357
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
-
-    if-lez v11, :cond_b
-
-    .line 1358
-    const/4 v11, 0x0
-
-    invoke-virtual {p0, v2, v11}, Lcom/sec/android/app/twlauncher/Workspace;->scrollBy(II)V
-
-    .line 1362
-    :goto_3
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->isWindowOpaque()Z
-
-    move-result v11
-
-    if-nez v11, :cond_3
-
-    .line 1363
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->updateWallpaperOffset()V
-
-    goto/16 :goto_1
-
-    .line 1360
+    .line 1487
     :cond_b
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+    move-object/from16 v0, p0
 
-    sub-int v11, v6, v11
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
 
-    invoke-static {v11, v2}, Ljava/lang/Math;->max(II)I
+    move/from16 v18, v0
 
-    move-result v11
+    if-eqz v18, :cond_e
 
-    const/4 v12, 0x0
+    .line 1488
+    if-gez v5, :cond_c
 
-    invoke-virtual {p0, v11, v12}, Lcom/sec/android/app/twlauncher/Workspace;->scrollBy(II)V
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
-    goto :goto_3
+    move-result v18
 
-    .line 1366
-    .end local v6           #minScrollX:I
+    const/16 v19, 0x1
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-eq v0, v1, :cond_d
+
     :cond_c
-    if-lez v2, :cond_3
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
-    .line 1367
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+    move-result v18
 
-    move-result v11
+    const/16 v19, 0x1
 
-    const/4 v12, 0x1
+    sub-int v18, v18, v19
 
-    sub-int/2addr v11, v12
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
-    invoke-virtual {p0, v11}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+    move-result v19
 
-    move-result-object v11
+    mul-int v18, v18, v19
 
-    invoke-virtual {v11}, Landroid/view/View;->getRight()I
+    move v0, v5
 
-    move-result v11
+    move/from16 v1, v18
 
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+    if-le v0, v1, :cond_e
 
-    move-result v12
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
-    sub-int/2addr v11, v12
+    move-result v18
 
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+    const/16 v19, 0x1
 
-    move-result v12
+    move/from16 v0, v18
 
-    div-int/lit8 v12, v12, 0x2
+    move/from16 v1, v19
 
-    add-int v5, v11, v12
+    if-ne v0, v1, :cond_e
 
-    .line 1368
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+    .line 1489
+    :cond_d
+    const/16 v18, 0x0
 
-    if-ge v11, v5, :cond_3
+    goto/16 :goto_0
 
-    .line 1369
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+    .line 1494
+    :cond_e
+    move-object/from16 v0, p0
 
-    sub-int v11, v5, v11
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
-    invoke-static {v11, v2}, Ljava/lang/Math;->min(II)I
+    move-object/from16 v18, v0
 
-    move-result v11
+    if-eqz v18, :cond_f
 
-    const/4 v12, 0x0
+    move-object/from16 v0, p0
 
-    invoke-virtual {p0, v11, v12}, Lcom/sec/android/app/twlauncher/Workspace;->scrollBy(II)V
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
-    .line 1370
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    move-object/from16 v18, v0
 
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->isWindowOpaque()Z
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/PageIndicator;->show()V
 
-    move-result v11
+    .line 1497
+    :cond_f
+    move/from16 v0, v16
 
-    if-nez v11, :cond_3
+    move-object/from16 v1, p0
 
-    .line 1371
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->updateWallpaperOffset()V
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mLastMotionX:F
 
-    goto/16 :goto_1
-
-    .line 1378
-    .end local v1           #childCount:I
-    .end local v2           #deltaX:I
-    .end local v3           #deltaY:I
-    .end local v5           #maxScrollX:I
-    :pswitch_2
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
-
-    const/4 v12, 0x1
-
-    if-ne v11, v12, :cond_f
-
-    .line 1379
-    iget-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
-
-    if-eqz v11, :cond_14
-
-    .line 1380
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
-
-    float-to-int v12, v9
-
-    add-int/2addr v11, v12
-
-    iget v12, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollY:I
-
-    float-to-int v13, v10
-
-    add-int/2addr v12, v13
-
-    invoke-virtual {p0, v11, v12}, Lcom/sec/android/app/twlauncher/Workspace;->getPageIndicatorArea(II)I
+    .line 1499
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v4
 
-    .line 1381
-    .local v4, index:I
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    .line 1500
+    .local v4, childCount:I
+    const/16 v18, 0x1
 
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->isAddWidgetState()Z
+    sub-int v18, v4, v18
 
-    move-result v11
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
-    if-eqz v11, :cond_10
+    move-result v19
 
-    iget-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
+    mul-int v11, v18, v19
 
-    if-eqz v11, :cond_10
+    .line 1502
+    .local v11, maxScrollX:I
+    move-object/from16 v0, p0
 
-    .line 1382
-    iget-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mExistWidgetSpace:Z
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
 
-    if-nez v11, :cond_e
+    move/from16 v18, v0
 
-    .line 1383
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAutoScrollRunnable:Ljava/lang/Runnable;
+    if-eqz v18, :cond_10
 
-    invoke-virtual {p0, v11}, Lcom/sec/android/app/twlauncher/Workspace;->removeCallbacks(Ljava/lang/Runnable;)Z
+    const/16 v18, 0x2
 
-    .line 1384
-    const/4 v11, 0x0
+    move v0, v4
 
-    iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
+    move/from16 v1, v18
 
-    .line 1385
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+    if-lt v0, v1, :cond_10
 
-    invoke-virtual {v11}, Landroid/widget/Scroller;->isFinished()Z
+    .line 1503
+    const/16 v18, 0x0
 
-    move-result v11
+    move-object/from16 v0, p0
 
-    if-nez v11, :cond_d
+    move v1, v5
 
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+    move/from16 v2, v18
 
-    invoke-virtual {v11}, Landroid/widget/Scroller;->abortAnimation()V
-
-    .line 1386
-    :cond_d
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mStartScreen:I
-
-    invoke-virtual {p0, v11}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
-
-    .line 1387
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->cancelAddWidget()V
-
-    .line 1388
-    const/4 v11, -0x1
-
-    iput v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
-
-    .line 1405
-    :cond_e
-    :goto_4
-    const/4 v11, 0x0
-
-    iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
-
-    .line 1423
-    .end local v4           #index:I
-    :goto_5
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    invoke-virtual {v11}, Landroid/view/VelocityTracker;->recycle()V
-
-    .line 1424
-    const/4 v11, 0x0
-
-    iput-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    .line 1426
-    :cond_f
-    const-wide/16 v11, 0x7d0
-
-    invoke-virtual {p0, v11, v12}, Lcom/sec/android/app/twlauncher/Workspace;->reserveIndicatorHideTime(J)V
-
-    .line 1427
-    const/4 v11, 0x0
-
-    iput v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
+    invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/Workspace;->scrollBy(II)V
 
     goto/16 :goto_1
 
-    .line 1390
-    .restart local v4       #index:I
+    .line 1507
     :cond_10
-    const/4 v11, -0x1
+    if-gez v5, :cond_12
 
-    if-eq v4, v11, :cond_11
+    .line 1508
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchedPageIndicatorIndex:I
+    move-result v18
 
-    if-ne v4, v11, :cond_11
+    div-int/lit8 v18, v18, 0x2
 
-    .line 1391
-    invoke-virtual {p0, v4}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
+    move/from16 v0, v18
 
-    goto :goto_4
+    neg-int v0, v0
 
-    .line 1392
-    :cond_11
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    move v12, v0
 
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->isAddWidgetState()Z
+    .line 1509
+    .local v12, minScrollX:I
+    move-object/from16 v0, p0
 
-    move-result v11
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    if-eqz v11, :cond_e
+    move/from16 v18, v0
 
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+    move/from16 v0, v18
 
-    invoke-virtual {v11}, Landroid/widget/Scroller;->isFinished()Z
+    move v1, v12
 
-    move-result v11
+    if-le v0, v1, :cond_5
 
-    if-eqz v11, :cond_e
+    .line 1510
+    move-object/from16 v0, p0
 
-    .line 1393
-    iget-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mExistWidgetSpace:Z
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
 
-    if-eqz v11, :cond_12
+    move/from16 v18, v0
 
-    .line 1394
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    if-lez v18, :cond_11
 
-    iget v12, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+    .line 1511
+    const/16 v18, 0x0
 
-    invoke-virtual {v11, v12}, Lcom/sec/android/app/twlauncher/Launcher;->completeAddWidget(I)V
+    move-object/from16 v0, p0
 
-    goto :goto_4
+    move v1, v5
 
-    .line 1396
-    :cond_12
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAutoScrollRunnable:Ljava/lang/Runnable;
+    move/from16 v2, v18
 
-    invoke-virtual {p0, v11}, Lcom/sec/android/app/twlauncher/Workspace;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/Workspace;->scrollBy(II)V
 
-    .line 1397
-    const/4 v11, 0x0
+    .line 1515
+    :goto_3
+    move-object/from16 v0, p0
 
-    iput-boolean v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    .line 1398
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+    move-object/from16 v18, v0
 
-    invoke-virtual {v11}, Landroid/widget/Scroller;->isFinished()Z
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->isWindowOpaque()Z
 
-    move-result v11
+    move-result v18
 
-    if-nez v11, :cond_13
+    if-nez v18, :cond_5
 
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v11}, Landroid/widget/Scroller;->abortAnimation()V
-
-    .line 1399
-    :cond_13
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mStartScreen:I
-
-    invoke-virtual {p0, v11}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
-
-    .line 1400
-    iget-object v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
-
-    invoke-virtual {v11}, Lcom/sec/android/app/twlauncher/Launcher;->cancelAddWidget()V
-
-    .line 1401
-    const/4 v11, -0x1
-
-    iput v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
-
-    goto :goto_4
-
-    .line 1407
-    .end local v4           #index:I
-    :cond_14
-    iget-object v7, p0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    .line 1408
-    .local v7, velocityTracker:Landroid/view/VelocityTracker;
-    const/16 v11, 0x3e8
-
-    iget v12, p0, Lcom/sec/android/app/twlauncher/Workspace;->mMaximumVelocity:I
-
-    int-to-float v12, v12
-
-    invoke-virtual {v7, v11, v12}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
-
-    .line 1409
-    invoke-virtual {v7}, Landroid/view/VelocityTracker;->getXVelocity()F
-
-    move-result v11
-
-    float-to-int v8, v11
-
-    .line 1411
-    .local v8, velocityX:I
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
-
-    move-result v1
-
-    .line 1412
-    .restart local v1       #childCount:I
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->SNAP_VELOCITY:I
-
-    if-le v8, v11, :cond_15
-
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
-
-    if-ltz v11, :cond_15
-
-    .line 1414
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
-
-    const/4 v12, 0x1
-
-    sub-int/2addr v11, v12
-
-    invoke-virtual {p0, v11}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
-
-    goto :goto_5
-
-    .line 1415
-    :cond_15
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->SNAP_VELOCITY:I
-
-    neg-int v11, v11
-
-    if-ge v8, v11, :cond_16
-
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
-
-    const/4 v12, 0x1
-
-    sub-int v12, v1, v12
-
-    if-gt v11, v12, :cond_16
-
-    .line 1417
-    iget v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
-
-    add-int/lit8 v11, v11, 0x1
-
-    invoke-virtual {p0, v11}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
-
-    goto/16 :goto_5
-
-    .line 1419
-    :cond_16
-    invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToDestination()V
-
-    goto/16 :goto_5
-
-    .line 1430
-    .end local v1           #childCount:I
-    .end local v7           #velocityTracker:Landroid/view/VelocityTracker;
-    .end local v8           #velocityX:I
-    :pswitch_3
-    const/4 v11, 0x0
-
-    iput v11, p0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
+    .line 1516
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->updateWallpaperOffset()V
 
     goto/16 :goto_1
 
-    .line 1312
+    .line 1513
+    :cond_11
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    move/from16 v18, v0
+
+    sub-int v18, v12, v18
+
+    move/from16 v0, v18
+
+    move v1, v5
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v18
+
+    const/16 v19, 0x0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move/from16 v2, v19
+
+    invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/Workspace;->scrollBy(II)V
+
+    goto :goto_3
+
+    .line 1519
+    .end local v12           #minScrollX:I
+    :cond_12
+    if-lez v5, :cond_5
+
+    .line 1520
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v18
+
+    const/16 v19, 0x1
+
+    sub-int v18, v18, v19
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Landroid/view/View;->getRight()I
+
+    move-result v18
+
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v19
+
+    sub-int v18, v18, v19
+
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v19
+
+    div-int/lit8 v19, v19, 0x2
+
+    add-int v11, v18, v19
+
+    .line 1521
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    move/from16 v18, v0
+
+    move/from16 v0, v18
+
+    move v1, v11
+
+    if-ge v0, v1, :cond_5
+
+    .line 1522
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    move/from16 v18, v0
+
+    sub-int v18, v11, v18
+
+    move/from16 v0, v18
+
+    move v1, v5
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v18
+
+    const/16 v19, 0x0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move/from16 v2, v19
+
+    invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/Workspace;->scrollBy(II)V
+
+    .line 1523
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->isWindowOpaque()Z
+
+    move-result v18
+
+    if-nez v18, :cond_5
+
+    .line 1524
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->updateWallpaperOffset()V
+
+    goto/16 :goto_1
+
+    .line 1532
+    .end local v4           #childCount:I
+    .end local v5           #deltaX:I
+    .end local v6           #deltaY:I
+    .end local v11           #maxScrollX:I
+    :pswitch_2
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
+
+    move/from16 v18, v0
+
+    const/16 v19, 0x1
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-ne v0, v1, :cond_16
+
+    .line 1533
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_1b
+
+    .line 1534
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    move/from16 v18, v0
+
+    move/from16 v0, v16
+
+    float-to-int v0, v0
+
+    move/from16 v19, v0
+
+    add-int v18, v18, v19
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollY:I
+
+    move/from16 v19, v0
+
+    move/from16 v0, v17
+
+    float-to-int v0, v0
+
+    move/from16 v20, v0
+
+    add-int v19, v19, v20
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move/from16 v2, v19
+
+    invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/Workspace;->getPageIndicatorArea(II)I
+
+    move-result v8
+
+    .line 1535
+    .local v8, index:I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->isAddWidgetState()Z
+
+    move-result v18
+
+    if-eqz v18, :cond_17
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_17
+
+    .line 1536
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mExistWidgetSpace:Z
+
+    move/from16 v18, v0
+
+    if-nez v18, :cond_14
+
+    .line 1537
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mAutoScrollRunnable:Ljava/lang/Runnable;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 1538
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
+
+    .line 1539
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/Scroller;->isFinished()Z
+
+    move-result v18
+
+    if-nez v18, :cond_13
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 1540
+    :cond_13
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mStartScreen:I
+
+    move/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
+
+    .line 1541
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->cancelAddWidget()V
+
+    .line 1542
+    const/16 v18, -0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
+
+    .line 1559
+    :cond_14
+    :goto_4
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsSingleTap:Z
+
+    .line 1621
+    .end local v8           #index:I
+    :cond_15
+    :goto_5
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/view/VelocityTracker;->recycle()V
+
+    .line 1622
+    const/16 v18, 0x0
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 1630
+    :cond_16
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
+
+    goto/16 :goto_1
+
+    .line 1544
+    .restart local v8       #index:I
+    :cond_17
+    const/16 v18, -0x1
+
+    move v0, v8
+
+    move/from16 v1, v18
+
+    if-eq v0, v1, :cond_18
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mTouchedPageIndicatorIndex:I
+
+    move/from16 v18, v0
+
+    move v0, v8
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_18
+
+    .line 1545
+    move-object/from16 v0, p0
+
+    move v1, v8
+
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
+
+    goto :goto_4
+
+    .line 1546
+    :cond_18
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->isAddWidgetState()Z
+
+    move-result v18
+
+    if-eqz v18, :cond_14
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/Scroller;->isFinished()Z
+
+    move-result v18
+
+    if-eqz v18, :cond_14
+
+    .line 1547
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mExistWidgetSpace:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_19
+
+    .line 1548
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    move/from16 v19, v0
+
+    invoke-virtual/range {v18 .. v19}, Lcom/sec/android/app/twlauncher/Launcher;->completeAddWidget(I)V
+
+    goto :goto_4
+
+    .line 1550
+    :cond_19
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mAutoScrollRunnable:Ljava/lang/Runnable;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 1551
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
+
+    .line 1552
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/Scroller;->isFinished()Z
+
+    move-result v18
+
+    if-nez v18, :cond_1a
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 1553
+    :cond_1a
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mStartScreen:I
+
+    move/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
+
+    .line 1554
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->cancelAddWidget()V
+
+    .line 1555
+    const/16 v18, -0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
+
+    goto/16 :goto_4
+
+    .line 1561
+    .end local v8           #index:I
+    :cond_1b
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    move-object v13, v0
+
+    .line 1562
+    .local v13, velocityTracker:Landroid/view/VelocityTracker;
+    const/16 v18, 0x3e8
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mMaximumVelocity:I
+
+    move/from16 v19, v0
+
+    move/from16 v0, v19
+
+    int-to-float v0, v0
+
+    move/from16 v19, v0
+
+    move-object v0, v13
+
+    move/from16 v1, v18
+
+    move/from16 v2, v19
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
+
+    .line 1563
+    invoke-virtual {v13}, Landroid/view/VelocityTracker;->getXVelocity()F
+
+    move-result v18
+
+    move/from16 v0, v18
+
+    float-to-int v0, v0
+
+    move v14, v0
+
+    .line 1565
+    .local v14, velocityX:I
+    invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v4
+
+    .line 1567
+    .restart local v4       #childCount:I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->getWindowManager()Landroid/view/WindowManager;
+
+    move-result-object v18
+
+    invoke-interface/range {v18 .. v18}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v7
+
+    .line 1568
+    .local v7, display:Landroid/view/Display;
+    invoke-virtual {v7}, Landroid/view/Display;->getWidth()I
+
+    move-result v18
+
+    invoke-virtual {v7}, Landroid/view/Display;->getHeight()I
+
+    move-result v19
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-ge v0, v1, :cond_1c
+
+    const/16 v18, 0x1
+
+    move/from16 v9, v18
+
+    .line 1569
+    .local v9, isPortrait:Z
+    :goto_6
+    if-eqz v9, :cond_1d
+
+    invoke-virtual {v7}, Landroid/view/Display;->getWidth()I
+
+    move-result v18
+
+    move/from16 v10, v18
+
+    .line 1570
+    .local v10, iwidth:I
+    :goto_7
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageWallpaperDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v18
+
+    if-eqz v18, :cond_1e
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/sec/android/app/twlauncher/Launcher;->getCurrentImageWallpaperDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v18
+
+    move/from16 v15, v18
+
+    .line 1573
+    .local v15, wallpaperDrawableWidth:I
+    :goto_8
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->SNAP_VELOCITY:I
+
+    move/from16 v18, v0
+
+    move v0, v14
+
+    move/from16 v1, v18
+
+    if-le v0, v1, :cond_20
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    move/from16 v18, v0
+
+    if-ltz v18, :cond_20
+
+    .line 1575
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    move/from16 v18, v0
+
+    const/16 v19, 0x1
+
+    sub-int v18, v18, v19
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
+
+    .line 1577
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_15
+
+    .line 1578
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    move/from16 v18, v0
+
+    const/16 v19, 0x1
+
+    sub-int v18, v18, v19
+
+    if-gez v18, :cond_1f
+
+    const/16 v18, 0x1
+
+    move v0, v4
+
+    move/from16 v1, v18
+
+    if-le v0, v1, :cond_1f
+
+    if-eq v10, v15, :cond_1f
+
+    .line 1579
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v18
+
+    move-wide/from16 v0, v18
+
+    move-object/from16 v2, p0
+
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/Workspace;->mSnaptoScreenStartTime:J
+
+    .line 1580
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    .line 1581
+    const/16 v18, 0x2
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    goto/16 :goto_5
+
+    .line 1568
+    .end local v9           #isPortrait:Z
+    .end local v10           #iwidth:I
+    .end local v15           #wallpaperDrawableWidth:I
+    :cond_1c
+    const/16 v18, 0x0
+
+    move/from16 v9, v18
+
+    goto/16 :goto_6
+
+    .line 1569
+    .restart local v9       #isPortrait:Z
+    :cond_1d
+    invoke-virtual {v7}, Landroid/view/Display;->getHeight()I
+
+    move-result v18
+
+    move/from16 v10, v18
+
+    goto/16 :goto_7
+
+    .line 1570
+    .restart local v10       #iwidth:I
+    :cond_1e
+    const/16 v18, 0x1
+
+    move/from16 v15, v18
+
+    goto :goto_8
+
+    .line 1583
+    .restart local v15       #wallpaperDrawableWidth:I
+    :cond_1f
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    goto/16 :goto_5
+
+    .line 1587
+    :cond_20
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->SNAP_VELOCITY:I
+
+    move/from16 v18, v0
+
+    move/from16 v0, v18
+
+    neg-int v0, v0
+
+    move/from16 v18, v0
+
+    move v0, v14
+
+    move/from16 v1, v18
+
+    if-ge v0, v1, :cond_22
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    move/from16 v18, v0
+
+    const/16 v19, 0x1
+
+    sub-int v19, v4, v19
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-gt v0, v1, :cond_22
+
+    .line 1589
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    move/from16 v18, v0
+
+    add-int/lit8 v18, v18, 0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
+
+    .line 1591
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_15
+
+    .line 1592
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    move/from16 v18, v0
+
+    add-int/lit8 v18, v18, 0x1
+
+    move/from16 v0, v18
+
+    move v1, v4
+
+    if-lt v0, v1, :cond_21
+
+    const/16 v18, 0x1
+
+    move v0, v4
+
+    move/from16 v1, v18
+
+    if-le v0, v1, :cond_21
+
+    if-eq v10, v15, :cond_21
+
+    .line 1593
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v18
+
+    move-wide/from16 v0, v18
+
+    move-object/from16 v2, p0
+
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/Workspace;->mSnaptoScreenStartTime:J
+
+    .line 1594
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    .line 1595
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    goto/16 :goto_5
+
+    .line 1597
+    :cond_21
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    goto/16 :goto_5
+
+    .line 1602
+    :cond_22
+    invoke-direct/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToDestination()V
+
+    .line 1604
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_15
+
+    .line 1605
+    invoke-direct/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWhichScreen()I
+
+    move-result v18
+
+    if-gez v18, :cond_23
+
+    const/16 v18, 0x1
+
+    move v0, v4
+
+    move/from16 v1, v18
+
+    if-le v0, v1, :cond_23
+
+    if-eq v10, v15, :cond_23
+
+    .line 1606
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v18
+
+    move-wide/from16 v0, v18
+
+    move-object/from16 v2, p0
+
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/Workspace;->mSnaptoScreenStartTime:J
+
+    .line 1607
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    .line 1608
+    const/16 v18, 0x2
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    goto/16 :goto_5
+
+    .line 1609
+    :cond_23
+    invoke-direct/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWhichScreen()I
+
+    move-result v18
+
+    move/from16 v0, v18
+
+    move v1, v4
+
+    if-lt v0, v1, :cond_24
+
+    const/16 v18, 0x1
+
+    move v0, v4
+
+    move/from16 v1, v18
+
+    if-le v0, v1, :cond_24
+
+    if-eq v10, v15, :cond_24
+
+    .line 1610
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v18
+
+    move-wide/from16 v0, v18
+
+    move-object/from16 v2, p0
+
+    iput-wide v0, v2, Lcom/sec/android/app/twlauncher/Workspace;->mSnaptoScreenStartTime:J
+
+    .line 1611
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    .line 1612
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mWallpaperLooingState:I
+
+    goto/16 :goto_5
+
+    .line 1614
+    :cond_24
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mIsWallpaperLooping:Z
+
+    goto/16 :goto_5
+
+    .line 1633
+    .end local v4           #childCount:I
+    .end local v7           #display:Landroid/view/Display;
+    .end local v9           #isPortrait:Z
+    .end local v10           #iwidth:I
+    .end local v13           #velocityTracker:Landroid/view/VelocityTracker;
+    .end local v14           #velocityX:I
+    .end local v15           #wallpaperDrawableWidth:I
+    :pswitch_3
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sec/android/app/twlauncher/Workspace;->mTouchState:I
+
+    goto/16 :goto_1
+
+    .line 1450
     nop
 
     :pswitch_data_0
@@ -6835,28 +8290,28 @@
     .parameter "which"
 
     .prologue
-    .line 2165
+    .line 2427
     invoke-virtual {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 2166
+    .line 2428
     .local v0, cell:Lcom/sec/android/app/twlauncher/CellLayout;
     if-nez v0, :cond_1
 
-    .line 2175
+    .line 2437
     :cond_0
     return-void
 
-    .line 2167
+    .line 2429
     :cond_1
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v2
 
-    .line 2168
+    .line 2430
     .local v2, itemCount:I
     const/4 v1, 0x0
 
@@ -6864,24 +8319,24 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 2169
+    .line 2431
     invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 2170
+    .line 2432
     .local v4, view:Landroid/view/View;
     invoke-virtual {v4}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 2171
+    .line 2433
     .local v3, tag:Ljava/lang/Object;
     instance-of v5, v3, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
 
     if-eqz v5, :cond_2
 
-    .line 2172
+    .line 2434
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v5}, Lcom/sec/android/app/twlauncher/Launcher;->getSamsungWidgetPackageManager()Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
@@ -6895,7 +8350,7 @@
     .end local v3           #tag:Ljava/lang/Object;
     invoke-virtual {v5, v6, v3}, Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;->pauseWidget(Landroid/app/ActivityGroup;Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;)V
 
-    .line 2168
+    .line 2430
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
@@ -6908,7 +8363,7 @@
     .parameter "screen"
 
     .prologue
-    .line 545
+    .line 570
     if-ltz p2, :cond_0
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
@@ -6917,7 +8372,7 @@
 
     if-lt p2, v2, :cond_1
 
-    .line 546
+    .line 571
     :cond_0
     new-instance v2, Ljava/lang/IllegalStateException;
 
@@ -6947,7 +8402,7 @@
 
     throw v2
 
-    .line 549
+    .line 574
     :cond_1
     invoke-virtual {p0, p2}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
@@ -6955,7 +8410,7 @@
 
     check-cast v0, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 551
+    .line 576
     .local v0, group:Lcom/sec/android/app/twlauncher/CellLayout;
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -6963,14 +8418,14 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 552
+    .line 577
     .local v1, parent:Landroid/view/ViewGroup;
     if-eqz v1, :cond_2
 
-    .line 553
+    .line 578
     invoke-virtual {v1, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 556
+    .line 581
     :cond_2
     const-string v2, "Workspace"
 
@@ -7014,7 +8469,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 557
+    .line 582
     return-void
 .end method
 
@@ -7032,13 +8487,13 @@
     .end annotation
 
     .prologue
-    .line 1992
+    .line 2243
     .local p1, apps:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sec/android/app/twlauncher/ApplicationInfo;>;"
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v7
 
-    .line 1993
+    .line 2244
     .local v7, count:I
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getContext()Landroid/content/Context;
 
@@ -7048,7 +8503,7 @@
 
     move-result-object v4
 
-    .line 1994
+    .line 2245
     .local v4, manager:Landroid/content/pm/PackageManager;
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getContext()Landroid/content/Context;
 
@@ -7058,19 +8513,19 @@
 
     move-result-object v5
 
-    .line 1996
+    .line 2247
     .local v5, widgets:Landroid/appwidget/AppWidgetManager;
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 1997
+    .line 2248
     .local v3, packageNames:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    .line 1998
+    .line 2249
     .local v6, appCount:I
     const/4 v8, 0x0
 
@@ -7078,7 +8533,7 @@
     :goto_0
     if-ge v8, v6, :cond_0
 
-    .line 1999
+    .line 2250
     invoke-virtual {p1, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -7093,26 +8548,26 @@
 
     invoke-virtual {v3, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1998
+    .line 2249
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
-    .line 2002
+    .line 2253
     :cond_0
     const/4 v8, 0x0
 
     :goto_1
     if-ge v8, v7, :cond_1
 
-    .line 2003
+    .line 2254
     invoke-virtual {p0, v8}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 2006
+    .line 2257
     .local v2, layout:Lcom/sec/android/app/twlauncher/CellLayout;
     new-instance v0, Lcom/sec/android/app/twlauncher/Workspace$3;
 
@@ -7122,12 +8577,12 @@
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->post(Ljava/lang/Runnable;)Z
 
-    .line 2002
+    .line 2253
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 2115
+    .line 2366
     .end local v2           #layout:Lcom/sec/android/app/twlauncher/CellLayout;
     :cond_1
     return-void
@@ -7140,12 +8595,12 @@
     .parameter "immediate"
 
     .prologue
-    .line 944
+    .line 1065
     invoke-virtual {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->indexOfChild(Landroid/view/View;)I
 
     move-result v0
 
-    .line 945
+    .line 1066
     .local v0, screen:I
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
@@ -7159,7 +8614,7 @@
 
     if-nez v1, :cond_2
 
-    .line 946
+    .line 1067
     :cond_0
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -7169,14 +8624,14 @@
 
     if-nez v1, :cond_1
 
-    .line 947
+    .line 1068
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
 
-    .line 949
+    .line 1070
     :cond_1
     const/4 v1, 0x1
 
-    .line 951
+    .line 1072
     :goto_0
     return v1
 
@@ -7191,25 +8646,25 @@
     .parameter "millis"
 
     .prologue
-    .line 1012
+    .line 1133
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 1016
+    .line 1137
     .local v0, hideTime:Ljava/util/Calendar;
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideTime:Ljava/util/Calendar;
 
     if-nez v3, :cond_0
 
-    .line 1017
+    .line 1138
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideTime:Ljava/util/Calendar;
 
-    .line 1019
+    .line 1140
     :cond_0
     const/16 v3, 0xe
 
@@ -7217,7 +8672,7 @@
 
     invoke-virtual {v0, v3, v4}, Ljava/util/Calendar;->add(II)V
 
-    .line 1020
+    .line 1141
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Workspace;->mHideTime:Ljava/util/Calendar;
 
     invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
@@ -7226,18 +8681,18 @@
 
     invoke-virtual {v3, v4}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
 
-    .line 1022
+    .line 1143
     new-instance v2, Lcom/sec/android/app/twlauncher/Workspace$2;
 
     invoke-direct {v2, p0}, Lcom/sec/android/app/twlauncher/Workspace$2;-><init>(Lcom/sec/android/app/twlauncher/Workspace;)V
 
-    .line 1028
+    .line 1149
     .local v2, timerTask:Ljava/util/TimerTask;
     new-instance v1, Ljava/util/Timer;
 
     invoke-direct {v1}, Ljava/util/Timer;-><init>()V
 
-    .line 1029
+    .line 1150
     .local v1, timer:Ljava/util/Timer;
     const-wide/16 v3, 0x64
 
@@ -7245,7 +8700,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
 
-    .line 1030
+    .line 1151
     return-void
 .end method
 
@@ -7254,25 +8709,25 @@
     .parameter "which"
 
     .prologue
-    .line 2192
+    .line 2454
     move v0, p1
 
-    .line 2193
+    .line 2455
     .local v0, screen:I
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
 
     move-result v2
 
-    .line 2194
+    .line 2456
     .local v2, width:I
     if-eqz v2, :cond_1
 
     if-ltz v0, :cond_1
 
-    .line 2195
+    .line 2457
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
 
-    .line 2196
+    .line 2458
     .local v1, scroller:Landroid/widget/Scroller;
     if-eqz v1, :cond_0
 
@@ -7284,7 +8739,7 @@
 
     invoke-virtual {v1}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 2197
+    .line 2459
     :cond_0
     mul-int v3, v0, v2
 
@@ -7292,7 +8747,7 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/sec/android/app/twlauncher/Workspace;->scrollTo(II)V
 
-    .line 2199
+    .line 2461
     .end local v1           #scroller:Landroid/widget/Scroller;
     :cond_1
     return-void
@@ -7303,28 +8758,28 @@
     .parameter "which"
 
     .prologue
-    .line 2179
+    .line 2441
     invoke-virtual {p0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 2180
+    .line 2442
     .local v0, cell:Lcom/sec/android/app/twlauncher/CellLayout;
     if-nez v0, :cond_1
 
-    .line 2189
+    .line 2451
     :cond_0
     return-void
 
-    .line 2181
+    .line 2443
     :cond_1
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v2
 
-    .line 2182
+    .line 2444
     .local v2, itemCount:I
     const/4 v1, 0x0
 
@@ -7332,24 +8787,24 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 2183
+    .line 2445
     invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 2184
+    .line 2446
     .local v4, view:Landroid/view/View;
     invoke-virtual {v4}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 2185
+    .line 2447
     .local v3, tag:Ljava/lang/Object;
     instance-of v5, v3, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
 
     if-eqz v5, :cond_2
 
-    .line 2186
+    .line 2448
     iget-object v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v5}, Lcom/sec/android/app/twlauncher/Launcher;->getSamsungWidgetPackageManager()Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
@@ -7363,7 +8818,7 @@
     .end local v3           #tag:Ljava/lang/Object;
     invoke-virtual {v5, v6, v3}, Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;->resumeWidget(Landroid/app/ActivityGroup;Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;)V
 
-    .line 2182
+    .line 2444
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
@@ -7371,16 +8826,53 @@
 .end method
 
 .method public scrollLeft()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 1817
-    invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
-
-    .line 1818
-    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+    const/4 v2, 0x1
 
     const/4 v1, -0x1
+
+    .line 2049
+    invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
+
+    .line 2051
+    iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v0, :cond_1
+
+    .line 2052
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    if-ne v0, v1, :cond_0
+
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    if-ltz v0, :cond_0
+
+    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2053
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    sub-int/2addr v0, v2
+
+    invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
+
+    .line 2062
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 2058
+    :cond_1
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
 
     if-ne v0, v1, :cond_0
 
@@ -7396,31 +8888,34 @@
 
     if-eqz v0, :cond_0
 
-    .line 1819
+    .line 2059
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
-    const/4 v1, 0x1
-
-    sub-int/2addr v0, v1
+    sub-int/2addr v0, v2
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
 
-    .line 1821
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 .method public scrollRight()V
     .locals 3
 
     .prologue
-    .line 1824
-    invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
-
-    .line 1825
-    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+    const/4 v2, 0x1
 
     const/4 v1, -0x1
+
+    .line 2065
+    invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
+
+    .line 2067
+    iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v0, :cond_1
+
+    .line 2068
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
 
     if-ne v0, v1, :cond_0
 
@@ -7430,7 +8925,41 @@
 
     move-result v1
 
-    const/4 v2, 0x1
+    sub-int/2addr v1, v2
+
+    if-gt v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2070
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
+
+    .line 2080
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 2075
+    :cond_1
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    if-ne v0, v1, :cond_0
+
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v1
 
     sub-int/2addr v1, v2
 
@@ -7444,16 +8973,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1827
+    .line 2077
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     add-int/lit8 v0, v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(I)V
 
-    .line 1829
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 .method public setAllowLongPress(Z)V
@@ -7461,10 +8988,10 @@
     .parameter "allowLongPress"
 
     .prologue
-    .line 1891
+    .line 2142
     iput-boolean p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAllowLongPress:Z
 
-    .line 1892
+    .line 2143
     return-void
 .end method
 
@@ -7473,15 +9000,15 @@
     .parameter "screen"
 
     .prologue
-    .line 2248
+    .line 2510
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mStartScreen:I
 
-    .line 2249
+    .line 2511
     iput p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
 
-    .line 2250
+    .line 2512
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mEndScreen:I
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mStartScreen:I
@@ -7490,19 +9017,19 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollDirection:I
 
-    .line 2252
+    .line 2514
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
 
-    .line 2253
+    .line 2515
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAutoScrollRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x3e8
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/sec/android/app/twlauncher/Workspace;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 2254
+    .line 2516
     return-void
 .end method
 
@@ -7513,10 +9040,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 437
+    .line 462
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
 
-    .line 438
+    .line 463
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
@@ -7535,7 +9062,7 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
-    .line 439
+    .line 464
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
@@ -7546,10 +9073,10 @@
 
     invoke-virtual {p0, v0, v2}, Lcom/sec/android/app/twlauncher/Workspace;->scrollTo(II)V
 
-    .line 440
+    .line 465
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->invalidate()V
 
-    .line 441
+    .line 466
     return-void
 .end method
 
@@ -7558,10 +9085,10 @@
     .parameter "dragger"
 
     .prologue
-    .line 1790
+    .line 2022
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragger:Lcom/sec/android/app/twlauncher/DragController;
 
-    .line 1791
+    .line 2023
     return-void
 .end method
 
@@ -7570,10 +9097,10 @@
     .parameter "launcher"
 
     .prologue
-    .line 1786
+    .line 2018
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    .line 1787
+    .line 2019
     return-void
 .end method
 
@@ -7582,15 +9109,15 @@
     .parameter "l"
 
     .prologue
-    .line 593
+    .line 618
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLongClickListener:Landroid/view/View$OnLongClickListener;
 
-    .line 594
+    .line 619
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
 
-    .line 595
+    .line 620
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -7598,19 +9125,19 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 596
+    .line 621
     invoke-virtual {p0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v2, p1}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 595
+    .line 620
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 598
+    .line 623
     :cond_0
     return-void
 .end method
@@ -7619,12 +9146,12 @@
     .locals 1
 
     .prologue
-    .line 444
+    .line 469
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mOpenFlag:Z
 
-    .line 445
+    .line 470
     return-void
 .end method
 
@@ -7633,17 +9160,17 @@
     .parameter "whichScreen"
 
     .prologue
-    .line 1460
+    .line 1674
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSnapToScreenDuration:I
 
     invoke-virtual {p0, p1, v0}, Lcom/sec/android/app/twlauncher/Workspace;->snapToScreen(II)V
 
-    .line 1461
+    .line 1675
     return-void
 .end method
 
 .method snapToScreen(II)V
-    .locals 9
+    .locals 10
     .parameter "whichScreen"
     .parameter "duration"
 
@@ -7652,15 +9179,15 @@
 
     const/4 v2, 0x0
 
-    .line 1464
+    .line 1678
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
 
-    .line 1465
+    .line 1679
     iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v0, p1}, Lcom/sec/android/app/twlauncher/Workspace;->enableChildrenCache(II)V
 
-    .line 1466
+    .line 1680
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
 
     if-eqz v0, :cond_0
@@ -7669,8 +9196,141 @@
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/PageIndicator;->show()V
 
-    .line 1468
+    .line 1682
     :cond_0
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
+
+    move-result v7
+
+    .line 1684
+    .local v7, childCount:I
+    iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v0, :cond_6
+
+    const/4 v0, 0x2
+
+    if-lt v7, v0, :cond_6
+
+    .line 1685
+    if-ltz p1, :cond_1
+
+    if-ge p1, v7, :cond_1
+
+    .line 1686
+    sub-int v0, v7, v1
+
+    invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result p1
+
+    .line 1694
+    :cond_1
+    :goto_0
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    if-eq p1, v0, :cond_7
+
+    move v6, v1
+
+    .line 1695
+    .local v6, changingScreens:Z
+    :goto_1
+    if-eqz v6, :cond_2
+
+    .line 1696
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->pauseScreen(I)V
+
+    .line 1699
+    :cond_2
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getFocusedChild()Landroid/view/View;
+
+    move-result-object v8
+
+    .line 1700
+    .local v8, focusedChild:Landroid/view/View;
+    if-eqz v8, :cond_3
+
+    if-eqz v6, :cond_3
+
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+
+    invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-ne v8, v0, :cond_3
+
+    .line 1701
+    invoke-virtual {v8}, Landroid/view/View;->clearFocus()V
+
+    .line 1704
+    :cond_3
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
+
+    move-result v0
+
+    mul-int v9, p1, v0
+
+    .line 1705
+    .local v9, newX:I
+    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    sub-int v3, v9, v0
+
+    .line 1707
+    .local v3, delta:I
+    iget-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->LAUNCHER_LOOP_WORKSPACE:Z
+
+    if-eqz v0, :cond_4
+
+    .line 1708
+    if-gez p1, :cond_8
+
+    .line 1709
+    sub-int p1, v7, v1
+
+    .line 1715
+    :cond_4
+    :goto_2
+    iput p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
+
+    .line 1717
+    if-gez p2, :cond_5
+
+    .line 1718
+    iget p2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSnapToScreenDuration:I
+
+    .line 1720
+    :cond_5
+    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
+
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
+
+    move v4, v2
+
+    move v5, p2
+
+    invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
+
+    .line 1721
+    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->invalidate()V
+
+    .line 1722
+    return-void
+
+    .line 1691
+    .end local v3           #delta:I
+    .end local v6           #changingScreens:Z
+    .end local v8           #focusedChild:Landroid/view/View;
+    .end local v9           #newX:I
+    :cond_6
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
@@ -7685,97 +9345,26 @@
 
     move-result p1
 
-    .line 1470
-    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
+    goto :goto_0
 
-    if-eq p1, v0, :cond_4
-
-    move v6, v1
-
-    .line 1471
-    .local v6, changingScreens:Z
-    :goto_0
-    if-eqz v6, :cond_1
-
-    .line 1472
-    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
-
-    invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->pauseScreen(I)V
-
-    .line 1475
-    :cond_1
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getFocusedChild()Landroid/view/View;
-
-    move-result-object v7
-
-    .line 1476
-    .local v7, focusedChild:Landroid/view/View;
-    if-eqz v7, :cond_2
-
-    if-eqz v6, :cond_2
-
-    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
-
-    invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    if-ne v7, v0, :cond_2
-
-    .line 1477
-    invoke-virtual {v7}, Landroid/view/View;->clearFocus()V
-
-    .line 1480
-    :cond_2
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getWidth()I
-
-    move-result v0
-
-    mul-int v8, p1, v0
-
-    .line 1481
-    .local v8, newX:I
-    iget v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
-
-    sub-int v3, v8, v0
-
-    .line 1483
-    .local v3, delta:I
-    iput p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mNextScreen:I
-
-    .line 1485
-    if-gez p2, :cond_3
-
-    .line 1486
-    iget p2, p0, Lcom/sec/android/app/twlauncher/Workspace;->mSnapToScreenDuration:I
-
-    .line 1488
-    :cond_3
-    iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScroller:Landroid/widget/Scroller;
-
-    iget v1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mScrollX:I
-
-    move v4, v2
-
-    move v5, p2
-
-    invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
-
-    .line 1489
-    invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->invalidate()V
-
-    .line 1490
-    return-void
-
-    .end local v3           #delta:I
-    .end local v6           #changingScreens:Z
-    .end local v7           #focusedChild:Landroid/view/View;
-    .end local v8           #newX:I
-    :cond_4
+    :cond_7
     move v6, v2
 
-    .line 1470
-    goto :goto_0
+    .line 1694
+    goto :goto_1
+
+    .line 1710
+    .restart local v3       #delta:I
+    .restart local v6       #changingScreens:Z
+    .restart local v8       #focusedChild:Landroid/view/View;
+    .restart local v9       #newX:I
+    :cond_8
+    if-lt p1, v7, :cond_4
+
+    .line 1711
+    const/4 p1, 0x0
+
+    goto :goto_2
 .end method
 
 .method startDrag(Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;)V
@@ -7783,10 +9372,10 @@
     .parameter "cellInfo"
 
     .prologue
-    .line 1493
+    .line 1725
     iget-object v1, p1, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->cell:Landroid/view/View;
 
-    .line 1497
+    .line 1729
     .local v1, child:Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->isInTouchMode()Z
 
@@ -7794,12 +9383,12 @@
 
     if-nez v4, :cond_1
 
-    .line 1521
+    .line 1753
     :cond_0
     :goto_0
     return-void
 
-    .line 1501
+    .line 1733
     :cond_1
     invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -7815,20 +9404,20 @@
 
     if-eqz v4, :cond_0
 
-    .line 1505
+    .line 1737
     invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/sec/android/app/twlauncher/ItemInfo;
 
-    .line 1507
+    .line 1739
     .local v3, ii:Lcom/sec/android/app/twlauncher/ItemInfo;
     instance-of v4, v3, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
 
     if-eqz v4, :cond_2
 
-    .line 1508
+    .line 1740
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/Launcher;->getSamsungWidgetPackageManager()Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
@@ -7845,21 +9434,21 @@
 
     invoke-virtual {v5, v6, v4}, Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;->pauseWidget(Landroid/app/ActivityGroup;Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;)V
 
-    .line 1511
+    .line 1743
     :cond_2
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Workspace;->clearVacantCache()V
 
-    .line 1513
+    .line 1745
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
-    .line 1514
+    .line 1746
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragInfo:Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;
 
     iget v5, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     iput v5, v4, Lcom/sec/android/app/twlauncher/CellLayout$CellInfo;->screen:I
 
-    .line 1516
+    .line 1748
     iget v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mCurrentScreen:I
 
     invoke-virtual {p0, v4}, Lcom/sec/android/app/twlauncher/Workspace;->getChildAt(I)Landroid/view/View;
@@ -7868,18 +9457,18 @@
 
     check-cast v2, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 1518
+    .line 1750
     .local v2, current:Lcom/sec/android/app/twlauncher/CellLayout;
     invoke-virtual {v2, v1}, Lcom/sec/android/app/twlauncher/CellLayout;->onDragChild(Landroid/view/View;)V
 
-    .line 1519
+    .line 1751
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Workspace;->mDragger:Lcom/sec/android/app/twlauncher/DragController;
 
     const/4 v5, 0x0
 
     invoke-interface {v4, v1, p0, v3, v5}, Lcom/sec/android/app/twlauncher/DragController;->startDrag(Landroid/view/View;Lcom/sec/android/app/twlauncher/DragSource;Ljava/lang/Object;I)V
 
-    .line 1520
+    .line 1752
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->invalidate()V
 
     goto :goto_0
@@ -7889,17 +9478,17 @@
     .locals 1
 
     .prologue
-    .line 2285
+    .line 2547
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mAutoScrollRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 2286
+    .line 2548
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sec/android/app/twlauncher/Workspace;->mIsAutoScrolling:Z
 
-    .line 2287
+    .line 2549
     return-void
 .end method
 
@@ -7917,7 +9506,7 @@
     .end annotation
 
     .prologue
-    .line 2118
+    .line 2369
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
@@ -7926,12 +9515,12 @@
 
     invoke-virtual {v5}, Lcom/sec/android/app/twlauncher/Launcher;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    .line 2120
+    .line 2371
     invoke-virtual/range {p0 .. p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v9
 
-    .line 2121
+    .line 2372
     const/4 v5, 0x0
 
     move v10, v5
@@ -7939,7 +9528,7 @@
     :goto_0
     if-ge v10, v9, :cond_3
 
-    .line 2122
+    .line 2373
     move-object/from16 v0, p0
 
     move v1, v10
@@ -7950,12 +9539,12 @@
 
     check-cast v5, Lcom/sec/android/app/twlauncher/CellLayout;
 
-    .line 2123
+    .line 2374
     invoke-virtual {v5}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildCount()I
 
     move-result v11
 
-    .line 2124
+    .line 2375
     const/4 v6, 0x0
 
     move v12, v6
@@ -7963,34 +9552,34 @@
     :goto_1
     if-ge v12, v11, :cond_2
 
-    .line 2125
+    .line 2376
     invoke-virtual {v5, v12}, Lcom/sec/android/app/twlauncher/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
-    .line 2126
+    .line 2377
     invoke-virtual {v8}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 2127
+    .line 2378
     instance-of v7, v6, Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
     if-eqz v7, :cond_1
 
-    .line 2128
+    .line 2379
     check-cast v6, Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
-    .line 2132
+    .line 2383
     iget-object v7, v6, Lcom/sec/android/app/twlauncher/ShortcutInfo;->intent:Landroid/content/Intent;
 
-    .line 2133
+    .line 2384
     invoke-virtual {v7}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v13
 
-    .line 2134
-    iget v14, v6, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    .line 2385
+    iget v14, v6, Lcom/sec/android/app/twlauncher/ShortcutInfo;->itemType:I
 
     if-nez v14, :cond_1
 
@@ -8008,12 +9597,12 @@
 
     if-eqz v13, :cond_1
 
-    .line 2136
+    .line 2387
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->size()I
 
     move-result v14
 
-    .line 2137
+    .line 2388
     const/4 v7, 0x0
 
     move v15, v7
@@ -8021,7 +9610,7 @@
     :goto_2
     if-ge v15, v14, :cond_1
 
-    .line 2138
+    .line 2389
     move-object/from16 v0, p1
 
     move v1, v15
@@ -8032,7 +9621,7 @@
 
     check-cast v7, Lcom/sec/android/app/twlauncher/ApplicationInfo;
 
-    .line 2139
+    .line 2390
     iget-object v7, v7, Lcom/sec/android/app/twlauncher/ApplicationInfo;->componentName:Landroid/content/ComponentName;
 
     invoke-virtual {v7, v13}, Landroid/content/ComponentName;->equals(Ljava/lang/Object;)Z
@@ -8041,7 +9630,7 @@
 
     if-eqz v7, :cond_0
 
-    .line 2140
+    .line 2391
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace;->mIconCache:Lcom/sec/android/app/twlauncher/IconCache;
@@ -8064,7 +9653,7 @@
 
     invoke-virtual {v6, v7}, Lcom/sec/android/app/twlauncher/ShortcutInfo;->setIcon(Landroid/graphics/Bitmap;)V
 
-    .line 2141
+    .line 2392
     move-object v0, v8
 
     check-cast v0, Landroid/widget/TextView;
@@ -8107,7 +9696,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 2137
+    .line 2388
     :cond_0
     add-int/lit8 v7, v15, 0x1
 
@@ -8115,7 +9704,7 @@
 
     goto :goto_2
 
-    .line 2124
+    .line 2375
     :cond_1
     add-int/lit8 v6, v12, 0x1
 
@@ -8123,7 +9712,7 @@
 
     goto/16 :goto_1
 
-    .line 2121
+    .line 2372
     :cond_2
     add-int/lit8 v5, v10, 0x1
 
@@ -8131,7 +9720,7 @@
 
     goto/16 :goto_0
 
-    .line 2150
+    .line 2401
     :cond_3
     return-void
 .end method
@@ -8140,7 +9729,7 @@
     .locals 2
 
     .prologue
-    .line 601
+    .line 626
     invoke-virtual {p0}, Lcom/sec/android/app/twlauncher/Workspace;->getChildCount()I
 
     move-result v0
@@ -8157,6 +9746,6 @@
 
     invoke-direct {p0, v0}, Lcom/sec/android/app/twlauncher/Workspace;->updateWallpaperOffset(I)V
 
-    .line 602
+    .line 627
     return-void
 .end method

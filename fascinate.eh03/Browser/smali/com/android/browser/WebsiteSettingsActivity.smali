@@ -52,7 +52,7 @@
 
     iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
-    .line 158
+    .line 159
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .parameter "event"
 
     .prologue
-    .line 571
+    .line 572
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -110,7 +110,7 @@
 
     if-nez v0, :cond_0
 
-    .line 573
+    .line 574
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     if-eqz v0, :cond_0
@@ -123,10 +123,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 574
+    .line 575
     const/4 v0, 0x1
 
-    .line 577
+    .line 578
     :goto_0
     return v0
 
@@ -139,52 +139,80 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 3
     .parameter "icicle"
 
     .prologue
-    .line 582
+    .line 583
     invoke-super {p0, p1}, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 583
-    sget-object v0, Lcom/android/browser/WebsiteSettingsActivity;->sMBStored:Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
     .line 584
-    const v0, 0x7f0900f3
-
-    invoke-virtual {p0, v0}, Lcom/android/browser/WebsiteSettingsActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/android/browser/WebsiteSettingsActivity;->sMBStored:Ljava/lang/String;
+    if-eqz p1, :cond_1
 
     .line 586
-    :cond_0
-    new-instance v0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
-
-    const v1, 0x7f03002a
-
-    invoke-direct {v0, p0, p0, v1}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;-><init>(Lcom/android/browser/WebsiteSettingsActivity;Landroid/content/Context;I)V
-
-    iput-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
-
-    .line 587
-    iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
-
-    invoke-virtual {p0, v0}, Lcom/android/browser/WebsiteSettingsActivity;->setListAdapter(Landroid/widget/ListAdapter;)V
-
-    .line 588
-    invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity;->getListView()Landroid/widget/ListView;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    const/4 v0, 0x0
 
     .line 589
+    .local v0, restart:Z
+    if-eqz p1, :cond_0
+
+    .line 590
+    const-string v1, "key_restart"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    .line 591
+    :cond_0
+    if-eqz v0, :cond_1
+
+    .line 592
+    invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity;->finish()V
+
+    .line 595
+    .end local v0           #restart:Z
+    :cond_1
+    sget-object v1, Lcom/android/browser/WebsiteSettingsActivity;->sMBStored:Ljava/lang/String;
+
+    if-nez v1, :cond_2
+
+    .line 596
+    const v1, 0x7f0900f3
+
+    invoke-virtual {p0, v1}, Lcom/android/browser/WebsiteSettingsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    sput-object v1, Lcom/android/browser/WebsiteSettingsActivity;->sMBStored:Ljava/lang/String;
+
+    .line 598
+    :cond_2
+    new-instance v1, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
+
+    const v2, 0x7f03002a
+
+    invoke-direct {v1, p0, p0, v2}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;-><init>(Lcom/android/browser/WebsiteSettingsActivity;Landroid/content/Context;I)V
+
+    iput-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
+
+    .line 599
+    iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
+
+    invoke-virtual {p0, v1}, Lcom/android/browser/WebsiteSettingsActivity;->setListAdapter(Landroid/widget/ListAdapter;)V
+
+    .line 600
+    invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity;->getListView()Landroid/widget/ListView;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
+
+    invoke-virtual {v1, v2}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+
+    .line 601
     return-void
 .end method
 
@@ -193,18 +221,18 @@
     .parameter "menu"
 
     .prologue
-    .line 593
+    .line 612
     invoke-virtual {p0}, Lcom/android/browser/WebsiteSettingsActivity;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v0
 
-    .line 594
+    .line 613
     .local v0, inflater:Landroid/view/MenuInflater;
     const v1, 0x7f0c000e
 
     invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    .line 595
+    .line 614
     const/4 v1, 0x1
 
     return v1
@@ -215,20 +243,20 @@
     .parameter "item"
 
     .prologue
-    .line 607
+    .line 626
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 627
+    .line 646
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 610
+    .line 629
     :pswitch_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -272,12 +300,12 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 625
+    .line 644
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 607
+    .line 626
     :pswitch_data_0
     .packed-switch 0x7f0d00e5
         :pswitch_0
@@ -289,7 +317,7 @@
     .parameter "menu"
 
     .prologue
-    .line 602
+    .line 621
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity;->mAdapter:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     invoke-virtual {v0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->currentSite()Lcom/android/browser/WebsiteSettingsActivity$Site;
@@ -315,4 +343,23 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public onSaveInstanceState(Landroid/os/Bundle;)V
+    .locals 2
+    .parameter "outState"
+
+    .prologue
+    .line 606
+    invoke-super {p0, p1}, Landroid/app/ListActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
+
+    .line 607
+    const-string v0, "key_restart"
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 608
+    return-void
 .end method

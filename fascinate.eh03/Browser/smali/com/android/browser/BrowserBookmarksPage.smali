@@ -279,7 +279,7 @@
     .parameter
 
     .prologue
-    .line 1198
+    .line 1196
     :try_start_0
     const-string v0, "clipboard"
 
@@ -291,24 +291,24 @@
 
     move-result-object v0
 
-    .line 1199
+    .line 1197
     if-eqz v0, :cond_0
 
-    .line 1200
+    .line 1198
     invoke-interface {v0, p1}, Landroid/text/IClipboard;->setClipboardText(Ljava/lang/CharSequence;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1205
+    .line 1203
     :cond_0
     :goto_0
     return-void
 
-    .line 1202
+    .line 1200
     :catch_0
     move-exception v0
 
-    .line 1203
+    .line 1201
     const-string v1, "browser"
 
     const-string v2, "Copy failed"
@@ -1190,23 +1190,20 @@
 
     const-string v7, "%s"
 
-    .line 1119
-    .line 1121
+    .line 1118
+    .line 1120
     invoke-virtual {p0, p1}, Lcom/android/browser/BrowserBookmarksPage;->getBookmarkTitle(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1122
+    .line 1121
     invoke-virtual {p0, p1}, Lcom/android/browser/BrowserBookmarksPage;->getUrl(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1124
-    if-eqz v0, :cond_4
+    .line 1123
+    if-eqz v0, :cond_3
 
-    # djp952: much easier way
-    goto :cond_4
-    
     const-string v2, "VZW Home"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1221,7 +1218,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
     :cond_0
     const-string v2, "My Verizon"
@@ -1230,7 +1227,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3
 
     const-string v2, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
 
@@ -1238,27 +1235,10 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-eqz v2, :cond_3
 
+    .line 1126
     :cond_1
-    const-string v2, "Your Guide Mobile"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    const-string v2, "http://yourguide.vzw.com/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    .line 1128
-    :cond_2
     const-string v2, "BrowserBookmarksPage"
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -1267,7 +1247,7 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1129
+    .line 1127
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1294,13 +1274,13 @@
 
     const-string v4, "%s"
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    if-lez v4, :cond_3
+    if-lez v4, :cond_2
 
     :goto_0
     invoke-virtual {v3, v7, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
@@ -1317,18 +1297,18 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 1156
+    .line 1154
     :goto_1
     return-void
 
-    :cond_3
+    :cond_2
     move-object v0, v1
 
-    .line 1129
+    .line 1127
     goto :goto_0
 
-    .line 1139
-    :cond_4
+    .line 1137
+    :cond_3
     const-string v1, "BrowserBookmarksPage"
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -1337,7 +1317,7 @@
 
     invoke-static {v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1142
+    .line 1140
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1396,8 +1376,8 @@
     .parameter
 
     .prologue
+    .line 1098
     .line 1099
-    .line 1100
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1458,7 +1438,7 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 1113
+    .line 1112
     return-void
 .end method
 
@@ -1478,10 +1458,7 @@
     move-result-object v1
 
     .line 1011
-    if-eqz v0, :cond_3
-    
-    # djp952: much easier way
-    goto :cond_3
+    if-eqz v0, :cond_2
 
     const-string v2, "VZW Home"
 
@@ -1497,7 +1474,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
     :cond_0
     const-string v2, "My Verizon"
@@ -1506,35 +1483,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     const-string v2, "https://mobile.vzw.com/sspostmw/forms/myacc.jsp"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    :cond_1
-    const-string v2, "Your Guide Mobile"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    const-string v2, "http://yourguide.vzw.com/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
-    .line 1015
-    :cond_2
+    .line 1014
+    :cond_1
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1581,19 +1541,19 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 1028
+    .line 1027
     :goto_0
     return-void
 
-    .line 1024
-    :cond_3
+    .line 1023
+    :cond_2
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/browser/AddBookmarkPage;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1025
+    .line 1024
     const-string v1, "bookmark"
 
     invoke-virtual {p0, p1}, Lcom/android/browser/BrowserBookmarksPage;->getRow(I)Landroid/os/Bundle;
@@ -1602,7 +1562,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 1026
+    .line 1025
     const/4 v1, 0x1
 
     invoke-virtual {p0, v0, v1}, Lcom/android/browser/BrowserBookmarksPage;->startActivityForResult(Landroid/content/Intent;I)V
@@ -1664,7 +1624,7 @@
     .parameter "url"
 
     .prologue
-    .line 1215
+    .line 1213
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     invoke-virtual {v0, p1}, Lcom/android/browser/BrowserBookmarksAdapter;->getBitmap(Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -1679,7 +1639,7 @@
     .parameter "position"
 
     .prologue
-    .line 1192
+    .line 1190
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     if-nez v0, :cond_0
@@ -1779,16 +1739,16 @@
     .locals 1
 
     .prologue
-    .line 1163
+    .line 1161
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     if-nez v0, :cond_0
 
-    .line 1165
+    .line 1163
     :goto_0
     return-void
 
-    .line 1164
+    .line 1162
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
@@ -1841,24 +1801,24 @@
     .parameter "data"
 
     .prologue
-    .line 1266
+    .line 1264
     invoke-virtual {p0}, Lcom/android/browser/BrowserBookmarksPage;->getParent()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 1267
+    .line 1265
     .local v0, parent:Landroid/app/Activity;
     if-nez v0, :cond_0
 
-    .line 1268
+    .line 1266
     invoke-virtual {p0, p1, p2}, Lcom/android/browser/BrowserBookmarksPage;->setResult(ILandroid/content/Intent;)V
 
-    .line 1273
+    .line 1271
     .end local v0           #parent:Landroid/app/Activity;
     :goto_0
     return-void
 
-    .line 1270
+    .line 1268
     .restart local v0       #parent:Landroid/app/Activity;
     :cond_0
     check-cast v0, Lcom/android/browser/CombinedBookmarkHistoryActivity;
@@ -2488,16 +2448,16 @@
     .parameter "position"
 
     .prologue
-    .line 1250
+    .line 1248
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     if-nez v0, :cond_0
 
-    .line 1252
+    .line 1250
     :goto_0
     return-void
 
-    .line 1251
+    .line 1249
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
@@ -2511,12 +2471,12 @@
     .parameter "position"
 
     .prologue
-    .line 1242
+    .line 1240
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     invoke-virtual {v0, p1}, Lcom/android/browser/BrowserBookmarksAdapter;->deleteFolderRow(I)V
 
-    .line 1243
+    .line 1241
     return-void
 .end method
 
@@ -2525,7 +2485,7 @@
     .parameter "position"
 
     .prologue
-    .line 1208
+    .line 1206
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     if-nez v0, :cond_0
@@ -2550,7 +2510,7 @@
     .parameter "position"
 
     .prologue
-    .line 1187
+    .line 1185
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     if-nez v0, :cond_0
@@ -2575,7 +2535,7 @@
     .parameter "position"
 
     .prologue
-    .line 1237
+    .line 1235
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/browser/BrowserBookmarksAdapter;->getFolderId(Lcom/android/browser/BrowserBookmarksPage;I)I
@@ -2590,7 +2550,7 @@
     .parameter "position"
 
     .prologue
-    .line 1233
+    .line 1231
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/browser/BrowserBookmarksAdapter;->getFolderName(Lcom/android/browser/BrowserBookmarksPage;I)Ljava/lang/String;
@@ -2605,7 +2565,7 @@
     .parameter "position"
 
     .prologue
-    .line 1171
+    .line 1169
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     if-nez v0, :cond_0
@@ -2630,7 +2590,7 @@
     .parameter "position"
 
     .prologue
-    .line 1179
+    .line 1177
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     if-nez v0, :cond_0
@@ -2656,7 +2616,7 @@
     .parameter "position"
 
     .prologue
-    .line 1229
+    .line 1227
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     invoke-virtual {v0, p0, p1, p2}, Lcom/android/browser/BrowserBookmarksAdapter;->isFolderItem(Lcom/android/browser/BrowserBookmarksPage;Landroid/view/View;I)Z
@@ -2677,19 +2637,19 @@
 
     const-string v2, "title"
 
-    .line 1033
+    .line 1032
     packed-switch p1, :pswitch_data_0
 
-    .line 1093
+    .line 1092
     :cond_0
     :goto_0
     return-void
 
-    .line 1035
+    .line 1034
     :pswitch_0
     if-ne p2, v0, :cond_0
 
-    .line 1037
+    .line 1036
     if-eqz p3, :cond_2
 
     invoke-virtual {p3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
@@ -2698,72 +2658,72 @@
 
     if-eqz v0, :cond_2
 
-    .line 1040
+    .line 1039
     const-string v1, "title"
 
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1041
+    .line 1040
     const-string v2, "url"
 
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1043
+    .line 1042
     const-string v3, "folder"
 
     invoke-virtual {v0, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
-    .line 1044
+    .line 1043
     const-string v3, "shortcut"
 
     invoke-virtual {v0, v3}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v3
 
-    .line 1046
+    .line 1045
     if-eqz v3, :cond_1
 
-    .line 1048
+    .line 1047
     invoke-direct {p0, v2, v1}, Lcom/android/browser/BrowserBookmarksPage;->createShortcutIntent(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 1049
+    .line 1048
     const-string v4, "com.android.launcher.action.INSTALL_SHORTCUT"
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1050
+    .line 1049
     invoke-virtual {p0, v3}, Lcom/android/browser/BrowserBookmarksPage;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 1053
+    .line 1052
     :cond_1
     if-eqz v1, :cond_0
 
     if-eqz v2, :cond_0
 
-    .line 1054
+    .line 1053
     iget-object v1, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     invoke-virtual {v1, v0}, Lcom/android/browser/BrowserBookmarksAdapter;->updateRow(Landroid/os/Bundle;)V
 
     goto :goto_0
 
-    .line 1059
+    .line 1058
     :cond_2
     invoke-direct {p0}, Lcom/android/browser/BrowserBookmarksPage;->refreshList()V
 
     goto :goto_0
 
-    .line 1066
+    .line 1065
     :pswitch_1
     if-ne p2, v0, :cond_0
 
-    .line 1068
+    .line 1067
     if-eqz p3, :cond_3
 
     invoke-virtual {p3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
@@ -2772,39 +2732,39 @@
 
     if-eqz v0, :cond_3
 
-    .line 1071
+    .line 1070
     const-string v1, "title"
 
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1072
+    .line 1071
     if-eqz v1, :cond_0
 
-    .line 1073
+    .line 1072
     iget-object v1, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     invoke-virtual {v1, v0}, Lcom/android/browser/BrowserBookmarksAdapter;->updateFolderRow(Landroid/os/Bundle;)V
 
     goto :goto_0
 
-    .line 1078
+    .line 1077
     :cond_3
     invoke-direct {p0}, Lcom/android/browser/BrowserBookmarksPage;->refreshList()V
 
     goto :goto_0
 
-    .line 1084
+    .line 1083
     :pswitch_2
     if-ne p2, v0, :cond_0
 
-    .line 1085
+    .line 1084
     invoke-direct {p0}, Lcom/android/browser/BrowserBookmarksPage;->refreshList()V
 
     goto :goto_0
 
-    .line 1033
+    .line 1032
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -2817,22 +2777,22 @@
     .locals 2
 
     .prologue
-    .line 1256
+    .line 1254
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lcom/android/browser/BrowserBookmarksPage;->setResultToParent(ILandroid/content/Intent;)V
 
-    .line 1257
+    .line 1255
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mCanceled:Z
 
-    .line 1258
+    .line 1256
     invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V
 
-    .line 1259
+    .line 1257
     return-void
 .end method
 
@@ -3103,9 +3063,6 @@
     .local v5, url:Ljava/lang/String;
     :goto_2
     if-eqz v2, :cond_5
-    
-    # djp952: much easier way
-    goto :cond_5
 
     .line 197
     const-string v6, "VZW Home"
@@ -3117,14 +3074,6 @@
     if-nez v6, :cond_4
 
     const-string v6, "My Verizon"
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    const-string v6, "Your Guide Mobile"
 
     invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4159,11 +4108,11 @@
     .parameter "folder"
 
     .prologue
-    .line 1225
+    .line 1223
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage;->mBookmarksAdapter:Lcom/android/browser/BrowserBookmarksAdapter;
 
     invoke-virtual {v0, p0, p1, p2}, Lcom/android/browser/BrowserBookmarksAdapter;->showFolder(Lcom/android/browser/BrowserBookmarksPage;Landroid/view/View;I)V
 
-    .line 1226
+    .line 1224
     return-void
 .end method

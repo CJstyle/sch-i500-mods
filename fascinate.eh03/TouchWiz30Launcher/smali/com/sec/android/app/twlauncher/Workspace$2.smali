@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1022
+    .line 1143
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Workspace$2;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -38,11 +38,11 @@
     .locals 1
 
     .prologue
-    .line 1024
+    .line 1145
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace$2;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Workspace;->postInvalidate()V
 
-    .line 1025
+    .line 1146
     return-void
 .end method

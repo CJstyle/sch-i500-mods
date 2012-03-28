@@ -47,6 +47,7 @@
     .line 687
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/DragLayer$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/DragLayer;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DragLayer;->mDragScroller:Lcom/sec/android/app/twlauncher/DragScroller;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/DragLayer;->access$000(Lcom/sec/android/app/twlauncher/DragLayer;)Lcom/sec/android/app/twlauncher/DragScroller;
 
     move-result-object v0
@@ -56,6 +57,7 @@
     .line 688
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/DragLayer$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/DragLayer;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DragLayer;->mMenuListener:Lcom/sec/android/app/twlauncher/DragController$DragListener;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/DragLayer;->access$100(Lcom/sec/android/app/twlauncher/DragLayer;)Lcom/sec/android/app/twlauncher/DragController$DragListener;
 
     move-result-object v0
@@ -70,6 +72,7 @@
     .line 690
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/DragLayer$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/DragLayer;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DragLayer;->mDragMenuScroller:Lcom/sec/android/app/twlauncher/DragScroller;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/DragLayer;->access$200(Lcom/sec/android/app/twlauncher/DragLayer;)Lcom/sec/android/app/twlauncher/DragScroller;
 
     move-result-object v0
@@ -82,6 +85,7 @@
 
     const/4 v1, 0x0
 
+    #setter for: Lcom/sec/android/app/twlauncher/DragLayer;->mScrollState:I
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/DragLayer;->access$302(Lcom/sec/android/app/twlauncher/DragLayer;I)I
 
     .line 703
@@ -92,6 +96,7 @@
     :cond_1
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/DragLayer$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/DragLayer;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DragLayer;->mDragMenuScroller:Lcom/sec/android/app/twlauncher/DragScroller;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/DragLayer;->access$200(Lcom/sec/android/app/twlauncher/DragLayer;)Lcom/sec/android/app/twlauncher/DragScroller;
 
     move-result-object v0
@@ -109,6 +114,7 @@
     .line 696
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/DragLayer$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/DragLayer;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DragLayer;->mDragScroller:Lcom/sec/android/app/twlauncher/DragScroller;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/DragLayer;->access$000(Lcom/sec/android/app/twlauncher/DragLayer;)Lcom/sec/android/app/twlauncher/DragScroller;
 
     move-result-object v0
@@ -121,6 +127,7 @@
     :cond_3
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/DragLayer$ScrollRunnable;->this$0:Lcom/sec/android/app/twlauncher/DragLayer;
 
+    #getter for: Lcom/sec/android/app/twlauncher/DragLayer;->mDragScroller:Lcom/sec/android/app/twlauncher/DragScroller;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/DragLayer;->access$000(Lcom/sec/android/app/twlauncher/DragLayer;)Lcom/sec/android/app/twlauncher/DragScroller;
 
     move-result-object v0

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 4686
+    .line 4721
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$20;->this$0:Lcom/android/browser/BrowserActivity;
 
     iput-object p2, p0, Lcom/android/browser/BrowserActivity$20;->val$tab:Lcom/android/browser/Tab;
@@ -50,17 +50,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 4689
+    .line 4724
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$20;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v0, v1}, Lcom/android/browser/BrowserActivity;->access$2202(Lcom/android/browser/BrowserActivity;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 4690
+    .line 4725
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$20;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v0, v1}, Lcom/android/browser/BrowserActivity;->access$2302(Lcom/android/browser/BrowserActivity;Lcom/android/browser/Tab;)Lcom/android/browser/Tab;
 
-    .line 4692
+    .line 4727
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$20;->this$0:Lcom/android/browser/BrowserActivity;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity$20;->val$tab:Lcom/android/browser/Tab;
@@ -69,6 +69,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/browser/BrowserActivity;->access$2400(Lcom/android/browser/BrowserActivity;Lcom/android/browser/Tab;Z)V
 
-    .line 4693
+    .line 4728
     return-void
 .end method

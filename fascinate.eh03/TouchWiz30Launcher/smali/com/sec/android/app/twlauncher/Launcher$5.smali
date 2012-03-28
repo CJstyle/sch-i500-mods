@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1924
+    .line 1948
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$5;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,16 +41,18 @@
     .locals 2
 
     .prologue
-    .line 1926
+    .line 1950
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$5;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const/4 v1, 0x0
 
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->closeDrawer(Z)V
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$700(Lcom/sec/android/app/twlauncher/Launcher;Z)V
 
-    .line 1927
+    .line 1951
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$5;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mQuickViewMainMenu:Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$800(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/QuickViewMainMenu;
 
     move-result-object v0
@@ -61,15 +63,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 1928
+    .line 1952
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$5;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->closeQuickViewMainMenu()V
 
-    .line 1930
+    .line 1954
     :cond_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$5;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mQuickViewWorkspace:Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$900(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/QuickViewWorkspace;
 
     move-result-object v0
@@ -80,12 +83,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 1931
+    .line 1955
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$5;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->closeQuickViewWorkspace()V
 
-    .line 1933
+    .line 1957
     :cond_1
     return-void
 .end method

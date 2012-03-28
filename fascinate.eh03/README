@@ -63,18 +63,18 @@ AXT9IME.APK
 BROWSER.APK
 ===========
 
+- Set default home page to "about:blank"
+- Remove all default bookmarks
+
+BROWSEREH03.APK
+===============
+
+- This is the Browser from the EH03 ROM; rename to Browser.apk if using it
 - Removed all default bookmarks
 - Set default home page to "about:blank"
 - Set default search engine to Google
 - Allow all bookmarks to be deleted and/or edited
 - Fix Smart URL Filter so that all search engines function (google/yahoo/bing)
-
-BROWSEREI20.APK
-===============
-
-- This is the Browser from the ACG EI20 ROM; rename to Browser.apk if using it
-- Set default home page to "about:blank"
-- Remove all default bookmarks
 
 CAMERA.APK
 ==========
@@ -143,13 +143,13 @@ SYSTEMUI.APK
 TOUCHWIZ30LAUNCHER.APK
 ======================
 
-- Modified default application list order to match my ROM
 - Modified default shortcut and widget layouts
 
-TOUCHWIZ30LAUNCHEREI20.APK
+TOUCHWIZ30LAUNCHEREH03.APK
 ==========================
 
-- This is the TouchWiz Launcher from the ACG EI20 ROM; rename to TouchWiz30Launcher.apk if using it
+- This is the TouchWiz Launcher from the EH03 ROM; rename to TouchWiz30Launcher.apk if using it
+- Modified default application list order to match my ROM
 - Modified default shortcut and widget layouts
 
 TWWALLPAPERCHOOSER

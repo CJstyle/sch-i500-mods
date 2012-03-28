@@ -45,7 +45,7 @@
     .line 60
     iget-object v1, p0, Lcom/android/browser/SelectDialog$3;->this$0:Lcom/android/browser/SelectDialog;
 
-    iget-object v1, v1, Lcom/android/browser/WebDialog;->mWebView:Landroid/webkit/WebView;
+    iget-object v1, v1, Lcom/android/browser/SelectDialog;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->getSelection()Ljava/lang/String;
 
@@ -55,14 +55,14 @@
     .local v0, selection:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/browser/SelectDialog$3;->this$0:Lcom/android/browser/SelectDialog;
 
-    iget-object v1, v1, Lcom/android/browser/WebDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
+    iget-object v1, v1, Lcom/android/browser/SelectDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v1, v0}, Landroid/provider/Browser;->sendString(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 62
     iget-object v1, p0, Lcom/android/browser/SelectDialog$3;->this$0:Lcom/android/browser/SelectDialog;
 
-    iget-object v1, v1, Lcom/android/browser/WebDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
+    iget-object v1, v1, Lcom/android/browser/SelectDialog;->mBrowserActivity:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v1}, Lcom/android/browser/BrowserActivity;->closeDialogs()V
 

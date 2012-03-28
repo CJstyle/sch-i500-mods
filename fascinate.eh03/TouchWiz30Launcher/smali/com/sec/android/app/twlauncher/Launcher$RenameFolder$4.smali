@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3450
+    .line 3498
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$4;->this$1:Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,25 +42,27 @@
     .parameter "dialog"
 
     .prologue
-    .line 3452
+    .line 3500
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$4;->this$1:Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$1602(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mWaitingForResult:Z
+    invoke-static {v1, v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$1702(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
 
-    .line 3455
+    .line 3503
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$4;->this$1:Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;
 
-    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->access$1700(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)Landroid/widget/EditText;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->mInput:Landroid/widget/EditText;
+    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->access$1800(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)Landroid/widget/EditText;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 3456
+    .line 3504
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$4;->this$1:Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;
 
     iget-object v1, v1, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
@@ -73,11 +75,12 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 3457
+    .line 3505
     .local v0, inputManager:Landroid/view/inputmethod/InputMethodManager;
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$4;->this$1:Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;
 
-    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->access$1700(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)Landroid/widget/EditText;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->mInput:Landroid/widget/EditText;
+    invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->access$1800(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)Landroid/widget/EditText;
 
     move-result-object v1
 
@@ -85,6 +88,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
-    .line 3459
+    .line 3507
     return-void
 .end method

@@ -137,6 +137,7 @@
     .line 609
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mLock:Ljava/lang/Object;
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$000(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/Object;
 
     move-result-object v1
@@ -147,6 +148,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$100(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/ref/WeakReference;
 
     move-result-object v2
@@ -155,6 +157,7 @@
 
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$100(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/ref/WeakReference;
 
     move-result-object v2
@@ -170,6 +173,7 @@
 
     const/4 v3, 0x1
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mIsBusy:Z
     invoke-static {v2, v3}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$202(Lcom/sec/android/app/twlauncher/LauncherModel;Z)Z
 
     .line 617
@@ -232,6 +236,7 @@
     .line 633
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/LauncherModel$Loader;->this$0:Lcom/sec/android/app/twlauncher/LauncherModel;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mLock:Ljava/lang/Object;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$000(Lcom/sec/android/app/twlauncher/LauncherModel;)Ljava/lang/Object;
 
     move-result-object v0

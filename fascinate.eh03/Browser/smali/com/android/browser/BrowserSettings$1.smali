@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 621
+    .line 632
     iput-object p1, p0, Lcom/android/browser/BrowserSettings$1;->this$0:Lcom/android/browser/BrowserSettings;
 
     iput-object p2, p0, Lcom/android/browser/BrowserSettings$1;->val$screen:Landroid/preference/PreferenceScreen;
@@ -57,7 +57,7 @@
     .parameter "x0"
 
     .prologue
-    .line 621
+    .line 632
     check-cast p1, Ljava/util/Map;
 
     .end local p1
@@ -71,7 +71,7 @@
     .parameter "webStorageOrigins"
 
     .prologue
-    .line 623
+    .line 634
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
@@ -80,14 +80,14 @@
 
     if-nez v0, :cond_0
 
-    .line 624
+    .line 635
     iget-object v0, p0, Lcom/android/browser/BrowserSettings$1;->val$screen:Landroid/preference/PreferenceScreen;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
 
-    .line 626
+    .line 637
     :cond_0
     return-void
 .end method

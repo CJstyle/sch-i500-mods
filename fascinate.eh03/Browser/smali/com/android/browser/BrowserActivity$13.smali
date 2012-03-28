@@ -47,7 +47,7 @@
     .parameter
 
     .prologue
-    .line 3655
+    .line 3688
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$13;->this$0:Lcom/android/browser/BrowserActivity;
 
     iput-object p2, p0, Lcom/android/browser/BrowserActivity$13;->val$cr:Landroid/content/ContentResolver;
@@ -70,7 +70,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3655
+    .line 3688
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -88,10 +88,10 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 3658
+    .line 3691
     const/4 v0, 0x0
 
-    .line 3660
+    .line 3693
     .local v0, c:Landroid/database/Cursor;
     :try_start_0
     iget-object v3, p0, Lcom/android/browser/BrowserActivity$13;->val$cr:Landroid/content/ContentResolver;
@@ -106,28 +106,28 @@
 
     move-result-object v0
 
-    .line 3662
+    .line 3695
     if-eqz v0, :cond_1
 
-    .line 3663
+    .line 3696
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 3664
+    .line 3697
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    .line 3665
+    .line 3698
     .local v2, values:Landroid/content/ContentValues;
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 3667
+    .line 3700
     .local v1, os:Ljava/io/ByteArrayOutputStream;
     iget-object v3, p0, Lcom/android/browser/BrowserActivity$13;->val$bm:Landroid/graphics/Bitmap;
 
@@ -137,7 +137,7 @@
 
     invoke-virtual {v3, v4, v5, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 3668
+    .line 3701
     const-string v3, "thumbnail"
 
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -146,7 +146,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 3671
+    .line 3704
     :cond_0
     iget-object v3, p0, Lcom/android/browser/BrowserActivity$13;->val$cr:Landroid/content/ContentResolver;
 
@@ -170,7 +170,7 @@
 
     invoke-virtual {v3, v4, v2, v5, v6}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 3674
+    .line 3707
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -180,7 +180,7 @@
 
     if-nez v3, :cond_0
 
-    .line 3680
+    .line 3713
     .end local v1           #os:Ljava/io/ByteArrayOutputStream;
     .end local v2           #values:Landroid/content/ContentValues;
     :cond_1
@@ -188,16 +188,16 @@
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 3682
+    .line 3715
     :cond_2
     :goto_0
     return-object v7
 
-    .line 3677
+    .line 3710
     :catch_0
     move-exception v3
 
-    .line 3680
+    .line 3713
     if-eqz v0, :cond_2
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V

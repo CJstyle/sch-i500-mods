@@ -632,19 +632,19 @@
 
     .line 214
     .local v0, lp:Landroid/view/WindowManager$LayoutParams;
-    iput v6, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v6, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 215
     const/4 v2, -0x2
 
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 218
     iget-object v2, p0, Lcom/android/browser/IconPopupMenu;->mDecorView:Landroid/view/View;
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v3, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    iget v4, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v4, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     invoke-virtual {v2, v3, v4}, Landroid/view/View;->measure(II)V
 

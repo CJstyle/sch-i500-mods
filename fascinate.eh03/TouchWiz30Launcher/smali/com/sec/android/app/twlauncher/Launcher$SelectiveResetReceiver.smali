@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 5444
+    .line 5466
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$SelectiveResetReceiver;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5444
+    .line 5466
     invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Launcher$SelectiveResetReceiver;-><init>(Lcom/sec/android/app/twlauncher/Launcher;)V
 
     return-void
@@ -52,11 +52,12 @@
     .parameter "intent"
 
     .prologue
-    .line 5447
+    .line 5469
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$SelectiveResetReceiver;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->setSelectiveReset2ndAck()V
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$3800(Lcom/sec/android/app/twlauncher/Launcher;)V
 
-    .line 5448
+    .line 5470
     return-void
 .end method

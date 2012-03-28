@@ -165,10 +165,10 @@
     <item type="id" name="MAIN_MENU">false</item>
     <item type="id" name="new_tab_menu_id">false</item>
     <item type="id" name="active_tabs_menu_id">false</item>
-    <item type="id" name="brightness_menu_id">false</item>
     <item type="id" name="stop_reload_menu_id">false</item>
-    <item type="id" name="forward_menu_id">false</item>
     <item type="id" name="add_bookmark_menu_id">false</item>
+    <item type="id" name="forward_menu_id">false</item>
+    <item type="id" name="brightness_menu_id">false</item>
     <item type="id" name="add_shortcut_to_home">false</item>
     <item type="id" name="add_rss_menu_id">false</item>
     <item type="id" name="find_menu_id">false</item>

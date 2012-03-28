@@ -4,10 +4,10 @@
     <group android:id="@id/MAIN_MENU">
         <item android:icon="@drawable/ic_menu_new_window" android:id="@id/new_tab_menu_id" android:title="@string/new_tab" android:alphabeticShortcut="n" />
         <item android:icon="@drawable/ic_menu_windows" android:id="@id/active_tabs_menu_id" android:title="@string/active_tabs" android:alphabeticShortcut="t" />
-        <item android:icon="@drawable/ic_menu_brightness" android:id="@id/brightness_menu_id" android:title="@string/menu_brightness_setting" android:alphabeticShortcut="b" />
         <item android:id="@id/stop_reload_menu_id" android:alphabeticShortcut="r" />
-        <item android:icon="@drawable/ic_menu_forward" android:id="@id/forward_menu_id" android:title="@string/forward" android:alphabeticShortcut="k" />
         <item android:icon="@drawable/ic_menu_add_bookmark" android:id="@id/add_bookmark_menu_id" android:title="@string/save_to_bookmarks" android:alphabeticShortcut="a" />
+        <item android:icon="@drawable/ic_menu_forward" android:id="@id/forward_menu_id" android:title="@string/forward" android:alphabeticShortcut="k" />
+        <item android:icon="@drawable/ic_menu_brightness" android:id="@id/brightness_menu_id" android:title="@string/menu_brightness_setting" android:alphabeticShortcut="b" />
         <item android:id="@id/add_shortcut_to_home" android:title="@string/create_shortcut_bookmark" android:alphabeticShortcut="h" />
         <item android:id="@id/add_rss_menu_id" android:title="@string/add_rss" android:alphabeticShortcut="m" />
         <item android:id="@id/find_menu_id" android:title="@string/find_dot" android:alphabeticShortcut="f" />

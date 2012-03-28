@@ -566,7 +566,7 @@
     .line 1023
     iget-object v5, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->this$0:Lcom/nemustech/tiffany/widget/TFAnimatedListView;
 
-    iget-object v5, v5, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v5, v5, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v5}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->clearShouldRetainView()V
 
@@ -666,7 +666,7 @@
     .line 869
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->this$0:Lcom/nemustech/tiffany/widget/TFAnimatedListView;
 
-    iget-object v3, v3, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v3, v3, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v3}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->clearShouldRetainView()V
 
@@ -766,7 +766,7 @@
     .line 817
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->this$0:Lcom/nemustech/tiffany/widget/TFAnimatedListView;
 
-    iget-object v3, v3, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v3, v3, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v3}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->clearShouldRetainView()V
 
@@ -866,7 +866,7 @@
     .line 843
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->this$0:Lcom/nemustech/tiffany/widget/TFAnimatedListView;
 
-    iget-object v3, v3, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v3, v3, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v3}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->clearShouldRetainView()V
 
@@ -1200,7 +1200,7 @@
     .line 1108
     iget-object v11, p0, Lcom/nemustech/tiffany/widget/TFAnimatedListView$ItemAnimator;->this$0:Lcom/nemustech/tiffany/widget/TFAnimatedListView;
 
-    iget-object v11, v11, Lcom/nemustech/tiffany/widget/TFAbsListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
+    iget-object v11, v11, Lcom/nemustech/tiffany/widget/TFAnimatedListView;->mRecycler:Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;
 
     invoke-virtual {v11}, Lcom/nemustech/tiffany/widget/TFAbsListView$RecycleBin;->clearShouldRetainView()V
 

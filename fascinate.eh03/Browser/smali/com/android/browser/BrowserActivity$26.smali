@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 4906
+    .line 4941
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$26;->this$0:Lcom/android/browser/BrowserActivity;
 
     iput-object p2, p0, Lcom/android/browser/BrowserActivity$26;->val$v:Landroid/view/View;
@@ -65,7 +65,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 4909
+    .line 4944
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$26;->val$v:Landroid/view/View;
 
     const v3, 0x7f0d0059
@@ -84,7 +84,7 @@
 
     move-result-object v0
 
-    .line 4912
+    .line 4947
     .local v0, nm:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$26;->val$v:Landroid/view/View;
 
@@ -104,7 +104,7 @@
 
     move-result-object v1
 
-    .line 4915
+    .line 4950
     .local v1, pw:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$26;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -114,21 +114,21 @@
 
     invoke-virtual {v2, v3, v4, v0, v1}, Lcom/android/browser/BrowserActivity;->setHttpAuthUsernamePassword(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4917
+    .line 4952
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$26;->val$handler:Landroid/webkit/HttpAuthHandler;
 
     invoke-virtual {v2, v0, v1}, Landroid/webkit/HttpAuthHandler;->proceed(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4918
+    .line 4953
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$26;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v2, v5}, Lcom/android/browser/BrowserActivity;->access$2602(Lcom/android/browser/BrowserActivity;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 4919
+    .line 4954
     iget-object v2, p0, Lcom/android/browser/BrowserActivity$26;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v2, v5}, Lcom/android/browser/BrowserActivity;->access$2702(Lcom/android/browser/BrowserActivity;Landroid/webkit/HttpAuthHandler;)Landroid/webkit/HttpAuthHandler;
 
-    .line 4920
+    .line 4955
     return-void
 .end method

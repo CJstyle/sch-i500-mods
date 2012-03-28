@@ -44,7 +44,7 @@
     .line 79
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v0, p0, Lcom/sec/android/app/twlauncher/ShortcutInfo;->itemType:I
 
     .line 80
     return-void
@@ -311,7 +311,7 @@
     .line 131
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v0, p0, Lcom/sec/android/app/twlauncher/ShortcutInfo;->itemType:I
 
     .line 132
     return-void

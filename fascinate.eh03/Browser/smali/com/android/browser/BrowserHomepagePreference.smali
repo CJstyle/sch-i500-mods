@@ -318,7 +318,7 @@
     .local v1, params:Landroid/view/WindowManager$LayoutParams;
     const/4 v3, -0x1
 
-    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 118
     invoke-virtual {v2}, Landroid/view/Window;->getWindowManager()Landroid/view/WindowManager;

@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 5370
+    .line 5418
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$28;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -52,7 +52,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5370
+    .line 5418
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -79,12 +79,12 @@
     .end annotation
 
     .prologue
-    .line 5372
+    .line 5420
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 5373
+    .line 5421
     .local v1, installedPackages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     iget-object v5, p0, Lcom/android/browser/BrowserActivity$28;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -92,18 +92,18 @@
 
     move-result-object v4
 
-    .line 5374
+    .line 5422
     .local v4, pm:Landroid/content/pm/PackageManager;
     if-eqz v4, :cond_1
 
-    .line 5375
+    .line 5423
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Landroid/content/pm/PackageManager;->getInstalledPackages(I)Ljava/util/List;
 
     move-result-object v3
 
-    .line 5376
+    .line 5424
     .local v3, packages:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -124,7 +124,7 @@
 
     check-cast v2, Landroid/content/pm/PackageInfo;
 
-    .line 5377
+    .line 5425
     .local v2, p:Landroid/content/pm/PackageInfo;
     iget-object v5, p0, Lcom/android/browser/BrowserActivity$28;->this$0:Lcom/android/browser/BrowserActivity;
 
@@ -140,14 +140,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 5378
+    .line 5426
     iget-object v5, v2, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 5383
+    .line 5431
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v2           #p:Landroid/content/pm/PackageInfo;
     .end local v3           #packages:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
@@ -160,7 +160,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5370
+    .line 5418
     check-cast p1, Ljava/util/Set;
 
     .end local p1
@@ -183,12 +183,12 @@
     .end annotation
 
     .prologue
-    .line 5388
+    .line 5436
     .local p1, installedPackages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$28;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v0, p1}, Lcom/android/browser/BrowserActivity;->access$2800(Lcom/android/browser/BrowserActivity;Ljava/util/Set;)V
 
-    .line 5389
+    .line 5437
     return-void
 .end method

@@ -71,6 +71,7 @@
 
     const/4 v2, 0x0
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherModel;->mIsBusy:Z
     invoke-static {v1, v2}, Lcom/sec/android/app/twlauncher/LauncherModel;->access$202(Lcom/sec/android/app/twlauncher/LauncherModel;Z)Z
 
     .line 1452

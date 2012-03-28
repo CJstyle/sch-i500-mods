@@ -39,7 +39,7 @@
     .line 56
     const/4 v0, 0x5
 
-    iput v0, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v0, p0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->itemType:I
 
     .line 57
     return-void
@@ -1340,7 +1340,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->packageName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

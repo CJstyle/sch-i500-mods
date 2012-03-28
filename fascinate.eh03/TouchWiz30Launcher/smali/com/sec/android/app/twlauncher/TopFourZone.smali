@@ -1025,7 +1025,7 @@
 
     .line 228
     .local v1, item:Landroid/view/View;
-    iget v0, p1, Lcom/sec/android/app/twlauncher/ItemInfo;->cellX:I
+    iget v0, p1, Lcom/sec/android/app/twlauncher/ShortcutInfo;->cellX:I
 
     .line 229
     .local v0, index:I
@@ -2255,7 +2255,7 @@
 
     .line 784
     .local v9, name:Landroid/content/ComponentName;
-    iget v12, v6, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iget v12, v6, Lcom/sec/android/app/twlauncher/ShortcutInfo;->itemType:I
 
     if-nez v12, :cond_3
 

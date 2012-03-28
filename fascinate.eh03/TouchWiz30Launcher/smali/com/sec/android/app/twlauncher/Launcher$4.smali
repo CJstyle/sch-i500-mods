@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 955
+    .line 959
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$4;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 957
+    .line 961
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$4;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->updateWallpaperVisiblity()V
 
-    .line 958
+    .line 962
     return-void
 .end method

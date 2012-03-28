@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sec/android/app/twlauncher/Launcher;->closeQuickViewWorkspace()V
+    value = Lcom/sec/android/app/twlauncher/Launcher;->openQuickViewWorkspace()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-.field final synthetic val$newScreen:I
+.field final synthetic val$curScreen:I
 
 
 # direct methods
@@ -30,10 +30,10 @@
     .parameter
 
     .prologue
-    .line 3254
+    .line 3274
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$7;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    iput p2, p0, Lcom/sec/android/app/twlauncher/Launcher$7;->val$newScreen:I
+    iput p2, p0, Lcom/sec/android/app/twlauncher/Launcher$7;->val$curScreen:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,17 +46,18 @@
     .locals 2
 
     .prologue
-    .line 3256
+    .line 3276
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$7;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$1000(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/Workspace;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mWorkspace:Lcom/sec/android/app/twlauncher/Workspace;
+    invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher;->access$1100(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/sec/android/app/twlauncher/Launcher$7;->val$newScreen:I
+    iget v1, p0, Lcom/sec/android/app/twlauncher/Launcher$7;->val$curScreen:I
 
-    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->resumeScreen(I)V
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/Workspace;->pauseScreen(I)V
 
-    .line 3257
+    .line 3277
     return-void
 .end method

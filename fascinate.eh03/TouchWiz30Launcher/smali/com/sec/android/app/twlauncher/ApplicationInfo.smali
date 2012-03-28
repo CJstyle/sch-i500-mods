@@ -73,7 +73,7 @@
     .line 81
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v0, p0, Lcom/sec/android/app/twlauncher/ApplicationInfo;->itemType:I
 
     .line 82
     return-void
@@ -133,7 +133,7 @@
     .line 92
     const-wide/16 v0, -0x1
 
-    iput-wide v0, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
+    iput-wide v0, p0, Lcom/sec/android/app/twlauncher/ApplicationInfo;->container:J
 
     .line 93
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/ApplicationInfo;->componentName:Landroid/content/ComponentName;
@@ -308,7 +308,7 @@
     .line 131
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v0, p0, Lcom/sec/android/app/twlauncher/ApplicationInfo;->itemType:I
 
     .line 132
     return-void

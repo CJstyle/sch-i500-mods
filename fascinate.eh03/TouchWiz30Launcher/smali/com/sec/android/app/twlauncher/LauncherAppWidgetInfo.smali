@@ -26,7 +26,7 @@
     .line 40
     const/4 v0, 0x4
 
-    iput v0, p0, Lcom/sec/android/app/twlauncher/ItemInfo;->itemType:I
+    iput v0, p0, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->itemType:I
 
     .line 41
     iput p1, p0, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;->appWidgetId:I

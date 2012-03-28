@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 504
+    .line 510
     iput-object p1, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -47,31 +47,31 @@
 
     const/4 v4, 0x1
 
-    .line 508
+    .line 514
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v2}, Lcom/android/browser/BitmapWebView;->getState()I
 
     move-result v1
 
-    .line 509
+    .line 515
     .local v1, state:I
     if-eq v1, v4, :cond_1
 
-    .line 511
+    .line 517
     if-ne v1, v5, :cond_0
 
-    .line 513
+    .line 519
     iget v2, p1, Landroid/os/Message;->what:I
 
     if-eq v2, v5, :cond_1
 
-    .line 604
+    .line 610
     :cond_0
     :goto_0
     return-void
 
-    .line 521
+    .line 527
     :cond_1
     iget v2, p1, Landroid/os/Message;->what:I
 
@@ -80,11 +80,11 @@
     :pswitch_0
     goto :goto_0
 
-    .line 524
+    .line 530
     :pswitch_1
     const/4 v0, 0x0
 
-    .line 526
+    .line 532
     .local v0, resend:Z
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
@@ -92,14 +92,14 @@
 
     if-eq v2, v4, :cond_0
 
-    .line 528
+    .line 534
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iget-boolean v2, v2, Lcom/android/browser/BitmapWebView;->mScaling:Z
 
     if-nez v2, :cond_0
 
-    .line 532
+    .line 538
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iget-object v3, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
@@ -112,17 +112,17 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 534
+    .line 540
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iget-object v2, v2, Lcom/android/browser/BitmapWebView;->mTextureBitmapDirtyRegion:Landroid/graphics/Region;
 
     invoke-virtual {v2}, Landroid/graphics/Region;->setEmpty()V
 
-    .line 536
+    .line 542
     const/4 v0, 0x0
 
-    .line 545
+    .line 551
     :goto_1
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
@@ -136,10 +136,10 @@
 
     if-ne v0, v4, :cond_0
 
-    .line 547
+    .line 553
     invoke-virtual {p0, v4}, Lcom/android/browser/BitmapWebView$PrivateHandler;->removeMessages(I)V
 
-    .line 548
+    .line 554
     invoke-virtual {p0, v4}, Lcom/android/browser/BitmapWebView$PrivateHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v2
@@ -148,13 +148,13 @@
 
     goto :goto_0
 
-    .line 539
+    .line 545
     :cond_2
     const/4 v0, 0x1
 
     goto :goto_1
 
-    .line 556
+    .line 562
     .end local v0           #resend:Z
     :pswitch_2
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 560
+    .line 566
     :pswitch_3
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
@@ -171,14 +171,14 @@
 
     if-eq v2, v4, :cond_0
 
-    .line 561
+    .line 567
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v2}, Lcom/android/browser/BitmapWebView;->updateWebViewTexture()V
 
     goto :goto_0
 
-    .line 566
+    .line 572
     :pswitch_4
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
@@ -186,7 +186,7 @@
 
     goto :goto_0
 
-    .line 570
+    .line 576
     :pswitch_5
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
@@ -194,7 +194,7 @@
 
     goto :goto_0
 
-    .line 574
+    .line 580
     :pswitch_6
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
@@ -202,7 +202,7 @@
 
     invoke-interface {v2}, Lcom/android/browser/BitmapWebView$Surface;->stopDraw()V
 
-    .line 576
+    .line 582
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iget-object v2, v2, Lcom/android/browser/BitmapWebView;->mWebView:Landroid/webkit/WebView;
@@ -213,14 +213,14 @@
 
     invoke-virtual {v2, v3}, Landroid/webkit/WebView;->onAdaptiveZoomFinished(F)V
 
-    .line 578
+    .line 584
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iget-object v2, v2, Lcom/android/browser/BitmapWebView;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
 
-    .line 579
+    .line 585
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iget-object v2, v2, Lcom/android/browser/BitmapWebView;->mWebView:Landroid/webkit/WebView;
@@ -231,7 +231,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/webkit/WebView;->transformPlugins(Landroid/graphics/Matrix;Z)V
 
-    .line 581
+    .line 587
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v2, v4, v4}, Lcom/android/browser/BitmapWebView;->initWebViewVariables(ZZ)Z
@@ -240,7 +240,7 @@
 
     if-ne v2, v4, :cond_3
 
-    .line 583
+    .line 589
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     new-instance v3, Landroid/graphics/Region;
@@ -255,7 +255,7 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/browser/BitmapWebView;->updateWebViewTextureBitmap(Landroid/graphics/Region;Z)Z
 
-    .line 586
+    .line 592
     :cond_3
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
@@ -263,7 +263,7 @@
 
     invoke-virtual {v2, v6}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 587
+    .line 593
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iget-object v2, v2, Lcom/android/browser/BitmapWebView;->mPrivateHandler:Landroid/os/Handler;
@@ -274,25 +274,25 @@
 
     goto/16 :goto_0
 
-    .line 593
+    .line 599
     :pswitch_7
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iput v3, v2, Lcom/android/browser/BitmapWebView;->mScrollDX:F
 
-    .line 594
+    .line 600
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     iput v3, v2, Lcom/android/browser/BitmapWebView;->mScrollDY:F
 
-    .line 595
+    .line 601
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v2}, Lcom/android/browser/BitmapWebView;->hide()V
 
     goto/16 :goto_0
 
-    .line 600
+    .line 606
     :pswitch_8
     iget-object v2, p0, Lcom/android/browser/BitmapWebView$PrivateHandler;->this$0:Lcom/android/browser/BitmapWebView;
 
@@ -300,7 +300,7 @@
 
     goto/16 :goto_0
 
-    .line 521
+    .line 527
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1

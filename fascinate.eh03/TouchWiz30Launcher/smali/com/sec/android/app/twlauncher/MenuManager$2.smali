@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1613
+    .line 1624
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/MenuManager$2;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     iput-object p2, p0, Lcom/sec/android/app/twlauncher/MenuManager$2;->val$listadapter:Lcom/sec/android/app/twlauncher/ApplicationsListAdapter;
@@ -59,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 1617
+    .line 1628
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/MenuManager$2;->val$listadapter:Lcom/sec/android/app/twlauncher/ApplicationsListAdapter;
 
@@ -69,10 +69,11 @@
 
     check-cast v0, Lcom/sec/android/app/twlauncher/ApplicationInfo;
 
-    .line 1618
+    .line 1629
     .local v0, app:Lcom/sec/android/app/twlauncher/ApplicationInfo;
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/MenuManager$2;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/MenuManager;->access$100(Lcom/sec/android/app/twlauncher/MenuManager;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v1
@@ -83,6 +84,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/sec/android/app/twlauncher/Launcher;->startActivitySafely(Landroid/content/Intent;Ljava/lang/Object;)V
 
-    .line 1619
+    .line 1630
     return-void
 .end method

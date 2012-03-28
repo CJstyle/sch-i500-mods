@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1988
+    .line 1999
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/MenuManager$AdapterDataSetObserver;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -38,14 +38,16 @@
     .locals 2
 
     .prologue
-    .line 1992
+    .line 2003
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/MenuManager$AdapterDataSetObserver;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #calls: Lcom/sec/android/app/twlauncher/MenuManager;->updateMenu()V
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/MenuManager;->access$500(Lcom/sec/android/app/twlauncher/MenuManager;)V
 
-    .line 1993
+    .line 2004
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/MenuManager$AdapterDataSetObserver;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mMode:I
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/MenuManager;->access$300(Lcom/sec/android/app/twlauncher/MenuManager;)I
 
     move-result v0
@@ -54,17 +56,17 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1994
+    .line 2005
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/MenuManager$AdapterDataSetObserver;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/MenuManager;->stopUpdateDB()V
 
-    .line 1995
+    .line 2006
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/MenuManager$AdapterDataSetObserver;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/MenuManager;->startUpdateDB()V
 
-    .line 1997
+    .line 2008
     :cond_0
     return-void
 .end method
@@ -73,11 +75,12 @@
     .locals 1
 
     .prologue
-    .line 2001
+    .line 2012
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/MenuManager$AdapterDataSetObserver;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #calls: Lcom/sec/android/app/twlauncher/MenuManager;->updateMenu()V
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/MenuManager;->access$500(Lcom/sec/android/app/twlauncher/MenuManager;)V
 
-    .line 2002
+    .line 2013
     return-void
 .end method

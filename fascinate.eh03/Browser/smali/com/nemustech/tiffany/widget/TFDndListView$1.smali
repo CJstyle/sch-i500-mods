@@ -1,4 +1,4 @@
-.class Lcom/nemustech/tiffany/widget/TFDndListView$1;
+.class synthetic Lcom/nemustech/tiffany/widget/TFDndListView$1;
 .super Ljava/lang/Object;
 .source "TFDndListView.java"
 

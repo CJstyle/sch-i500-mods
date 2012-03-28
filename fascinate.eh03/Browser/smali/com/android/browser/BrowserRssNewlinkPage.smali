@@ -143,7 +143,7 @@
 
 # virtual methods
 .method protected onActivityResult(IILandroid/content/Intent;)V
-    .locals 1
+    .locals 2
     .parameter "requestCode"
     .parameter "resultCode"
     .parameter "data"
@@ -163,9 +163,18 @@
 
     if-ne p2, v0, :cond_0
 
+    .line 134
+    const-string v0, "browser"
+
+    const-string v1, "onDownloadStart google reader confirmation - cancel "
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     goto :goto_0
 
     .line 130
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

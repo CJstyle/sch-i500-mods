@@ -2106,41 +2106,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1473
-    invoke-static {}, Lcom/android/browser/BitmapWebViewSurface3D;->access$000()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "onSurfaceChanged"
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v4, " "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1474
     iget-object v0, p0, Lcom/android/browser/BitmapWebViewSurface3D$Renderer;->this$0:Lcom/android/browser/BitmapWebViewSurface3D;
 
@@ -2233,15 +2198,6 @@
     const/4 v5, -0x1
 
     const/4 v2, 0x0
-
-    .line 1508
-    invoke-static {}, Lcom/android/browser/BitmapWebViewSurface3D;->access$000()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v3, "onSurfaceCreated"
-
-    invoke-static {v0, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1509
     iget-object v0, p0, Lcom/android/browser/BitmapWebViewSurface3D$Renderer;->this$0:Lcom/android/browser/BitmapWebViewSurface3D;

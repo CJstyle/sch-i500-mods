@@ -46,6 +46,7 @@
     .line 90
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView$CheckForLongPress;->this$0:Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;
 
+    #calls: Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->getWindowAttachCount()I
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->access$300(Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;)I
 
     move-result v0
@@ -63,6 +64,7 @@
     .line 80
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView$CheckForLongPress;->this$0:Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->mParent:Landroid/view/ViewParent;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->access$000(Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;)Landroid/view/ViewParent;
 
     move-result-object v0
@@ -81,6 +83,7 @@
 
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView$CheckForLongPress;->this$0:Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;
 
+    #calls: Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->getWindowAttachCount()I
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->access$100(Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;)I
 
     move-result v1
@@ -89,6 +92,7 @@
 
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView$CheckForLongPress;->this$0:Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;
 
+    #getter for: Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->mHasPerformedLongPress:Z
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->access$200(Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;)Z
 
     move-result v0
@@ -109,6 +113,7 @@
 
     const/4 v1, 0x1
 
+    #setter for: Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->mHasPerformedLongPress:Z
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;->access$202(Lcom/sec/android/app/twlauncher/LauncherAppWidgetHostView;Z)Z
 
     .line 87

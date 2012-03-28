@@ -26,17 +26,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2321
+    .line 2332
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/MenuManager$MenuOpenAnimationController;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
-    .line 2322
+    .line 2333
     new-instance v0, Landroid/view/animation/TranslateAnimation;
 
     invoke-direct {v0, v1, v1, v1, v1}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
 
     invoke-direct {p0, v0}, Landroid/view/animation/LayoutAnimationController;-><init>(Landroid/view/animation/Animation;)V
 
-    .line 2323
+    .line 2334
     return-void
 .end method
 
@@ -47,19 +47,20 @@
     .parameter "view"
 
     .prologue
-    .line 2327
+    .line 2338
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 2328
+    .line 2339
     .local v0, lp:Landroid/view/ViewGroup$LayoutParams;
     iget-object v1, v0, Landroid/view/ViewGroup$LayoutParams;->layoutAnimationParameters:Landroid/view/animation/LayoutAnimationController$AnimationParameters;
 
-    .line 2329
+    .line 2340
     .local v1, params:Landroid/view/animation/LayoutAnimationController$AnimationParameters;
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/MenuManager$MenuOpenAnimationController;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
+    #getter for: Lcom/sec/android/app/twlauncher/MenuManager;->mOpenAnimations:[Landroid/view/animation/Animation;
     invoke-static {v2}, Lcom/sec/android/app/twlauncher/MenuManager;->access$1000(Lcom/sec/android/app/twlauncher/MenuManager;)[Landroid/view/animation/Animation;
 
     move-result-object v2
@@ -70,14 +71,14 @@
 
     iput-object v2, p0, Lcom/sec/android/app/twlauncher/MenuManager$MenuOpenAnimationController;->mAnimation:Landroid/view/animation/Animation;
 
-    .line 2330
+    .line 2341
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/MenuManager$MenuOpenAnimationController;->mAnimation:Landroid/view/animation/Animation;
 
     const-wide/16 v3, 0x258
 
     invoke-virtual {v2, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 2331
+    .line 2342
     invoke-super {p0, p1}, Landroid/view/animation/LayoutAnimationController;->getDelayForView(Landroid/view/View;)J
 
     move-result-wide v2

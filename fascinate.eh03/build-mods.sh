@@ -128,27 +128,27 @@ apktool b Browser
 rm Browser/dist/Browser.apk
 cp stock-apks/Browser.apk Browser/dist/
 pushd Browser/build/apk
-zip -u ../../dist/Browser.apk classes.dex
 zip -u ../../dist/Browser.apk resources.arsc
-zip -u ../../dist/Browser.apk res/xml/browser_preferences.xml
 popd
 zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build
 rm -f -r Browser/dist
 
-# BROWSEREI20.APK
+# BROWSEREH03.APK
 echo
-echo BROWSEREI20.APK
+echo BROWSEREH03.APK
 echo
-apktool b BrowserEI20
-rm BrowserEI20/dist/BrowserEI20.apk
-cp stock-apks/BrowserEI20.apk BrowserEI20/dist/
-pushd BrowserEI20/build/apk
-zip -u ../../dist/BrowserEI20.apk resources.arsc
+apktool b BrowserEH03
+rm BrowserEH03/dist/BrowserEH03.apk
+cp stock-apks/BrowserEH03.apk BrowserEH03/dist/
+pushd BrowserEH03/build/apk
+zip -u ../../dist/BrowserEH03.apk classes.dex
+zip -u ../../dist/BrowserEH03.apk resources.arsc
+zip -u ../../dist/BrowserEH03.apk res/xml/browser_preferences.xml
 popd
-zipalign -f 4 BrowserEI20/dist/BrowserEI20.apk ./BrowserEI20.apk
-rm -f -r BrowserEI20/build
-rm -f -r BrowserEI20/dist
+zipalign -f 4 BrowserEH03/dist/BrowserEH03.apk ./BrowserEH03.apk
+rm -f -r BrowserEH03/build
+rm -f -r BrowserEH03/dist
 
 # CAMERA.APK
 echo
@@ -319,27 +319,27 @@ apktool b TouchWiz30Launcher
 rm TouchWiz30Launcher/dist/TouchWiz30Launcher.apk
 cp stock-apks/TouchWiz30Launcher.apk TouchWiz30Launcher/dist/
 pushd TouchWiz30Launcher/build/apk
-zip -u ../../dist/TouchWiz30Launcher.apk res/xml/default_mainapplication_order.xml
+zip -u ../../dist/TouchWiz30Launcher.apk classes.dex
 zip -u ../../dist/TouchWiz30Launcher.apk res/xml/default_workspace.xml
 popd
 zipalign -f 4 TouchWiz30Launcher/dist/TouchWiz30Launcher.apk ./TouchWiz30Launcher.apk
 rm -f -r TouchWiz30Launcher/build
 rm -f -r TouchWiz30Launcher/dist
 
-# TOUCHWIZ30LAUNCHEREI20.APK
+# TOUCHWIZ30LAUNCHEREH03.APK
 echo
-echo TOUCHWIZ30LAUNCHEREI20.APK
+echo TOUCHWIZ30LAUNCHEREH03.APK
 echo
-apktool b TouchWiz30LauncherEI20
-rm TouchWiz30LauncherEI20/dist/TouchWiz30LauncherEI20.apk
-cp stock-apks/TouchWiz30LauncherEI20.apk TouchWiz30LauncherEI20/dist/
-pushd TouchWiz30LauncherEI20/build/apk
-zip -u ../../dist/TouchWiz30LauncherEI20.apk classes.dex
-zip -u ../../dist/TouchWiz30LauncherEI20.apk res/xml/default_workspace.xml
+apktool b TouchWiz30LauncherEH03
+rm TouchWiz30LauncherEH03/dist/TouchWiz30LauncherEH03.apk
+cp stock-apks/TouchWiz30LauncherEH03.apk TouchWiz30LauncherEH03/dist/
+pushd TouchWiz30LauncherEH03/build/apk
+zip -u ../../dist/TouchWiz30LauncherEH03.apk res/xml/default_mainapplication_order.xml
+zip -u ../../dist/TouchWiz30LauncherEH03.apk res/xml/default_workspace.xml
 popd
-zipalign -f 4 TouchWiz30LauncherEI20/dist/TouchWiz30LauncherEI20.apk ./TouchWiz30LauncherEI20.apk
-rm -f -r TouchWiz30LauncherEI20/build
-rm -f -r TouchWiz30LauncherEI20/dist
+zipalign -f 4 TouchWiz30LauncherEH03/dist/TouchWiz30LauncherEH03.apk ./TouchWiz30LauncherEH03.apk
+rm -f -r TouchWiz30LauncherEH03/build
+rm -f -r TouchWiz30LauncherEH03/dist
 
 # TWWALLPAPERCHOOSER.APK
 echo

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 569
+    .line 573
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$1;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,18 +44,18 @@
 
     const-string v6, "Launcher"
 
-    .line 572
+    .line 576
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 573
+    .line 577
     .local v1, cr:Landroid/content/ContentResolver;
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 574
+    .line 578
     .local v0, action:Ljava/lang/String;
     const-string v4, "android.intent.action.SCREEN_OFF"
 
@@ -65,33 +65,34 @@
 
     if-eqz v4, :cond_1
 
-    .line 575
+    .line 579
     const-string v4, "Launcher"
 
     const-string v4, "ACTION_SCREEN_OFF"
 
     invoke-static {v6, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 576
+    .line 580
     const-string v4, "phone_lock_status"
 
     invoke-static {v1, v4, v5}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     move-result v2
 
-    .line 577
+    .line 581
     .local v2, result:Z
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Launcher$1;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mIsScreenOff:Z
     invoke-static {v4, v5}, Lcom/sec/android/app/twlauncher/Launcher;->access$202(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
 
-    .line 590
+    .line 594
     .end local v2           #result:Z
     :cond_0
     :goto_0
     return-void
 
-    .line 578
+    .line 582
     :cond_1
     const-string v4, "android.intent.action.USER_PRESENT"
 
@@ -101,21 +102,22 @@
 
     if-eqz v4, :cond_2
 
-    .line 579
+    .line 583
     const-string v4, "Launcher"
 
     const-string v4, "ACTION_USER_PRESENT"
 
     invoke-static {v6, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 580
+    .line 584
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Launcher$1;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v4}, Lcom/sec/android/app/twlauncher/Launcher;->updateWallpaperVisiblity()V
 
-    .line 581
+    .line 585
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Launcher$1;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mIsActive:Z
     invoke-static {v4}, Lcom/sec/android/app/twlauncher/Launcher;->access$300(Lcom/sec/android/app/twlauncher/Launcher;)Z
 
     move-result v4
@@ -126,11 +128,12 @@
 
     const/4 v5, 0x0
 
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mIsScreenOff:Z
     invoke-static {v4, v5}, Lcom/sec/android/app/twlauncher/Launcher;->access$202(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
 
     goto :goto_0
 
-    .line 582
+    .line 586
     :cond_2
     const-string v4, "android.intent.action.MULTI_CSC_CLEAR"
 
@@ -140,7 +143,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 583
+    .line 587
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Launcher$1;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const-string v5, "launcher.db"
@@ -149,7 +152,7 @@
 
     move-result v3
 
-    .line 584
+    .line 588
     .local v3, ret:Z
     const-string v4, "Launcher"
 
@@ -173,9 +176,10 @@
 
     invoke-static {v6, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 586
+    .line 590
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Launcher$1;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->changeWallpaperToDefault()V
     invoke-static {v4}, Lcom/sec/android/app/twlauncher/Launcher;->access$400(Lcom/sec/android/app/twlauncher/Launcher;)V
 
     goto :goto_0

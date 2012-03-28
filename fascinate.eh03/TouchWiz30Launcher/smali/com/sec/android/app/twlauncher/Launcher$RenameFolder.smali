@@ -26,7 +26,7 @@
     .parameter
 
     .prologue
-    .line 3417
+    .line 3465
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,19 +40,8 @@
     .parameter "x1"
 
     .prologue
-    .line 3417
+    .line 3465
     invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;-><init>(Lcom/sec/android/app/twlauncher/Launcher;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1400(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 3417
-    invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->cleanup()V
 
     return-void
 .end method
@@ -62,18 +51,29 @@
     .parameter "x0"
 
     .prologue
-    .line 3417
+    .line 3465
+    invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->cleanup()V
+
+    return-void
+.end method
+
+.method static synthetic access$1600(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 3465
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->changeFolderName()V
 
     return-void
 .end method
 
-.method static synthetic access$1700(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)Landroid/widget/EditText;
+.method static synthetic access$1800(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)Landroid/widget/EditText;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 3417
+    .line 3465
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->mInput:Landroid/widget/EditText;
 
     return-object v0
@@ -85,7 +85,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 3466
+    .line 3514
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->mInput:Landroid/widget/EditText;
 
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    .line 3467
+    .line 3515
     .local v1, name:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -104,20 +104,21 @@
 
     if-nez v2, :cond_0
 
-    .line 3469
+    .line 3517
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {}, Lcom/sec/android/app/twlauncher/Launcher;->access$1900()Ljava/util/HashMap;
+    invoke-static {}, Lcom/sec/android/app/twlauncher/Launcher;->access$2000()Ljava/util/HashMap;
 
     move-result-object v2
 
     iget-object v4, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v4}, Lcom/sec/android/app/twlauncher/Launcher;->access$1800(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/FolderInfo;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mFolderInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    invoke-static {v4}, Lcom/sec/android/app/twlauncher/Launcher;->access$1900(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/FolderInfo;
 
     move-result-object v4
 
-    iget-wide v4, v4, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v4, v4, Lcom/sec/android/app/twlauncher/FolderInfo;->id:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -129,46 +130,51 @@
 
     check-cast v2, Lcom/sec/android/app/twlauncher/FolderInfo;
 
-    invoke-static {v3, v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$1802(Lcom/sec/android/app/twlauncher/Launcher;Lcom/sec/android/app/twlauncher/FolderInfo;)Lcom/sec/android/app/twlauncher/FolderInfo;
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mFolderInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    invoke-static {v3, v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$1902(Lcom/sec/android/app/twlauncher/Launcher;Lcom/sec/android/app/twlauncher/FolderInfo;)Lcom/sec/android/app/twlauncher/FolderInfo;
 
-    .line 3470
+    .line 3518
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$1800(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/FolderInfo;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mFolderInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$1900(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/FolderInfo;
 
     move-result-object v2
 
     iput-object v1, v2, Lcom/sec/android/app/twlauncher/FolderInfo;->title:Ljava/lang/CharSequence;
 
-    .line 3471
+    .line 3519
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$1800(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/FolderInfo;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mFolderInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$1900(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/FolderInfo;
 
     move-result-object v3
 
     invoke-static {v2, v3}, Lcom/sec/android/app/twlauncher/LauncherModel;->updateItemInDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;)V
 
-    .line 3473
+    .line 3521
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$2000(Lcom/sec/android/app/twlauncher/Launcher;)Z
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mWorkspaceLoading:Z
+    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$2100(Lcom/sec/android/app/twlauncher/Launcher;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 3474
+    .line 3522
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->lockAllApps()V
 
-    .line 3475
+    .line 3523
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$2100(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/LauncherModel;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mModel:Lcom/sec/android/app/twlauncher/LauncherModel;
+    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$2200(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/LauncherModel;
 
     move-result-object v2
 
@@ -176,25 +182,27 @@
 
     invoke-virtual {v2, v3, v6}, Lcom/sec/android/app/twlauncher/LauncherModel;->startLoader(Landroid/content/Context;Z)V
 
-    .line 3489
+    .line 3537
     :cond_0
     :goto_0
     invoke-direct {p0}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->cleanup()V
 
-    .line 3490
+    .line 3538
     return-void
 
-    .line 3477
+    .line 3525
     :cond_1
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$1000(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/Workspace;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mWorkspace:Lcom/sec/android/app/twlauncher/Workspace;
+    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$1100(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/Workspace;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$1800(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/FolderInfo;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mFolderInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    invoke-static {v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$1900(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/FolderInfo;
 
     move-result-object v3
 
@@ -204,14 +212,14 @@
 
     check-cast v0, Lcom/sec/android/app/twlauncher/FolderIcon;
 
-    .line 3479
+    .line 3527
     .local v0, folderIcon:Lcom/sec/android/app/twlauncher/FolderIcon;
     if-eqz v0, :cond_2
 
-    .line 3480
+    .line 3528
     invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/FolderIcon;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3481
+    .line 3529
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->getWorkspace()Lcom/sec/android/app/twlauncher/Workspace;
@@ -222,23 +230,25 @@
 
     goto :goto_0
 
-    .line 3483
+    .line 3531
     :cond_2
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v2}, Lcom/sec/android/app/twlauncher/Launcher;->lockAllApps()V
 
-    .line 3484
+    .line 3532
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const/4 v3, 0x1
 
-    invoke-static {v2, v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$2002(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mWorkspaceLoading:Z
+    invoke-static {v2, v3}, Lcom/sec/android/app/twlauncher/Launcher;->access$2102(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
 
-    .line 3485
+    .line 3533
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
-    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$2100(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/LauncherModel;
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mModel:Lcom/sec/android/app/twlauncher/LauncherModel;
+    invoke-static {v2}, Lcom/sec/android/app/twlauncher/Launcher;->access$2200(Lcom/sec/android/app/twlauncher/Launcher;)Lcom/sec/android/app/twlauncher/LauncherModel;
 
     move-result-object v2
 
@@ -253,7 +263,7 @@
     .locals 2
 
     .prologue
-    .line 3494
+    .line 3542
     :try_start_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
@@ -263,25 +273,27 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3499
+    .line 3547
     :goto_0
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$1602(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mWaitingForResult:Z
+    invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$1702(Lcom/sec/android/app/twlauncher/Launcher;Z)Z
 
-    .line 3500
+    .line 3548
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$1802(Lcom/sec/android/app/twlauncher/Launcher;Lcom/sec/android/app/twlauncher/FolderInfo;)Lcom/sec/android/app/twlauncher/FolderInfo;
+    #setter for: Lcom/sec/android/app/twlauncher/Launcher;->mFolderInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$1902(Lcom/sec/android/app/twlauncher/Launcher;Lcom/sec/android/app/twlauncher/FolderInfo;)Lcom/sec/android/app/twlauncher/FolderInfo;
 
-    .line 3501
+    .line 3549
     return-void
 
-    .line 3495
+    .line 3543
     :catch_0
     move-exception v0
 
@@ -294,7 +306,7 @@
     .locals 6
 
     .prologue
-    .line 3421
+    .line 3469
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const v4, 0x7f03000f
@@ -305,7 +317,7 @@
 
     move-result-object v2
 
-    .line 3422
+    .line 3470
     .local v2, layout:Landroid/view/View;
     const v3, 0x7f060024
 
@@ -317,20 +329,20 @@
 
     iput-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->mInput:Landroid/widget/EditText;
 
-    .line 3424
+    .line 3472
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {v0, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 3425
+    .line 3473
     .local v0, builder:Landroid/app/AlertDialog$Builder;
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
-    .line 3426
+    .line 3474
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const v4, 0x7f0a000a
@@ -341,19 +353,19 @@
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 3427
+    .line 3475
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 3428
+    .line 3476
     new-instance v3, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$1;
 
     invoke-direct {v3, p0}, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$1;-><init>(Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;)V
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 3433
+    .line 3481
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const v4, 0x7f0a000c
@@ -368,7 +380,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 3440
+    .line 3488
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     const v4, 0x7f0a000b
@@ -383,15 +395,15 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 3447
+    .line 3495
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    .line 3449
+    .line 3497
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
-    .line 3450
+    .line 3498
     .local v1, dialog:Landroid/app/AlertDialog;
     new-instance v3, Lcom/sec/android/app/twlauncher/Launcher$RenameFolder$4;
 
@@ -399,6 +411,6 @@
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
-    .line 3462
+    .line 3510
     return-object v1
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 647
+    .line 651
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$3;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 650
+    .line 654
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 651
+    .line 655
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.WALLPAPER_CHANGED"
 
@@ -55,33 +55,35 @@
 
     if-eqz v1, :cond_0
 
-    .line 652
+    .line 656
     const-string v1, "Launcher"
 
     const-string v2, "ACTION_WALLPAPER_CHANGED broadcast received"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 654
+    .line 658
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$3;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #calls: Lcom/sec/android/app/twlauncher/Launcher;->setWallpaperDimension()V
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$500(Lcom/sec/android/app/twlauncher/Launcher;)V
 
-    .line 656
+    .line 660
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$3;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
+    #getter for: Lcom/sec/android/app/twlauncher/Launcher;->mIsActive:Z
     invoke-static {v1}, Lcom/sec/android/app/twlauncher/Launcher;->access$300(Lcom/sec/android/app/twlauncher/Launcher;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 657
+    .line 661
     iget-object v1, p0, Lcom/sec/android/app/twlauncher/Launcher$3;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v1}, Lcom/sec/android/app/twlauncher/Launcher;->updateWindowTransparency()V
 
-    .line 660
+    .line 664
     :cond_0
     return-void
 .end method

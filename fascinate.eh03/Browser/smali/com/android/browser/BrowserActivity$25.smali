@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 4922
+    .line 4957
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$25;->this$0:Lcom/android/browser/BrowserActivity;
 
     iput-object p2, p0, Lcom/android/browser/BrowserActivity$25;->val$handler:Landroid/webkit/HttpAuthHandler;
@@ -50,26 +50,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 4925
+    .line 4960
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$25;->val$handler:Landroid/webkit/HttpAuthHandler;
 
     invoke-virtual {v0}, Landroid/webkit/HttpAuthHandler;->cancel()V
 
-    .line 4926
+    .line 4961
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$25;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-virtual {v0}, Lcom/android/browser/BrowserActivity;->resetTitleAndRevertLockIcon()V
 
-    .line 4927
+    .line 4962
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$25;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v0, v1}, Lcom/android/browser/BrowserActivity;->access$2602(Lcom/android/browser/BrowserActivity;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 4928
+    .line 4963
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$25;->this$0:Lcom/android/browser/BrowserActivity;
 
     invoke-static {v0, v1}, Lcom/android/browser/BrowserActivity;->access$2702(Lcom/android/browser/BrowserActivity;Landroid/webkit/HttpAuthHandler;)Landroid/webkit/HttpAuthHandler;
 
-    .line 4929
+    .line 4964
     return-void
 .end method

@@ -47,31 +47,31 @@
 
     const/4 v1, 0x0
 
-    .line 2432
+    .line 2540
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2449
+    .line 2557
     const/high16 v0, 0x42c8
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->Ck:F
 
-    .line 2450
+    .line 2558
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->Cm:F
 
-    .line 2452
+    .line 2560
     const/high16 v0, 0x447a
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->CMAXt:F
 
-    .line 2453
+    .line 2561
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->xdot0:F
 
-    .line 2454
+    .line 2562
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->x0:F
 
-    .line 2455
+    .line 2563
     iput v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->w0:F
 
     return-void
@@ -84,7 +84,7 @@
     .prologue
     const/high16 v5, -0x4080
 
-    .line 2489
+    .line 2597
     iget v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->x0:F
 
     iget v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->xdot0:F
@@ -117,7 +117,7 @@
 
     mul-float v0, v1, v2
 
-    .line 2490
+    .line 2598
     .local v0, ret:F
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
@@ -129,10 +129,10 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 2491
+    .line 2599
     mul-float/2addr v0, v5
 
-    .line 2493
+    .line 2601
     :cond_0
     return v0
 .end method
@@ -143,12 +143,12 @@
     .locals 1
 
     .prologue
-    .line 2519
+    .line 2627
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v0, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 2520
+    .line 2628
     return-void
 .end method
 
@@ -156,7 +156,7 @@
     .locals 5
 
     .prologue
-    .line 2501
+    .line 2609
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     iget v3, v3, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
@@ -167,18 +167,18 @@
 
     if-eqz v3, :cond_1
 
-    .line 2502
+    .line 2610
     :cond_0
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->mFirstRun:Z
 
-    .line 2503
+    .line 2611
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 2504
+    .line 2612
     .local v1, tNow:J
     iget-wide v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->mStartTime:J
 
@@ -190,7 +190,7 @@
 
     div-float v0, v3, v4
 
-    .line 2506
+    .line 2614
     .local v0, t:F
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
@@ -202,12 +202,12 @@
 
     iput v4, v3, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
 
-    .line 2512
+    .line 2620
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v3, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->post(Ljava/lang/Runnable;)Z
 
-    .line 2514
+    .line 2622
     .end local v0           #t:F
     .end local v1           #tNow:J
     :cond_1
@@ -215,12 +215,12 @@
 
     invoke-static {v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$900(Lcom/nemustech/tiffany/widget/TFAbsListView;)Z
 
-    .line 2515
+    .line 2623
     iget-object v3, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v3}, Lcom/nemustech/tiffany/widget/TFAbsListView;->invalidate()V
 
-    .line 2516
+    .line 2624
     return-void
 .end method
 
@@ -231,37 +231,37 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2465
+    .line 2573
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->mFirstRun:Z
 
-    .line 2466
+    .line 2574
     invoke-virtual {p0}, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->cancel()V
 
-    .line 2468
+    .line 2576
     cmpl-float v0, p1, v2
 
     if-nez v0, :cond_0
 
-    .line 2469
+    .line 2577
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     const/4 v1, 0x2
 
     invoke-static {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$802(Lcom/nemustech/tiffany/widget/TFAbsListView;I)I
 
-    .line 2470
+    .line 2578
     const/high16 v0, 0x447a
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->CMAXt:F
 
-    .line 2471
+    .line 2579
     const/high16 v0, 0x4348
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->Ck:F
 
-    .line 2472
+    .line 2580
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     iget v0, v0, Lcom/nemustech/tiffany/widget/TFAbsListView;->mExcessScroll:I
@@ -270,7 +270,7 @@
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->x0:F
 
-    .line 2480
+    .line 2588
     :goto_0
     iget v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->Ck:F
 
@@ -288,7 +288,7 @@
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->w0:F
 
-    .line 2481
+    .line 2589
     const/high16 v0, 0x4000
 
     mul-float/2addr v0, p1
@@ -299,22 +299,22 @@
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->xdot0:F
 
-    .line 2483
+    .line 2591
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->mStartTime:J
 
-    .line 2485
+    .line 2593
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v0, p0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->post(Ljava/lang/Runnable;)Z
 
-    .line 2486
+    .line 2594
     return-void
 
-    .line 2474
+    .line 2582
     :cond_0
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
@@ -322,17 +322,17 @@
 
     invoke-static {v0, v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$802(Lcom/nemustech/tiffany/widget/TFAbsListView;I)I
 
-    .line 2475
+    .line 2583
     const v0, 0x44a28000
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->CMAXt:F
 
-    .line 2476
+    .line 2584
     const/high16 v0, 0x42c8
 
     iput v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->Ck:F
 
-    .line 2477
+    .line 2585
     iput v2, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$ExcessScrollDampingRunnable;->x0:F
 
     goto :goto_0

@@ -243,13 +243,13 @@
     :goto_0
     sput-boolean v0, Lcom/android/browser/BrowserActivity;->ENABLE_BITMAPWEBVIEW:Z
 
-    .line 3692
+    .line 3725
     sput v3, Lcom/android/browser/BrowserActivity;->THUMBNAIL_WIDTH:I
 
-    .line 3693
+    .line 3726
     sput v3, Lcom/android/browser/BrowserActivity;->THUMBNAIL_HEIGHT:I
 
-    .line 5238
+    .line 5273
     const-string v0, "(?i)((?:http|https|file|rtsp):\\/\\/|(?:inline|data|about|javascript):)(.*)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -258,21 +258,21 @@
 
     sput-object v0, Lcom/android/browser/BrowserActivity;->ACCEPTED_URI_SCHEMA:Ljava/util/regex/Pattern;
 
-    .line 5431
+    .line 5479
     new-array v0, v4, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/browser/BrowserActivity;->SYSTEM_CPU_FORMAT:[I
 
-    .line 5495
+    .line 5543
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-direct {v0, v2, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
     sput-object v0, Lcom/android/browser/BrowserActivity;->COVER_SCREEN_PARAMS:Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 5499
+    .line 5547
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     const/16 v1, 0x11
@@ -281,28 +281,28 @@
 
     sput-object v0, Lcom/android/browser/BrowserActivity;->COVER_SCREEN_GRAVITY_CENTER:Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 5545
+    .line 5594
     new-array v0, v4, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/android/browser/BrowserActivity;->WINDOW_SHORTCUT_ID_ARRAY:[I
 
-    .line 5576
+    .line 5625
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lcom/android/browser/BrowserActivity;->sGoogleApps:Ljava/util/Set;
 
-    .line 5577
+    .line 5626
     sget-object v0, Lcom/android/browser/BrowserActivity;->sGoogleApps:Ljava/util/Set;
 
     const-string v1, "com.google.android.youtube"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 5627
+    .line 5676
     new-instance v0, Lcom/android/browser/BrowserActivity$UrlData;
 
     const/4 v1, 0x0
@@ -319,7 +319,7 @@
 
     goto :goto_0
 
-    .line 5431
+    .line 5479
     :array_0
     .array-data 0x4
         0x20t 0x1t 0x0t 0x0t
@@ -332,7 +332,7 @@
         0x20t 0x20t 0x0t 0x0t
     .end array-data
 
-    .line 5545
+    .line 5594
     :array_1
     .array-data 0x4
         0xb8t 0x0t 0xdt 0x7ft
@@ -401,39 +401,39 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mbrightnessChangeListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
-    .line 3462
+    .line 3495
     new-instance v0, Lcom/android/browser/BrowserActivity$12;
 
     invoke-direct {v0, p0}, Lcom/android/browser/BrowserActivity$12;-><init>(Lcom/android/browser/BrowserActivity;)V
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
-    .line 5408
+    .line 5456
     iput v2, p0, Lcom/android/browser/BrowserActivity;->mCurrentMenuState:I
 
-    .line 5409
+    .line 5457
     const v0, 0x7f0d00a2
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
-    .line 5410
+    .line 5458
     iput v3, p0, Lcom/android/browser/BrowserActivity;->mOldMenuState:I
 
-    .line 5424
+    .line 5472
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
-    .line 5540
+    .line 5589
     iput-object v1, p0, Lcom/android/browser/BrowserActivity;->mErrorConsoleContainer:Landroid/widget/LinearLayout;
 
-    .line 5541
+    .line 5590
     iput-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mShouldShowErrorConsole:Z
 
-    .line 5581
+    .line 5630
     iput-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
-    .line 5582
+    .line 5631
     iput-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mPendingZoomViewResume:Z
 
     .line 209
@@ -830,7 +830,7 @@
     .end annotation
 
     .prologue
-    .line 5360
+    .line 5408
     .local p1, packageNames:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -838,15 +838,15 @@
 
     move-result-object v0
 
-    .line 5361
+    .line 5409
     .local v0, w:Landroid/webkit/WebView;
     if-nez v0, :cond_0
 
-    .line 5366
+    .line 5414
     :goto_0
     return-void
 
-    .line 5365
+    .line 5413
     :cond_0
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->addPackageNames(Ljava/util/Set;)V
 
@@ -858,24 +858,24 @@
     .parameter "t"
 
     .prologue
-    .line 2810
+    .line 2821
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v2}, Lcom/android/browser/Tab;->attachTabToContentView(Landroid/view/ViewGroup;)V
 
-    .line 2812
+    .line 2823
     iget-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mShouldShowErrorConsole:Z
 
     if-eqz v2, :cond_0
 
-    .line 2813
+    .line 2824
     const/4 v2, 0x1
 
     invoke-virtual {p1, v2}, Lcom/android/browser/Tab;->getErrorConsole(Z)Lcom/android/browser/ErrorConsoleView;
 
     move-result-object v0
 
-    .line 2814
+    .line 2825
     .local v0, errorConsole:Lcom/android/browser/ErrorConsoleView;
     invoke-virtual {v0}, Lcom/android/browser/ErrorConsoleView;->numberOfErrors()I
 
@@ -883,12 +883,12 @@
 
     if-nez v2, :cond_2
 
-    .line 2815
+    .line 2826
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Lcom/android/browser/ErrorConsoleView;->showConsole(I)V
 
-    .line 2820
+    .line 2831
     :goto_0
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mErrorConsoleContainer:Landroid/widget/LinearLayout;
 
@@ -902,34 +902,34 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2825
+    .line 2836
     .end local v0           #errorConsole:Lcom/android/browser/ErrorConsoleView;
     :cond_0
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 2826
+    .line 2837
     .local v1, view:Landroid/webkit/WebView;
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setEmbeddedTitleBar(Landroid/view/View;)V
 
-    .line 2827
+    .line 2838
     invoke-virtual {p1}, Lcom/android/browser/Tab;->isInVoiceSearchMode()Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 2828
+    .line 2839
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getVoiceDisplayTitle()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p0, v2}, Lcom/android/browser/BrowserActivity;->showVoiceTitleBar(Ljava/lang/String;)V
 
-    .line 2833
+    .line 2844
     :goto_1
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getTopWindow()Landroid/webkit/WebView;
 
@@ -937,12 +937,12 @@
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->requestFocus()Z
 
-    .line 2837
+    .line 2848
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v2, :cond_1
 
-    .line 2839
+    .line 2850
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getTopWindow()Landroid/webkit/WebView;
@@ -973,7 +973,7 @@
 
     invoke-virtual {v3, v4, v5, v6, v2}, Lcom/android/browser/BitmapWebView;->setWebView(Landroid/webkit/WebView;Landroid/view/View;Landroid/view/View;Landroid/view/View;)V
 
-    .line 2845
+    .line 2856
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v2
@@ -982,12 +982,12 @@
 
     invoke-virtual {v2, v3}, Landroid/webkit/WebView;->setPinchZoomListener(Landroid/webkit/OnPinchZoomListener;)V
 
-    .line 2846
+    .line 2857
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
     if-nez v2, :cond_1
 
-    .line 2847
+    .line 2858
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
@@ -1002,11 +1002,11 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 2850
+    .line 2861
     :cond_1
     return-void
 
-    .line 2817
+    .line 2828
     .end local v1           #view:Landroid/webkit/WebView;
     .restart local v0       #errorConsole:Lcom/android/browser/ErrorConsoleView;
     :cond_2
@@ -1016,7 +1016,7 @@
 
     goto :goto_0
 
-    .line 2830
+    .line 2841
     .end local v0           #errorConsole:Lcom/android/browser/ErrorConsoleView;
     .restart local v1       #view:Landroid/webkit/WebView;
     :cond_3
@@ -1029,22 +1029,22 @@
     .locals 1
 
     .prologue
-    .line 3428
+    .line 3461
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mStopToast:Landroid/widget/Toast;
 
     if-eqz v0, :cond_0
 
-    .line 3429
+    .line 3462
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mStopToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->cancel()V
 
-    .line 3430
+    .line 3463
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mStopToast:Landroid/widget/Toast;
 
-    .line 3432
+    .line 3465
     :cond_0
     return-void
 .end method
@@ -1056,7 +1056,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2466
+    .line 2477
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Lcom/android/browser/WebDialog;->isVisible()Z
@@ -1068,11 +1068,11 @@
     :cond_0
     move v2, v3
 
-    .line 2479
+    .line 2490
     :goto_0
     return v2
 
-    .line 2467
+    .line 2478
     :cond_1
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -1080,19 +1080,19 @@
 
     move-result-object v0
 
-    .line 2468
+    .line 2479
     .local v0, currentTab:Lcom/android/browser/Tab;
     invoke-virtual {v0, p1}, Lcom/android/browser/Tab;->closeDialog(Lcom/android/browser/WebDialog;)V
 
-    .line 2469
+    .line 2480
     invoke-virtual {p1}, Lcom/android/browser/WebDialog;->dismiss()V
 
-    .line 2471
+    .line 2482
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 2472
+    .line 2483
     .local v1, webview:Landroid/webkit/WebView;
     if-eqz v1, :cond_2
 
@@ -1100,17 +1100,17 @@
 
     if-eqz v2, :cond_2
 
-    .line 2474
+    .line 2485
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setPinchZoomListener(Landroid/webkit/OnPinchZoomListener;)V
 
-    .line 2475
+    .line 2486
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v2, v3}, Lcom/android/browser/BitmapWebView;->setVisible(I)V
 
-    .line 2479
+    .line 2490
     :cond_2
     const/4 v2, 0x1
 
@@ -1122,7 +1122,7 @@
     .parameter
 
     .prologue
-    .line 3069
+    .line 3080
     :try_start_0
     const-string v0, "clipboard"
 
@@ -1134,24 +1134,24 @@
 
     move-result-object v0
 
-    .line 3070
+    .line 3081
     if-eqz v0, :cond_0
 
-    .line 3071
+    .line 3082
     invoke-interface {v0, p1}, Landroid/text/IClipboard;->setClipboardText(Ljava/lang/CharSequence;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3076
+    .line 3087
     :cond_0
     :goto_0
     return-void
 
-    .line 3073
+    .line 3084
     :catch_0
     move-exception v0
 
-    .line 3074
+    .line 3085
     const-string v1, "browser"
 
     const-string v2, "Copy failed"
@@ -1165,26 +1165,26 @@
     .locals 3
 
     .prologue
-    .line 5009
+    .line 5044
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
-    .line 5010
+    .line 5045
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->cancel()V
 
-    .line 5014
+    .line 5049
     :cond_0
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->closeContextMenu()V
 
-    .line 5016
+    .line 5051
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
 
     if-nez v0, :cond_1
 
-    .line 5017
+    .line 5052
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1225,7 +1225,7 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 5039
+    .line 5074
     :cond_1
     return-void
 .end method
@@ -1404,18 +1404,18 @@
     .parameter "source"
 
     .prologue
-    .line 1847
+    .line 1858
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1848
+    .line 1859
     .local v0, bundle:Landroid/os/Bundle;
     const-string v1, "source"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1849
+    .line 1860
     return-object v0
 .end method
 
@@ -1426,21 +1426,21 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 3723
+    .line 3756
     invoke-virtual {p1}, Landroid/webkit/WebView;->capturePicture()Landroid/graphics/Picture;
 
     move-result-object v0
 
-    .line 3724
+    .line 3757
     if-nez v0, :cond_0
 
     move-object v0, v5
 
-    .line 3765
+    .line 3798
     :goto_0
     return-object v0
 
-    .line 3729
+    .line 3762
     :cond_0
     :try_start_0
     invoke-static {p0}, Lcom/android/browser/BrowserActivity;->getDesiredThumbnailWidth(Landroid/content/Context;)I
@@ -1459,25 +1459,25 @@
 
     move-result-object v1
 
-    .line 3736
+    .line 3769
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 3739
+    .line 3772
     invoke-virtual {v0}, Landroid/graphics/Picture;->getWidth()I
 
     move-result v3
 
-    .line 3740
+    .line 3773
     invoke-virtual {v0}, Landroid/graphics/Picture;->getHeight()I
 
     move-result v4
 
-    .line 3743
+    .line 3776
     if-lez v3, :cond_1
 
-    .line 3744
+    .line 3777
     invoke-static {p0}, Lcom/android/browser/BrowserActivity;->getDesiredThumbnailWidth(Landroid/content/Context;)I
 
     move-result v5
@@ -1488,7 +1488,7 @@
 
     div-float v3, v5, v3
 
-    .line 3750
+    .line 3783
     invoke-virtual {p1}, Landroid/webkit/WebView;->getWidth()I
 
     move-result v5
@@ -1507,7 +1507,7 @@
 
     if-lez v4, :cond_2
 
-    .line 3755
+    .line 3788
     invoke-static {p0}, Lcom/android/browser/BrowserActivity;->getDesiredThumbnailHeight(Landroid/content/Context;)I
 
     move-result v5
@@ -1518,23 +1518,23 @@
 
     div-float v4, v5, v4
 
-    .line 3762
+    .line 3795
     :goto_1
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 3764
+    .line 3797
     invoke-virtual {v0, v2}, Landroid/graphics/Picture;->draw(Landroid/graphics/Canvas;)V
 
     move-object v0, v1
 
-    .line 3765
+    .line 3798
     goto :goto_0
 
-    .line 3731
+    .line 3764
     :catch_0
     move-exception v0
 
-    .line 3732
+    .line 3765
     const-string v1, "browser"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1559,19 +1559,19 @@
 
     move-object v0, v5
 
-    .line 3733
+    .line 3766
     goto :goto_0
 
     :cond_1
     move-object v0, v5
 
-    .line 3747
+    .line 3780
     goto :goto_0
 
     :cond_2
     move v4, v3
 
-    .line 3759
+    .line 3792
     goto :goto_1
 .end method
 
@@ -1589,15 +1589,15 @@
 
     const/high16 v11, 0x4000
 
-    .line 2245
+    .line 2256
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 2246
+    .line 2257
     if-nez v0, :cond_0
 
-    .line 2248
+    .line 2259
     const-string v0, "browser"
 
     const-string v1, "createShortcutIntent : Top window is null"
@@ -1606,22 +1606,22 @@
 
     move-object v0, v13
 
-    .line 2342
+    .line 2353
     :goto_0
     return-object v0
 
-    .line 2251
+    .line 2262
     :cond_0
     invoke-virtual {v0}, Landroid/webkit/WebView;->getTitle()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2252
+    .line 2263
     invoke-virtual {v0}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 2254
+    .line 2265
     if-eqz v2, :cond_1
 
     const-string v3, "about:blank"
@@ -1632,7 +1632,7 @@
 
     if-ne v9, v3, :cond_2
 
-    .line 2255
+    .line 2266
     :cond_1
     const-string v0, "browser"
 
@@ -1642,16 +1642,16 @@
 
     move-object v0, v13
 
-    .line 2256
+    .line 2267
     goto :goto_0
 
-    .line 2259
+    .line 2270
     :cond_2
     invoke-static {p0, v2}, Lcom/android/browser/BrowserBookmarksAdapter;->getTouchIcon(Lcom/android/browser/BrowserActivity;Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 2262
+    .line 2273
     new-instance v4, Landroid/content/Intent;
 
     const-string v5, "android.intent.action.VIEW"
@@ -1662,14 +1662,14 @@
 
     invoke-direct {v4, v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 2263
+    .line 2274
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
     int-to-long v5, v2
 
-    .line 2264
+    .line 2275
     const/16 v2, 0x20
 
     shl-long/2addr v5, v2
@@ -1682,7 +1682,7 @@
 
     or-long/2addr v5, v7
 
-    .line 2265
+    .line 2276
     const-string v2, "com.android.browser.application_id"
 
     invoke-static {v5, v6}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
@@ -1691,47 +1691,47 @@
 
     invoke-virtual {v4, v2, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2268
+    .line 2279
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
-    .line 2269
+    .line 2280
     const-string v5, "android.intent.extra.shortcut.INTENT"
 
     invoke-virtual {v2, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 2270
+    .line 2281
     const-string v4, "android.intent.extra.shortcut.NAME"
 
     invoke-virtual {v2, v4, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2274
+    .line 2285
     if-eqz v3, :cond_3
 
-    .line 2276
+    .line 2287
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-virtual {v3, v0, v9}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 2277
+    .line 2288
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 2281
+    .line 2292
     new-instance v4, Landroid/graphics/Path;
 
     invoke-direct {v4}, Landroid/graphics/Path;-><init>()V
 
-    .line 2282
+    .line 2293
     sget-object v5, Landroid/graphics/Path$FillType;->INVERSE_WINDING:Landroid/graphics/Path$FillType;
 
     invoke-virtual {v4, v5}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
 
-    .line 2283
+    .line 2294
     new-instance v5, Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
@@ -1748,14 +1748,14 @@
 
     invoke-direct {v5, v10, v10, v6, v3}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 2284
+    .line 2295
     const/high16 v3, 0x3f80
 
     const/high16 v6, 0x3f80
 
     invoke-virtual {v5, v3, v6}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 2285
+    .line 2296
     const/high16 v3, 0x4100
 
     const/high16 v6, 0x4100
@@ -1764,12 +1764,12 @@
 
     invoke-virtual {v4, v5, v3, v6, v7}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 2289
+    .line 2300
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3, v9}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 2290
+    .line 2301
     new-instance v5, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v6, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -1778,15 +1778,15 @@
 
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 2291
+    .line 2302
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 2293
+    .line 2304
     const-string v1, "android.intent.extra.shortcut.ICON"
 
     invoke-virtual {v2, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 2341
+    .line 2352
     :goto_1
     const-string v0, "duplicate"
 
@@ -1794,19 +1794,19 @@
 
     move-object v0, v2
 
-    .line 2342
+    .line 2353
     goto/16 :goto_0
 
-    .line 2296
+    .line 2307
     :cond_3
     invoke-virtual {v0}, Landroid/webkit/WebView;->getFavicon()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 2298
+    .line 2309
     if-nez v0, :cond_4
 
-    .line 2299
+    .line 2310
     const-string v0, "android.intent.extra.shortcut.ICON_RESOURCE"
 
     const v1, 0x7f020024
@@ -1819,7 +1819,7 @@
 
     goto :goto_1
 
-    .line 2302
+    .line 2313
     :cond_4
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getResources()Landroid/content/res/Resources;
 
@@ -1831,36 +1831,36 @@
 
     move-result-object v1
 
-    .line 2306
+    .line 2317
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-virtual {v1, v3, v9}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 2307
+    .line 2318
     new-instance v4, Landroid/graphics/Canvas;
 
     invoke-direct {v4, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 2310
+    .line 2321
     new-instance v5, Landroid/graphics/Paint;
 
     const/4 v6, 0x3
 
     invoke-direct {v5, v6}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 2311
+    .line 2322
     sget-object v6, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 2312
+    .line 2323
     const/4 v6, -0x1
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2314
+    .line 2325
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
@@ -1871,20 +1871,20 @@
 
     iget v6, v6, Landroid/util/DisplayMetrics;->density:F
 
-    .line 2316
+    .line 2327
     const/high16 v7, 0x4180
 
     mul-float/2addr v7, v6
 
-    .line 2317
+    .line 2328
     mul-float/2addr v6, v11
 
-    .line 2318
+    .line 2329
     mul-float v8, v11, v6
 
     add-float/2addr v7, v8
 
-    .line 2320
+    .line 2331
     new-instance v8, Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -1897,7 +1897,7 @@
 
     invoke-direct {v8, v12, v12, v9, v1}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 2321
+    .line 2332
     invoke-virtual {v8}, Landroid/graphics/Rect;->exactCenterX()F
 
     move-result v1
@@ -1906,7 +1906,7 @@
 
     sub-float/2addr v1, v9
 
-    .line 2325
+    .line 2336
     invoke-virtual {v8}, Landroid/graphics/Rect;->exactCenterY()F
 
     move-result v8
@@ -1917,7 +1917,7 @@
 
     sub-float/2addr v8, v6
 
-    .line 2326
+    .line 2337
     new-instance v9, Landroid/graphics/RectF;
 
     add-float v10, v1, v7
@@ -1926,16 +1926,16 @@
 
     invoke-direct {v9, v1, v8, v10, v7}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 2329
+    .line 2340
     invoke-virtual {v4, v9, v11, v11, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 2334
+    .line 2345
     invoke-virtual {v9, v6, v6}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 2335
+    .line 2346
     invoke-virtual {v4, v0, v13, v9, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 2336
+    .line 2347
     const-string v0, "android.intent.extra.shortcut.ICON"
 
     invoke-virtual {v2, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
@@ -1947,7 +1947,7 @@
     .locals 1
 
     .prologue
-    .line 2461
+    .line 2472
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFindDialog:Lcom/android/browser/FindDialog;
 
     if-eqz v0, :cond_0
@@ -2000,12 +2000,12 @@
 
     const/4 v5, 0x0
 
-    .line 4365
+    .line 4400
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object v0
 
-    .line 4368
+    .line 4403
     array-length v1, v0
 
     move v2, v5
@@ -2015,7 +2015,7 @@
 
     aget-char v3, v0, v2
 
-    .line 4370
+    .line 4405
     if-eq v3, v6, :cond_0
 
     if-eq v3, v8, :cond_0
@@ -2028,27 +2028,27 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 4371
+    .line 4406
     :cond_0
     const/4 v1, 0x1
 
-    .line 4375
+    .line 4410
     :goto_1
     if-nez v1, :cond_2
 
     move-object v0, p0
 
-    .line 4390
+    .line 4425
     :goto_2
     return-object v0
 
-    .line 4368
+    .line 4403
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 4379
+    .line 4414
     :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2056,7 +2056,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 4380
+    .line 4415
     array-length v2, v0
 
     move v3, v5
@@ -2066,7 +2066,7 @@
 
     aget-char v4, v0, v3
 
-    .line 4382
+    .line 4417
     if-eq v4, v6, :cond_3
 
     if-eq v4, v8, :cond_3
@@ -2079,32 +2079,32 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 4383
+    .line 4418
     :cond_3
     const/16 v5, 0x25
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 4384
+    .line 4419
     invoke-static {v4}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4380
+    .line 4415
     :goto_4
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 4386
+    .line 4421
     :cond_4
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_4
 
-    .line 4390
+    .line 4425
     :cond_5
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2304,20 +2304,20 @@
     .prologue
     const-string v1, ""
 
-    .line 4868
+    .line 4903
     if-nez p1, :cond_1
 
-    .line 4869
+    .line 4904
     const-string v0, ""
 
     move-object v0, v1
 
-    .line 4875
+    .line 4910
     :cond_0
     :goto_0
     return-object v0
 
-    .line 4871
+    .line 4906
     :cond_1
     invoke-static {p0}, Landroid/text/format/DateFormat;->getDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
 
@@ -2327,10 +2327,10 @@
 
     move-result-object v0
 
-    .line 4872
+    .line 4907
     if-nez v0, :cond_0
 
-    .line 4873
+    .line 4908
     const-string v0, ""
 
     move-object v0, v1
@@ -2343,10 +2343,10 @@
     .parameter "context"
 
     .prologue
-    .line 3718
+    .line 3751
     invoke-static {p0}, Lcom/android/browser/BrowserActivity;->getDesiredThumbnailWidth(Landroid/content/Context;)I
 
-    .line 3719
+    .line 3752
     sget v0, Lcom/android/browser/BrowserActivity;->THUMBNAIL_HEIGHT:I
 
     return v0
@@ -2357,12 +2357,12 @@
     .parameter
 
     .prologue
-    .line 3702
+    .line 3735
     sget v0, Lcom/android/browser/BrowserActivity;->THUMBNAIL_WIDTH:I
 
     if-nez v0, :cond_0
 
-    .line 3703
+    .line 3736
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2373,7 +2373,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    .line 3704
+    .line 3737
     const/high16 v1, 0x42b4
 
     mul-float/2addr v1, v0
@@ -2382,7 +2382,7 @@
 
     sput v1, Lcom/android/browser/BrowserActivity;->THUMBNAIL_WIDTH:I
 
-    .line 3705
+    .line 3738
     const/high16 v1, 0x42a0
 
     mul-float/2addr v0, v1
@@ -2391,7 +2391,7 @@
 
     sput v0, Lcom/android/browser/BrowserActivity;->THUMBNAIL_HEIGHT:I
 
-    .line 3707
+    .line 3740
     :cond_0
     sget v0, Lcom/android/browser/BrowserActivity;->THUMBNAIL_WIDTH:I
 
@@ -2402,12 +2402,12 @@
     .locals 2
 
     .prologue
-    .line 5369
+    .line 5417
     new-instance v0, Lcom/android/browser/BrowserActivity$28;
 
     invoke-direct {v0, p0}, Lcom/android/browser/BrowserActivity$28;-><init>(Lcom/android/browser/BrowserActivity;)V
 
-    .line 5391
+    .line 5439
     .local v0, task:Landroid/os/AsyncTask;,"Landroid/os/AsyncTask<Ljava/lang/Void;Ljava/lang/Void;Ljava/util/Set<Ljava/lang/String;>;>;"
     const/4 v1, 0x0
 
@@ -2415,7 +2415,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 5392
+    .line 5440
     return-void
 .end method
 
@@ -2849,144 +2849,137 @@
 .end method
 
 .method private handleWebSearchRequest(Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;)Z
-    .locals 8
-    .parameter "inUrl"
-    .parameter "appData"
-    .parameter "extraData"
+    .locals 5
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v4, 0x1
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
     .line 928
     if-nez p1, :cond_0
 
-    move v4, v6
+    move v0, v3
 
     .line 965
     :goto_0
-    return v4
+    return v0
 
     .line 932
     :cond_0
     invoke-static {p1}, Lcom/android/browser/BrowserActivity;->fixUrl(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 936
-    .local v3, url:Ljava/lang/String;
-    sget-object v4, Landroid/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
+    sget-object v1, Landroid/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v4, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/util/regex/Matcher;->matches()Z
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result v4
+    move-result v1
 
-    if-nez v4, :cond_1
+    if-nez v1, :cond_1
 
-    sget-object v4, Lcom/android/browser/BrowserActivity;->ACCEPTED_URI_SCHEMA:Ljava/util/regex/Pattern;
+    sget-object v1, Lcom/android/browser/BrowserActivity;->ACCEPTED_URI_SCHEMA:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v4, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/util/regex/Matcher;->matches()Z
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result v4
+    move-result v1
 
-    if-nez v4, :cond_1
+    if-nez v1, :cond_1
 
-    invoke-direct {p0, v3}, Lcom/android/browser/BrowserActivity;->parseUrlShortcut(Ljava/lang/String;)I
+    invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->parseUrlShortcut(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_2
+    if-eqz v1, :cond_2
 
     :cond_1
-    move v4, v6
+    move v0, v3
 
     .line 939
     goto :goto_0
 
     .line 942
     :cond_2
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mResolver:Landroid/content/ContentResolver;
-
-    .line 943
-    .local v0, cr:Landroid/content/ContentResolver;
-    move-object v1, v3
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mResolver:Landroid/content/ContentResolver;
 
     .line 944
-    .local v1, newUrl:Ljava/lang/String;
-    new-instance v4, Lcom/android/browser/BrowserActivity$6;
+    new-instance v2, Lcom/android/browser/BrowserActivity$6;
 
-    invoke-direct {v4, p0, v0, v1}, Lcom/android/browser/BrowserActivity$6;-><init>(Lcom/android/browser/BrowserActivity;Landroid/content/ContentResolver;Ljava/lang/String;)V
+    invoke-direct {v2, p0, v1, v0}, Lcom/android/browser/BrowserActivity$6;-><init>(Lcom/android/browser/BrowserActivity;Landroid/content/ContentResolver;Ljava/lang/String;)V
 
-    new-array v5, v6, [Ljava/lang/Void;
+    new-array v1, v3, [Ljava/lang/Void;
 
-    invoke-virtual {v4, v5}, Lcom/android/browser/BrowserActivity$6;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v2, v1}, Lcom/android/browser/BrowserActivity$6;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 952
-    iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
-    if-nez v4, :cond_3
+    if-nez v1, :cond_3
 
-    move v4, v6
+    move v0, v3
 
     .line 953
     goto :goto_0
 
     .line 954
     :cond_3
-    iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
-    invoke-virtual {v4}, Lcom/android/browser/BrowserSettings;->getSearchEngine()Lcom/android/browser/search/SearchEngine;
+    invoke-virtual {v1}, Lcom/android/browser/BrowserSettings;->getSearchEngine()Lcom/android/browser/search/SearchEngine;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 955
-    .local v2, searchEngine:Lcom/android/browser/search/SearchEngine;
-    if-nez v2, :cond_4
+    if-nez v1, :cond_4
 
-    move v4, v6
+    move v0, v3
 
     goto :goto_0
 
     .line 956
     :cond_4
-    invoke-interface {v2, p0, v3, p2, p3}, Lcom/android/browser/search/SearchEngine;->startSearch(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;)V
+    invoke-interface {v1, p0, v0, p2, p3}, Lcom/android/browser/search/SearchEngine;->startSearch(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;)V
 
     .line 960
-    invoke-interface {v2}, Lcom/android/browser/search/SearchEngine;->getName()Ljava/lang/String;
+    invoke-interface {v1}, Lcom/android/browser/search/SearchEngine;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string v5, "google"
+    const-string v1, "google"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_5
+    if-nez v0, :cond_5
 
     .line 961
-    iput-boolean v7, p0, Lcom/android/browser/BrowserActivity;->mStartSearch:Z
+    iput-boolean v4, p0, Lcom/android/browser/BrowserActivity;->mStartSearch:Z
 
-    move v4, v6
+    move v0, v3
 
     .line 962
     goto :goto_0
 
     :cond_5
-    move v4, v7
+    move v0, v4
 
     .line 965
     goto :goto_0
@@ -2996,19 +2989,19 @@
     .locals 3
 
     .prologue
-    .line 1420
+    .line 1430
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v0, :cond_0
 
-    .line 1421
+    .line 1431
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/browser/BitmapWebView;->setTitleBarVisibility(Z)V
 
-    .line 1423
+    .line 1433
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
@@ -3018,11 +3011,11 @@
 
     if-nez v0, :cond_1
 
-    .line 1437
+    .line 1447
     :goto_0
     return-void
 
-    .line 1424
+    .line 1434
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
@@ -3032,14 +3025,14 @@
 
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 1426
+    .line 1436
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 1431
+    .line 1441
     if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->getScrollY()I
@@ -3053,7 +3046,7 @@
     :goto_1
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 1433
+    .line 1443
     const-string v1, "window"
 
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -3062,19 +3055,19 @@
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 1435
+    .line 1445
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-interface {v1, v2, v0}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1436
+    .line 1446
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-interface {v1, v0}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 1431
+    .line 1441
     :cond_2
     const v1, 0x7f0b0003
 
@@ -3088,37 +3081,37 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 4816
+    .line 4851
     if-nez p1, :cond_0
 
     move-object v0, v2
 
-    .line 4859
+    .line 4894
     :goto_0
     return-object v0
 
-    .line 4820
+    .line 4855
     :cond_0
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 4822
+    .line 4857
     const v1, 0x7f030020
 
     invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
-    .line 4826
+    .line 4861
     invoke-virtual {p1}, Landroid/net/http/SslCertificate;->getIssuedTo()Landroid/net/http/SslCertificate$DName;
 
     move-result-object v2
 
-    .line 4827
+    .line 4862
     if-eqz v2, :cond_1
 
-    .line 4828
+    .line 4863
     const v0, 0x7f0d0070
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3133,7 +3126,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4830
+    .line 4865
     const v0, 0x7f0d0072
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3148,7 +3141,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4832
+    .line 4867
     const v0, 0x7f0d0074
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3163,16 +3156,16 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4837
+    .line 4872
     :cond_1
     invoke-virtual {p1}, Landroid/net/http/SslCertificate;->getIssuedBy()Landroid/net/http/SslCertificate$DName;
 
     move-result-object v2
 
-    .line 4838
+    .line 4873
     if-eqz v2, :cond_2
 
-    .line 4839
+    .line 4874
     const v0, 0x7f0d0076
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3187,7 +3180,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4841
+    .line 4876
     const v0, 0x7f0d0078
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3202,7 +3195,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4843
+    .line 4878
     const v0, 0x7f0d007a
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3217,7 +3210,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4848
+    .line 4883
     :cond_2
     invoke-virtual {p1}, Landroid/net/http/SslCertificate;->getValidNotBeforeDate()Ljava/util/Date;
 
@@ -3227,7 +3220,7 @@
 
     move-result-object v2
 
-    .line 4850
+    .line 4885
     const v0, 0x7f0d007d
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3238,7 +3231,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4854
+    .line 4889
     invoke-virtual {p1}, Landroid/net/http/SslCertificate;->getValidNotAfterDate()Ljava/util/Date;
 
     move-result-object v0
@@ -3247,7 +3240,7 @@
 
     move-result-object v0
 
-    .line 4856
+    .line 4891
     const v2, 0x7f0d007f
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3260,7 +3253,7 @@
 
     move-object v0, v1
 
-    .line 4859
+    .line 4894
     goto/16 :goto_0
 .end method
 
@@ -3268,22 +3261,22 @@
     .locals 2
 
     .prologue
-    .line 1301
+    .line 1311
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 1302
+    .line 1312
     const-string v1, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1303
+    .line 1313
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1, v0}, Lcom/android/browser/BrowserActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1304
+    .line 1314
     return-void
 .end method
 
@@ -3293,13 +3286,13 @@
     .parameter "url"
 
     .prologue
-    .line 5199
+    .line 5234
     invoke-direct {p0, p1, p2}, Lcom/android/browser/BrowserActivity;->updateTitleBarForNewLoad(Landroid/webkit/WebView;Ljava/lang/String;)V
 
-    .line 5200
+    .line 5235
     invoke-virtual {p1, p2}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 5201
+    .line 5236
     return-void
 .end method
 
@@ -3309,7 +3302,7 @@
     .parameter "data"
 
     .prologue
-    .line 5210
+    .line 5245
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v0
@@ -3318,10 +3311,10 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/browser/BrowserActivity;->updateTitleBarForNewLoad(Landroid/webkit/WebView;Ljava/lang/String;)V
 
-    .line 5211
+    .line 5246
     invoke-virtual {p2, p1}, Lcom/android/browser/BrowserActivity$UrlData;->loadIn(Lcom/android/browser/Tab;)V
 
-    .line 5212
+    .line 5247
     return-void
 .end method
 
@@ -3331,7 +3324,7 @@
     .parameter "url"
 
     .prologue
-    .line 5183
+    .line 5218
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Ljava/lang/String;->length()I
@@ -3342,12 +3335,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 5184
+    .line 5219
     invoke-virtual {p0, p2}, Lcom/android/browser/BrowserActivity;->smartUrlFilter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 5185
+    .line 5220
     invoke-virtual {p1}, Landroid/webkit/WebView;->getWebViewClient()Landroid/webkit/WebViewClient;
 
     move-result-object v0
@@ -3358,10 +3351,10 @@
 
     if-nez v0, :cond_0
 
-    .line 5186
+    .line 5221
     invoke-direct {p0, p1, p2}, Lcom/android/browser/BrowserActivity;->loadUrl(Landroid/webkit/WebView;Ljava/lang/String;)V
 
-    .line 5189
+    .line 5224
     :cond_0
     return-void
 .end method
@@ -3373,7 +3366,7 @@
     .parameter "appId"
 
     .prologue
-    .line 2889
+    .line 2900
     new-instance v0, Lcom/android/browser/BrowserActivity$UrlData;
 
     invoke-direct {v0, p1}, Lcom/android/browser/BrowserActivity$UrlData;-><init>(Ljava/lang/String;)V
@@ -3391,31 +3384,31 @@
     .parameter "wasAdded"
 
     .prologue
-    .line 5347
+    .line 5395
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 5348
+    .line 5396
     .local v0, w:Landroid/webkit/WebView;
     if-nez v0, :cond_0
 
-    .line 5357
+    .line 5405
     :goto_0
     return-void
 
-    .line 5352
+    .line 5400
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 5353
+    .line 5401
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->addPackageName(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 5355
+    .line 5403
     :cond_1
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->removePackageName(Ljava/lang/String;)V
 
@@ -3509,20 +3502,20 @@
     .locals 4
 
     .prologue
-    .line 1665
+    .line 1676
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v3}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
 
     move-result-object v1
 
-    .line 1666
+    .line 1677
     .local v1, tab:Lcom/android/browser/Tab;
     invoke-virtual {v1}, Lcom/android/browser/Tab;->inLoad()Z
 
     move-result v0
 
-    .line 1667
+    .line 1678
     .local v0, inLoad:Z
     iget-boolean v3, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
@@ -3530,32 +3523,32 @@
 
     if-nez v0, :cond_1
 
-    .line 1668
+    .line 1679
     invoke-static {}, Landroid/webkit/CookieSyncManager;->getInstance()Landroid/webkit/CookieSyncManager;
 
     move-result-object v3
 
     invoke-virtual {v3}, Landroid/webkit/CookieSyncManager;->stopSync()V
 
-    .line 1669
+    .line 1680
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v3}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v2
 
-    .line 1670
+    .line 1681
     .local v2, w:Landroid/webkit/WebView;
     if-eqz v2, :cond_0
 
-    .line 1671
+    .line 1682
     invoke-virtual {v2}, Landroid/webkit/WebView;->pauseTimers()V
 
-    .line 1673
+    .line 1684
     :cond_0
     const/4 v3, 0x1
 
-    .line 1675
+    .line 1686
     .end local v2           #w:Landroid/webkit/WebView;
     :goto_0
     return v3
@@ -3571,55 +3564,55 @@
     .parameter "t"
 
     .prologue
-    .line 2861
+    .line 2872
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v2}, Lcom/android/browser/Tab;->removeTabFromContentView(Landroid/view/ViewGroup;)V
 
-    .line 2863
+    .line 2874
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2}, Lcom/android/browser/Tab;->getErrorConsole(Z)Lcom/android/browser/ErrorConsoleView;
 
     move-result-object v0
 
-    .line 2864
+    .line 2875
     .local v0, errorConsole:Lcom/android/browser/ErrorConsoleView;
     if-eqz v0, :cond_0
 
-    .line 2865
+    .line 2876
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mErrorConsoleContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
 
-    .line 2868
+    .line 2879
     :cond_0
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 2869
+    .line 2880
     .local v1, view:Landroid/webkit/WebView;
     if-eqz v1, :cond_1
 
-    .line 2870
+    .line 2881
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setEmbeddedTitleBar(Landroid/view/View;)V
 
-    .line 2871
+    .line 2882
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v2, :cond_1
 
-    .line 2873
+    .line 2884
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Lcom/android/browser/BitmapWebView;->setVisible(I)V
 
-    .line 2875
+    .line 2886
     :cond_1
     return-void
 .end method
@@ -3629,7 +3622,7 @@
     .parameter "url"
 
     .prologue
-    .line 4514
+    .line 4549
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -3638,12 +3631,12 @@
 
     invoke-virtual {v0, p1}, Lcom/android/browser/Tab;->resetLockIcon(Ljava/lang/String;)V
 
-    .line 4515
+    .line 4550
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->updateLockIconImage(I)V
 
-    .line 4516
+    .line 4551
     return-void
 .end method
 
@@ -3654,7 +3647,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3115
+    .line 3126
     invoke-virtual {p1}, Landroid/webkit/WebView;->copyBackForwardList()Landroid/webkit/WebBackForwardList;
 
     move-result-object v1
@@ -3663,11 +3656,11 @@
 
     move-result-object v0
 
-    .line 3116
+    .line 3127
     .local v0, item:Landroid/webkit/WebHistoryItem;
     if-eqz v0, :cond_0
 
-    .line 3117
+    .line 3128
     invoke-virtual {v0}, Landroid/webkit/WebHistoryItem;->getUrl()Ljava/lang/String;
 
     move-result-object v1
@@ -3678,22 +3671,22 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/browser/BrowserActivity;->setUrlTitle(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3118
+    .line 3129
     invoke-virtual {v0}, Landroid/webkit/WebHistoryItem;->getFavicon()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->setFavicon(Landroid/graphics/Bitmap;)V
 
-    .line 3123
+    .line 3134
     :goto_0
     return-void
 
-    .line 3120
+    .line 3131
     :cond_0
     invoke-virtual {p0, v2, v2}, Lcom/android/browser/BrowserActivity;->setUrlTitle(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3121
+    .line 3132
     invoke-virtual {p0, v2}, Lcom/android/browser/BrowserActivity;->setFavicon(Landroid/graphics/Bitmap;)V
 
     goto :goto_0
@@ -3703,31 +3696,31 @@
     .locals 3
 
     .prologue
-    .line 3104
+    .line 3115
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 3105
+    .line 3116
     .local v0, current:Landroid/webkit/WebView;
     if-nez v0, :cond_0
 
-    .line 3111
+    .line 3122
     :goto_0
     return-void
 
-    .line 3108
+    .line 3119
     :cond_0
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->resetTitleAndIcon(Landroid/webkit/WebView;)V
 
-    .line 3109
+    .line 3120
     invoke-virtual {v0}, Landroid/webkit/WebView;->getProgress()I
 
     move-result v1
 
-    .line 3110
+    .line 3121
     .local v1, progress:I
     invoke-virtual {v0}, Landroid/webkit/WebView;->getWebChromeClient()Landroid/webkit/WebChromeClient;
 
@@ -3742,29 +3735,29 @@
     .locals 4
 
     .prologue
-    .line 1652
+    .line 1663
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v3}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
 
     move-result-object v1
 
-    .line 1653
+    .line 1664
     .local v1, tab:Lcom/android/browser/Tab;
     if-nez v1, :cond_1
 
-    .line 1662
+    .line 1673
     :cond_0
     :goto_0
     return-void
 
-    .line 1654
+    .line 1665
     :cond_1
     invoke-virtual {v1}, Lcom/android/browser/Tab;->inLoad()Z
 
     move-result v0
 
-    .line 1655
+    .line 1666
     .local v0, inLoad:Z
     iget-boolean v3, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
@@ -3779,7 +3772,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1656
+    .line 1667
     :cond_3
     invoke-static {}, Landroid/webkit/CookieSyncManager;->getInstance()Landroid/webkit/CookieSyncManager;
 
@@ -3787,140 +3780,130 @@
 
     invoke-virtual {v3}, Landroid/webkit/CookieSyncManager;->startSync()V
 
-    .line 1657
+    .line 1668
     invoke-virtual {v1}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v2
 
-    .line 1658
+    .line 1669
     .local v2, w:Landroid/webkit/WebView;
     if-eqz v2, :cond_0
 
-    .line 1659
+    .line 1670
     invoke-virtual {v2}, Landroid/webkit/WebView;->resumeTimers()V
 
     goto :goto_0
 .end method
 
 .method private retainIconsOnStartup()V
-    .locals 7
+    .locals 4
 
     .prologue
-    .line 1681
+    .line 1692
     invoke-static {}, Landroid/webkit/WebIconDatabase;->getInstance()Landroid/webkit/WebIconDatabase;
-
-    move-result-object v1
-
-    .line 1682
-    .local v1, db:Landroid/webkit/WebIconDatabase;
-    const-string v5, "icons"
-
-    const/4 v6, 0x0
-
-    invoke-virtual {p0, v5, v6}, Lcom/android/browser/BrowserActivity;->getDir(Ljava/lang/String;I)Ljava/io/File;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v5}, Landroid/webkit/WebIconDatabase;->open(Ljava/lang/String;)V
-
-    .line 1683
-    const/4 v0, 0x0
-
-    .line 1685
-    .local v0, c:Landroid/database/Cursor;
-    :try_start_0
-    iget-object v5, p0, Lcom/android/browser/BrowserActivity;->mResolver:Landroid/content/ContentResolver;
-
-    invoke-static {v5}, Landroid/provider/Browser;->getAllBookmarks(Landroid/content/ContentResolver;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 1686
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
+    .line 1693
+    const-string v1, "icons"
 
-    move-result v5
+    const/4 v2, 0x0
 
-    if-eqz v5, :cond_1
+    invoke-virtual {p0, v1, v2}, Lcom/android/browser/BrowserActivity;->getDir(Ljava/lang/String;I)Ljava/io/File;
 
-    .line 1687
-    const-string v5, "url"
+    move-result-object v1
 
-    invoke-interface {v0, v5}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
-    move-result v4
+    move-result-object v1
 
-    .line 1689
-    .local v4, urlIndex:I
+    invoke-virtual {v0, v1}, Landroid/webkit/WebIconDatabase;->open(Ljava/lang/String;)V
+
+    .line 1694
+    const/4 v1, 0x0
+
+    .line 1696
+    :try_start_0
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mResolver:Landroid/content/ContentResolver;
+
+    invoke-static {v2}, Landroid/provider/Browser;->getAllBookmarks(Landroid/content/ContentResolver;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    .line 1697
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 1698
+    const-string v2, "url"
+
+    invoke-interface {v1, v2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v2
+
+    .line 1700
     :cond_0
-    invoke-interface {v0, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1690
-    .local v3, url:Ljava/lang/String;
-    invoke-virtual {v1, v3}, Landroid/webkit/WebIconDatabase;->retainIconForPageUrl(Ljava/lang/String;)V
+    .line 1701
+    invoke-virtual {v0, v3}, Landroid/webkit/WebIconDatabase;->retainIconForPageUrl(Ljava/lang/String;)V
 
-    .line 1691
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
+    .line 1702
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v5
+    move-result v3
 
-    if-nez v5, :cond_0
+    if-nez v3, :cond_0
 
-    .line 1696
-    .end local v3           #url:Ljava/lang/String;
-    .end local v4           #urlIndex:I
+    .line 1707
     :cond_1
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_2
 
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 1698
+    .line 1709
     :cond_2
     :goto_0
     return-void
 
-    .line 1693
+    .line 1704
     :catch_0
-    move-exception v5
+    move-exception v0
 
-    move-object v2, v5
-
-    .line 1694
-    .local v2, e:Ljava/lang/IllegalStateException;
+    .line 1705
     :try_start_1
-    const-string v5, "browser"
+    const-string v2, "browser"
 
-    const-string v6, "retainIconsOnStartup"
+    const-string v3, "retainIconsOnStartup"
 
-    invoke-static {v5, v6, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1696
-    if-eqz v0, :cond_2
+    .line 1707
+    if-eqz v1, :cond_2
 
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .end local v2           #e:Ljava/lang/IllegalStateException;
     :catchall_0
-    move-exception v5
+    move-exception v0
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     :cond_3
-    throw v5
+    throw v0
 .end method
 
 .method private sendNetworkType(Ljava/lang/String;Ljava/lang/String;)V
@@ -3929,21 +3912,21 @@
     .parameter "subtype"
 
     .prologue
-    .line 5340
+    .line 5388
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 5341
+    .line 5389
     .local v0, w:Landroid/webkit/WebView;
     if-eqz v0, :cond_0
 
-    .line 5342
+    .line 5390
     invoke-virtual {v0, p1, p2}, Landroid/webkit/WebView;->setNetworkType(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5344
+    .line 5392
     :cond_0
     return-void
 .end method
@@ -3955,14 +3938,14 @@
     .prologue
     const/16 v2, 0x400
 
-    .line 5334
+    .line 5382
     if-eqz p1, :cond_0
 
     const/4 v1, 0x0
 
     move v0, v1
 
-    .line 5335
+    .line 5383
     .local v0, flag:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getWindow()Landroid/view/Window;
@@ -3971,14 +3954,14 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/view/Window;->setFlags(II)V
 
-    .line 5336
+    .line 5384
     return-void
 
     .end local v0           #flag:I
     :cond_0
     move v0, v2
 
-    .line 5334
+    .line 5382
     goto :goto_0
 .end method
 
@@ -4072,39 +4055,39 @@
     .parameter
 
     .prologue
-    .line 3625
+    .line 3658
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.SEND"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3626
+    .line 3659
     const-string v1, "text/plain"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3627
+    .line 3660
     const-string v1, "android.intent.extra.TEXT"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3628
+    .line 3661
     const-string v1, "android.intent.extra.SUBJECT"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3629
+    .line 3662
     const-string v1, "share_favicon"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3630
+    .line 3663
     const-string v1, "share_screenshot"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3632
+    .line 3665
     const v1, 0x7f090064
 
     :try_start_0
@@ -4120,11 +4103,11 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3637
+    .line 3670
     :goto_0
     return-void
 
-    .line 3634
+    .line 3667
     :catch_0
     move-exception v0
 
@@ -4136,14 +4119,14 @@
     .parameter "dialog"
 
     .prologue
-    .line 1960
+    .line 1971
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
 
     move-result-object v1
 
-    .line 1961
+    .line 1972
     .local v1, tab:Lcom/android/browser/Tab;
     invoke-virtual {v1}, Lcom/android/browser/Tab;->getSubWebView()Landroid/webkit/WebView;
 
@@ -4151,31 +4134,31 @@
 
     if-nez v2, :cond_0
 
-    .line 1964
+    .line 1975
     invoke-virtual {v1}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 1965
+    .line 1976
     .local v0, mainView:Landroid/webkit/WebView;
     if-eqz v0, :cond_0
 
-    .line 1966
+    .line 1977
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/webkit/WebView;->setEmbeddedTitleBar(Landroid/view/View;)V
 
-    .line 1969
+    .line 1980
     .end local v0           #mainView:Landroid/webkit/WebView;
     :cond_0
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
 
-    .line 1970
+    .line 1981
     const/4 v2, -0x1
 
     iput v2, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
-    .line 1971
+    .line 1982
     invoke-virtual {v1, p1}, Lcom/android/browser/Tab;->showDialog(Lcom/android/browser/WebDialog;)Landroid/webkit/WebView;
 
     move-result-object v2
@@ -4189,17 +4172,17 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 1369
+    .line 1379
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v1, :cond_0
 
-    .line 1370
+    .line 1380
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v1, v9}, Lcom/android/browser/BitmapWebView;->setTitleBarVisibility(Z)V
 
-    .line 1372
+    .line 1382
     :cond_0
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
@@ -4217,22 +4200,22 @@
 
     if-nez v1, :cond_1
 
-    .line 1374
+    .line 1384
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v8
 
-    .line 1376
+    .line 1386
     if-nez v8, :cond_2
 
-    .line 1404
+    .line 1414
     :cond_1
     :goto_0
     return-void
 
-    .line 1381
+    .line 1391
     :cond_2
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->dialogIsUp()Z
 
@@ -4240,7 +4223,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1387
+    .line 1397
     const-string v1, "window"
 
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -4253,7 +4236,7 @@
 
     move-object v7, v0
 
-    .line 1392
+    .line 1402
     new-instance v1, Landroid/view/WindowManager$LayoutParams;
 
     const/4 v2, -0x1
@@ -4268,12 +4251,12 @@
 
     invoke-direct/range {v1 .. v6}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 1399
+    .line 1409
     const/16 v2, 0x30
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 1400
+    .line 1410
     invoke-virtual {v8}, Landroid/webkit/WebView;->getScrollY()I
 
     move-result v2
@@ -4282,7 +4265,7 @@
 
     const/4 v2, 0x1
 
-    .line 1401
+    .line 1411
     :goto_1
     if-eqz v2, :cond_4
 
@@ -4291,7 +4274,7 @@
     :goto_2
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 1402
+    .line 1412
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-interface {v7, v2, v1}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
@@ -4301,10 +4284,10 @@
     :cond_3
     move v2, v9
 
-    .line 1400
+    .line 1410
     goto :goto_1
 
-    .line 1401
+    .line 1411
     :cond_4
     const v2, 0x7f0b0003
 
@@ -4319,12 +4302,12 @@
     .prologue
     const-string v4, ""
 
-    .line 4549
+    .line 4584
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 4552
+    .line 4587
     const v1, 0x7f03001d
 
     const/4 v2, 0x0
@@ -4333,20 +4316,20 @@
 
     move-result-object v1
 
-    .line 4554
+    .line 4589
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v2
 
-    .line 4559
+    .line 4594
     if-nez v2, :cond_3
 
-    .line 4560
+    .line 4595
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4561
+    .line 4596
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getTitle()Ljava/lang/String;
 
     move-result-object v3
@@ -4357,23 +4340,23 @@
 
     move-object v0, v5
 
-    .line 4571
+    .line 4606
     :goto_0
     if-nez v3, :cond_0
 
-    .line 4572
+    .line 4607
     const-string v3, ""
 
     move-object v3, v4
 
-    .line 4574
+    .line 4609
     :cond_0
     if-nez v0, :cond_5
 
-    .line 4575
+    .line 4610
     const-string v0, ""
 
-    .line 4578
+    .line 4613
     :goto_1
     const v0, 0x7f0d001a
 
@@ -4385,7 +4368,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4579
+    .line 4614
     const v0, 0x7f0d0007
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4396,13 +4379,13 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4581
+    .line 4616
     iput-object p1, p0, Lcom/android/browser/BrowserActivity;->mPageInfoView:Lcom/android/browser/Tab;
 
-    .line 4582
+    .line 4617
     iput-boolean p2, p0, Lcom/android/browser/BrowserActivity;->mPageInfoFromShowSSLCertificateOnError:Z
 
-    .line 4584
+    .line 4619
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -4441,7 +4424,7 @@
 
     move-result-object v0
 
-    .line 4625
+    .line 4660
     if-nez p2, :cond_1
 
     if-eqz v2, :cond_2
@@ -4452,7 +4435,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 4628
+    .line 4663
     :cond_1
     const v1, 0x7f090018
 
@@ -4462,7 +4445,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/app/AlertDialog$Builder;->setNeutralButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 4654
+    .line 4689
     :cond_2
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
@@ -4470,10 +4453,10 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mPageInfoDialog:Landroid/app/AlertDialog;
 
-    .line 4655
+    .line 4690
     return-void
 
-    .line 4562
+    .line 4597
     :cond_3
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -4483,10 +4466,10 @@
 
     if-ne v2, v0, :cond_4
 
-    .line 4564
+    .line 4599
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mUrl:Ljava/lang/String;
 
-    .line 4565
+    .line 4600
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mTitle:Ljava/lang/String;
 
     move-object v5, v3
@@ -4497,13 +4480,13 @@
 
     goto :goto_0
 
-    .line 4567
+    .line 4602
     :cond_4
     invoke-virtual {v2}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4568
+    .line 4603
     invoke-virtual {v2}, Landroid/webkit/WebView;->getTitle()Ljava/lang/String;
 
     move-result-object v3
@@ -4527,7 +4510,7 @@
     .parameter
 
     .prologue
-    .line 4663
+    .line 4698
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v0
@@ -4540,20 +4523,20 @@
 
     move-result-object v1
 
-    .line 4665
+    .line 4700
     if-nez v1, :cond_0
 
-    .line 4705
+    .line 4740
     :goto_0
     return-void
 
-    .line 4669
+    .line 4704
     :cond_0
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v2
 
-    .line 4671
+    .line 4706
     const v0, 0x7f0d006c
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4562,7 +4545,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 4674
+    .line 4709
     const v3, 0x7f030021
 
     invoke-virtual {v2, v3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -4571,7 +4554,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 4676
+    .line 4711
     const v2, 0x7f0d0080
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
@@ -4584,10 +4567,10 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 4679
+    .line 4714
     iput-object p1, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateView:Lcom/android/browser/Tab;
 
-    .line 4680
+    .line 4715
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -4640,10 +4623,10 @@
     .parameter "inUri"
 
     .prologue
-    .line 5232
+    .line 5267
     if-eqz p1, :cond_0
 
-    .line 5233
+    .line 5268
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -4652,7 +4635,7 @@
 
     move-result-object v0
 
-    .line 5235
+    .line 5270
     :goto_0
     return-object v0
 
@@ -4666,16 +4649,16 @@
     .locals 3
 
     .prologue
-    .line 1734
+    .line 1745
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
     if-nez v0, :cond_0
 
-    .line 1743
+    .line 1754
     :goto_0
     return-void
 
-    .line 1737
+    .line 1748
     :cond_0
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
@@ -4689,24 +4672,24 @@
 
     move-result-object v0
 
-    .line 1740
+    .line 1751
     :goto_1
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
-    const v2, 0x7f0d00a6
+    const v2, 0x7f0d00a5
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v1
 
-    .line 1741
+    .line 1752
     invoke-interface {v0}, Landroid/view/MenuItem;->getIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
 
-    .line 1742
+    .line 1753
     invoke-interface {v0}, Landroid/view/MenuItem;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -4715,7 +4698,7 @@
 
     goto :goto_0
 
-    .line 1737
+    .line 1748
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
@@ -4733,40 +4716,40 @@
     .parameter "lockIconType"
 
     .prologue
-    .line 4529
+    .line 4564
     const/4 v0, 0x0
 
-    .line 4530
+    .line 4565
     .local v0, d:Landroid/graphics/drawable/Drawable;
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_1
 
-    .line 4531
+    .line 4566
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSecLockIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 4535
+    .line 4570
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v1, v0}, Lcom/android/browser/TitleBar;->setLock(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4536
+    .line 4571
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v1, v0}, Lcom/android/browser/TitleBar;->setLock(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4537
+    .line 4572
     return-void
 
-    .line 4532
+    .line 4567
     :cond_1
     const/4 v1, 0x2
 
     if-ne p1, v1, :cond_0
 
-    .line 4533
+    .line 4568
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mMixLockIcon:Landroid/graphics/drawable/Drawable;
 
     goto :goto_0
@@ -4776,7 +4759,7 @@
     .locals 1
 
     .prologue
-    .line 4522
+    .line 4557
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -4789,7 +4772,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->updateLockIconImage(I)V
 
-    .line 4523
+    .line 4558
     return-void
 .end method
 
@@ -4803,16 +4786,16 @@
 
     const/4 v2, 0x1
 
-    .line 1748
+    .line 1759
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
     if-nez v0, :cond_0
 
-    .line 1778
+    .line 1789
     :goto_0
     return-void
 
-    .line 1752
+    .line 1763
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
@@ -4822,7 +4805,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 1756
+    .line 1767
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
     if-eqz v0, :cond_1
@@ -4835,7 +4818,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 1758
+    .line 1769
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
     const v1, 0x7f0d00c5
@@ -4844,7 +4827,7 @@
 
     move-result-object v0
 
-    .line 1765
+    .line 1776
     :goto_1
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
@@ -4852,20 +4835,20 @@
 
     move-result-object v1
 
-    .line 1766
+    .line 1777
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 1767
+    .line 1778
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 1768
+    .line 1779
     invoke-interface {v0}, Landroid/view/MenuItem;->getIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
 
-    .line 1769
+    .line 1780
     invoke-interface {v0}, Landroid/view/MenuItem;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -4874,7 +4857,7 @@
 
     goto :goto_0
 
-    .line 1762
+    .line 1773
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
@@ -4886,7 +4869,7 @@
 
     goto :goto_1
 
-    .line 1773
+    .line 1784
     :cond_2
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
@@ -4894,10 +4877,10 @@
 
     move-result-object v0
 
-    .line 1774
+    .line 1785
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 1775
+    .line 1786
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
     goto :goto_0
@@ -4908,38 +4891,38 @@
     .parameter "view"
 
     .prologue
-    .line 3646
+    .line 3679
     invoke-direct {p0, p1}, Lcom/android/browser/BrowserActivity;->createScreenshot(Landroid/webkit/WebView;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
-    .line 3647
+    .line 3680
     .local v5, bm:Landroid/graphics/Bitmap;
     if-nez v5, :cond_0
 
-    .line 3685
+    .line 3718
     :goto_0
     return-void
 
-    .line 3651
+    .line 3684
     :cond_0
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    .line 3652
+    .line 3685
     .local v2, cr:Landroid/content/ContentResolver;
     invoke-virtual {p1}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 3653
+    .line 3686
     .local v4, url:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/webkit/WebView;->getOriginalUrl()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 3655
+    .line 3688
     .local v3, originalUrl:Ljava/lang/String;
     new-instance v0, Lcom/android/browser/BrowserActivity$13;
 
@@ -4964,25 +4947,25 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 5224
+    .line 5259
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 5225
+    .line 5260
     invoke-virtual {p0, p2, v1}, Lcom/android/browser/BrowserActivity;->setUrlTitle(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5226
+    .line 5261
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->setFavicon(Landroid/graphics/Bitmap;)V
 
-    .line 5227
+    .line 5262
     const/16 v0, 0xa
 
     invoke-virtual {p0, p1, v0}, Lcom/android/browser/BrowserActivity;->onProgressChanged(Landroid/webkit/WebView;I)V
 
-    .line 5229
+    .line 5264
     :cond_0
     return-void
 .end method
@@ -4991,15 +4974,15 @@
 # virtual methods
 .method AddFeedToGoogleReader(Ljava/lang/String;)V
     .locals 2
-    .parameter "url"
+    .parameter
 
     .prologue
-    .line 4246
+    .line 4281
     const-string v0, "http://www.google.com/reader/i/#stream/feed/"
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mAddFeedUrl:Ljava/lang/String;
 
-    .line 4247
+    .line 4282
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5020,7 +5003,7 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mAddFeedUrl:Ljava/lang/String;
 
-    .line 4249
+    .line 4284
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
@@ -5029,7 +5012,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/browser/BrowserActivity;->loadUrl(Landroid/webkit/WebView;Ljava/lang/String;)V
 
-    .line 4253
+    .line 4288
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -5040,7 +5023,7 @@
 
     iput-boolean v1, v0, Lcom/android/browser/Tab;->mbIsDownloadRss:Z
 
-    .line 4283
+    .line 4318
     return-void
 .end method
 
@@ -5049,19 +5032,19 @@
     .parameter "t"
 
     .prologue
-    .line 2854
+    .line 2865
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v0}, Lcom/android/browser/Tab;->attachSubWindow(Landroid/view/ViewGroup;)V
 
-    .line 2855
+    .line 2866
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->requestFocus()Z
 
-    .line 2856
+    .line 2867
     return-void
 .end method
 
@@ -5072,21 +5055,21 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 5144
+    .line 5179
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 5145
+    .line 5180
     if-nez v0, :cond_0
 
-    .line 5178
+    .line 5213
     :goto_0
     return-void
 
-    .line 5148
+    .line 5183
     :cond_0
     new-instance v1, Landroid/content/Intent;
 
@@ -5094,60 +5077,60 @@
 
     invoke-direct {v1, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 5150
+    .line 5185
     invoke-virtual {v0}, Landroid/webkit/WebView;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 5151
+    .line 5186
     invoke-virtual {v0}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 5152
+    .line 5187
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->createScreenshot(Landroid/webkit/WebView;)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
-    .line 5156
+    .line 5191
     if-nez v3, :cond_1
 
-    .line 5157
+    .line 5192
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mLastEnteredUrl:Ljava/lang/String;
 
-    .line 5159
+    .line 5194
     if-nez v3, :cond_1
 
-    .line 5160
+    .line 5195
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v3}, Lcom/android/browser/BrowserSettings;->getHomePage()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 5164
+    .line 5199
     :cond_1
     if-nez v2, :cond_2
 
     move-object v2, v3
 
-    .line 5167
+    .line 5202
     :cond_2
     const-string v5, "title"
 
     invoke-virtual {v1, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 5168
+    .line 5203
     const-string v2, "url"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 5169
+    .line 5204
     const-string v2, "thumbnail"
 
     invoke-virtual {v1, v2, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 5171
+    .line 5206
     const-string v2, "disable_new_window"
 
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
@@ -5163,7 +5146,7 @@
     :goto_1
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 5172
+    .line 5207
     const-string v2, "touch_icon_url"
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getTouchIconUrl()Ljava/lang/String;
@@ -5172,23 +5155,23 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 5173
+    .line 5208
     if-eqz p1, :cond_3
 
-    .line 5174
+    .line 5209
     sget-object v0, Lcom/android/browser/CombinedBookmarkHistoryActivity;->STARTING_TAB:Ljava/lang/String;
 
     sget-object v2, Lcom/android/browser/CombinedBookmarkHistoryActivity;->HISTORY_TAB:Ljava/lang/String;
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 5177
+    .line 5212
     :cond_3
     invoke-virtual {p0, v1, v6}, Lcom/android/browser/BrowserActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_0
 
-    .line 5171
+    .line 5206
     :cond_4
     const/4 v3, 0x0
 
@@ -5201,14 +5184,14 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 1915
+    .line 1926
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v4}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
 
     move-result-object v0
 
-    .line 1916
+    .line 1927
     .local v0, current:Lcom/android/browser/Tab;
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -5218,39 +5201,39 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 1919
+    .line 1930
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->openTabToHomePage()Lcom/android/browser/Tab;
 
-    .line 1920
+    .line 1931
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->closeTab(Lcom/android/browser/Tab;)V
 
-    .line 1940
+    .line 1951
     :cond_0
     :goto_0
     return-void
 
-    .line 1923
+    .line 1934
     :cond_1
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getParentTab()Lcom/android/browser/Tab;
 
     move-result-object v3
 
-    .line 1924
+    .line 1935
     .local v3, parent:Lcom/android/browser/Tab;
     const/4 v2, -0x1
 
-    .line 1925
+    .line 1936
     .local v2, indexToShow:I
     if-eqz v3, :cond_3
 
-    .line 1926
+    .line 1937
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v4, v3}, Lcom/android/browser/TabControl;->getTabIndex(Lcom/android/browser/Tab;)I
 
     move-result v2
 
-    .line 1936
+    .line 1947
     :cond_2
     :goto_1
     invoke-virtual {p0, v2}, Lcom/android/browser/BrowserActivity;->switchToTab(I)Z
@@ -5259,12 +5242,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 1938
+    .line 1949
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->closeTab(Lcom/android/browser/Tab;)V
 
     goto :goto_0
 
-    .line 1928
+    .line 1939
     :cond_3
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -5272,11 +5255,11 @@
 
     move-result v1
 
-    .line 1930
+    .line 1941
     .local v1, currentIndex:I
     add-int/lit8 v2, v1, 0x1
 
-    .line 1931
+    .line 1942
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v4}, Lcom/android/browser/TabControl;->getTabCount()I
@@ -5287,7 +5270,7 @@
 
     if-le v2, v4, :cond_2
 
-    .line 1933
+    .line 1944
     sub-int v2, v1, v5
 
     goto :goto_1
@@ -5297,7 +5280,7 @@
     .locals 3
 
     .prologue
-    .line 2486
+    .line 2497
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mFindDialog:Lcom/android/browser/FindDialog;
 
     invoke-direct {p0, v2}, Lcom/android/browser/BrowserActivity;->closeDialog(Lcom/android/browser/WebDialog;)Z
@@ -5314,12 +5297,12 @@
 
     if-nez v2, :cond_1
 
-    .line 2503
+    .line 2514
     :cond_0
     :goto_0
     return-void
 
-    .line 2489
+    .line 2500
     :cond_1
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -5327,7 +5310,7 @@
 
     move-result-object v0
 
-    .line 2490
+    .line 2501
     .local v0, currentTab:Lcom/android/browser/Tab;
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getSubWebView()Landroid/webkit/WebView;
 
@@ -5335,33 +5318,33 @@
 
     if-nez v2, :cond_2
 
-    .line 2491
+    .line 2502
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 2492
+    .line 2503
     .local v1, mainView:Landroid/webkit/WebView;
     if-eqz v1, :cond_2
 
-    .line 2493
+    .line 2504
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setEmbeddedTitleBar(Landroid/view/View;)V
 
-    .line 2496
+    .line 2507
     .end local v1           #mainView:Landroid/webkit/WebView;
     :cond_2
     const v2, 0x7f0d00a2
 
     iput v2, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
-    .line 2497
+    .line 2508
     iget-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
     if-eqz v2, :cond_0
 
-    .line 2501
+    .line 2512
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->showFakeTitleBar()V
 
     goto :goto_0
@@ -5372,14 +5355,14 @@
     .parameter "t"
 
     .prologue
-    .line 3188
+    .line 3199
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2}, Lcom/android/browser/TabControl;->getCurrentIndex()I
 
     move-result v0
 
-    .line 3189
+    .line 3200
     .local v0, currentIndex:I
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -5387,21 +5370,21 @@
 
     move-result v1
 
-    .line 3190
+    .line 3201
     .local v1, removeIndex:I
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2, p1}, Lcom/android/browser/TabControl;->removeTab(Lcom/android/browser/Tab;)Z
 
-    .line 3191
+    .line 3202
     if-lt v0, v1, :cond_0
 
     if-eqz v0, :cond_0
 
-    .line 3192
+    .line 3203
     add-int/lit8 v0, v0, -0x1
 
-    .line 3194
+    .line 3205
     :cond_0
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -5413,10 +5396,10 @@
 
     invoke-virtual {v2, v3}, Lcom/android/browser/TabControl;->setCurrentTab(Lcom/android/browser/Tab;)Z
 
-    .line 3195
+    .line 3206
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->resetTitleIconAndProgress()V
 
-    .line 3196
+    .line 3207
     return-void
 .end method
 
@@ -5424,7 +5407,7 @@
     .locals 1
 
     .prologue
-    .line 3424
+    .line 3457
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mDidStopLoad:Z
 
     return v0
@@ -5435,22 +5418,22 @@
     .parameter "t"
 
     .prologue
-    .line 2880
+    .line 2891
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v0}, Lcom/android/browser/Tab;->removeSubWindow(Landroid/view/ViewGroup;)V
 
-    .line 2882
+    .line 2893
     invoke-virtual {p1}, Lcom/android/browser/Tab;->dismissSubWindow()V
 
-    .line 2883
+    .line 2894
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->requestFocus()Z
 
-    .line 2884
+    .line 2895
     return-void
 .end method
 
@@ -5458,32 +5441,32 @@
     .locals 5
 
     .prologue
-    .line 1995
+    .line 2006
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/browser/BrowserRssNewlinkPage;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1998
+    .line 2009
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 1999
+    .line 2010
     invoke-virtual {v1}, Landroid/webkit/WebView;->getWebFeedLinks()[Landroid/webkit/WebFeedLink;
 
     move-result-object v1
 
-    .line 2001
+    .line 2012
     array-length v2, v1
 
-    .line 2002
+    .line 2013
     const-string v3, "Feed_number"
 
     invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2004
+    .line 2015
     const/4 v2, 0x0
 
     :goto_0
@@ -5491,7 +5474,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 2006
+    .line 2017
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5522,7 +5505,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2007
+    .line 2018
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5553,18 +5536,18 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2004
+    .line 2015
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 2010
+    .line 2021
     :cond_0
     const/4 v1, 0x5
 
     invoke-virtual {p0, v0, v1}, Lcom/android/browser/BrowserActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 2011
+    .line 2022
     return-void
 .end method
 
@@ -5574,14 +5557,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1853
+    .line 1864
     iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mOptionsMenuOpen:Z
 
     if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->closeOptionsMenu()V
 
-    .line 1855
+    .line 1866
     :cond_0
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -5591,7 +5574,7 @@
 
     move-object v0, v4
 
-    .line 1856
+    .line 1867
     .local v0, url:Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
@@ -5615,10 +5598,10 @@
 
     invoke-virtual {p0, v1, v2, v4, v3}, Lcom/android/browser/BrowserActivity;->startSearch(Ljava/lang/String;ZLandroid/os/Bundle;Z)V
 
-    .line 1858
+    .line 1869
     return-void
 
-    .line 1855
+    .line 1866
     .end local v0           #url:Ljava/lang/String;
     :cond_1
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
@@ -5637,7 +5620,7 @@
     :cond_2
     move-object v1, v0
 
-    .line 1856
+    .line 1867
     goto :goto_1
 .end method
 
@@ -5645,12 +5628,12 @@
     .locals 2
 
     .prologue
-    .line 4201
+    .line 4236
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mDefaultVideoPoster:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_0
 
-    .line 4202
+    .line 4237
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -5663,7 +5646,7 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mDefaultVideoPoster:Landroid/graphics/Bitmap;
 
-    .line 4205
+    .line 4240
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mDefaultVideoPoster:Landroid/graphics/Bitmap;
 
@@ -5674,23 +5657,23 @@
     .locals 2
 
     .prologue
-    .line 4951
+    .line 4986
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 4952
+    .line 4987
     .local v0, w:Landroid/webkit/WebView;
     if-eqz v0, :cond_0
 
-    .line 4953
+    .line 4988
     invoke-virtual {v0}, Landroid/webkit/WebView;->getProgress()I
 
     move-result v1
 
-    .line 4955
+    .line 4990
     :goto_0
     return v1
 
@@ -5704,7 +5687,7 @@
     .locals 1
 
     .prologue
-    .line 1714
+    .line 1725
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     return-object v0
@@ -5714,19 +5697,19 @@
     .locals 1
 
     .prologue
-    .line 1703
+    .line 1714
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     if-eqz v0, :cond_0
 
-    .line 1705
+    .line 1716
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTopWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 1709
+    .line 1720
     :goto_0
     return-object v0
 
@@ -5740,17 +5723,17 @@
     .locals 3
 
     .prologue
-    .line 4209
+    .line 4244
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mVideoProgressView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
-    .line 4210
+    .line 4245
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 4211
+    .line 4246
     const v1, 0x7f030029
 
     const/4 v2, 0x0
@@ -5761,7 +5744,7 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mVideoProgressView:Landroid/view/View;
 
-    .line 4214
+    .line 4249
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mVideoProgressView:Landroid/view/View;
 
@@ -5778,14 +5761,7 @@
 
     const-string v4, "browser"
 
-    .line 3200
-    const-string v0, "browser"
-
-    const-string v0, "BrowserActivity.goBackOnePageOrQuit : called"
-
-    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3202
+    .line 3213
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getTextSelector()Lcom/android/browser/TextSelector;
@@ -5794,58 +5770,59 @@
 
     invoke-virtual {v0}, Lcom/android/browser/TextSelector;->clearSelection()V
 
-    .line 3204
+    .line 3215
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
 
     move-result-object v0
 
-    .line 3205
-    if-nez v0, :cond_0
+    .line 3216
+    if-nez v0, :cond_1
 
-    .line 3214
+    .line 3225
     const-string v0, "browser"
 
     const-string v0, "BrowserActivity.goBackOnePageOrQuit : moveTaskToBack called"
 
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3215
+    .line 3226
     invoke-virtual {p0, v3}, Lcom/android/browser/BrowserActivity;->moveTaskToBack(Z)Z
 
-    .line 3266
+    .line 3288
+    :cond_0
     :goto_0
     return-void
 
-    .line 3218
-    :cond_0
+    .line 3229
+    :cond_1
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 3219
+    .line 3230
     invoke-virtual {v1}, Landroid/webkit/WebView;->canGoBack()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
-    .line 3220
+    .line 3231
     invoke-virtual {v1}, Landroid/webkit/WebView;->goBack()V
 
     goto :goto_0
 
-    .line 3224
-    :cond_1
+    .line 3235
+    :cond_2
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getParentTab()Lcom/android/browser/Tab;
 
     move-result-object v1
 
-    .line 3225
-    if-eqz v1, :cond_2
+    .line 3236
+    if-eqz v1, :cond_3
 
-    .line 3226
+    .line 3237
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2, v1}, Lcom/android/browser/TabControl;->getTabIndex(Lcom/android/browser/Tab;)I
@@ -5854,20 +5831,20 @@
 
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->switchToTab(I)Z
 
-    .line 3228
+    .line 3239
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->closeTab(Lcom/android/browser/Tab;)V
 
     goto :goto_0
 
-    .line 3230
-    :cond_2
+    .line 3241
+    :cond_3
     invoke-virtual {v0}, Lcom/android/browser/Tab;->closeOnExit()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_7
 
-    .line 3234
+    .line 3245
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -5876,61 +5853,77 @@
 
     invoke-virtual {v1}, Lcom/android/browser/Tab;->clearInLoad()V
 
-    .line 3235
+    .line 3251
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getTabCount()I
 
     move-result v1
 
-    if-ne v1, v3, :cond_3
+    if-lt v1, v3, :cond_4
 
-    .line 3236
+    invoke-virtual {v0}, Lcom/android/browser/Tab;->getAppId()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    .line 3254
+    :cond_4
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+
+    invoke-virtual {v1}, Lcom/android/browser/TabControl;->getTabCount()I
+
+    move-result v1
+
+    if-ne v1, v3, :cond_5
+
+    .line 3256
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->finish()V
 
     goto :goto_0
 
-    .line 3244
-    :cond_3
+    .line 3266
+    :cond_5
     iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
-    .line 3245
-    if-eqz v1, :cond_4
+    .line 3267
+    if-eqz v1, :cond_6
 
-    .line 3246
+    .line 3268
     const-string v2, "browser"
 
     const-string v2, "BrowserActivity is already paused while handing goBackOnePageOrQuit."
 
     invoke-static {v4, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3249
-    :cond_4
+    .line 3271
+    :cond_6
     iput-boolean v3, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
-    .line 3250
+    .line 3272
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->pauseWebViewTimers()Z
 
-    .line 3251
+    .line 3273
     iput-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
-    .line 3252
+    .line 3274
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->removeTabFromContentView(Lcom/android/browser/Tab;)V
 
-    .line 3253
+    .line 3275
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1, v0}, Lcom/android/browser/TabControl;->removeTab(Lcom/android/browser/Tab;)Z
 
-    .line 3262
-    :cond_5
+    .line 3284
+    :cond_7
     const-string v0, "browser"
 
     const-string v0, "BrowserActivity.goBackOnePageOrQuit : moveTaskToBack called"
 
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3263
+    .line 3285
     invoke-virtual {p0, v3}, Lcom/android/browser/BrowserActivity;->moveTaskToBack(Z)Z
 
     goto :goto_0
@@ -5940,30 +5933,30 @@
     .locals 6
 
     .prologue
-    .line 3784
+    .line 3817
     sget-boolean v0, Lcom/android/browser/BrowserActivity;->ENABLE_BITMAPWEBVIEW:Z
 
     if-nez v0, :cond_1
 
-    .line 3786
+    .line 3819
     const-string v0, "browser"
 
     const-string v1, "initZoomView : disabled ENABLE_BITMAPWEBVIEW is false "
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3816
+    .line 3849
     :cond_0
     :goto_0
     return-void
 
-    .line 3790
+    .line 3823
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-nez v0, :cond_0
 
-    .line 3793
+    .line 3826
     const v0, 0x7f0d0047
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->findViewById(I)Landroid/view/View;
@@ -5974,33 +5967,33 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
-    .line 3794
+    .line 3827
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/browser/Browser;
 
-    .line 3795
+    .line 3828
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     iput-object v1, v0, Lcom/android/browser/Browser;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
-    .line 3800
+    .line 3833
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/browser/BitmapWebView;->setVisible(I)V
 
-    .line 3802
+    .line 3835
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
 
     move-result-object v0
 
-    .line 3804
+    .line 3837
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getTopWindow()Landroid/webkit/WebView;
@@ -6009,7 +6002,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3806
+    .line 3839
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v1
@@ -6018,14 +6011,14 @@
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setPinchZoomListener(Landroid/webkit/OnPinchZoomListener;)V
 
-    .line 3807
+    .line 3840
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v1, v2}, Lcom/android/browser/BitmapWebView;->setTitleBar(Landroid/view/View;)V
 
-    .line 3808
+    .line 3841
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getTopWindow()Landroid/webkit/WebView;
@@ -6063,7 +6056,7 @@
     .locals 1
 
     .prologue
-    .line 3269
+    .line 3291
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
 
     return v0
@@ -6073,7 +6066,7 @@
     .locals 1
 
     .prologue
-    .line 5003
+    .line 5038
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
 
     return v0
@@ -6085,47 +6078,47 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1977
+    .line 1988
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v2
 
-    .line 1978
+    .line 1989
     .local v2, view:Landroid/webkit/WebView;
     if-nez v2, :cond_0
 
     move v3, v4
 
-    .line 1990
+    .line 2001
     :goto_0
     return v3
 
-    .line 1981
+    .line 1992
     :cond_0
     invoke-virtual {v2}, Landroid/webkit/WebView;->getWebFeedLinks()[Landroid/webkit/WebFeedLink;
 
     move-result-object v1
 
-    .line 1983
+    .line 1994
     .local v1, links:[Landroid/webkit/WebFeedLink;
     if-nez v1, :cond_1
 
     move v3, v4
 
-    .line 1984
+    .line 1995
     goto :goto_0
 
-    .line 1985
+    .line 1996
     :cond_1
     array-length v0, v1
 
-    .line 1987
+    .line 1998
     .local v0, a:I
     array-length v3, v1
 
     if-eqz v3, :cond_2
 
-    .line 1988
+    .line 1999
     const/4 v3, 0x1
 
     goto :goto_0
@@ -6133,7 +6126,7 @@
     :cond_2
     move v3, v4
 
-    .line 1990
+    .line 2001
     goto :goto_0
 .end method
 
@@ -6152,22 +6145,22 @@
 
     const-string v5, "new_window"
 
-    .line 5044
+    .line 5079
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 5115
+    .line 5150
     :goto_0
     return-void
 
-    .line 5046
+    .line 5081
     :cond_0
     packed-switch p1, :pswitch_data_0
 
-    .line 5106
+    .line 5141
     :cond_1
     :goto_1
     :pswitch_0
@@ -6175,31 +6168,31 @@
 
     move-result-object v0
 
-    .line 5107
+    .line 5142
     if-eqz v0, :cond_7
 
-    .line 5108
+    .line 5143
     invoke-virtual {v0}, Landroid/webkit/WebView;->requestFocus()Z
 
     goto :goto_0
 
-    .line 5048
+    .line 5083
     :pswitch_1
     if-ne p2, v3, :cond_2
 
     if-eqz p3, :cond_2
 
-    .line 5049
+    .line 5084
     invoke-virtual {p3}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5050
+    .line 5085
     invoke-virtual {p3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 5051
+    .line 5086
     if-eqz v1, :cond_3
 
     const-string v2, "new_window"
@@ -6210,10 +6203,10 @@
 
     if-eqz v1, :cond_3
 
-    .line 5052
+    .line 5087
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->openTab(Ljava/lang/String;)Lcom/android/browser/Tab;
 
-    .line 5065
+    .line 5100
     :cond_2
     :goto_2
     :pswitch_2
@@ -6221,14 +6214,14 @@
 
     if-eqz p3, :cond_1
 
-    .line 5066
+    .line 5101
     const-string v0, "android.intent.extra.TEXT"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5067
+    .line 5102
     const-string v1, "privacy_clear_history"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -6237,14 +6230,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 5068
+    .line 5103
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->removeParentChildRelationShips()V
 
     goto :goto_1
 
-    .line 5054
+    .line 5089
     :cond_3
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -6252,10 +6245,10 @@
 
     move-result-object v1
 
-    .line 5056
+    .line 5091
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->dismissSubWindow(Lcom/android/browser/Tab;)V
 
-    .line 5057
+    .line 5092
     if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -6264,7 +6257,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 5058
+    .line 5093
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v1
@@ -6273,13 +6266,13 @@
 
     goto :goto_2
 
-    .line 5074
+    .line 5109
     :pswitch_3
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
 
     if-eqz v0, :cond_1
 
-    .line 5075
+    .line 5110
     if-eqz p3, :cond_4
 
     if-eq p2, v3, :cond_5
@@ -6287,18 +6280,18 @@
     :cond_4
     move-object v0, v2
 
-    .line 5077
+    .line 5112
     :goto_3
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
 
     invoke-interface {v1, v0}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
-    .line 5078
+    .line 5113
     iput-object v2, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
 
     goto :goto_1
 
-    .line 5075
+    .line 5110
     :cond_5
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
@@ -6306,23 +6299,23 @@
 
     goto :goto_3
 
-    .line 5082
+    .line 5117
     :pswitch_4
     if-ne p2, v3, :cond_1
 
     if-eqz p3, :cond_1
 
-    .line 5083
+    .line 5118
     invoke-virtual {p3}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5084
+    .line 5119
     invoke-virtual {p3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 5085
+    .line 5120
     if-eqz v1, :cond_6
 
     const-string v2, "new_window"
@@ -6333,12 +6326,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 5086
+    .line 5121
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->openTab(Ljava/lang/String;)Lcom/android/browser/Tab;
 
     goto/16 :goto_1
 
-    .line 5088
+    .line 5123
     :cond_6
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -6346,10 +6339,10 @@
 
     move-result-object v1
 
-    .line 5090
+    .line 5125
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->dismissSubWindow(Lcom/android/browser/Tab;)V
 
-    .line 5091
+    .line 5126
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -6358,12 +6351,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 5093
+    .line 5128
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->AddFeedToGoogleReader(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
-    .line 5112
+    .line 5147
     :cond_7
     const-string v0, "browser"
 
@@ -6399,7 +6392,7 @@
 
     goto/16 :goto_0
 
-    .line 5046
+    .line 5081
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -6417,15 +6410,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1583
+    .line 1593
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mConfigChanged:Z
 
-    .line 1584
+    .line 1594
     invoke-super {p0, p1}, Landroid/app/Activity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 1588
+    .line 1598
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v0
@@ -6440,76 +6433,51 @@
 
     sput v0, Lcom/android/browser/BrowserActivity;->orien:I
 
-    .line 1589
-    const-string v0, "browser"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "orientation changed : "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget v3, Lcom/android/browser/BrowserActivity;->orien:I
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1595
+    .line 1606
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPageInfoDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
-    .line 1596
+    .line 1607
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPageInfoDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 1597
+    .line 1608
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPageInfoView:Lcom/android/browser/Tab;
 
     iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mPageInfoFromShowSSLCertificateOnError:Z
 
     invoke-direct {p0, v0, v1}, Lcom/android/browser/BrowserActivity;->showPageInfo(Lcom/android/browser/Tab;Z)V
 
-    .line 1601
+    .line 1612
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_1
 
-    .line 1602
+    .line 1613
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 1603
+    .line 1614
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateView:Lcom/android/browser/Tab;
 
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->showSSLCertificate(Lcom/android/browser/Tab;)V
 
-    .line 1606
+    .line 1617
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateOnErrorDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_2
 
-    .line 1607
+    .line 1618
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateOnErrorDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 1608
+    .line 1619
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateOnErrorView:Landroid/webkit/WebView;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateOnErrorHandler:Landroid/webkit/SslErrorHandler;
@@ -6518,13 +6486,13 @@
 
     invoke-virtual {p0, v0, v1, v3}, Lcom/android/browser/BrowserActivity;->showSSLCertificateOnError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V
 
-    .line 1613
+    .line 1624
     :cond_2
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthenticationDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_3
 
-    .line 1614
+    .line 1625
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthenticationDialog:Landroid/app/AlertDialog;
 
     const v1, 0x102018f
@@ -6543,7 +6511,7 @@
 
     move-result-object v4
 
-    .line 1617
+    .line 1628
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthenticationDialog:Landroid/app/AlertDialog;
 
     const v1, 0x7f0d0059
@@ -6562,7 +6530,7 @@
 
     move-result-object v5
 
-    .line 1619
+    .line 1630
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthenticationDialog:Landroid/app/AlertDialog;
 
     const v1, 0x7f0d005b
@@ -6581,7 +6549,7 @@
 
     move-result-object v6
 
-    .line 1621
+    .line 1632
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthenticationDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->getCurrentFocus()Landroid/view/View;
@@ -6592,12 +6560,12 @@
 
     move-result v7
 
-    .line 1623
+    .line 1634
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthenticationDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 1624
+    .line 1635
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthHandler:Landroid/webkit/HttpAuthHandler;
 
     move-object v0, p0
@@ -6606,27 +6574,27 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/android/browser/BrowserActivity;->showHttpAuthentication(Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1627
+    .line 1638
     :cond_3
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
     if-eqz v0, :cond_4
 
-    .line 1628
+    .line 1639
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 1629
+    .line 1640
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
     invoke-virtual {v0}, Lcom/android/browser/ActiveTabsPage;->getGallerySelection()I
 
     move-result v0
 
-    .line 1630
+    .line 1641
     new-instance v1, Lcom/android/browser/ActiveTabsPage;
 
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
@@ -6635,12 +6603,12 @@
 
     iput-object v1, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
-    .line 1631
+    .line 1642
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
     invoke-virtual {v1, v0}, Lcom/android/browser/ActiveTabsPage;->setGallerySelection(I)V
 
-    .line 1632
+    .line 1643
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -6649,7 +6617,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->removeTabFromContentView(Lcom/android/browser/Tab;)V
 
-    .line 1633
+    .line 1644
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
@@ -6658,17 +6626,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1634
+    .line 1645
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
     invoke-virtual {v0}, Lcom/android/browser/ActiveTabsPage;->requestFocus()Z
 
-    .line 1635
+    .line 1646
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
-    .line 1637
+    .line 1648
     :cond_4
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
@@ -6686,12 +6654,12 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 1638
+    .line 1649
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0}, Lcom/android/browser/BitmapWebView;->onResumed()V
 
-    .line 1639
+    .line 1650
     :cond_5
     return-void
 .end method
@@ -6703,37 +6671,37 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 1785
+    .line 1796
     const/4 v7, 0x1
 
     iput-boolean v7, p0, Lcom/android/browser/BrowserActivity;->mCanChord:Z
 
-    .line 1786
+    .line 1797
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v2
 
-    .line 1787
+    .line 1798
     .local v2, id:I
     const/4 v5, 0x1
 
-    .line 1788
+    .line 1799
     .local v5, result:Z
     sparse-switch v2, :sswitch_data_0
 
-    .line 1840
+    .line 1851
     invoke-virtual {p0, p1}, Lcom/android/browser/BrowserActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v5
 
-    .line 1842
+    .line 1853
     :goto_0
     iput-boolean v10, p0, Lcom/android/browser/BrowserActivity;->mCanChord:Z
 
-    .line 1843
+    .line 1854
     return v5
 
-    .line 1791
+    .line 1802
     :sswitch_0
     iget-object v7, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -6741,33 +6709,33 @@
 
     move-result-object v0
 
-    .line 1792
+    .line 1803
     .local v0, currentTab:Lcom/android/browser/Tab;
     if-nez v0, :cond_0
 
-    .line 1793
+    .line 1804
     const/4 v5, 0x0
 
-    .line 1794
+    .line 1805
     goto :goto_0
 
-    .line 1796
+    .line 1807
     :cond_0
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v3
 
-    .line 1797
+    .line 1808
     .local v3, mainView:Landroid/webkit/WebView;
     if-nez v3, :cond_1
 
-    .line 1798
+    .line 1809
     const/4 v5, 0x0
 
-    .line 1799
+    .line 1810
     goto :goto_0
 
-    .line 1801
+    .line 1812
     :cond_1
     invoke-virtual {v3}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
 
@@ -6777,7 +6745,7 @@
 
     goto :goto_0
 
-    .line 1810
+    .line 1821
     .end local v0           #currentTab:Lcom/android/browser/Tab;
     .end local v3           #mainView:Landroid/webkit/WebView;
     :sswitch_1
@@ -6785,29 +6753,29 @@
 
     move-result-object v6
 
-    .line 1811
+    .line 1822
     .local v6, webView:Landroid/webkit/WebView;
     if-nez v6, :cond_2
 
-    .line 1812
+    .line 1823
     const/4 v5, 0x0
 
-    .line 1813
+    .line 1824
     goto :goto_0
 
-    .line 1815
+    .line 1826
     :cond_2
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 1816
+    .line 1827
     .local v1, hrefMap:Ljava/util/HashMap;
     const-string v7, "webview"
 
     invoke-virtual {v1, v7, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1817
+    .line 1828
     iget-object v7, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
     const/16 v8, 0x66
@@ -6816,7 +6784,7 @@
 
     move-result-object v4
 
-    .line 1820
+    .line 1831
     .local v4, msg:Landroid/os/Message;
     invoke-virtual {v6}, Landroid/webkit/WebView;->cursorIsAnchor()Z
 
@@ -6824,12 +6792,12 @@
 
     if-eqz v7, :cond_3
 
-    .line 1823
+    .line 1834
     invoke-virtual {v6, v4}, Landroid/webkit/WebView;->requestFocusNodeHref(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 1829
+    .line 1840
     :cond_3
     invoke-virtual {v4}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
@@ -6841,7 +6809,7 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1832
+    .line 1843
     invoke-virtual {v4}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v7
@@ -6852,12 +6820,12 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1833
+    .line 1844
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 1788
+    .line 1799
     nop
 
     :sswitch_data_0
@@ -6877,24 +6845,24 @@
     .parameter "menu"
 
     .prologue
-    .line 1460
+    .line 1470
     invoke-super {p0, p1}, Landroid/app/Activity;->onContextMenuClosed(Landroid/view/Menu;)V
 
-    .line 1461
+    .line 1471
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
     if-eqz v0, :cond_0
 
-    .line 1462
+    .line 1472
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->showFakeTitleBar()V
 
-    .line 1466
+    .line 1476
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mCursorUrl:Ljava/lang/String;
 
-    .line 1468
+    .line 1478
     return-void
 .end method
 
@@ -6910,39 +6878,6 @@
     const/4 v6, 0x0
 
     const-string v4, "phone"
-
-    .line 317
-    const-string v0, "browser"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "BrowserActivity.onCreate: this="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " bundle = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 319
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
@@ -7615,37 +7550,37 @@
 
     const-string v7, "android.intent.action.VIEW"
 
-    .line 2683
+    .line 2694
     instance-of v0, p2, Lcom/android/browser/TitleBar;
 
     if-eqz v0, :cond_1
 
-    .line 2803
+    .line 2814
     :cond_0
     :goto_0
     return-void
 
-    .line 2686
+    .line 2697
     :cond_1
     check-cast p2, Landroid/webkit/WebView;
 
-    .line 2687
+    .line 2698
     invoke-virtual {p2}, Landroid/webkit/WebView;->getHitTestResult()Landroid/webkit/WebView$HitTestResult;
 
     move-result-object v0
 
-    .line 2688
+    .line 2699
     if-eqz v0, :cond_0
 
-    .line 2692
+    .line 2703
     invoke-virtual {v0}, Landroid/webkit/WebView$HitTestResult;->getType()I
 
     move-result v1
 
-    .line 2693
+    .line 2704
     if-nez v1, :cond_2
 
-    .line 2694
+    .line 2705
     const-string v0, "browser"
 
     const-string v1, "We should not show context menu when nothing is touched"
@@ -7654,13 +7589,13 @@
 
     goto :goto_0
 
-    .line 2698
+    .line 2709
     :cond_2
     const/16 v2, 0x9
 
     if-eq v1, v2, :cond_0
 
-    .line 2704
+    .line 2715
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2}, Lcom/android/browser/TabControl;->getTextSelector()Lcom/android/browser/TextSelector;
@@ -7669,22 +7604,22 @@
 
     invoke-virtual {v2}, Lcom/android/browser/TextSelector;->clearSelection()V
 
-    .line 2709
+    .line 2720
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v2
 
-    .line 2710
+    .line 2721
     const v3, 0x7f0c0004
 
     invoke-virtual {v2, v3, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    .line 2713
+    .line 2724
     invoke-virtual {v0}, Landroid/webkit/WebView$HitTestResult;->getExtra()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 2714
+    .line 2725
     const v0, 0x7f0d00c7
 
     const/4 v3, 0x2
@@ -7696,7 +7631,7 @@
     :goto_1
     invoke-interface {p1, v0, v3}, Landroid/view/ContextMenu;->setGroupVisible(IZ)V
 
-    .line 2716
+    .line 2727
     const v0, 0x7f0d00cb
 
     const/4 v3, 0x4
@@ -7708,7 +7643,7 @@
     :goto_2
     invoke-interface {p1, v0, v3}, Landroid/view/ContextMenu;->setGroupVisible(IZ)V
 
-    .line 2718
+    .line 2729
     const v0, 0x7f0d00ce
 
     const/4 v3, 0x3
@@ -7720,7 +7655,7 @@
     :goto_3
     invoke-interface {p1, v0, v3}, Landroid/view/ContextMenu;->setGroupVisible(IZ)V
 
-    .line 2720
+    .line 2731
     const v0, 0x7f0d00d6
 
     if-eq v1, v8, :cond_3
@@ -7735,7 +7670,7 @@
     :goto_4
     invoke-interface {p1, v0, v3}, Landroid/view/ContextMenu;->setGroupVisible(IZ)V
 
-    .line 2723
+    .line 2734
     const v0, 0x7f0d00d1
 
     if-eq v1, v9, :cond_4
@@ -7750,10 +7685,10 @@
     :goto_5
     invoke-interface {p1, v0, v3}, Landroid/view/ContextMenu;->setGroupVisible(IZ)V
 
-    .line 2728
+    .line 2739
     packed-switch v1, :pswitch_data_0
 
-    .line 2799
+    .line 2810
     :pswitch_0
     const-string v0, "browser"
 
@@ -7761,7 +7696,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2802
+    .line 2813
     :cond_5
     :goto_6
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
@@ -7771,34 +7706,34 @@
     :cond_6
     move v3, v5
 
-    .line 2714
+    .line 2725
     goto :goto_1
 
     :cond_7
     move v3, v5
 
-    .line 2716
+    .line 2727
     goto :goto_2
 
     :cond_8
     move v3, v5
 
-    .line 2718
+    .line 2729
     goto :goto_3
 
     :cond_9
     move v3, v5
 
-    .line 2720
+    .line 2731
     goto :goto_4
 
     :cond_a
     move v3, v5
 
-    .line 2723
+    .line 2734
     goto :goto_5
 
-    .line 2730
+    .line 2741
     :pswitch_1
     invoke-static {v2}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
 
@@ -7806,7 +7741,7 @@
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/ContextMenu;
 
-    .line 2731
+    .line 2742
     const v0, 0x7f0d00c8
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -7843,14 +7778,14 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
 
-    .line 2734
+    .line 2745
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.INSERT_OR_EDIT"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2735
+    .line 2746
     const-string v1, "phone"
 
     invoke-static {v2}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
@@ -7859,12 +7794,12 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2736
+    .line 2747
     const-string v1, "vnd.android.cursor.item/contact"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2737
+    .line 2748
     const v1, 0x7f0d00c9
 
     invoke-interface {p1, v1}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -7873,7 +7808,7 @@
 
     invoke-interface {v1, v0}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
 
-    .line 2739
+    .line 2750
     const v0, 0x7f0d00ca
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -7888,11 +7823,11 @@
 
     goto :goto_6
 
-    .line 2744
+    .line 2755
     :pswitch_2
     invoke-interface {p1, v2}, Landroid/view/ContextMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/ContextMenu;
 
-    .line 2745
+    .line 2756
     const v0, 0x7f0d00cc
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -7929,7 +7864,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
 
-    .line 2748
+    .line 2759
     const v0, 0x7f0d00cd
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -7944,11 +7879,11 @@
 
     goto/16 :goto_6
 
-    .line 2753
+    .line 2764
     :pswitch_3
     invoke-interface {p1, v2}, Landroid/view/ContextMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/ContextMenu;
 
-    .line 2754
+    .line 2765
     const v0, 0x7f0d00cf
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -7989,7 +7924,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
 
-    .line 2758
+    .line 2769
     const v0, 0x7f0d00d0
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -8004,7 +7939,7 @@
 
     goto/16 :goto_6
 
-    .line 2764
+    .line 2775
     :pswitch_4
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
@@ -8020,20 +7955,20 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 2767
+    .line 2778
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2769
+    .line 2780
     new-instance v3, Ljava/lang/String;
 
     invoke-direct {v3, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     iput-object v3, p0, Lcom/android/browser/BrowserActivity;->mCursorUrl:Ljava/lang/String;
 
-    .line 2771
+    .line 2782
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->setHeaderView(Landroid/view/View;)Landroid/view/ContextMenu;
 
-    .line 2773
+    .line 2784
     const v0, 0x7f0d00d2
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -8048,7 +7983,7 @@
 
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 2775
+    .line 2786
     const v0, 0x7f0d00d3
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -8061,31 +7996,31 @@
 
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 2777
+    .line 2788
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 2778
+    .line 2789
     new-instance v3, Landroid/content/Intent;
 
     const-string v4, "android.intent.action.SEND"
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2779
+    .line 2790
     const-string v4, "text/plain"
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2780
+    .line 2791
     const/high16 v4, 0x1
 
     invoke-virtual {v0, v3, v4}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
 
-    .line 2781
+    .line 2792
     const v3, 0x7f0d009d
 
     invoke-interface {p1, v3}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -8099,17 +8034,17 @@
     :goto_7
     invoke-interface {v3, v0}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 2782
+    .line 2793
     if-eq v1, v9, :cond_5
 
-    .line 2787
+    .line 2798
     :pswitch_5
     if-ne v1, v8, :cond_b
 
-    .line 2788
+    .line 2799
     invoke-interface {p1, v2}, Landroid/view/ContextMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/ContextMenu;
 
-    .line 2790
+    .line 2801
     :cond_b
     const v0, 0x7f0d00d8
 
@@ -8129,7 +8064,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
 
-    .line 2792
+    .line 2803
     const v0, 0x7f0d00d7
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -8142,7 +8077,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
 
-    .line 2794
+    .line 2805
     const v0, 0x7f0d00d9
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
@@ -8160,10 +8095,10 @@
     :cond_c
     move v0, v5
 
-    .line 2781
+    .line 2792
     goto :goto_7
 
-    .line 2728
+    .line 2739
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_1
@@ -8181,26 +8116,26 @@
     .parameter
 
     .prologue
-    .line 1719
+    .line 1730
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
 
-    .line 1721
+    .line 1732
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v0
 
-    .line 1722
+    .line 1733
     const v1, 0x7f0c0003
 
     invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    .line 1723
+    .line 1734
     iput-object p1, p0, Lcom/android/browser/BrowserActivity;->mMenu:Landroid/view/Menu;
 
-    .line 1724
+    .line 1735
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->updateInLoadMenuItems()V
 
-    .line 1725
+    .line 1736
     const/4 v0, 0x1
 
     return v0
@@ -8210,151 +8145,130 @@
     .locals 3
 
     .prologue
-    .line 1541
-    const-string v0, "browser"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "BrowserActivity.onDestroy: this="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1543
+    .line 1553
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 1547
+    .line 1557
     :try_start_0
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 1548
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
+    .line 1558
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
 
+    const/4 v2, 0x0
+
+    invoke-interface {v1, v2}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
+
+    .line 1559
     const/4 v1, 0x0
 
-    invoke-interface {v0, v1}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
+    iput-object v1, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
 
-    .line 1549
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
-
-    .line 1552
+    .line 1562
     :cond_0
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
-    .line 1575
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
-
-    if-eqz v0, :cond_1
-
-    .line 1576
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
-
-    invoke-virtual {v0}, Lcom/android/browser/BitmapWebView;->onDestroy()V
-
-    .line 1578
-    :cond_1
-    :goto_0
-    return-void
-
-    .line 1555
-    :cond_2
-    :try_start_1
-    invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
-
-    .line 1558
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
-
-    invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
-
-    move-result-object v0
-
-    .line 1559
-    if-eqz v0, :cond_3
-
-    .line 1560
-    invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->dismissSubWindow(Lcom/android/browser/Tab;)V
-
-    .line 1561
-    invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->removeTabFromContentView(Lcom/android/browser/Tab;)V
-
-    .line 1564
-    :cond_3
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
-
-    invoke-virtual {v0}, Lcom/android/browser/TabControl;->destroy()V
-
-    .line 1565
-    invoke-static {}, Landroid/webkit/WebIconDatabase;->getInstance()Landroid/webkit/WebIconDatabase;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/webkit/WebIconDatabase;->close()V
-
-    .line 1567
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPackageInstallationReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    .line 1570
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSystemAllowGeolocationOrigins:Lcom/android/browser/SystemAllowGeolocationOrigins;
-
-    invoke-virtual {v0}, Lcom/android/browser/SystemAllowGeolocationOrigins;->stop()V
-
-    .line 1571
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mSystemAllowGeolocationOrigins:Lcom/android/browser/SystemAllowGeolocationOrigins;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 1575
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
-
-    if-eqz v0, :cond_1
-
-    .line 1576
-    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
-
-    invoke-virtual {v0}, Lcom/android/browser/BitmapWebView;->onDestroy()V
-
-    goto :goto_0
-
-    .line 1575
-    :catchall_0
-    move-exception v0
-
+    .line 1585
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_1
 
-    .line 1576
+    .line 1586
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v1}, Lcom/android/browser/BitmapWebView;->onDestroy()V
 
+    .line 1588
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 1565
+    :cond_2
+    :try_start_1
+    invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
+
+    .line 1568
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+
+    invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
+
+    move-result-object v0
+
+    .line 1569
+    .local v0, t:Lcom/android/browser/Tab;
+    if-eqz v0, :cond_3
+
+    .line 1570
+    invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->dismissSubWindow(Lcom/android/browser/Tab;)V
+
+    .line 1571
+    invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->removeTabFromContentView(Lcom/android/browser/Tab;)V
+
+    .line 1574
+    :cond_3
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+
+    invoke-virtual {v1}, Lcom/android/browser/TabControl;->destroy()V
+
+    .line 1575
+    invoke-static {}, Landroid/webkit/WebIconDatabase;->getInstance()Landroid/webkit/WebIconDatabase;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/webkit/WebIconDatabase;->close()V
+
+    .line 1577
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mPackageInstallationReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    .line 1580
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mSystemAllowGeolocationOrigins:Lcom/android/browser/SystemAllowGeolocationOrigins;
+
+    invoke-virtual {v1}, Lcom/android/browser/SystemAllowGeolocationOrigins;->stop()V
+
+    .line 1581
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/android/browser/BrowserActivity;->mSystemAllowGeolocationOrigins:Lcom/android/browser/SystemAllowGeolocationOrigins;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 1585
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
+
+    if-eqz v1, :cond_1
+
+    .line 1586
+    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
+
+    invoke-virtual {v1}, Lcom/android/browser/BitmapWebView;->onDestroy()V
+
+    goto :goto_0
+
+    .line 1585
+    .end local v0           #t:Lcom/android/browser/Tab;
+    :catchall_0
+    move-exception v1
+
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
+
+    if-eqz v2, :cond_4
+
+    .line 1586
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
+
+    invoke-virtual {v2}, Lcom/android/browser/BitmapWebView;->onDestroy()V
+
     :cond_4
-    throw v0
+    throw v1
 .end method
 
 .method public onDisplaySoftKeyboard(Landroid/webkit/WebView;Z)V
@@ -8429,50 +8343,7 @@
 
     const/4 v2, 0x0
 
-    .line 4298
-    const-string v0, "BrowserActivity LOG"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, " BrowserActivity onDownloadStart() Begin - url "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " contentDisposition - "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " mimetype - "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4302
+    .line 4337
     const-string v0, "application/vnd.webkit.maybe.feed"
 
     invoke-virtual {p4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -8481,12 +8352,12 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 4303
+    .line 4338
     const-string v0, "application/rss+xml"
 
     move-object v6, v0
 
-    .line 4307
+    .line 4342
     :goto_0
     if-eqz p3, :cond_0
 
@@ -8504,7 +8375,7 @@
 
     if-nez v0, :cond_4
 
-    .line 4311
+    .line 4346
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -8512,14 +8383,14 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4312
+    .line 4347
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4313
+    .line 4348
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -8530,15 +8401,15 @@
 
     move-result-object v0
 
-    .line 4315
+    .line 4350
     if-eqz v0, :cond_3
 
-    .line 4316
+    .line 4351
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 4319
+    .line 4354
     invoke-virtual {v1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -8583,16 +8454,16 @@
 
     move-wide v6, p5
 
-    .line 4357
+    .line 4392
     invoke-static/range {v0 .. v7}, Lcom/android/browser/DownloadActivityChooser;->chooseActivity(Lcom/android/browser/BrowserActivity;Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 4359
+    .line 4394
     return-void
 
     :cond_2
     move-object v1, v7
 
-    .line 4347
+    .line 4382
     goto :goto_1
 
     :cond_3
@@ -8612,7 +8483,7 @@
 .end method
 
 .method onDownloadStartNoStream(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
-    .locals 9
+    .locals 8
     .parameter
     .parameter
     .parameter
@@ -8624,57 +8495,12 @@
 
     const/4 v6, 0x0
 
-    const-string v8, "BrowserActivity LOG"
-
-    .line 4405
-    const-string v0, "BrowserActivity LOG"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, " BrowserActivity onDownloadStartNoStream() Begin - url "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " contentDisposition - "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " mimetype - "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v8, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4411
+    .line 4446
     invoke-static {p1, p3, p4}, Landroid/webkit/URLUtil;->guessFileNameEx(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4415
+    .line 4450
     invoke-static {}, Lcom/android/browser/BrowserSettings;->getInstance()Lcom/android/browser/BrowserSettings;
 
     move-result-object v1
@@ -8685,12 +8511,12 @@
 
     if-nez v1, :cond_1
 
-    .line 4417
+    .line 4452
     invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 4418
+    .line 4453
     const-string v2, "mounted"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -8699,7 +8525,7 @@
 
     if-nez v2, :cond_1
 
-    .line 4423
+    .line 4458
     const-string v2, "shared"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -8708,17 +8534,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 4424
+    .line 4459
     const v0, 0x7f0900d8
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4425
+    .line 4460
     const v1, 0x7f0900d7
 
-    .line 4431
+    .line 4466
     :goto_0
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -8748,11 +8574,11 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 4504
+    .line 4539
     :goto_1
     return-void
 
-    .line 4427
+    .line 4462
     :cond_0
     const v1, 0x7f0900d6
 
@@ -8764,19 +8590,19 @@
 
     move-result-object v0
 
-    .line 4428
+    .line 4463
     const v1, 0x7f0900d5
 
     goto :goto_0
 
-    .line 4446
+    .line 4481
     :cond_1
     :try_start_0
     new-instance v1, Landroid/net/WebAddress;
 
     invoke-direct {v1, p1}, Landroid/net/WebAddress;-><init>(Ljava/lang/String;)V
 
-    .line 4447
+    .line 4482
     iget-object v2, v1, Landroid/net/WebAddress;->mPath:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/browser/BrowserActivity;->encodePath(Ljava/lang/String;)Ljava/lang/String;
@@ -8787,7 +8613,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4457
+    .line 4492
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object v2
@@ -8796,12 +8622,12 @@
 
     move-result-object v2
 
-    .line 4459
+    .line 4494
     new-instance v3, Landroid/content/ContentValues;
 
     invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
 
-    .line 4460
+    .line 4495
     const-string v4, "uri"
 
     invoke-virtual {v1}, Landroid/net/WebAddress;->toString()Ljava/lang/String;
@@ -8810,17 +8636,17 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4461
+    .line 4496
     const-string v4, "cookiedata"
 
     invoke-virtual {v3, v4, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4462
+    .line 4497
     const-string v2, "useragent"
 
     invoke-virtual {v3, v2, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4463
+    .line 4498
     const-string v2, "notificationpackage"
 
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getPackageName()Ljava/lang/String;
@@ -8829,7 +8655,7 @@
 
     invoke-virtual {v3, v2, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4465
+    .line 4500
     const-string v2, "notificationclass"
 
     const-class v4, Lcom/android/browser/OpenDownloadReceiver;
@@ -8840,7 +8666,7 @@
 
     invoke-virtual {v3, v2, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4467
+    .line 4502
     const-string v2, "visibility"
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8849,31 +8675,31 @@
 
     invoke-virtual {v3, v2, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 4469
+    .line 4504
     const-string v2, "mimetype"
 
     invoke-virtual {v3, v2, p4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4470
+    .line 4505
     const-string v2, "hint"
 
     invoke-virtual {v3, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4471
+    .line 4506
     const-string v0, "description"
 
     iget-object v1, v1, Landroid/net/WebAddress;->mHost:Ljava/lang/String;
 
     invoke-virtual {v3, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4472
+    .line 4507
     const-wide/16 v0, 0x0
 
     cmp-long v0, p5, v0
 
     if-lez v0, :cond_2
 
-    .line 4473
+    .line 4508
     const-string v0, "total_bytes"
 
     invoke-static {p5, p6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -8882,7 +8708,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 4476
+    .line 4511
     :cond_2
     invoke-static {}, Lcom/android/browser/BrowserSettings;->getInstance()Lcom/android/browser/BrowserSettings;
 
@@ -8894,7 +8720,7 @@
 
     if-nez v0, :cond_3
 
-    .line 4482
+    .line 4517
     const-string v0, "storagetype"
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8903,18 +8729,18 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 4485
+    .line 4520
     :cond_3
     if-nez p4, :cond_4
 
-    .line 4488
+    .line 4523
     const-string v0, "BrowserActivity LOG"
 
-    const-string v0, " Browser activity onDownloadStartNoStream FetchUrlMimeType"
+    const-string v1, " Browser activity onDownloadStartNoStream FetchUrlMimeType"
 
-    invoke-static {v8, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4489
+    .line 4524
     new-instance v0, Lcom/android/browser/FetchUrlMimeType;
 
     invoke-direct {v0, p0}, Lcom/android/browser/FetchUrlMimeType;-><init>(Lcom/android/browser/BrowserActivity;)V
@@ -8925,7 +8751,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/browser/FetchUrlMimeType;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 4502
+    .line 4537
     :goto_2
     const v0, 0x7f0900df
 
@@ -8937,11 +8763,11 @@
 
     goto/16 :goto_1
 
-    .line 4448
+    .line 4483
     :catch_0
     move-exception v0
 
-    .line 4451
+    .line 4486
     const-string v0, "browser"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8966,7 +8792,7 @@
 
     goto/16 :goto_1
 
-    .line 4497
+    .line 4532
     :cond_4
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -8987,70 +8813,70 @@
 
     const/4 v2, 0x0
 
-    .line 4177
+    .line 4212
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
     if-nez v0, :cond_1
 
-    .line 4198
+    .line 4233
     :cond_0
     :goto_0
     return-void
 
-    .line 4181
+    .line 4216
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4183
+    .line 4218
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomViewContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 4184
+    .line 4219
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
-    .line 4186
+    .line 4221
     iget v0, p0, Lcom/android/browser/BrowserActivity;->mOldMenuState:I
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
-    .line 4187
+    .line 4222
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mOldMenuState:I
 
-    .line 4188
+    .line 4223
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomViewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 4189
+    .line 4224
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomViewCallback:Landroid/webkit/WebChromeClient$CustomViewCallback;
 
     invoke-interface {v0}, Landroid/webkit/WebChromeClient$CustomViewCallback;->onCustomViewHidden()V
 
-    .line 4191
+    .line 4226
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->setStatusBarVisibility(Z)V
 
-    .line 4192
+    .line 4227
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 4193
+    .line 4228
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v0, :cond_0
 
-    .line 4195
+    .line 4230
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0, v2}, Lcom/android/browser/BitmapWebView;->setVisible(I)V
@@ -9066,8 +8892,8 @@
     .parameter
 
     .prologue
-    .line 4078
-    .line 4080
+    .line 4113
+    .line 4115
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -9110,7 +8936,7 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mJSAlertPopup:Landroid/app/AlertDialog;
 
-    .line 4100
+    .line 4135
     const/4 v0, 0x1
 
     return v0
@@ -9132,34 +8958,34 @@
 
     const/4 v2, 0x1
 
-    .line 3276
+    .line 3298
     if-ne v6, p1, :cond_0
 
-    .line 3277
+    .line 3299
     iput-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
 
-    .line 3278
+    .line 3300
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result v1
 
-    .line 3360
+    .line 3382
     :goto_0
     return v1
 
-    .line 3286
+    .line 3308
     :cond_0
     iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
 
     if-eqz v1, :cond_1
 
-    .line 3290
+    .line 3312
     if-eq v6, p1, :cond_1
 
-    .line 3292
+    .line 3314
     iput-boolean v4, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
 
-    .line 3293
+    .line 3315
     const/16 v1, 0x3e
 
     if-eq p1, v1, :cond_1
@@ -9170,14 +8996,14 @@
 
     move v1, v2
 
-    .line 3294
+    .line 3316
     goto :goto_0
 
-    .line 3298
+    .line 3320
     :cond_1
     sparse-switch p1, :sswitch_data_0
 
-    .line 3360
+    .line 3382
     :cond_2
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
@@ -9185,7 +9011,7 @@
 
     goto :goto_0
 
-    .line 3303
+    .line 3325
     :sswitch_0
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isShiftPressed()Z
 
@@ -9193,7 +9019,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 3304
+    .line 3326
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v1
@@ -9203,10 +9029,10 @@
     :goto_1
     move v1, v2
 
-    .line 3308
+    .line 3330
     goto :goto_0
 
-    .line 3306
+    .line 3328
     :cond_3
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -9216,7 +9042,7 @@
 
     goto :goto_1
 
-    .line 3310
+    .line 3332
     :sswitch_1
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
@@ -9224,15 +9050,15 @@
 
     if-nez v1, :cond_2
 
-    .line 3311
+    .line 3333
     invoke-virtual {p2}, Landroid/view/KeyEvent;->startTracking()V
 
     move v1, v2
 
-    .line 3312
+    .line 3334
     goto :goto_0
 
-    .line 3327
+    .line 3349
     :sswitch_2
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mAudioManager:Landroid/media/AudioManager;
 
@@ -9250,18 +9076,18 @@
 
     if-eq v1, v3, :cond_8
 
-    .line 3331
+    .line 3353
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 3332
+    .line 3354
     .local v0, view:Landroid/webkit/WebView;
     if-eqz v0, :cond_5
 
-    .line 3333
+    .line 3355
     sget v1, Lcom/android/browser/BrowserActivity;->orien:I
 
     if-eqz v1, :cond_4
@@ -9270,7 +9096,7 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 3334
+    .line 3356
     :cond_4
     invoke-virtual {v0}, Landroid/webkit/WebView;->zoomOut()Z
 
@@ -9278,10 +9104,10 @@
     :goto_2
     move v1, v2
 
-    .line 3339
+    .line 3361
     goto :goto_0
 
-    .line 3335
+    .line 3357
     :cond_6
     sget v1, Lcom/android/browser/BrowserActivity;->orien:I
 
@@ -9291,13 +9117,13 @@
 
     if-ne v1, v5, :cond_5
 
-    .line 3336
+    .line 3358
     :cond_7
     invoke-virtual {v0}, Landroid/webkit/WebView;->zoomIn()Z
 
     goto :goto_2
 
-    .line 3346
+    .line 3368
     .end local v0           #view:Landroid/webkit/WebView;
     :cond_8
     :sswitch_3
@@ -9317,18 +9143,18 @@
 
     if-eq v1, v3, :cond_2
 
-    .line 3349
+    .line 3371
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 3350
+    .line 3372
     .restart local v0       #view:Landroid/webkit/WebView;
     if-eqz v0, :cond_a
 
-    .line 3351
+    .line 3373
     sget v1, Lcom/android/browser/BrowserActivity;->orien:I
 
     if-eqz v1, :cond_9
@@ -9337,7 +9163,7 @@
 
     if-ne v1, v2, :cond_b
 
-    .line 3352
+    .line 3374
     :cond_9
     invoke-virtual {v0}, Landroid/webkit/WebView;->zoomIn()Z
 
@@ -9345,10 +9171,10 @@
     :goto_3
     move v1, v2
 
-    .line 3357
+    .line 3379
     goto/16 :goto_0
 
-    .line 3353
+    .line 3375
     :cond_b
     sget v1, Lcom/android/browser/BrowserActivity;->orien:I
 
@@ -9358,13 +9184,13 @@
 
     if-ne v1, v5, :cond_a
 
-    .line 3354
+    .line 3376
     :cond_c
     invoke-virtual {v0}, Landroid/webkit/WebView;->zoomOut()Z
 
     goto :goto_3
 
-    .line 3298
+    .line 3320
     nop
 
     :sswitch_data_0
@@ -9377,126 +9203,155 @@
 .end method
 
 .method public onKeyUp(ILandroid/view/KeyEvent;)Z
-    .locals 3
+    .locals 4
     .parameter "keyCode"
     .parameter "event"
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    .line 3370
+    .line 3392
     sparse-switch p1, :sswitch_data_0
 
-    .line 3399
+    .line 3432
     :cond_0
     :goto_0
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
-    move-result v1
+    move-result v2
 
     :goto_1
-    return v1
+    return v2
 
-    .line 3372
+    .line 3394
     :sswitch_0
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    iput-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
+    iput-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
 
     goto :goto_0
 
-    .line 3375
+    .line 3397
     :sswitch_1
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isTracking()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isCanceled()Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
-    .line 3376
-    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
+    .line 3398
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    .line 3378
-    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+    .line 3400
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
-    invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
+    invoke-virtual {v2}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getWebChromeClient()Landroid/webkit/WebChromeClient;
+    invoke-virtual {v2}, Landroid/webkit/WebView;->getWebChromeClient()Landroid/webkit/WebChromeClient;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/webkit/WebChromeClient;->onHideCustomView()V
+    invoke-virtual {v2}, Landroid/webkit/WebChromeClient;->onHideCustomView()V
 
     :goto_2
-    move v1, v2
+    move v2, v3
 
-    .line 3395
+    .line 3428
     goto :goto_1
 
-    .line 3380
+    .line 3402
     :cond_1
-    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    .line 3382
-    invoke-virtual {p0, v2}, Lcom/android/browser/BrowserActivity;->removeActiveTabPage(Z)V
+    .line 3404
+    invoke-virtual {p0, v3}, Lcom/android/browser/BrowserActivity;->removeActiveTabPage(Z)V
 
     goto :goto_2
 
-    .line 3384
+    .line 3406
     :cond_2
-    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
-    invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentSubWindow()Landroid/webkit/WebView;
+    invoke-virtual {v2}, Lcom/android/browser/TabControl;->getCurrentSubWindow()Landroid/webkit/WebView;
+
+    move-result-object v1
+
+    .line 3407
+    .local v1, subwindow:Landroid/webkit/WebView;
+    if-eqz v1, :cond_4
+
+    .line 3408
+    invoke-virtual {v1}, Landroid/webkit/WebView;->canGoBack()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 3409
+    invoke-virtual {v1}, Landroid/webkit/WebView;->goBack()V
+
+    goto :goto_2
+
+    .line 3411
+    :cond_3
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+
+    invoke-virtual {v2}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/android/browser/BrowserActivity;->dismissSubWindow(Lcom/android/browser/Tab;)V
+
+    goto :goto_2
+
+    .line 3415
+    :cond_4
+    iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+
+    invoke-virtual {v2}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
 
     move-result-object v0
 
-    .line 3385
-    .local v0, subwindow:Landroid/webkit/WebView;
-    if-eqz v0, :cond_4
+    .line 3416
+    .local v0, current:Lcom/android/browser/Tab;
+    if-eqz v0, :cond_5
 
-    .line 3386
-    invoke-virtual {v0}, Landroid/webkit/WebView;->canGoBack()Z
+    .line 3418
+    invoke-virtual {v0}, Lcom/android/browser/Tab;->getAppId()Ljava/lang/String;
 
-    move-result v1
+    move-result-object v2
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_5
 
-    .line 3387
-    invoke-virtual {v0}, Landroid/webkit/WebView;->goBack()V
+    .line 3420
+    invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->finish()V
 
-    goto :goto_2
+    move v2, v3
 
-    .line 3389
-    :cond_3
-    iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+    .line 3421
+    goto :goto_1
 
-    invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->dismissSubWindow(Lcom/android/browser/Tab;)V
-
-    goto :goto_2
-
-    .line 3392
-    :cond_4
+    .line 3425
+    :cond_5
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->goBackOnePageOrQuit()V
 
     goto :goto_2
 
-    .line 3370
+    .line 3392
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x4 -> :sswitch_1
@@ -9505,41 +9360,18 @@
 .end method
 
 .method public onLowMemory()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 1645
-    const-string v0, "browser"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "BrowserActivity.onLowMemory: this="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1647
+    .line 1658
     invoke-super {p0}, Landroid/app/Activity;->onLowMemory()V
 
-    .line 1648
+    .line 1659
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->freeMemory()V
 
-    .line 1649
+    .line 1660
     return-void
 .end method
 
@@ -9553,61 +9385,61 @@
 
     const/4 v1, 0x1
 
-    .line 1337
+    .line 1347
     if-nez p1, :cond_0
 
-    .line 1338
+    .line 1348
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mOptionsMenuOpen:Z
 
     if-eqz v0, :cond_3
 
-    .line 1339
+    .line 1349
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mConfigChanged:Z
 
     if-eqz v0, :cond_1
 
-    .line 1343
+    .line 1353
     iput-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mConfigChanged:Z
 
-    .line 1365
+    .line 1375
     :cond_0
     :goto_0
     return v1
 
-    .line 1345
+    .line 1355
     :cond_1
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mIconView:Z
 
     if-eqz v0, :cond_2
 
-    .line 1348
+    .line 1358
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
 
-    .line 1349
+    .line 1359
     iput-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mIconView:Z
 
     goto :goto_0
 
-    .line 1353
+    .line 1363
     :cond_2
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->showFakeTitleBar()V
 
-    .line 1354
+    .line 1364
     iput-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mIconView:Z
 
     goto :goto_0
 
-    .line 1359
+    .line 1369
     :cond_3
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->showFakeTitleBar()V
 
-    .line 1360
+    .line 1370
     iput-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mOptionsMenuOpen:Z
 
-    .line 1361
+    .line 1371
     iput-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mConfigChanged:Z
 
-    .line 1362
+    .line 1372
     iput-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mIconView:Z
 
     goto :goto_0
@@ -9618,41 +9450,41 @@
     .parameter "up"
 
     .prologue
-    .line 4982
+    .line 5017
     iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
 
     if-ne p1, v1, :cond_1
 
-    .line 5000
+    .line 5035
     :cond_0
     :goto_0
     return-void
 
-    .line 4984
+    .line 5019
     :cond_1
     if-eqz p1, :cond_3
 
-    .line 4985
+    .line 5020
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
 
-    .line 4986
+    .line 5021
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     if-eqz v1, :cond_2
 
-    .line 4987
+    .line 5022
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v1}, Landroid/app/AlertDialog;->cancel()V
 
-    .line 4988
+    .line 5023
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/browser/BrowserActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 4996
+    .line 5031
     :cond_2
     :goto_1
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
@@ -9661,28 +9493,28 @@
 
     move-result-object v0
 
-    .line 4997
+    .line 5032
     .local v0, w:Landroid/webkit/WebView;
     if-eqz v0, :cond_0
 
-    .line 4998
+    .line 5033
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->setNetworkAvailable(Z)V
 
     goto :goto_0
 
-    .line 4991
+    .line 5026
     .end local v0           #w:Landroid/webkit/WebView;
     :cond_3
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
 
-    .line 4992
+    .line 5027
     iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
     if-eqz v1, :cond_2
 
-    .line 4993
+    .line 5028
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->createAndShowNetworkDialog()V
 
     goto :goto_1
@@ -9702,33 +9534,6 @@
     const-string v11, "android.intent.action.VIEW"
 
     const-string v6, "android.intent.action.SEARCH"
-
-    .line 674
-    const-string v0, "browser"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " onNewIntent, intent = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 677
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
@@ -10409,18 +10214,18 @@
 
     const/4 v4, 0x0
 
-    .line 2017
+    .line 2028
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mCanChord:Z
 
     if-nez v0, :cond_0
 
     move v0, v4
 
-    .line 2240
+    .line 2251
     :goto_0
     return v0
 
-    .line 2022
+    .line 2033
     :cond_0
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -10430,19 +10235,19 @@
 
     move v0, v4
 
-    .line 2023
+    .line 2034
     goto :goto_0
 
-    .line 2025
+    .line 2036
     :cond_1
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
 
     if-eqz v0, :cond_2
 
-    .line 2030
+    .line 2041
     iput-boolean v4, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
 
-    .line 2032
+    .line 2043
     :cond_2
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -10450,7 +10255,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2234
+    .line 2245
     :pswitch_0
     invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
@@ -10460,30 +10265,30 @@
 
     move v0, v4
 
-    .line 2235
+    .line 2246
     goto :goto_0
 
-    .line 2035
+    .line 2046
     :pswitch_1
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->openTabToHomePage()Lcom/android/browser/Tab;
 
-    .line 2239
+    .line 2250
     :cond_3
     :goto_1
     iput-boolean v4, p0, Lcom/android/browser/BrowserActivity;->mCanChord:Z
 
     move v0, v5
 
-    .line 2240
+    .line 2251
     goto :goto_0
 
-    .line 2039
+    .line 2050
     :pswitch_2
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->editUrl()V
 
     goto :goto_1
 
-    .line 2047
+    .line 2058
     :pswitch_3
     new-instance v0, Lcom/android/browser/ActiveTabsPage;
 
@@ -10493,7 +10298,7 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
-    .line 2048
+    .line 2059
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -10502,10 +10307,10 @@
 
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->removeTabFromContentView(Lcom/android/browser/Tab;)V
 
-    .line 2049
+    .line 2060
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
 
-    .line 2050
+    .line 2061
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
@@ -10514,19 +10319,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2051
+    .line 2062
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
     invoke-virtual {v0}, Lcom/android/browser/ActiveTabsPage;->requestFocus()Z
 
-    .line 2052
+    .line 2063
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
     goto :goto_1
 
-    .line 2056
+    .line 2067
     :pswitch_4
     new-instance v0, Landroid/content/Intent;
 
@@ -10534,12 +10339,12 @@
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2058
+    .line 2069
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 2059
+    .line 2070
     const-string v2, "url"
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
@@ -10548,7 +10353,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2060
+    .line 2071
     const-string v2, "title"
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->getTitle()Ljava/lang/String;
@@ -10557,7 +10362,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2061
+    .line 2072
     const-string v2, "touch_icon_url"
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->getTouchIconUrl()Ljava/lang/String;
@@ -10566,7 +10371,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2062
+    .line 2073
     const-string v2, "thumbnail"
 
     invoke-direct {p0, v1}, Lcom/android/browser/BrowserActivity;->createScreenshot(Landroid/webkit/WebView;)Landroid/graphics/Bitmap;
@@ -10575,29 +10380,29 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 2063
+    .line 2074
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_1
 
-    .line 2067
+    .line 2078
     :pswitch_5
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->displayRssLinks()V
 
     goto :goto_1
 
-    .line 2071
+    .line 2082
     :pswitch_6
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
     if-eqz v0, :cond_4
 
-    .line 2072
+    .line 2083
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->stopLoading()V
 
     goto :goto_1
 
-    .line 2074
+    .line 2085
     :cond_4
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -10607,7 +10412,7 @@
 
     goto :goto_1
 
-    .line 2079
+    .line 2090
     :pswitch_7
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -10617,7 +10422,7 @@
 
     goto :goto_1
 
-    .line 2083
+    .line 2094
     :pswitch_8
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -10627,7 +10432,7 @@
 
     goto/16 :goto_1
 
-    .line 2088
+    .line 2099
     :pswitch_9
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -10637,7 +10442,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 2089
+    .line 2100
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -10648,13 +10453,13 @@
 
     goto/16 :goto_1
 
-    .line 2092
+    .line 2103
     :cond_5
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->closeCurrentWindow()V
 
     goto/16 :goto_1
 
-    .line 2096
+    .line 2107
     :pswitch_a
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -10662,13 +10467,13 @@
 
     move-result-object v0
 
-    .line 2097
+    .line 2108
     if-eqz v0, :cond_3
 
-    .line 2098
+    .line 2109
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->dismissSubWindow(Lcom/android/browser/Tab;)V
 
-    .line 2099
+    .line 2110
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v0
@@ -10683,7 +10488,7 @@
 
     goto/16 :goto_1
 
-    .line 2104
+    .line 2115
     :pswitch_b
     new-instance v0, Landroid/content/Intent;
 
@@ -10691,7 +10496,7 @@
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2106
+    .line 2117
     const-string v1, "currentPage"
 
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
@@ -10704,63 +10509,63 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2108
+    .line 2119
     const/4 v1, 0x3
 
     invoke-virtual {p0, v0, v1}, Lcom/android/browser/BrowserActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto/16 :goto_1
 
-    .line 2112
+    .line 2123
     :pswitch_c
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->createShortcutIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 2113
+    .line 2124
     if-eqz v0, :cond_3
 
-    .line 2115
+    .line 2126
     const-string v1, "com.android.launcher.action.INSTALL_SHORTCUT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2116
+    .line 2127
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_1
 
-    .line 2121
+    .line 2132
     :pswitch_d
     iget v0, p0, Lcom/android/browser/BrowserActivity;->autobright:I
 
     if-ne v0, v5, :cond_6
 
-    .line 2123
+    .line 2134
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->brightToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->cancel()V
 
-    .line 2124
+    .line 2135
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->brightToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     goto/16 :goto_1
 
-    .line 2128
+    .line 2139
     :cond_6
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->createBrightPopup()V
 
     goto/16 :goto_1
 
-    .line 2133
+    .line 2144
     :pswitch_e
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->showFindDialog()V
 
     goto/16 :goto_1
 
-    .line 2141
+    .line 2152
     :pswitch_f
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -10772,13 +10577,13 @@
 
     goto/16 :goto_1
 
-    .line 2145
+    .line 2156
     :pswitch_10
     invoke-virtual {p0, v5}, Lcom/android/browser/BrowserActivity;->bookmarksOrHistoryPicker(Z)V
 
     goto/16 :goto_1
 
-    .line 2150
+    .line 2161
     :pswitch_11
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -10786,22 +10591,22 @@
 
     move-result-object v0
 
-    .line 2151
+    .line 2162
     if-nez v0, :cond_7
 
-    .line 2152
+    .line 2163
     iput-boolean v4, p0, Lcom/android/browser/BrowserActivity;->mCanChord:Z
 
     move v0, v4
 
-    .line 2153
+    .line 2164
     goto/16 :goto_0
 
-    .line 2155
+    .line 2166
     :cond_7
     invoke-virtual {v0}, Lcom/android/browser/Tab;->populatePickerData()V
 
-    .line 2157
+    .line 2168
     :try_start_0
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getTitle()Ljava/lang/String;
 
@@ -10829,7 +10634,7 @@
 
     goto/16 :goto_1
 
-    .line 2160
+    .line 2171
     :catch_0
     move-exception v0
 
@@ -10841,7 +10646,7 @@
 
     goto/16 :goto_1
 
-    .line 2165
+    .line 2176
     :pswitch_12
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -10849,7 +10654,7 @@
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->debugDump()V
 
-    .line 2167
+    .line 2178
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
@@ -10858,7 +10663,7 @@
 
     goto/16 :goto_1
 
-    .line 2172
+    .line 2183
     :pswitch_13
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
@@ -10868,26 +10673,26 @@
 
     if-ne v0, v5, :cond_3
 
-    .line 2174
+    .line 2185
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
     if-nez v0, :cond_8
 
-    .line 2176
+    .line 2187
     new-instance v0, Lcom/android/browser/PerformanceTester;
 
     invoke-direct {v0, p0}, Lcom/android/browser/PerformanceTester;-><init>(Lcom/android/browser/BrowserActivity;)V
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
-    .line 2177
+    .line 2188
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
     invoke-virtual {v0}, Lcom/android/browser/PerformanceTester;->startTest()V
 
     goto/16 :goto_1
 
-    .line 2181
+    .line 2192
     :cond_8
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
@@ -10897,19 +10702,19 @@
 
     if-ne v0, v5, :cond_9
 
-    .line 2183
+    .line 2194
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
     invoke-virtual {v0}, Lcom/android/browser/PerformanceTester;->stopTest()V
 
-    .line 2184
+    .line 2195
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
     goto/16 :goto_1
 
-    .line 2188
+    .line 2199
     :cond_9
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
@@ -10917,7 +10722,7 @@
 
     goto/16 :goto_1
 
-    .line 2195
+    .line 2206
     :pswitch_14
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -10927,7 +10732,7 @@
 
     goto/16 :goto_1
 
-    .line 2199
+    .line 2210
     :pswitch_15
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -10937,7 +10742,7 @@
 
     goto/16 :goto_1
 
-    .line 2203
+    .line 2214
     :pswitch_16
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -10947,13 +10752,13 @@
 
     goto/16 :goto_1
 
-    .line 2207
+    .line 2218
     :pswitch_17
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->viewDownloads()V
 
     goto/16 :goto_1
 
-    .line 2219
+    .line 2230
     :pswitch_18
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -10961,7 +10766,7 @@
 
     move v1, v4
 
-    .line 2220
+    .line 2231
     :goto_2
     sget-object v2, Lcom/android/browser/BrowserActivity;->WINDOW_SHORTCUT_ID_ARRAY:[I
 
@@ -10969,21 +10774,21 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2221
+    .line 2232
     sget-object v2, Lcom/android/browser/BrowserActivity;->WINDOW_SHORTCUT_ID_ARRAY:[I
 
     aget v2, v2, v1
 
     if-ne v2, v0, :cond_a
 
-    .line 2222
+    .line 2233
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0, v1}, Lcom/android/browser/TabControl;->getTab(I)Lcom/android/browser/Tab;
 
     move-result-object v0
 
-    .line 2223
+    .line 2234
     if-eqz v0, :cond_3
 
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
@@ -10994,28 +10799,28 @@
 
     if-eq v0, v2, :cond_3
 
-    .line 2225
+    .line 2236
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->switchToTab(I)Z
 
     goto/16 :goto_1
 
-    .line 2220
+    .line 2231
     :cond_a
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 2032
+    .line 2043
     nop
 
     :pswitch_data_0
     .packed-switch 0x7f0d00a3
         :pswitch_1
         :pswitch_3
-        :pswitch_d
         :pswitch_6
-        :pswitch_8
         :pswitch_4
+        :pswitch_8
+        :pswitch_d
         :pswitch_c
         :pswitch_5
         :pswitch_e
@@ -11083,31 +10888,31 @@
     .parameter "menu"
 
     .prologue
-    .line 1408
+    .line 1418
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mOptionsMenuOpen:Z
 
-    .line 1409
+    .line 1419
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
     if-nez v0, :cond_1
 
-    .line 1410
+    .line 1420
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
 
-    .line 1417
+    .line 1427
     :cond_0
     :goto_0
     return-void
 
-    .line 1411
+    .line 1421
     :cond_1
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mIconView:Z
 
     if-nez v0, :cond_0
 
-    .line 1415
+    .line 1425
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->showFakeTitleBar()V
 
     goto :goto_0
@@ -11119,13 +10924,13 @@
     .parameter "url"
 
     .prologue
-    .line 3896
+    .line 3931
     invoke-direct {p0, p1}, Lcom/android/browser/BrowserActivity;->resetTitleAndIcon(Landroid/webkit/WebView;)V
 
-    .line 3898
+    .line 3933
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->updateLockIconToLatest()V
 
-    .line 3901
+    .line 3936
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
     if-eqz v0, :cond_0
@@ -11136,7 +10941,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3902
+    .line 3937
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
@@ -11145,46 +10950,46 @@
 
     if-eqz v0, :cond_0
 
-    .line 3903
+    .line 3938
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x6b
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 3904
+    .line 3939
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 3955
+    .line 3990
     :cond_0
     sget-boolean v0, Lcom/android/browser/BrowserActivity;->mInTrace:Z
 
     if-eqz v0, :cond_1
 
-    .line 3956
+    .line 3991
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/browser/BrowserActivity;->mInTrace:Z
 
-    .line 3957
+    .line 3992
     invoke-static {}, Landroid/os/Debug;->stopMethodTracing()V
 
-    .line 3961
+    .line 3996
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
     if-eqz v0, :cond_2
 
-    .line 3962
+    .line 3997
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mPerfTester:Lcom/android/browser/PerformanceTester;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/browser/PerformanceTester;->onPageFinished(Ljava/lang/String;)V
 
-    .line 3963
+    .line 3998
     :cond_2
     return-void
 .end method
@@ -11196,16 +11001,14 @@
     .parameter
 
     .prologue
-    const-string v2, "browser"
-
-    .line 3826
+    .line 3859
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->resumeWebViewTimers()V
 
-    .line 3829
+    .line 3862
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -11215,53 +11018,28 @@
 
     invoke-virtual {v0}, Lcom/android/browser/TextSelector;->clearSelection()V
 
-    .line 3831
+    .line 3864
     invoke-direct {p0, p2}, Lcom/android/browser/BrowserActivity;->resetLockIcon(Ljava/lang/String;)V
 
-    .line 3832
+    .line 3865
     const/4 v0, 0x0
 
     invoke-virtual {p0, p2, v0}, Lcom/android/browser/BrowserActivity;->setUrlTitle(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3833
+    .line 3866
     invoke-virtual {p0, p3}, Lcom/android/browser/BrowserActivity;->setFavicon(Landroid/graphics/Bitmap;)V
 
-    .line 3836
+    .line 3869
     const/16 v0, 0xa
 
     invoke-virtual {p0, p1, v0}, Lcom/android/browser/BrowserActivity;->onProgressChanged(Landroid/webkit/WebView;I)V
 
-    .line 3837
+    .line 3870
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mDidStopLoad:Z
 
-    .line 3839
-    const-string v0, "browser"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "BrowserActivity onPageStarted() : mIsNetworkUp = "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v2, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3840
+    .line 3874
     const-string v0, "connectivity"
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -11270,47 +11048,22 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 3842
+    .line 3876
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
-    .line 3843
+    .line 3877
     if-eqz v0, :cond_1
 
-    .line 3844
+    .line 3878
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isAvailable()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
 
-    .line 3845
-    const-string v0, "browser"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "BrowserActivity onPageStarted(): mIsNetworkUp from info.isAvailable()="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v2, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3848
+    .line 3883
     :cond_1
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mIsNetworkUp:Z
 
@@ -11318,11 +11071,11 @@
 
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->createAndShowNetworkDialog()V
 
-    .line 3849
+    .line 3884
     :cond_2
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->closeDialogs()V
 
-    .line 3850
+    .line 3885
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v0}, Lcom/android/browser/BrowserSettings;->isTracing()Z
@@ -11331,18 +11084,18 @@
 
     if-eqz v0, :cond_3
 
-    .line 3853
+    .line 3888
     :try_start_0
     new-instance v0, Landroid/net/WebAddress;
 
     invoke-direct {v0, p2}, Landroid/net/WebAddress;-><init>(Ljava/lang/String;)V
 
-    .line 3854
+    .line 3889
     iget-object v0, v0, Landroid/net/WebAddress;->mHost:Ljava/lang/String;
     :try_end_0
     .catch Landroid/net/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3858
+    .line 3893
     :goto_0
     const/16 v1, 0x2e
 
@@ -11352,7 +11105,7 @@
 
     move-result-object v0
 
-    .line 3859
+    .line 3894
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -11371,17 +11124,17 @@
 
     move-result-object v0
 
-    .line 3860
+    .line 3895
     const/4 v1, 0x1
 
     sput-boolean v1, Lcom/android/browser/BrowserActivity;->mInTrace:Z
 
-    .line 3861
+    .line 3896
     const/high16 v1, 0x140
 
     invoke-static {v0, v1}, Landroid/os/Debug;->startMethodTracing(Ljava/lang/String;I)V
 
-    .line 3885
+    .line 3920
     :cond_3
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
@@ -11391,22 +11144,20 @@
 
     move-result-object v0
 
-    .line 3886
+    .line 3921
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 3887
+    .line 3922
     return-void
 
-    .line 3855
+    .line 3890
     :catch_0
     move-exception v0
 
-    .line 3856
+    .line 3891
     const-string v0, "browser"
-
-    move-object v0, v2
 
     goto :goto_0
 .end method
@@ -11417,61 +11168,36 @@
     .prologue
     const/4 v4, 0x1
 
-    const-string v2, "browser"
-
-    .line 1494
+    .line 1504
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    .line 1498
-    const-string v0, "browser"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "BrowserActivity.onPause: this="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v2, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1501
+    .line 1511
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
     if-eqz v0, :cond_1
 
-    .line 1502
+    .line 1512
     const-string v0, "browser"
 
-    const-string v0, "BrowserActivity is already paused."
+    const-string v1, "BrowserActivity is already paused."
 
-    invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1535
+    .line 1545
     :cond_0
     :goto_0
     return-void
 
-    .line 1507
+    .line 1517
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->pauseCurrentTab()V
 
-    .line 1508
+    .line 1518
     iput-boolean v4, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
-    .line 1509
+    .line 1519
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentIndex()I
@@ -11486,12 +11212,12 @@
 
     if-nez v0, :cond_2
 
-    .line 1510
+    .line 1520
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 1511
+    .line 1521
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
@@ -11506,43 +11232,43 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 1519
+    .line 1529
     :cond_2
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
     if-eqz v0, :cond_3
 
-    .line 1520
+    .line 1530
     invoke-virtual {p0, v4}, Lcom/android/browser/BrowserActivity;->removeActiveTabPage(Z)V
 
-    .line 1523
+    .line 1533
     :cond_3
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->cancelStopToast()V
 
-    .line 1526
+    .line 1536
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mNetworkStateIntentReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 1527
+    .line 1537
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mIMEReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 1528
+    .line 1538
     invoke-static {}, Landroid/webkit/WebView;->disablePlatformNotifications()V
 
-    .line 1531
+    .line 1541
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 1533
+    .line 1543
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v0, :cond_0
 
-    .line 1534
+    .line 1544
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0}, Lcom/android/browser/BitmapWebView;->onPaused()V
@@ -11563,13 +11289,13 @@
 
     const/4 v4, 0x1
 
-    .line 2545
+    .line 2556
     iput-boolean v4, p0, Lcom/android/browser/BrowserActivity;->mCanChord:Z
 
-    .line 2549
+    .line 2560
     invoke-super {p0, p1}, Landroid/app/Activity;->onPrepareOptionsMenu(Landroid/view/Menu;)Z
 
-    .line 2552
+    .line 2563
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getTextSelector()Lcom/android/browser/TextSelector;
@@ -11578,47 +11304,47 @@
 
     invoke-virtual {v0}, Lcom/android/browser/TextSelector;->clearSelection()V
 
-    .line 2554
+    .line 2565
     iget v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2563
+    .line 2574
     iget v0, p0, Lcom/android/browser/BrowserActivity;->mCurrentMenuState:I
 
     iget v1, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
     if-eq v0, v1, :cond_0
 
-    .line 2564
+    .line 2575
     invoke-interface {p1, v2, v4}, Landroid/view/Menu;->setGroupVisible(IZ)V
 
-    .line 2565
+    .line 2576
     invoke-interface {p1, v2, v4}, Landroid/view/Menu;->setGroupEnabled(IZ)V
 
-    .line 2566
+    .line 2577
     invoke-interface {p1, v3, v4}, Landroid/view/Menu;->setGroupEnabled(IZ)V
 
-    .line 2568
+    .line 2579
     :cond_0
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 2572
+    .line 2583
     if-eqz v0, :cond_7
 
-    .line 2573
+    .line 2584
     invoke-virtual {v0}, Landroid/webkit/WebView;->canGoBack()Z
 
     move-result v1
 
-    .line 2574
+    .line 2585
     invoke-virtual {v0}, Landroid/webkit/WebView;->canGoForward()Z
 
     move-result v2
 
-    .line 2575
+    .line 2586
     iget-object v3, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v3}, Lcom/android/browser/BrowserSettings;->getHomePage()Ljava/lang/String;
@@ -11639,7 +11365,7 @@
 
     move v1, v6
 
-    .line 2577
+    .line 2588
     :goto_0
     const v3, 0x7f0d00c0
 
@@ -11647,17 +11373,17 @@
 
     move-result-object v3
 
-    .line 2578
+    .line 2589
     invoke-interface {v3, v2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2580
+    .line 2591
     const v2, 0x7f0d00b4
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    .line 2581
+    .line 2592
     if-nez v0, :cond_3
 
     move v0, v4
@@ -11665,14 +11391,14 @@
     :goto_1
     invoke-interface {v2, v0}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2583
+    .line 2594
     const v0, 0x7f0d00a9
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    .line 2586
+    .line 2597
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v2
@@ -11705,25 +11431,25 @@
 
     if-ne v4, v2, :cond_4
 
-    .line 2587
+    .line 2598
     :cond_1
     invoke-interface {v0, v5}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2594
+    .line 2605
     :goto_2
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 2595
+    .line 2606
     if-eqz v0, :cond_6
 
-    .line 2596
+    .line 2607
     invoke-virtual {v0}, Landroid/webkit/WebView;->getProgress()I
 
     move-result v0
 
-    .line 2597
+    .line 2608
     const/16 v2, 0x64
 
     if-ne v0, v2, :cond_6
@@ -11736,7 +11462,7 @@
 
     move v0, v4
 
-    .line 2603
+    .line 2614
     :goto_3
     const v2, 0x7f0d00aa
 
@@ -11744,10 +11470,10 @@
 
     move-result-object v2
 
-    .line 2604
+    .line 2615
     invoke-interface {v2, v0}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2606
+    .line 2617
     const v0, 0x7f0d00a7
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
@@ -11756,7 +11482,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2609
+    .line 2620
     const v0, 0x7f0d00a3
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
@@ -11771,31 +11497,31 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2613
+    .line 2624
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 2614
+    .line 2625
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.SEND"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2615
+    .line 2626
     const-string v2, "text/plain"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2616
+    .line 2627
     const/high16 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
 
-    .line 2617
+    .line 2628
     const v1, 0x7f0d00ad
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
@@ -11809,54 +11535,54 @@
     :goto_4
     invoke-interface {v1, v0}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 2619
+    .line 2630
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v0}, Lcom/android/browser/BrowserSettings;->isNavDump()Z
 
     move-result v0
 
-    .line 2620
+    .line 2631
     const v1, 0x7f0d00b0
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v1
 
-    .line 2621
+    .line 2632
     invoke-interface {v1, v0}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 2622
+    .line 2633
     invoke-interface {v1, v0}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2624
+    .line 2635
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v0}, Lcom/android/browser/BrowserSettings;->showDebugSettings()Z
 
     move-result v0
 
-    .line 2625
+    .line 2636
     const v1, 0x7f0d00b2
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v1
 
-    .line 2626
+    .line 2637
     invoke-interface {v1, v0}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 2627
+    .line 2638
     invoke-interface {v1, v0}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2629
+    .line 2640
     const v0, 0x7f0d00a4
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    .line 2631
+    .line 2642
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getTabCount()I
@@ -11865,34 +11591,34 @@
 
     packed-switch v1, :pswitch_data_1
 
-    .line 2666
+    .line 2677
     :goto_5
-    const v0, 0x7f0d00a5
+    const v0, 0x7f0d00a8
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    .line 2668
+    .line 2679
     invoke-interface {v0, v4}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 2669
+    .line 2680
     invoke-interface {v0, v4}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 2672
+    .line 2683
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->updatePerfTestMenuItems()V
 
-    .line 2676
+    .line 2687
     :cond_2
     :goto_6
     iget v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mCurrentMenuState:I
 
-    .line 2677
+    .line 2688
     return v4
 
-    .line 2556
+    .line 2567
     :pswitch_0
     iget v0, p0, Lcom/android/browser/BrowserActivity;->mCurrentMenuState:I
 
@@ -11900,13 +11626,13 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 2557
+    .line 2568
     invoke-interface {p1, v2, v5}, Landroid/view/Menu;->setGroupVisible(IZ)V
 
-    .line 2558
+    .line 2569
     invoke-interface {p1, v2, v5}, Landroid/view/Menu;->setGroupEnabled(IZ)V
 
-    .line 2559
+    .line 2570
     invoke-interface {p1, v3, v5}, Landroid/view/Menu;->setGroupEnabled(IZ)V
 
     goto :goto_6
@@ -11914,10 +11640,10 @@
     :cond_3
     move v0, v5
 
-    .line 2581
+    .line 2592
     goto/16 :goto_1
 
-    .line 2589
+    .line 2600
     :cond_4
     invoke-interface {v0, v4}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
@@ -11926,10 +11652,10 @@
     :cond_5
     move v0, v5
 
-    .line 2617
+    .line 2628
     goto :goto_4
 
-    .line 2634
+    .line 2645
     :pswitch_1
     const v1, 0x7f020037
 
@@ -11937,7 +11663,7 @@
 
     goto :goto_5
 
-    .line 2638
+    .line 2649
     :pswitch_2
     const v1, 0x7f020038
 
@@ -11945,7 +11671,7 @@
 
     goto :goto_5
 
-    .line 2642
+    .line 2653
     :pswitch_3
     const v1, 0x7f020039
 
@@ -11953,7 +11679,7 @@
 
     goto :goto_5
 
-    .line 2646
+    .line 2657
     :pswitch_4
     const v1, 0x7f02003a
 
@@ -11961,7 +11687,7 @@
 
     goto :goto_5
 
-    .line 2650
+    .line 2661
     :pswitch_5
     const v1, 0x7f02003b
 
@@ -11969,7 +11695,7 @@
 
     goto :goto_5
 
-    .line 2654
+    .line 2665
     :pswitch_6
     const v1, 0x7f02003c
 
@@ -11977,7 +11703,7 @@
 
     goto :goto_5
 
-    .line 2658
+    .line 2669
     :pswitch_7
     const v1, 0x7f02003d
 
@@ -11985,7 +11711,7 @@
 
     goto :goto_5
 
-    .line 2662
+    .line 2673
     :pswitch_8
     const v1, 0x7f02003e
 
@@ -12007,7 +11733,7 @@
 
     goto/16 :goto_0
 
-    .line 2554
+    .line 2565
     nop
 
     :pswitch_data_0
@@ -12015,7 +11741,7 @@
         :pswitch_0
     .end packed-switch
 
-    .line 2631
+    .line 2642
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_1
@@ -12035,17 +11761,17 @@
     .parameter
 
     .prologue
-    .line 4104
+    .line 4139
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v0, p2}, Lcom/android/browser/TitleBar;->setProgress(I)V
 
-    .line 4106
+    .line 4141
     const/16 v0, 0x64
 
     if-ne p2, v0, :cond_3
 
-    .line 4115
+    .line 4150
     const-string v0, "browser"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -12090,20 +11816,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4117
+    .line 4152
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
     if-eqz v0, :cond_1
 
-    .line 4118
+    .line 4153
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
-    .line 4119
+    .line 4154
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->updateInLoadMenuItems()V
 
-    .line 4121
+    .line 4156
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mOptionsMenuOpen:Z
 
     if-eqz v0, :cond_0
@@ -12112,11 +11838,11 @@
 
     if-nez v0, :cond_1
 
-    .line 4122
+    .line 4157
     :cond_0
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
 
-    .line 4126
+    .line 4161
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
@@ -12126,7 +11852,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/browser/TitleBar;->setRss(Z)V
 
-    .line 4127
+    .line 4162
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->isRssLinkedPage()Z
@@ -12135,26 +11861,26 @@
 
     invoke-virtual {v0, v1}, Lcom/android/browser/TitleBar;->setRss(Z)V
 
-    .line 4147
+    .line 4182
     :cond_2
     :goto_0
     return-void
 
-    .line 4130
+    .line 4165
     :cond_3
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
     if-nez v0, :cond_4
 
-    .line 4134
+    .line 4169
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mInLoad:Z
 
-    .line 4135
+    .line 4170
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->updateInLoadMenuItems()V
 
-    .line 4142
+    .line 4177
     :cond_4
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mOptionsMenuOpen:Z
 
@@ -12164,7 +11890,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4144
+    .line 4179
     :cond_5
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->showFakeTitleBar()V
 
@@ -12179,48 +11905,13 @@
 
     const-string v4, "browser"
 
-    .line 1242
+    .line 1252
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    .line 1245
-    const-string v0, "browser"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "BrowserActivity.onResume: this="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " mPendingZoomViewResume = "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/android/browser/BrowserActivity;->mPendingZoomViewResume:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1248
+    .line 1258
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->initIntentFilter()V
 
-    .line 1251
+    .line 1261
     const-string v0, "device_policy"
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -12229,7 +11920,7 @@
 
     check-cast v0, Landroid/app/admin/DevicePolicyManager;
 
-    .line 1252
+    .line 1262
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/admin/DevicePolicyManager;->getAllowBrowser(Landroid/content/ComponentName;)Z
@@ -12238,7 +11929,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1256
+    .line 1266
     const v0, 0x7f09014a
 
     invoke-static {p0, v0, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
@@ -12247,21 +11938,21 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 1257
+    .line 1267
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->finish()V
 
-    .line 1298
+    .line 1308
     :cond_0
     :goto_0
     return-void
 
-    .line 1261
+    .line 1271
     :cond_1
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
     if-nez v0, :cond_2
 
-    .line 1262
+    .line 1272
     const-string v0, "browser"
 
     const-string v0, "BrowserActivity is already resumed."
@@ -12270,29 +11961,29 @@
 
     goto :goto_0
 
-    .line 1266
+    .line 1276
     :cond_2
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->resumeCurrentTab()V
 
-    .line 1267
+    .line 1277
     iput-boolean v3, p0, Lcom/android/browser/BrowserActivity;->mActivityInPause:Z
 
-    .line 1268
+    .line 1278
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->resumeWebViewTimers()V
 
-    .line 1270
+    .line 1280
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v0, :cond_3
 
-    .line 1271
+    .line 1281
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0}, Lcom/android/browser/BitmapWebView;->onResumed()V
 
-    .line 1273
+    .line 1283
     :cond_3
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -12302,19 +11993,19 @@
 
     if-eqz v0, :cond_4
 
-    .line 1274
+    .line 1284
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x6b
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1275
+    .line 1285
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1278
+    .line 1288
     :cond_4
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mNetworkStateIntentReceiver:Landroid/content/BroadcastReceiver;
 
@@ -12322,7 +12013,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/browser/BrowserActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1280
+    .line 1290
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mIMEReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v1, Landroid/content/IntentFilter;
@@ -12333,17 +12024,17 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/browser/BrowserActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1282
+    .line 1292
     invoke-static {}, Landroid/webkit/WebView;->enablePlatformNotifications()V
 
-    .line 1284
+    .line 1294
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mPendingZoomViewResume:Z
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 1285
+    .line 1295
     const-string v0, "browser"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -12368,36 +12059,36 @@
 
     invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1287
+    .line 1297
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v0, :cond_6
 
-    .line 1288
+    .line 1298
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0, v3}, Lcom/android/browser/BitmapWebView;->setVisible(I)V
 
-    .line 1289
+    .line 1299
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 1290
+    .line 1300
     if-eqz v0, :cond_5
 
-    .line 1291
+    .line 1301
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setPinchZoomListener(Landroid/webkit/OnPinchZoomListener;)V
 
-    .line 1293
+    .line 1303
     :cond_5
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0}, Lcom/android/browser/BitmapWebView;->resume()V
 
-    .line 1296
+    .line 1306
     :cond_6
     iput-boolean v3, p0, Lcom/android/browser/BrowserActivity;->mPendingZoomViewResume:Z
 
@@ -12405,39 +12096,16 @@
 .end method
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
-    .locals 3
-    .parameter
+    .locals 1
+    .parameter "outState"
 
     .prologue
-    .line 1479
-    const-string v0, "browser"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "BrowserActivity.onSaveInstanceState: this="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1489
+    .line 1499
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0, p1}, Lcom/android/browser/TabControl;->saveState(Landroid/os/Bundle;)V
 
-    .line 1490
+    .line 1500
     return-void
 .end method
 
@@ -12451,30 +12119,30 @@
 
     const/4 v2, 0x0
 
-    .line 4151
+    .line 4186
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     if-eqz v0, :cond_0
 
-    .line 4153
+    .line 4188
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     invoke-virtual {v0, v3}, Lcom/android/browser/BitmapWebView;->setVisible(I)V
 
-    .line 4155
+    .line 4190
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 4156
+    .line 4191
     invoke-interface {p2}, Landroid/webkit/WebChromeClient$CustomViewCallback;->onCustomViewHidden()V
 
-    .line 4174
+    .line 4209
     :goto_0
     return-void
 
-    .line 4161
+    .line 4196
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomViewContainer:Landroid/widget/FrameLayout;
 
@@ -12482,36 +12150,36 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4162
+    .line 4197
     iput-object p1, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
-    .line 4163
+    .line 4198
     iput-object p2, p0, Lcom/android/browser/BrowserActivity;->mCustomViewCallback:Landroid/webkit/WebChromeClient$CustomViewCallback;
 
-    .line 4166
+    .line 4201
     iget v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mOldMenuState:I
 
-    .line 4167
+    .line 4202
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
-    .line 4169
+    .line 4204
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 4171
+    .line 4206
     invoke-direct {p0, v2}, Lcom/android/browser/BrowserActivity;->setStatusBarVisibility(Z)V
 
-    .line 4172
+    .line 4207
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomViewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 4173
+    .line 4208
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomViewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->bringToFront()V
@@ -12732,7 +12400,28 @@
     .line 1235
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1236
+    .line 1238
+    iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
+
+    invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
+
+    move-result-object v0
+
+    .line 1239
+    if-eqz v0, :cond_2
+
+    .line 1240
+    invoke-virtual {v0}, Lcom/android/browser/Tab;->getAppId()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    .line 1241
+    invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->finish()V
+
+    .line 1246
+    :cond_2
     return-void
 .end method
 
@@ -12750,37 +12439,37 @@
     .end annotation
 
     .prologue
-    .line 4223
+    .line 4258
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
 
     if-eqz v0, :cond_0
 
-    .line 4230
+    .line 4265
     :goto_0
     return-void
 
-    .line 4224
+    .line 4259
     :cond_0
     iput-object p1, p0, Lcom/android/browser/BrowserActivity;->mUploadMessage:Landroid/webkit/ValueCallback;
 
-    .line 4225
+    .line 4260
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.GET_CONTENT"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4226
+    .line 4261
     const-string v1, "android.intent.category.OPENABLE"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4227
+    .line 4262
     const-string v1, "*/*"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4228
+    .line 4263
     const v1, 0x7f090002
 
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->getString(I)Ljava/lang/String;
@@ -12803,7 +12492,7 @@
     .parameter "url"
 
     .prologue
-    .line 2924
+    .line 2935
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v2}, Lcom/android/browser/BrowserSettings;->openInBackground()Z
@@ -12812,23 +12501,23 @@
 
     if-eqz v2, :cond_1
 
-    .line 2925
+    .line 2936
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2}, Lcom/android/browser/TabControl;->createNewTab()Lcom/android/browser/Tab;
 
     move-result-object v0
 
-    .line 2926
+    .line 2937
     .local v0, t:Lcom/android/browser/Tab;
     if-eqz v0, :cond_0
 
-    .line 2927
+    .line 2938
     invoke-virtual {v0}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v1
 
-    .line 2928
+    .line 2939
     .local v1, view:Landroid/webkit/WebView;
     invoke-direct {p0, v1, p1}, Lcom/android/browser/BrowserActivity;->loadUrl(Landroid/webkit/WebView;Ljava/lang/String;)V
 
@@ -12836,7 +12525,7 @@
     :cond_0
     move-object v2, v0
 
-    .line 2932
+    .line 2943
     .end local v0           #t:Lcom/android/browser/Tab;
     :goto_0
     return-object v2
@@ -12860,14 +12549,14 @@
     .parameter "appId"
 
     .prologue
-    .line 2897
+    .line 2908
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v4}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
 
     move-result-object v1
 
-    .line 2898
+    .line 2909
     .local v1, currentTab:Lcom/android/browser/Tab;
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -12877,7 +12566,7 @@
 
     if-nez v4, :cond_0
 
-    .line 2899
+    .line 2910
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     const/4 v5, 0x0
@@ -12886,17 +12575,17 @@
 
     move-result-object v0
 
-    .line 2900
+    .line 2911
     .local v0, closeTab:Lcom/android/browser/Tab;
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->closeTab(Lcom/android/browser/Tab;)V
 
-    .line 2901
+    .line 2912
     if-ne v0, v1, :cond_0
 
-    .line 2902
+    .line 2913
     const/4 v1, 0x0
 
-    .line 2905
+    .line 2916
     .end local v0           #closeTab:Lcom/android/browser/Tab;
     :cond_0
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
@@ -12907,39 +12596,39 @@
 
     move-result-object v2
 
-    .line 2907
+    .line 2918
     .local v2, tab:Lcom/android/browser/Tab;
     invoke-virtual {v2}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v3
 
-    .line 2910
+    .line 2921
     .local v3, webview:Landroid/webkit/WebView;
     if-eqz v1, :cond_1
 
-    .line 2911
+    .line 2922
     invoke-direct {p0, v1}, Lcom/android/browser/BrowserActivity;->removeTabFromContentView(Lcom/android/browser/Tab;)V
 
-    .line 2915
+    .line 2926
     :cond_1
     iget-object v4, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v4, v2}, Lcom/android/browser/TabControl;->setCurrentTab(Lcom/android/browser/Tab;)Z
 
-    .line 2916
+    .line 2927
     invoke-direct {p0, v2}, Lcom/android/browser/BrowserActivity;->attachTabToContentView(Lcom/android/browser/Tab;)V
 
-    .line 2917
+    .line 2928
     invoke-virtual {p1}, Lcom/android/browser/BrowserActivity$UrlData;->isEmpty()Z
 
     move-result v4
 
     if-nez v4, :cond_2
 
-    .line 2918
+    .line 2929
     invoke-direct {p0, v2, p1}, Lcom/android/browser/BrowserActivity;->loadUrlDataIn(Lcom/android/browser/Tab;Lcom/android/browser/BrowserActivity$UrlData;)V
 
-    .line 2920
+    .line 2931
     :cond_2
     return-object v2
 .end method
@@ -12948,7 +12637,7 @@
     .locals 3
 
     .prologue
-    .line 1911
+    .line 1922
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v0}, Lcom/android/browser/BrowserSettings;->getHomePage()Ljava/lang/String;
@@ -12975,7 +12664,7 @@
     .parameter "delayMillis"
 
     .prologue
-    .line 3437
+    .line 3470
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
@@ -12986,7 +12675,7 @@
 
     invoke-virtual {v0, v1, p5, p6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 3439
+    .line 3472
     return-void
 .end method
 
@@ -12995,27 +12684,27 @@
     .parameter "needToAttach"
 
     .prologue
-    .line 1950
+    .line 1961
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mContentView:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 1951
+    .line 1962
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mActiveTabsPage:Lcom/android/browser/ActiveTabsPage;
 
-    .line 1952
+    .line 1963
     const v0, 0x7f0d00a2
 
     iput v0, p0, Lcom/android/browser/BrowserActivity;->mMenuState:I
 
-    .line 1953
+    .line 1964
     if-eqz p1, :cond_0
 
-    .line 1954
+    .line 1965
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -13024,7 +12713,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->attachTabToContentView(Lcom/android/browser/Tab;)V
 
-    .line 1956
+    .line 1967
     :cond_0
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
@@ -13032,7 +12721,7 @@
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->requestFocus()Z
 
-    .line 1957
+    .line 1968
     return-void
 .end method
 
@@ -13042,12 +12731,12 @@
     .parameter "object"
 
     .prologue
-    .line 3443
+    .line 3476
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 3444
+    .line 3477
     return-void
 .end method
 
@@ -13055,7 +12744,7 @@
     .locals 1
 
     .prologue
-    .line 3090
+    .line 3101
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     if-eqz v0, :cond_0
@@ -13068,12 +12757,12 @@
 
     if-nez v0, :cond_1
 
-    .line 3098
+    .line 3109
     :cond_0
     :goto_0
     return-void
 
-    .line 3095
+    .line 3106
     :cond_1
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -13083,10 +12772,10 @@
 
     invoke-virtual {v0}, Lcom/android/browser/Tab;->revertLockIcon()V
 
-    .line 3096
+    .line 3107
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->updateLockIconToLatest()V
 
-    .line 3097
+    .line 3108
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->resetTitleIconAndProgress()V
 
     goto :goto_0
@@ -13131,17 +12820,17 @@
     .parameter "icon"
 
     .prologue
-    .line 3179
+    .line 3190
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v0, p1}, Lcom/android/browser/TitleBar;->setFavicon(Landroid/graphics/Bitmap;)V
 
-    .line 3180
+    .line 3191
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v0, p1}, Lcom/android/browser/TitleBar;->setFavicon(Landroid/graphics/Bitmap;)V
 
-    .line 3181
+    .line 3192
     return-void
 .end method
 
@@ -13150,12 +12839,12 @@
     .parameter "text"
 
     .prologue
-    .line 2522
+    .line 2533
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFindDialog:Lcom/android/browser/FindDialog;
 
     invoke-virtual {v0, p1}, Lcom/android/browser/FindDialog;->setText(Ljava/lang/String;)V
 
-    .line 2523
+    .line 2534
     return-void
 .end method
 
@@ -13167,19 +12856,19 @@
     .parameter "password"
 
     .prologue
-    .line 4971
+    .line 5006
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 4972
+    .line 5007
     .local v0, w:Landroid/webkit/WebView;
     if-eqz v0, :cond_0
 
-    .line 4973
+    .line 5008
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/webkit/WebView;->setHttpAuthUsernamePassword(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4975
+    .line 5010
     :cond_0
     return-void
 .end method
@@ -13189,17 +12878,17 @@
     .parameter "flag"
 
     .prologue
-    .line 5297
+    .line 5345
     iget-boolean v2, p0, Lcom/android/browser/BrowserActivity;->mShouldShowErrorConsole:Z
 
     if-ne p1, v2, :cond_1
 
-    .line 5327
+    .line 5375
     :cond_0
     :goto_0
     return-void
 
-    .line 5301
+    .line 5349
     :cond_1
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -13207,37 +12896,37 @@
 
     move-result-object v1
 
-    .line 5302
+    .line 5350
     .local v1, t:Lcom/android/browser/Tab;
     if-eqz v1, :cond_0
 
-    .line 5307
+    .line 5355
     iput-boolean p1, p0, Lcom/android/browser/BrowserActivity;->mShouldShowErrorConsole:Z
 
-    .line 5309
+    .line 5357
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/android/browser/Tab;->getErrorConsole(Z)Lcom/android/browser/ErrorConsoleView;
 
     move-result-object v0
 
-    .line 5311
+    .line 5359
     .local v0, errorConsole:Lcom/android/browser/ErrorConsoleView;
     if-eqz p1, :cond_3
 
-    .line 5313
+    .line 5361
     invoke-virtual {v0}, Lcom/android/browser/ErrorConsoleView;->numberOfErrors()I
 
     move-result v2
 
     if-lez v2, :cond_2
 
-    .line 5314
+    .line 5362
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lcom/android/browser/ErrorConsoleView;->showConsole(I)V
 
-    .line 5320
+    .line 5368
     :goto_1
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mErrorConsoleContainer:Landroid/widget/LinearLayout;
 
@@ -13253,7 +12942,7 @@
 
     goto :goto_0
 
-    .line 5316
+    .line 5364
     :cond_2
     const/4 v2, 0x2
 
@@ -13261,7 +12950,7 @@
 
     goto :goto_1
 
-    .line 5324
+    .line 5372
     :cond_3
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mErrorConsoleContainer:Landroid/widget/LinearLayout;
 
@@ -13276,13 +12965,13 @@
     .parameter "title"
 
     .prologue
-    .line 3131
+    .line 3142
     iput-object p1, p0, Lcom/android/browser/BrowserActivity;->mUrl:Ljava/lang/String;
 
-    .line 3132
+    .line 3143
     iput-object p2, p0, Lcom/android/browser/BrowserActivity;->mTitle:Ljava/lang/String;
 
-    .line 3135
+    .line 3146
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v0}, Lcom/android/browser/TabControl;->getCurrentTab()Lcom/android/browser/Tab;
@@ -13295,17 +12984,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 3138
+    .line 3149
     :goto_0
     return-void
 
-    .line 3136
+    .line 3147
     :cond_0
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v0, p1}, Lcom/android/browser/TitleBar;->setDisplayTitle(Ljava/lang/String;)V
 
-    .line 3137
+    .line 3148
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mFakeTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v0, p1}, Lcom/android/browser/TitleBar;->setDisplayTitle(Ljava/lang/String;)V
@@ -13329,7 +13018,7 @@
 
     const-string v3, ";"
 
-    .line 3971
+    .line 4006
     const-string v0, "wtai://wp/"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -13338,7 +13027,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 3974
+    .line 4009
     const-string v0, "wtai://wp/mc;"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -13347,7 +13036,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3975
+    .line 4010
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
@@ -13386,16 +13075,16 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 3978
+    .line 4013
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->startActivity(Landroid/content/Intent;)V
 
     move v0, v5
 
-    .line 4068
+    .line 4103
     :goto_0
     return v0
 
-    .line 3983
+    .line 4018
     :cond_0
     const-string v0, "wtai://wp/sd;"
 
@@ -13407,10 +13096,10 @@
 
     move v0, v4
 
-    .line 3985
+    .line 4020
     goto :goto_0
 
-    .line 3990
+    .line 4025
     :cond_1
     const-string v0, "wtai://wp/ap;"
 
@@ -13420,7 +13109,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 3993
+    .line 4028
     const-string v0, "wtai://wp/ap;"
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -13431,13 +13120,13 @@
 
     move-result-object v0
 
-    .line 3994
+    .line 4029
     const-string v1, ""
 
-    .line 3995
+    .line 4030
     const-string v1, ""
 
-    .line 3997
+    .line 4032
     const-string v1, ";"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -13446,7 +13135,7 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 4000
+    .line 4035
     const-string v1, ";"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -13457,7 +13146,7 @@
 
     move-result-object v1
 
-    .line 4001
+    .line 4036
     const-string v2, ";"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -13470,7 +13159,7 @@
 
     move-result-object v0
 
-    .line 4002
+    .line 4037
     const-string v2, "%20"
 
     const-string v3, " "
@@ -13479,7 +13168,7 @@
 
     move-result-object v0
 
-    .line 4009
+    .line 4044
     :goto_1
     new-instance v2, Landroid/content/Intent;
 
@@ -13489,22 +13178,22 @@
 
     invoke-direct {v2, v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 4010
+    .line 4045
     const-string v3, "name"
 
     invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4011
+    .line 4046
     const-string v0, "phone"
 
     invoke-virtual {v2, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4012
+    .line 4047
     invoke-virtual {p0, v2}, Lcom/android/browser/BrowserActivity;->startActivity(Landroid/content/Intent;)V
 
     move v0, v5
 
-    .line 4014
+    .line 4049
     goto :goto_0
 
     :cond_2
@@ -13512,10 +13201,10 @@
 
     move-object v0, v6
 
-    .line 4006
+    .line 4041
     goto :goto_1
 
-    .line 4022
+    .line 4057
     :cond_3
     const-string v0, "about:"
 
@@ -13536,10 +13225,10 @@
     :cond_4
     move v0, v4
 
-    .line 4023
+    .line 4058
     goto :goto_0
 
-    .line 4029
+    .line 4064
     :cond_5
     const/4 v0, 0x1
 
@@ -13550,7 +13239,7 @@
 
     move-result-object v0
 
-    .line 4037
+    .line 4072
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -13561,15 +13250,15 @@
 
     if-nez v1, :cond_7
 
-    .line 4038
+    .line 4073
     invoke-virtual {v0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4039
+    .line 4074
     if-eqz v0, :cond_6
 
-    .line 4040
+    .line 4075
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.VIEW"
@@ -13598,24 +13287,24 @@
 
     invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 4042
+    .line 4077
     const-string v0, "android.intent.category.BROWSABLE"
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4043
+    .line 4078
     invoke-virtual {p0, v1}, Lcom/android/browser/BrowserActivity;->startActivity(Landroid/content/Intent;)V
 
     move v0, v5
 
-    .line 4044
+    .line 4079
     goto/16 :goto_0
 
-    .line 4030
+    .line 4065
     :catch_0
     move-exception v0
 
-    .line 4031
+    .line 4066
     const-string v1, "Browser"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -13654,27 +13343,27 @@
 
     move v0, v4
 
-    .line 4032
+    .line 4067
     goto/16 :goto_0
 
     :cond_6
     move v0, v4
 
-    .line 4046
+    .line 4081
     goto/16 :goto_0
 
-    .line 4052
+    .line 4087
     :cond_7
     const-string v1, "android.intent.category.BROWSABLE"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4053
+    .line 4088
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 4055
+    .line 4090
     const/4 v1, -0x1
 
     :try_start_1
@@ -13688,34 +13377,34 @@
 
     move v0, v5
 
-    .line 4056
+    .line 4091
     goto/16 :goto_0
 
-    .line 4058
+    .line 4093
     :catch_1
     move-exception v0
 
-    .line 4063
+    .line 4098
     :cond_8
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mMenuIsDown:Z
 
     if-eqz v0, :cond_9
 
-    .line 4064
+    .line 4099
     invoke-virtual {p0, p2}, Lcom/android/browser/BrowserActivity;->openTab(Ljava/lang/String;)Lcom/android/browser/Tab;
 
-    .line 4065
+    .line 4100
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->closeOptionsMenu()V
 
     move v0, v5
 
-    .line 4066
+    .line 4101
     goto/16 :goto_0
 
     :cond_9
     move v0, v4
 
-    .line 4068
+    .line 4103
     goto/16 :goto_0
 .end method
 
@@ -13723,7 +13412,7 @@
     .locals 1
 
     .prologue
-    .line 5330
+    .line 5378
     iget-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mShouldShowErrorConsole:Z
 
     return v0
@@ -13733,25 +13422,25 @@
     .locals 3
 
     .prologue
-    .line 2506
+    .line 2517
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mFindDialog:Lcom/android/browser/FindDialog;
 
     if-nez v1, :cond_0
 
-    .line 2507
+    .line 2518
     new-instance v1, Lcom/android/browser/FindDialog;
 
     invoke-direct {v1, p0}, Lcom/android/browser/FindDialog;-><init>(Lcom/android/browser/BrowserActivity;)V
 
     iput-object v1, p0, Lcom/android/browser/BrowserActivity;->mFindDialog:Lcom/android/browser/FindDialog;
 
-    .line 2510
+    .line 2521
     :cond_0
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 2511
+    .line 2522
     .local v0, webview:Landroid/webkit/WebView;
     if-eqz v0, :cond_1
 
@@ -13759,19 +13448,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 2513
+    .line 2524
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setPinchZoomListener(Landroid/webkit/OnPinchZoomListener;)V
 
-    .line 2514
+    .line 2525
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mBitmapWebView:Lcom/android/browser/BitmapWebView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Lcom/android/browser/BitmapWebView;->setVisible(I)V
 
-    .line 2518
+    .line 2529
     :cond_1
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mFindDialog:Lcom/android/browser/FindDialog;
 
@@ -13783,7 +13472,7 @@
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setFindIsUp(Z)V
 
-    .line 2519
+    .line 2530
     return-void
 .end method
 
@@ -13798,12 +13487,12 @@
     .parameter
 
     .prologue
-    .line 4884
+    .line 4919
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 4885
+    .line 4920
     const v1, 0x7f030019
 
     const/4 v2, 0x0
@@ -13812,10 +13501,10 @@
 
     move-result-object v2
 
-    .line 4887
+    .line 4922
     if-eqz p5, :cond_0
 
-    .line 4888
+    .line 4923
     const v0, 0x7f0d0059
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -13826,11 +13515,11 @@
 
     invoke-virtual {v0, p5}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4890
+    .line 4925
     :cond_0
     if-eqz p6, :cond_1
 
-    .line 4891
+    .line 4926
     const v0, 0x7f0d005b
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -13841,11 +13530,11 @@
 
     invoke-virtual {p5, p6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4895
+    .line 4930
     :cond_1
     if-nez p4, :cond_3
 
-    .line 4896
+    .line 4931
     const v0, 0x7f09000a
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->getText(I)Ljava/lang/CharSequence;
@@ -13868,11 +13557,11 @@
 
     move-result-object v0
 
-    .line 4900
+    .line 4935
     :goto_0
     iput-object p1, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthHandler:Landroid/webkit/HttpAuthHandler;
 
-    .line 4901
+    .line 4936
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -13931,7 +13620,7 @@
 
     move-result-object v0
 
-    .line 4939
+    .line 4974
     invoke-virtual {v0}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -13940,27 +13629,27 @@
 
     invoke-virtual {v1, v3}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 4941
+    .line 4976
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 4942
+    .line 4977
     if-eqz p7, :cond_2
 
-    .line 4943
+    .line 4978
     invoke-virtual {v0, p7}, Landroid/app/AlertDialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/view/View;->requestFocus()Z
 
-    .line 4947
+    .line 4982
     :goto_1
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mHttpAuthenticationDialog:Landroid/app/AlertDialog;
 
-    .line 4948
+    .line 4983
     return-void
 
-    .line 4945
+    .line 4980
     :cond_2
     const v1, 0x7f0d0059
 
@@ -13989,7 +13678,7 @@
 
     const v5, 0x7f030022
 
-    .line 4717
+    .line 4752
     invoke-virtual {p3}, Landroid/net/http/SslError;->getCertificate()Landroid/net/http/SslCertificate;
 
     move-result-object v0
@@ -13998,20 +13687,20 @@
 
     move-result-object v2
 
-    .line 4719
+    .line 4754
     if-nez v2, :cond_0
 
-    .line 4806
+    .line 4841
     :goto_0
     return-void
 
-    .line 4723
+    .line 4758
     :cond_0
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v3
 
-    .line 4725
+    .line 4760
     const v0, 0x7f0d006c
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -14020,7 +13709,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 4728
+    .line 4763
     const/4 v1, 0x3
 
     invoke-virtual {p3, v1}, Landroid/net/http/SslError;->hasError(I)Z
@@ -14029,14 +13718,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 4729
+    .line 4764
     invoke-virtual {v3, v5, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    .line 4731
+    .line 4766
     invoke-virtual {v1, v6}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
@@ -14047,7 +13736,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(I)V
 
-    .line 4735
+    .line 4770
     :cond_1
     const/4 v1, 0x2
 
@@ -14057,14 +13746,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 4736
+    .line 4771
     invoke-virtual {v3, v5, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    .line 4738
+    .line 4773
     invoke-virtual {v1, v6}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
@@ -14075,7 +13764,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(I)V
 
-    .line 4742
+    .line 4777
     :cond_2
     const/4 v1, 0x1
 
@@ -14085,14 +13774,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 4743
+    .line 4778
     invoke-virtual {v3, v5, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    .line 4745
+    .line 4780
     invoke-virtual {v1, v6}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
@@ -14103,7 +13792,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(I)V
 
-    .line 4749
+    .line 4784
     :cond_3
     const/4 v1, 0x0
 
@@ -14113,14 +13802,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 4750
+    .line 4785
     invoke-virtual {v3, v5, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 4752
+    .line 4787
     invoke-virtual {v0, v6}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -14131,17 +13820,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 4756
+    .line 4791
     :cond_4
     iput-object p2, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateOnErrorHandler:Landroid/webkit/SslErrorHandler;
 
-    .line 4757
+    .line 4792
     iput-object p1, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateOnErrorView:Landroid/webkit/WebView;
 
-    .line 4758
+    .line 4793
     iput-object p3, p0, Lcom/android/browser/BrowserActivity;->mSSLCertificateOnErrorError:Landroid/net/http/SslError;
 
-    .line 4759
+    .line 4794
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -14203,7 +13892,7 @@
     .locals 1
 
     .prologue
-    .line 1445
+    .line 1455
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {v0}, Lcom/android/browser/TitleBar;->getParent()Landroid/view/ViewParent;
@@ -14212,18 +13901,18 @@
 
     if-nez v0, :cond_0
 
-    .line 1456
+    .line 1466
     :goto_0
     return-void
 
-    .line 1452
+    .line 1462
     :cond_0
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->hideFakeTitleBar()V
 
-    .line 1453
+    .line 1463
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->closeOptionsMenu()V
 
-    .line 1455
+    .line 1465
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mTitleBar:Lcom/android/browser/TitleBar;
 
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->openContextMenu(Landroid/view/View;)V
@@ -14341,12 +14030,13 @@
     const-string v6, "google"
 
     const-string v5, "%s"
-    .line 5259
+
+    .line 5294
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5260
+    .line 5295
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
@@ -14359,7 +14049,7 @@
 
     move v1, v4
 
-    .line 5262
+    .line 5297
     :goto_0
     sget-object v2, Lcom/android/browser/BrowserActivity;->ACCEPTED_URI_SCHEMA:Ljava/util/regex/Pattern;
 
@@ -14367,31 +14057,31 @@
 
     move-result-object v2
 
-    .line 5263
+    .line 5298
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 5265
+    .line 5300
     invoke-virtual {v2, v4}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 5266
+    .line 5301
     invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 5267
+    .line 5302
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 5268
+    .line 5303
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -14414,11 +14104,11 @@
 
     move-result-object v0
 
-    .line 5270
+    .line 5305
     :cond_0
     if-eqz v1, :cond_1
 
-    .line 5271
+    .line 5306
     const-string v1, " "
 
     const-string v2, "%20"
@@ -14427,22 +14117,22 @@
 
     move-result-object v0
 
-    .line 5289
+    .line 5337
     :cond_1
     :goto_1
     return-object v0
 
-    .line 5260
+    .line 5295
     :cond_2
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 5275
+    .line 5310
     :cond_3
     if-nez v1, :cond_4
 
-    .line 5276
+    .line 5311
     sget-object v1, Landroid/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -14455,19 +14145,20 @@
 
     if-eqz v1, :cond_4
 
-    .line 5277
+    .line 5312
     invoke-static {v0}, Landroid/webkit/URLUtil;->guessUrl(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_1
 
-    .line 5284
+    .line 5319
     :cond_4
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mResolver:Landroid/content/ContentResolver;
 
     invoke-static {v1, v0}, Landroid/provider/Browser;->addSearchUrl(Landroid/content/ContentResolver;Ljava/lang/String;)V
 
+    .line 5325
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -14480,7 +14171,8 @@
     invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
-    .line 5289
+
+    .line 5328
     const-string v2, "google"
 
     invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -14503,11 +14195,12 @@
     .line 5330
     :cond_5
     const-string v2, "yahoo"
+
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_6
+    if-eqz v1, :cond_6
 
     .line 5331
     const-string v1, "http://search.yahoo.com/search?ei=UTF-8&fr=crmas&p=%s"
@@ -14519,26 +14212,9 @@
     move-result-object v0
 
     goto :goto_1
+
+    .line 5337
     :cond_6
-
-    const-string v2, "bing"
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7
-
-    const-string v1, "http://m.bing.com/search/?q=%s"
-
-    const-string v2, "%s"
-
-    invoke-static {v0, v1, v5}, Landroid/webkit/URLUtil;->composeSearchUrl(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-    :cond_7
-
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
     invoke-virtual {v1}, Lcom/android/browser/BrowserSettings;->getSearchEngine()Lcom/android/browser/search/SearchEngine;
@@ -14560,34 +14236,34 @@
     .parameter
 
     .prologue
-    .line 1866
+    .line 1877
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mCustomView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 1867
+    .line 1878
     const-string v0, "browser"
 
     const-string v1, "startSearch : Cancelled because custom view is on"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1881
+    .line 1892
     :goto_0
     return-void
 
-    .line 1871
+    .line 1882
     :cond_0
     if-nez p3, :cond_2
 
-    .line 1872
+    .line 1883
     const-string v0, "browser-type"
 
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->createGoogleSearchSourceBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 1875
+    .line 1886
     :goto_1
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mSettings:Lcom/android/browser/BrowserSettings;
 
@@ -14595,7 +14271,7 @@
 
     move-result-object v1
 
-    .line 1876
+    .line 1887
     if-eqz v1, :cond_1
 
     invoke-interface {v1}, Lcom/android/browser/search/SearchEngine;->supportsVoiceSearch()Z
@@ -14604,14 +14280,14 @@
 
     if-nez v1, :cond_1
 
-    .line 1877
+    .line 1888
     const-string v1, "android.search.DISABLE_VOICE_SEARCH"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 1880
+    .line 1891
     :cond_1
     invoke-super {p0, p1, p2, v0, p4}, Landroid/app/Activity;->startSearch(Ljava/lang/String;ZLandroid/os/Bundle;Z)V
 
@@ -14627,31 +14303,31 @@
     .locals 3
 
     .prologue
-    .line 3403
+    .line 3436
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/browser/BrowserActivity;->mDidStopLoad:Z
 
-    .line 3404
+    .line 3437
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->resetTitleAndRevertLockIcon()V
 
-    .line 3405
+    .line 3438
     invoke-virtual {p0}, Lcom/android/browser/BrowserActivity;->getTopWindow()Landroid/webkit/WebView;
 
     move-result-object v0
 
-    .line 3406
+    .line 3439
     if-nez v0, :cond_0
 
-    .line 3421
+    .line 3454
     :goto_0
     return-void
 
-    .line 3409
+    .line 3442
     :cond_0
     invoke-virtual {v0}, Landroid/webkit/WebView;->stopLoading()V
 
-    .line 3414
+    .line 3447
     iget-object v1, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v1}, Lcom/android/browser/TabControl;->getCurrentWebView()Landroid/webkit/WebView;
@@ -14668,10 +14344,10 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
 
-    .line 3417
+    .line 3450
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->cancelStopToast()V
 
-    .line 3418
+    .line 3451
     const v0, 0x7f090027
 
     const/4 v1, 0x0
@@ -14682,7 +14358,7 @@
 
     iput-object v0, p0, Lcom/android/browser/BrowserActivity;->mStopToast:Landroid/widget/Toast;
 
-    .line 3420
+    .line 3453
     iget-object v0, p0, Lcom/android/browser/BrowserActivity;->mStopToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
@@ -14695,14 +14371,14 @@
     .parameter "index"
 
     .prologue
-    .line 1893
+    .line 1904
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2, p1}, Lcom/android/browser/TabControl;->getTab(I)Lcom/android/browser/Tab;
 
     move-result-object v1
 
-    .line 1894
+    .line 1905
     .local v1, tab:Lcom/android/browser/Tab;
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
@@ -14710,43 +14386,43 @@
 
     move-result-object v0
 
-    .line 1895
+    .line 1906
     .local v0, currentTab:Lcom/android/browser/Tab;
     if-eqz v1, :cond_0
 
     if-ne v1, v0, :cond_1
 
-    .line 1896
+    .line 1907
     :cond_0
     const/4 v2, 0x0
 
-    .line 1907
+    .line 1918
     :goto_0
     return v2
 
-    .line 1898
+    .line 1909
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 1901
+    .line 1912
     invoke-direct {p0, v0}, Lcom/android/browser/BrowserActivity;->removeTabFromContentView(Lcom/android/browser/Tab;)V
 
-    .line 1903
+    .line 1914
     :cond_2
     iget-object v2, p0, Lcom/android/browser/BrowserActivity;->mTabControl:Lcom/android/browser/TabControl;
 
     invoke-virtual {v2, v1}, Lcom/android/browser/TabControl;->setCurrentTab(Lcom/android/browser/Tab;)Z
 
-    .line 1904
+    .line 1915
     invoke-direct {p0, v1}, Lcom/android/browser/BrowserActivity;->attachTabToContentView(Lcom/android/browser/Tab;)V
 
-    .line 1905
+    .line 1916
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->resetTitleIconAndProgress()V
 
-    .line 1906
+    .line 1917
     invoke-direct {p0}, Lcom/android/browser/BrowserActivity;->updateLockIconToLatest()V
 
-    .line 1907
+    .line 1918
     const/4 v2, 0x1
 
     goto :goto_0
@@ -14756,16 +14432,16 @@
     .locals 2
 
     .prologue
-    .line 5132
+    .line 5167
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW_SEC_DOWNLOADS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 5134
+    .line 5169
     invoke-virtual {p0, v0}, Lcom/android/browser/BrowserActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 5135
+    .line 5170
     return-void
 .end method

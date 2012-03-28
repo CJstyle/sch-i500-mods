@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1148
+    .line 1146
     iput-object p1, p0, Lcom/android/browser/BrowserBookmarksPage$5;->this$0:Lcom/android/browser/BrowserBookmarksPage;
 
     iput p2, p0, Lcom/android/browser/BrowserBookmarksPage$5;->val$deletePos:I
@@ -48,13 +48,13 @@
     .parameter "whichButton"
 
     .prologue
-    .line 1150
+    .line 1148
     iget-object v0, p0, Lcom/android/browser/BrowserBookmarksPage$5;->this$0:Lcom/android/browser/BrowserBookmarksPage;
 
     iget v1, p0, Lcom/android/browser/BrowserBookmarksPage$5;->val$deletePos:I
 
     invoke-virtual {v0, v1}, Lcom/android/browser/BrowserBookmarksPage;->deleteBookmark(I)V
 
-    .line 1151
+    .line 1149
     return-void
 .end method

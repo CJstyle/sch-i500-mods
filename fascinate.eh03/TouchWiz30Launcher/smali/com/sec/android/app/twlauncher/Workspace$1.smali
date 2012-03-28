@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 760
+    .line 851
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Workspace$1;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,20 +41,21 @@
     .locals 1
 
     .prologue
-    .line 762
+    .line 853
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace$1;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
+    #getter for: Lcom/sec/android/app/twlauncher/Workspace;->mPageIndicator:Lcom/sec/android/app/twlauncher/PageIndicator;
     invoke-static {v0}, Lcom/sec/android/app/twlauncher/Workspace;->access$000(Lcom/sec/android/app/twlauncher/Workspace;)Lcom/sec/android/app/twlauncher/PageIndicator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/PageIndicator;->hide()V
 
-    .line 763
+    .line 854
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Workspace$1;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Workspace;->postInvalidate()V
 
-    .line 764
+    .line 855
     return-void
 .end method

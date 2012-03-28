@@ -34,34 +34,34 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 4943
+    .line 4965
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 4944
+    .line 4966
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 4945
+    .line 4967
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mWidth:I
 
-    .line 4946
+    .line 4968
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mHeight:I
 
-    .line 4947
+    .line 4969
     iget v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mWidth:I
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mHeight:I
 
     invoke-virtual {p0, v2, v2, v0, v1}, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->setBounds(IIII)V
 
-    .line 4948
+    .line 4970
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4936
+    .line 4958
     invoke-direct {p0, p1}, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -84,7 +84,7 @@
     .parameter "canvas"
 
     .prologue
-    .line 4952
+    .line 4974
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mDrawLeft:I
@@ -99,7 +99,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 4953
+    .line 4975
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .locals 1
 
     .prologue
-    .line 5003
+    .line 5025
     iget v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mHeight:I
 
     return v0
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 4998
+    .line 5020
     iget v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mWidth:I
 
     return v0
@@ -127,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 5013
+    .line 5035
     iget v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mHeight:I
 
     return v0
@@ -137,7 +137,7 @@
     .locals 1
 
     .prologue
-    .line 5008
+    .line 5030
     iget v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mWidth:I
 
     return v0
@@ -147,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 4957
+    .line 4979
     const/4 v0, -0x1
 
     return v0
@@ -158,7 +158,7 @@
     .parameter "alpha"
 
     .prologue
-    .line 4974
+    .line 4996
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported with this drawable"
@@ -176,7 +176,7 @@
     .parameter "bottom"
 
     .prologue
-    .line 4962
+    .line 4984
     sub-int v0, p3, p1
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mWidth:I
@@ -189,7 +189,7 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mDrawLeft:I
 
-    .line 4963
+    .line 4985
     sub-int v0, p4, p2
 
     iget v1, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mHeight:I
@@ -202,7 +202,7 @@
 
     iput v0, p0, Lcom/sec/android/app/twlauncher/Launcher$WallpaperFastBitmapDrawable;->mDrawTop:I
 
-    .line 4964
+    .line 4986
     return-void
 .end method
 
@@ -211,10 +211,10 @@
     .parameter "bounds"
 
     .prologue
-    .line 4969
+    .line 4991
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 4970
+    .line 4992
     return-void
 .end method
 
@@ -223,7 +223,7 @@
     .parameter "cf"
 
     .prologue
-    .line 4980
+    .line 5002
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported with this drawable"
@@ -238,7 +238,7 @@
     .parameter "dither"
 
     .prologue
-    .line 4986
+    .line 5008
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported with this drawable"
@@ -253,7 +253,7 @@
     .parameter "filter"
 
     .prologue
-    .line 4992
+    .line 5014
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported with this drawable"

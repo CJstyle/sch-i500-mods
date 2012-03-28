@@ -46,7 +46,7 @@
     .parameter
 
     .prologue
-    .line 473
+    .line 474
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$5;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     iput-object p2, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$5;->val$title:Landroid/widget/TextView;
@@ -67,10 +67,10 @@
     .parameter "value"
 
     .prologue
-    .line 475
+    .line 476
     if-eqz p1, :cond_0
 
-    .line 476
+    .line 477
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -107,7 +107,7 @@
 
     move-result-object v0
 
-    .line 477
+    .line 478
     .local v0, usage:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$5;->val$title:Landroid/widget/TextView;
 
@@ -115,19 +115,19 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 478
+    .line 479
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$5;->val$subtitle:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 479
+    .line 480
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$5;->val$subtitle:Landroid/widget/TextView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 480
+    .line 481
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$5;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     iget-object v2, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$5;->val$featureIcon:Landroid/widget/ImageView;
@@ -138,7 +138,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->setIconForUsage(Landroid/widget/ImageView;J)V
 
-    .line 482
+    .line 483
     .end local v0           #usage:Ljava/lang/String;
     :cond_0
     return-void
@@ -149,7 +149,7 @@
     .parameter "x0"
 
     .prologue
-    .line 473
+    .line 474
     check-cast p1, Ljava/lang/Long;
 
     .end local p1

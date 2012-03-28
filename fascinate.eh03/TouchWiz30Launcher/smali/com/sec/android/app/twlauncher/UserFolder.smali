@@ -78,9 +78,9 @@
     :cond_0
     iget-wide v3, v1, Lcom/sec/android/app/twlauncher/ItemInfo;->container:J
 
-    iget-object v5, p0, Lcom/sec/android/app/twlauncher/Folder;->mInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    iget-object v5, p0, Lcom/sec/android/app/twlauncher/UserFolder;->mInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
 
-    iget-wide v5, v5, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v5, v5, Lcom/sec/android/app/twlauncher/FolderInfo;->id:J
 
     cmp-long v3, v3, v5
 
@@ -201,7 +201,7 @@
     .line 51
     .local v2, item:Lcom/sec/android/app/twlauncher/ShortcutInfo;
     :goto_0
-    iget-object v1, p0, Lcom/sec/android/app/twlauncher/Folder;->mContent:Landroid/widget/AbsListView;
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/UserFolder;->mContent:Landroid/widget/AbsListView;
 
     invoke-virtual {v1}, Landroid/widget/AbsListView;->getAdapter()Landroid/widget/Adapter;
 
@@ -212,11 +212,11 @@
     invoke-virtual {v1, v2}, Lcom/sec/android/app/twlauncher/ShortcutsAdapter;->add(Ljava/lang/Object;)V
 
     .line 52
-    iget-object v1, p0, Lcom/sec/android/app/twlauncher/Folder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/UserFolder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
-    iget-object v3, p0, Lcom/sec/android/app/twlauncher/Folder;->mInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
+    iget-object v3, p0, Lcom/sec/android/app/twlauncher/UserFolder;->mInfo:Lcom/sec/android/app/twlauncher/FolderInfo;
 
-    iget-wide v3, v3, Lcom/sec/android/app/twlauncher/ItemInfo;->id:J
+    iget-wide v3, v3, Lcom/sec/android/app/twlauncher/FolderInfo;->id:J
 
     move v6, v5
 
@@ -252,7 +252,7 @@
     if-eqz p2, :cond_0
 
     .line 67
-    iget-object v2, p0, Lcom/sec/android/app/twlauncher/Folder;->mContent:Landroid/widget/AbsListView;
+    iget-object v2, p0, Lcom/sec/android/app/twlauncher/UserFolder;->mContent:Landroid/widget/AbsListView;
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->getAdapter()Landroid/widget/Adapter;
 
@@ -262,7 +262,7 @@
 
     .line 68
     .local v0, adapter:Lcom/sec/android/app/twlauncher/ShortcutsAdapter;
-    iget-object v1, p0, Lcom/sec/android/app/twlauncher/Folder;->mDragItem:Lcom/sec/android/app/twlauncher/ShortcutInfo;
+    iget-object v1, p0, Lcom/sec/android/app/twlauncher/UserFolder;->mDragItem:Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
     .line 69
     .local v1, si:Lcom/sec/android/app/twlauncher/ShortcutInfo;

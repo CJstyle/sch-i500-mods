@@ -88,7 +88,7 @@
     iput-object v1, p0, Lcom/sec/android/app/twlauncher/LiveFolder$FolderLoadingTask;->mInfo:Lcom/sec/android/app/twlauncher/LiveFolderInfo;
 
     .line 117
-    iget-object v1, v0, Lcom/sec/android/app/twlauncher/Folder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    iget-object v1, v0, Lcom/sec/android/app/twlauncher/LiveFolder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     iget-object v2, p0, Lcom/sec/android/app/twlauncher/LiveFolder$FolderLoadingTask;->mInfo:Lcom/sec/android/app/twlauncher/LiveFolderInfo;
 
@@ -151,7 +151,7 @@
     if-eqz v0, :cond_0
 
     .line 128
-    iget-object v1, v0, Lcom/sec/android/app/twlauncher/Folder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
+    iget-object v1, v0, Lcom/sec/android/app/twlauncher/LiveFolder;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
 
     .line 129
     .local v1, launcher:Lcom/sec/android/app/twlauncher/Launcher;

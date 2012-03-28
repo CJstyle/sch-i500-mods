@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 540
+    .line 541
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$8;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "which"
 
     .prologue
-    .line 542
+    .line 543
     invoke-static {}, Landroid/webkit/GeolocationPermissions;->getInstance()Landroid/webkit/GeolocationPermissions;
 
     move-result-object v0
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/GeolocationPermissions;->clear(Ljava/lang/String;)V
 
-    .line 543
+    .line 544
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$8;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     invoke-static {v0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->access$500(Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;)Lcom/android/browser/WebsiteSettingsActivity$Site;
@@ -71,7 +71,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/browser/WebsiteSettingsActivity$Site;->removeFeature(I)V
 
-    .line 544
+    .line 545
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$8;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     invoke-static {v0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->access$500(Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;)Lcom/android/browser/WebsiteSettingsActivity$Site;
@@ -84,24 +84,24 @@
 
     if-nez v0, :cond_0
 
-    .line 545
+    .line 546
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$8;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->access$502(Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;Lcom/android/browser/WebsiteSettingsActivity$Site;)Lcom/android/browser/WebsiteSettingsActivity$Site;
 
-    .line 547
+    .line 548
     :cond_0
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$8;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     invoke-virtual {v0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->askForOrigins()V
 
-    .line 548
+    .line 549
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$8;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     invoke-virtual {v0}, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;->notifyDataSetChanged()V
 
-    .line 549
+    .line 550
     return-void
 .end method

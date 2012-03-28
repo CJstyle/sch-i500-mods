@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 2006
+    .line 2257
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Workspace$3;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     iput-object p2, p0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$layout:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -61,16 +61,16 @@
     .locals 28
 
     .prologue
-    .line 2008
+    .line 2259
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2009
+    .line 2260
     .local v6, childrenToRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 2011
+    .line 2262
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$layout:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -81,7 +81,7 @@
 
     move-result v5
 
-    .line 2012
+    .line 2263
     .local v5, childCount:I
     const/4 v13, 0x0
 
@@ -89,7 +89,7 @@
     :goto_0
     if-ge v13, v5, :cond_c
 
-    .line 2013
+    .line 2264
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$layout:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -104,13 +104,13 @@
 
     move-result-object v24
 
-    .line 2014
+    .line 2265
     .local v24, view:Landroid/view/View;
     invoke-virtual/range {v24 .. v24}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v21
 
-    .line 2016
+    .line 2267
     .local v21, tag:Ljava/lang/Object;
     move-object/from16 v0, v21
 
@@ -120,24 +120,24 @@
 
     if-eqz v25, :cond_1
 
-    .line 2017
+    .line 2268
     move-object/from16 v0, v21
 
     check-cast v0, Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
     move-object v11, v0
 
-    .line 2018
+    .line 2269
     .local v11, info:Lcom/sec/android/app/twlauncher/ShortcutInfo;
     iget-object v12, v11, Lcom/sec/android/app/twlauncher/ShortcutInfo;->intent:Landroid/content/Intent;
 
-    .line 2019
+    .line 2270
     .local v12, intent:Landroid/content/Intent;
     invoke-virtual {v12}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v16
 
-    .line 2021
+    .line 2272
     .local v16, name:Landroid/content/ComponentName;
     const-string v25, "android.intent.action.MAIN"
 
@@ -153,7 +153,7 @@
 
     if-eqz v16, :cond_5
 
-    .line 2022
+    .line 2273
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$packageNames:Ljava/util/HashSet;
@@ -179,7 +179,7 @@
 
     check-cast v17, Ljava/lang/String;
 
-    .line 2023
+    .line 2274
     .local v17, packageName:Ljava/lang/String;
     invoke-virtual/range {v16 .. v16}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
@@ -195,13 +195,14 @@
 
     if-eqz v25, :cond_0
 
-    .line 2025
+    .line 2276
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     move-object/from16 v25, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/Workspace;->access$100(Lcom/sec/android/app/twlauncher/Workspace;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v25
@@ -212,7 +213,7 @@
 
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->deleteItemFromDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;)V
 
-    .line 2026
+    .line 2277
     move-object v0, v6
 
     move-object/from16 v1, v24
@@ -221,7 +222,7 @@
 
     goto :goto_1
 
-    .line 2030
+    .line 2281
     .end local v10           #i$:Ljava/util/Iterator;
     .end local v11           #info:Lcom/sec/android/app/twlauncher/ShortcutInfo;
     .end local v12           #intent:Landroid/content/Intent;
@@ -236,18 +237,18 @@
 
     if-eqz v25, :cond_6
 
-    .line 2031
+    .line 2282
     move-object/from16 v0, v21
 
     check-cast v0, Lcom/sec/android/app/twlauncher/UserFolderInfo;
 
     move-object v11, v0
 
-    .line 2032
+    .line 2283
     .local v11, info:Lcom/sec/android/app/twlauncher/UserFolderInfo;
     iget-object v7, v11, Lcom/sec/android/app/twlauncher/UserFolderInfo;->contents:Ljava/util/ArrayList;
 
-    .line 2033
+    .line 2284
     .local v7, contents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sec/android/app/twlauncher/ShortcutInfo;>;"
     new-instance v22, Ljava/util/ArrayList;
 
@@ -259,17 +260,17 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 2034
+    .line 2285
     .local v22, toRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sec/android/app/twlauncher/ShortcutInfo;>;"
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
-    .line 2035
+    .line 2286
     .local v8, contentsCount:I
     const/16 v20, 0x0
 
-    .line 2037
+    .line 2288
     .local v20, removedFromFolder:Z
     const/4 v14, 0x0
 
@@ -277,24 +278,24 @@
     :goto_2
     if-ge v14, v8, :cond_4
 
-    .line 2038
+    .line 2289
     invoke-virtual {v7, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/sec/android/app/twlauncher/ShortcutInfo;
 
-    .line 2039
+    .line 2290
     .local v3, appInfo:Lcom/sec/android/app/twlauncher/ShortcutInfo;
     iget-object v12, v3, Lcom/sec/android/app/twlauncher/ShortcutInfo;->intent:Landroid/content/Intent;
 
-    .line 2040
+    .line 2291
     .restart local v12       #intent:Landroid/content/Intent;
     invoke-virtual {v12}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v16
 
-    .line 2042
+    .line 2293
     .restart local v16       #name:Landroid/content/ComponentName;
     const-string v25, "android.intent.action.MAIN"
 
@@ -310,7 +311,7 @@
 
     if-eqz v16, :cond_3
 
-    .line 2043
+    .line 2294
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$packageNames:Ljava/util/HashSet;
@@ -336,7 +337,7 @@
 
     check-cast v17, Ljava/lang/String;
 
-    .line 2044
+    .line 2295
     .restart local v17       #packageName:Ljava/lang/String;
     invoke-virtual/range {v16 .. v16}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
@@ -352,20 +353,21 @@
 
     if-eqz v25, :cond_2
 
-    .line 2045
+    .line 2296
     move-object/from16 v0, v22
 
     move-object v1, v3
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2047
+    .line 2298
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     move-object/from16 v25, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/Workspace;->access$100(Lcom/sec/android/app/twlauncher/Workspace;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v25
@@ -376,12 +378,12 @@
 
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->deleteItemFromDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;)V
 
-    .line 2049
+    .line 2300
     const/16 v20, 0x1
 
     goto :goto_3
 
-    .line 2037
+    .line 2288
     .end local v10           #i$:Ljava/util/Iterator;
     .end local v17           #packageName:Ljava/lang/String;
     :cond_3
@@ -389,7 +391,7 @@
 
     goto :goto_2
 
-    .line 2055
+    .line 2306
     .end local v3           #appInfo:Lcom/sec/android/app/twlauncher/ShortcutInfo;
     .end local v12           #intent:Landroid/content/Intent;
     .end local v16           #name:Landroid/content/ComponentName;
@@ -400,10 +402,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
 
-    .line 2056
+    .line 2307
     if-eqz v20, :cond_5
 
-    .line 2057
+    .line 2308
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
@@ -414,13 +416,13 @@
 
     move-result-object v9
 
-    .line 2058
+    .line 2309
     .local v9, folder:Lcom/sec/android/app/twlauncher/Folder;
     if-eqz v9, :cond_5
 
     invoke-virtual {v9}, Lcom/sec/android/app/twlauncher/Folder;->notifyDataSetChanged()V
 
-    .line 2012
+    .line 2263
     .end local v7           #contents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sec/android/app/twlauncher/ShortcutInfo;>;"
     .end local v8           #contentsCount:I
     .end local v9           #folder:Lcom/sec/android/app/twlauncher/Folder;
@@ -433,7 +435,7 @@
 
     goto/16 :goto_0
 
-    .line 2060
+    .line 2311
     :cond_6
     move-object/from16 v0, v21
 
@@ -443,14 +445,14 @@
 
     if-eqz v25, :cond_8
 
-    .line 2061
+    .line 2312
     move-object/from16 v0, v21
 
     check-cast v0, Lcom/sec/android/app/twlauncher/LiveFolderInfo;
 
     move-object v11, v0
 
-    .line 2062
+    .line 2313
     .local v11, info:Lcom/sec/android/app/twlauncher/LiveFolderInfo;
     move-object v0, v11
 
@@ -458,7 +460,7 @@
 
     move-object/from16 v23, v0
 
-    .line 2063
+    .line 2314
     .local v23, uri:Landroid/net/Uri;
     move-object/from16 v0, p0
 
@@ -476,11 +478,11 @@
 
     move-result-object v19
 
-    .line 2066
+    .line 2317
     .local v19, providerInfo:Landroid/content/pm/ProviderInfo;
     if-eqz v19, :cond_5
 
-    .line 2067
+    .line 2318
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$packageNames:Ljava/util/HashSet;
@@ -506,7 +508,7 @@
 
     check-cast v17, Ljava/lang/String;
 
-    .line 2068
+    .line 2319
     .restart local v17       #packageName:Ljava/lang/String;
     move-object/from16 v0, v19
 
@@ -524,13 +526,14 @@
 
     if-eqz v25, :cond_7
 
-    .line 2070
+    .line 2321
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     move-object/from16 v25, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/Workspace;->access$100(Lcom/sec/android/app/twlauncher/Workspace;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v25
@@ -541,7 +544,7 @@
 
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->deleteItemFromDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;)V
 
-    .line 2071
+    .line 2322
     move-object v0, v6
 
     move-object/from16 v1, v24
@@ -550,7 +553,7 @@
 
     goto :goto_4
 
-    .line 2075
+    .line 2326
     .end local v10           #i$:Ljava/util/Iterator;
     .end local v11           #info:Lcom/sec/android/app/twlauncher/LiveFolderInfo;
     .end local v17           #packageName:Ljava/lang/String;
@@ -565,14 +568,14 @@
 
     if-eqz v25, :cond_a
 
-    .line 2076
+    .line 2327
     move-object/from16 v0, v21
 
     check-cast v0, Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;
 
     move-object v11, v0
 
-    .line 2077
+    .line 2328
     .local v11, info:Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;
     move-object/from16 v0, p0
 
@@ -590,11 +593,11 @@
 
     move-result-object v18
 
-    .line 2079
+    .line 2330
     .local v18, provider:Landroid/appwidget/AppWidgetProviderInfo;
     if-eqz v18, :cond_5
 
-    .line 2080
+    .line 2331
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$packageNames:Ljava/util/HashSet;
@@ -620,7 +623,7 @@
 
     check-cast v17, Ljava/lang/String;
 
-    .line 2081
+    .line 2332
     .restart local v17       #packageName:Ljava/lang/String;
     move-object/from16 v0, v18
 
@@ -642,13 +645,14 @@
 
     if-eqz v25, :cond_9
 
-    .line 2083
+    .line 2334
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     move-object/from16 v25, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/Workspace;->access$100(Lcom/sec/android/app/twlauncher/Workspace;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v25
@@ -659,7 +663,7 @@
 
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->deleteItemFromDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;)V
 
-    .line 2084
+    .line 2335
     move-object v0, v6
 
     move-object/from16 v1, v24
@@ -668,7 +672,7 @@
 
     goto :goto_5
 
-    .line 2088
+    .line 2339
     .end local v10           #i$:Ljava/util/Iterator;
     .end local v11           #info:Lcom/sec/android/app/twlauncher/LauncherAppWidgetInfo;
     .end local v17           #packageName:Ljava/lang/String;
@@ -682,20 +686,20 @@
 
     if-eqz v25, :cond_5
 
-    .line 2089
+    .line 2340
     move-object/from16 v0, v21
 
     check-cast v0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
 
     move-object v11, v0
 
-    .line 2090
+    .line 2341
     .local v11, info:Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
     invoke-static {}, Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;->getInstance()Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
 
     move-result-object v15
 
-    .line 2091
+    .line 2342
     .local v15, manager:Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
     move-object/from16 v0, p0
 
@@ -722,11 +726,11 @@
 
     check-cast v17, Ljava/lang/String;
 
-    .line 2092
+    .line 2343
     .restart local v17       #packageName:Ljava/lang/String;
     move-object v0, v11
 
-    iget-object v0, v0, Lcom/sec/android/app/twlauncher/ItemInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v25, v0
 
@@ -740,13 +744,14 @@
 
     if-eqz v25, :cond_b
 
-    .line 2093
+    .line 2344
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     move-object/from16 v25, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/Workspace;->access$100(Lcom/sec/android/app/twlauncher/Workspace;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v25
@@ -759,13 +764,14 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;->destroyWidget(Landroid/app/ActivityGroup;Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;)V
 
-    .line 2095
+    .line 2346
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->this$0:Lcom/sec/android/app/twlauncher/Workspace;
 
     move-object/from16 v25, v0
 
+    #getter for: Lcom/sec/android/app/twlauncher/Workspace;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/Workspace;->access$100(Lcom/sec/android/app/twlauncher/Workspace;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v25
@@ -776,7 +782,7 @@
 
     invoke-static {v0, v1}, Lcom/sec/android/app/twlauncher/LauncherModel;->deleteItemFromDatabase(Landroid/content/Context;Lcom/sec/android/app/twlauncher/ItemInfo;)V
 
-    .line 2096
+    .line 2347
     move-object v0, v6
 
     move-object/from16 v1, v24
@@ -785,7 +791,7 @@
 
     goto :goto_6
 
-    .line 2102
+    .line 2353
     .end local v10           #i$:Ljava/util/Iterator;
     .end local v11           #info:Lcom/sec/android/app/twlauncher/SamsungAppWidgetInfo;
     .end local v15           #manager:Lcom/sec/android/app/twlauncher/SamsungWidgetPackageManager;
@@ -797,20 +803,20 @@
 
     move-result v5
 
-    .line 2103
+    .line 2354
     const/4 v13, 0x0
 
     :goto_7
     if-ge v13, v5, :cond_d
 
-    .line 2104
+    .line 2355
     invoke-virtual {v6, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/view/View;
 
-    .line 2105
+    .line 2356
     .local v4, child:Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -824,17 +830,17 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/android/app/twlauncher/CellLayout;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 2103
+    .line 2354
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_7
 
-    .line 2108
+    .line 2359
     .end local v4           #child:Landroid/view/View;
     :cond_d
     if-lez v5, :cond_e
 
-    .line 2109
+    .line 2360
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$layout:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -843,7 +849,7 @@
 
     invoke-virtual/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/CellLayout;->requestLayout()V
 
-    .line 2110
+    .line 2361
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Workspace$3;->val$layout:Lcom/sec/android/app/twlauncher/CellLayout;
@@ -852,7 +858,7 @@
 
     invoke-virtual/range {v25 .. v25}, Lcom/sec/android/app/twlauncher/CellLayout;->invalidate()V
 
-    .line 2112
+    .line 2363
     :cond_e
     return-void
 .end method

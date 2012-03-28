@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3553
+    .line 3710
     iput-object p1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$4;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-direct {p0, p2, p3}, Landroid/view/inputmethod/InputConnectionWrapper;-><init>(Landroid/view/inputmethod/InputConnection;Z)V
@@ -43,12 +43,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3540
+    .line 3722
     const/4 v1, 0x6
 
     if-ne p1, v1, :cond_1
 
-    .line 3541
+    .line 3723
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$4;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getContext()Landroid/content/Context;
@@ -63,11 +63,11 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 3544
+    .line 3726
     .local v0, imm:Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_0
 
-    .line 3545
+    .line 3727
     iget-object v1, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$4;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
     invoke-virtual {v1}, Lcom/nemustech/tiffany/widget/TFAbsListView;->getWindowToken()Landroid/os/IBinder;
@@ -76,11 +76,11 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 3547
+    .line 3729
     :cond_0
     const/4 v1, 0x1
 
-    .line 3549
+    .line 3731
     .end local v0           #imm:Landroid/view/inputmethod/InputMethodManager;
     :goto_0
     return v1
@@ -96,10 +96,10 @@
     .parameter "enabled"
 
     .prologue
-    .line 3533
+    .line 3715
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$4;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
-    invoke-static {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$1900(Lcom/nemustech/tiffany/widget/TFAbsListView;)Landroid/view/inputmethod/InputConnection;
+    invoke-static {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$2300(Lcom/nemustech/tiffany/widget/TFAbsListView;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 
@@ -115,10 +115,10 @@
     .parameter "event"
 
     .prologue
-    .line 3557
+    .line 3739
     iget-object v0, p0, Lcom/nemustech/tiffany/widget/TFAbsListView$4;->this$0:Lcom/nemustech/tiffany/widget/TFAbsListView;
 
-    invoke-static {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$1900(Lcom/nemustech/tiffany/widget/TFAbsListView;)Landroid/view/inputmethod/InputConnection;
+    invoke-static {v0}, Lcom/nemustech/tiffany/widget/TFAbsListView;->access$2300(Lcom/nemustech/tiffany/widget/TFAbsListView;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 

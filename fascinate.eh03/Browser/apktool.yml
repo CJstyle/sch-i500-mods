@@ -1,5 +1,5 @@
 version: 1.4.2.269870b
-apkFileName: Browser.apk
+apkFileName: BrowserEI20.apk
 isFrameworkApk: false
 usesFramework:
   ids:

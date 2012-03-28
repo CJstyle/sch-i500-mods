@@ -43,7 +43,7 @@
     .parameter
 
     .prologue
-    .line 487
+    .line 488
     iput-object p1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
 
     iput-object p2, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->val$subtitle:Landroid/widget/TextView;
@@ -62,24 +62,24 @@
     .parameter "allowed"
 
     .prologue
-    .line 489
+    .line 490
     if-eqz p1, :cond_0
 
-    .line 490
+    .line 491
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 491
+    .line 492
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->val$subtitle:Landroid/widget/TextView;
 
     const v1, 0x7f0900fc
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 492
+    .line 493
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->val$featureIcon:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
@@ -90,7 +90,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 497
+    .line 498
     :goto_0
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->val$subtitle:Landroid/widget/TextView;
 
@@ -98,11 +98,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 499
+    .line 500
     :cond_0
     return-void
 
-    .line 494
+    .line 495
     :cond_1
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->val$subtitle:Landroid/widget/TextView;
 
@@ -110,7 +110,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 495
+    .line 496
     iget-object v0, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->val$featureIcon:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter$6;->this$1:Lcom/android/browser/WebsiteSettingsActivity$SiteAdapter;
@@ -129,7 +129,7 @@
     .parameter "x0"
 
     .prologue
-    .line 487
+    .line 488
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1

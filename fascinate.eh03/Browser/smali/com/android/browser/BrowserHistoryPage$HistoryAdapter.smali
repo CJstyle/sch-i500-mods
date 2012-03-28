@@ -27,13 +27,13 @@
     .parameter "index"
 
     .prologue
-    .line 330
+    .line 329
     iput-object p1, p0, Lcom/android/browser/BrowserHistoryPage$HistoryAdapter;->this$0:Lcom/android/browser/BrowserHistoryPage;
 
-    .line 331
+    .line 330
     invoke-direct {p0, p2, p3, p4}, Lcom/android/browser/DateSortedExpandableListAdapter;-><init>(Landroid/content/Context;Landroid/database/Cursor;I)V
 
-    .line 333
+    .line 332
     return-void
 .end method
 
@@ -52,14 +52,14 @@
 
     const/4 v8, 0x1
 
-    .line 338
+    .line 337
     if-eqz p4, :cond_0
 
     instance-of v4, p4, Lcom/android/browser/HistoryItem;
 
     if-nez v4, :cond_1
 
-    .line 339
+    .line 338
     :cond_0
     new-instance v2, Lcom/android/browser/HistoryItem;
 
@@ -67,7 +67,7 @@
 
     invoke-direct {v2, v4}, Lcom/android/browser/HistoryItem;-><init>(Landroid/content/Context;)V
 
-    .line 342
+    .line 341
     .local v2, item:Lcom/android/browser/HistoryItem;
     invoke-virtual {v2}, Lcom/android/browser/HistoryItem;->getPaddingLeft()I
 
@@ -89,7 +89,7 @@
 
     invoke-virtual {v2, v4, v5, v6, v7}, Lcom/android/browser/HistoryItem;->setPadding(IIII)V
 
-    .line 350
+    .line 349
     :goto_0
     invoke-virtual {p0, p1, p2}, Lcom/android/browser/BrowserHistoryPage$HistoryAdapter;->moveCursorToChildPosition(II)Z
 
@@ -97,11 +97,11 @@
 
     if-nez v4, :cond_2
 
-    .line 366
+    .line 365
     :goto_1
     return-object v2
 
-    .line 347
+    .line 346
     .end local v2           #item:Lcom/android/browser/HistoryItem;
     :cond_1
     move-object v0, p4
@@ -113,7 +113,7 @@
     .restart local v2       #item:Lcom/android/browser/HistoryItem;
     goto :goto_0
 
-    .line 353
+    .line 352
     :cond_2
     const/4 v4, 0x5
 
@@ -123,27 +123,27 @@
 
     invoke-virtual {v2, v4}, Lcom/android/browser/HistoryItem;->setName(Ljava/lang/String;)V
 
-    .line 354
+    .line 353
     invoke-virtual {p0, v8}, Lcom/android/browser/BrowserHistoryPage$HistoryAdapter;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 355
+    .line 354
     .local v3, url:Ljava/lang/String;
     invoke-virtual {v2, v3}, Lcom/android/browser/HistoryItem;->setUrl(Ljava/lang/String;)V
 
-    .line 356
+    .line 355
     const/4 v4, 0x6
 
     invoke-virtual {p0, v4}, Lcom/android/browser/BrowserHistoryPage$HistoryAdapter;->getBlob(I)[B
 
     move-result-object v1
 
-    .line 357
+    .line 356
     .local v1, data:[B
     if-eqz v1, :cond_3
 
-    .line 358
+    .line 357
     array-length v4, v1
 
     invoke-static {v1, v9, v4}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
@@ -152,7 +152,7 @@
 
     invoke-virtual {v2, v4}, Lcom/android/browser/HistoryItem;->setFavicon(Landroid/graphics/Bitmap;)V
 
-    .line 364
+    .line 363
     :goto_2
     const/4 v4, 0x4
 
@@ -169,7 +169,7 @@
 
     goto :goto_1
 
-    .line 361
+    .line 360
     :cond_3
     invoke-static {}, Lcom/android/browser/CombinedBookmarkHistoryActivity;->getIconListenerSet()Lcom/android/browser/CombinedBookmarkHistoryActivity$IconListenerSet;
 
@@ -186,6 +186,6 @@
     :cond_4
     move v4, v9
 
-    .line 364
+    .line 363
     goto :goto_3
 .end method

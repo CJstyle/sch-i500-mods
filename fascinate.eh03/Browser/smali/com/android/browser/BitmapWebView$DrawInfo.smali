@@ -27,16 +27,16 @@
     .locals 1
 
     .prologue
-    .line 2971
+    .line 2983
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2972
+    .line 2984
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
     iput-object v0, p0, Lcom/android/browser/BitmapWebView$DrawInfo;->validRegion:Landroid/graphics/Region;
 
-    .line 2973
+    .line 2985
     return-void
 .end method

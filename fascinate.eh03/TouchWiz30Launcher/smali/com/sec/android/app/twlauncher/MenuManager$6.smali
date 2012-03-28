@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2282
+    .line 2293
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/MenuManager$6;->this$0:Lcom/sec/android/app/twlauncher/MenuManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "input"
 
     .prologue
-    .line 2284
+    .line 2295
     const v0, 0x3dcccccd
 
     cmpg-float v0, p1, v0

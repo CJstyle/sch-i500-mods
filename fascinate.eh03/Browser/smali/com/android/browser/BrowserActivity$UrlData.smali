@@ -40,19 +40,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 5593
+    .line 5642
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5594
+    .line 5643
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$UrlData;->mUrl:Ljava/lang/String;
 
-    .line 5595
+    .line 5644
     iput-object v0, p0, Lcom/android/browser/BrowserActivity$UrlData;->mHeaders:Ljava/util/Map;
 
-    .line 5596
+    .line 5645
     iput-object v0, p0, Lcom/android/browser/BrowserActivity$UrlData;->mVoiceIntent:Landroid/content/Intent;
 
-    .line 5597
+    .line 5646
     return-void
 .end method
 
@@ -76,17 +76,17 @@
     .end annotation
 
     .prologue
-    .line 5599
+    .line 5648
     .local p2, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5600
+    .line 5649
     iput-object p1, p0, Lcom/android/browser/BrowserActivity$UrlData;->mUrl:Ljava/lang/String;
 
-    .line 5601
+    .line 5650
     iput-object p2, p0, Lcom/android/browser/BrowserActivity$UrlData;->mHeaders:Ljava/util/Map;
 
-    .line 5602
+    .line 5651
     const-string v0, "android.speech.action.VOICE_SEARCH_RESULTS"
 
     invoke-virtual {p3}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -99,14 +99,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 5604
+    .line 5653
     iput-object p3, p0, Lcom/android/browser/BrowserActivity$UrlData;->mVoiceIntent:Landroid/content/Intent;
 
-    .line 5608
+    .line 5657
     :goto_0
     return-void
 
-    .line 5606
+    .line 5655
     :cond_0
     const/4 v0, 0x0
 
@@ -121,7 +121,7 @@
     .locals 1
 
     .prologue
-    .line 5611
+    .line 5660
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$UrlData;->mVoiceIntent:Landroid/content/Intent;
 
     if-nez v0, :cond_1
@@ -155,21 +155,21 @@
     .parameter "t"
 
     .prologue
-    .line 5619
+    .line 5668
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$UrlData;->mVoiceIntent:Landroid/content/Intent;
 
     if-eqz v0, :cond_0
 
-    .line 5620
+    .line 5669
     iget-object v0, p0, Lcom/android/browser/BrowserActivity$UrlData;->mVoiceIntent:Landroid/content/Intent;
 
     invoke-virtual {p1, v0}, Lcom/android/browser/Tab;->activateVoiceSearchMode(Landroid/content/Intent;)V
 
-    .line 5624
+    .line 5673
     :goto_0
     return-void
 
-    .line 5622
+    .line 5671
     :cond_0
     invoke-virtual {p1}, Lcom/android/browser/Tab;->getWebView()Landroid/webkit/WebView;
 

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3676
+    .line 3724
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$1;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,18 +42,19 @@
     .parameter "dialog"
 
     .prologue
-    .line 3678
+    .line 3726
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$1;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
     iget-object v0, v0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-virtual {v0}, Lcom/sec/android/app/twlauncher/Launcher;->cancelRemovePage()V
 
-    .line 3679
+    .line 3727
     iget-object v0, p0, Lcom/sec/android/app/twlauncher/Launcher$TextDialog$1;->this$1:Lcom/sec/android/app/twlauncher/Launcher$TextDialog;
 
-    invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->access$2600(Lcom/sec/android/app/twlauncher/Launcher$TextDialog;)V
+    #calls: Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->cleanup()V
+    invoke-static {v0}, Lcom/sec/android/app/twlauncher/Launcher$TextDialog;->access$2700(Lcom/sec/android/app/twlauncher/Launcher$TextDialog;)V
 
-    .line 3680
+    .line 3728
     return-void
 .end method

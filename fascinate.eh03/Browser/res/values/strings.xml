@@ -161,7 +161,7 @@
     <string name="pref_extras_title">Advanced settings</string>
     <string name="pref_extras_website_settings">Website settings</string>
     <string name="pref_extras_website_settings_summary">View advanced settings for individual websites</string>
-    <string name="pref_extras_useragent_settings">Select view mode</string>
+    <string name="pref_extras_useragent_settings">Select Mode</string>
     <string name="pref_extras_reset_default">Reset to default</string>
     <string name="pref_extras_reset_default_summary">Clear all browser data and reset all settings to default</string>
     <string name="pref_extras_reset_default_dlg">All browser data will be cleared and settings will revert to default values</string>

@@ -66,6 +66,7 @@
     .local v1, app:Lcom/sec/android/app/twlauncher/ShortcutInfo;
     iget-object v3, p0, Lcom/sec/android/app/twlauncher/TopFourZone$1;->this$0:Lcom/sec/android/app/twlauncher/TopFourZone;
 
+    #getter for: Lcom/sec/android/app/twlauncher/TopFourZone;->mLauncher:Lcom/sec/android/app/twlauncher/Launcher;
     invoke-static {v3}, Lcom/sec/android/app/twlauncher/TopFourZone;->access$000(Lcom/sec/android/app/twlauncher/TopFourZone;)Lcom/sec/android/app/twlauncher/Launcher;
 
     move-result-object v3

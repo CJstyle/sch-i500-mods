@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 594
+    .line 598
     iput-object p1, p0, Lcom/sec/android/app/twlauncher/Launcher$2;->this$0:Lcom/sec/android/app/twlauncher/Launcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,10 +40,10 @@
     .parameter "intentAction"
 
     .prologue
-    .line 618
+    .line 622
     const-wide/16 v13, -0x1
 
-    .line 620
+    .line 624
     .local v13, ret:J
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
@@ -57,19 +57,19 @@
 
     move-result-object v12
 
-    .line 622
+    .line 626
     .local v12, requiredUri:Landroid/net/Uri;
     if-nez v12, :cond_0
 
     move-wide v15, v13
 
-    .line 641
+    .line 645
     .end local v13           #ret:J
     .local v15, ret:J
     :goto_0
     return-wide v15
 
-    .line 625
+    .line 629
     .end local v15           #ret:J
     .restart local v13       #ret:J
     :cond_0
@@ -103,7 +103,7 @@
 
     move-result-object v8
 
-    .line 628
+    .line 632
     .local v8, c:Landroid/database/Cursor;
     const-string v2, "intent"
 
@@ -111,7 +111,7 @@
 
     move-result v11
 
-    .line 629
+    .line 633
     .local v11, intentIndex:I
     const-string v2, "_id"
 
@@ -119,7 +119,7 @@
 
     move-result v10
 
-    .line 631
+    .line 635
     .local v10, idIndex:I
     :cond_1
     :try_start_0
@@ -129,7 +129,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 632
+    .line 636
     invoke-interface {v8, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -146,7 +146,7 @@
 
     move-result-object v9
 
-    .line 633
+    .line 637
     .local v9, contactUri:Landroid/net/Uri;
     invoke-virtual {v12, v9}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
@@ -154,26 +154,26 @@
 
     if-eqz v2, :cond_1
 
-    .line 634
+    .line 638
     invoke-interface {v8, v10}, Landroid/database/Cursor;->getLong(I)J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-wide v13
 
-    .line 639
+    .line 643
     .end local v9           #contactUri:Landroid/net/Uri;
     :cond_2
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     move-wide v15, v13
 
-    .line 641
+    .line 645
     .end local v13           #ret:J
     .restart local v15       #ret:J
     goto :goto_0
 
-    .line 639
+    .line 643
     .end local v15           #ret:J
     .restart local v13       #ret:J
     :catchall_0
@@ -190,7 +190,7 @@
     .parameter "intent"
 
     .prologue
-    .line 597
+    .line 601
     const-string v8, "android.intent.extra.shortcut.INTENT"
 
     invoke-virtual {p2, v8}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -199,19 +199,19 @@
 
     check-cast v4, Landroid/content/Intent;
 
-    .line 598
+    .line 602
     .local v4, intent_action:Landroid/content/Intent;
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 600
+    .line 604
     .local v0, cr:Landroid/content/ContentResolver;
     invoke-virtual {p0, v0, v4}, Lcom/sec/android/app/twlauncher/Launcher$2;->getShortcutIdByIntentAction(Landroid/content/ContentResolver;Landroid/content/Intent;)J
 
     move-result-wide v6
 
-    .line 601
+    .line 605
     .local v6, shortcutId:J
     const-wide/16 v8, -0x1
 
@@ -219,14 +219,14 @@
 
     if-eqz v8, :cond_1
 
-    .line 602
+    .line 606
     const-string v8, "android.intent.extra.shortcut.NAME"
 
     invoke-virtual {p2, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 603
+    .line 607
     .local v5, name:Ljava/lang/String;
     const-string v8, "android.intent.extra.shortcut.ICON"
 
@@ -234,11 +234,11 @@
 
     move-result-object v3
 
-    .line 604
+    .line 608
     .local v3, iconData:Landroid/os/Parcelable;
     const/4 v2, 0x0
 
-    .line 605
+    .line 609
     .local v2, iconBitmap:Landroid/graphics/Bitmap;
     if-eqz v3, :cond_0
 
@@ -246,7 +246,7 @@
 
     if-eqz v8, :cond_0
 
-    .line 606
+    .line 610
     new-instance v8, Lcom/sec/android/app/twlauncher/FastBitmapDrawable;
 
     check-cast v3, Landroid/graphics/Bitmap;
@@ -258,22 +258,22 @@
 
     move-result-object v2
 
-    .line 608
+    .line 612
     :cond_0
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 609
+    .line 613
     .local v1, cv:Landroid/content/ContentValues;
     invoke-static {v1, v2}, Lcom/sec/android/app/twlauncher/ItemInfo;->writeBitmap(Landroid/content/ContentValues;Landroid/graphics/Bitmap;)V
 
-    .line 610
+    .line 614
     const-string v8, "title"
 
     invoke-virtual {v1, v8, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 611
+    .line 615
     const-string v8, "intent"
 
     const/4 v9, 0x0
@@ -284,7 +284,7 @@
 
     invoke-virtual {v1, v8, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 612
+    .line 616
     sget-object v8, Lcom/sec/android/app/twlauncher/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -309,7 +309,7 @@
 
     invoke-virtual {v0, v8, v1, v9, v10}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 615
+    .line 619
     .end local v1           #cv:Landroid/content/ContentValues;
     .end local v2           #iconBitmap:Landroid/graphics/Bitmap;
     .end local v5           #name:Ljava/lang/String;
