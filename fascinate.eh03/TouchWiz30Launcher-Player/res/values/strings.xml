@@ -18,8 +18,8 @@
     <string name="choose_widget">Choose widget</string>
     <string name="group_samsung_widgets">Samsung Widgets</string>
     <string name="menu_item_add_item">Add to Home screen</string>
-    <string name="group_applications">Apps</string>
-    <string name="group_applications_shortcut">Apps</string>
+    <string name="group_applications">Applications</string>
+    <string name="group_applications_shortcut">Applications</string>
     <string name="group_shortcuts">Shortcuts</string>
     <string name="group_search">Search</string>
     <string name="group_folder">New folder</string>

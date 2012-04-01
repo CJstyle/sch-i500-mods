@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="65.32999dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/list_item_layout" android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+        <TextView android:textSize="24.0dip" android:textStyle="bold" android:textColor="@color/color_txt_white_black" android:gravity="left|center" android:id="@id/aniText" android:layout_width="fill_parent" android:layout_height="65.32999dip" android:shadowColor="@color/black50" android:shadowDx="-1.0" android:shadowDy="-1.0" android:shadowRadius="1.0" android:layout_centerVertical="true" />
+        <RelativeLayout android:id="@id/itemlayout" android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="65.32999dip">
+            <LinearLayout android:id="@id/frequent_list_item_photo_layout" android:layout_width="53.329987dip" android:layout_height="53.329987dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:layout_below="@id/itemlayout">
+                <QuickContactBadge android:id="@id/frequent_list_item_photo_quick_contact" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" style="@*android:style/Widget.QuickContactBadge.WindowSmall" />
+                <ImageView android:id="@id/frequent_list_item_photo" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/favo_layout" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginRight="6.0dip" android:weightSum="12.0" android:layout_toRightOf="@id/frequent_list_item_photo_layout" android:layout_below="@id/itemlayout">
+                <TextView android:textSize="21.0sp" android:textColor="@color/color_txt_white_black" android:layout_gravity="left" android:id="@id/favo_contact_name" android:paddingTop="16.0dip" android:duplicateParentState="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:maxLines="1" android:singleLine="true" android:layout_weight="11.0" android:layout_toRightOf="@id/frequent_list_item_photo_layout" android:layout_alignRight="@id/ImageView01" />
+                <ImageView android:layout_gravity="right|center" android:id="@id/favo_star" android:paddingRight="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/freq_layout" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="8.0dip" android:layout_toRightOf="@id/frequent_list_item_photo_layout" android:layout_alignRight="@id/ImageView01">
+                <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout07" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginRight="6.0dip" android:weightSum="12.0">
+                    <TextView android:textAppearance="@style/TwTextAppearanceListTwoLinePrimary" android:textColor="@color/color_txt_white_black" android:layout_gravity="left" android:id="@id/frequent_list_item_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_weight="11.0" android:layout_toRightOf="@id/frequent_list_item_photo" android:layout_alignParentTop="true" />
+                    <ImageView android:layout_gravity="right|center" android:id="@id/call_indi_image" android:paddingRight="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout03" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginRight="6.0dip" android:weightSum="12.0" android:layout_below="@id/LinearLayout07">
+                    <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLineSecondary" android:id="@id/frequent_list_item_number" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_weight="9.0" android:layout_below="@id/frequent_list_item_name" />
+                    <TextView android:textSize="13.299988sp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="right" android:layout_gravity="right" android:id="@id/frequent_list_item_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="11.0dip" android:layout_weight="3.0" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center" android:id="@id/list_noitem" android:background="@drawable/listview_item_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="65.32999dip" />
+</RelativeLayout>

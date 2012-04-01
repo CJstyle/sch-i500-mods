@@ -250,6 +250,20 @@ zipalign -f 4 DialerTabActivity/dist/DialerTabActivity.apk ./DialerTabActivity.a
 rm -f -r DialerTabActivity/build
 rm -f -r DialerTabActivity/dist
 
+# DIALERTABACTIVITY-PLAYER.APK
+echo
+echo DIALERTABACTIVITY-PLAYER.APK
+echo
+apktool b DialerTabActivity-Player
+rm DialerTabActivity-Player/dist/DialerTabActivity-Player.apk
+cp stock-apks/DialerTabActivity-Player.apk DialerTabActivity-Player/dist/
+pushd DialerTabActivity-Player/build/apk
+zip -u ../../dist/DialerTabActivity-Player.apk classes.dex
+popd
+zipalign -f 4 DialerTabActivity-Player/dist/DialerTabActivity-Player.apk ./DialerTabActivity-Player.apk
+rm -f -r DialerTabActivity-Player/build
+rm -f -r DialerTabActivity-Player/dist
+
 # JOBMANAGER.APK
 echo
 echo JOBMANAGER.APK
@@ -326,6 +340,21 @@ zipalign -f 4 SettingsProvider/dist/SettingsProvider.apk ./SettingsProvider.apk
 rm -f -r SettingsProvider/build
 rm -f -r SettingsProvider/dist
 
+# SETTINGSPROVIDER-PLAYER.APK
+echo
+echo SETTINGSPROVIDER-PLAYER.APK
+echo
+apktool b SettingsProvider-Player
+rm SettingsProvider-Player/dist/SettingsProvider-Player.apk
+cp stock-apks/SettingsProvider-Player.apk SettingsProvider-Player/dist/
+pushd SettingsProvider-Player/build/apk
+zip -u ../../dist/SettingsProvider-Player.apk classes.dex
+zip -u ../../dist/SettingsProvider-Player.apk resources.arsc
+popd
+zipalign -f 4 SettingsProvider-Player/dist/SettingsProvider-Player.apk ./SettingsProvider-Player.apk
+rm -f -r SettingsProvider-Player/build
+rm -f -r SettingsProvider-Player/dist
+
 # SYSTEMUI.APK
 echo
 echo SYSTEMUI.APK
@@ -364,7 +393,6 @@ rm TouchWiz30Launcher-Player/dist/TouchWiz30Launcher-Player.apk
 cp stock-apks/TouchWiz30Launcher-Player.apk TouchWiz30Launcher-Player/dist/
 pushd TouchWiz30Launcher-Player/build/apk
 zip -u ../../dist/TouchWiz30Launcher-Player.apk classes.dex
-zip -u ../../dist/TouchWiz30Launcher-Player.apk resources.arsc
 zip -u ../../dist/TouchWiz30Launcher-Player.apk res/xml/default_topapplication.xml
 zip -u ../../dist/TouchWiz30Launcher-Player.apk res/xml/default_workspace.xml
 popd

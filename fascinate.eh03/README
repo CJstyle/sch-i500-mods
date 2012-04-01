@@ -115,6 +115,12 @@ DIALERTABACTIVITY.APK
 
 - Modified voicemail button to dial voicemail instead of VZW Visual Voice Mail
 
+DIALERTABACTIVITY-PLAYER.APK
+============================
+
+- Modified voicemail button to dial voicemail instead of VZW Visual Voice Mail
+- Removed LAUNCHER category from application manifest
+
 JOBMANAGER.APK
 ==============
 
@@ -147,6 +153,15 @@ SETTINGSPROVIDER.APK
 - Change default USB mode to "Ask on connection" (4)
 - Modified to add Settings/Sound/Charge Activation boolean option
 
+SETTINGSPROVIDER.APK
+====================
+
+- Change default transition animation speed to 50% (Fast/0.5)
+- Change default USB mode to "Ask on connection" (4)
+- Modified to add Settings/Sound/Charge Activation boolean option
+- Change default wifi mode to ON
+- Change airplane mode and allowed location provider defaults to match Galaxy Player
+
 SYSTEMUI.APK
 ============
 
@@ -170,7 +185,6 @@ TOUCHWIZ30LAUNCHER-PLAYER.APK
 =============================
 
 - Modified default shortcut and widget layouts for Player version of GeeWiz
-- Renamed 'Applications' home screen button to 'Apps' to match Galaxy Player
 
 TWWALLPAPERCHOOSER
 ==================

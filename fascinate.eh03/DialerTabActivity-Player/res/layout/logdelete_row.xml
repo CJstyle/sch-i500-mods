@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="60.0dip" class="com.sec.android.app.dialertab.calllog.LogDeleteActivity$ItemView"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/image1" android:layout_width="53.329987dip" android:layout_height="53.329987dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="3.3299866dip" android:layout_marginBottom="3.3299866dip" android:layout_alignParentLeft="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_toRightOf="@id/image1" android:layout_alignRight="@id/ImageView01">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textAppearance="@style/TwTextAppearanceListTwoLinePrimary" android:textColor="@color/color_txt_white_black" android:id="@id/mainText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="7.0dip" android:singleLine="true" />
+            <LinearLayout android:layout_gravity="center_vertical" android:id="@id/row_text" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginRight="6.0dip">
+                <ImageView android:id="@id/call_indi_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_marginTop="3.3299866dip" android:layout_marginBottom="4.659973dip" />
+                <TextView android:textAppearance="@style/TwTextAppearanceListTwoLineSecondaryOrange" android:textColor="@color/color_text_blue" android:gravity="left" android:id="@id/subText" android:paddingTop="3.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_marginBottom="4.659973dip" android:singleLine="true" android:layout_weight="10.0" />
+                <TextView android:textSize="12.0sp" android:textColor="@color/tw_color005" android:gravity="right" android:id="@id/time" android:paddingTop="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:layout_weight="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+        <CheckBox android:id="@id/checkbox1" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:onClick="clickHandler" />
+    </LinearLayout>
+</view>
