@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="subtitle_color_01">#ff000000</color>
+    <color name="subtitle_color_02">#ffffffff</color>
+    <color name="subtitle_text_disable">#ffaaaaaa</color>
+    <color name="subtitle_text_able">#ffffffff</color>
+    <color name="softkey_bg">#77777777</color>
+    <color name="main_list_line_color">#77777777</color>
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+</resources>

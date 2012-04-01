@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/videoholdLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/subtitle_sync_reset" android:background="#00000000" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginTop="55.0dip" android:src="@drawable/btn_subtitle_sync_reset" android:layout_above="@id/subtitle_sync_down" />
+    <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/subtitle_sync_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0dip" android:text="@id/TextView01" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_centerHorizontal="true" />
+    <ImageButton android:id="@id/subtitle_sync_down" android:background="#00000000" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.659973dip" android:layout_marginTop="126.66dip" android:src="@drawable/btn_subtitle_sync_down" android:layout_centerVertical="true" />
+    <ImageButton android:id="@id/subtitle_sync_up" android:background="#00000000" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="126.66dip" android:layout_marginRight="6.659973dip" android:src="@drawable/btn_subtitle_sync_up" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

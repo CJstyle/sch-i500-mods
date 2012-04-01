@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_remove_video" android:id="@id/bookmark_remove" android:visible="true" android:title="@string/remove" android:checkable="true" />
+    <item android:icon="@drawable/ic_menu_cancel" android:id="@id/bookmark_cancel" android:title="@string/cancel" android:checkable="true" />
+</menu>

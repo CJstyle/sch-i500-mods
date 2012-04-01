@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/RichInfo_Main" android:background="@drawable/music_play_info_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/winset_header_bg" android:layout_width="fill_parent" android:layout_height="66.66dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:id="@id/RichInfo_albumart" android:background="#ff000000" android:paddingLeft="1.0dip" android:paddingTop="1.0dip" android:paddingRight="1.0dip" android:paddingBottom="1.0dip" android:layout_width="55.329987dip" android:layout_height="55.329987dip" android:layout_marginLeft="5.659973dip" android:layout_marginTop="4.659973dip" android:src="@drawable/music_play_grid_thumb_01" />
+        <TextView android:textSize="19.329987sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:id="@id/RichInfo_Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="7.3299866dip" android:singleLine="true" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_toRightOf="@id/RichInfo_albumart" android:marqueeRepeatLimit="marquee_forever" />
+        <TextView android:textSize="14.659973sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:id="@id/RichInfo_Artist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="1.3299866dip" android:singleLine="true" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_toRightOf="@id/RichInfo_albumart" android:layout_below="@id/RichInfo_Title" android:marqueeRepeatLimit="marquee_forever" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/RichInfo_BodyPage" android:paddingBottom="45.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.nemustech.tiffany.widget.TFScrollView android:scrollbarSize="6.659973dip" android:scrollbarThumbVertical="@drawable/winset_scroll_bg" android:id="@id/RichInfo_ScrollView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="2.6599731dip" android:layout_marginRight="2.6599731dip">
+            <LinearLayout android:orientation="vertical" android:id="@id/RichInfo_CenterLayout" android:paddingLeft="12.659973dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+              xmlns:android="http://schemas.android.com/apk/res/android" />
+        </com.nemustech.tiffany.widget.TFScrollView>
+        <RelativeLayout android:gravity="center" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="44.659973dip"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <Button android:textSize="16.0sp" android:textColor="@drawable/page_button_text_color" android:id="@id/RichInfo_PageNum" android:background="@drawable/music_play_tw3_info_button" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="35.329987dip" android:minWidth="61.329987dip" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -66,6 +66,13 @@ BROWSER.APK
 - Set default home page to "about:blank"
 - Remove all default bookmarks
 
+BROWSER-PLAYER.APK
+==================
+
+- Set default home page to "about:blank"
+- Remove all default bookmarks
+- Change application name to "Internet" for Player version of GeeWiz
+
 BROWSEREH03.APK
 ===============
 
@@ -120,6 +127,13 @@ MUSICPLAYER.APK
 - Localize some strings for US English
 - Remove "Download from V cast?" prompt when no media exists
 
+MUSICPLAYER-PLAYER.APK
+======================
+
+- Localize some strings for US English
+- Remove "Download from V cast?" prompt when no media exists
+- Rename application to "Music" for GeeWiz Player ROM
+
 SETTINGS.APK
 ============
 
@@ -152,10 +166,19 @@ TOUCHWIZ30LAUNCHEREH03.APK
 - Modified default application list order to match my ROM
 - Modified default shortcut and widget layouts
 
+TOUCHWIZ30LAUNCHER-PLAYER.APK
+=============================
+
+- Modified default shortcut and widget layouts for Player version of GeeWiz
+
 TWWALLPAPERCHOOSER
 ==================
 
 - Added new default wallpaper from GeeWiz ROM as a selectable item
 
  
+VIDEOPLAYER-PLAYER.APK
+======================
+
+- Rename application to "Videos" for GeeWiz Player ROM
 

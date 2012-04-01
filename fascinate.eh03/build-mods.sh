@@ -134,6 +134,20 @@ zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
 rm -f -r Browser/build
 rm -f -r Browser/dist
 
+# BROWSER-PLAYER.APK
+echo
+echo BROWSER-PLAYER.APK
+echo
+apktool b Browser-Player
+rm Browser-Player/dist/Browser-Player.apk
+cp stock-apks/Browser-Player.apk Browser-Player/dist/
+pushd Browser-Player/build/apk
+zip -u ../../dist/Browser-Player.apk resources.arsc
+popd
+zipalign -f 4 Browser-Player/dist/Browser-Player.apk ./Browser-Player.apk
+rm -f -r Browser-Player/build
+rm -f -r Browser-Player/dist
+
 # BROWSEREH03.APK
 echo
 echo BROWSEREH03.APK
@@ -265,6 +279,21 @@ zipalign -f 4 MusicPlayer/dist/MusicPlayer.apk ./MusicPlayer.apk
 rm -f -r MusicPlayer/build
 rm -f -r MusicPlayer/dist
 
+# MUSICPLAYER-PLAYER.APK
+echo
+echo MUSICPLAYER-PLAYER.APK
+echo
+apktool b MusicPlayer-Player
+rm MusicPlayer-Player/dist/MusicPlayer-Player.apk
+cp stock-apks/MusicPlayer-Player.apk MusicPlayer-Player/dist/
+pushd MusicPlayer-Player/build/apk
+zip -u ../../dist/MusicPlayer-Player.apk classes.dex
+zip -u ../../dist/MusicPlayer-Player.apk resources.arsc
+popd
+zipalign -f 4 MusicPlayer-Player/dist/MusicPlayer-Player.apk ./MusicPlayer-Player.apk
+rm -f -r MusicPlayer-Player/build
+rm -f -r MusicPlayer-Player/dist
+
 # SETTINGS.APK
 echo
 echo SETTINGS.APK
@@ -326,6 +355,22 @@ zipalign -f 4 TouchWiz30Launcher/dist/TouchWiz30Launcher.apk ./TouchWiz30Launche
 rm -f -r TouchWiz30Launcher/build
 rm -f -r TouchWiz30Launcher/dist
 
+# TOUCHWIZ30LAUNCHER-PLAYER.APK
+echo
+echo TOUCHWIZ30LAUNCHER-PLAYER.APK
+echo
+apktool b TouchWiz30Launcher-Player
+rm TouchWiz30Launcher-Player/dist/TouchWiz30Launcher-Player.apk
+cp stock-apks/TouchWiz30Launcher-Player.apk TouchWiz30Launcher-Player/dist/
+pushd TouchWiz30Launcher-Player/build/apk
+zip -u ../../dist/TouchWiz30Launcher-Player.apk classes.dex
+zip -u ../../dist/TouchWiz30Launcher-Player.apk res/xml/default_topapplication.xml
+zip -u ../../dist/TouchWiz30Launcher-Player.apk res/xml/default_workspace.xml
+popd
+zipalign -f 4 TouchWiz30Launcher-Player/dist/TouchWiz30Launcher-Player.apk ./TouchWiz30Launcher-Player.apk
+rm -f -r TouchWiz30Launcher-Player/build
+rm -f -r TouchWiz30Launcher-Player/dist
+
 # TOUCHWIZ30LAUNCHEREH03.APK
 echo
 echo TOUCHWIZ30LAUNCHEREH03.APK
@@ -355,4 +400,18 @@ popd
 zipalign -f 4 TwWallpaperChooser/dist/TwWallpaperChooser.apk ./TwWallpaperChooser.apk
 rm -f -r TwWallpaperChooser/build
 rm -f -r TwWallpaperChooser/dist
+
+# VIDEOPLAYER-PLAYER.APK
+echo
+echo VIDEOPLAYER-PLAYER.APK
+echo
+apktool b VideoPlayer-Player
+rm VideoPlayer-Player/dist/VideoPlayer-Player.apk
+cp stock-apks/VideoPlayer-Player.apk VideoPlayer-Player/dist/
+pushd VideoPlayer-Player/build/apk
+zip -u ../../dist/VideoPlayer-Player.apk resources.arsc
+popd
+zipalign -f 4 VideoPlayer-Player/dist/VideoPlayer-Player.apk ./VideoPlayer-Player.apk
+rm -f -r VideoPlayer-Player/build
+rm -f -r VideoPlayer-Player/dist
 

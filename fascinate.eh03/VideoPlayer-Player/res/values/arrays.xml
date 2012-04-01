@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="repeat_sub_menu">
+        <item>@string/menu_repeat_all</item>
+        <item>@string/menu_repeat_one</item>
+        <item>@string/menu_repeat_off</item>
+    </array>
+    <array name="setting_sub_menu">
+        <item>@string/repeat</item>
+        <item>@string/bright</item>
+        <item>@string/colortone</item>
+        <item>@string/outdoor</item>
+    </array>
+    <array name="setting_sub_menu_no_mdnie">
+        <item>@string/repeat</item>
+        <item>@string/bright</item>
+    </array>
+    <array name="list_by_menu">
+        <item>@string/list_by_size</item>
+        <item>@string/list_by_name</item>
+        <item>@string/list_by_date</item>
+        <item>@string/list_by_type</item>
+    </array>
+    <array name="outdoor_visibility">
+        <item>@string/on</item>
+        <item>@string/off</item>
+    </array>
+    <array name="color_tone">
+        <item>@string/normal</item>
+        <item>@string/warm</item>
+        <item>@string/cold</item>
+    </array>
+    <array name="subtitle_setting_size">
+        <item>@string/video_subtitle_size_large</item>
+        <item>@string/video_subtitle_size_medium</item>
+        <item>@string/video_subtitle_size_small</item>
+    </array>
+    <array name="subtitle_setting_color">
+        <item>@string/video_subtitle_color_white</item>
+        <item>@string/video_subtitle_color_black</item>
+        <item>@string/video_subtitle_color_blue</item>
+        <item>@string/video_subtitle_color_red</item>
+        <item>@string/video_subtitle_color_green</item>
+    </array>
+</resources>

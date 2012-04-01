@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topapps
+  xmlns:launcher="http://schemas.android.com/apk/res/com.sec.android.app.twlauncher">
+    <topapp launcher:className="com.android.music.list.activity.MpMainTabActivity" launcher:packageName="com.android.music" />
+    <topapp launcher:className="com.sec.android.app.videoplayer.activity.VideoList" launcher:packageName="com.sec.android.app.videoplayer" />
+    <topapp launcher:className="com.android.browser.BrowserActivity" launcher:packageName="com.android.browser" />
+</topapps>

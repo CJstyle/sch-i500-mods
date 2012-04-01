@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/EffectTilteLayout" android:background="@drawable/winset_title_bg" android:layout_width="fill_parent" android:layout_height="25.329987dip">
+        <TextView android:textSize="14.659973dip" android:typeface="sans" android:textStyle="bold" android:textColor="@drawable/list_item_large_text" android:gravity="center_vertical" android:id="@id/SettingsTitle" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="25.329987dip" android:layout_marginLeft="5.3299866dip" android:text="@string/effect" android:shadowColor="#00000000" android:shadowDx="-1.0" android:shadowDy="-1.0" android:shadowRadius="1.0" />
+    </LinearLayout>
+    <com.nemustech.tiffany.widget.TFScrollView android:scrollbarSize="6.0dip" android:scrollbarThumbVertical="@drawable/winset_scroll_bg" android:id="@id/SettingsScrollView" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sec.android.touchwiz.widget.TwRadioGroup android:orientation="vertical" android:id="@id/radio_group1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+          xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:ellipsize="marquee" android:id="@id/Effect_radio1" android:layout_width="fill_parent" android:layout_height="65.32999dip" android:text="@string/normal" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:ellipsize="marquee" android:id="@id/Effect_radio2" android:layout_width="fill_parent" android:layout_height="65.32999dip" android:text="@string/wide" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:ellipsize="marquee" android:id="@id/Effect_radio3" android:layout_width="fill_parent" android:layout_height="65.32999dip" android:text="@string/concert_hall" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:ellipsize="marquee" android:id="@id/Effect_radio4" android:layout_width="fill_parent" android:layout_height="65.32999dip" android:text="@string/music_clarity" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:ellipsize="marquee" android:id="@id/Effect_radio5" android:layout_width="fill_parent" android:layout_height="65.32999dip" android:text="@string/bass_enhancement" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+            <com.sec.android.touchwiz.widget.TwRadioButton android:ellipsize="marquee" android:id="@id/Effect_radio6" android:layout_width="fill_parent" android:layout_height="65.32999dip" android:text="@string/externalization" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            <View android:id="@id/divider1" android:background="@color/darkgray" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+        </com.sec.android.touchwiz.widget.TwRadioGroup>
+    </com.nemustech.tiffany.widget.TFScrollView>
+</LinearLayout>

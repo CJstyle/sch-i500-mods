@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/LinearLayout01" android:background="@drawable/status_bar_header_background" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <RelativeLayout android:id="@id/RelativeLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/ThumnailTwoLineTitleImag" android:layout_width="53.329987dip" android:layout_height="53.329987dip" android:layout_marginLeft="6.659973dip" android:layout_marginTop="4.659973dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="6.0dip" android:scaleType="centerCrop" />
+            <RelativeLayout android:id="@id/ThumnailTwoLineFolderTitleLayout" android:visibility="invisible" android:layout_width="64.0dip" android:layout_height="52.0dip" android:layout_marginLeft="5.3299866dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="3.3299866dip">
+                <ImageView android:id="@id/ThumnailTwoLineFolderTitleImageView" android:layout_width="42.659973dip" android:layout_height="30.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="12.329987dip" android:scaleType="centerCrop" />
+                <ImageView android:id="@id/ImageView01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/myfiles_folder_music_thumb_list" android:scaleType="fitXY" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout03" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip">
+                <TextView android:textSize="21.329987sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:layout_gravity="top" android:id="@id/ThumnailTwoLineTitleMainText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginRight="6.659973dip" android:maxLines="1" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            </LinearLayout>
+            <LinearLayout android:gravity="bottom" android:id="@id/LinearLayout04" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="7.0dip">
+                <TextView android:textSize="14.659973sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:gravity="bottom|left|center" android:layout_gravity="bottom" android:id="@id/ThumnailTwoLineTitleSubText" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.3299866dip" android:layout_marginRight="6.659973dip" android:layout_marginBottom="9.0dip" android:text="@id/TextView02" android:maxLines="1" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/SVFrameLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.sec.android.touchwiz.widget.TwIndexScrollView android:id="@id/indexScrollView" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twIndexViewHandlePosition="right"
+              xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

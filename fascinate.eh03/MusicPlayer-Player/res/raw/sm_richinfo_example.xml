@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SM_RichInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SM_RichInfo_Schema.xsd">
+  <Track>
+    <TrackID>T   909338</TrackID>
+    <Title>Let It Be</Title>
+    <GenreDesc>Rock</GenreDesc>
+    <PlayLength>243</PlayLength>
+    <IsPick>true</IsPick>
+    <ISRC />
+    <Composers>
+      <Composer>
+        <ID>P     4744</ID>
+        <Name>John Lennon</Name>
+      </Composer>
+      <Composer>
+        <ID>P     4865</ID>
+        <Name>Paul McCartney</Name>
+      </Composer>
+    </Composers>
+    <Performers>
+      <PerformerSimpleInfo>
+        <ID>P     3644</ID>
+        <Name>The Beatles</Name>
+      </PerformerSimpleInfo>
+    </Performers>
+  </Track>
+  <Album>
+    <AlbumSimpleInfo>
+      <AlbumID>R     1497</AlbumID>
+      <Title>Past Masters, Vols. 1 &amp; 2</Title>
+      <Rating>9</Rating>
+      <Date>1988 03 zz</Date>
+      <Artist>
+        <ID>P     3644</ID>
+        <Name>The Beatles</Name>
+      </Artist>
+      <IsPick>false</IsPick>
+      <Artwork uri="amg/cov250/drn100/n144/n14446zhy8t.jpg">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</Artwork>
+    </AlbumSimpleInfo>
+    <GenreDesc>Rock</GenreDesc>
+    <Review>When EMI and Capitol released the Beatles' recordings on compact disc, it was decided to issue the albums in their original British formats in both the U.K. and the U.S. The British albums frequently did not contain singles released by the Beatles at the same time, and there were other odd tracks not included on any regular album. Thus, two discs were necessary to gather the stray material (some of which included their biggest hits). For the cassette and LP formats, Capitol combined the two volumes into this double release. ~ William Ruhlmann</Review>
+    <Copyright>09 EMI Records Ltd.</Copyright>
+    <Releases>
+      <Release>
+        <Media>CD</Media>
+        <Label>Capitol Records</Label>
+      </Release>
+      <Release>
+        <Media>CS</Media>
+        <Label>Capitol Records</Label>
+      </Release>
+      <Release>
+        <Media>LP</Media>
+        <Label>EMD Int'l</Label>
+      </Release>
+    </Releases>
+    <Credits>
+      <Credit>
+        <CreditID>D   651</CreditID>
+        <Role>Guitar</Role>
+        <PerformerSimpleInfo>
+          <ID>P     4444</ID>
+          <Name>George Harrison</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D  1618</CreditID>
+        <Role>Vocals</Role>
+        <PerformerSimpleInfo>
+          <ID>P     4444</ID>
+          <Name>George Harrison</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D   651</CreditID>
+        <Role>Guitar</Role>
+        <PerformerSimpleInfo>
+          <ID>P     4744</ID>
+          <Name>John Lennon</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D   654</CreditID>
+        <Role>Harmonica</Role>
+        <PerformerSimpleInfo>
+          <ID>P     4744</ID>
+          <Name>John Lennon</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D  1618</CreditID>
+        <Role>Vocals</Role>
+        <PerformerSimpleInfo>
+          <ID>P     4744</ID>
+          <Name>John Lennon</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D   734</CreditID>
+        <Role>Piano</Role>
+        <PerformerSimpleInfo>
+          <ID>P     4865</ID>
+          <Name>Paul McCartney</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D  1547</CreditID>
+        <Role>Guitar (Bass)</Role>
+        <PerformerSimpleInfo>
+          <ID>P     4865</ID>
+          <Name>Paul McCartney</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D  1618</CreditID>
+        <Role>Vocals</Role>
+        <PerformerSimpleInfo>
+          <ID>P     4865</ID>
+          <Name>Paul McCartney</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D  1531</CreditID>
+        <Role>Drums</Role>
+        <PerformerSimpleInfo>
+          <ID>P     5522</ID>
+          <Name>Ringo Starr</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+      <Credit>
+        <CreditID>D  1618</CreditID>
+        <Role>Vocals</Role>
+        <PerformerSimpleInfo>
+          <ID>P     5522</ID>
+          <Name>Ringo Starr</Name>
+        </PerformerSimpleInfo>
+      </Credit>
+    </Credits>
+    <Discs>
+      <Disc>
+        <TotalRunningTime>2538</TotalRunningTime>
+        <CurrentMediaNumber>1</CurrentMediaNumber>
+        <Tracks>
+          <Track>
+            <TrackID>T 14296034</TrackID>
+            <Title>Love Me Do</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>145</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1685038</ID>
+                <Name>McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296035</TrackID>
+            <Title>From Me to You</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>117</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296036</TrackID>
+            <Title>Thank You Girl</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>123</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296037</TrackID>
+            <Title>She Loves You</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>141</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296038</TrackID>
+            <Title>I'll Get You</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>126</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296039</TrackID>
+            <Title>I Want to Hold Your Hand</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>146</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296040</TrackID>
+            <Title>This Boy</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>136</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296041</TrackID>
+            <Title>Komm, Gib Mir Deine Hand</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>145</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296042</TrackID>
+            <Title>Sie Liebt Dich</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>139</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296043</TrackID>
+            <Title>Long Tall Sally</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>122</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4765</ID>
+                <Name>Little Richard</Name>
+              </Composer>
+              <Composer>
+                <ID>P   190990</ID>
+                <Name>Richard Wayne Penniman</Name>
+              </Composer>
+              <Composer>
+                <ID>P   306104</ID>
+                <Name>Robert "Bumps" Blackwell</Name>
+              </Composer>
+              <Composer>
+                <ID>P   306206</ID>
+                <Name>Enotris Johnson</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1959079</ID>
+                <Name>Robert Blackwell</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296044</TrackID>
+            <Title>I Call Your Name</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>128</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296045</TrackID>
+            <Title>Slow Down</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>176</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     5831</ID>
+                <Name>Larry Williams</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296046</TrackID>
+            <Title>Matchbox</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>118</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     5129</ID>
+                <Name>Carl Perkins</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296047</TrackID>
+            <Title>I Feel Fine</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>139</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296048</TrackID>
+            <Title>She's a Woman</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>182</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296049</TrackID>
+            <Title>Bad Boy</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>140</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P      371</ID>
+                <Name>John Lee Hooker</Name>
+              </Composer>
+              <Composer>
+                <ID>P     5831</ID>
+                <Name>Larry Williams</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296050</TrackID>
+            <Title>Yes It Is</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>162</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296051</TrackID>
+            <Title>I'm Down</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>153</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+        </Tracks>
+      </Disc>
+      <Disc>
+        <TotalRunningTime>3051</TotalRunningTime>
+        <CurrentMediaNumber>2</CurrentMediaNumber>
+        <Tracks>
+          <Track>
+            <TrackID>T 14296052</TrackID>
+            <Title>Day Tripper</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>169</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296053</TrackID>
+            <Title>We Can Work It Out</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>135</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296054</TrackID>
+            <Title>Paperback Writer</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>138</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296055</TrackID>
+            <Title>Rain</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>181</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296056</TrackID>
+            <Title>Lady Madonna</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>137</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296057</TrackID>
+            <Title>The Inner Light</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>156</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4444</ID>
+                <Name>George Harrison</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296058</TrackID>
+            <Title>Hey Jude</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>429</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296059</TrackID>
+            <Title>Revolution</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>204</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296060</TrackID>
+            <Title>Get Back</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>191</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+              <PerformerSimpleInfo>
+                <ID>P     5176</ID>
+                <Name>Billy Preston</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296061</TrackID>
+            <Title>Don't Let Me Down</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>215</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+              <PerformerSimpleInfo>
+                <ID>P     5176</ID>
+                <Name>Billy Preston</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296062</TrackID>
+            <Title>The Ballad of John and Yoko</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>179</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296063</TrackID>
+            <Title>Old Brown Shoe</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>198</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4444</ID>
+                <Name>George Harrison</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296064</TrackID>
+            <Title>Across the Universe</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>229</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296065</TrackID>
+            <Title>Let It Be</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>231</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+          <Track>
+            <TrackID>T 14296066</TrackID>
+            <Title>You Know My Name (Look Up the Number)</Title>
+            <GenreDesc>Rock</GenreDesc>
+            <PlayLength>259</PlayLength>
+            <IsPick>false</IsPick>
+            <ISRC />
+            <Composers>
+              <Composer>
+                <ID>P     4744</ID>
+                <Name>John Lennon</Name>
+              </Composer>
+              <Composer>
+                <ID>P     4865</ID>
+                <Name>Paul McCartney</Name>
+              </Composer>
+              <Composer>
+                <ID>P  1875209</ID>
+                <Name>Lennon &amp; McCartney</Name>
+              </Composer>
+            </Composers>
+            <Performers>
+              <PerformerSimpleInfo>
+                <ID>P     3644</ID>
+                <Name>The Beatles</Name>
+              </PerformerSimpleInfo>
+            </Performers>
+          </Track>
+        </Tracks>
+      </Disc>
+    </Discs>
+    <Styles>
+      <Style>
+        <StyleID>D   419</StyleID>
+        <Name>Contemporary Pop/Rock</Name>
+      </Style>
+      <Style>
+        <StyleID>D   379</StyleID>
+        <Name>British Invasion</Name>
+      </Style>
+      <Style>
+        <StyleID>D   380</StyleID>
+        <Name>Psychedelic</Name>
+      </Style>
+      <Style>
+        <StyleID>D   283</StyleID>
+        <Name>Early Pop/Rock</Name>
+      </Style>
+      <Style>
+        <StyleID>D   417</StyleID>
+        <Name>Folk-Rock</Name>
+      </Style>
+      <Style>
+        <StyleID>D    32</StyleID>
+        <Name>Rock &amp; Roll</Name>
+      </Style>
+      <Style>
+        <StyleID>D 11968</StyleID>
+        <Name>AM Pop</Name>
+      </Style>
+      <Style>
+        <StyleID>D 10980</StyleID>
+        <Name>British Psychedelia</Name>
+      </Style>
+      <Style>
+        <StyleID>D   407</StyleID>
+        <Name>Merseybeat</Name>
+      </Style>
+    </Styles>
+    <Tones />
+    <SimilarAlbums>
+      <SimilarAlbum>
+        <AlbumID>R   230538</AlbumID>
+        <Title>1969 [Original Soundtrack]</Title>
+        <Rating>6</Rating>
+        <Date />
+        <Artist>
+          <ID>MST</ID>
+          <Name>Soundtrack</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/dre900/e962/e96274vqal4.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R    21811</AlbumID>
+        <Title>Who's Better, Who's Best</Title>
+        <Rating>7</Rating>
+        <Date />
+        <Artist>
+          <ID>P     5822</ID>
+          <Name>The Who</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drg700/g789/g78948hxdrb.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R    16827</AlbumID>
+        <Title>Flowers</Title>
+        <Rating>8</Rating>
+        <Date />
+        <Artist>
+          <ID>P     5298</ID>
+          <Name>The Rolling Stones</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drf400/f451/f45188vbbno.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R   309446</AlbumID>
+        <Title>British Rock, Vol. 3-4</Title>
+        <Rating>5</Rating>
+        <Date />
+        <Artist>
+          <ID>VA</ID>
+          <Name>Various Artists</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drc800/c822/c82255o7sd4.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R   504898</AlbumID>
+        <Title>1</Title>
+        <Rating>9</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>true</IsPick>
+        <Artwork uri="amg/cov75/drn100/n143/n14351ra4ma.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R   318117</AlbumID>
+        <Title>Smashed Blocked!</Title>
+        <Rating>7</Rating>
+        <Date />
+        <Artist>
+          <ID>P    18542</ID>
+          <Name>John's Children</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drd200/d232/d23295c93sv.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R    20388</AlbumID>
+        <Title>Smiling Phases</Title>
+        <Rating>8</Rating>
+        <Date />
+        <Artist>
+          <ID>P     5681</ID>
+          <Name>Traffic</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drh400/h406/h40679vq2ri.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R    72471</AlbumID>
+        <Title>Troubadour: The Definitive Collection 1964-1976</Title>
+        <Rating>8</Rating>
+        <Date />
+        <Artist>
+          <ID>P     4117</ID>
+          <Name>Donovan</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drd800/d840/d84077n27f7.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R    18273</AlbumID>
+        <Title>Ogden's Nut Gone Flake</Title>
+        <Rating>9</Rating>
+        <Date />
+        <Artist>
+          <ID>P     5461</ID>
+          <Name>The Small Faces</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/dre400/e427/e42780x72ox.jpg" />
+      </SimilarAlbum>
+      <SimilarAlbum>
+        <AlbumID>R  1404716</AlbumID>
+        <Title>Into Something Good: The Mickie Most Years 1964-72</Title>
+        <Rating>8</Rating>
+        <Date />
+        <Artist>
+          <ID>P     4476</ID>
+          <Name>Herman's Hermits</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drl800/l870/l87034zmoj4.jpg" />
+      </SimilarAlbum>
+    </SimilarAlbums>
+    <Themes />
+  </Album>
+  <Performer>
+    <PerformerSimpleInfo>
+      <ID>P     3644</ID>
+      <Name>The Beatles</Name>
+    </PerformerSimpleInfo>
+    <Biography>So much has been said and written about the Beatles -- and their story is so mythic in its sweep -- that it's difficult to summarize their career without restating clichés that have already been digested by tens of millions of rock fans. To start with the obvious, they were the greatest and most influential act of the rock era, and introduced more innovations into popular music than any other rock band of the 20th century. Moreover, they were among the few artists of any discipline that were simultaneously the best at what they did and the most popular at what they did. Relentlessly imaginative and experimental, the Beatles grabbed a hold of the international mass consciousness in 1964 and never let go for the next six years, always staying ahead of the pack in terms of creativity but never losing their ability to communicate their increasingly sophisticated ideas to a mass audience. Their supremacy as rock icons remains unchallenged to this day, decades after their breakup in 1970. 
+Even when couching praise in specific terms, it's hard to convey the scope of the Beatles' achievements in a mere paragraph or two. They synthesized all that was good about early rock &amp; roll, and changed it into something original and even more exciting. They established the prototype for the self-contained rock group that wrote and performed its own material. As composers, their craft and melodic inventiveness were second to none, and key to the evolution of rock from its blues/R&amp;B-based forms into a style that was far more eclectic, but equally visceral. As singers, both John Lennon and Paul McCartney were among the best and most expressive vocalists in rock; the group's harmonies were intricate and exhilarating. As performers, they were (at least until touring had ground them down) exciting and photogenic; when they retreated into the studio, they were instrumental in pioneering advanced techniques and multi-layered arrangements. They were also the first British rock group to achieve worldwide prominence, launching a British Invasion that made rock truly an international phenomenon. 
+More than any other top group, the Beatles' success was very much a case of the whole being greater than the sum of its parts. Their phenomenal cohesion was due in large degree to most of the group having known each other and played together in Liverpool for about five years before they began to have hit records. Guitarist and teenage rebel John Lennon got hooked on rock &amp; roll  in the mid-'50s, and formed a band, the Quarrymen, at his high school. Around mid-1957, the Quarrymen were joined by another guitarist, Paul McCartney, nearly two years Lennon's junior. A bit later they were joined by another guitarist, George Harrison, a friend of McCartney. The Quarrymen would change lineups constantly in the late '50s, eventually reducing to the core trio of guitarists, who'd proven themselves to be the best musicians and most personally compatible individuals within the band. 
+The Quarrymen changed their name to the Silver Beatles in 1960, quickly dropping the "Silver" to become just the Beatles. Lennon's art college friend Stuart Sutcliffe joined on bass, but finding a permanent drummer was a vexing problem until Pete Best joined in the summer of 1960. He successfully auditioned for the combo just before they left for a several-month stint in Hamburg, Germany.
+Hamburg was the Beatles' baptism by fire. Playing grueling sessions for hours on end in one of the most notorious red-light districts in the world, the group was forced to expand its repertoire, tighten up its chops, and invest its show with enough manic energy to keep the rowdy crowds satisfied. When they returned to Liverpool at the end of 1960, the band -- formerly also-rans on the exploding Liverpudlian "beat" scene -- were suddenly the most exciting act on the local circuit. They consolidated their following in 1961 with constant gigging in the Merseyside area, most often at the legendary Cavern Club, the incubator of the Merseybeat sound.
+They also returned for engagements in Hamburg during 1961, although Sutcliffe dropped out of the band that year to concentrate on his art school studies there. McCartney took over on bass, Harrison settled in as lead guitarist, and Lennon had rhythm guitar; everyone sang. In mid-1961, the Beatles (minus Sutcliffe) made their first recordings in Germany, as a backup group to a British rock guitarist/singer based in Hamburg, Tony Sheridan. The Beatles hadn't fully developed at this point, and these recordings -- many of which (including a couple of Sheridan-less tracks) were issued only after the band's rise to fame -- found their talents in a most embryonic state. The Hamburg stint was also notable for gaining the Beatles sophisticated, artistic fans such as Sutcliffe's girlfriend, Astrid Kirchherr, who influenced all of them (except Best) to restyle their quiffs in the moptops that gave the musicians their most distinctive visual trademark. (Sutcliffe, tragically, would die of a brain hemorrhage in April 1962). 
+Near the end of 1961, the Beatles' exploding local popularity caught the attention of local record store manager Brian Epstein, who was soon managing the band as well. He used his contacts to swiftly acquire a January 1, 1962, audition at Decca Records that has been heavily bootlegged (some tracks were officially released in 1995). After weeks of deliberation, Decca turned them down as did several other British labels. Epstein's perseverance was finally rewarded with an audition for producer George Martin at Parlophone, an EMI subsidiary; Martin signed the Beatles in mid-1962. By this time, Epstein was assiduously grooming his charges for national success by influencing them to smarten up their appearance, dispensing with their leather jackets and trousers in favor of tailored suits and ties. 
+One more major change was in the offing before the Beatles made their Parlophone debut. In August 1962, drummer Pete Best was kicked out of the group, a controversial decision that has been the cause of much speculation since. There is still no solid consensus as to whether it was because of his solitary, moody nature; the other Beatles' jealousy of his popularity with the fans; his musical shortcomings (George Martin had already told Epstein that Best wasn't good enough to drum on recordings); or his refusal to wear his hair in bangs. What seems most likely was that the Beatles simply found his personality incompatible, preferring to enlist Ringo Starr (born Richard Starkey), a drummer with another popular Merseyside outfit, Rory Storm &amp; the Hurricanes. Starr had been in the Beatles for a few weeks when they recorded their first single, "Love Me Do"/"P.S. I Love You," in September 1962. Both sides of the 45 were Lennon-McCartney originals, and the songwriting team would be credited with most of the group's material throughout the Beatles' career. 
+The single, a promising but fairly rudimentary effort, hovered around the lower reaches of the British Top 20. The Beatles phenomenon didn't truly kick in until "Please Please Me," which topped the British charts in early 1963. This was the prototype British Invasion single: an infectious melody, charging guitars, and positively exuberant harmonies. The same traits were evident on their third 45, "From Me to You" (a British number one), and their debut LP, Please Please Me. Although it was mostly recorded in a single day, Please Please Me topped the British charts for an astonishing 30 weeks, establishing the group as the most popular rock &amp; roll act ever seen in the U.K. 
+What the Beatles had done was take the best elements of the rock and pop they loved and make them their own. Since the Quarrymen days, they had been steeped in the classic early rock of Elvis, Buddy Holly, Chuck Berry, Little Richard, Carl Perkins, and the Everly Brothers; they'd also kept an ear open to the early '60s sounds of Motown, Phil Spector, and the girl groups. What they added was an unmatched songwriting savvy (inspired by Brill Building teams such as Gerry Goffin and Carole King), a brash guitar-oriented attack, wildly enthusiastic vocals, and the embodiment of the youthful flair of their generation, ready to dispense with postwar austerity and claim a culture of their own. They were also unsurpassed in their eclecticism, willing to borrow from blues, popular standards, gospel, folk, or whatever seemed suitable for their musical vision. Producer George Martin was the perfect foil for the group, refining their ideas without tinkering with their cores; during the last half of their career, he was indispensable for his ability to translate their concepts into arrangements that required complex orchestration, innovative applications of recording technology, and an ever-widening array of instruments. 
+Just as crucially, the Beatles were never ones to stand still and milk formulas. All of their subsequent albums and singles would show remarkable artistic progression (though never at the expense of a damn catchy tune). Even on their second LP, With the Beatles (1963), it was evident that their talents as composers and instrumentalists were expanding furiously, as they devised ever more inventive melodies and harmonies, and boosted the fullness of their arrangements. "She Loves You" and "I Want to Hold Your Hand" established the group not just as a popular music act, but as a phenomenon never before seen in the British entertainment business, as each single sold over a million copies in the U.K. After some celebrated national TV appearances, Beatlemania broke out across the British Isles in late 1963, and the group generating screams and hysteria at all of their public appearances, musical or otherwise. 
+Capitol, which had first refusal of the Beatles' recordings in the United States, had declined to issue the group's first few singles, which ended up appearing on relatively small American independents. Capitol took up its option on "I Want to Hold Your Hand," which stormed to the top of the U.S. charts within weeks of its release on December 26, 1963. The Beatles' television appearances on The Ed Sullivan Show in February of 1964 launched Beatlemania (and the entire British Invasion) on an even bigger scale than it had reached in Britain. In the first week of April 1964, the Beatles had the Top Five best-selling singles in the U.S.; they also had the first two slots on the album charts, as well as other entries throughout the Billboard Top 100. No one had ever dominated the market for popular music so heavily; it's doubtful that anyone ever will again. The Beatles themselves would continue to reach number one with most of their singles and albums until their 1970 breakup. 
+Hard as it may be to believe today, the Beatles were often dismissed by cultural commentators of the time as nothing more than a fad that would vanish within months as the novelty wore off. The group ensured this wouldn't happen by making A Hard Day's Night in early 1964, a cinéma vérité-style motion picture comedy/musical that cemented their image as "the Fab Four": happy-go-lucky, individualistic, cheeky, funny lads with nonstop energy. The soundtrack was also a triumph, consisting entirely of Lennon-McCartney tunes, including such standards as the title tune, "And I Love Her," "If I Fell," "Can't Buy Me Love," and "Things We Said Today." George Harrison's resonant 12-string electric guitar leads were hugely influential; the movie helped persuade the Byrds, then folksingers, to plunge all out into rock &amp; roll, and the Beatles (along with Bob Dylan) would be hugely influential on the folk-rock explosion of 1965. The Beatles' success, too, had begun to open the U.S. market for fellow Brits like the Rolling Stones, the Animals, and the Kinks, and inspired young American groups like the Beau Brummels, Lovin' Spoonful, and others to mount a challenge of their own with self-penned material that owed a great debt to Lennon-McCartney. 
+Between riotous international tours in 1964 and 1965, the Beatles continued to squeeze out more chart-topping albums and singles. (Until 1967, the group's British albums were often truncated for release in the States; when their catalog was transferred to CD, the albums were released worldwide in their British configurations.) In retrospect, critics have judged Beatles for Sale (late 1964) and Help! (mid-1965) as the band's least impressive efforts. To some degree, that's true. Touring and an insatiable market placed heavy demands upon their songwriting, and some of the originals and covers on these records, while brilliant by many group's standards, were filler in the context of the Beatles' best work. 
+But when at the top of their game, the group was continuing to push forward. "I Feel Fine" had feedback and brilliant guitar leads; "Ticket to Ride" showed the band beginning to incorporate the ringing, metallic, circular guitar lines that would be appropriated by bands like the Byrds; "Help!" was their first burst of confessional lyricism; "Yesterday" employed a string quartet. John Lennon in particular was beginning to exhibit a Dylanesque influence in his songwriting on such folky, downbeat numbers as "I'm a Loser" and "You've Got to Hide Your Love Away." And tracks like "I Don't Want to Spoil the Party" and "I've Just Seen a Face" had a strong country flavor. 
+Although the Beatles' second film, Help!, was a much sillier and less sophisticated affair than their first feature, it too was a huge commercial success. By this time, though, the Beatles had nothing to prove in commercial terms; the remaining frontiers were artistic challenges that could only be met in the studio. They rose to the occasion at the end of 1965 with Rubber Soul, one of the classic folk-rock records. Lyrically, Lennon, McCartney, and even Harrison (who was now writing some tunes on his own) were evolving beyond boy-girl scenarios into complex, personal feelings. They were also pushing the limits of studio rock by devising new guitar and bass textures, experimenting with distortion and multi-tracking, and using unconventional (for rock) instruments like the sitar. 
+As much of a progression as Rubber Soul was relative to their previous records, it was but a taster for the boundary-shattering outings of the next few years. The "Paperback Writer"/"Rain" single found the group abandoning romantic themes entirely, boosting the bass to previously unknown levels, and fooling around with psychedelic imagery and backward tapes on the B-side. Drugs (psychedelic and otherwise) were fueling their already fertile imaginations, but they felt creatively hindered by their touring obligations. Revolver, released in the summer of 1966, proved what the group could be capable of when allotted months of time in the studio. Hazy hard guitars and thicker vocal arrangements formed the bed of these increasingly imagistic, ambitious lyrics; the group's eclecticism now encompassed everything from singalong novelties ("Yellow Submarine") and string quartet-backed character sketches ("Eleanor Rigby") to Indian-influenced swirls of echo and backward tapes ("Tomorrow Never Knows"). Some would complain that the Beatles had abandoned the earthy rock of their roots for clever mannerism. But Revolver, like virtually all of the group's singles and albums from "She Loves You" on, would be a worldwide chart-topper. 
+For the past couple of years, live performance had become a rote exercise for the group, tired of competing with thousands of screaming fans that drowned out most of their voices and instruments. A 1966 summer worldwide tour was particularly grueling: the group's entourage was physically attacked in the Philippines after a perceived snub of the country's first lady, and a casual remark by John Lennon about the Beatles being bigger than Jesus Christ was picked up in the States, resulting in the burning of Beatle records in the Bible belt and demands for a repentant apology. Their final concert of that American tour (in San Francisco on August 29, 1966) would be their last in front of a paying audience, as the group decided to stop playing live in order to concentrate on their studio recordings. 
+This was a radical (indeed, unprecedented) step in 1966, and the media was rife with speculation that the act was breaking up, especially after all four spent late 1966 engaged in separate personal and artistic pursuits. The appearance of the "Penny Lane"/"Strawberry Fields Forever" single in February 1967 squelched these concerns. Frequently cited as the strongest double A-side ever, the Beatles were now pushing forward into unabashedly psychedelic territory in their use of orchestral arrangements and Mellotron, without abandoning their grasp of memorable melody and immediately accessible lyrical messages. 
+Sgt. Pepper, released in June 1967 as the Summer of Love dawned, was the definitive psychedelic soundtrack. Or, at least, so it was perceived at the time: subsequent critics have painted the album as an uneven affair, given a conceptual unity via its brilliant multi-tracked overdubs, singalong melodies, and fairy tale-ish lyrics. Others remain convinced, as millions did at the time, that it represented pop's greatest triumph, or indeed an evolution of pop into art with a capital A. In addition to mining all manner of roots influences, the musicians were also picking up vibes from Indian music, avant-garde electronics, classical, music hall, and more. When the Beatles premiered their hippie anthem "All You Need Is Love" as part of a worldwide TV broadcast, they had been truly anointed as spokespersons for their generation (a role they had not actively sought), and it seemed they could do no wrong. 
+Musically, that would usually continue to be the case, but the group's strength began to unravel at a surprisingly quick pace. In August 1967, Brian Epstein -- prone to suicidal depression over the past year -- died of a drug overdose, leaving them without a manager. They pressed on with their next film project, Magical Mystery Tour, directed by themselves; lacking focus or even basic professionalism, the picture bombed when it was premiered on BBC television in December 1967, giving the media the first real chance they'd ever had to roast the Beatles over a flame. (Another film, the animated feature Yellow Submarine, would appear in 1968, although the Beatles had little involvement with the project, either in terms of the movie or the soundtrack.) In early 1968, the Beatles decamped to India for a course in transcendental meditation with the Maharishi; this too became something of a media embarrassment as each of the four would eventually depart the course before its completion. 
+The Beatles did use their unaccustomed peace in India to compose a wealth of new material. Judged solely on musical merit, The White Album, a double LP released in late 1968, was a triumph. While largely abandoning their psychedelic instruments to return to guitar-based rock, they maintained their whimsical eclecticism, proving themselves masters of everything from blues-rock to vaudeville. As individual songwriters, too, it contains some of their finest work (as does the brilliant non-LP single from this era, "Hey Jude"/"Revolution"). 
+The problem, at least in terms of the group's long-term health, was that these were very much individual songs, as opposed to collective ones. Lennon and McCartney had long composed most of their tunes separately (you can almost always tell the composer by the lead vocalist). But they had always fed off of each other not only to supply missing bits and pieces that would bring a song to completion, but to provide a competitive edge that would bring out the best in the other. McCartney's romantic melodicism and Lennon's more acidic, gritty wit were perfect complements for one another. By The White Album, it was clear (if only in retrospect) that each member was more concerned with his own expression than that of the collective group: a natural impulse, but one that was bound to lead to difficulties. 
+In addition, George Harrison was becoming a more prolific and skilled composer as well, imbuing his own melodies (which were nearly the equal of those of his more celebrated colleagues) with a cosmic lightness. Harrison was beginning to resent his junior status, and the group began to bicker more openly in the studio. Ringo Starr, whose solid drumming and good nature could usually be counted upon (as was evident in his infrequent lead vocals), actually quit for a couple of weeks in the midst of the White Album sessions (though the media was unaware of this at the time). Personal interests were coming into play as well: Lennon's devotion to romantic and artistic pursuits with his new girlfriend (and soon-to-be wife) Yoko Ono was diverting his attentions from the Beatles. Apple Records, started by the group earlier in 1968 as a sort of utopian commercial enterprise, was becoming a financial and organizational nightmare. 
+These weren't the ideal conditions under which to record a new album in January 1969, especially when McCartney was pushing the group to return to live performing, although none of the others seemed especially keen on the idea. They did agree to try and record a "back-to-basics," live-in-the-studio-type LP, the sessions being filmed for a television special. That plan almost blew up when Harrison, in the midst of tense arguments, left the group for a few days. Although he returned, the idea of playing live concerts was put on the back burner; Harrison enlisted American soul keyboardist Billy Preston as kind of a fifth member on the sessions, both to beef up the arrangements and to alleviate the uncomfortable atmosphere. Exacerbating the problem was that the Beatles didn't have a great deal of first-class new songs to work with, although some were excellent. In order to provide a suitable concert-like experience for the film, the group did climb the roof of their Apple headquarters in London to deliver an impromptu performance on January 30, 1969, before the police stopped it; this was their last live concert of any sort. 
+Generally dissatisfied with these early-1969 sessions, the album and film -- at first titled Get Back, and later to emerge as Let It Be -- remained in the can as the group tried to figure out how the projects should be mixed, packaged, and distributed. A couple of the best tracks, "Get Back"/"Don't Let Me Down," were issued as a single in the spring of 1969. By this time, the Beatles' quarrels were intensifying in a dispute over management: McCartney wanted their affairs to be handled by his new father-in-law, Lee Eastman, while the other members of the group favored a tough American businessman, Allen Klein. 
+It was something of a miracle, then, that the final album recorded by the group, Abbey Road, was one of their most unified efforts (even if, by this time, the musicians were recording many of their parts separately). It certainly boasted some of their most intricate melodies, harmonies, and instrumental arrangements; it also heralded the arrival of Harrison as a composer of equal talent to Lennon and McCartney, as George wrote the album's two most popular tunes, "Something" and "Here Comes the Sun." The Beatles were still progressing, but it turned out to be the end of the road, as their business disputes continued to magnify. Lennon, who had begun releasing solo singles and performing with friends as the Plastic Ono Band, threatened to resign in late 1969, although he was dissuaded from making a public announcement. 
+Most of the early-1969 tapes remained unreleased, partially because the footage for the planned television broadcast of these sessions was now going to be produced as a documentary movie. The accompanying soundtrack album, Let It Be, was delayed so that its release could coincide with that of the film. Lennon, Harrison, and Allen Klein decided to have celebrated American producer Phil Spector record some additional instrumentation and do some mixing. Thus the confusion that persists among most rock listeners to this day: Let It Be, although the last Beatles album to be released, was not the last one to be recorded. Abbey Road should actually be considered as the Beatles' last album; most of the material on Let It Be, including the title track (which would be the last single released while the group was still together), was recorded several months before the Abbey Road sessions began in earnest, and a good 15 months or so before its May 1970 release. 
+By that time, the Beatles were no more. In fact, there had been no recording done by the group as a unit since August 1969, and each member of the band had begun to pursue serious outside professional interests independently via the Plastic Ono Band, Harrison's tour with Delaney &amp; Bonnie, Starr's starring role in the Magic Christian film, or McCartney's first solo album. The outside world for the most part remained almost wholly unaware of the seriousness of the group's friction, making it a devastating shock for much of the world's youth when McCartney announced that he was leaving the Beatles on April 10, 1970. (The "announcement" was actually contained in a press release for his new album, in which his declaration of his intention to work on his own effectively served as a notice of his departure.) 
+The final blow, apparently, was the conflict between the release dates of Let It Be and McCartney's debut solo album. The rest of the group asked McCartney to delay his release until after Let It Be; McCartney refused and, for good measure, was distressed by Spector's post-production work on Let It Be, particularly the string overdubs on "The Long and Winding Road," which became a posthumous Beatles single that spring. Although McCartney received much of the blame for the split, it should be remembered that he had done more than any other member to keep the group going since Epstein's death, and that each of the other Beatles had threatened to leave well before McCartney's departure. With hindsight, the breakup seemed inevitable in view of their serious business disagreements and the growth of their individual interests. 
+As bitter as the initial headlines were to swallow, the feuding would grow much worse over the next few years. At the end of 1970, McCartney sued the rest of the Beatles in order to dissolve their partnership; the battle dragged through the courts for years, scotching any prospects of a group reunion. In any case, each member of the band quickly established a viable solo career. In fact, at the outset it could have been argued that the artistic effects of the split were in some ways beneficial, freeing Lennon and Harrison to make their most uncompromising artistic statements (Plastic Ono Band and All Things Must Pass). George's individual talents in particular received acclaim that had always eluded him when he was overshadowed by Lennon-McCartney. Paul had a much rougher time with the critics, but continued to issue a stream of hit singles, hitting a commercial and critical jackpot at the end of 1973 with the massively successful Band on the Run. Ringo did not have the songwriting acumen to compete on the same level as the others, yet he too had quite a few big hit singles in the early '70s, often benefiting from the assistance of his former bandmates. 
+Yet within a short time, it became apparent both that the Beatles were not going to settle their differences and reunite, and that their solo work could not compare with what they were capable of creating together. The stereotype has it that the split allowed each of them to indulge in their worst tendencies to their extremes: Lennon in agitprop, Harrison in holier-than-thou mysticism, McCartney in cutesy pop, Starr in easy listening rock. There's a good deal of truth in this, but it's also important to bear in mind that what was most missing was a sense of group interaction. The critical party line often champions Lennon as the angry, realist rocker, and McCartney as the melodic balladeer, but this is a fallacy: each of them was capable, in roughly equal measures, of ballsy all-out rock and sweet romanticism. What is not in dispute is that they sparked each other to reach heights that they could not attain on their own. 
+Despite periodic rumors of reunions throughout the 1970s, no group projects came close to materializing. It should be added that the Beatles themselves continued to feud to some degree, and from all evidence weren't seriously interested in working together as a unit. Any hopes of a reunion vanished when Lennon was assassinated in New York City in December 1980. The Beatles continued their solo careers throughout the 1980s, but their releases became less frequent, and their commercial success gradually diminished as listeners without first-hand memories of the combo created their own idols. 
+The popularity of the Beatles-as-unit, however, proved eternal. In part, this is because the group's 1970 split effectively short-circuited the prospects of artistic decline; the body of work that was preserved was uniformly strong. However, it's also because, like any great works of art, the Beatles' records carried an ageless magnificence that continues to captivate new generations of listeners. So it is that Beatles records continue to be heard on radio in heavy rotation, continue to sell in massive quantities, and continue to be covered and quoted by rock and pop artists through the present day. 
+Legal wrangles at Apple prevented the official issue of previously unreleased Beatle material for over two decades (although much of it was frequently bootlegged). The situation finally changed in the 1990s, after McCartney, Harrison, Starr, and Lennon's widow, Yoko Ono, settled their principal business disagreements. In 1994, this resulted in a double CD of BBC sessions from the early and mid-'60s. The following year, a much more ambitious project was undertaken: a multi-part film documentary, broadcast on network television in 1995, and then released (with double the length) for the home video market in 1996, with the active participation of the surviving Beatles. 
+To coincide with the Anthology documentary, three double CDs of previously unreleased/rare material were issued in 1995 and 1996. Additionally, McCartney, Harrison, and Starr (with some assistance from Jeff Lynne) embellished a couple of John Lennon demos from the 1970s with overdubs to create two new tracks ("Free as a Bird" and "Real Love") that were billed as actual Beatles recordings. Whether this constitutes the actual long-awaited "reunion" is the subject of much debate. Certainly these cuts were hardly classics on par with the music the group made in the 1960s. Some fans, even diehards, were inclined to view the whole Anthology project as a distinctly 1990s marketing exercise that maximized the mileage of whatever could be squeezed from the Beatles' vaults. If nothing else, though, the massive commercial success of outtakes that had, after all, been recorded 25 to 30 years ago, spoke volumes about the unabated appeal and fascination the Beatles continue to exert worldwide. ~ Richie Unterberger</Biography>
+    <Albums>
+      <AlbumSimpleInfo>
+        <AlbumID>R  1488831</AlbumID>
+        <Title>Karaoke Station</Title>
+        <Rating>0</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drn300/n306/n30649s48pl.jpg">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</Artwork>
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1498</AlbumID>
+        <Title>Live at Star Club 1962, Vol. 1</Title>
+        <Rating>1</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drc000/c007/c00794333xw.jpg">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</Artwork>
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1499</AlbumID>
+        <Title>Live at Star Club 1962, Vol. 2</Title>
+        <Rating>1</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drc000/c007/c00795v6qyj.jpg">/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABLAEsDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwChZWVo9hbs1tCzGJSSYxknAqb7BZ/8+kH/AH7FOsP+Qda/9ck/kK1JdI1CCJpJLSRUVQ5PBwp78dvevDnKbk7XPuqUKKpx5ktUuxk/YLP/AJ9IP+/Yp8Wl2sz7Bb2q8Zy6gD+VaMek6hNGkkVpKySfcYAYb6VHDZztLN+5c/ZgZJgMAqAQD+tK8/M0caDTtb8CObw1FCzK0dhlHWNsYOCWK+nqDUZ8OxgsDBZjbK8XOBll6gcVt2kl1d3V7PY2tyxnnRvkdcg7i233zz+VTLFc3LzWos7oLczSXJiEkfzocDGSexHatNXs2cjai7SUfwOPNlaf8+0P/fAppsrX/n2h/wC+BWilncTXX2WKIyT5I2JgkkemOtFxp93bRLLPbukZbaGOME+nFY80/M7/AGdC9rK/yM77Fa5/49ov++BXO6pGkWoyoihVGMADA6Cuyl028ghM0ts6RqRuJx8uemR1H41x+sf8hWb/AID/AOgiuvBOXtGn2PHzuNNYZOCXxdPRnV6f/wAg61/65L/IV28MYlmit443imn0hVN0QSEUISQRjABxjNcNYf8AIOtv+uS/yFXWu7hkKNcTFD1UyEg/hWHPyyZ2+xdWlCztp/X/AAxsp5P9gWHnW8kjF7nySn8LELtOMc/NjvVvT4m02RH1ITK11dNHKBCX8xQCrDI9WYnv92uSv/EraHZxzXWpXMEO8RRhGc4OCeAOg4rPh8X6XfSIE1gPI7/Krs4JYn3HXNXFSspKLMajppulOolvfXXXXrsdlo9lc2fi+20+RXPk3e4rtPbI3fTHf3qLw8s8niK0heOQrF5pVCh+UFWJ4x3NYB1ONLl0/tGIXC/KwF0u4e3XPpUyzXTFpkknY4AaRWY8e5FRdxto9zo5VUTtNO6t89dfxNXQLC4h1fTLiWGSOM3aRAMhBJxnjI9KryRsnlPY20kUMU0ausvIabc23PAzxxU9rDLJbpcz39yHG7y0E+GztbGCTx0/UetJBI11bJ589xPiSUOsk4ZUwvykAnhuuCKSWlhObc3Ju/T8/vH3kS3cOrXMcM9ncRsGu4nO6NyX6KSMg7uQDnvzXnGsf8hWb/gP/oIr0LUYHGneZJqlxcYYFY3fcBnHXn73Nee6x/yFJv8AgP8A6CK6sJ/Ffp+p5ma2+pqz+0vyfc6mx/5B1t/1yX+Qqc1Nodit5psHzsGVI8qFB+Ur16+uB+NTyWAit53eVWaPaVMZ3K2WKnn1BFck4u7Z61GrBQjHrZfiedfEqYrp+mw/35ZXP4BR/U1j6C2p6nphg0+xR7y0ZVt5orVGdixPysSvGAGYPnjGPTHpmqaBpWq6XDLfQGWRHKRhiV4PLbcHOBhck+uO1ZOl6Tpum3SyaVcTRvA5ZokuPMjyVKkOjZBypI57Gu6liIQgos8PGZbXr15VIWs3+RyNvpUl+9hpM+mRTardp5KTOGjFsqErvchsNtRd2cAbcH5q2tbn1rSNJstQ8MapJbaTDkW1pakhvKIKieYYwWkKuTuBwAB0xW3qNqdR0t9OsrqLT7YK0LrZ26bipILRlydwXIGVBA9qcsmtQLEI7zTZDEgjj32bIFTCDbhH2nPlpnIzgY6EitliaT6nDLKsWvsfijyzS5vEF5qMWn2F1efaHJCx+cVAAGSTk4AABJJ4AFbGoXnifSbRbw6xbXdqXEYmhljmUvgkryM5AHPHceordhtNbj1GQajdWWptcQzJM7S+XdSxyLsP71kJwOMA5A6Y5q0llaRaZHZS+F5plgXEKfbIZV3FmLsSdpBOU5xz5ajgZquelLqjNUMZT2Ul95haX4j11tX060voIQl3tdS0AVmjOfmGMehrR1b/AJCc3/Af/QRUl7Ab/wAdWN9b6Rc2tvDGUeaSHYG2hhGNoZgu1NidedueM1Hq/wDyE5v+A/8AoIqIKCre72/U6Ksq0sDeq2/fW/ozrNOkePT7fY5XMKg4OMjA/wABV86jeFmY3MmWxk564OR+vNZ1j/yD7b/rkv8AIVPXlzb5mfU0YRlTjddESyXdxLEIpJ5GjByELcDnP8yaxoWnhvrlRZzFZrgESHAULsAJ656j0rTNIaSl3NXTTtbSxjWsd39huY9lxHMs7yxNIcb13ZAJB5yODn1qK5h1J7WIxyTxmR3eQL87xgj5FHI4HfB6+1blNPNP2mt7EfV1a12U4YN2pWzzK24QeW8+0YGWXPGevBOK6mOWyiDIt7p7rsEf7y1f5gDnJ96wDSGlz2Klh1Lr+R0sc+neb+/k0vC9Nlu2D7cdOv6V5vr6Rx65dJFIJI1YBXAxuGBzXRZrmdX/AOQpN/wH/wBBFdeCnzVHp0/yPFzqh7PDppt6r8mdTY/8g+1/65L/ACFWMVx0esX8UaxpPhVAUDYvAH4U/wDtzUf+fj/xxf8ACnLBVG27oKed4eMFFp6en+Z1uKQ1yX9uaj/z8f8Aji/4Uf23qP8Az8f+OL/hU/UandGn9vYb+WX3L/M6s001yv8AbWof8/H/AI4v+FH9tah/z3/8cX/Cj6jU7of9vYb+WX3L/M6g00iuZ/tm/wD+e/8A44v+FJ/bF/8A89//ABxf8KX1Cp3X9fIf9v4b+WX3L/M6auZ1f/kKTf8AAf8A0EUf2xff89//ABxf8KqzTSXErSytudupxiujDYadKblJrY87NM0o4uiqdNNNO+tuz8z/2Q==</Artwork>
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1500</AlbumID>
+        <Title>Beatles Talk Down Under</Title>
+        <Rating>3</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="" />
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1504</AlbumID>
+        <Title>Meet the Beatles!</Title>
+        <Rating>8</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="" />
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1505</AlbumID>
+        <Title>The Beatles' Second Album</Title>
+        <Rating>8</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drg100/g181/g18111ly719.jpg">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</Artwork>
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1507</AlbumID>
+        <Title>Something New</Title>
+        <Rating>6</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drg500/g510/g51055sojco.jpg">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</Artwork>
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1509</AlbumID>
+        <Title>Beatles VI</Title>
+        <Rating>6</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drg200/g281/g28169t6f67.jpg">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</Artwork>
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1510</AlbumID>
+        <Title>Sing a Song with the Beatles</Title>
+        <Rating>3</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="" />
+      </AlbumSimpleInfo>
+      <AlbumSimpleInfo>
+        <AlbumID>R     1511</AlbumID>
+        <Title>The Early Beatles</Title>
+        <Rating>6</Rating>
+        <Date />
+        <Artist>
+          <ID>P     3644</ID>
+          <Name>The Beatles</Name>
+        </Artist>
+        <IsPick>false</IsPick>
+        <Artwork uri="amg/cov75/drg200/g281/g28170y35wt.jpg">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</Artwork>
+      </AlbumSimpleInfo>
+    </Albums>
+    <SimilarArtists>
+      <SimilarArtist>
+        <ID>P     5461</ID>
+        <Name>The Small Faces</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P     4307</ID>
+        <Name>Freddie &amp; the Dreamers</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P     2140</ID>
+        <Name>P.F. Sloan</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P   198752</ID>
+        <Name>Kippington Lodge</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P     5385</ID>
+        <Name>The Searchers</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P     4359</ID>
+        <Name>Gerry &amp; the Pacemakers</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P     3860</ID>
+        <Name>Chad &amp; Jeremy</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P     5399</ID>
+        <Name>The Shadows</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P     4948</ID>
+        <Name>The Moody Blues</Name>
+      </SimilarArtist>
+      <SimilarArtist>
+        <ID>P     3580</ID>
+        <Name>The Association</Name>
+      </SimilarArtist>
+    </SimilarArtists>
+    <InfluenceArtists>
+      <InfluenceArtist>
+        <ID>P     5399</ID>
+        <Name>The Shadows</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P     4851</ID>
+        <Name>The Marvelettes</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P     5129</ID>
+        <Name>Carl Perkins</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P     8434</ID>
+        <Name>Lonnie Donegan</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P     3928</ID>
+        <Name>Eddie Cochran</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P     5175</ID>
+        <Name>Elvis Presley</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P    26999</ID>
+        <Name>Phil Spector</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P    24464</ID>
+        <Name>Little Willie John</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P     4147</ID>
+        <Name>Bob Dylan</Name>
+      </InfluenceArtist>
+      <InfluenceArtist>
+        <ID>P     5289</ID>
+        <Name>Smokey Robinson</Name>
+      </InfluenceArtist>
+    </InfluenceArtists>
+    <Followers>
+      <Follower>
+        <ID>PK    1231</ID>
+        <Name>송골매</Name>
+      </Follower>
+      <Follower>
+        <ID>PK    2287</ID>
+        <Name>장 연주</Name>
+      </Follower>
+      <Follower>
+        <ID>PK    2022</ID>
+        <Name>이 적</Name>
+      </Follower>
+      <Follower>
+        <ID>PR   44706</ID>
+        <Name>キュリオ</Name>
+      </Follower>
+      <Follower>
+        <ID>PR   23269</ID>
+        <Name>ゴダイゴ</Name>
+      </Follower>
+      <Follower>
+        <ID>PR   65830</ID>
+        <Name>シェイディードールズ</Name>
+      </Follower>
+      <Follower>
+        <ID>PR   26958</ID>
+        <Name>杉　真理</Name>
+      </Follower>
+      <Follower>
+        <ID>PR   33086</ID>
+        <Name>ザ・ブリリアント・グリーン</Name>
+      </Follower>
+      <Follower>
+        <ID>PR   98145</ID>
+        <Name>Buzz</Name>
+      </Follower>
+      <Follower>
+        <ID>PR   37568</ID>
+        <Name>西岡　恭蔵</Name>
+      </Follower>
+    </Followers>
+  </Performer>
+</SM_RichInfo>

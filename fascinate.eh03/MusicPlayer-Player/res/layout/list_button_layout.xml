@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/MiddleLayout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="0.9" />
+    <RelativeLayout android:gravity="center_horizontal" android:id="@id/TwoButtonLayout" android:background="@drawable/winset_softkey_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="59.329987dip">
+        <LinearLayout android:id="@id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.659973dip" android:layout_marginBottom="2.6599731dip">
+            <Button android:textSize="16.0sp" android:typeface="sans" android:textColor="@color/twcolor002" android:ellipsize="marquee" android:gravity="center" android:id="@id/Softkey1" android:background="@drawable/list_softkey_btn_selector" android:saveEnabled="false" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="3.3299866dip" android:singleLine="true" android:layout_weight="1.0" android:marqueeRepeatLimit="marquee_forever" />
+            <Button android:textSize="16.0sp" android:typeface="sans" android:textColor="@color/twcolor002" android:id="@id/Softkey2" android:background="@drawable/list_softkey_btn_selector" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginRight="3.3299866dip" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:id="@id/PlayButtonLayout" android:background="@drawable/music_play_controller_list_btn_bg_h" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="46.659973dip">
+        <com.android.music.common.util.IconTextButton android:gravity="center" android:layout_gravity="center" android:id="@id/PlayButton" android:background="@drawable/list_music_button_selector" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:focusable="false" android:clickable="true" android:layout_width="wrap_content" android:layout_height="36.0dip" android:minWidth="165.32999dip" />
+    </RelativeLayout>
+</LinearLayout>
