@@ -364,6 +364,7 @@ rm TouchWiz30Launcher-Player/dist/TouchWiz30Launcher-Player.apk
 cp stock-apks/TouchWiz30Launcher-Player.apk TouchWiz30Launcher-Player/dist/
 pushd TouchWiz30Launcher-Player/build/apk
 zip -u ../../dist/TouchWiz30Launcher-Player.apk classes.dex
+zip -u ../../dist/TouchWiz30Launcher-Player.apk resources.arsc
 zip -u ../../dist/TouchWiz30Launcher-Player.apk res/xml/default_topapplication.xml
 zip -u ../../dist/TouchWiz30Launcher-Player.apk res/xml/default_workspace.xml
 popd

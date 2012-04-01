@@ -71,7 +71,7 @@ BROWSER-PLAYER.APK
 
 - Set default home page to "about:blank"
 - Remove all default bookmarks
-- Change application name to "Internet" for Player version of GeeWiz
+- Change application name to "Internet" to match Galaxy Player
 
 BROWSEREH03.APK
 ===============
@@ -132,7 +132,7 @@ MUSICPLAYER-PLAYER.APK
 
 - Localize some strings for US English
 - Remove "Download from V cast?" prompt when no media exists
-- Rename application to "Music" for GeeWiz Player ROM
+- Rename application to "Music" to match Galaxy Player
 
 SETTINGS.APK
 ============
@@ -170,6 +170,7 @@ TOUCHWIZ30LAUNCHER-PLAYER.APK
 =============================
 
 - Modified default shortcut and widget layouts for Player version of GeeWiz
+- Renamed 'Applications' home screen button to 'Apps' to match Galaxy Player
 
 TWWALLPAPERCHOOSER
 ==================
@@ -180,5 +181,5 @@ TWWALLPAPERCHOOSER
 VIDEOPLAYER-PLAYER.APK
 ======================
 
-- Rename application to "Videos" for GeeWiz Player ROM
+- Rename application to "Videos" to match Galaxy Player
 
