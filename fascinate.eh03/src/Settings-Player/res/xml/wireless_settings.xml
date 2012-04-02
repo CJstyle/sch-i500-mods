@@ -4,22 +4,12 @@
     <PreferenceScreen android:title="@string/wifi_settings" android:key="wifi_settings" android:summary="@string/wifi_settings_summary">
         <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.wifi.WifiSettings" />
     </PreferenceScreen>
-    <PreferenceScreen android:title="@string/mobileap" android:key="mobileap_settings" android:summary="@string/mobileap_settings_summary">
-        <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.wifi.WifiApSettings" />
-    </PreferenceScreen>
     <PreferenceScreen android:title="@string/bluetooth_settings_title" android:key="bt_settings" android:summary="@string/bluetooth_settings_summary">
         <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.bluetooth.BluetoothSettings" />
-    </PreferenceScreen>
-    <CheckBoxPreference android:persistent="false" android:title="@string/airplane_mode" android:key="toggle_airplane" android:summary="@string/airplane_mode_summary" android:disableDependentsState="true" />
-    <PreferenceScreen android:title="@string/tether_settings_title_usb" android:key="tether_settings" android:summary="@string/tether_settings_summary_usb">
-        <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.TetherSettings" />
     </PreferenceScreen>
     <PreferenceScreen android:title="@string/vpn_settings_title" android:key="vpn_settings" android:summary="@string/vpn_settings_summary">
         <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.vpn.VpnSettings" />
     </PreferenceScreen>
     <CheckBoxPreference android:persistent="false" android:title="@string/nfc_quick_toggle_title" android:key="toggle_nfc" android:summary="@string/nfc_quick_toggle_summary" />
-    <PreferenceScreen android:title="@string/network_settings_title" android:key="mobile_networks" android:summary="@string/network_settings_summary" android:dependency="toggle_airplane">
-        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.Settings" />
-    </PreferenceScreen>
     <CheckBoxPreference android:persistent="false" android:title="@string/dun_title" android:key="button_dun_key" android:dependency="toggle_airplane" android:summaryOff="@string/dun_summary" />
 </PreferenceScreen>

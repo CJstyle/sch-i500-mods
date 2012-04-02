@@ -7,6 +7,7 @@ if [ ! -d "out" ]; then
 	mkdir out
 else
 	rm -fr out/
+	mkdir out
 fi
 
 # OUTPUT: Standard ROM

@@ -5,9 +5,6 @@
     <com.android.settings.IconPreferenceScreen android:title="@string/radio_controls_title" settings:icon="@drawable/ic_settings_wireless">
         <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.WirelessSettings" />
     </com.android.settings.IconPreferenceScreen>
-    <com.android.settings.IconPreferenceScreen android:title="@string/call_settings_title" android:key="call_settings" settings:icon="@drawable/ic_settings_call">
-        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.CallFeaturesSetting" />
-    </com.android.settings.IconPreferenceScreen>
     <com.android.settings.IconPreferenceScreen android:title="@string/sound_settings_title" settings:icon="@drawable/ic_settings_sound">
         <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.SoundSettings" />
     </com.android.settings.IconPreferenceScreen>
