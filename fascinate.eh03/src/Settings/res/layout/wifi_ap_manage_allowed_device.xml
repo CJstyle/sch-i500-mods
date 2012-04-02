@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/manage_allowed_devices"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:persistent="false" android:title="@string/allow_all_devices_to_connect" android:key="allow_all_devices_to_connect" />
+    <Preference android:persistent="false" android:title="@string/add_device" android:key="add_device" />
+    <PreferenceCategory android:title="@string/currently_allowed_device" android:key="device_list_category" />
+</PreferenceScreen>

@@ -146,6 +146,13 @@ SETTINGS.APK
 - Show full kernel version and mod/ROM version in About Phone (s0niqu3)
 - Modified to add Settings/Sound/Charge Activation boolean option
 
+SETTINGS-PLAYER.APK
+===================
+
+- Show full kernel version and mod/ROM version in About Phone (s0niqu3)
+- Modified to add Settings/Sound/Charge Activation boolean option
+- Remove 3G Mobile Hotspot tray icon
+
 SETTINGSPROVIDER.APK
 ====================
 
@@ -153,13 +160,12 @@ SETTINGSPROVIDER.APK
 - Change default USB mode to "Ask on connection" (4)
 - Modified to add Settings/Sound/Charge Activation boolean option
 
-SETTINGSPROVIDER.APK
-====================
+SETTINGSPROVIDER-PLAYER.APK
+===========================
 
 - Change default transition animation speed to 50% (Fast/0.5)
 - Change default USB mode to "Ask on connection" (4)
 - Modified to add Settings/Sound/Charge Activation boolean option
-- Change default wifi mode to ON
 - Change airplane mode and allowed location provider defaults to match Galaxy Player
 
 SYSTEMUI.APK

@@ -2,445 +2,182 @@
 
 PATH=$PATH:/opt/android-sdk-linux/tools/
 
+# Create output folders
+if [ ! -d "out" ]; then
+	mkdir out
+else
+	rm -fr out/
+fi
+
+# OUTPUT: Standard ROM
+if [ ! -d "out/rom" ]; then
+	mkdir out/rom
+fi
+if [ ! -d "out/rom/app" ]; then
+	mkdir out/rom/app
+fi
+if [ ! -d "out/rom/framework" ]; then
+	mkdir out/rom/framework
+fi
+
+# OUTPUT: Player ROM
+if [ ! -d "out/playerrom" ]; then
+	mkdir out/playerrom
+fi
+if [ ! -d "out/playerrom/app" ]; then
+	mkdir out/playerrom/app
+fi
+if [ ! -d "out/playerrom/framework" ]; then
+	mkdir out/playerrom/framework
+fi
+
+# OUTPUT: Extras
+if [ ! -d "out/extras" ]; then
+	mkdir out/extras
+fi
+if [ ! -d "out/extras/app" ]; then
+	mkdir out/extras/app
+fi
+if [ ! -d "out/extras/framework" ]; then
+	mkdir out/extras/framework
+fi
+
+# CLEAN APKTOOL FRAMEWORKS
 rm -f -r ~/apktool
 
 # FRAMEWORK-RES.APK
-echo
-echo FRAMEWORK-RES.APK
-echo
-apktool b framework-res
-rm framework-res/dist/framework-res.apk
-cp stock-apks/framework-res.apk framework-res/dist/
-pushd framework-res/build/apk
-zip -u ../../dist/framework-res.apk res/drawable/stat_sys_battery.xml
-zip -u ../../dist/framework-res.apk res/drawable/stat_sys_battery_charge.xml
-zip -u ../../dist/framework-res.apk res/drawable-hdpi/reboot.png
-zip -u ../../dist/framework-res.apk res/drawable-hdpi/recovery.png
-zip -u ../../dist/framework-res.apk res/drawable-hdpi/stat_sys_battery_*
-zip -u ../../dist/framework-res.apk res/layout/preference_information.xml
-zip -u ../../dist/framework-res.apk resources.arsc
-popd
-zipalign -f 4 framework-res/dist/framework-res.apk ./framework-res.apk
-rm -f -r framework-res/build
-rm -f -r framework-res/dist
+apktool b src/framework-res
+zipalign -f 4 src/framework-res/dist/framework-res.apk out/rom/framework/framework-res.apk
+zipalign -f 4 src/framework-res/dist/framework-res.apk out/playerrom/framework/framework-res.apk
 
-apktool if ./framework-res.apk
-apktool if ./stock-apks/twframework-res.apk
+# ** REGISTER UPDATED APKTOOL FRAMEWORKS **
+apktool if out/rom/framework/framework-res.apk
+apktool if stock-apks/twframework-res.apk
 
 # ANDROID.POLICY.JAR
-echo
-echo ANDROID.POLICY.JAR
-echo
-apktool b android.policy.jar.out
-rm android.policy.jar.out/dist/android.policy.jar
-cp stock-apks/android.policy.jar android.policy.jar.out/dist/
-pushd android.policy.jar.out/build/apk
-zip -u ../../dist/android.policy.jar classes.dex
-popd
-zipalign -f 4 android.policy.jar.out/dist/android.policy.jar ./android.policy.jar
-rm -f -r android.policy.jar.out/build
-rm -f -r android.policy.jar.out/dist
+apktool b src/android.policy.jar.out
+zipalign -f 4 src/android.policy.jar.out/dist/android.policy.jar out/rom/framework/android.policy.jar
+zipalign -f 4 src/android.policy.jar.out/dist/android.policy.jar out/playerrom/framework/android.policy.jar
 
 # FRAMEWORK.JAR
-echo
-echo FRAMEWORK.JAR
-echo
-apktool b framework.jar.out
-rm framework.jar.out/dist/framework.jar
-cp stock-apks/framework.jar framework.jar.out/dist/
-pushd framework.jar.out/build/apk
-zip -u ../../dist/framework.jar classes.dex
-popd
-zipalign -f 4 framework.jar.out/dist/framework.jar ./framework.jar
-rm -f -r framework.jar.out/build
-rm -f -r framework.jar.out/dist
+apktool b src/framework.jar.out
+zipalign -f 4 src/framework.jar.out/dist/framework.jar out/rom/framework/framework.jar
+zipalign -f 4 src/framework.jar.out/dist/framework.jar out/playerrom/framework/framework.jar
 
 # FRAMEWORK-RES-SBRISSENMETER.APK
-echo
-echo FRAMEWORK-RES-SBRISSENMETER.APK
-echo
-apktool b framework-res-sbrissenmeter
-rm framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk
-cp stock-apks/framework-res.apk framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk
-pushd framework-res-sbrissenmeter/build/apk
-zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable/stat_sys_battery.xml
-zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable/stat_sys_battery_charge.xml
-zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/reboot.png
-zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/recovery.png
-zip -u ../../dist/framework-res-sbrissenmeter.apk res/drawable-hdpi/stat_sys_battery_*
-zip -u ../../dist/framework-res-sbrissenmeter.apk res/layout/preference_information.xml
-zip -u ../../dist/framework-res-sbrissenmeter.apk resources.arsc
-popd
-zipalign -f 4 framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk ./framework-res-sbrissenmeter.apk
-rm -f -r framework-res-sbrissenmeter/build
-rm -f -r framework-res-sbrissenmeter/dist
+apktool b src/framework-res-sbrissenmeter
+zipalign -f 4 src/framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk out/extras/framework/framework-res-sbrissenmeter.apk
 
 # FRAMEWORK-RES-STOCKBATTERYMETER.APK
-echo
-echo FRAMEWORK-RES-STOCKBATTERYMETER.APK
-echo
-apktool b framework-res-stockbatterymeter
-rm framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk
-cp stock-apks/framework-res.apk framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk
-pushd framework-res-stockbatterymeter/build/apk
-zip -u ../../dist/framework-res-stockbatterymeter.apk res/drawable-hdpi/reboot.png
-zip -u ../../dist/framework-res-stockbatterymeter.apk res/drawable-hdpi/recovery.png
-zip -u ../../dist/framework-res-stockbatterymeter.apk res/layout/preference_information.xml
-zip -u ../../dist/framework-res-stockbatterymeter.apk resources.arsc
-popd
-zipalign -f 4 framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk ./framework-res-stockbatterymeter.apk
-rm -f -r framework-res-stockbatterymeter/build
-rm -f -r framework-res-stockbatterymeter/dist
+apktool b src/framework-res-stockbatterymeter
+zipalign -f 4 src/framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk out/extras/framework/framework-res-stockbatterymeter.apk
 
 # SERVICES.JAR
-echo
-echo SERVICES.JAR
-echo
-apktool b services.jar.out
-rm services.jar.out/dist/services.jar
-cp stock-apks/services.jar services.jar.out/dist/
-pushd services.jar.out/build/apk
-zip -u ../../dist/services.jar classes.dex
-popd
-zipalign -f 4 services.jar.out/dist/services.jar ./services.jar
-rm -f -r services.jar.out/build
-rm -f -r services.jar.out/dist
+apktool b src/services.jar.out
+zipalign -f 4 src/services.jar.out/dist/services.jar out/rom/framework/services.jar
+zipalign -f 4 src/services.jar.out/dist/services.jar out/playerrom/framework/services.jar
 
 # AXT9IME.APK
-echo
-echo AXT9IME.APK
-echo
-apktool b AxT9IME
-rm AxT9IME/dist/AxT9IME.apk
-cp stock-apks/AxT9IME.apk AxT9IME/dist/
-pushd AxT9IME/build/apk
-zip -u ../../dist/AxT9IME.apk classes.dex
-popd
-zipalign -f 4 AxT9IME/dist/AxT9IME.apk ./AxT9IME.apk
-rm -f -r AxT9IME/build
-rm -f -r AxT9IME/dist
+apktool b src/AxT9IME
+zipalign -f 4 src/AxT9IME/dist/AxT9IME.apk out/rom/app/AxT9IME.apk
+zipalign -f 4 src/AxT9IME/dist/AxT9IME.apk out/playerrom/app/AxT9IME.apk
 
 # BROWSER.APK
-echo
-echo BROWSER.APK
-echo
-apktool b Browser
-rm Browser/dist/Browser.apk
-cp stock-apks/Browser.apk Browser/dist/
-pushd Browser/build/apk
-zip -u ../../dist/Browser.apk resources.arsc
-popd
-zipalign -f 4 Browser/dist/Browser.apk ./Browser.apk
-rm -f -r Browser/build
-rm -f -r Browser/dist
+apktool b src/Browser
+zipalign -f 4 src/Browser/dist/Browser.apk out/rom/app/Browser.apk
 
 # BROWSER-PLAYER.APK
-echo
-echo BROWSER-PLAYER.APK
-echo
-apktool b Browser-Player
-rm Browser-Player/dist/Browser-Player.apk
-cp stock-apks/Browser-Player.apk Browser-Player/dist/
-pushd Browser-Player/build/apk
-zip -u ../../dist/Browser-Player.apk resources.arsc
-popd
-zipalign -f 4 Browser-Player/dist/Browser-Player.apk ./Browser-Player.apk
-rm -f -r Browser-Player/build
-rm -f -r Browser-Player/dist
+apktool b src/Browser-Player
+zipalign -f 4 src/Browser-Player/dist/Browser-Player.apk out/playerrom/app/Browser.apk
 
 # BROWSEREH03.APK
-echo
-echo BROWSEREH03.APK
-echo
-apktool b BrowserEH03
-rm BrowserEH03/dist/BrowserEH03.apk
-cp stock-apks/BrowserEH03.apk BrowserEH03/dist/
-pushd BrowserEH03/build/apk
-zip -u ../../dist/BrowserEH03.apk classes.dex
-zip -u ../../dist/BrowserEH03.apk resources.arsc
-zip -u ../../dist/BrowserEH03.apk res/xml/browser_preferences.xml
-popd
-zipalign -f 4 BrowserEH03/dist/BrowserEH03.apk ./BrowserEH03.apk
-rm -f -r BrowserEH03/build
-rm -f -r BrowserEH03/dist
+apktool b src/BrowserEH03
+zipalign -f 4 src/BrowserEH03/dist/BrowserEH03.apk out/extras/app/BrowserEH03.apk
 
 # CAMERA.APK
-echo
-echo CAMERA.APK
-echo
-apktool b Camera
-rm Camera/dist/Camera.apk
-cp stock-apks/Camera.apk Camera/dist/
-pushd Camera/build/apk
-zip -u ../../dist/Camera.apk classes.dex
-popd
-zipalign -f 4 Camera/dist/Camera.apk ./Camera.apk
-rm -f -r Camera/build
-rm -f -r Camera/dist
+apktool b src/Camera
+zipalign -f 4 src/Camera/dist/Camera.apk out/rom/app/Camera.apk
+zipalign -f 4 src/Camera/dist/Camera.apk out/playerrom/app/Camera.apk
 
 # CARCRADLE.APK
-echo
-echo CARCRADLE.APK
-echo
-apktool b CarCradle
-rm CarCradle/dist/CarCradle.apk
-cp stock-apks/CarCradle.apk CarCradle/dist/
-pushd CarCradle/build/apk
-zip -u ../../dist/CarCradle.apk classes.dex
-popd
-zipalign -f 4 CarCradle/dist/CarCradle.apk ./CarCradle.apk
-rm -f -r CarCradle/build
-rm -f -r CarCradle/dist
+apktool b src/CarCradle
+zipalign -f 4 src/CarCradle/dist/CarCradle.apk out/rom/app/CarCradle.apk
+zipalign -f 4 src/CarCradle/dist/CarCradle.apk out/playerrom/app/CarCradle.apk
 
-# CARCRADLEEI20.APK
-echo
-echo CARCRADLEEI20.APK
-echo
-apktool b CarCradleEI20
-rm CarCradleEI20/dist/CarCradleEI20.apk
-cp stock-apks/CarCradleEI20.apk CarCradleEI20/dist/
-pushd CarCradleEI20/build/apk
-zip -u ../../dist/CarCradleEI20.apk classes.dex
-zip -u ../../dist/CarCradleEI20.apk resources.arsc
-popd
-zipalign -f 4 CarCradleEI20/dist/CarCradleEI20.apk ./CarCradleEI20.apk
-rm -f -r CarCradleEI20/build
-rm -f -r CarCradleEI20/dist
+# CARCRADLEEH03.APK
+apktool b src/CarCradleEH03
+zipalign -f 4 src/CarCradleEH03/dist/CarCradleEH03.apk out/extras/app/CarCradleEH03.apk
 
 # DESKCRADLE.APK
-echo
-echo DESKCRADLE.APK
-echo
-apktool b DeskCradle
-rm DeskCradle/dist/DeskCradle.apk
-cp stock-apks/DeskCradle.apk DeskCradle/dist/
-pushd DeskCradle/build/apk
-zip -u ../../dist/DeskCradle.apk classes.dex
-popd
-zipalign -f 4 DeskCradle/dist/DeskCradle.apk ./DeskCradle.apk
-rm -f -r DeskCradle/build
-rm -f -r DeskCradle/dist
+apktool b src/DeskCradle
+zipalign -f 4 src/DeskCradle/dist/DeskCradle.apk out/rom/app/DeskCradle.apk
+zipalign -f 4 src/DeskCradle/dist/DeskCradle.apk out/playerrom/app/DeskCradle.apk
 
-# DESKCRADLEEI20.APK
-echo
-echo DESKCRADLEEI20.APK
-echo
-apktool b DeskCradleEI20
-rm DeskCradleEI20/dist/DeskCradleEI20.apk
-cp stock-apks/DeskCradleEI20.apk DeskCradleEI20/dist/
-pushd DeskCradleEI20/build/apk
-zip -u ../../dist/DeskCradleEI20.apk classes.dex
-zip -u ../../dist/DeskCradleEI20.apk resources.arsc
-popd
-zipalign -f 4 DeskCradleEI20/dist/DeskCradleEI20.apk ./DeskCradleEI20.apk
-rm -f -r DeskCradleEI20/build
-rm -f -r DeskCradleEI20/dist
+# DESKCRADLEEH03.APK
+apktool b src/DeskCradleEH03
+zipalign -f 4 src/DeskCradleEH03/dist/DeskCradleEH03.apk out/extras/app/DeskCradleEH03.apk
 
 # DIALERTABACTIVITY.APK
-echo
-echo DIALERTABACTIVITY.APK
-echo
-apktool b DialerTabActivity
-rm DialerTabActivity/dist/DialerTabActivity.apk
-cp stock-apks/DialerTabActivity.apk DialerTabActivity/dist/
-pushd DialerTabActivity/build/apk
-zip -u ../../dist/DialerTabActivity.apk classes.dex
-popd
-zipalign -f 4 DialerTabActivity/dist/DialerTabActivity.apk ./DialerTabActivity.apk
-rm -f -r DialerTabActivity/build
-rm -f -r DialerTabActivity/dist
+apktool b src/DialerTabActivity
+zipalign -f 4 src/DialerTabActivity/dist/DialerTabActivity.apk out/rom/app/DialerTabActivity.apk
 
 # DIALERTABACTIVITY-PLAYER.APK
-echo
-echo DIALERTABACTIVITY-PLAYER.APK
-echo
-apktool b DialerTabActivity-Player
-rm DialerTabActivity-Player/dist/DialerTabActivity-Player.apk
-cp stock-apks/DialerTabActivity-Player.apk DialerTabActivity-Player/dist/
-pushd DialerTabActivity-Player/build/apk
-zip -u ../../dist/DialerTabActivity-Player.apk classes.dex
-popd
-zipalign -f 4 DialerTabActivity-Player/dist/DialerTabActivity-Player.apk ./DialerTabActivity-Player.apk
-rm -f -r DialerTabActivity-Player/build
-rm -f -r DialerTabActivity-Player/dist
+apktool b src/DialerTabActivity-Player
+zipalign -f 4 src/DialerTabActivity-Player/dist/DialerTabActivity-Player.apk out/playerrom/app/DialerTabActivity.apk
 
 # JOBMANAGER.APK
-echo
-echo JOBMANAGER.APK
-echo
-apktool b JobManager
-rm JobManager/dist/JobManager.apk
-cp stock-apks/JobManager.apk JobManager/dist/
-pushd JobManager/build/apk
-zip -u ../../dist/JobManager.apk classes.dex
-popd
-zipalign -f 4 JobManager/dist/JobManager.apk ./JobManager.apk
-rm -f -r JobManager/build
-rm -f -r JobManager/dist
+apktool b src/JobManager
+zipalign -f 4 src/JobManager/dist/JobManager.apk out/rom/app/JobManager.apk
+zipalign -f 4 src/JobManager/dist/JobManager.apk out/playerrom/app/JobManager.apk
 
 # MUSICPLAYER.APK
-echo
-echo MUSICPLAYER.APK
-echo
-apktool b MusicPlayer
-rm MusicPlayer/dist/MusicPlayer.apk
-cp stock-apks/MusicPlayer.apk MusicPlayer/dist/
-pushd MusicPlayer/build/apk
-zip -u ../../dist/MusicPlayer.apk classes.dex
-zip -u ../../dist/MusicPlayer.apk resources.arsc
-popd
-zipalign -f 4 MusicPlayer/dist/MusicPlayer.apk ./MusicPlayer.apk
-rm -f -r MusicPlayer/build
-rm -f -r MusicPlayer/dist
+apktool b src/MusicPlayer
+zipalign -f 4 src/MusicPlayer/dist/MusicPlayer.apk out/rom/app/MusicPlayer.apk
 
 # MUSICPLAYER-PLAYER.APK
-echo
-echo MUSICPLAYER-PLAYER.APK
-echo
-apktool b MusicPlayer-Player
-rm MusicPlayer-Player/dist/MusicPlayer-Player.apk
-cp stock-apks/MusicPlayer-Player.apk MusicPlayer-Player/dist/
-pushd MusicPlayer-Player/build/apk
-zip -u ../../dist/MusicPlayer-Player.apk classes.dex
-zip -u ../../dist/MusicPlayer-Player.apk resources.arsc
-popd
-zipalign -f 4 MusicPlayer-Player/dist/MusicPlayer-Player.apk ./MusicPlayer-Player.apk
-rm -f -r MusicPlayer-Player/build
-rm -f -r MusicPlayer-Player/dist
+apktool b src/MusicPlayer-Player
+zipalign -f 4 src/MusicPlayer-Player/dist/MusicPlayer-Player.apk out/playerrom/app/MusicPlayer.apk
 
 # SETTINGS.APK
-echo
-echo SETTINGS.APK
-echo
-apktool b Settings
-rm Settings/dist/Settings.apk
-cp stock-apks/Settings.apk Settings/dist/
-pushd Settings/build/apk
-zip -u ../../dist/Settings.apk classes.dex
-zip -u ../../dist/Settings.apk resources.arsc
-zip -u ../../dist/Settings.apk res/xml/device_info_settings.xml
-zip -u ../../dist/Settings.apk res/xml/sound_settings.xml
-popd
-zipalign -f 4 Settings/dist/Settings.apk ./Settings.apk
-rm -f -r Settings/build
-rm -f -r Settings/dist
+apktool b src/Settings
+zipalign -f 4 src/Settings/dist/Settings.apk out/rom/app/Settings.apk
+
+# SETTINGS-PLAYER.APK
+apktool b src/Settings-Player
+zipalign -f 4 src/Settings-Player/dist/Settings-Player.apk out/playerrom/app/Settings-Player.apk
 
 # SETTINGSPROVIDER.APK
-echo
-echo SETTINGSPROVIDER.APK
-echo
-apktool b SettingsProvider
-rm SettingsProvider/dist/SettingsProvider.apk
-cp stock-apks/SettingsProvider.apk SettingsProvider/dist/
-pushd SettingsProvider/build/apk
-zip -u ../../dist/SettingsProvider.apk classes.dex
-zip -u ../../dist/SettingsProvider.apk resources.arsc
-popd
-zipalign -f 4 SettingsProvider/dist/SettingsProvider.apk ./SettingsProvider.apk
-rm -f -r SettingsProvider/build
-rm -f -r SettingsProvider/dist
+apktool b src/SettingsProvider
+zipalign -f 4 src/SettingsProvider/dist/SettingsProvider.apk out/rom/app/SettingsProvider.apk
 
 # SETTINGSPROVIDER-PLAYER.APK
-echo
-echo SETTINGSPROVIDER-PLAYER.APK
-echo
-apktool b SettingsProvider-Player
-rm SettingsProvider-Player/dist/SettingsProvider-Player.apk
-cp stock-apks/SettingsProvider-Player.apk SettingsProvider-Player/dist/
-pushd SettingsProvider-Player/build/apk
-zip -u ../../dist/SettingsProvider-Player.apk classes.dex
-zip -u ../../dist/SettingsProvider-Player.apk resources.arsc
-popd
-zipalign -f 4 SettingsProvider-Player/dist/SettingsProvider-Player.apk ./SettingsProvider-Player.apk
-rm -f -r SettingsProvider-Player/build
-rm -f -r SettingsProvider-Player/dist
+apktool b src/SettingsProvider-Player
+zipalign -f 4 src/SettingsProvider-Player/dist/SettingsProvider-Player.apk out/playerrom/app/SettingsProvider.apk
 
 # SYSTEMUI.APK
-echo
-echo SYSTEMUI.APK
-echo
-apktool b SystemUI
-rm SystemUI/dist/SystemUI.apk
-cp stock-apks/SystemUI.apk SystemUI/dist/
-pushd SystemUI/build/apk
-zip -u ../../dist/SystemUI.apk classes.dex
-popd
-zipalign -f 4 SystemUI/dist/SystemUI.apk ./SystemUI.apk
-rm -f -r SystemUI/build
-rm -f -r SystemUI/dist
+apktool b src/SystemUI
+zipalign -f 4 src/SystemUI/dist/SystemUI.apk out/rom/app/SystemUI.apk
+zipalign -f 4 src/SystemUI/dist/SystemUI.apk out/playerrom/app/SystemUI.apk
 
 # TOUCHWIZ30LAUNCHER.APK
-echo
-echo TOUCHWIZ30LAUNCHER.APK
-echo
-apktool b TouchWiz30Launcher
-rm TouchWiz30Launcher/dist/TouchWiz30Launcher.apk
-cp stock-apks/TouchWiz30Launcher.apk TouchWiz30Launcher/dist/
-pushd TouchWiz30Launcher/build/apk
-zip -u ../../dist/TouchWiz30Launcher.apk classes.dex
-zip -u ../../dist/TouchWiz30Launcher.apk res/xml/default_workspace.xml
-popd
-zipalign -f 4 TouchWiz30Launcher/dist/TouchWiz30Launcher.apk ./TouchWiz30Launcher.apk
-rm -f -r TouchWiz30Launcher/build
-rm -f -r TouchWiz30Launcher/dist
+apktool b src/TouchWiz30Launcher
+zipalign -f 4 src/TouchWiz30Launcher/dist/TouchWiz30Launcher.apk out/rom/app/TouchWiz30Launcher.apk
 
 # TOUCHWIZ30LAUNCHER-PLAYER.APK
-echo
-echo TOUCHWIZ30LAUNCHER-PLAYER.APK
-echo
-apktool b TouchWiz30Launcher-Player
-rm TouchWiz30Launcher-Player/dist/TouchWiz30Launcher-Player.apk
-cp stock-apks/TouchWiz30Launcher-Player.apk TouchWiz30Launcher-Player/dist/
-pushd TouchWiz30Launcher-Player/build/apk
-zip -u ../../dist/TouchWiz30Launcher-Player.apk classes.dex
-zip -u ../../dist/TouchWiz30Launcher-Player.apk res/xml/default_topapplication.xml
-zip -u ../../dist/TouchWiz30Launcher-Player.apk res/xml/default_workspace.xml
-popd
-zipalign -f 4 TouchWiz30Launcher-Player/dist/TouchWiz30Launcher-Player.apk ./TouchWiz30Launcher-Player.apk
-rm -f -r TouchWiz30Launcher-Player/build
-rm -f -r TouchWiz30Launcher-Player/dist
+apktool b src/TouchWiz30Launcher-Player
+zipalign -f 4 src/TouchWiz30Launcher-Player/dist/TouchWiz30Launcher-Player.apk out/playerrom/app/TouchWiz30Launcher.apk
 
 # TOUCHWIZ30LAUNCHEREH03.APK
-echo
-echo TOUCHWIZ30LAUNCHEREH03.APK
-echo
-apktool b TouchWiz30LauncherEH03
-rm TouchWiz30LauncherEH03/dist/TouchWiz30LauncherEH03.apk
-cp stock-apks/TouchWiz30LauncherEH03.apk TouchWiz30LauncherEH03/dist/
-pushd TouchWiz30LauncherEH03/build/apk
-zip -u ../../dist/TouchWiz30LauncherEH03.apk res/xml/default_mainapplication_order.xml
-zip -u ../../dist/TouchWiz30LauncherEH03.apk res/xml/default_workspace.xml
-popd
-zipalign -f 4 TouchWiz30LauncherEH03/dist/TouchWiz30LauncherEH03.apk ./TouchWiz30LauncherEH03.apk
-rm -f -r TouchWiz30LauncherEH03/build
-rm -f -r TouchWiz30LauncherEH03/dist
+apktool b src/TouchWiz30LauncherEH03
+zipalign -f 4 src/TouchWiz30LauncherEH03/dist/TouchWiz30LauncherEH03.apk out/extras/app/TouchWiz30LauncherEH03.apk
 
 # TWWALLPAPERCHOOSER.APK
-echo
-echo TWWALLPAPERCHOOSER.APK
-echo
-apktool b TwWallpaperChooser
-rm TwWallpaperChooser/dist/TwWallpaperChooser.apk
-cp stock-apks/TwWallpaperChooser.apk TwWallpaperChooser/dist/
-pushd TwWallpaperChooser/build/apk
-zip -u ../../dist/TwWallpaperChooser.apk resources.arsc
-zip -u ../../dist/TwWallpaperChooser.apk res/drawable-hdpi/*.jpg
-popd
-zipalign -f 4 TwWallpaperChooser/dist/TwWallpaperChooser.apk ./TwWallpaperChooser.apk
-rm -f -r TwWallpaperChooser/build
-rm -f -r TwWallpaperChooser/dist
+apktool b src/TwWallpaperChooser
+zipalign -f 4 src/TwWallpaperChooser/dist/TwWallpaperChooser.apk out/rom/app/TwWallpaperChooser.apk
+zipalign -f 4 src/TwWallpaperChooser/dist/TwWallpaperChooser.apk out/playerrom/app/TwWallpaperChooser.apk
 
 # VIDEOPLAYER-PLAYER.APK
-echo
-echo VIDEOPLAYER-PLAYER.APK
-echo
-apktool b VideoPlayer-Player
-rm VideoPlayer-Player/dist/VideoPlayer-Player.apk
-cp stock-apks/VideoPlayer-Player.apk VideoPlayer-Player/dist/
-pushd VideoPlayer-Player/build/apk
-zip -u ../../dist/VideoPlayer-Player.apk resources.arsc
-popd
-zipalign -f 4 VideoPlayer-Player/dist/VideoPlayer-Player.apk ./VideoPlayer-Player.apk
-rm -f -r VideoPlayer-Player/build
-rm -f -r VideoPlayer-Player/dist
+apktool b src/VideoPlayer-Player
+zipalign -f 4 src/VideoPlayer-Player/dist/VideoPlayer-Player.apk out/playerrom/app/VideoPlayer.apk
+
 
