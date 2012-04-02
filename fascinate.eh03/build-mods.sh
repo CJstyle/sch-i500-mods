@@ -145,7 +145,7 @@ zipalign -f 4 src/Settings/dist/Settings.apk out/rom/app/Settings.apk
 
 # SETTINGS-PLAYER.APK
 apktool b src/Settings-Player
-zipalign -f 4 src/Settings-Player/dist/Settings-Player.apk out/playerrom/app/Settings-Player.apk
+zipalign -f 4 src/Settings-Player/dist/Settings-Player.apk out/playerrom/app/Settings.apk
 
 # SETTINGSPROVIDER.APK
 apktool b src/SettingsProvider
