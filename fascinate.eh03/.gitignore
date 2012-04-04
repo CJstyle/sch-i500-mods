@@ -1,4 +1,5 @@
 out/
+tmp/
 src/framework-res/build
 src/framework-res/dist
 src/android.policy.jar.out/build

@@ -2,183 +2,279 @@
 
 PATH=$PATH:/opt/android-sdk-linux/tools/
 
-# Create output folders
-if [ ! -d "out" ]; then
-	mkdir out
-else
-	rm -fr out/
-	mkdir out
-fi
+# Build Directories
+export ROOTDIR=`pwd`
+export OUTDIR=$ROOTDIR/out
+export SRCDIR=$ROOTDIR/src
+export TEMPDIR=$ROOTDIR/tmp
+export ROMDIR=$OUTDIR/rom
+export EXTRASDIR=$OUTDIR/extras
+export PLAYERROMDIR=$OUTDIR/playerrom
 
-# OUTPUT: Standard ROM
-if [ ! -d "out/rom" ]; then
-	mkdir out/rom
-fi
-if [ ! -d "out/rom/app" ]; then
-	mkdir out/rom/app
-fi
-if [ ! -d "out/rom/framework" ]; then
-	mkdir out/rom/framework
-fi
+# Output Directories
+export ROMAPP=$OUTDIR/rom/app
+export ROMFRAMEWORK=$OUTDIR/rom/framework
+export EXTRASAPP=$OUTDIR/extras/app
+export EXTRASFRAMEWORK=$OUTDIR/extras/framework
+export PLAYERROMAPP=$OUTDIR/playerrom/app
+export PLAYERROMFRAMEWORK=$OUTDIR/playerrom/framework
 
-# OUTPUT: Player ROM
-if [ ! -d "out/playerrom" ]; then
-	mkdir out/playerrom
-fi
-if [ ! -d "out/playerrom/app" ]; then
-	mkdir out/playerrom/app
-fi
-if [ ! -d "out/playerrom/framework" ]; then
-	mkdir out/playerrom/framework
-fi
+# ZipAlignFile
+#
+# $1: ZIP/APK file to be zipaligned
+ZipAlignFile()
+{
+	echo $1
+	if [ -e "tmp/zipalign.zip" ]; then rm -f tmp/zipalign.zip; fi
+	cp $1 tmp/zipalign.zip	
+	zipalign -f 4 tmp/zipalign.zip $1
+	rm -f tmp/zipalign.zip
+}
 
-# OUTPUT: Extras
-if [ ! -d "out/extras" ]; then
-	mkdir out/extras
-fi
-if [ ! -d "out/extras/app" ]; then
-	mkdir out/extras/app
-fi
-if [ ! -d "out/extras/framework" ]; then
-	mkdir out/extras/framework
-fi
+# $1 - Source folder
+# $2 - Output file name
+CompileAppNoCertificate()
+{
+	# Compile the APK/JAR
+	if [ ! -d "$(dirname $2)" ]; then mkdir $(dirname $2); fi
+	apktool b $SRCDIR/$1 $2
+
+	# Zip-Align the output file
+	ZipAlignFile $2
+}
+
+# $1 - Source folder
+# $2 - Output file name
+CompileAppWithOriginalCertificate()
+{
+	# Compile the APK/JAR
+	if [ ! -d "$(dirname $2)" ]; then mkdir $(dirname $2); fi
+	apktool b $SRCDIR/$1 $2
+
+	# Extract the original META-INF information
+	if [ -d "$TEMPDIR/META-INF" ]; then rm -fr $TEMPDIR/META-INF; fi
+	unzip -q stock-apks/$(basename $2) META-INF* -d $TEMPDIR/
+
+	# If the original META-INF information existed, add to new APK/JAR
+	if [ -d "$TEMPDIR/META-INF" ]; then
+		pushd $TEMPDIR > /dev/null
+		zip -qur $2 "META-INF"
+		popd > /dev/null
+		#rm -fr $TEMPDIR/META-INF
+	fi
+
+	# Zip-Align the output file
+	ZipAlignFile $2	
+}
+
+# Recreate output and temporary directories
+if [ -d "$OUTDIR" ]; then rm -fr out; fi
+if [ -d "$TEMPDIR" ]; then rm -fr tmp; fi
+mkdir $OUTDIR
+mkdir $ROMDIR
+mkdir $EXTRASDIR
+mkdir $PLAYERROMDIR
+mkdir $TEMPDIR
 
 # CLEAN APKTOOL FRAMEWORKS
 rm -f -r ~/apktool
+echo
 
 # FRAMEWORK-RES.APK
-apktool b src/framework-res
-zipalign -f 4 src/framework-res/dist/framework-res.apk out/rom/framework/framework-res.apk
-zipalign -f 4 src/framework-res/dist/framework-res.apk out/playerrom/framework/framework-res.apk
+echo FRAMEWORK-RES.APK
+echo
+CompileAppWithOriginalCertificate 	framework-res 			$ROMFRAMEWORK/framework-res.apk
+CompileAppNoCertificate 		framework-res 			$PLAYERROMFRAMEWORK/framework-res.apk
+echo
 
 # ** REGISTER UPDATED APKTOOL FRAMEWORKS **
-apktool if out/rom/framework/framework-res.apk
+apktool if $ROMFRAMEWORK/framework-res.apk
 apktool if stock-apks/twframework-res.apk
 
 # ANDROID.POLICY.JAR
-apktool b src/android.policy.jar.out
-zipalign -f 4 src/android.policy.jar.out/dist/android.policy.jar out/rom/framework/android.policy.jar
-zipalign -f 4 src/android.policy.jar.out/dist/android.policy.jar out/playerrom/framework/android.policy.jar
+echo ANDROID.POLICY.JAR
+echo
+CompileAppWithOriginalCertificate 	android.policy.jar.out 		$ROMFRAMEWORK/android.policy.jar
+CompileAppNoCertificate 		android.policy.jar.out 		$PLAYERROMFRAMEWORK/android.policy.jar
+echo
 
 # FRAMEWORK.JAR
-apktool b src/framework.jar.out
-zipalign -f 4 src/framework.jar.out/dist/framework.jar out/rom/framework/framework.jar
-zipalign -f 4 src/framework.jar.out/dist/framework.jar out/playerrom/framework/framework.jar
+echo FRAMEWORK.JAR
+echo
+CompileAppWithOriginalCertificate 	framework.jar.out 		$ROMFRAMEWORK/framework.jar
+CompileAppNoCertificate 		framework.jar.out 		$PLAYERROMFRAMEWORK/framework.jar
+echo
 
 # FRAMEWORK-RES-SBRISSENMETER.APK
-apktool b src/framework-res-sbrissenmeter
-zipalign -f 4 src/framework-res-sbrissenmeter/dist/framework-res-sbrissenmeter.apk out/extras/framework/framework-res-sbrissenmeter.apk
+echo FRAMEWORK-RES-SBRISSENMETER.APK
+echo
+CompileAppWithOriginalCertificate 	framework-res-sbrissenmeter 	$EXTRASFRAMEWORK/framework-res-sbrissenmeter.apk
+echo
 
 # FRAMEWORK-RES-STOCKBATTERYMETER.APK
-apktool b src/framework-res-stockbatterymeter
-zipalign -f 4 src/framework-res-stockbatterymeter/dist/framework-res-stockbatterymeter.apk out/extras/framework/framework-res-stockbatterymeter.apk
+echo FRAMEWORK-RES-STOCKBATTERYMETER.APK
+echo
+CompileAppWithOriginalCertificate 	framework-res-stockbatterymeter	$EXTRASFRAMEWORK/framework-res-stockbatterymeter.apk
+echo
 
 # SERVICES.JAR
-apktool b src/services.jar.out
-zipalign -f 4 src/services.jar.out/dist/services.jar out/rom/framework/services.jar
-zipalign -f 4 src/services.jar.out/dist/services.jar out/playerrom/framework/services.jar
+echo SERVICES.JAR
+echo
+CompileAppWithOriginalCertificate 	services.jar.out 		$ROMFRAMEWORK/services.jar
+CompileAppNoCertificate 		services.jar.out 		$PLAYERROMFRAMEWORK/services.jar]
+echo
 
 # AXT9IME.APK
-apktool b src/AxT9IME
-zipalign -f 4 src/AxT9IME/dist/AxT9IME.apk out/rom/app/AxT9IME.apk
-zipalign -f 4 src/AxT9IME/dist/AxT9IME.apk out/playerrom/app/AxT9IME.apk
+echo AXT9IME.APK
+echo
+CompileAppWithOriginalCertificate 	AxT9IME 			$ROMAPP/AxT9IME.apk
+CompileAppNoCertificate 		AxT9IME 			$PLAYERROMAPP/AxT9IME.apk
+echo
 
 # BROWSER.APK
-apktool b src/Browser
-zipalign -f 4 src/Browser/dist/Browser.apk out/rom/app/Browser.apk
+echo BROWSER.APK
+echo
+CompileAppWithOriginalCertificate 	Browser 			$ROMAPP/Browser.apk
+echo
 
 # BROWSER-PLAYER.APK
-apktool b src/Browser-Player
-zipalign -f 4 src/Browser-Player/dist/Browser-Player.apk out/playerrom/app/Browser.apk
+echo BROWSER-PLAYER.APK
+echo
+CompileAppNoCertificate 		Browser-Player 			$PLAYERROMAPP/Browser.apk
+echo
 
 # BROWSEREH03.APK
-apktool b src/BrowserEH03
-zipalign -f 4 src/BrowserEH03/dist/BrowserEH03.apk out/extras/app/BrowserEH03.apk
+echo BROWSEREH03.APK
+echo
+CompileAppWithOriginalCertificate 	BrowserEH03 			$EXTRASAPP/BrowserEH03.apk
+echo
 
 # CAMERA.APK
-apktool b src/Camera
-zipalign -f 4 src/Camera/dist/Camera.apk out/rom/app/Camera.apk
-zipalign -f 4 src/Camera/dist/Camera.apk out/playerrom/app/Camera.apk
+echo CAMERA.APK
+echo
+CompileAppWithOriginalCertificate 	Camera 				$ROMAPP/Camera.apk
+CompileAppNoCertificate 		Camera 				$PLAYERROMAPP/Camera.apk
+echo
 
 # CARCRADLE.APK
-apktool b src/CarCradle
-zipalign -f 4 src/CarCradle/dist/CarCradle.apk out/rom/app/CarCradle.apk
-zipalign -f 4 src/CarCradle/dist/CarCradle.apk out/playerrom/app/CarCradle.apk
+echo CARCRADLE.APK
+echo
+CompileAppWithOriginalCertificate 	CarCradle			$ROMAPP/CarCradle.apk
+CompileAppNoCertificate 		CarCradle 			$PLAYERROMAPP/CarCradle.apk
+echo
 
 # CARCRADLEEH03.APK
-apktool b src/CarCradleEH03
-zipalign -f 4 src/CarCradleEH03/dist/CarCradleEH03.apk out/extras/app/CarCradleEH03.apk
+echo CARCRADLEEH03.APK
+echo
+CompileAppWithOriginalCertificate 	CarCradleEH03 			$EXTRASAPP/CarCradleEH03.apk
+echo
 
 # DESKCRADLE.APK
-apktool b src/DeskCradle
-zipalign -f 4 src/DeskCradle/dist/DeskCradle.apk out/rom/app/DeskCradle.apk
-zipalign -f 4 src/DeskCradle/dist/DeskCradle.apk out/playerrom/app/DeskCradle.apk
+echo DESKCRADLE.APK
+echo
+CompileAppWithOriginalCertificate 	DeskCradle			$ROMAPP/DeskCradle.apk
+CompileAppNoCertificate 		DeskCradle 			$PLAYERROMAPP/DeskCradle.apk
+echo
 
 # DESKCRADLEEH03.APK
-apktool b src/DeskCradleEH03
-zipalign -f 4 src/DeskCradleEH03/dist/DeskCradleEH03.apk out/extras/app/DeskCradleEH03.apk
+echo DESKCRADLEEH03.APK
+echo
+CompileAppWithOriginalCertificate 	DeskCradleEH03 			$EXTRASAPP/DeskCradleEH03.apk
+echo
 
 # DIALERTABACTIVITY.APK
-apktool b src/DialerTabActivity
-zipalign -f 4 src/DialerTabActivity/dist/DialerTabActivity.apk out/rom/app/DialerTabActivity.apk
+echo DIALERTABACTIVITY.APK
+echo
+CompileAppWithOriginalCertificate 	DialerTabActivity 		$ROMAPP/DialerTabActivity.apk
+echo
 
 # DIALERTABACTIVITY-PLAYER.APK
-apktool b src/DialerTabActivity-Player
-zipalign -f 4 src/DialerTabActivity-Player/dist/DialerTabActivity-Player.apk out/playerrom/app/DialerTabActivity.apk
+echo DIALERTABACTIVITY-PLAYER.APK
+echo
+CompileAppNoCertificate 		DialerTabActivity-Player	$PLAYERROMAPP/DialerTabActivity.apk
+echo
 
 # JOBMANAGER.APK
-apktool b src/JobManager
-zipalign -f 4 src/JobManager/dist/JobManager.apk out/rom/app/JobManager.apk
-zipalign -f 4 src/JobManager/dist/JobManager.apk out/playerrom/app/JobManager.apk
+echo JOBMANAGER.APK
+echo
+CompileAppWithOriginalCertificate 	JobManager			$ROMAPP/JobManager.apk
+CompileAppNoCertificate 		JobManager 			$PLAYERROMAPP/JobManager.apk
+echo
 
 # MUSICPLAYER.APK
-apktool b src/MusicPlayer
-zipalign -f 4 src/MusicPlayer/dist/MusicPlayer.apk out/rom/app/MusicPlayer.apk
+echo MUSICPLAYER.APK
+echo
+CompileAppWithOriginalCertificate 	MusicPlayer 			$ROMAPP/MusicPlayer.apk
+echo
 
 # MUSICPLAYER-PLAYER.APK
-apktool b src/MusicPlayer-Player
-zipalign -f 4 src/MusicPlayer-Player/dist/MusicPlayer-Player.apk out/playerrom/app/MusicPlayer.apk
+echo MUSICPLAYER-PLAYER.APK
+echo
+CompileAppNoCertificate 		MusicPlayer-Player		$PLAYERROMAPP/MusicPlayer.apk
+echo
 
 # SETTINGS.APK
-apktool b src/Settings
-zipalign -f 4 src/Settings/dist/Settings.apk out/rom/app/Settings.apk
+echo SETTINGS.APK
+echo
+CompileAppWithOriginalCertificate 	Settings 			$ROMAPP/Settings.apk
+echo
 
 # SETTINGS-PLAYER.APK
-apktool b src/Settings-Player
-zipalign -f 4 src/Settings-Player/dist/Settings-Player.apk out/playerrom/app/Settings.apk
+echo SETTINGS-PLAYER.APK
+echo
+CompileAppNoCertificate 		Settings-Player			$PLAYERROMAPP/Settings.apk
+echo
 
 # SETTINGSPROVIDER.APK
-apktool b src/SettingsProvider
-zipalign -f 4 src/SettingsProvider/dist/SettingsProvider.apk out/rom/app/SettingsProvider.apk
+echo SETTINGSPROVIDER.APK
+echo
+CompileAppWithOriginalCertificate 	SettingsProvider 		$ROMAPP/SettingsProvider.apk
+echo
 
 # SETTINGSPROVIDER-PLAYER.APK
-apktool b src/SettingsProvider-Player
-zipalign -f 4 src/SettingsProvider-Player/dist/SettingsProvider-Player.apk out/playerrom/app/SettingsProvider.apk
+echo SETTINGSPROVIDER-PLAYER.APK
+echo
+CompileAppNoCertificate 		SettingsProvider-Player		$PLAYERROMAPP/SettingsProvider.apk
+echo
 
 # SYSTEMUI.APK
-apktool b src/SystemUI
-zipalign -f 4 src/SystemUI/dist/SystemUI.apk out/rom/app/SystemUI.apk
-zipalign -f 4 src/SystemUI/dist/SystemUI.apk out/playerrom/app/SystemUI.apk
+echo SYSTEMUI.APK
+echo
+CompileAppWithOriginalCertificate 	SystemUI			$ROMAPP/SystemUI.apk
+CompileAppNoCertificate 		SystemUI 			$PLAYERROMAPP/SystemUI.apk
+echo
 
 # TOUCHWIZ30LAUNCHER.APK
-apktool b src/TouchWiz30Launcher
-zipalign -f 4 src/TouchWiz30Launcher/dist/TouchWiz30Launcher.apk out/rom/app/TouchWiz30Launcher.apk
+echo TOUCHWIZ30LAUNCHER.APK
+echo
+CompileAppWithOriginalCertificate 	TouchWiz30Launcher 		$ROMAPP/TouchWiz30Launcher.apk
+echo
 
 # TOUCHWIZ30LAUNCHER-PLAYER.APK
-apktool b src/TouchWiz30Launcher-Player
-zipalign -f 4 src/TouchWiz30Launcher-Player/dist/TouchWiz30Launcher-Player.apk out/playerrom/app/TouchWiz30Launcher.apk
+echo TOUCHWIZ30LAUNCHER-PLAYER.APK
+echo
+CompileAppNoCertificate 		TouchWiz30Launcher-Player	$PLAYERROMAPP/TouchWiz30Launcher.apk
+echo
 
 # TOUCHWIZ30LAUNCHEREH03.APK
-apktool b src/TouchWiz30LauncherEH03
-zipalign -f 4 src/TouchWiz30LauncherEH03/dist/TouchWiz30LauncherEH03.apk out/extras/app/TouchWiz30LauncherEH03.apk
+echo TOUCHWIZ30LAUNCHEREH03.APK
+echo
+CompileAppWithOriginalCertificate 	TouchWiz30LauncherEH03 		$EXTRASAPP/TouchWiz30LauncherEH03.apk
+echo
 
 # TWWALLPAPERCHOOSER.APK
-apktool b src/TwWallpaperChooser
-zipalign -f 4 src/TwWallpaperChooser/dist/TwWallpaperChooser.apk out/rom/app/TwWallpaperChooser.apk
-zipalign -f 4 src/TwWallpaperChooser/dist/TwWallpaperChooser.apk out/playerrom/app/TwWallpaperChooser.apk
+echo TWWALLPAPERCHOOSER.APK
+echo
+CompileAppWithOriginalCertificate 	TwWallpaperChooser		$ROMAPP/TwWallpaperChooser.apk
+CompileAppNoCertificate 		TwWallpaperChooser 		$PLAYERROMAPP/TwWallpaperChooser.apk
+echo
 
 # VIDEOPLAYER-PLAYER.APK
-apktool b src/VideoPlayer-Player
-zipalign -f 4 src/VideoPlayer-Player/dist/VideoPlayer-Player.apk out/playerrom/app/VideoPlayer.apk
+echo VIDEOPLAYER-PLAYER.APK
+echo
+CompileAppNoCertificate 		VideoPlayer-Player		$PLAYERROMAPP/VideoPlayer.apk
+echo
 
+# Remove TEMP directory after build
+if [ -d "$TEMPDIR" ]; then rm -fr tmp; fi
 
