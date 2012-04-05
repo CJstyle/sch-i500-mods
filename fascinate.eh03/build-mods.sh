@@ -90,6 +90,7 @@ echo
 # ** REGISTER UPDATED APKTOOL FRAMEWORKS **
 apktool if $ROMFRAMEWORK/framework-res.apk
 apktool if stock-apks/twframework-res.apk
+echo
 
 # ANDROID.POLICY.JAR
 echo ANDROID.POLICY.JAR
