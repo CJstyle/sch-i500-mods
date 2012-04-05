@@ -122,7 +122,7 @@ echo
 echo SERVICES.JAR
 echo
 CompileAppWithOriginalCertificate 	services.jar.out 		$ROMFRAMEWORK/services.jar
-CompileAppNoCertificate 		services.jar.out 		$PLAYERROMFRAMEWORK/services.jar]
+CompileAppNoCertificate 		services.jar.out 		$PLAYERROMFRAMEWORK/services.jar
 echo
 
 # AXT9IME.APK
