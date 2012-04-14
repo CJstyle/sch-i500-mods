@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="25.319977dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="@style/TwTextAppearanceGroupTitle" android:textStyle="bold" android:textColor="?android:textColorPrimaryInverse" android:gravity="center_vertical" android:id="@id/freq_favo_selector_title" android:background="@drawable/light_header_dither" android:paddingLeft="5.0dip" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="25.319977dip" android:scaleType="fitXY" android:layout_centerHorizontal="false" android:layout_centerVertical="true" />
-    <LinearLayout android:orientation="vertical" android:id="@id/sep_itemlayout" android:background="@drawable/listview_item_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="75.32999dip">
-        <TextView android:textAppearance="@style/TwTextAppearanceGroupTitle" android:textStyle="bold" android:textColor="?android:textColorPrimaryInverse" android:id="@id/freq_favo_selector_title2" android:background="@drawable/light_header_dither" android:paddingLeft="5.0dip" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="25.319977dip" android:scaleType="fitXY" android:layout_centerHorizontal="false" android:layout_centerVertical="true" />
-        <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center" android:id="@id/sep_noitem" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    </LinearLayout>
-</RelativeLayout>

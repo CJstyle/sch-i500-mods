@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/selectall_selector" android:layout_width="fill_parent" android:layout_height="65.29999dip" android:minHeight="65.29999dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListOneLine" android:textSize="24.0sp" android:gravity="left|center" android:id="@id/videolist_selectall_itemview_text" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:singleLine="true" android:layout_weight="0.8" />
-    <CheckBox android:id="@id/videolist_selectall_itemview_checkbox" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" />
-</LinearLayout>

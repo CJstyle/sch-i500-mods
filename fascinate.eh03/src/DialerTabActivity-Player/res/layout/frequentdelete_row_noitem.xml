@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="65.32999dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center" android:id="@id/list_noitem" android:background="@drawable/listview_item_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="65.32999dip" />
-</RelativeLayout>

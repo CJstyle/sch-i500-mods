@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/dr_settings"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference android:persistent="false" android:title="@string/data_roaming_title" android:key="button_data_roaming" android:summary="@string/data_roaming_sub_title" />
-</PreferenceScreen>

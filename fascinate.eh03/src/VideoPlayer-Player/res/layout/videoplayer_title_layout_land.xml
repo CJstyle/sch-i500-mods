@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/title_landscape" android:background="@drawable/video_player_top_box_bg" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/horizontal_titlebg" android:layout_width="fill_parent" android:layout_height="46.659973dip" android:layout_alignParentTop="true">
-        <ImageButton android:id="@id/scnCtrl" android:background="#00000000" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="6.0dip" android:src="@drawable/btn_overlookaspect_selector" android:layout_centerVertical="true" />
-        <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:ellipsize="marquee" android:layout_gravity="left" android:id="@id/TitleText" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="88.66dip" android:layout_marginRight="99.98999dip" android:singleLine="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="0" />
-        <ImageView android:id="@id/batteyrIcon" android:background="#00000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="16.0dip" android:src="@drawable/video_player_battery_icon_00" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-    </RelativeLayout>
-</RelativeLayout>

@@ -66,13 +66,6 @@ BROWSER.APK
 - Set default home page to "about:blank"
 - Remove all default bookmarks
 
-BROWSER-PLAYER.APK
-==================
-
-- Set default home page to "about:blank"
-- Remove all default bookmarks
-- Change application name to "Internet" to match Galaxy Player
-
 BROWSEREH03.APK
 ===============
 
@@ -115,12 +108,6 @@ DIALERTABACTIVITY.APK
 
 - Modified voicemail button to dial voicemail instead of VZW Visual Voice Mail
 
-DIALERTABACTIVITY-PLAYER.APK
-============================
-
-- Modified voicemail button to dial voicemail instead of VZW Visual Voice Mail
-- Removed LAUNCHER category from application manifest
-
 JOBMANAGER.APK
 ==============
 
@@ -133,25 +120,11 @@ MUSICPLAYER.APK
 - Localize some strings for US English
 - Remove "Download from V cast?" prompt when no media exists
 
-MUSICPLAYER-PLAYER.APK
-======================
-
-- Localize some strings for US English
-- Remove "Download from V cast?" prompt when no media exists
-- Rename application to "Music" to match Galaxy Player
-
 SETTINGS.APK
 ============
 
 - Show full kernel version and mod/ROM version in About Phone (s0niqu3)
 - Modified to add Settings/Sound/Charge Activation boolean option
-
-SETTINGS-PLAYER.APK
-===================
-
-- Show full kernel version and mod/ROM version in About Phone (s0niqu3)
-- Modified to add Settings/Sound/Charge Activation boolean option
-- Remove 3G Mobile Hotspot tray icon
 
 SETTINGSPROVIDER.APK
 ====================
@@ -159,14 +132,6 @@ SETTINGSPROVIDER.APK
 - Change default transition animation speed to 50% (Fast/0.5)
 - Change default USB mode to "Ask on connection" (4)
 - Modified to add Settings/Sound/Charge Activation boolean option
-
-SETTINGSPROVIDER-PLAYER.APK
-===========================
-
-- Change default transition animation speed to 50% (Fast/0.5)
-- Change default USB mode to "Ask on connection" (4)
-- Modified to add Settings/Sound/Charge Activation boolean option
-- Change airplane mode and allowed location provider defaults to match Galaxy Player
 
 SYSTEMUI.APK
 ============
@@ -187,19 +152,8 @@ TOUCHWIZ30LAUNCHEREH03.APK
 - Modified default application list order to match my ROM
 - Modified default shortcut and widget layouts
 
-TOUCHWIZ30LAUNCHER-PLAYER.APK
-=============================
-
-- Modified default shortcut and widget layouts for Player version of GeeWiz
-
 TWWALLPAPERCHOOSER
 ==================
 
 - Added new default wallpaper from GeeWiz ROM as a selectable item
-
- 
-VIDEOPLAYER-PLAYER.APK
-======================
-
-- Rename application to "Videos" to match Galaxy Player
 

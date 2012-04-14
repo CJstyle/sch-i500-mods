@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/Frequent_add_favo" android:title="@string/add_2_favorites" />
-    <item android:id="@id/Frequent_Remove" android:title="@string/remove" />
-    <item android:id="@id/Frequent_view_status" />
-    <item android:id="@id/isFrequent" />
-</menu>

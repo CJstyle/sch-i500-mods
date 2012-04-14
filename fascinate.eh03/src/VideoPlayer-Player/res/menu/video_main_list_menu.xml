@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_remove_video" android:id="@id/video_remove" android:visible="true" android:title="@string/remove" android:checkable="true" />
-    <item android:icon="@drawable/ic_menu_restore_video_links" android:id="@id/video_restore" android:title="@string/restore" android:checkable="true" />
-    <item android:icon="@drawable/ic_menu_list_by" android:id="@id/video_listby" android:title="@string/list_by" android:checkable="true" />
-</menu>

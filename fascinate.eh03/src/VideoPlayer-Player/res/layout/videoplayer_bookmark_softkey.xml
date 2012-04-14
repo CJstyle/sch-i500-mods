@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:id="@id/bookmark_softkey" android:background="@color/black" android:layout_width="fill_parent" android:layout_height="54.669983dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/lsk_button" android:background="@drawable/btn_bookmark_sk_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_weight="1.0" />
-    <Button android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/rsk_button" android:background="@drawable/btn_bookmark_sk_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_weight="1.0" />
-</LinearLayout>

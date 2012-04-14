@@ -210,3 +210,7 @@ git add / git rm / etc
 git commit -m "comment"
 git push origin branch_name
 
+REFERENCE: REMOVE .LINE TAGS FROM DECOMPILED APKS (FOR DIFF)
+for smalifile in `find . -name '*.smali'`; do sed '/^    .line/d' $smalifile > ./tt; mv ./tt $smalifile; done
+
+

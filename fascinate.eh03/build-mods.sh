@@ -9,15 +9,12 @@ export SRCDIR=$ROOTDIR/src
 export TEMPDIR=$ROOTDIR/tmp
 export ROMDIR=$OUTDIR/rom
 export EXTRASDIR=$OUTDIR/extras
-export PLAYERROMDIR=$OUTDIR/playerrom
 
 # Output Directories
 export ROMAPP=$OUTDIR/rom/app
 export ROMFRAMEWORK=$OUTDIR/rom/framework
 export EXTRASAPP=$OUTDIR/extras/app
 export EXTRASFRAMEWORK=$OUTDIR/extras/framework
-export PLAYERROMAPP=$OUTDIR/playerrom/app
-export PLAYERROMFRAMEWORK=$OUTDIR/playerrom/framework
 
 # ZipAlignFile
 #
@@ -73,7 +70,6 @@ if [ -d "$TEMPDIR" ]; then rm -fr tmp; fi
 mkdir $OUTDIR
 mkdir $ROMDIR
 mkdir $EXTRASDIR
-mkdir $PLAYERROMDIR
 mkdir $TEMPDIR
 
 # CLEAN APKTOOL FRAMEWORKS
@@ -84,7 +80,6 @@ echo
 echo FRAMEWORK-RES.APK
 echo
 CompileAppWithOriginalCertificate 	framework-res 			$ROMFRAMEWORK/framework-res.apk
-CompileAppNoCertificate 		framework-res 			$PLAYERROMFRAMEWORK/framework-res.apk
 echo
 
 # ** REGISTER UPDATED APKTOOL FRAMEWORKS **
@@ -96,14 +91,12 @@ echo
 echo ANDROID.POLICY.JAR
 echo
 CompileAppWithOriginalCertificate 	android.policy.jar.out 		$ROMFRAMEWORK/android.policy.jar
-CompileAppNoCertificate 		android.policy.jar.out 		$PLAYERROMFRAMEWORK/android.policy.jar
 echo
 
 # FRAMEWORK.JAR
 echo FRAMEWORK.JAR
 echo
 CompileAppWithOriginalCertificate 	framework.jar.out 		$ROMFRAMEWORK/framework.jar
-CompileAppNoCertificate 		framework.jar.out 		$PLAYERROMFRAMEWORK/framework.jar
 echo
 
 # FRAMEWORK-RES-SBRISSENMETER.APK
@@ -122,26 +115,18 @@ echo
 echo SERVICES.JAR
 echo
 CompileAppWithOriginalCertificate 	services.jar.out 		$ROMFRAMEWORK/services.jar
-CompileAppNoCertificate 		services.jar.out 		$PLAYERROMFRAMEWORK/services.jar
 echo
 
 # AXT9IME.APK
 echo AXT9IME.APK
 echo
 CompileAppWithOriginalCertificate 	AxT9IME 			$ROMAPP/AxT9IME.apk
-CompileAppNoCertificate 		AxT9IME 			$PLAYERROMAPP/AxT9IME.apk
 echo
 
 # BROWSER.APK
 echo BROWSER.APK
 echo
 CompileAppWithOriginalCertificate 	Browser 			$ROMAPP/Browser.apk
-echo
-
-# BROWSER-PLAYER.APK
-echo BROWSER-PLAYER.APK
-echo
-CompileAppNoCertificate 		Browser-Player 			$PLAYERROMAPP/Browser.apk
 echo
 
 # BROWSEREH03.APK
@@ -154,14 +139,12 @@ echo
 echo CAMERA.APK
 echo
 CompileAppWithOriginalCertificate 	Camera 				$ROMAPP/Camera.apk
-CompileAppNoCertificate 		Camera 				$PLAYERROMAPP/Camera.apk
 echo
 
 # CARCRADLE.APK
 echo CARCRADLE.APK
 echo
 CompileAppWithOriginalCertificate 	CarCradle			$ROMAPP/CarCradle.apk
-CompileAppNoCertificate 		CarCradle 			$PLAYERROMAPP/CarCradle.apk
 echo
 
 # CARCRADLEEH03.APK
@@ -174,7 +157,6 @@ echo
 echo DESKCRADLE.APK
 echo
 CompileAppWithOriginalCertificate 	DeskCradle			$ROMAPP/DeskCradle.apk
-CompileAppNoCertificate 		DeskCradle 			$PLAYERROMAPP/DeskCradle.apk
 echo
 
 # DESKCRADLEEH03.APK
@@ -189,17 +171,10 @@ echo
 CompileAppWithOriginalCertificate 	DialerTabActivity 		$ROMAPP/DialerTabActivity.apk
 echo
 
-# DIALERTABACTIVITY-PLAYER.APK
-echo DIALERTABACTIVITY-PLAYER.APK
-echo
-CompileAppNoCertificate 		DialerTabActivity-Player	$PLAYERROMAPP/DialerTabActivity.apk
-echo
-
 # JOBMANAGER.APK
 echo JOBMANAGER.APK
 echo
 CompileAppWithOriginalCertificate 	JobManager			$ROMAPP/JobManager.apk
-CompileAppNoCertificate 		JobManager 			$PLAYERROMAPP/JobManager.apk
 echo
 
 # MUSICPLAYER.APK
@@ -208,22 +183,10 @@ echo
 CompileAppWithOriginalCertificate 	MusicPlayer 			$ROMAPP/MusicPlayer.apk
 echo
 
-# MUSICPLAYER-PLAYER.APK
-echo MUSICPLAYER-PLAYER.APK
-echo
-CompileAppNoCertificate 		MusicPlayer-Player		$PLAYERROMAPP/MusicPlayer.apk
-echo
-
 # SETTINGS.APK
 echo SETTINGS.APK
 echo
 CompileAppWithOriginalCertificate 	Settings 			$ROMAPP/Settings.apk
-echo
-
-# SETTINGS-PLAYER.APK
-echo SETTINGS-PLAYER.APK
-echo
-CompileAppNoCertificate 		Settings-Player			$PLAYERROMAPP/Settings.apk
 echo
 
 # SETTINGSPROVIDER.APK
@@ -232,29 +195,16 @@ echo
 CompileAppWithOriginalCertificate 	SettingsProvider 		$ROMAPP/SettingsProvider.apk
 echo
 
-# SETTINGSPROVIDER-PLAYER.APK
-echo SETTINGSPROVIDER-PLAYER.APK
-echo
-CompileAppNoCertificate 		SettingsProvider-Player		$PLAYERROMAPP/SettingsProvider.apk
-echo
-
 # SYSTEMUI.APK
 echo SYSTEMUI.APK
 echo
 CompileAppWithOriginalCertificate 	SystemUI			$ROMAPP/SystemUI.apk
-CompileAppNoCertificate 		SystemUI 			$PLAYERROMAPP/SystemUI.apk
 echo
 
 # TOUCHWIZ30LAUNCHER.APK
 echo TOUCHWIZ30LAUNCHER.APK
 echo
 CompileAppWithOriginalCertificate 	TouchWiz30Launcher 		$ROMAPP/TouchWiz30Launcher.apk
-echo
-
-# TOUCHWIZ30LAUNCHER-PLAYER.APK
-echo TOUCHWIZ30LAUNCHER-PLAYER.APK
-echo
-CompileAppNoCertificate 		TouchWiz30Launcher-Player	$PLAYERROMAPP/TouchWiz30Launcher.apk
 echo
 
 # TOUCHWIZ30LAUNCHEREH03.APK
@@ -267,13 +217,6 @@ echo
 echo TWWALLPAPERCHOOSER.APK
 echo
 CompileAppWithOriginalCertificate 	TwWallpaperChooser		$ROMAPP/TwWallpaperChooser.apk
-CompileAppNoCertificate 		TwWallpaperChooser 		$PLAYERROMAPP/TwWallpaperChooser.apk
-echo
-
-# VIDEOPLAYER-PLAYER.APK
-echo VIDEOPLAYER-PLAYER.APK
-echo
-CompileAppNoCertificate 		VideoPlayer-Player		$PLAYERROMAPP/VideoPlayer.apk
 echo
 
 # Remove TEMP directory after build

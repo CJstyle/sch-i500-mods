@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/grid_data_layout" android:background="@drawable/frequent_item_bg" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/grid_contact_photo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
-    <TextView android:textSize="18.659973dip" android:textColor="@color/tw_color001" android:gravity="left" android:id="@id/contact_name" android:background="@color/tw_color002_bg" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="@color/tw_color002" android:shadowRadius="1.0" android:layout_alignBottom="@id/grid_contact_photo" />
-    <ImageView android:id="@id/gridview_star" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/contact_name" android:layout_alignLeft="@id/contact_name" android:layout_alignParentLeft="true" />
-</RelativeLayout>
