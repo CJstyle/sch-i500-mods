@@ -48,16 +48,28 @@ CompileAppWithOriginalCertificate()
 	if [ ! -d "$(dirname $2)" ]; then mkdir $(dirname $2); fi
 	apktool b $SRCDIR/$1 $2
 
-	# Extract the original META-INF information
+	# Extract the original META-INF and AndroidManifest.xml files
 	if [ -d "$TEMPDIR/META-INF" ]; then rm -fr $TEMPDIR/META-INF; fi
+	if [ -e "$TEMPDIR/AndroidManifest.xml" ]; then rm -f $TEMPDIR/AndroidManifest.xml; fi
+
 	unzip -q stock-apks/$(basename $2) META-INF* -d $TEMPDIR/
+	unzip -q stock-apks/$(basename $2) AndroidManifest.xml -d $TEMPDIR/
 
 	# If the original META-INF information existed, add to new APK/JAR
 	if [ -d "$TEMPDIR/META-INF" ]; then
 		pushd $TEMPDIR > /dev/null
 		zip -qur $2 "META-INF"
 		popd > /dev/null
-		#rm -fr $TEMPDIR/META-INF
+		rm -fr $TEMPDIR/META-INF
+	fi
+
+	# If the original AndroidManifest.xml file existed, add to new APK/JAR
+	if [ -e "$TEMPDIR/AndroidManifest.xml" ]; then
+		pushd $TEMPDIR > /dev/null
+		zip -qd $2 AndroidManifest.xml
+		zip -qu $2 AndroidManifest.xml
+		popd > /dev/null
+		rm -f $TEMPDIR/AndroidManifest.xml
 	fi
 
 	# Zip-Align the output file
