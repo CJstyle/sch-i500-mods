@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="def_airplane_mode_radios">cell,wifi</string>
-    <string name="airplane_mode_toggleable_radios">wifi</string>
+    <string name="def_airplane_mode_radios">cell</string>
+    <string name="airplane_mode_toggleable_radios">bluetooth,wifi</string>
     <string name="def_location_providers_allowed" />
     <string name="def_backup_transport">com.google.android.backup/.BackupTransportService</string>
     <string name="def_low_battery_sound">/system/media/audio/ui/TW_Low_Battery.ogg</string>
