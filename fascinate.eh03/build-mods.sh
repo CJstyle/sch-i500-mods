@@ -109,6 +109,12 @@ echo
 CompileAppWithOriginalCertificate 	android.policy.jar.out 		$ROMFRAMEWORK/android.policy.jar
 echo
 
+# ANDROID.POLICY.JAR-PLAYER
+echo ANDROID.POLICY.JAR-PLAYER
+echo
+CompileAppWithOriginalCertificate 	android.policy.jar.out-Player	$PLAYERFRAMEWORK/android.policy.jar
+echo
+
 # FRAMEWORK.JAR
 echo FRAMEWORK.JAR
 echo

@@ -42,6 +42,13 @@ ANDROID.POLICY.JAR
 - Modified for addition of Reboot and Recovery power menu options
 - Stop animation services (samsungani/bootanim) at the same time
 
+ANDROID.POLICY.JAR-PLAYER
+=========================
+
+- Modified for addition of Reboot and Recovery power menu options
+- Remove Airplane Mode from power menu
+- Stop animation services (samsungani/bootanim) at the same time
+
 FRAMEWORK.JAR
 =============
 
