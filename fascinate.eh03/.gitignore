@@ -4,6 +4,8 @@ src/framework-res/build
 src/framework-res/dist
 src/android.policy.jar.out/build
 src/android.policy.jar.out/dist
+src/android.policy.jar.out-Player/build
+src/android.policy.jar.out-Player/dist
 src/framework.jar.out/build
 src/framework.jar.out/dist
 src/framework-res-sbrissenmeter/build
@@ -16,8 +18,6 @@ src/AxT9IME/build
 src/AxT9IME/dist
 src/Browser/build
 src/Browser/dist
-src/Browser-Player/build
-src/Browser-Player/dist
 src/BrowserEH03/build
 src/BrowserEH03/dist
 src/Camera/build
@@ -32,14 +32,12 @@ src/DeskCradleEH03/build
 src/DeskCradleEH03/dist
 src/DialerTabActivity/build
 src/DialerTabActivity/dist
-src/DialerTabActivity-Player/build
-src/DialerTabActivity-Player/dist
 src/JobManager/build
 src/JobManager/dist
 src/MusicPlayer/build
 src/MusicPlayer/dist
-src/MusicPlayer-Player/build
-src/MusicPlayer-Player/dist
+src/Phone-Player/build
+src/Phone-Player/dist
 src/Settings/build
 src/Settings/dist
 src/Settings-Player/build
@@ -49,15 +47,13 @@ src/SettingsProvider/dist
 src/SettingsProvider-Player/build
 src/SettingsProvider-Player/dist
 src/SystemUI/build
+src/SystemUI-Player/dist
+src/SystemUI-Player/build
 src/SystemUI/dist
 src/TouchWiz30Launcher/build
 src/TouchWiz30Launcher/dist
-src/TouchWiz30Launcher-Player/build
-src/TouchWiz30Launcher-Player/dist
 src/TouchWiz30LauncherEH03/build
 src/TouchWiz30LauncherEH03/dist
 src/TwWallpaperChooser/build
 src/TwWallpaperChooser/dist
-src/VideoPlayer-Player/build
-src/VideoPlayer-Player/dist
 

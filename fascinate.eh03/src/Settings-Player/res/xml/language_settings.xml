@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <PreferenceCategory android:title="@string/language_selection" android:key="language_selection">
+        <PreferenceScreen android:title="@string/phone_language" android:key="phone_language">
+            <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.LocalePicker" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/user_dict_settings_title" android:summary="@string/user_dict_settings_summary">
+            <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.UserDictionarySettings" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/keyboard_settings_category" android:key="keyboard_settings_category">
+        <Preference android:title="@string/select_input_method" android:key="select_default_input_method" />
+    </PreferenceCategory>
+    <PreferenceScreen android:title="@string/builtin_keyboard_settings_title" android:key="hardkeyboard_category" android:summary="@string/builtin_keyboard_settings_summary">
+        <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.PhysicalKeyboardSettings" />
+    </PreferenceScreen>
+</PreferenceScreen>

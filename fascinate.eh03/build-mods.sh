@@ -217,6 +217,12 @@ echo
 CompileAppWithOriginalCertificate 	Settings 			$ROMAPP/Settings.apk
 echo
 
+# SETTINGS-PLAYER.APK
+echo SETTINGS-PLAYER.APK
+echo
+CompileAppWithOriginalCertificate 	Settings-Player 		$PLAYERAPP/Settings.apk
+echo
+
 # SETTINGSPROVIDER.APK
 echo SETTINGSPROVIDER.APK
 echo
