@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/call_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
+    <PreferenceScreen android:persistent="false" android:visibility="gone" android:title="@string/fdn" android:key="button_fdn_key" android:summary="@string/sum_fdn">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.FdnSetting" />
+    </PreferenceScreen>
+    <CheckBoxPreference android:persistent="true" android:visibility="gone" android:title="@string/hac_mode_title" android:key="button_hac_key" android:summary="@string/hac_mode_summary" />
+    <ListPreference android:visibility="gone" android:title="@string/zz_tty_list_name" android:key="tty_preference" android:summary="@string/zz_tty_value_name" />
+    <PreferenceScreen android:persistent="false" android:visibility="gone" android:title="@string/labelGSMMore" android:key="button_gsm_more_expand_key" android:summary="@string/sum_gsm_call_settings">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.GsmUmtsCallOptions" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:visibility="gone" android:title="@string/labelCDMAMore" android:key="button_cdma_more_expand_key" android:summary="@string/sum_cdma_call_settings">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.CdmaCallOptions" />
+    </PreferenceScreen>
+    <PreferenceCategory android:persistent="false" android:title="@string/voicemail" android:key="button_voicemail_category_key">
+        <ListPreference android:persistent="true" android:title="@string/voicemail_provider" android:key="button_voicemail_provider_key" android:summary="@string/sum_voicemail_choose_provider" />
+        <PreferenceScreen android:persistent="false" android:title="@string/voicemail_settings" android:key="button_voicemail_setting_key">
+            <com.android.phone.EditPhoneNumberPreference android:persistent="false" android:layout="@layout/preference_list" android:singleLine="true" android:autoText="false" android:title="@string/voicemail_settings_number_label" android:key="button_voicemail_key" android:dialogTitle="@string/voicemail" phone:confirmMode="confirm" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/other_settings" android:key="button_misc_category_key">
+        <PreferenceScreen android:persistent="false" android:title="@string/ignore_with_msg_title" android:key="ignore_with_msg_key">
+            <intent android:action="com.sec.phone.callfeatures.RejectCallWithMsgSettings" />
+            <CheckBoxPreference android:visibility="gone" android:title="@string/zz_country_code_dialing_title" android:key="toggle_country_name" android:summary="@string/zz_country_name_toggle_summary" />
+            <EditTextPreference android:visibility="gone" android:title="@string/zz_country_code_name" android:key="country_code" android:summary="@string/zz_country_code_summary" android:dialogTitle="@string/zz_country_code_name" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:persistent="true" android:title="@string/auto_retry_mode_title" android:key="button_auto_retry_key" android:summary="@string/auto_retry_mode_summary" />
+        <ListPreference android:entries="@array/dtmf_tone_entries" android:title="@string/dtmf_tones_title" android:key="button_dtmf_settings" android:summary="@string/dtmf_tones_summary" android:entryValues="@array/dtmf_tone_values" />
+        <ListPreference android:entries="@array/tty_mode_entries" android:title="@string/tty_mode_option_title" android:key="button_tty_mode_key" android:summary="@string/zz_tty_value_name" android:entryValues="@array/tty_mode_values" />
+        <CheckBoxPreference android:persistent="true" android:title="@string/voice_privacy" android:key="voice_privacy" android:summary="@string/voice_privacy_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

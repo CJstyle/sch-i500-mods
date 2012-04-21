@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/call_card_person_info_land_incoming" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/snsInfo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="219.0px" android:layout_marginTop="322.0px" android:layout_marginRight="219.0px">
+            <ImageView android:id="@id/snsIcon" android:layout_width="42.0px" android:layout_height="42.0px" />
+            <TextView android:textSize="26.0px" android:typeface="sans" android:gravity="center_vertical" android:id="@id/snsStatus" android:layout_height="36.0px" android:singleLine="true" style="@style/InCallRoundButtonLabel" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/recInfo" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_marginTop="260.0dip">
+        <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/call_rec_icon" />
+        <TextView android:textSize="21.0sp" android:textColor="@color/twcolor030" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rec_text" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/noiseReductionIcon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="85.0dip" android:layout_marginTop="260.0dip" android:src="@drawable/call_noise_reduction_icon" />
+    <TextView android:textSize="21.0sp" android:textStyle="normal" android:gravity="center_vertical" android:layout_gravity="right" android:id="@id/elapsedTime" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_marginTop="260.0dip" android:layout_marginRight="11.0dip" android:singleLine="true" />
+</FrameLayout>

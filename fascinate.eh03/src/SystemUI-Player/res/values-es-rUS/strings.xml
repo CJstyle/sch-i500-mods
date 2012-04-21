@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Barra de estado</string>
+    <string name="status_bar_clear_all_button">Borrar</string>
+    <string name="status_bar_no_notifications_title">No hay notificaciones</string>
+    <string name="status_bar_ongoing_events_title">Continuo</string>
+    <string name="status_bar_latest_events_title">Notificaciones</string>
+    <string name="battery_low_title">Conecta el cargador</string>
+    <string name="battery_low_subtitle">Hay poca batería:</string>
+    <string name="battery_low_percent_format">%d%% o menos disponible.</string>
+    <string name="battery_low_why">Uso de la batería</string>
+    <string name="quickpanel_mobiledata_text">"Movil
+datos"</string>
+    <string name="mobileap_notification">Punto de Acceso Móvil 3G activada</string>
+    <string name="mobileap_notification_message">Pulse para configurar</string>
+    <string name="warning_alert_check">No volver a mostrar este mensaje.</string>
+    <string name="mobiledata_title">Datos móviles</string>
+    <string name="mobiledata_dialogtext">Ya no podrás usar aplicaciones de datos como Navegador, Correo electrónico y YouTube mediante la red móvil. Las llamadas y los mensajes de texto seguirán funcionando. ¿Continuar?</string>
+    <string name="location_title">Mi ubicacin</string>
+    <string name="location_3rdparty_gps_dialogtext">Al seleccionar \"Servicios de GPS Autnomos\", usted est permitiendo que cualquier tercer proveedor acceda a toda la formacin de ubicacin a travs de Internet o cualquier software o componente perifrico que instale, descargue, aada, adjunte, etc. al aparato. Habilitar esta funcioad pudiera representar ciertos riesgos a los usuarios de este aparato.</string>
+    <string name="agree">Acepto</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
+    <PreferenceCategory android:title="@string/mobile_networks" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/roaming" android:key="button_roaming_key" android:summaryOn="@string/roaming_enable" android:summaryOff="@string/roaming_disable" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/sprint_call_guard" android:key="button_sprint_call_guard_key" android:summaryOn="@string/sprint_call_guard_enable" android:summaryOff="@string/sprint_call_guard_disable" />
+    <ListPreference android:entries="@array/sprint_data_roaming_guard_choices" android:title="@string/sprint_data_roaming_guard_title" android:key="sprint_data_roaming_guard_key" android:summary="@string/sprint_data_roaming_guard_summary" android:dialogTitle="@string/sprint_data_roaming_guard_dialogtitle" android:entryValues="@array/sprint_data_roaming_guard_values" />
+    <ListPreference android:entries="@array/cdma_system_select_choices" android:title="@string/cdma_system_select_title" android:key="cdma_system_select_key" android:summary="@string/cdma_system_select_summary" android:dialogTitle="@string/cdma_system_select_dialogtitle" android:entryValues="@array/cdma_system_select_values" />
+</PreferenceScreen>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="OtaShowActivationScreen">1</integer>
+    <integer name="OtaShowListeningScreen">1</integer>
+    <integer name="OtaShowActivateFailTimes">3</integer>
+    <integer name="OtaPlaySuccessFailureTone">1</integer>
+    <integer name="ringing_animation_duration">100</integer>
+    <integer name="locked_call_ui_animation_duration">200</integer>
+</resources>

@@ -120,6 +120,11 @@ MUSICPLAYER.APK
 - Localize some strings for US English
 - Remove "Download from V cast?" prompt when no media exists
 
+PHONE-PLAYER.APK
+================
+
+- Disable device activation by pretending the device is GSM
+
 SETTINGS.APK
 ============
 
@@ -138,8 +143,17 @@ SYSTEMUI.APK
 ============
 
 - NOTE: Was decompiled with "apktool d -r" due to problem linking back to twframework-res.apk
+- (^^^^ REDO IT; add framework 2 to the yml to fix this)
 - Remove full battery notification
 - Remove LBS (location-based services) icon from the status bar
+
+SYSTEMUI-PLAYER.APK
+===================
+
+- Remove full battery notification
+- Remove LBS (location-based services) icon from the status bar
+- Remove signal / airplane mode icon from the status bar
+- Change QuickPanel Mobile Data item to Sound item (YP-G1)
 
 TOUCHWIZ30LAUNCHER.APK
 ======================

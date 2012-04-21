@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:background="@drawable/call_incoming_reject_list_top" android:layout_width="fill_parent" android:layout_height="76.66dip">
+        <Button android:textSize="16.0sp" android:textColor="@color/twcolor002" android:gravity="center" android:id="@id/reject_call_with_msg_create" android:layout_width="178.66dip" android:layout_height="46.659973dip" android:text="@string/reject_call_with_msg_create" android:singleLine="true" />
+    </LinearLayout>
+    <Button android:textSize="16.0sp" android:textColor="@color/twcolor001" android:gravity="center" android:id="@id/reject_call_with_msg_item1" android:background="@drawable/reject_call_with_msg_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="65.32999dip" />
+    <Button android:textSize="16.0sp" android:textColor="@color/twcolor001" android:gravity="center" android:id="@id/reject_call_with_msg_item2" android:background="@drawable/reject_call_with_msg_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="65.32999dip" />
+    <Button android:textSize="16.0sp" android:textColor="@color/twcolor001" android:gravity="center" android:id="@id/reject_call_with_msg_item3" android:background="@drawable/reject_call_with_msg_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="65.32999dip" />
+    <Button android:textSize="16.0sp" android:textColor="@color/twcolor001" android:gravity="center" android:id="@id/reject_call_with_msg_item4" android:background="@drawable/reject_call_with_msg_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="65.32999dip" />
+    <Button android:textSize="16.0sp" android:textColor="@color/twcolor001" android:gravity="center" android:id="@id/reject_call_with_msg_item5" android:background="@drawable/reject_call_with_msg_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="65.32999dip" />
+</LinearLayout>

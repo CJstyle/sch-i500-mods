@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/zzz_background01" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:id="@id/zzz_sweepglassfull01" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/zzz_sweepglass" android:background="@drawable/unlock_whitebg" android:layout_width="fill_parent" android:layout_height="73.32999dip" android:layout_marginBottom="137.0dip" android:layout_alignParentBottom="true">
+                <TextView android:textSize="17.329987dip" android:typeface="sans" android:textColor="#ff000000" android:id="@id/zzz_incoming_call_sweepglasstext01" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/zzz_glass_lock_help_text_1" android:singleLine="true" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:drawableLeft="@drawable/unlock_icon_lock" android:marqueeRepeatLimit="marquee_forever" />
+                <TextView android:textSize="24.0dip" android:typeface="sans" android:textColor="#ff000000" android:id="@id/zzz_incoming_call_sweepglasstext02" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/zzz_glass_lock_help_text_2" android:singleLine="true" android:shadowColor="#ff000000" android:shadowDx="1.0" android:shadowDy="1.0" android:marqueeRepeatLimit="marquee_forever" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

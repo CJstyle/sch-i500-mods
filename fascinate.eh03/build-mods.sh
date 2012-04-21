@@ -8,11 +8,14 @@ export OUTDIR=$ROOTDIR/out
 export SRCDIR=$ROOTDIR/src
 export TEMPDIR=$ROOTDIR/tmp
 export ROMDIR=$OUTDIR/rom
+export PLAYERDIR=$OUTDIR/player
 export EXTRASDIR=$OUTDIR/extras
 
 # Output Directories
 export ROMAPP=$OUTDIR/rom/app
 export ROMFRAMEWORK=$OUTDIR/rom/framework
+export PLAYERAPP=$OUTDIR/player/app
+export PLAYERFRAMEWORK=$OUTDIR/player/framework
 export EXTRASAPP=$OUTDIR/extras/app
 export EXTRASFRAMEWORK=$OUTDIR/extras/framework
 
@@ -81,6 +84,7 @@ if [ -d "$OUTDIR" ]; then rm -fr out; fi
 if [ -d "$TEMPDIR" ]; then rm -fr tmp; fi
 mkdir $OUTDIR
 mkdir $ROMDIR
+mkdir $PLAYERDIR
 mkdir $EXTRASDIR
 mkdir $TEMPDIR
 
@@ -195,6 +199,12 @@ echo
 CompileAppWithOriginalCertificate 	MusicPlayer 			$ROMAPP/MusicPlayer.apk
 echo
 
+# PHONE-PLAYER.APK --> PHONE.APK
+echo PHONE-PLAYER.APK
+echo
+CompileAppWithOriginalCertificate 	Phone-Player 			$PLAYERAPP/Phone.apk
+echo
+
 # SETTINGS.APK
 echo SETTINGS.APK
 echo
@@ -211,6 +221,12 @@ echo
 echo SYSTEMUI.APK
 echo
 CompileAppWithOriginalCertificate 	SystemUI			$ROMAPP/SystemUI.apk
+echo
+
+# SYSTEMUI-PLAYER.APK
+echo SYSTEMUI-PLAYER.APK
+echo
+CompileAppWithOriginalCertificate 	SystemUI-Player			$PLAYERAPP/SystemUI.apk
 echo
 
 # TOUCHWIZ30LAUNCHER.APK

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/incoming_puzzle_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/incoming_puzzle_match_layout" android:background="@drawable/call_puzzle_btn_unlock" android:visibility="visible" android:layout_width="105.0dip" android:layout_height="77.0dip" android:layout_marginLeft="155.0px" android:layout_marginTop="155.0px" />
+    <LinearLayout android:orientation="vertical" android:id="@id/incoming_puzzle_quiet_layout" android:background="@drawable/call_puzzle_btn_disable" android:layout_width="105.0dip" android:layout_height="77.0dip">
+        <ImageView android:textColor="@color/twcolor001" android:id="@id/imgViewQuiet" android:background="@drawable/call_puzzle_quiet_icon" android:duplicateParentState="true" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="32.0dip" android:layout_marginTop="20.0dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/incoming_puzzle_answer_layout" android:background="@drawable/call_puzzle_green_btn" android:layout_width="105.0dip" android:layout_height="77.0dip" android:layout_marginLeft="155.0px">
+        <ImageView android:textColor="@color/twcolor001" android:id="@id/imgViewAccept" android:background="@drawable/call_puzzle_accept_icon" android:duplicateParentState="true" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="32.0dip" android:layout_marginTop="20.0dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/incoming_puzzle_ignore_layout" android:background="@drawable/call_puzzle_red_btn" android:layout_width="105.0dip" android:layout_height="77.0dip" android:layout_marginLeft="310.0px">
+        <ImageView android:textColor="@color/twcolor001" android:id="@id/imgViewReject" android:background="@drawable/call_puzzle_ignore_icon" android:duplicateParentState="true" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="32.0dip" android:layout_marginTop="20.0dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/incomingCallTimePanel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="80.0dip">
+        <TextView android:textSize="18.0sp" android:gravity="right" android:id="@id/callTime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_marginBottom="10.0dip" android:text="@string/end_screen_text" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/incoming_puzzle_reject_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="130.0dip">
+        <FrameLayout android:layout_gravity="bottom" android:layout_width="1.0dip" android:layout_height="60.0dip" android:layout_weight="1.0">
+            <Button android:id="@id/incomingCallButton" android:background="@drawable/quiet_button" android:paddingTop="15.0dip" android:text="@string/call" style="@style/InCallRejectPanelButton" />
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="bottom" android:layout_width="1.0dip" android:layout_height="60.0dip" android:layout_weight="1.0">
+            <Button android:id="@id/incomingMessageButton" android:background="@drawable/quiet_button" android:paddingTop="15.0dip" android:text="@string/message" style="@style/InCallRejectPanelButton" />
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

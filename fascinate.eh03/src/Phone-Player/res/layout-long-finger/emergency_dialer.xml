@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/top" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="34.0sp" android:textColor="@color/dialer_button_text" android:gravity="center" android:id="@id/digits" android:background="@drawable/btn_dial_textfield" android:focusableInTouchMode="false" android:layout_width="fill_parent" android:layout_height="74.0dip" android:layout_marginTop="43.0px" android:maxLines="1" android:scrollHorizontally="true" android:freezesText="true" android:layout_weight="0.0" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/dialpadset" android:background="@drawable/call_dial_panel_bg_01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="100.0px">
+        <include android:layout_gravity="bottom" layout="@layout/dialpad" />
+        <include android:layout_gravity="bottom" layout="@layout/voicemail_dial_delete" />
+    </LinearLayout>
+</LinearLayout>

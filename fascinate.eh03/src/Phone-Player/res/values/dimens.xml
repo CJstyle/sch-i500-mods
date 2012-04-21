@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="otabase_layout_marginTop">30.0dip</dimen>
+    <dimen name="otabase_minHeight">270.0dip</dimen>
+    <dimen name="otaactivate_layout_marginTop">10.0dip</dimen>
+    <dimen name="otalistenprogress_layout_marginTop">5.0dip</dimen>
+    <dimen name="otasuccessfail_layout_marginTop">10.0dip</dimen>
+    <dimen name="font_num_view">45.5sp</dimen>
+    <dimen name="softkey_pnl_padding_left">4.0dip</dimen>
+    <dimen name="softkey_pnl_padding_right">4.0dip</dimen>
+    <dimen name="softkey_pnl_padding_top">6.669983dip</dimen>
+    <dimen name="softkey_2btn_width">156.0dip</dimen>
+    <dimen name="softkey_2btn_height">49.339996dip</dimen>
+</resources>
