@@ -232,7 +232,7 @@ echo
 # SETTINGSPROVIDER-PLAYER.APK
 echo SETTINGSPROVIDER-PLAYER.APK
 echo
-CompileAppWithOriginalCertificate 	SettingsProvider-PLAYER 	$PLAYERAPP/SettingsProvider.apk
+CompileAppWithOriginalCertificate 	SettingsProvider-Player 	$PLAYERAPP/SettingsProvider.apk
 echo
 
 # SYSTEMUI.APK
