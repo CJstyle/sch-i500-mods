@@ -146,6 +146,15 @@ SETTINGSPROVIDER.APK
 - Modified to add Settings/Sound/Charge Activation boolean option
 - Default airplane mode to not disable wifi (requires data wipe or a manual db edit)
 
+SETTINGSPROVIDER-PLAYER.APK
+===========================
+
+- Change default transition animation speed to 50% (Fast/0.5)
+- Change default USB mode to "Ask on connection" (4)
+- Modified to add Settings/Sound/Charge Activation boolean option
+- Default airplane mode to not disable wifi (requires data wipe or a manual db edit)
+- Default airplane mode to ON
+
 SYSTEMUI.APK
 ============
 
