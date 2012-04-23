@@ -133,6 +133,18 @@ echo
 CompileAppWithOriginalCertificate 	framework-res-stockbatterymeter	$EXTRASFRAMEWORK/framework-res-stockbatterymeter.apk
 echo
 
+# FRAMEWORK-RES-SUPERCIRCLE-D.APK
+echo FRAMEWORK-RES-SUPERCIRCLE-D.APK
+echo
+CompileAppWithOriginalCertificate 	framework-res-supercircle-d 	$EXTRASFRAMEWORK/framework-res-supercircle-d.apk
+echo
+
+# FRAMEWORK-RES-SUPERCIRCLE-F.APK
+echo FRAMEWORK-RES-SUPERCIRCLE-F.APK
+echo
+CompileAppWithOriginalCertificate 	framework-res-supercircle-f 	$EXTRASFRAMEWORK/framework-res-supercircle-f.apk
+echo
+
 # SERVICES.JAR
 echo SERVICES.JAR
 echo

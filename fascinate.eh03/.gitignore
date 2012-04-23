@@ -12,6 +12,10 @@ src/framework-res-sbrissenmeter/build
 src/framework-res-sbrissenmeter/dist
 src/framework-res-stockbatterymeter/build
 src/framework-res-stockbatterymeter/dist
+src/framework-res-supercircle-d/build
+src/framework-res-supercircle-d/dist
+src/framework-res-supercircle-f/build
+src/framework-res-supercircle-f/dist
 src/services.jar.out/build
 src/services.jar.out/dist
 src/AxT9IME/build

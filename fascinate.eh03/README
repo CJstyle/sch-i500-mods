@@ -36,6 +36,24 @@ FRAMEWORK-RES-STOCKBATTERYMETER.APK
 - Use Stock EH03 (Froyo) battery meter and graphics
 - Change default Preference.Information layout to display 3 lines instead of 2
 
+FRAMEWORK-RES-SUPERCIRCLE-D.APK
+===================================
+
+- NOTE: Was decompiled with "apktool d --keep-broken-res"
+- Enable slow-blur effect from power button popup
+- Enable CRT screen off animation (nitsuj17)
+- Use Fightspit SuperCircle "D" battery meter and graphics
+- Change default Preference.Information layout to display 3 lines instead of 2
+
+FRAMEWORK-RES-SUPERCIRCLE-F.APK
+===================================
+
+- NOTE: Was decompiled with "apktool d --keep-broken-res"
+- Enable slow-blur effect from power button popup
+- Enable CRT screen off animation (nitsuj17)
+- Use Fightspit SuperCircle "F" battery meter and graphics
+- Change default Preference.Information layout to display 3 lines instead of 2
+
 ANDROID.POLICY.JAR
 ==================
 
